@@ -12,10 +12,15 @@ ob_start();
 <div>
 <?php
     foreach ($escapeGames as $game){
-        $result = '<div>test</div>';
+        $result = '
+            <div>'. $game['nom_escape_game'] . '</div>
+            <div>'. $game['lieu'] . '</div>
+        ';
 
         echo $result;
     }
+
+    // var_dump($escapeGames);
 ?>
 <div>
 
