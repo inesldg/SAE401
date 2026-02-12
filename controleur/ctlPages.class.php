@@ -13,7 +13,6 @@ class ctlPages {
         $vue->afficher(array("message" => $message));
     }
 
-
     public function pageInscription($message){
         $vue = new vue("Inscription");
         $vue->afficher(array("message" => $message));

@@ -13,6 +13,14 @@ class ctlCompte {
         return $acces;
     }
 
+    public function getMail($mail)
+    {
+        $mailUser = new compte();
+        $mail = $_SESSION["acces"];
+        $mailUtilisateur = $mailUser->getMail($mail);
+        return $mailUtilisateur;
+    }
+
     public function deconnexion(){
         session_unset(); // Supprime toutes les variables de session
         session_destroy(); // Détruit la session
