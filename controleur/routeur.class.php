@@ -84,6 +84,9 @@ class routeur {
                         case "escapeGames" :
                             $this->ctlEscapeGames->pageEscapeGames();
                         break;
+                        case "game" :
+                            $this->ctlEscapeGames->pageGame($_GET['idEscapeGame']);
+                        break;
 
                         default :
                             throw new Exception("Action non valide");

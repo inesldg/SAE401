@@ -11,4 +11,15 @@ class escapeGames extends database {
         return $listeEscapeGames;
     }
 
+    public function afficherGame($idEscapeGame)
+        {
+        $req = 'SELECT * FROM escape_games 
+        WHERE id_escape_game = ?;';
+        $afficherGame = $this->execReqPrep($req, array($idEscapeGame)); 
+        //$idEscapeGame a récupérer en $_GET avec l'index (avec symbole & pour ajouter un parametre dans le lien)
+        
+        return $afficherGame;
+
+    }
+
 }

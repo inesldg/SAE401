@@ -15,6 +15,7 @@ ob_start();
         $result = '
             <div>'. $game['nom_escape_game'] . '</div>
             <div>'. $game['lieu'] . '</div>
+            <a href=index.php?action=game&idEscapeGame=' . $game['id_escape_game'] . '>Lien</a>
         ';
 
         echo $result;
