@@ -13,4 +13,7 @@ $Conf->DBPwd = Config::$DBPWD ?? "admin";
 $Conf->titreOnglet = Config::TITREONGLET;
 $Conf->nomSite = Config::NOMSITE;
 
+
 // Configuration des menus
+
+$Conf->footer = '';

@@ -20,18 +20,18 @@ ob_start();
 <div>
 <div>
 <?php
-    foreach ($avis as $evaluation){
-        $result = '
-            <div>'. $evaluation['nom'] . ' ' . $evaluation['prenom'] .'</div>
-            <div>'. $evaluation['note'] . '</div>
-            <div>'. $evaluation['avis_date'] . '</div>
-            <div>'. $evaluation['commentaire'] . '</div>
-        ';
+    if ($avis != 0){
+        foreach ($avis as $evaluation){
+            $result = '
+                <div>'. $evaluation['nom'] . ' ' . $evaluation['prenom'] .'</div>
+                <div>'. $evaluation['note'] . '</div>
+                <div>'. $evaluation['avis_date'] . '</div>
+                <div>'. $evaluation['commentaire'] . '</div>
+            ';
 
-        echo $result;
+            echo $result;
+        }
     }
-
-    // var_dump($escapeGames);
 ?>
 </div>
 

@@ -19,6 +19,8 @@ if (isset($acces[0]['statut'])){
         break;
         case "2" :
             echo "<div>vous êtes connecté en tant qu'administrateur</div>
+            <a href='index.php?action=utilisateurs'>Liste des utilisateurs</a>
+            <a href='index.php?action=pageAjoutEscape'>Ajouter un escape game</a>
             <a href='index.php?action=deconnexion'>Déconnexion</a>";
         break;
         default :

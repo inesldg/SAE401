@@ -23,4 +23,9 @@ class ctlPages {
         $vue->afficher(array("message" => $message));
     }
 
+    public function pageAjoutEscape($message){
+        $vue = new vue("AjoutEscape");
+        $vue->afficher(array("message" => $message));
+    }
+
 }

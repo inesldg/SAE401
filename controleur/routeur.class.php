@@ -5,6 +5,8 @@ require "controleur/ctlEscapeGames.class.php";
 require "controleur/ctlCompte.class.php";
 require "controleur/ctlInscription.class.php";
 require "controleur/ctlConnexion.class.php";
+require "controleur/ctlUtilisateurs.class.php";
+require "controleur/ctlAjoutEscape.class.php";
 
 class routeur {
     private $ctlPages;
@@ -12,6 +14,8 @@ class routeur {
     private $ctlCompte;
     private $ctlInscription;
     private $ctlConnexion;
+    private $ctlUtilisateurs;
+    private $ctlAjoutEscape;
 
 
     public function __construct(){
@@ -20,6 +24,8 @@ class routeur {
         $this->ctlCompte = new ctlCompte();
         $this->ctlInscription = new ctlInscription();
         $this->ctlConnexion = new ctlConnexion();
+        $this->ctlUtilisateurs = new ctlUtilisateurs();
+        $this->ctlAjoutEscape = new ctlAjoutEscape();
     }
 
     public function routerRequete(){
@@ -40,6 +46,31 @@ class routeur {
                             break;
                             case "escapeGames" :
                                 $this->ctlEscapeGames->pageEscapeGames();
+                            break;
+
+
+                            /********** Pages administrateur **********/
+                            case "utilisateurs" :
+                                if ($acces[0]['statut'] !== 2)
+                                    throw new Exception("Action non valide");
+                                else
+                                    $this->ctlUtilisateurs->afficherUtilisateurs();
+                            break;
+                            case "pageAjoutEscape" :
+                                if ($acces[0]['statut'] !== 2)
+                                    throw new Exception("Action non valide");
+                                else
+                                    $this->ctlPages->pageAjoutEscape($message="");
+                            break;
+                            case "ajoutEscape" :
+                                if ($acces[0]['statut'] !== 2)
+                                    throw new Exception("Action non valide");
+                                else {
+                                    if (isset($_POST['nom'], $_POST['description'], $_POST['lieu'], $_POST['duree'], $_POST['pers_min'], $_POST['pers_max']))
+                                        $this->ctlAjoutEscape->ajoutEscape($_POST['nom'], $_POST['description'], $_POST['lieu'], $_POST['duree'], $_POST['pers_min'], $_POST['pers_max']);
+                                    else
+                                        $this->ctlPages->pageAjoutEscape($message="<span>Veuillez remplir tout les champs</span>");
+                                }
                             break;
                             default :
                                 throw new Exception("Action non valide");
