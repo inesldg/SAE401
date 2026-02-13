@@ -13,9 +13,9 @@ ob_start();
 <?php
     foreach ($escapeGames as $game){
         $result = '
-            <div>'. $game['nom_escape_game'] . '</div>
+            <div>'. $game['nom'] . '</div>
             <div>'. $game['lieu'] . '</div>
-            <a href=index.php?action=game&idEscapeGame=' . $game['id_escape_game'] . '>Lien</a>
+            <a href=index.php?action=game&idEscapeGame=' . $game['id_escape'] . '>Lien</a>
         ';
 
         echo $result;

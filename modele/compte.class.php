@@ -7,7 +7,7 @@ class compte extends database
     public function getAcces($mail)
     {
         $data = array($mail);
-        $req = 'SELECT niveau_acces FROM utilisateurs WHERE mail = ?;';
+        $req = 'SELECT statut FROM utilisateur WHERE mail = ?;';
         $accesUtilisateur = $this->execReqPrep($req, $data);
         return $accesUtilisateur;
     }
@@ -15,7 +15,7 @@ class compte extends database
     public function getMail($mail)
     {
         $data = array($mail);
-        $req = 'SELECT * FROM utilisateurs WHERE mail = ?;';
+        $req = 'SELECT * FROM utilisateur WHERE mail = ?;';
         $mailUtilisateur = $this->execReqPrep($req, $data);
         return $mailUtilisateur;
     }

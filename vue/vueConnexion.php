@@ -25,6 +25,9 @@ ob_start();
             <input type="password" name="mdp" value="" placeholder="Mot de passe" required>
         </label>
     </div>
+    <div>
+        <input type="submit" name="connexion" value="Se connecter">
+    </div>
     <span><?= $message ?></span>
     <div>
         Vous n'avez pas de compte ?

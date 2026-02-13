@@ -5,7 +5,7 @@
 abstract class Config {
 
     // public static $DBHOST = "localhost";
-    public static $DBNAME = "sae401weescape";
+    public static $DBNAME = "sae401";
     // public static $DBUSER = "root";
     public static $DBPWD = "";
     public const TITREONGLET = "";
