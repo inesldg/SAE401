@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(16, 26, 35, 0.85), rgba(16, 26, 35, 0.85)),
+        url('img/EffetBrouillard.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--fond-sombre);
+    font-family: var(--titre);
+    color: var(--blanc-casse);
+    overflow-x: hidden;
+}
+
+/* Engrenages dans les coins */
+.decoration-coin {
+    position: fixed;
+    width: 280px;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.haut-droit {
+    top: -40px;
+    right: -40px;
+}
+
+.bas-gauche {
+    bottom: -40px;
+    left: -40px;
+    transform: rotate(180deg);
+}
+
+/* --- CONTENEUR FORMULAIRE + SVG --- */
+.boite-formulaire {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    /* Largeur du SVG */
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Le SVG centré en fond */
+.svg-arriere-plan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+/* Contenu au-dessus du SVG */
+.contenu-formulaire {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 320px;
+    /* Largeur des champs */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.titre-connexion {
+    background: var(--gold-gradient-transition);
+    background-size: 300% auto;
+    background-position: 0% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+.titre-connexion:hover {
+    animation: glissementOr 2s ease-in-out infinite alternate;
+}
+
+@keyframes glissementOr {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 100% center;
+    }
+}
+
+/* Champs du formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    color: var(--blanc-casse);
+}
+
+input {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 2px solid #C5A059;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background-color: rgba(16, 26, 35, 0.6);
+    color: var(--blanc-casse);
+    font-family: var(--texte);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(230, 184, 86, 0.3);
+    background-color: rgba(16, 26, 35, 0.9);
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+.bouton-connexion {
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: var(--titre);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: var(--gold-gradient);
+    color: var(--blanc-casse);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+.bouton-connexion:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.lien-inscription {
+    margin-top: 20px;
+    color: #a0aab4;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.lien-inscription:hover {
+    color: #E6B856;
+}
+
+
+/* Animation de rotation lente pour la boussole/engrenage */
+@keyframes rotationLente {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* On applique l'animation au SVG */
+.svg-arriere-plan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* On garde le translate pour le centrage ET on ajoute l'animation */
+    transform: translate(-50%, -50%);
+    animation: rotationLente 60s linear infinite;
+    /* 60s pour un mouvement très calme */
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(0 0 10px rgba(163, 115, 12, 0.2));
+    /* Légère lueur dorée */
+}
+
+@keyframes pulsationDouce {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+.decoration-coin {
+    /* ... tes propriétés actuelles ... */
+    animation: pulsationDouce 4s ease-in-out infinite alternate;
+}
+
+/* Note: pour la bas-gauche qui a déjà un rotate(180deg), il faudra ajuster ainsi : */
+.bas-gauche {
+    bottom: -40px;
+    left: -40px;
+    animation: pulsationDouceBas 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulsationDouceBas {
+    0% {
+        opacity: 0.6;
+        transform: rotate(180deg) scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: rotate(180deg) scale(1.02);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .decoration-coin {
+        width: 180px;
+    }
+
+    .boite-formulaire {
+        transform: scale(0.9);
+    }
+}
