@@ -1,6 +1,6 @@
 <?php
 
-$style = '';
+$style = '<link rel="stylesheet" href="styles/connexion.css">';
 
 ob_start();
 ?>
@@ -11,8 +11,8 @@ ob_start();
 
 
  
-<img src="img/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
-<img src="img/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
+<img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
+<img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
 
 
 <div class="boite-formulaire">
@@ -36,8 +36,7 @@ ob_start();
             <label>MOT DE PASSE</label>
             <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
 
-            <input type="submit" name="connexion" value="Se connecter">
-            <button type="submit" class="bouton-connexion">SE CONNECTER</button>
+            <button type="submit" name="connexion" class="bouton-connexion">SE CONNECTER</button>
 
             <span>
                 <?= $message ?>

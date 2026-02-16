@@ -36,8 +36,6 @@ class vue
   {
     global $Conf;
     $titre = $Conf->titreOnglet;
-    // $footer = $Conf->footer;
-    // $header = $Conf->header;
 
     ob_start();
     require "composants/header/header_deconnecte.php";
