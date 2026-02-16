@@ -5,9 +5,7 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
 ob_start();
 ?>
 
-<div>Page d'inscription</div>
 <a href="index.php?action=accueil">Retour à l'accueil</a>
-<a href="index.php?action=escapeGames">Découvrez nos escape games</a>
 
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
@@ -37,6 +35,7 @@ ob_start();
                     <input type="text" name="prenom" value="" placeholder="Votre prénom" required>
                 </div>
             </div>
+            
 
             <!-- <p>Votre Numéro de téléphone : </p>
     <input type="tel" name="phone" value="" placeholder="01 23 45 67 89"

@@ -12,6 +12,13 @@ body {
     color: var(--blanc-casse);
 }
 
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .decoration-coin {
     position: fixed;
     width: 280px;
