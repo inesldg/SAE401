@@ -54,7 +54,7 @@ class routeur {
                                 if ($acces[0]['statut'] !== 2)
                                     throw new Exception("Action non valide");
                                 else
-                                    $this->ctlUtilisateurs->afficherUtilisateurs($message="");
+                                    $this->ctlUtilisateurs->afficherUtilisateurs($message="", $mail);
                             break;
                             case "pageAjoutEscape" :
                                 if ($acces[0]['statut'] !== 2)
@@ -76,13 +76,13 @@ class routeur {
                                 if ($acces[0]['statut'] !== 2)
                                     throw new Exception("Action non valide");
                                 else {
-                                    if (isset($_POST['niveauAcces']))
+                                    if (isset($_POST['niveauAcces']) && $_POST['niveauAcces'] !== 0)
                                         if (isset ($_GET['id']))
-                                            $this->ctlUtilisateurs->changementAcces($_POST['niveauAcces'], $_GET['id']);
+                                            $this->ctlUtilisateurs->changementAcces($_POST['niveauAcces'], $_GET['id'], $mail);
                                         else
-                                            $this->ctlUtilisateurs->afficherUtilisateurs($message="<span>Veuillez choisir un niveau d'acces si vous souhaitez le modifier sur cet utilisateur</span>");
+                                            $this->ctlUtilisateurs->afficherUtilisateurs($message="<span>Veuillez choisir un niveau d'acces si vous souhaitez le modifier sur cet utilisateur</span>", $mail);
                                     else
-                                        $this->ctlUtilisateurs->afficherUtilisateurs($message="<span>Veuillez choisir un niveau d'acces si vous souhaitez modifier cet utilisateur</span>");
+                                        $this->ctlUtilisateurs->afficherUtilisateurs($message="<span>Veuillez choisir un niveau d'acces si vous souhaitez modifier cet utilisateur</span>", $mail);
                                 }
                             break;
                             default :

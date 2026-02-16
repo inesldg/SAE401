@@ -17,7 +17,7 @@ ob_start();
                 <form method="post" action="' . $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] . '" >
                     <label>
                         <select name="niveauAcces">
-                          <option value="">--Please choose an option--</option>
+                          <option value="0">--Choisissez un niveau--</option>
                           <option value="1">Membre</option>
                           <option value="2">Administrateur</option>
                         </select>
@@ -30,7 +30,7 @@ ob_start();
         echo $result;
     }
 
-    var_dump(value: $utilisateurs);
+    // var_dump(value: $utilisateurs);
 ?>
 
 <div>

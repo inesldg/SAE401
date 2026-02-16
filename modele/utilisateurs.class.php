@@ -5,10 +5,11 @@ require_once "modele/database.class.php";
 class utilisateurs extends database
 {
     
-    public function listeUtilisateurs()
+    public function listeUtilisateurs($mail)
     {
-        $req = 'SELECT id_utilisateur, nom, prenom, mail, tel, statut FROM utilisateur';
-        $accesUtilisateur = $this->execReq($req);
+        $req = 'SELECT id_utilisateur, nom, prenom, mail, tel, statut FROM utilisateur 
+        WHERE NOT mail = ?;';
+        $accesUtilisateur = $this->execReqPrep($req, array($mail));
         return $accesUtilisateur;
     }
 
