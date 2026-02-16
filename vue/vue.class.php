@@ -37,6 +37,7 @@ class vue
     global $Conf;
     $titre = $Conf->titreOnglet;
     $footer = $Conf->footer;
+    $header = $Conf->header;
 
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables

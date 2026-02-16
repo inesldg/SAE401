@@ -2,7 +2,7 @@
 
 $style = '';
 
-$header = '<h1>Outdoor mystery<h1>';
+$header;
 
 ob_start();
 ?>
