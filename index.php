@@ -8,5 +8,3 @@ require "controleur/routeur.class.php";
 
 $routeur = new routeur();
 $routeur->routerRequete();
-
-echo "caca";
