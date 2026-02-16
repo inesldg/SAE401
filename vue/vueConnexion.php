@@ -5,15 +5,10 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
 ob_start();
 ?>
 
-<div>Page de connexion</div>
 <a href="index.php?action=accueil">Retour à l'accueil</a>
-<a href="index.php?action=escapeGames">Découvrez nos escape games</a>
-
-
  
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
-
 
 <div class="boite-formulaire">
     <svg class="svg-arriere-plan" width="685" height="658" viewBox="0 0 685 658" fill="none"
@@ -26,10 +21,10 @@ ob_start();
             stroke="#A3730C" stroke-width="5" opacity="0.6" />
     </svg>
 
-
     <div class="contenu-formulaire">
         <h1 class="titre-connexion">Connexion</h1>
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=connexion" ?>>
+            
             <label>ADRESSE MAIL</label>
             <input type="email" name="mail" value="" placeholder="mail@exemple.com" required>
 

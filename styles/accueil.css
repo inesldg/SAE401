@@ -1,0 +1,311 @@
+/* --- HERO PREMIÈRE SECTION --- */
+.hero-accueil {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/paysage-kaiserstuhl.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Filtre bleuté par-dessus l'image */
+.hero-accueil__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            #101A23FA 0%,
+            #101A23AA 50%,
+            #101A23CC 100%);
+    pointer-events: none;
+}
+
+.hero-accueil__contenu {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    max-width: 720px;
+}
+
+.hero-accueil__titre {
+    font-family: var(--titre);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 1.25rem;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.hero-accueil__titre--or {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-accueil__sous-titre {
+    font-family: var(--texte);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: #fff;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+    opacity: 0.95;
+}
+
+.hero-accueil__bouton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 30px;
+    font-family: var(--texte);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: var(--gold-gradient);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.hero-accueil__bouton:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-accueil__bouton-icone {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+/* --- SECTIONS COMMUNES --- */
+.accueil-section {
+    padding: 4rem 1.5rem;
+    background: radial-gradient(ellipse 140% 120% at 15% 10%,
+            rgba(45, 65, 85, 0.85) 0%,
+            rgba(25, 42, 58, 0.95) 35%,
+            rgba(18, 35, 48, 1) 60%,
+            rgba(12, 28, 40, 1) 85%,
+            rgba(8, 22, 32, 1) 100%);
+}
+
+.accueil-conteneur {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.accueil-titre {
+    font-family: var(--titre);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #fff;
+    margin: 0 0 2rem;
+}
+
+.accueil-titre--or {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Titres avec lignes décoratives (NOS ESCAPES, AVIS CLIENTS) */
+.accueil-escapes .accueil-titre,
+.accueil-avis .accueil-titre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.accueil-escapes .accueil-titre::before,
+.accueil-escapes .accueil-titre::after,
+.accueil-avis .accueil-titre::before,
+.accueil-avis .accueil-titre::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: var(--gold-clair);
+}
+
+/* --- L'EXPÉRIENCE OUTDOOR MYSTERY --- */
+.accueil-experience__texte {
+    font-family: var(--texte);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #fff;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* --- NOS ESCAPES --- */
+.accueil-escapes {
+    background: var(--fond-sombre);
+}
+
+.accueil-escapes__grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.accueil-escape-card {
+    background: #1a242f;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.accueil-escape-card__img {
+    aspect-ratio: 1;
+    background: #2a3441;
+    flex-shrink: 0;
+}
+
+.accueil-escape-card__corps {
+    position: relative;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.accueil-escape-card__titre {
+    font-family: var(--titre);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.accueil-escape-card__desc {
+    font-family: var(--texte);
+    font-size: 0.85rem;
+    color: var(--blanc-casse);
+    line-height: 1.5;
+    margin: 0 0 1rem;
+    flex: 1;
+}
+
+.accueil-escape-card__infos {
+    display: flex;
+    gap: 1rem;
+    font-family: var(--texte);
+    font-size: 0.85rem;
+    color: var(--blanc-casse);
+    margin-bottom: 0.5rem;
+}
+
+.accueil-escape-card__prix {
+    font-family: var(--texte);
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 0 1rem;
+}
+
+.accueil-escape-card__btn {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    font-family: var(--texte);
+    font-size: 0.85rem;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid var(--gold-clair);
+    border-radius: 6px;
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+}
+
+.accueil-escape-card__btn:hover {
+    background: var(--gold-clair);
+    color: var(--fond-sombre);
+}
+
+.accueil-escapes__lien-wrap {
+    text-align: center;
+    margin: 0;
+}
+
+.accueil-escapes__lien {
+    font-family: var(--titre);
+    font-size: 1rem;
+    color: var(--gold-clair);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.accueil-escapes__lien:hover {
+    color: #E6B856;
+}
+
+/* --- AVIS CLIENTS --- */
+.accueil-avis__grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.accueil-avis-card {
+    background: #1a242f;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.accueil-avis-card__etoiles {
+    font-size: 1.1rem;
+    color: var(--gold-clair);
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.accueil-avis-card__texte {
+    font-family: var(--texte);
+    font-size: 0.9rem;
+    color: var(--blanc-casse);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+}
+
+.accueil-avis-card__auteur {
+    font-family: var(--texte);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+
+    .accueil-escapes__grille,
+    .accueil-avis__grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .accueil-escapes__grille,
+    .accueil-avis__grille {
+        grid-template-columns: 1fr;
+    }
+}
