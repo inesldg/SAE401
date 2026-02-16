@@ -2,8 +2,6 @@
 
 $style = '';
 
-$header = '<h1>Escape game<h1>';
-
 ob_start();
 ?>
 
@@ -39,7 +37,5 @@ ob_start();
 // var_dump($escapeGame[0]);
 
 $main = ob_get_clean();
-
-$footer;
 
 $script = '';

@@ -36,8 +36,16 @@ class vue
   {
     global $Conf;
     $titre = $Conf->titreOnglet;
-    $footer = $Conf->footer;
-    $header = $Conf->header;
+    // $footer = $Conf->footer;
+    // $header = $Conf->header;
+
+    ob_start();
+    require "composants/header/header_deconnecte.php";
+    $header = ob_get_clean();
+
+    ob_start();
+    require "composants/footer/footer_deconnecte.php";
+    $footer = ob_get_clean();
 
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables

@@ -2,7 +2,6 @@
 
 $style = '';
 
-$header = '<h1>Nos escapes games<h1>';
 
 ob_start();
 ?>
@@ -28,7 +27,5 @@ ob_start();
 <?php
 
 $main = ob_get_clean();
-
-$footer;
 
 $script = '';

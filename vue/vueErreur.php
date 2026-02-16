@@ -2,7 +2,6 @@
 
 $style = '';
 
-$header = '<h1>Erreur<h1>';
 
 ob_start();
 ?>
@@ -14,6 +13,5 @@ ob_start();
 
 $main = ob_get_clean();
 
-$footer;
 
 $script = '';

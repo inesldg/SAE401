@@ -2,8 +2,6 @@
 
 $style = '';
 
-$header;
-
 ob_start();
 ?>
 
@@ -40,7 +38,5 @@ else {
 <?php
 
 $main = ob_get_clean();
-
-$footer;
 
 $script = '';
