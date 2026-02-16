@@ -41,6 +41,6 @@ else {
 
 $main = ob_get_clean();
 
-$footer = '<h2>Test footer<h2>';
+$footer;
 
 $script = '';

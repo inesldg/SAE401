@@ -14,6 +14,6 @@ ob_start();
 
 $main = ob_get_clean();
 
-$footer = '';
+$footer;
 
 $script = '';

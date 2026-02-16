@@ -2,10 +2,11 @@
 /*************************************
 Classe chargée de l'affichage des vues
 *************************************/
-class vue {
+class vue
+{
 
   private $fichierVue;    // Nom du fichier permettant de générer le contenu pour la vue en fonction de l'action demandée
-                          // Exemple : "vue/vueAccueil.php", "vue/vueArticles.php", "vue/vueErreur.php", ...
+  // Exemple : "vue/vueAccueil.php", "vue/vueArticles.php", "vue/vueErreur.php", ...
 
   /*******************************************************
   Initialise le nom du fichier requis pour générer le contenu à afficher dans la vue correspondant à l'action
@@ -16,23 +17,27 @@ class vue {
       $fichierVue [string] : nom du fichier requis pour générer le contenu à afficher dans la vue
 
     Retour : 
-      
+
   *******************************************************/
-  public function __construct($action) {
-    $this->fichierVue = "vue/vue".$action.".php";
+  public function __construct($action)
+  {
+    $this->fichierVue = "vue/vue" . $action . ".php";
   }
 
   /*******************************************************
   Affiche dans le gabarit la vue correspondant à l'action demandée
     Entrée : 
       data [array] : tableau associatif contenant les données à afficher dans la vue
-  
+
     Retour : 
-      
+
   *******************************************************/
-  public function afficher($data) {
+  public function afficher($data)
+  {
     global $Conf;
     $titre = $Conf->titreOnglet;
+    $footer = $Conf->footer;
+
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 
@@ -41,7 +46,7 @@ class vue {
     require $this->fichierVue;   // Génère le contenu de la page en fonction de l'action
 
     // $main = ob_get_clean();
-  
+
     require "gabarit.php";
   }
 }
