@@ -2,8 +2,6 @@
 
 $style = '';
 
-$header = '<h1>Outdoor mystery<h1>';
-
 ob_start();
 ?>
 
@@ -40,7 +38,5 @@ else {
 <?php
 
 $main = ob_get_clean();
-
-$footer = '<h2>Test footer<h2>';
 
 $script = '';

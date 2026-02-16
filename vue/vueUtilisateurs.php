@@ -2,8 +2,6 @@
 
 $style = '';
 
-$header = '<h1>Liste d\'utilisateurs<h1>';
-
 ob_start();
 ?>
 
@@ -40,7 +38,5 @@ ob_start();
 <?php
 
 $main = ob_get_clean();
-
-$footer = '';
 
 $script = '';
