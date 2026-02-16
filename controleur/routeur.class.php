@@ -54,7 +54,7 @@ class routeur {
                                 if ($acces[0]['statut'] !== 2)
                                     throw new Exception("Action non valide");
                                 else
-                                    $this->ctlUtilisateurs->afficherUtilisateurs();
+                                    $this->ctlUtilisateurs->afficherUtilisateurs($message="");
                             break;
                             case "pageAjoutEscape" :
                                 if ($acces[0]['statut'] !== 2)
@@ -70,6 +70,19 @@ class routeur {
                                         $this->ctlAjoutEscape->ajoutEscape($_POST['nom'], $_POST['description'], $_POST['lieu'], $_POST['duree'], $_POST['pers_min'], $_POST['pers_max']);
                                     else
                                         $this->ctlPages->pageAjoutEscape($message="<span>Veuillez remplir tout les champs</span>");
+                                }
+                            break;
+                            case "changementAcces" :
+                                if ($acces[0]['statut'] !== 2)
+                                    throw new Exception("Action non valide");
+                                else {
+                                    if (isset($_POST['niveauAcces']))
+                                        if (isset ($_GET['id']))
+                                            $this->ctlUtilisateurs->changementAcces($_POST['niveauAcces'], $_GET['id']);
+                                        else
+                                            $this->ctlUtilisateurs->afficherUtilisateurs($message="<span>Veuillez choisir un niveau d'acces si vous souhaitez le modifier sur cet utilisateur</span>");
+                                    else
+                                        $this->ctlUtilisateurs->afficherUtilisateurs($message="<span>Veuillez choisir un niveau d'acces si vous souhaitez modifier cet utilisateur</span>");
                                 }
                             break;
                             default :

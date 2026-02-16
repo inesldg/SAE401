@@ -10,11 +10,19 @@ class ctlUtilisateurs {
         $this->utilisateurs = new utilisateurs();
     }
 
-    public function afficherUtilisateurs(){
+    public function afficherUtilisateurs($message){
         $listeUtilisateurs = $this->utilisateurs->listeUtilisateurs();
 
         $vue = new vue("Utilisateurs"); // Instancie la vue appropriée
-        $vue->afficher(array("utilisateurs" => $listeUtilisateurs)); // Affiche la liste des clients dans la vue
+        $vue->afficher(array("utilisateurs" => $listeUtilisateurs, "message" => $message));
+    }
+
+    function changementAcces($acces, $id)
+    {
+        $this->utilisateurs->changementAcces($acces, $id);
+    
+        $vue = new vue("Utilisateurs"); // Instancie la vue appropriée
+        $vue->afficher(array("message" => "<span>Le changement d'accès à été réalisé avec succès"));
     }
 
 }

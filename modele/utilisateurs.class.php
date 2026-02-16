@@ -12,4 +12,11 @@ class utilisateurs extends database
         return $accesUtilisateur;
     }
 
+    public function changementAcces($acces, $id)
+    {
+        $req = 'UPDATE utilisateur SET statut = ? WHERE utilisateur.id_utilisateur = ?;';
+        $modifPrenom = $this->execReqPrep($req, array($acces, $id));
+        return $modifPrenom;
+    }
+
 }
