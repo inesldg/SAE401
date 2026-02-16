@@ -113,21 +113,21 @@ main {
 }
 
 .boite-formulaire label {
-    font-size: 13px;
-    margin-bottom: 6px;
-    margin-left: 15px;
+    font-size: 11px;
+    margin-bottom: 4px;
+    margin-left: 12px;
     letter-spacing: 1px;
     color: var(--blanc-casse);
 }
 
 .boite-formulaire input {
     width: 100%;
-    padding: 14px 20px;
+    padding: 10px 15px;
     border-radius: 30px;
     border: 2px solid #C5A059;
-    margin-bottom: 20px;
-    font-size: 14px;
-    background-color: rgba(16, 26, 35, 0.6);
+    margin-bottom: 12px;
+    font-size: 13px;
+    background-color: transparent;
     color: var(--blanc-casse);
     font-family: var(--texte);
     box-sizing: border-box;
@@ -137,7 +137,7 @@ main {
 .boite-formulaire input:focus {
     outline: none;
     box-shadow: 0 0 15px rgba(230, 184, 86, 0.3);
-    background-color: rgba(16, 26, 35, 0.9);
+    background-color: rgba(16, 26, 35, 0.4);
 }
 
 .boite-formulaire input::placeholder {
@@ -145,7 +145,7 @@ main {
     font-style: italic;
 }
 
-.bouton-connexion {
+.boite-formulaire .bouton-connexion {
     padding: 12px;
     border-radius: 30px;
     font-size: 16px;
@@ -156,10 +156,10 @@ main {
     background: var(--gold-gradient);
     color: var(--blanc-casse);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
-.bouton-connexion:hover {
+.boite-formulaire .bouton-connexion:hover {
     transform: scale(1.03);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }

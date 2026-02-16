@@ -1,6 +1,6 @@
 <?php
 
-$style = '';
+$style = '<link rel="stylesheet" href="styles/inscription.css">';
 
 ob_start();
 ?>

@@ -1,0 +1,89 @@
+/* --- HERO PREMIÈRE SECTION --- */
+.hero-accueil {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/paysage-kaiserstuhl.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Filtre bleuté par-dessus l'image */
+.hero-accueil__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        #101A23FA 0%,
+        #101A23AA 50%,
+        #101A23CC 100%
+    );
+    pointer-events: none;
+}
+
+.hero-accueil__contenu {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    max-width: 720px;
+}
+
+.hero-accueil__titre {
+    font-family: var(--titre);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 1.25rem;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.hero-accueil__titre--or {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-accueil__sous-titre {
+    font-family: var(--texte);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: #fff;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+    opacity: 0.95;
+}
+
+.hero-accueil__bouton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 30px;
+    font-family: var(--texte);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: var(--gold-gradient);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.hero-accueil__bouton:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-accueil__bouton-icone {
+    font-size: 1.15rem;
+    line-height: 1;
+}
