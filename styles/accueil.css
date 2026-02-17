@@ -86,6 +86,44 @@
     line-height: 1;
 }
 
+
+/* CONFIGURATION 3D à modifier encore */ 
+
+.hero-accueil__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: min(1300px, 90%);
+}
+
+/* colonne 3D */
+.hero-accueil__3d {
+    flex: 1;
+    height: 800px;
+    min-width: 750px;
+}
+
+/* conteneur canvas */
+#three-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* texte à droite */
+.hero-accueil__contenu {
+    flex: 1;
+    text-align: left;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+
+
+
+
 /* --- SECTIONS COMMUNES --- */
 .accueil-section {
     padding: 4rem 1.5rem;

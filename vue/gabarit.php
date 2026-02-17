@@ -15,12 +15,23 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
     <!-- styles pour cette page -->
 
     <?= $style ?>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/header.css">
 
-    <!-- <link rel="stylesheet" href="styles/loader.css"> -->
-    <!-- <link rel="stylesheet" href="styles/home.css">
+
+    <!-- <link rel="stylesheet" href="styles/loader.css">
+    <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/ajoutEscape.css">
     <link rel="stylesheet" href="styles/compteEtModif.css">

@@ -5,7 +5,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 ob_start();
 ?>
 
-<section class="hero-accueil">
+<!-- <section class="hero-accueil">
     <div class="hero-accueil__overlay"></div>
     <div class="hero-accueil__contenu">
         <h1 class="hero-accueil__titre">VIVEZ L' <span class="hero-accueil__titre--or">AVENTURE</span></h1>
@@ -13,6 +13,29 @@ ob_start();
             échappez-vous avant la fin du temps.</p>
         <a href="index.php?action=escapeGames" class="hero-accueil__bouton">Découvrir nos escape <span
                 class="hero-accueil__bouton-icone">→</span></a>
+    </div>
+</section> -->
+
+<section class="hero-accueil">
+    <div class="hero-accueil__overlay"></div>
+    <div class="hero-accueil__inner">
+        <!-- COLONNE 3D -->
+        <div class="hero-accueil__3d">
+            <div id="three-container"></div>
+        </div>
+        <!-- COLONNE TEXTE -->
+        <div class="hero-accueil__contenu">
+            <h1 class="hero-accueil__titre">
+                VIVEZ <br> L' <span class="hero-accueil__titre--or">AVENTURE</span>
+            </h1>
+            <p class="hero-accueil__sous-titre">
+                Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du
+                temps.
+            </p>
+            <a href="index.php?action=escapeGames" class="hero-accueil__bouton">
+                Découvrir nos escape <span class="hero-accueil__bouton-icone">→</span>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -36,8 +59,8 @@ ob_start();
                     <p class="accueil-escape-card__desc">Mini blabla : Hopla vous savez que la mamsell Huguette, la miss
                         Miss Dahlias du messti de Bischheim</p>
                     <div class="accueil-escape-card__infos">
-                        <span class="accueil-escape-card__duree">⏱ 120 min</span>
-                        <span class="accueil-escape-card__personnes">👥 2-6</span>
+                        <span class="accueil-escape-card__duree">120 min</span>
+                        <span class="accueil-escape-card__personnes">2-6</span>
                     </div>
                     <p class="accueil-escape-card__prix">28€ / pers</p>
                     <a href="#" class="accueil-escape-card__btn">Voir détails</a>
@@ -50,8 +73,8 @@ ob_start();
                     <p class="accueil-escape-card__desc">Mini blabla : Hopla vous savez que la mamsell Huguette, la miss
                         Miss Dahlias du messti de Bischheim</p>
                     <div class="accueil-escape-card__infos">
-                        <span class="accueil-escape-card__duree">⏱ 120 min</span>
-                        <span class="accueil-escape-card__personnes">👥 2-6</span>
+                        <span class="accueil-escape-card__duree">120 min</span>
+                        <span class="accueil-escape-card__personnes">2-6</span>
                     </div>
                     <p class="accueil-escape-card__prix">28€ / pers</p>
                     <a href="#" class="accueil-escape-card__btn">Voir détails</a>
@@ -64,8 +87,8 @@ ob_start();
                     <p class="accueil-escape-card__desc">Mini blabla : Hopla vous savez que la mamsell Huguette, la miss
                         Miss Dahlias du messti de Bischheim</p>
                     <div class="accueil-escape-card__infos">
-                        <span class="accueil-escape-card__duree">⏱ 120 min</span>
-                        <span class="accueil-escape-card__personnes">👥 2-6</span>
+                        <span class="accueil-escape-card__duree">120 min</span>
+                        <span class="accueil-escape-card__personnes">2-6</span>
                     </div>
                     <p class="accueil-escape-card__prix">28€ / pers</p>
                     <a href="#" class="accueil-escape-card__btn">Voir détails</a>
@@ -78,8 +101,8 @@ ob_start();
                     <p class="accueil-escape-card__desc">Mini blabla : Hopla vous savez que la mamsell Huguette, la miss
                         Miss Dahlias du messti de Bischheim</p>
                     <div class="accueil-escape-card__infos">
-                        <span class="accueil-escape-card__duree">⏱ 120 min</span>
-                        <span class="accueil-escape-card__personnes">👥 2-6</span>
+                        <span class="accueil-escape-card__duree">120 min</span>
+                        <span class="accueil-escape-card__personnes">2-6</span>
                     </div>
                     <p class="accueil-escape-card__prix">28€ / pers</p>
                     <a href="#" class="accueil-escape-card__btn">Voir détails</a>
@@ -153,4 +176,4 @@ if (isset($acces[0]['statut'])) {
 
 $main = ob_get_clean();
 
-$script = '';
+$script = '<script type="module" src="js/three-key.js"></script>';
