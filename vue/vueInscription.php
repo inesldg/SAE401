@@ -5,8 +5,6 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
 // ob_start();
 ?>
 
-<a href="index.php?action=accueil">Retour à l'accueil</a>
-
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
 
