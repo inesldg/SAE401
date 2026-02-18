@@ -37,7 +37,7 @@
 </div>
 
 <div class="footer-bottom">
-    <img class="imglogo" src="images/Frame 3670 (2).png" alt="logo elife">
+    <img class="imglogo" src="logo.png" alt="logo elife">
 
     <div class="links">
         <a href="#">Mentions légales</a>

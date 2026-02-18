@@ -27,6 +27,12 @@ body{
     font-family: var(--texte);
 }
 
+.admin{
+    font-size: 12px;
+    color: var(--blanc-casse);
+    opacity: 50%;
+}
+
 .menu-gauche{
     width: 300px;
     height: 100%;
@@ -42,10 +48,12 @@ body{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .dash>div, .escape>div, .calendrier>div, .avis>div, .user>div{
     margin-left: 10px;
+    font-size: 14px;
 }
 
 .ligne{
