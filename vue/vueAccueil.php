@@ -164,6 +164,7 @@ if (isset($acces[0]['statut'])) {
             echo "<div>vous n'êtes pas connecté</div>
             <a href='index.php?action=pageConnexion'>Connexion</a>
             <a href='index.php?action=pageInscription'>Inscription</a>";
+
     }
 } else {
     echo "<div>vous n'êtes pas connecté</div>
