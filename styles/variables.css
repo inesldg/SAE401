@@ -28,3 +28,12 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
+
+/* Pour changer le curseur éventuellement"*/
+html {
+    cursor: url("../images/cursor.png"), default;
+}
+
+/* html a {
+    cursor: url("../images/cursor.png"), default !important;
+} */

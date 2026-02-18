@@ -18,12 +18,8 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/header.css">
-    <!-- <link rel="stylesheet" href="styles/accueil.css"> -->
 
-    <!-- <link rel="stylesheet" href="styles/inscription.css">
-    <link rel="stylesheet" href="styles/loader.css"> -->
-
-
+    <!-- <link rel="stylesheet" href="styles/loader.css"> -->
     <!-- <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/ajoutEscape.css">

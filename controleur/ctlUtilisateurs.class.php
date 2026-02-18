@@ -24,7 +24,7 @@ class ctlUtilisateurs {
         $listeUtilisateurs = $this->utilisateurs->listeUtilisateurs($mail);
     
         $vue = new vue("Utilisateurs"); // Instancie la vue appropriée
-        $vue->afficher(array("utilisateurs" => $listeUtilisateurs, "message" => "<span>Le changement d'accès à été réalisé avec succès"));
+        $vue->afficher(array("utilisateurs" => $listeUtilisateurs, "message" => "<span>Le changement d'accès à été réalisé avec succès</span>"));
     }
 
 }
