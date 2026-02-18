@@ -2,10 +2,10 @@
 
 $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
-ob_start();
+// ob_start();
 ?>
 
-<a href="index.php?action=confirmation">Retour à l'accueil</a>
+<a href="index.php?action=accueil">Retour à l'accueil</a>
 
 <!-- ------ ICI mettre le code HTML ------ -->
 
@@ -20,16 +20,16 @@ ob_start();
     </div>
 
     <div class="titre">
-        À bientôt à <span class="goldText">Outdoor Mystery</span> !
+        À bientôt chez <span class="goldText">ELIFE</span> !
     </div>
 
     <div class="separation"></div>
 
     <div class="footer-content">
-        <img src="SVG/bouton home.svg" alt="Logo" class="logo-svg">
+        <img src="images/bouton_home.svg" alt="Logo" class="logo-svg">
 
         <div class="liens-footer">
-            <a href="#">Retour à la page d'accueil</a>
+            <a href="index.php?action=accueil">Retour à la page d'accueil</a>
             <a href="#">Voir ma commande</a>
         </div>
     </div>
@@ -41,6 +41,6 @@ ob_start();
 
 <?php
 
-$main = ob_get_clean();
+// $main = ob_get_clean();
 
 $script = '';
