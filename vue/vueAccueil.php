@@ -2,7 +2,7 @@
 
 $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
-ob_start();
+// ob_start();
 ?>
 
 <!-- <section class="hero-accueil">
@@ -175,6 +175,6 @@ if (isset($acces[0]['statut'])) {
 ?>
 <?php
 
-$main = ob_get_clean();
+// $main = ob_get_clean();
 
 $script = '<script type="module" src="js/three-key.js"></script>';

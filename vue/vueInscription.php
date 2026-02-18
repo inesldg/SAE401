@@ -2,7 +2,7 @@
 
 $style = '<link rel="stylesheet" href="styles/inscription.css">';
 
-ob_start();
+// ob_start();
 ?>
 
 <a href="index.php?action=accueil">Retour à l'accueil</a>
@@ -66,6 +66,6 @@ ob_start();
 
 <?php
 
-$main = ob_get_clean();
+// $main = ob_get_clean();
 
 $script = '';

@@ -48,11 +48,11 @@ class vue
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 
-    // ob_start();
+    ob_start();
 
     require $this->fichierVue;   // Génère le contenu de la page en fonction de l'action
 
-    // $main = ob_get_clean();
+    $main = ob_get_clean();
 
     require "gabarit.php";
   }
