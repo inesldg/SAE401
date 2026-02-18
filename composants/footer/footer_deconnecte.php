@@ -30,14 +30,14 @@
                 </svg></button>
         </div>
         <p class="infoNewsletter">
-            Inscrivez-vous à la Newsletter Outdoor Mystery pour ne rien manquer des nouveautés et des jeux de
+            Inscrivez-vous à la Newsletter ELIFE pour ne rien manquer des nouveautés et des jeux de
             saisons !
         </p>
     </div>
 </div>
 
 <div class="footer-bottom">
-    <div class="logo">LOGO</div>
+    <img class="imglogo" src="images/Frame 3670 (2).png" alt="logo elife">
 
     <div class="links">
         <a href="#">Mentions légales</a>
@@ -66,5 +66,5 @@
 </div>
 
 <div class="copyright">
-    &copy; 2026 Outdoor Mystery. Tous droits réservés.
+    &copy; 2026 ELIFE. Tous droits réservés.
 </div>

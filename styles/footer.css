@@ -12,7 +12,10 @@ footer {
     margin-bottom: 50px;
 }
 
-
+.imglogo{
+    height: 75px;
+    width: auto;
+}
 
 .colonne {
     position: relative;
