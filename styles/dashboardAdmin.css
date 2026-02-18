@@ -22,44 +22,65 @@
     --dark-bg: #101A23;
 }
 
-body{
+body {
     background-color: var(--noir);
     font-family: var(--texte);
 }
 
-.admin{
+.admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
-.menu-gauche{
+.menu-gauche {
     width: 300px;
     height: 100%;
     background-color: var(--bleu-fonce);
     padding: 20px;
 }
 
-.menu-categorie{
+.menu-categorie {
     color: var(--blanc-casse);
+    display: inline-block;
+    width: 100%;
 }
 
-.dash, .escape, .calendrier, .avis, .user{
+.dash,
+.escape,
+.calendrier,
+.avis,
+.user {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     font-size: 14px;
+    text-decoration: none;
+    color: var(--blanc-casse);
 }
 
-.dash>div, .escape>div, .calendrier>div, .avis>div, .user>div{
+.dash {
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin: -10px;
+    margin-bottom: 10px;
+}
+
+.dash>div,
+.escape>div,
+.calendrier>div,
+.avis>div,
+.user>div {
     margin-left: 10px;
     font-size: 14px;
 }
 
-.ligne{
+.ligne {
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 2px;
+    height: 1px;
     width: 340px;
     background-color: var(--bleu-clair);
     margin-left: -20px;
