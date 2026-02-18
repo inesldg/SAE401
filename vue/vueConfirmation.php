@@ -5,8 +5,6 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 // ob_start();
 ?>
 
-<a href="index.php?action=accueil">Retour à l'accueil</a>
-
 <!-- ------ ICI mettre le code HTML ------ -->
 
 <main class="container">

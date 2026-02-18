@@ -1,6 +1,6 @@
 <header class="main-header">
 
-    <a href="index.php?action=accueil"><img class="imglogo2" src="images/Frame 3670 (2).png" alt="logo elife"></a>
+    <a href="index.php?action=accueil"><img class="imglogo2" src="images/logo.png" alt="logo elife"></a>
 
 
     <div class="header-actions">

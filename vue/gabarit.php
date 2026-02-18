@@ -7,16 +7,16 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?= $titre ?></title>
 
 
-    <!-- styles pour cette page -->
+  <!-- styles pour cette page -->
 
-    <?= $style ?>
+  <?= $style ?>
 
-    <script type="importmap">
+  <script type="importmap">
     {
       "imports": {
         "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
@@ -24,13 +24,14 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
       }
     }
     </script>
-    
-    <link rel="stylesheet" href="styles/variables.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/header.css">
+
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="icon" href="/images/favicon.ico">
 
 
-    <!-- <link rel="stylesheet" href="styles/loader.css">
+  <!-- <link rel="stylesheet" href="styles/loader.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/ajoutEscape.css">
     <link rel="stylesheet" href="styles/compteEtModif.css">
@@ -44,25 +45,25 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
     <link rel="stylesheet" href="styles/utilisateurs.css"> -->
 
 
-    <!-- ---------------------- -->
+  <!-- ---------------------- -->
 
 </head>
 
 <body>
 
-    <header><?= $header ?></header>
+  <header><?= $header ?></header>
 
-    <main><?= $main ?></main>
+  <main><?= $main ?></main>
 
-    <footer><?= $footer ?></footer>
+  <footer><?= $footer ?></footer>
 
 
-    <!-- scripts pour cette page -->
+  <!-- scripts pour cette page -->
 
-    <?= $script ?>
-    <script src="js/script.js"></script>
+  <?= $script ?>
+  <script src="js/script.js"></script>
 
-    <!-- ----------------------- -->
+  <!-- ----------------------- -->
 
 </body>
 
