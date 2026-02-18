@@ -37,6 +37,8 @@ class vue
     global $Conf;
     $titre = $Conf->titreOnglet;
 
+    $script = "js/script.js";
+
     ob_start();
     require "composants/header/header_deconnecte.php";
     $header = ob_get_clean();

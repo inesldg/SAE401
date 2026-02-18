@@ -30,7 +30,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Pour changer le curseur éventuellement"*/
+/* Pour changer le curseur */
 html {
     cursor: url("../images/cursor.png"), default;
 }

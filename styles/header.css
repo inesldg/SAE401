@@ -2,15 +2,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 8px 5%;
     background-color: #101923;
-    /* Couleur sombre identique au footer */
     font-family: 'Inter', sans-serif;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/* Header fixe en haut après 70px de scroll (classe ajoutée par script.js) */
+header.sticky .main-header,
+.main-header.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
 
 .imglogo2 {
     height: 65px;
@@ -47,7 +57,7 @@
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 65px;
 }
 
 /* Bouton Réserver */

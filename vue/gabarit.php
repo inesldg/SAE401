@@ -60,6 +60,7 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
     <!-- scripts pour cette page -->
 
     <?= $script ?>
+    <script src="js/script.js"></script>
 
     <!-- ----------------------- -->
 
