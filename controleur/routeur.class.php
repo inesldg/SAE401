@@ -7,6 +7,9 @@ require "controleur/ctlInscription.class.php";
 require "controleur/ctlConnexion.class.php";
 require "controleur/ctlUtilisateurs.class.php";
 require "controleur/ctlAjoutEscape.class.php";
+require "controleur/ctlPropos.class.php";
+require "controleur/ctlConfirmation.class.php";
+
 require "controleur/ctlAdmin.class.php";
 
 class routeur
@@ -18,7 +21,10 @@ class routeur
     private $ctlConnexion;
     private $ctlUtilisateurs;
     private $ctlAjoutEscape;
+    private $ctlPropos;
+    private $ctlConfirmation;
     private $ctlAdmin;
+
 
 
     public function __construct()
@@ -30,6 +36,8 @@ class routeur
         $this->ctlConnexion = new ctlConnexion();
         $this->ctlUtilisateurs = new ctlUtilisateurs();
         $this->ctlAjoutEscape = new ctlAjoutEscape();
+        $this->ctlPropos = new ctlPropos();
+        $this->ctlConfirmation = new ctlConfirmation();
         $this->ctlAdmin = new ctlAdmin();
     }
 
@@ -55,6 +63,14 @@ class routeur
                             break;
                         case "game":
                             $this->ctlEscapeGames->pageGame($_GET['idEscapeGame']);
+                            break;
+
+                        case "propos":
+                            $this->ctlPropos->pagePropos();
+                            break;
+
+                        case "confirmation":
+                            $this->ctlConfirmation->pageConfirmation();
                             break;
 
 
@@ -107,11 +123,22 @@ class routeur
                         case "pageInscription":
                             $this->ctlPages->pageInscription($message = "");
                             break;
-                        case "pageConnexion":
-                            $this->ctlPages->pageConnexion($message = "");
-                            break;
+
                         case "dash":
                             $this->ctlAdmin->afficherDash();
+                            break;
+
+                        // pour l'accès public :
+                        case "propos":
+                            $this->ctlPropos->pagePropos();
+                            break;
+
+                        case "confirmation":
+                            $this->ctlConfirmation->pageConfirmation();
+                            break;
+
+                        case "pageConnexion":
+                            $this->ctlPages->pageConnexion($message = "");
                             break;
                         case "inscription":
                             if (isset($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['mdpConfirm'])) {
@@ -144,6 +171,7 @@ class routeur
                     }
                 } else
                     $this->ctlPages->accueil($acces = "0");
+
             }
         } catch (Exception $e) {
             $this->ctlPages->erreur($e->getMessage());

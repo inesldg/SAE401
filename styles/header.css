@@ -1,74 +1,80 @@
 .main-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 5%;
-        background-color: #101923;
-        /* Couleur sombre identique au footer */
-        font-family: 'Inter', sans-serif;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #101923;
+    /* Couleur sombre identique au footer */
+    font-family: 'Inter', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    /* Style du Logo */
-    .main-header .logo {
-        font-size: 32px;
-        font-weight: 800;
-        color: white;
-        letter-spacing: -1px;
-    }
 
-    /* Menu de Navigation */
+.imglogo2 {
+    height: 65px;
+    width: auto;
+}
+
+/* Style du Logo */
+.main-header .logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+}
+
+/* Menu de Navigation */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #E6B856;
+}
+
+/* Actions (Panier + Bouton) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Bouton Réserver */
+.btn-reserve {
+    background: #A3730C;
+    /* Couleur dorée foncée de ton image */
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    /* Bords très arrondis */
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-reserve:hover {
+    background: #C5A059;
+    transform: translateY(-2px);
+}
+
+/* Responsive : On cache le menu sur mobile (à adapter avec un menu burger plus tard) */
+@media (max-width: 900px) {
     .nav-menu {
-        display: flex;
-        gap: 30px;
+        display: none;
     }
-
-    .nav-menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 500;
-        transition: color 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-        color: #E6B856;
-    }
-
-    /* Actions (Panier + Bouton) */
-    .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-    }
-
-    /* Bouton Réserver */
-    .btn-reserve {
-        background: #A3730C;
-        /* Couleur dorée foncée de ton image */
-        color: white;
-        text-decoration: none;
-        padding: 12px 25px;
-        border-radius: 50px;
-        /* Bords très arrondis */
-        font-weight: 600;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: transform 0.2s ease, background 0.3s ease;
-    }
-
-    .btn-reserve:hover {
-        background: #C5A059;
-        transform: translateY(-2px);
-    }
-
-    /* Responsive : On cache le menu sur mobile (à adapter avec un menu burger plus tard) */
-    @media (max-width: 900px) {
-        .nav-menu {
-            display: none;
-        }
-    }
+}

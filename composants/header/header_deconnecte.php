@@ -1,5 +1,5 @@
 <header class="main-header">
-    <div class="logo">Logo</div>
+    <img class="imglogo2" src="images/Frame 3670 (2).png" alt="logo elife">
 
     <nav class="nav-menu">
         <a href="#">Accueil</a>
