@@ -5,11 +5,10 @@ require_once "vue/vue.class.php";
 class ctlConfirmation
 {
 
-    // Cette méthode manquait et causait l'erreur
-    public function pagePropos()
+    public function pageConfirmation()
     {
-        $styleCustom = '<link rel="stylesheet" href="styles/about.css">';
-        $vue = new vue("Propos");
+        $styleCustom = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
+        $vue = new vue("Confirmation");
         $vue->afficher(array("style" => $styleCustom)); // On passe le style ici
     }
 
