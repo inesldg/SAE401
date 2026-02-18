@@ -50,7 +50,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>RÉSERVATION</h2>
-                    <div class="chiffre">x</div>
+                    <div class="chiffre"><?= $reservations ?></div>
                     <div class="texte">confirmées</div>
                 </div>
                 <div class="part2">
@@ -61,7 +61,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>UTILISATEURS</h2>
-                    <div class="chiffre">x</div>
+                    <div class="chiffre"><?= $utilisateurs ?></div>
                     <div class="texte">inscrit</div>
                 </div>
                 <div class="part2">
@@ -72,7 +72,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>ESCAPES</h2>
-                    <div class="chiffre">x</div>
+                    <div class="chiffre"><?= $escapes ?></div>
                     <div class="texte">actifs</div>
                 </div>
                 <div class="part2">
@@ -83,7 +83,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>REVENUS</h2>
-                    <div class="chiffre">x</div>
+                    <div class="chiffre"><?= $revenus ?> €</div>
                     <div class="texte">ce mois</div>
                 </div>
                 <div class="part2">
@@ -94,7 +94,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>NOTE MOYENNE</h2>
-                    <div class="chiffre">x</div>
+                    <div class="chiffre"><?= $noteMoyenne ?></div>
                     <div class="texte">/5</div>
                 </div>
                 <div class="part2">
@@ -105,8 +105,8 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>TAUX D'OCCUPATION</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">cette semaine</div>
+                    <div class="chiffre"><?= $occupation ?></div>
+                    <div class="texte">personnes</div>
                 </div>
                 <div class="part2">
 
