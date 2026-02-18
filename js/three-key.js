@@ -89,14 +89,6 @@ function resizeRendererToDisplaySize() {
     }
 }
 
-
-
-// Position de la cam
-// camera.position.z = 15
-
-// camera.position.x = 2;
-// camera.position.y = 1;
-
 camera.aspect = container.clientWidth / container.clientHeight;
 camera.updateProjectionMatrix();
 
@@ -106,11 +98,13 @@ container.appendChild(renderer.domElement);
 
 // Définir la fonction finale
 function animate() {
+
     if (window.keyModel) {
-        window.keyModel.rotation.x += 0.01;
+
+        // rotation propre sur elle-même (axe vertical Y)
         window.keyModel.rotation.y += 0.01;
+        window.keyModel.rotation.z = -Math.PI / 2.5;
     }
-    // renderer.render(scene, camera);
 
     resizeRendererToDisplaySize();
     renderer.render(scene, camera);

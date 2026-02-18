@@ -19,22 +19,26 @@ ob_start();
 <section class="hero-accueil">
     <div class="hero-accueil__overlay"></div>
     <div class="hero-accueil__inner">
-        <!-- COLONNE 3D -->
-        <div class="hero-accueil__3d">
-            <div id="three-container"></div>
-        </div>
+        
         <!-- COLONNE TEXTE -->
         <div class="hero-accueil__contenu">
             <h1 class="hero-accueil__titre">
-                VIVEZ <br> L' <span class="hero-accueil__titre--or">AVENTURE</span>
+                VIVEZ L' <span class="hero-accueil__titre--or">AVENTURE</span>
             </h1>
             <p class="hero-accueil__sous-titre">
                 Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du
                 temps.
             </p>
             <a href="index.php?action=escapeGames" class="hero-accueil__bouton">
-                Découvrir nos escape <span class="hero-accueil__bouton-icone">→</span>
+                Découvrir nos escape <span class="hero-accueil__bouton-icone"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h13M12 5l7 7-7 7" />
+                </svg></span>
             </a>
+        </div>
+        <!-- COLONNE 3D -->
+        <div class="hero-accueil__3d">
+            <div id="three-container"></div>
         </div>
     </div>
 </section>
