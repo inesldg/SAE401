@@ -8,6 +8,8 @@ require "controleur/ctlConnexion.class.php";
 require "controleur/ctlUtilisateurs.class.php";
 require "controleur/ctlAjoutEscape.class.php";
 require "controleur/ctlPropos.class.php";
+require "controleur/ctlConfirmation.class.php";
+
 
 class routeur
 {
@@ -18,8 +20,9 @@ class routeur
     private $ctlConnexion;
     private $ctlUtilisateurs;
     private $ctlAjoutEscape;
-
     private $ctlPropos;
+    private $ctlConfirmation;
+
 
 
     public function __construct()
@@ -32,6 +35,8 @@ class routeur
         $this->ctlUtilisateurs = new ctlUtilisateurs();
         $this->ctlAjoutEscape = new ctlAjoutEscape();
         $this->ctlPropos = new ctlPropos();
+        $this->ctlConfirmation = new ctlConfirmation();
+
 
     }
 
@@ -61,6 +66,10 @@ class routeur
 
                         case "propos":
                             $this->ctlPropos->pagePropos();
+                            break;
+
+                        case "confirmation":
+                            $this->ctlConfirmation->pageConfirmation();
                             break;
 
 
@@ -117,6 +126,10 @@ class routeur
                         // pour l'accès public :
                         case "propos":
                             $this->ctlPropos->pagePropos();
+                            break;
+
+                        case "confirmation":
+                            $this->ctlConfirmation->pageConfirmation();
                             break;
 
                         case "pageConnexion":
