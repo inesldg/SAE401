@@ -42,3 +42,48 @@ body {
     background-clip: text;
     color: transparent;
 }
+
+
+
+.escapes-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.escapes-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: min(1300px, 90%);
+}
+
+.filtres-tri {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    max-width: 720px;
+}
+
+.filtres-tri {
+    flex: 1;
+    text-align: left;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+.escapes-cartes {
+    flex: 1;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
