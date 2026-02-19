@@ -70,7 +70,6 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
             </article>
         <!-- ------------------------------ -->
 
-
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>
                 <div class="accueil-escape-card__corps">
