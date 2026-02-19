@@ -10,6 +10,13 @@ class ctlEscapeGames {
         $this->escapeGames = new escapeGames();
     }
 
+    public function accueil($acces){
+        $escapeGames = $this->escapeGames->listeEscapeGames();
+
+        $vue = new vue("Accueil"); // Instancie la vue appropriée
+        $vue->afficher(array("escapeGames" => $escapeGames, "acces" => $acces));
+    }
+
     public function pageEscapeGames(){
         $escapeGames = $this->escapeGames->listeEscapeGames();
 
