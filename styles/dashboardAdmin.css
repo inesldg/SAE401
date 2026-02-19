@@ -53,7 +53,7 @@ body {
 .user {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 14px;
     text-decoration: none;
     color: var(--blanc-casse);
@@ -65,7 +65,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     margin: -10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border-right: solid #A3730C 3px;
 }
 
 .dash>div,
@@ -75,6 +76,16 @@ body {
 .user>div {
     margin-left: 10px;
     font-size: 14px;
+}
+
+.escape:hover, .calendrier:hover, .avis:hover, .user:hover{
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: -10px;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
 .ligne {
@@ -92,6 +103,7 @@ body {
 
 .droite{
      margin: 32px;
+     flex: 1;
 }
 
 h1{
@@ -110,6 +122,8 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
+    margin-bottom: 32px;
+
 }
 
 .card{
@@ -162,5 +176,5 @@ h1{
 }
 
 .part2{
-    margin-left: 180px;
+    margin-left: auto;
 }
