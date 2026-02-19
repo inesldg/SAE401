@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 :root {
     /* Couleurs principales */
     --blanc-casse: #F2F2F2;
@@ -24,7 +27,60 @@
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-image: url('/images/fond_erreur_404.png');
+    background-color: #1E1E1E;
+    background-size: cover;
 }
 
+.erreur_txt {
+    font-family: var(--titre);
+    font-weight: 900;
+    font-size: 5rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #FFF2D5 , #A3730C 50%, #A3730C 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content_404{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Erreur_404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Erreur_404 img {
+    width: 300px;
+    margin-bottom: 24px;
+}
+
+.Erreur_404 span {
+    background: linear-gradient(to bottom, #FFF2D5 , #A3730C 50%, #A3730C 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--titre);
+    font-weight: 900;
+    font-size: 20rem;
+}
+
+.msg_erreur{
+    font-family: var(--titre);
+    font-size: 2.5rem;
+    color: var(--gold-clair);
+    text-align: center;
+}
