@@ -1,5 +1,5 @@
 body {
-    background-color: var(--fond-sombre);
+    background-color: #121d28;
     color: white;
     font-family: var(--texte);
     margin: 0;
@@ -36,6 +36,8 @@ body {
     max-width: 1200px;
     margin: -50px auto 0;
     padding: 0 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .carte-noire {
