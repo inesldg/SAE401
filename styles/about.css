@@ -1,13 +1,3 @@
-:root {
-    --or-degrade: linear-gradient(135deg, #E6B856 0%, #806630 100%);
-    --fond-sombre: #101A23;
-    --fond-carte: #16212c;
-    --blanc-casse: #F2F2F2;
-    --titre: 'Cinzel', serif;
-    --texte: 'Inter', sans-serif;
-    --or-clair: #C5A059;
-}
-
 body {
     margin: 0;
     background-color: var(--fond-sombre);
@@ -27,7 +17,7 @@ h3 {
 }
 
 .texte-doré {
-    background: var(--or-degrade);
+    background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
@@ -104,7 +94,7 @@ h3 {
 }
 
 .carte {
-    background-color: var(--fond-carte);
+    background-color: #16212c;
     padding: 40px 30px;
     border-radius: 25px;
     border: 1px solid rgba(197, 160, 89, 0.1);
@@ -113,7 +103,7 @@ h3 {
 
 .carte:hover {
     transform: translateY(-5px);
-    border-color: var(--or-clair);
+    border-color: var(--gold-clair);
 }
 
 .carte h3 {
@@ -176,7 +166,7 @@ h3 {
 
 .role-gardien {
     font-size: 14px;
-    color: var(--or-clair);
+    color: var(--gold-clair);
 }
 
 .imgBoussole {
