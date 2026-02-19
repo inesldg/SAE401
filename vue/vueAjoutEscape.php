@@ -46,11 +46,15 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
     <div class="droite">
 
-    <h1>GESTIONS DES ESCAPES</h1>
-    <div class="sous-titre">X escapes actifs</div>
-
-    <a href=""></a>
-
+        <div class="haut">
+            <div class="part1">
+                <h1>GESTIONS DES ESCAPES</h1>
+                <div class="sous-titre">X escapes actifs</div>
+            </div>
+            <div class="part2">
+                <a href="#" class="ajouter">+ Ajouter</a>
+            </div>
+        </div>
     </div>
 
     <div class="ajout">

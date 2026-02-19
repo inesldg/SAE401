@@ -117,3 +117,22 @@ h1{
     font-weight: lighter;
     margin-bottom: 32px;
 }
+
+.ajouter{
+    text-decoration: none;
+    color: var(--blanc-casse);
+    background: var(--gold-gradient);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.part2{
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+.haut{
+    display: flex;
+    align-items: start;
+}
