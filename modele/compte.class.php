@@ -28,6 +28,14 @@ class compte extends database
         return $mdpUtilisateur;
     }
 
+    public function getId($mail)
+    {
+        $data = array($mail);
+        $req = 'SELECT id_utilisateur FROM utilisateur WHERE mail = ?;';
+        $id = $this->execReqPrep($req, $data);
+        return $id;
+    }
+
     public function infosCompte($mail)
     {
         $req = 'SELECT nom, prenom, mail, tel FROM utilisateur 
@@ -38,7 +46,8 @@ class compte extends database
 
     public function modifInfos($nom, $prenom, $mail, $ancienMail)
     {
-        $req = 'UPDATE utilisateurs SET nom = ?, prenom = ?, mail = ? WHERE utilisateurs.id_utilisateur = ?;';
+        $req = 'UPDATE utilisateur SET nom = ?, prenom = ?, mail = ? 
+        WHERE mail = ?;';
         $modifMail = $this->execReqPrep($req, array($nom, $prenom, $mail, $ancienMail));
         return $modifMail;
     }

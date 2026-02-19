@@ -15,6 +15,29 @@ $style = '';
     <div>Nombre de personnes minimum = <?= $escapeGame[0]['nbr_pers_min'] ?></div>
     <div>Nombre de personnes maximum = <?= $escapeGame[0]['nbr_pers_max'] ?></div>
 <div>
+
+<?php
+if (isset($_SESSION["acces"])){
+    echo '<form method="post" action=' . $_SERVER["PHP_SELF"] . "?action=ajouterAvis" . '>
+        <label>
+            <input type="text" name="avis" value="" placeholder="Commentaire">
+        </label>
+        <label>
+            <select name="note">
+                <option value="">Choisissez une note</option>
+                <option value="0">0/5</option>
+                <option value="1">1/5</option>
+                <option value="2">2/5</option>
+                <option value="3">3/5</option>
+                <option value="4">4/5</option>
+                <option value="5">5/5</option>
+            </select>
+        </label>
+    </form>';
+}
+    
+?>
+
 <div>
 <?php
     if ($avis != 0){

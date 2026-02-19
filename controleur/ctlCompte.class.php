@@ -25,6 +25,13 @@ class ctlCompte {
         return $mailUtilisateur;
     }
 
+    public function getId($mail)
+    {
+        $mail = $_SESSION["acces"];
+        $id = $this->compte->getId($mail);
+        return $id;
+    }
+
     public function deconnexion(){
         session_unset(); // Supprime toutes les variables de session
         session_destroy(); // Détruit la session
@@ -54,30 +61,22 @@ class ctlCompte {
         $infosCompte = $this->compte->infosCompte($ancienMail);
         $mdpUtilisateur = $this->compte->getMdp($ancienMail);
 
-        $ancienNom = $infosCompte[0]['nom'];
-        $ancienPrenom = $infosCompte[0]['prenom'];
-        // $ancienMail = $infosCompte[0]['mail'];
-
-        if($nom == 0)
-            $nom = $ancienNom;
-        if($prenom == 0)
-            $prenom = $ancienPrenom;
-        if($mail == 0)
+        if($nom === "")
+            $nom = $infosCompte[0]['nom'];
+        if($prenom === "")
+            $prenom = $infosCompte[0]['prenom'];
+        if($mail === "")
             $mail = $ancienMail;
     
         if(password_verify($mdp, $mdpUtilisateur[0]['mdp'])){
             $this->compte->modifInfos($nom, $prenom, $mail, $ancienMail);
             $_SESSION["acces"] = $mail;
+            $infosCompte = $this->compte->infosCompte($mail);
         
-            if(isset($_COOKIE["page"]))
-                header("Location: index.php".$_COOKIE["page"]);
-            else
-                header("location: index.php");
+            $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Le ou les changement(s) ont été réalisé(s) avec succès</span>"));
         }
         else
             $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Mot de passe incorrect</span>"));
-    
-        $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Le ou les changement(s) ont été réalisé(s) avec succès</span>"));
     }
 
 }

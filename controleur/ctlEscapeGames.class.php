@@ -36,4 +36,8 @@ class ctlEscapeGames {
             throw new Exception("L'escape Game demandé n'existe pas");
     }
 
+    // public function ajouterAvis($avis, $note, $id){
+
+    // }
+
 }
