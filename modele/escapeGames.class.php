@@ -34,4 +34,13 @@ class escapeGames extends database {
         return $afficherAvis;
     }
 
+    public function ajouterAvis($nom, $description, $date, $id, $idEscape)
+    {
+        $req = 'INSERT INTO `evaluer` (`id_avis`, `note`, `commentaire`, `avis_date`, `id_utilisateur`, `id_escape`) 
+                VALUES (NULL, ?, ?, ?, ?, ?);';
+        $ajout = $this->execReqPrep($req, array($nom, $description, $date, $id, $idEscape));
+
+        return $ajout;
+    }
+
 }

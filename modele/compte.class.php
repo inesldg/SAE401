@@ -28,6 +28,14 @@ class compte extends database
         return $mdpUtilisateur;
     }
 
+    public function getId($mail)
+    {
+        $data = array($mail);
+        $req = 'SELECT id_utilisateur FROM utilisateur WHERE mail = ?;';
+        $id = $this->execReqPrep($req, $data);
+        return $id;
+    }
+
     public function infosCompte($mail)
     {
         $req = 'SELECT nom, prenom, mail, tel FROM utilisateur 

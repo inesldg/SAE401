@@ -25,6 +25,13 @@ class ctlCompte {
         return $mailUtilisateur;
     }
 
+    public function getId($mail)
+    {
+        $mail = $_SESSION["acces"];
+        $id = $this->compte->getId($mail);
+        return $id;
+    }
+
     public function deconnexion(){
         session_unset(); // Supprime toutes les variables de session
         session_destroy(); // Détruit la session

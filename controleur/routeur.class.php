@@ -44,6 +44,7 @@ class routeur
 
                 $mail = $_SESSION["acces"];
                 $acces = $this->ctlCompte->getAcces($mail);
+                $id = $this->ctlCompte->getId($mail);
 
                 if (isset($_GET["action"])) {
                     switch ($_GET["action"]) {
@@ -70,7 +71,7 @@ class routeur
                             break;
                         case "modifInfos":
                             if (isset($_POST['mdp']))
-                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $mail);
+                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], ancienMail: $mail);
                             else
                                 $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer votre mot de passe si vous souhaitez modifier vos informations</span>", $mail);
                             break;
