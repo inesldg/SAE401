@@ -92,6 +92,7 @@ body {
 
 .droite{
      margin: 32px;
+     flex: 1;
 }
 
 h1{
@@ -110,6 +111,7 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
+
 }
 
 .card{
@@ -162,5 +164,5 @@ h1{
 }
 
 .part2{
-    margin-left: 180px;
+    margin-left: auto;
 }
