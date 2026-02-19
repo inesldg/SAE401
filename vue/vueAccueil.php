@@ -5,17 +5,6 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 // ob_start();
 ?>
 
-<!-- <section class="hero-accueil">
-    <div class="hero-accueil__overlay"></div>
-    <div class="hero-accueil__contenu">
-        <h1 class="hero-accueil__titre">VIVEZ L' <span class="hero-accueil__titre--or">AVENTURE</span></h1>
-        <p class="hero-accueil__sous-titre">Plongez dans des univers immersifs, résolvez des énigmes captivantes et
-            échappez-vous avant la fin du temps.</p>
-        <a href="index.php?action=escapeGames" class="hero-accueil__bouton">Découvrir nos escape <span
-                class="hero-accueil__bouton-icone">→</span></a>
-    </div>
-</section> -->
-
 <section class="hero-accueil">
     <div class="hero-accueil__overlay"></div>
     <div class="hero-accueil__inner">

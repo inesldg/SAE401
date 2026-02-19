@@ -38,3 +38,19 @@ html {
 /* html a {
     cursor: url("../images/cursor.png"), default !important;
 } */
+
+/* Header */
+header.sticky {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transform: translateY(-100%);
+  animation: smoothEntrance 0.5s forwards;
+}
+
+@keyframes smoothEntrance {
+  to {
+    transform: translateY(0);
+  }
+}

@@ -2,21 +2,18 @@
     <div class="colonne">
         <h2>Services</h2>
         <a href="#">Réservations</a>
-        <a href="#">Tarifs</a>
-        <a href="#">Nos jeux</a>
+        <a href="index.php?action=escapeGames">Nos jeux</a>
     </div>
 
     <div class="colonne">
         <h2>Informations</h2>
         <a href="#">FAQ</a>
         <a href="#">Assistance</a>
-        <a href="#">Support</a>
     </div>
 
     <div class="colonne">
         <h2>Notre entreprise</h2>
-        <a href="#">À propos de nous</a>
-        <a href="#">Nos jeux</a>
+        <a href="index.php?action=propos">À propos de nous</a>
         <a href="#">Notre Instagram</a>
     </div>
 
