@@ -170,12 +170,16 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <div>' . $evaluation['nom'] . ' ' . $evaluation['prenom'] . '</div>
                 <div>' . $evaluation['note'] . '</div>
                 <div>' . $evaluation['avis_date'] . '</div>
-                <div>' . $evaluation['commentaire'] . '</div>
-<div>
+                <div>' . $evaluation['commentaire'] . '</div>';
+                }
+            }
+            ;
+            ?>
+        </div>
 
-<?php
-if (isset($_SESSION["acces"])){
-    echo '<form method="post" action=' . $_SERVER["PHP_SELF"] . "?action=ajouterAvis" . '>
+        <?php
+        if (isset($_SESSION["acces"])) {
+            echo '<form method="post" action=' . $_SERVER["PHP_SELF"] . "?action=ajouterAvis" . '>
         <label>
             <input type="text" name="avis" value="" placeholder="Commentaire">
         </label>
@@ -191,19 +195,19 @@ if (isset($_SESSION["acces"])){
             </select>
         </label>
     </form>';
-}
-    
-?>
+        }
 
-<div>
-<?php
-    if ($avis != 0){
-        foreach ($avis as $evaluation){
-            $result = '
-                <div>'. $evaluation['nom'] . ' ' . $evaluation['prenom'] .'</div>
-                <div>'. $evaluation['note'] . '</div>
-                <div>'. $evaluation['avis_date'] . '</div>
-                <div>'. $evaluation['commentaire'] . '</div>
+        ?>
+
+        <div>
+            <?php
+            if ($avis != 0) {
+                foreach ($avis as $evaluation) {
+                    $result = '
+                <div>' . $evaluation['nom'] . ' ' . $evaluation['prenom'] . '</div>
+                <div>' . $evaluation['note'] . '</div>
+                <div>' . $evaluation['avis_date'] . '</div>
+                <div>' . $evaluation['commentaire'] . '</div>
             ';
 
                     echo $result;
