@@ -2,7 +2,6 @@
 
 $style = '';
 
-ob_start();
 ?>
 
 <a href="index.php?action=accueil">Retour à l'accueil</a>
@@ -36,7 +35,5 @@ ob_start();
 <div>
 
 <?php
-
-$main = ob_get_clean();
 
 $script = '';

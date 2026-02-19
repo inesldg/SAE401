@@ -2,7 +2,6 @@
 
 $style = '';
 
-ob_start();
 ?>
 
 <a href="index.php?action=accueil">Retour à l'accueil</a>
@@ -34,8 +33,5 @@ ob_start();
 </div>
 
 <?php
-// var_dump($escapeGame[0]);
-
-$main = ob_get_clean();
 
 $script = '';

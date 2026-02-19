@@ -2,7 +2,8 @@
 
 $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
-// ob_start();
+
+var_dump($escapeGames[0]);
 ?>
 
 <!-- <section class="hero-accueil">
@@ -57,6 +58,32 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
     <div class="accueil-conteneur">
         <h2 class="accueil-titre">NOS <span class="accueil-titre--or">ESCAPES</span></h2>
         <div class="accueil-escapes__grille">
+
+
+        <!-- ------------------------------ -->
+            <article class="accueil-escape-card">
+                <div class="accueil-escape-card__img"></div>
+                <div class="accueil-escape-card__corps">
+                    <h3 class="accueil-escape-card__titre"><?= $escapeGames[0]['nom'] ?></h3>
+                    <p class="accueil-escape-card__desc">
+                        <?= $escapeGames[0]['description'] ?>
+                    </p>
+                    <div class="accueil-escape-card__infos">
+                        <span class="accueil-escape-card__duree">
+                            <?= $escapeGames[0]['duree'] ?>h
+                        </span>
+                        <span class="accueil-escape-card__personnes">
+                            <?= $escapeGames[0]['nbr_pers_min'] ?>-<?= $escapeGames[0]['nbr_pers_max'] ?>
+                        </span>
+                    </div>
+                    <p class="accueil-escape-card__prix">28€ / pers</p>
+
+                    <a href="#" class="accueil-escape-card__btn">Voir détails</a>
+                </div>
+            </article>
+        <!-- ------------------------------ -->
+
+
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>
                 <div class="accueil-escape-card__corps">
@@ -66,21 +93,6 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
                         les parcs avec nos boussoles.
 
                         — Léa M.</p>
-                    <div class="accueil-escape-card__infos">
-                        <span class="accueil-escape-card__duree">120 min</span>
-                        <span class="accueil-escape-card__personnes">2-6</span>
-                    </div>
-                    <p class="accueil-escape-card__prix">28€ / pers</p>
-
-                    <a href="#" class="accueil-escape-card__btn">Voir détails</a>
-                </div>
-            </article>
-            <article class="accueil-escape-card">
-                <div class="accueil-escape-card__img"></div>
-                <div class="accueil-escape-card__corps">
-                    <h3 class="accueil-escape-card__titre">TITRE</h3>
-                    <p class="accueil-escape-card__desc">Mini blabla : Hopla vous savez que la mamsell Huguette, la miss
-                        Miss Dahlias du messti de Bischheim</p>
                     <div class="accueil-escape-card__infos">
                         <span class="accueil-escape-card__duree">120 min</span>
                         <span class="accueil-escape-card__personnes">2-6</span>
@@ -186,7 +198,5 @@ if (isset($acces[0]['statut'])) {
 
 ?>
 <?php
-
-// $main = ob_get_clean();
 
 $script = '<script type="module" src="js/three-key.js"></script>';

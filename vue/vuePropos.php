@@ -2,7 +2,6 @@
 
 $style = '<link rel="stylesheet" href="styles/about.css">';
 
-// ob_start();
 ?>
 
 <a href="index.php?action=accueil">Retour à l'accueil</a>
@@ -75,7 +74,5 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 </section>
 
 <?php
-
-// $main = ob_get_clean();
 
 $script = '';

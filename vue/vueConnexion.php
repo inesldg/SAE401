@@ -2,8 +2,9 @@
 
 $style = '<link rel="stylesheet" href="styles/connexion.css">';
 
-// ob_start();
 ?>
+
+<h1><?= $message ?></h1>
  
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
@@ -46,7 +47,5 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
 
 
 <?php
-
-// $main = ob_get_clean();
 
 $script = '';

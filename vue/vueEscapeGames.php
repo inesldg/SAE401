@@ -2,8 +2,6 @@
 
 $style = '';
 
-
-// ob_start();
 ?>
 
 <div>
@@ -23,8 +21,5 @@ $style = '';
 <div>
 
 <?php
-
-// $main = ob_get_clean();
-$main;
 
 $script = '';
