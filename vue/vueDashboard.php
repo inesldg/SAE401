@@ -146,8 +146,8 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             </div>
         </div>
 
+        <h1>RÉSERVATIONS RÉCENTES</h1>
 
-        
     </div>
 </div>
 <?php
