@@ -11,10 +11,12 @@ body {
     text-align: center;
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
 }
+
+
 .container {
     max-width: 550px;
     padding: 20px;

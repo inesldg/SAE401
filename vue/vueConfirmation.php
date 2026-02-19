@@ -7,6 +7,10 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
 <!-- ------ ICI mettre le code HTML ------ -->
 
+
+
+
+
 <main class="container">
 
     <div class="titre">
