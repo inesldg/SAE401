@@ -3,7 +3,7 @@
     --blanc-casse: #F2F2F2;
     --gold-clair: #c5a059;
     --golf-fonce: #A3730C;
-    --bleu-fonce: #101A23;
+    --bleu-fonce: #101a23;
     --bleu-clair: #2b4359;
     --noir: #0A0A0A;
     --marron-clair: #4B2009;
@@ -135,4 +135,50 @@ h1{
 .haut{
     display: flex;
     align-items: start;
+}
+
+
+
+
+/* Overlay noir */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(16, 26, 35, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* Popup centrée */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+/* Animation ouverture */
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Croix */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
 }
