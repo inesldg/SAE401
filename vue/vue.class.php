@@ -37,6 +37,8 @@ class vue
     global $Conf;
     $titre = $Conf->titreOnglet;
 
+    $script = "js/script.js";
+
     ob_start();
     require "composants/header/header_deconnecte.php";
     $header = ob_get_clean();
@@ -48,11 +50,11 @@ class vue
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 
-    // ob_start();
+    ob_start();
 
     require $this->fichierVue;   // Génère le contenu de la page en fonction de l'action
 
-    // $main = ob_get_clean();
+    $main = ob_get_clean();
 
     require "gabarit.php";
   }

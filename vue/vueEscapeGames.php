@@ -1,19 +1,20 @@
 <?php
 
-$style = '';
+$style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
-
-ob_start();
 ?>
 
-<a href="index.php?action=accueil">Retour à l'accueil</a>
+<section class="hero-section">
+    <h1>Réservez votre <span class="titre-or">mission immersive</span> dès maintenant</h1>
+    <p>Choisissez votre univers !</p>
+</section>
 
 <div>
-<?php
-    foreach ($escapeGames as $game){
+    <?php
+    foreach ($escapeGames as $game) {
         $result = '
-            <div>'. $game['nom'] . '</div>
-            <div>'. $game['lieu'] . '</div>
+            <div>' . $game['nom'] . '</div>
+            <div>' . $game['lieu'] . '</div>
             <a href=index.php?action=game&idEscapeGame=' . $game['id_escape'] . '>Lien</a>
         ';
 
@@ -21,11 +22,11 @@ ob_start();
     }
 
     // var_dump($escapeGames);
-?>
-<div>
+    ?>
+    <div>
 
-<?php
+        <?php
 
-$main = ob_get_clean();
+        $main;
 
-$script = '';
+        $script = '';

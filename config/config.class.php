@@ -10,5 +10,4 @@ abstract class Config {
     public static $DBPWD = "";
     public const TITREONGLET = "";
     public const NOMSITE = "";
-
 }

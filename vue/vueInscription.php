@@ -2,10 +2,7 @@
 
 $style = '<link rel="stylesheet" href="styles/inscription.css">';
 
-ob_start();
 ?>
-
-<a href="index.php?action=accueil">Retour à l'accueil</a>
 
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
@@ -35,7 +32,7 @@ ob_start();
                     <input type="text" name="prenom" value="" placeholder="Votre prénom" required>
                 </div>
             </div>
-            
+
 
             <!-- <p>Votre Numéro de téléphone : </p>
     <input type="tel" name="phone" value="" placeholder="01 23 45 67 89"
@@ -51,10 +48,9 @@ ob_start();
             <label>MOT DE PASSE</label>
             <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
 
-            <!-- <label>
-    <p>Confirmer le mot de passe : </p>
-    <input type="password" name="mdpConfirm" value="" placeholder="Confirmer le mot de passe" required>
-</label> -->
+            <label>Confirmer le mot de passe : </label>
+            <input type="password" name="mdpConfirm" value="" placeholder="Confirmer le mot de passe" required>
+            
             <button type="submit" class="inscription" value="S'inscrire">S'INSCRIRE</button>
             <span><?= $message ?></span>
         </form>
@@ -65,7 +61,5 @@ ob_start();
 </body>
 
 <?php
-
-$main = ob_get_clean();
 
 $script = '';

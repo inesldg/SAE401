@@ -9,8 +9,8 @@ class utilisateurs extends database
     {
         $req = 'SELECT id_utilisateur, nom, prenom, mail, tel, statut FROM utilisateur 
         WHERE NOT mail = ?;';
-        $accesUtilisateur = $this->execReqPrep($req, array($mail));
-        return $accesUtilisateur;
+        $listeUtilisateurs = $this->execReqPrep($req, array($mail));
+        return $listeUtilisateurs;
     }
 
     public function changementAcces($acces, $id)
