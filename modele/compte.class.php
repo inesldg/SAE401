@@ -38,7 +38,8 @@ class compte extends database
 
     public function modifInfos($nom, $prenom, $mail, $ancienMail)
     {
-        $req = 'UPDATE utilisateurs SET nom = ?, prenom = ?, mail = ? WHERE utilisateurs.id_utilisateur = ?;';
+        $req = 'UPDATE utilisateur SET nom = ?, prenom = ?, mail = ? 
+        WHERE mail = ?;';
         $modifMail = $this->execReqPrep($req, array($nom, $prenom, $mail, $ancienMail));
         return $modifMail;
     }

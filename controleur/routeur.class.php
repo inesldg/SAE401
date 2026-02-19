@@ -69,7 +69,10 @@ class routeur
                             $this->ctlCompte->infosCompte($message = "", $mail);
                             break;
                         case "modifInfos":
-                            $this->ctlCompte->modifInfos($message = "", $mail);
+                            if (isset($_POST['mdp']))
+                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $mail);
+                            else
+                                $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer votre mot de passe si vous souhaitez modifier vos informations</span>", $mail);
                             break;
 
 
