@@ -50,10 +50,15 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>RÉSERVATION</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">confirmées</div>
+                    <div class="donnee">
+                        <div class="chiffre"><?= $reservations ?></div>
+                        <div class="texte">confirmées</div>
+                    </div>
                 </div>
                 <div class="part2">
+                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.55 2.4H17.25V1.2C17.25 0.88174 17.1288 0.576515 16.9132 0.351472C16.6975 0.126428 16.405 0 16.1 0C15.795 0 15.5025 0.126428 15.2868 0.351472C15.0712 0.576515 14.95 0.88174 14.95 1.2V2.4H8.05V1.2C8.05 0.88174 7.92884 0.576515 7.71317 0.351472C7.49751 0.126428 7.205 0 6.9 0C6.595 0 6.30249 0.126428 6.08683 0.351472C5.87116 0.576515 5.75 0.88174 5.75 1.2V2.4H3.45C2.535 2.4 1.65748 2.77928 1.01048 3.45442C0.363481 4.12955 0 5.04522 0 6V20.4C0 21.3548 0.363481 22.2705 1.01048 22.9456C1.65748 23.6207 2.535 24 3.45 24H19.55C20.465 24 21.3425 23.6207 21.9895 22.9456C22.6365 22.2705 23 21.3548 23 20.4V6C23 5.04522 22.6365 4.12955 21.9895 3.45442C21.3425 2.77928 20.465 2.4 19.55 2.4ZM20.7 20.4C20.7 20.7183 20.5788 21.0235 20.3632 21.2485C20.1475 21.4736 19.855 21.6 19.55 21.6H3.45C3.145 21.6 2.85249 21.4736 2.63683 21.2485C2.42116 21.0235 2.3 20.7183 2.3 20.4V12H20.7V20.4ZM20.7 9.6H2.3V6C2.3 5.68174 2.42116 5.37652 2.63683 5.15147C2.85249 4.92643 3.145 4.8 3.45 4.8H5.75V6C5.75 6.31826 5.87116 6.62348 6.08683 6.84853C6.30249 7.07357 6.595 7.2 6.9 7.2C7.205 7.2 7.49751 7.07357 7.71317 6.84853C7.92884 6.62348 8.05 6.31826 8.05 6V4.8H14.95V6C14.95 6.31826 15.0712 6.62348 15.2868 6.84853C15.5025 7.07357 15.795 7.2 16.1 7.2C16.405 7.2 16.6975 7.07357 16.9132 6.84853C17.1288 6.62348 17.25 6.31826 17.25 6V4.8H19.55C19.855 4.8 20.1475 4.92643 20.3632 5.15147C20.5788 5.37652 20.7 5.68174 20.7 6V9.6Z" fill="#F2F2F2" />
+                    </svg>
 
                 </div>
             </div>
@@ -61,10 +66,16 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>UTILISATEURS</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">inscrit</div>
+                    <div class="donnee">
+                        <div class="chiffre"><?= $utilisateurs ?></div>
+                        <div class="texte">inscrit</div>
+                    </div>
                 </div>
                 <div class="part2">
+                    <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6666 25.0002V22.3335C19.6666 20.919 19.1047 19.5625 18.1045 18.5623C17.1043 17.5621 15.7478 17.0002 14.3333 17.0002H6.33332C4.91884 17.0002 3.56229 17.5621 2.56209 18.5623C1.5619 19.5625 1 20.919 1 22.3335V25.0002M19.6666 1.1709C20.8103 1.46739 21.8231 2.13525 22.5462 3.06964C23.2692 4.00404 23.6615 5.15208 23.6615 6.33355C23.6615 7.51503 23.2692 8.66307 22.5462 9.59746C21.8231 10.5319 20.8103 11.1997 19.6666 11.4962M27.6666 25.0002V22.3335C27.6657 21.1518 27.2724 20.0039 26.5484 19.0699C25.8244 18.136 24.8108 17.469 23.6666 17.1735" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.3338 11.6666C13.2793 11.6666 15.6671 9.27883 15.6671 6.33332C15.6671 3.38781 13.2793 1 10.3338 1C7.3883 1 5.00049 3.38781 5.00049 6.33332C5.00049 9.27883 7.3883 11.6666 10.3338 11.6666Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
 
                 </div>
             </div>
@@ -72,8 +83,10 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>ESCAPES</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">actifs</div>
+                    <div class="donnee">
+                        <div class="chiffre"><?= $escapes ?></div>
+                        <div class="texte">actifs</div>
+                    </div>
                 </div>
                 <div class="part2">
 
@@ -83,8 +96,10 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>REVENUS</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">ce mois</div>
+                    <div class="donnee">
+                        <div class="chiffre"><?= $revenus ?> €</div>
+                        <div class="texte">ce mois</div>
+                    </div>
                 </div>
                 <div class="part2">
 
@@ -94,8 +109,10 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>NOTE MOYENNE</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">/5</div>
+                    <div class="donnee">
+                        <div class="chiffre"><?= $noteMoyenne ?></div>
+                        <div class="texte">/ 5</div>
+                    </div>
                 </div>
                 <div class="part2">
 
@@ -105,8 +122,10 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             <div class="card">
                 <div class="part1">
                     <h2>TAUX D'OCCUPATION</h2>
-                    <div class="chiffre">x</div>
-                    <div class="texte">cette semaine</div>
+                    <div class="donnee">
+                        <div class="chiffre"><?= $occupation ?></div>
+                        <div class="texte">personnes</div>
+                    </div>
                 </div>
                 <div class="part2">
 
