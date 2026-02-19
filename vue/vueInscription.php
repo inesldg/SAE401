@@ -33,7 +33,7 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
                     <input type="text" name="prenom" value="" placeholder="Votre prénom" required>
                 </div>
             </div>
-            
+
 
             <!-- <p>Votre Numéro de téléphone : </p>
     <input type="tel" name="phone" value="" placeholder="01 23 45 67 89"
@@ -49,10 +49,9 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             <label>MOT DE PASSE</label>
             <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
 
-            <!-- <label>
-    <p>Confirmer le mot de passe : </p>
-    <input type="password" name="mdpConfirm" value="" placeholder="Confirmer le mot de passe" required>
-</label> -->
+            <label>Confirmer le mot de passe : </label>
+            <input type="password" name="mdpConfirm" value="" placeholder="Confirmer le mot de passe" required>
+            
             <button type="submit" class="inscription" value="S'inscrire">S'INSCRIRE</button>
             <span><?= $message ?></span>
         </form>
