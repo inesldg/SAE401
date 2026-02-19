@@ -2,8 +2,6 @@
 
 $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
-
-var_dump($escapeGames[0]);
 ?>
 
 <!-- <section class="hero-accueil">

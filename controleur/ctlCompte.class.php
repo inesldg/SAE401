@@ -31,6 +31,13 @@ class ctlCompte {
         header("Location: index.php");
     }
 
+    public function infosCompte($message, $mail){
+        $infosCompte = $this->compte->infosCompte($mail);
+
+        $vue = new vue("Compte"); // Instancie la vue appropriée
+        $vue->afficher(array("infosCompte" => $infosCompte, "message" => $message));
+    }
+
 
     // Modification des informations utilisateur
 
@@ -41,27 +48,36 @@ class ctlCompte {
     //     $vue->afficher(array("infos" => $infos, "message" => $message));
     // }
 
-    // function modifInfos($mail, $mdp)
-    // {
-    //     $this->compte->modifInfos($mail);
+    function modifInfos($nom, $prenom, $mail, $mdp, $ancienMail)
+    {
+        $vue = new vue("Compte"); // Instancie la vue appropriée
+        $infosCompte = $this->compte->infosCompte($ancienMail);
+        $mdpUtilisateur = $this->compte->getMdp($ancienMail);
 
-    //     $infos = $this->compte->infosUtilisateur($mail);
+        $ancienNom = $infosCompte[0]['nom'];
+        $ancienPrenom = $infosCompte[0]['prenom'];
+        // $ancienMail = $infosCompte[0]['mail'];
 
-    //     $mdpUtilisateur = $this->compte->getMdp($mail);
+        if($nom == 0)
+            $nom = $ancienNom;
+        if($prenom == 0)
+            $prenom = $ancienPrenom;
+        if($mail == 0)
+            $mail = $ancienMail;
     
-    //     // if(password_verify($mdp, $mdpUtilisateur[0]['mdp'])){
-    //         // $_SESSION["acces"] = $mail;
-    //     // 
-    //         // if(isset($_COOKIE["page"]))
-    //             // header("Location: index.php".$_COOKIE["page"]);
-    //         // else
-    //             // header("location: index.php");
-    //     // }
-    //     // else
-    //         // $vue->afficher(array("message" => "<span>Mot de passe incorrect</span>"));
+        if(password_verify($mdp, $mdpUtilisateur[0]['mdp'])){
+            $this->compte->modifInfos($nom, $prenom, $mail, $ancienMail);
+            $_SESSION["acces"] = $mail;
+        
+            if(isset($_COOKIE["page"]))
+                header("Location: index.php".$_COOKIE["page"]);
+            else
+                header("location: index.php");
+        }
+        else
+            $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Mot de passe incorrect</span>"));
     
-    //     $vue = new vue("InfosCompte"); // Instancie la vue appropriée
-    //     $vue->afficher(array("infos" => $infos, "message" => "<span>Le ou les changement(s) ont été réalisé(s) avec succès</span>"));
-    // }
+        $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Le ou les changement(s) ont été réalisé(s) avec succès</span>"));
+    }
 
 }
