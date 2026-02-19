@@ -54,6 +54,9 @@ class routeur
                         case "accueil":
                             $this->ctlEscapeGames->accueil($acces);
                             break;
+                        case "legal":
+                            $this->ctlPages->pageLegal();
+                            break;
                         case "escapeGames":
                             $this->ctlEscapeGames->pageEscapeGames();
                             break;
