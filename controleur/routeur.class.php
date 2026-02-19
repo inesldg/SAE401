@@ -56,7 +56,7 @@ class routeur
                             $this->ctlCompte->deconnexion();
                             break;
                         case "accueil":
-                            $this->ctlPages->accueil($acces);
+                            $this->ctlEscapeGames->accueil($acces);
                             break;
                         case "escapeGames":
                             $this->ctlEscapeGames->pageEscapeGames();
@@ -75,6 +75,12 @@ class routeur
 
 
                         /********** Pages administrateur **********/
+                        case "dash":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else
+                            $this->ctlAdmin->afficherDash();
+                            break;
                         case "utilisateurs":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
@@ -114,8 +120,13 @@ class routeur
                             throw new Exception("Action non valide");
                     }
                 } else
-                    $this->ctlPages->accueil($acces);
-            } else {
+                    $this->ctlEscapeGames->accueil($acces);
+            } 
+
+
+            /********** Pages non connectés **********/
+
+            else {
 
                 if (isset($_GET["action"])) {
 
@@ -123,12 +134,6 @@ class routeur
                         case "pageInscription":
                             $this->ctlPages->pageInscription($message = "");
                             break;
-
-                        case "dash":
-                            $this->ctlAdmin->afficherDash();
-                            break;
-
-                        // pour l'accès public :
                         case "propos":
                             $this->ctlPropos->pagePropos();
                             break;
@@ -157,7 +162,7 @@ class routeur
                                 $this->ctlPages->pageConnexion($message = "<span>Veuillez remplir tout les champs</span>");
                             break;
                         case "accueil":
-                            $this->ctlPages->accueil($acces = "0");
+                            $this->ctlEscapeGames->accueil($acces = "0");
                             break;
                         case "escapeGames":
                             $this->ctlEscapeGames->pageEscapeGames();
@@ -170,7 +175,7 @@ class routeur
                             throw new Exception("Action non valide");
                     }
                 } else
-                    $this->ctlPages->accueil($acces = "0");
+                    $this->ctlEscapeGames->accueil($acces = "0");
 
             }
         } catch (Exception $e) {
