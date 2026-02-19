@@ -78,7 +78,10 @@ body {
     font-size: 14px;
 }
 
-.dash:hover, .calendrier:hover, .avis:hover, .user:hover{
+.dash:hover,
+.calendrier:hover,
+.avis:hover,
+.user:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -97,22 +100,22 @@ body {
     margin-left: -20px;
 }
 
-.contenu{
+.contenu {
     display: flex;
 }
 
-.droite{
-     margin: 32px;
-     flex: 1;
+.droite {
+    margin: 32px;
+    flex: 1;
 }
 
-h1{
+h1 {
     margin: 0;
     font-family: var(--titre);
     margin-bottom: 5px;
 }
 
-.sous-titre{
+.sous-titre {
     font-size: 14px;
     font-weight: lighter;
     margin-bottom: 32px;

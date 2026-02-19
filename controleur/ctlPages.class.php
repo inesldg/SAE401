@@ -45,10 +45,4 @@ class ctlPages
         $vue = new vue("panier");
         $vue->afficher(array("message" => $message));
     }
-
-    public function pageLegal()
-    {
-        $vue = new vue("Legal");
-        $vue->afficher(array());
-    }
 }

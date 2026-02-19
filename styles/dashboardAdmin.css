@@ -78,7 +78,10 @@ body {
     font-size: 14px;
 }
 
-.escape:hover, .calendrier:hover, .avis:hover, .user:hover{
+.escape:hover,
+.calendrier:hover,
+.avis:hover,
+.user:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -97,28 +100,28 @@ body {
     margin-left: -20px;
 }
 
-.contenu{
+.contenu {
     display: flex;
 }
 
-.droite{
-     margin: 32px;
-     flex: 1;
+.droite {
+    margin: 32px;
+    flex: 1;
 }
 
-h1{
+h1 {
     margin: 0;
     font-family: var(--titre);
     margin-bottom: 5px;
 }
 
-.sous-titre{
+.sous-titre {
     font-size: 14px;
     font-weight: lighter;
     margin-bottom: 32px;
 }
 
-.cards{
+.cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
@@ -126,55 +129,58 @@ h1{
 
 }
 
-.card{
+.card {
     display: flex;
     align-items: center;
     padding: 25px;
     border: solid var(--bleu-clair) 1px;
     border-radius: 10px;
     background-color: var(--bleu-fonce);
-    transition: stroke 0.3s ease; /* pour un effet fluide */
+    transition: stroke 0.3s ease;
+    /* pour un effet fluide */
 }
 
-.card:hover{
+.card:hover {
     border: solid rgb(197, 160, 89, 0.2) 1px;
     background-color: rgb(197, 160, 89, 0.1);
 }
 
 /* SVG initial */
 .part2 svg path {
-    stroke: #F2F2F2; /* couleur initiale */
+    stroke: #F2F2F2;
+    /* couleur initiale */
     transition: stroke 0.3s ease, fill 0.3s ease;
 }
 
 /* Au hover sur la carte entière */
 .card:hover .part2 svg path {
-    stroke: #A3730C; /* couleur du contour */
+    stroke: #A3730C;
+    /* couleur du contour */
 }
 
-.part1>h2{
+.part1>h2 {
     font-size: 14px;
     font-weight: 500;
 }
 
-.donnee{
+.donnee {
     display: flex;
     align-items: flex-end;
 }
 
-.chiffre{
+.chiffre {
     margin-top: 5px;
     font-size: 24px;
-    
+
 }
 
-.texte{
+.texte {
     font-size: 14px;
     margin-left: 15px;
     opacity: 50%;
     font-weight: 200;
 }
 
-.part2{
+.part2 {
     margin-left: auto;
 }
