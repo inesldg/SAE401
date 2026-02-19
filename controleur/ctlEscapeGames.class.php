@@ -36,8 +36,16 @@ class ctlEscapeGames {
             throw new Exception("L'escape Game demandé n'existe pas");
     }
 
-    // public function ajouterAvis($avis, $note, $id){
+    public function ajouterAvis($note, $avis, $id, $idEscape, $message){
+        $date = date("Y-m-d");
 
-    // }
+        $this->escapeGames->ajouterAvis($note, $avis, $date, $id, $idEscape);
+
+        $game = $this->escapeGames->afficherGame($idEscape);
+        $avis = $this->escapeGames->afficherAvis($idEscape);
+
+        $vue = new vue("Game"); // Instancie la vue appropriée
+        $vue->afficher(array("escapeGame" => $game, "avis" => $avis, "message" => $message));
+    }
 
 }
