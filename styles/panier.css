@@ -1,0 +1,255 @@
+.panier {
+    background: linear-gradient(rgba(16, 26, 35, 0.85), rgba(24, 38, 51, 0.699)),
+        url("../images/fossane-trees-4896953_1920.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--fond-sombre);
+    font-family: var(--texte);
+    padding: 50px;
+}
+
+.conteneur-principal {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* --- BLOCS COMMUNS --- */
+.carte {
+    background: var(--blanc-casse);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2 {
+    font-family: var(--titre);
+    color: var(--gold-fonce);
+    text-transform: uppercase;
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+    /* Titres encore plus gras */
+}
+
+h3 {
+    font-family: var(--titre);
+    font-weight: 800;
+    margin-top: 0;
+}
+
+/* --- PANIER (GAUCHE) --- */
+.section-panier {
+    flex: 1.4;
+}
+
+.produit {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 25px;
+}
+
+.image-remplacement {
+    width: 110px;
+    height: 110px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+.infos-produit {
+    max-width: 250px;
+}
+
+.infos-produit h3 {
+    color: var(--gold-fonce);
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.ligne-prix {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.selecteur-personnes {
+    border: 1.5px solid var(--bleu-fonce);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.bouton-supprimer {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.prix-unitaire {
+    margin-left: auto;
+    font-family: var(--titre);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--gold-fonce);
+}
+
+/* --- COLONNE DROITE --- */
+.colonne-laterale {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* --- INPUTS ET FOCUS --- */
+.groupe-saisie {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 12px 18px;
+    flex: 1;
+    font-family: var(--texte);
+    transition: all 0.3s ease;
+    outline: none;
+    border-color: var(--gold-clair);
+}
+
+/* Effet doré au clic */
+input:focus {
+    border-color: var(--gold-fonce);
+    box-shadow: 0 0 5px var(--gold-clair);
+}
+
+/* Style spécifique pour le code promo (plus épais) */
+.saisie-promo {
+    border-width: 2px;
+}
+
+.bouton-or {
+    background: var(--gold-gradient);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.indication {
+    font-size: 0.75rem;
+    margin-top: 10px;
+    color: #777;
+}
+
+.indication2 {
+    font-size: 0.75rem;
+    margin-top: 10px;
+    color: #777;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- FORMULAIRE INFOS (LABEL À CÔTÉ) --- */
+.ligne-formulaire {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.ligne-formulaire label {
+    width: 80px;
+    /* Largeur fixe pour aligner les inputs */
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.ligne-formulaire input {
+    flex: 1;
+}
+
+.grille-nom-prenom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+/* --- PAIEMENT --- */
+.icones-paiement {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    filter: grayscale(0.5);
+}
+
+.carte-bleue {
+    background: #1a237e;
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.puce-carte {
+    width: 40px;
+    height: 30px;
+    background: #ffd700;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.numero-carte {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+}
+
+.bouton-valider {
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px;
+    border-radius: 40px;
+    background: var(--gold-gradient);
+    color: white;
+    border: none;
+    font-family: var(--titre);
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.bouton-valider:hover {
+    background: var(--gold-fonce);
+}

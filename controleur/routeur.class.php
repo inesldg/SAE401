@@ -7,8 +7,7 @@ require "controleur/ctlInscription.class.php";
 require "controleur/ctlConnexion.class.php";
 require "controleur/ctlUtilisateurs.class.php";
 require "controleur/ctlAjoutEscape.class.php";
-require "controleur/ctlPropos.class.php";
-require "controleur/ctlConfirmation.class.php";
+
 
 require "controleur/ctlAdmin.class.php";
 
@@ -21,8 +20,6 @@ class routeur
     private $ctlConnexion;
     private $ctlUtilisateurs;
     private $ctlAjoutEscape;
-    private $ctlPropos;
-    private $ctlConfirmation;
     private $ctlAdmin;
 
 
@@ -36,8 +33,6 @@ class routeur
         $this->ctlConnexion = new ctlConnexion();
         $this->ctlUtilisateurs = new ctlUtilisateurs();
         $this->ctlAjoutEscape = new ctlAjoutEscape();
-        $this->ctlPropos = new ctlPropos();
-        $this->ctlConfirmation = new ctlConfirmation();
         $this->ctlAdmin = new ctlAdmin();
     }
 
@@ -66,11 +61,11 @@ class routeur
                             break;
 
                         case "propos":
-                            $this->ctlPropos->pagePropos();
+                            $this->ctlPages->pagePropos();
                             break;
 
                         case "confirmation":
-                            $this->ctlConfirmation->pageConfirmation();
+                            $this->ctlPages->pageConfirmation();
                             break;
 
 
@@ -79,7 +74,7 @@ class routeur
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
                             else
-                            $this->ctlAdmin->afficherDash();
+                                $this->ctlAdmin->afficherDash();
                             break;
                         case "utilisateurs":
                             if ($acces[0]['statut'] !== 2)
@@ -121,12 +116,10 @@ class routeur
                     }
                 } else
                     $this->ctlEscapeGames->accueil($acces);
-            } 
+            }
 
 
-            /********** Pages non connectés **********/
-
-            else {
+            /********** Pages non connectés **********/ else {
 
                 if (isset($_GET["action"])) {
 
@@ -135,11 +128,15 @@ class routeur
                             $this->ctlPages->pageInscription($message = "");
                             break;
                         case "propos":
-                            $this->ctlPropos->pagePropos();
+                            $this->ctlPages->pagePropos();
                             break;
 
                         case "confirmation":
-                            $this->ctlConfirmation->pageConfirmation();
+                            $this->ctlPages->pageConfirmation();
+                            break;
+
+                            case "panier":
+                            $this->ctlPages->pagePanier($message = "");
                             break;
 
                         case "pageConnexion":
