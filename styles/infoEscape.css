@@ -1,0 +1,330 @@
+body {
+    background-color: var(--fond-sombre);
+    color: white;
+    font-family: var(--texte);
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+/* --- SECTION 1 : ACCUEIL --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), var(--fond-sombre)), url('../images/paysage-kaiserstuhl.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-section h1 {
+    font-family: var(--titre);
+    font-size: 42px;
+    max-width: 800px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* --- MISE EN PAGE PRINCIPALE --- */
+.conteneur-reservation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: -50px auto 0;
+    padding: 0 20px;
+}
+
+.carte-noire {
+    background: rgba(16, 26, 35, 0.8);
+    border: 1px solid var(--gold-clair);
+    border-radius: 25px;
+    padding: 30px;
+}
+
+/* --- SECTION GAUCHE --- */
+.block_description h2 {
+    font-family: var(--titre);
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: var(--titre);
+}
+
+.infos-rapides {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.prix {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.notation {
+    color: var(--gold-clair);
+}
+
+.icones-detail {
+    margin: 20px 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.icones-detail div {
+    margin-bottom: 8px;
+}
+
+.separateur {
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+    margin: 20px 0;
+}
+
+/* --- SECTION AVIS --- */
+.block_avis {
+    margin-top: 30px;
+}
+
+.grille-avis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.avis-unitaire {
+    background: rgba(197, 160, 89, 0.15);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.photo-profil {
+    width: 50px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 25px;
+    margin: 0 auto 10px;
+}
+
+.bouton-avis {
+    background: var(--gold-gradient);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* --- SECTION DROITE (RESERVATION) --- */
+.preferences-titre {
+    color: var(--gold-clair);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.calendrier-boite {
+    background: #1c252e;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.selecteur-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c252e;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+    border: 1px solid #333;
+}
+
+.choix-horaire {
+    background: rgba(255, 255, 255, 0.05);
+    /* Un léger fond blanc transparent pour le relief */
+    color: white;
+    border: 1px solid var(--gold-clair);
+    /* Bordure dorée fine par défaut */
+    border-radius: 10px;
+    padding: 8px 30px 8px 15px;
+    /* Plus d'espace pour la flèche */
+    font-family: var(--texte);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+
+    /* Flèche personnalisée dorée */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C5A059' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    transition: all 0.3s ease;
+}
+
+/* Effet quand on clique dessus */
+.choix-horaire:focus {
+    border-color: white;
+    /* La bordure devient blanche éclatante au clic */
+    box-shadow: 0 0 8px rgba(197, 160, 89, 0.5);
+    /* Halo doré subtil */
+}
+
+/* Style des options pour éviter le blanc sur blanc du navigateur */
+.choix-horaire option {
+    background-color: var(--bleu-fonce);
+    /* Fond sombre pour le menu */
+    color: white;
+    padding: 10px;
+}
+
+.bouton-reserver {
+    width: 100%;
+    background: var(--gold-gradient);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.bouton-panier {
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: 1px solid var(--gold-clair);
+    padding: 15px;
+    border-radius: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.total-ligne {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.calendrier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: var(--titre);
+}
+
+.fleche-cal {
+    cursor: pointer;
+    color: var(--gold-clair);
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.fleche-cal:hover {
+    color: white;
+}
+
+/* ******************************************************************** */
+/* POUR CALENDRIER */
+/* ******************************************************************** */
+
+
+/* jour de la semaine (lun mar mer ...) en doré */
+.calendrier-jours {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--gold-clair);
+    margin-bottom: 10px;
+}
+
+/* grille jours */
+.calendrier-grille {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+/* --- STYLE DE BASE DES JOURS --- */
+/* cercle pour selectionner les jours */
+.jour-cal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Nécessaire pour le petit point ::after */
+
+    /* Force le rond parfait */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    border-radius: 50%;
+
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* --- ÉTATS AU SURVOL ET VIDE --- */
+/* pour que quand on survole les chiffres ca se grise un peu le fond */
+.jour-cal:hover:not(.vide) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.jour-cal.vide {
+    cursor: default;
+}
+
+/* --- JOUR ACTUEL (AUJOURD'HUI) --- */
+.jour-aujourdhui {
+    color: var(--gold-clair) !important;
+    font-weight: 900 !important;
+}
+
+/* Petit point doré sous le chiffre du jour actuel */
+.jour-aujourdhui::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--gold-clair);
+    border-radius: 50%;
+}
+
+/* --- ÉTAT SÉLECTIONNÉ (CLIC) --- */
+/* On regroupe tout ici : si c'est sélectionné, le blanc et le dégradé gagnent sur tout le reste */
+.jour-cal.selectionne,
+.jour-cal.jour-aujourdhui.selectionne {
+    background: var(--gold-gradient) !important;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* On cache le petit point doré si le jour actuel est sélectionné pour plus de propreté */
+.jour-cal.jour-aujourdhui.selectionne::after {
+    display: none;
+}
