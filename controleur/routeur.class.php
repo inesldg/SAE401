@@ -127,7 +127,8 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/ else {
+            /********** Pages non connectés **********/
+            else {
 
                 if (isset($_GET["action"])) {
 
@@ -143,7 +144,7 @@ class routeur
                             $this->ctlPages->pageConfirmation();
                             break;
 
-                            case "panier":
+                        case "panier":
                             $this->ctlPages->pagePanier($message = "");
                             break;
 
@@ -181,7 +182,6 @@ class routeur
                     }
                 } else
                     $this->ctlEscapeGames->accueil($acces = "0");
-
             }
         } catch (Exception $e) {
             $this->ctlPages->erreur($e->getMessage());

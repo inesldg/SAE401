@@ -46,8 +46,8 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
     <div class="droite">
 
-    <h1>GESTIONS DES ESCAPES</h1>
-    <div class="sous-titre">X escapes actifs</div>
+        <h1>GESTIONS DES ESCAPES</h1>
+        <div class="sous-titre">X escapes actifs</div>
 
     </div>
 

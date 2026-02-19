@@ -1,5 +1,6 @@
 <?php
-abstract class database {
+abstract class database
+{
 
   // Objet permettant la connexion à la BDD
   private $bdd;
@@ -11,8 +12,9 @@ abstract class database {
   
     Retour : 
       [array] : Tableau associatif contenant le résultat de la requête
-  *******************************************************/
-  protected function execReq($req) {
+   *******************************************************/
+  protected function execReq($req)
+  {
     $reponse = $this->connexionBDD()->query($req);
     $resultat = $reponse->fetchAll(PDO::FETCH_ASSOC);
     return $resultat;
@@ -26,12 +28,13 @@ abstract class database {
   
     Retour : 
       [array] : Tableau associatif contenant le résultat de la requête
-  *******************************************************/
-  protected function execReqPrep($req, $data) {
+   *******************************************************/
+  protected function execReqPrep($req, $data)
+  {
     $reponse = $this->connexionBDD()->prepare($req);
-    if($reponse->execute($data)){
+    if ($reponse->execute($data)) {
       $resultat = $reponse->fetchAll(PDO::FETCH_ASSOC);
-      if(!empty($resultat))
+      if (!empty($resultat))
         return $resultat;
       else
         return $reponse->rowCount();
@@ -39,28 +42,28 @@ abstract class database {
     return FALSE;
   }
 
-  
+
   protected function getLastInsertId()
   {
-      return $this->connexionBDD()->lastInsertId(); // Assuming `$this->pdo` is your PDO instance
+    return $this->connexionBDD()->lastInsertId(); // Assuming `$this->pdo` is your PDO instance
   }
-  
+
   /*******************************************************
   Connexion à la BDD à partir des paramètres de configuration
     Entrée : 
       
     Retour : 
       [object] : Objet de type PDO
-  *******************************************************/
-  private function connexionBDD() {
+   *******************************************************/
+  private function connexionBDD()
+  {
     global $Conf;
 
     if (!isset($this->bdd))     // Si la connexion à la BDD n'est pas encore établie
       try {  // Connexion à la base de données et initialisation de la propriété bdd
-        $options=array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-        $this->bdd = new PDO('mysql:host='.$Conf->DBHost.';dbname='.$Conf->DBName, $Conf->DBUser, $Conf->DBPwd, $options);
-      }
-      catch(Exception $err) {   // Erreur lors de la connexion à la BDD
+        $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+        $this->bdd = new PDO('mysql:host=' . $Conf->DBHost . ';dbname=' . $Conf->DBName, $Conf->DBUser, $Conf->DBPwd, $options);
+      } catch (Exception $err) {   // Erreur lors de la connexion à la BDD
         throw new Exception("Connexion à la BDD"); //.$err->getMessage());
       }
 

@@ -7,7 +7,7 @@ $style = '';
 <a href="index.php?action=accueil">Retour à l'accueil</a>
 
 <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>>
-            
+
     <label>NOM
         <input type="text" name="nom" value="" placeholder="<?= $infosCompte[0]['nom'] ?>">
     </label>
@@ -31,5 +31,3 @@ $style = '';
 <?php
 
 $script = '';
-
-

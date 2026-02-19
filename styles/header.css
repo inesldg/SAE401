@@ -1,5 +1,5 @@
 /* Conteneur header global (hauteur gérée par script.js au scroll) */
-body > header {
+body>header {
     position: sticky;
     top: 0;
     z-index: 1000;

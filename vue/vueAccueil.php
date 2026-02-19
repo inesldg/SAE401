@@ -47,7 +47,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
         <div class="accueil-escapes__grille">
 
 
-        <!-- ------------------------------ -->
+            <!-- ------------------------------ -->
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>
                 <div class="accueil-escape-card__corps">
@@ -68,7 +68,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
                     <a href="#" class="accueil-escape-card__btn">Voir détails</a>
                 </div>
             </article>
-        <!-- ------------------------------ -->
+            <!-- ------------------------------ -->
 
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>
@@ -174,9 +174,8 @@ if (isset($acces[0]['statut'])) {
             echo "<div>vous n'êtes pas connecté</div>
             <a href='index.php?action=pageConnexion'>Connexion</a>
             <a href='index.php?action=pageInscription'>Inscription</a>";
-
     }
-}// else {
+} // else {
 //     echo "<div>vous n'êtes pas connecté</div>
 //     <a href='index.php?action=pageConnexion'>Connexion</a>
 //     <a href='index.php?action=pageInscription'>Inscription</a>";

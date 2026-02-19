@@ -43,13 +43,13 @@ body {
     font-weight: 900;
     font-size: 5rem;
     color: transparent;
-    background: linear-gradient(to bottom, #FFF2D5 , #A3730C 50%, #A3730C 100%);
+    background: linear-gradient(to bottom, #FFF2D5, #A3730C 50%, #A3730C 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.content_404{
+.content_404 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@ body {
 }
 
 .Erreur_404 span {
-    background: linear-gradient(to bottom, #FFF2D5 , #A3730C 50%, #A3730C 100%);
+    background: linear-gradient(to bottom, #FFF2D5, #A3730C 50%, #A3730C 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -78,7 +78,7 @@ body {
     font-size: 20rem;
 }
 
-.msg_erreur{
+.msg_erreur {
     font-family: var(--titre);
     font-size: 2.5rem;
     color: var(--gold-clair);

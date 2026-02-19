@@ -172,8 +172,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <div>' . $evaluation['avis_date'] . '</div>
                 <div>' . $evaluation['commentaire'] . '</div>';
                 }
-            }
-            ;
+            };
             ?>
         </div>
 

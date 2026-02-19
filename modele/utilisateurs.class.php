@@ -4,7 +4,7 @@ require_once "modele/database.class.php";
 
 class utilisateurs extends database
 {
-    
+
     public function listeUtilisateurs($mail)
     {
         $req = 'SELECT id_utilisateur, nom, prenom, mail, tel, statut FROM utilisateur 
@@ -19,5 +19,4 @@ class utilisateurs extends database
         $modifPrenom = $this->execReqPrep($req, array($acces, $id));
         return $modifPrenom;
     }
-
 }

@@ -1,7 +1,8 @@
 <?php
 require_once "modele/database.class.php";
 
-class inscription extends database {
+class inscription extends database
+{
 
     public function inscrire($nom, $prenom, $mail, $phone, $mdpCrypte)
     {
