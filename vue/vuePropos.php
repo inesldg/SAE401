@@ -5,13 +5,8 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 // ob_start();
 ?>
 
-<a href="index.php?action=accueil">Retour à l'accueil</a>
-
-<!-- ------ ICI mettre le code HTML ------ -->
-
-
 <section class="hero-section">
-    <h1>L'Énigme à ciel ouvert</h1>
+    <h1>L'<span class="texte-doré">Énigme</span> à ciel ouvert</h1>
     <p>Découvrez l'envers du décor de votre ville.</p>
 </section>
 
