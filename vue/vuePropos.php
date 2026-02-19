@@ -2,7 +2,6 @@
 
 $style = '<link rel="stylesheet" href="styles/about.css">';
 
-// ob_start();
 ?>
 
 <section class="hero-section">
@@ -70,7 +69,5 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 </section>
 
 <?php
-
-// $main = ob_get_clean();
 
 $script = '';

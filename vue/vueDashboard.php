@@ -1,9 +1,8 @@
 <?php
 $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 
-
-
 ?>
+
 <div class="contenu">
     <div class="menu-gauche">
         <div class="admin">Administrateur</div>
@@ -192,9 +191,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 
     </div>
 </div>
+
 <?php
-
-
-
 
 $script = '';

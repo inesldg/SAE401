@@ -2,7 +2,6 @@
 
 $style = '';
 
-ob_start();
 ?>
 
 <div>Ajoutez une nouvel escape game</div>
@@ -45,7 +44,5 @@ ob_start();
 </form>
 
 <?php
-
-$main = ob_get_clean();
 
 $script = '';

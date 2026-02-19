@@ -59,13 +59,17 @@ class routeur
                         case "game":
                             $this->ctlEscapeGames->pageGame($_GET['idEscapeGame']);
                             break;
-
                         case "propos":
                             $this->ctlPages->pagePropos();
                             break;
-
                         case "confirmation":
                             $this->ctlPages->pageConfirmation();
+                            break;
+                        case "compte":
+                            $this->ctlCompte->infosCompte($message = "", $mail);
+                            break;
+                        case "modifInfos":
+                            $this->ctlCompte->modifInfos($message = "", $mail);
                             break;
 
 

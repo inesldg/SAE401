@@ -2,8 +2,6 @@
 
 $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
-
-// ob_start();
 ?>
 
 <!-- ------ ICI mettre le code HTML ------ -->
@@ -41,7 +39,5 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
 
 <?php
-
-// $main = ob_get_clean();
 
 $script = '';

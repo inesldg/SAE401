@@ -2,7 +2,6 @@
 
 $style = '<link rel="stylesheet" href="styles/inscription.css">';
 
-// ob_start();
 ?>
 
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
@@ -62,7 +61,5 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
 </body>
 
 <?php
-
-// $main = ob_get_clean();
 
 $script = '';

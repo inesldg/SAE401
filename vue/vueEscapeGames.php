@@ -2,7 +2,6 @@
 
 $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
-// ob_start();
 ?>
 
 <section class="hero-section">
@@ -28,7 +27,6 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
         <?php
 
-        // $main = ob_get_clean();
         $main;
 
         $script = '';
