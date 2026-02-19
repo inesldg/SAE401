@@ -1,10 +1,10 @@
 :root {
     /* Couleurs principales */
     --blanc-casse: #F2F2F2;
-    --gold-clair: #C5A059;
+    --gold-clair: #c5a059;
     --golf-fonce: #A3730C;
     --bleu-fonce: #101A23;
-    --bleu-clair: #2B4359;
+    --bleu-clair: #2b4359;
     --noir: #0A0A0A;
     --marron-clair: #4B2009;
     --marron-fonce: #322611;
@@ -104,4 +104,63 @@ h1{
     font-size: 14px;
     font-weight: lighter;
     margin-bottom: 32px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    border: solid var(--bleu-clair) 1px;
+    border-radius: 10px;
+    background-color: var(--bleu-fonce);
+    transition: stroke 0.3s ease; /* pour un effet fluide */
+}
+
+.card:hover{
+    border: solid rgb(197, 160, 89, 0.2) 1px;
+    background-color: rgb(197, 160, 89, 0.1);
+}
+
+/* SVG initial */
+.part2 svg path {
+    stroke: #F2F2F2; /* couleur initiale */
+    transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
+/* Au hover sur la carte entière */
+.card:hover .part2 svg path {
+    stroke: #A3730C; /* couleur du contour */
+}
+
+.part1>h2{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.donnee{
+    display: flex;
+    align-items: flex-end;
+}
+
+.chiffre{
+    margin-top: 5px;
+    font-size: 24px;
+    
+}
+
+.texte{
+    font-size: 14px;
+    margin-left: 15px;
+    opacity: 50%;
+    font-weight: 200;
+}
+
+.part2{
+    margin-left: 180px;
 }
