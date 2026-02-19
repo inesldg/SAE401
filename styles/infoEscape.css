@@ -207,17 +207,6 @@ h2 {
     cursor: pointer;
 }
 
-.bouton-panier {
-    width: 100%;
-    background: transparent;
-    color: white;
-    border: 1px solid var(--gold-clair);
-    padding: 15px;
-    border-radius: 25px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
 .total-ligne {
     display: flex;
     justify-content: space-between;
@@ -329,4 +318,9 @@ h2 {
 /* On cache le petit point doré si le jour actuel est sélectionné pour plus de propreté */
 .jour-cal.jour-aujourdhui.selectionne::after {
     display: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }

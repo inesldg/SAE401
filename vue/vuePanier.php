@@ -88,7 +88,8 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
 
 
-                    <button type="submit" class="bouton-valider">Valider le paiement</button>
+                    <button type="submit" class="bouton-valider"><a href="index.php?action=confirmation">Valider le
+                            paiement</a></button>
                 </form>
             </div>
         </div>

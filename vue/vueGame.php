@@ -146,8 +146,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <span style="color: white;">220.00 €</span>
             </div>
 
-            <button class="bouton-reserver">Réserver maintenant</button>
-            <button class="bouton-panier">Ajouter au panier</button>
+            <button class="bouton-reserver"><a href="index.php?action=panier">Réserver maintenant</a></button>
         </section>
     </div>
 
