@@ -34,6 +34,7 @@ class ctlAdmin
         $annee = date("Y");    // année courante
 
         $revenus = $this->admin->getRevenus($mois, $annee);
+        // $reservationsListe = $this->admin->getListeReservations();
 
 
         $vue = new vue("Dashboard");
@@ -44,7 +45,8 @@ class ctlAdmin
             "escapes" => $escapes['total'],
             "revenus" => $revenus['revenus'],
             "noteMoyenne" => $noteMoyenne['moyenne'],
-            "occupation" => $occupation['totalPers']
+            "occupation" => $occupation['totalPers'],
+            // "listeReservations" => $reservationsListe
         ));
     }
 }

@@ -148,6 +148,48 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 
         <h1>RÉSERVATIONS RÉCENTES</h1>
 
+        <!-- <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ESCAPE</th>
+                    <th>CLIENT</th>
+                    <th>DATE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php if (!empty($listeReservations)): ?>
+                    <?php foreach ($listeReservations as $reservation): ?>
+                        <tr>
+                            <td><?= $reservation['id_reserver'] ?></td>
+
+                            <td><?= $reservation['nom_escape'] ?></td>
+
+                            <td>
+                                <?= $reservation['prenom'] . " " . $reservation['nom'] ?>
+                            </td>
+
+                            <td>
+                                <?= date("d/m/Y", strtotime($reservation['reserver_date'])) ?>
+                                - <?= $reservation['reserver_heure'] ?>
+                            </td>
+
+                            <td>
+                                <?= $reservation['nbr_pers'] * $reservation['prix'] ?> €
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="5">Aucune réservation</td>
+                    </tr>
+                <?php endif; ?>
+
+            </tbody>
+        </table> -->
+
     </div>
 </div>
 <?php

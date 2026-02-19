@@ -67,4 +67,31 @@ class admin extends database
         return array("totalPers" => $res[0]['totalPers'] ?? 0);
     }
 
+
+    // public function getListeReservations()
+    // {
+    //     $req = "SELECT 
+    //             reserver.id_reserver,
+    //             escape.libelle AS nom_escape,
+    //             utilisateur.nom,
+    //             utilisateur.prenom,
+    //             reserver.reserver_date,
+    //             reserver.reserver_heure,
+    //             reserver.nbr_pers,
+    //             tarif.prix
+    //         FROM reserver
+    //         JOIN escape ON reserver.id_escape = escape.id_escape
+    //         JOIN utilisateur ON reserver.id_utilisateur = utilisateur.id_utilisateur
+    //         JOIN tarif ON reserver.id_escape = tarif.id_escape
+    //         ORDER BY reserver.reserver_date DESC";
+
+    //     $res = $this->execReq($req);
+
+    //     // Sécurité si vide
+    //     if (!is_array($res)) {
+    //         return [];
+    //     }
+
+    //     return $res;
+    // }
 }
