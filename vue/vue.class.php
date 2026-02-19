@@ -39,9 +39,20 @@ class vue
 
     $script = "js/script.js";
 
+
     ob_start();
     require "composants/header/header_deconnecte.php";
     $header = ob_get_clean();
+
+    // A FAIRE
+
+    // ob_start();
+    // require "composants/header/header_connecte.php";
+    // $header = ob_get_clean();
+
+    // ob_start();
+    // require "composants/header/header_admin.php";
+    // $header = ob_get_clean();
 
     ob_start();
     require "composants/footer/footer_deconnecte.php";

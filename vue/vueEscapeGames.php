@@ -17,6 +17,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
         </div>
         <!-- COLONNE ESCAPES -->
         <div class="escapes-cartes">
+            
 
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>
@@ -38,9 +39,11 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     </div>
                     <p class="accueil-escape-card__prix">28€ / pers</p>
 
-                    <a href="#" class="accueil-escape-card__btn">Voir détails</a>
+                    <a href="index.php?action=game&idEscapeGame= <?= $game[' id_escape'] ?> ">Voir détails</a>
+
                 </div>
             </article>
+
 
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>

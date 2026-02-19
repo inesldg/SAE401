@@ -77,13 +77,108 @@ body {
     flex: 1;
     text-align: left;
     padding: 2rem;
-    max-width: 600px;
+    max-width: 100px;
 }
 
 .escapes-cartes {
     flex: 1;
-    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 6rem;
+}
+
+    
+.accueil-escape-card {
+    background: #1a242f;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.accueil-escape-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-clair);
+}
+
+
+.accueil-escape-card__img {
+    aspect-ratio: 1;
+    background: #2a3441;
+    flex-shrink: 0;
+}
+
+.accueil-escape-card__corps {
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.accueil-escape-card__titre {
+    font-family: var(--titre);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.accueil-escape-card__desc {
+    font-family: var(--texte);
+    font-size: 0.85rem;
+    color: var(--blanc-casse);
+    line-height: 1.5;
+    margin: 0 0 1rem;
+    flex: 1;
+}
+
+.accueil-escape-card__infos {
+    display: flex;
+    gap: 1rem;
+    font-family: var(--texte);
+    font-size: 0.85rem;
+    color: var(--blanc-casse);
+}
+
+.accueil-escape-card__prix {
+    background: var(--gold-gradient);
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-family: var(--texte);
+    font-size: 1rem;
+    color: #101A23;
+    font-weight: bold;
+    /* margin: 0 0 1rem; */
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+}
+
+.accueil-escape-card__badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.accueil-escape-card__btn {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    font-family: var(--texte);
+    font-size: 0.85rem;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid var(--gold-clair);
+    border-radius: 6px;
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+}
+
+.accueil-escape-card__btn:hover {
+    background: var(--gold-clair);
+    color: var(--fond-sombre);
 }
