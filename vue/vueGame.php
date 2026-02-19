@@ -29,16 +29,10 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
 
             <div class="icones-detail">
-                <div>👥 2 à 12 joueurs</div>
-                <div>🕒 Durée de =
-                    <?= $escapeGame[0]['duree'] ?>h
+                <div>👥 De <?= $escapeGame[0]['nbr_pers_min'] ?> à <?= $escapeGame[0]['nbr_pers_max'] ?> joueurs</div>
+                <div>🕒 Durée de <?= $escapeGame[0]['duree'] ?>h
                 </div>
-
-                <div>
-                    <div>📍 Lieu :</div>
-                    <?= $escapeGame[0]['lieu'] ?>
-                </div>
-
+                <div>📍 Lieu : <?= $escapeGame[0]['lieu'] ?></div>
             </div>
 
             <div class="separateur"></div>
@@ -159,8 +153,6 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
 </div>
 <div>
-    <div>Nombre de personnes minimum = <?= $escapeGame[0]['nbr_pers_min'] ?></div>
-    <div>Nombre de personnes maximum = <?= $escapeGame[0]['nbr_pers_max'] ?></div>
     <div>
         <div>
             <?php
