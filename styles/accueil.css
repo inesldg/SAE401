@@ -225,9 +225,6 @@
 }
 
 /* --- NOS ESCAPES --- */
-.accueil-escapes {
-    /* background: radial-gradient(circle, #253E54 0%, #0b161f91 50%, #0B161F 100%); */
-}
 
 .accueil-escapes__grille {
     display: grid;
