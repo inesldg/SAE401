@@ -1,7 +1,12 @@
 A faire:
 
+Opti:
 -loading lazy sur chaque image 
+- preload - as (pour le css si on y arrive, tp1 front lehmann)
+
+Front:
 -page escapes (en cours)
 -page modif de compte
 
-- back -> if pour définir le header qui s'affiche selon qui est connecté (Inès s'en chargera)
+Back:
+-if pour définir le header qui s'affiche selon qui est connecté (Inès s'en chargera)
