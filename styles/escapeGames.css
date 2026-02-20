@@ -86,9 +86,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 6rem;
+    margin-bottom: 6rem;
+
 }
 
-    
+
 .accueil-escape-card {
     background: #1a242f;
     border-radius: 15px;
