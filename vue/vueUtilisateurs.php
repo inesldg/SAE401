@@ -9,10 +9,10 @@ $style = '';
 <div>
     <div><?= $message ?></div>
 
-<?php
-    foreach ($utilisateurs as $utilisateur){
+    <?php
+    foreach ($utilisateurs as $utilisateur) {
         $result = '
-            <div>'. $utilisateur['mail'] . $utilisateur['statut'] . ' 
+            <div>' . $utilisateur['mail'] . $utilisateur['statut'] . ' 
                 <form method="post" action="' . $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] . '" >
                     <label>
                         <select name="niveauAcces">
@@ -30,10 +30,10 @@ $style = '';
     }
 
     // var_dump(value: $utilisateurs);
-?>
+    ?>
 
-<div>
+    <div>
 
-<?php
+        <?php
 
-$script = '';
+        $script = '';

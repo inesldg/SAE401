@@ -5,7 +5,7 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
 ?>
 
 <h1><?= $message ?></h1>
- 
+
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
 
@@ -23,7 +23,7 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
     <div class="contenu-formulaire">
         <h1 class="titre-connexion">Connexion</h1>
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=connexion" ?>>
-            
+
             <label>ADRESSE MAIL</label>
             <input type="email" name="mail" value="" placeholder="mail@exemple.com" required>
 

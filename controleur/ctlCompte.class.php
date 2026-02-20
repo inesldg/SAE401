@@ -3,11 +3,13 @@
 require_once "modele/compte.class.php";
 require_once "vue/vue.class.php";
 
-class ctlCompte {
+class ctlCompte
+{
 
     private $compte;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->compte = new compte();
     }
 
@@ -32,13 +34,15 @@ class ctlCompte {
         return $id;
     }
 
-    public function deconnexion(){
+    public function deconnexion()
+    {
         session_unset(); // Supprime toutes les variables de session
         session_destroy(); // Détruit la session
         header("Location: index.php");
     }
 
-    public function infosCompte($message, $mail){
+    public function infosCompte($message, $mail)
+    {
         $infosCompte = $this->compte->infosCompte($mail);
 
         $vue = new vue("Compte"); // Instancie la vue appropriée
@@ -61,22 +65,20 @@ class ctlCompte {
         $infosCompte = $this->compte->infosCompte($ancienMail);
         $mdpUtilisateur = $this->compte->getMdp($ancienMail);
 
-        if($nom === "")
+        if ($nom === "")
             $nom = $infosCompte[0]['nom'];
-        if($prenom === "")
+        if ($prenom === "")
             $prenom = $infosCompte[0]['prenom'];
-        if($mail === "")
+        if ($mail === "")
             $mail = $ancienMail;
-    
-        if(password_verify($mdp, $mdpUtilisateur[0]['mdp'])){
+
+        if (password_verify($mdp, $mdpUtilisateur[0]['mdp'])) {
             $this->compte->modifInfos($nom, $prenom, $mail, $ancienMail);
             $_SESSION["acces"] = $mail;
             $infosCompte = $this->compte->infosCompte($mail);
-        
+
             $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Le ou les changement(s) ont été réalisé(s) avec succès</span>"));
-        }
-        else
+        } else
             $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Mot de passe incorrect</span>"));
     }
-
 }

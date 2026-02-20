@@ -50,7 +50,7 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
 
             <label>Confirmer le mot de passe : </label>
             <input type="password" name="mdpConfirm" value="" placeholder="Confirmer le mot de passe" required>
-            
+
             <button type="submit" class="inscription" value="S'inscrire">S'INSCRIRE</button>
             <span><?= $message ?></span>
         </form>

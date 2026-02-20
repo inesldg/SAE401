@@ -75,7 +75,7 @@ h3 {
     padding-bottom: 0;
     text-align: center;
     /* Couleur spécifique demandée */
-    background-color: #1e2f3e; 
+    background-color: #1e2f3e;
     /* Si tu voulais un effet de transparence à 50% sur le fond sombre : */
     /* background-color: rgba(43, 67, 89, 0.5); */
 }
@@ -168,7 +168,8 @@ h3 {
 }
 
 .imgBoussole {
-    width: 250px; /* Taille réduite demandée précédemment */
+    width: 250px;
+    /* Taille réduite demandée précédemment */
     height: auto;
     justify-self: center;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));

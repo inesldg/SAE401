@@ -1,7 +1,8 @@
 <?php
+
 /*************************************
 Classe chargée de l'affichage des vues
-*************************************/
+ *************************************/
 class vue
 {
 
@@ -18,7 +19,7 @@ class vue
 
     Retour : 
 
-  *******************************************************/
+   *******************************************************/
   public function __construct($action)
   {
     $this->fichierVue = "vue/vue" . $action . ".php";
@@ -31,7 +32,7 @@ class vue
 
     Retour : 
 
-  *******************************************************/
+   *******************************************************/
   public function afficher($data)
   {
     global $Conf;
@@ -39,9 +40,20 @@ class vue
 
     $script = "js/script.js";
 
+
     ob_start();
     require "composants/header/header_deconnecte.php";
     $header = ob_get_clean();
+
+    // A FAIRE
+
+    // ob_start();
+    // require "composants/header/header_connecte.php";
+    // $header = ob_get_clean();
+
+    // ob_start();
+    // require "composants/header/header_admin.php";
+    // $header = ob_get_clean();
 
     ob_start();
     require "composants/footer/footer_deconnecte.php";

@@ -3,7 +3,7 @@
     --blanc-casse: #F2F2F2;
     --gold-clair: #c5a059;
     --golf-fonce: #A3730C;
-    --bleu-fonce: #101A23;
+    --bleu-fonce: #101a23;
     --bleu-clair: #2b4359;
     --noir: #0A0A0A;
     --marron-clair: #4B2009;
@@ -78,7 +78,10 @@ body {
     font-size: 14px;
 }
 
-.dash:hover, .calendrier:hover, .avis:hover, .user:hover{
+.dash:hover,
+.calendrier:hover,
+.avis:hover,
+.user:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -97,23 +100,88 @@ body {
     margin-left: -20px;
 }
 
-.contenu{
+.contenu {
     display: flex;
 }
 
-.droite{
-     margin: 32px;
-     flex: 1;
+.droite {
+    margin: 32px;
+    flex: 1;
 }
 
-h1{
+h1 {
     margin: 0;
     font-family: var(--titre);
     margin-bottom: 5px;
 }
 
-.sous-titre{
+.sous-titre {
     font-size: 14px;
     font-weight: lighter;
     margin-bottom: 32px;
+}
+
+.ajouter{
+    text-decoration: none;
+    color: var(--blanc-casse);
+    background: var(--gold-gradient);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.part2{
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+.haut{
+    display: flex;
+    align-items: start;
+}
+
+
+
+
+/* Overlay noir */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(16, 26, 35, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* Popup centrée */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+/* Animation ouverture */
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Croix */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
 }

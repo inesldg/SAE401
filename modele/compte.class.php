@@ -51,5 +51,4 @@ class compte extends database
         $modifMail = $this->execReqPrep($req, array($nom, $prenom, $mail, $ancienMail));
         return $modifMail;
     }
-
 }

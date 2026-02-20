@@ -1,7 +1,8 @@
 <?php
 require_once "modele/database.class.php";
 
-class ajoutEscape extends database {
+class ajoutEscape extends database
+{
 
     public function ajouterEscape($nom, $description, $lieu, $duree, $min, $max)
     {

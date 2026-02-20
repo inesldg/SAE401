@@ -163,16 +163,19 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <div>' . $evaluation['avis_date'] . '</div>
                 <div>' . $evaluation['commentaire'] . '</div>';
                 }
-            }
-            ;
+            };
             ?>
         </div>
 
-        <?php
-        if (isset($_SESSION["acces"])) {
-            echo '<form method="post" action=' . $_SERVER["PHP_SELF"] . "?action=ajouterAvis" . '>
+<?php
+if (isset($_SESSION["acces"])){
+    echo '
+    <div>
+        ' . $message .'
+    </div>
+    <form method="post" action=' . $_SERVER["PHP_SELF"] . '?action=ajouterAvis&idEscapeGame=' . $escapeGame[0]['id_escape'] . '>
         <label>
-            <input type="text" name="avis" value="" placeholder="Commentaire">
+            <input type="text" name="commentaire" value="" placeholder="Commentaire">
         </label>
         <label>
             <select name="note">
@@ -185,6 +188,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <option value="5">5/5</option>
             </select>
         </label>
+        <button type="submit" name="ajoutAvis">Ajouter un avis</button>
     </form>';
         }
 
