@@ -1,0 +1,7 @@
+A faire:
+
+-loading lazy sur chaque image 
+-page escapes (en cours)
+-page modif de compte
+
+- back -> if pour définir le header qui s'affiche selon qui est connecté (Inès s'en chargera)
