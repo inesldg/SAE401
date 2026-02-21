@@ -22,7 +22,7 @@ $style = '';
     <label>Entrez votre mot de passe pour enregistrer
         <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
     </label>
-    <button type="submit" name="connexion" class="bouton-connexion">Modifier</button>
+    <button type="submit" name="modifierInfos">Modifier</button>
     <span>
         <?= $message ?>
     </span>

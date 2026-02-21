@@ -46,53 +46,73 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
     <div class="droite">
 
-        <h1>GESTIONS DES ESCAPES</h1>
-        <div class="sous-titre">X escapes actifs</div>
-
+        <div class="haut">
+            <div class="part1">
+                <h1>GESTIONS DES ESCAPES</h1>
+                <div class="sous-titre">X escapes actifs</div>
+            </div>
+            <div class="part2">
+                <a href="#" class="ajouter" id="btnAjouter">+ Ajouter</a>
+            </div>
+        </div>
     </div>
 
-    <div class="ajout">
-        <div>Ajoutez une nouvel escape game</div>
-        <a href="index.php?action=accueil">Retour à l'accueil</a>
 
-        <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>>
-            <div>
-                <h2>Nouvel escape game</h2>
+    <div class="overlay" id="overlay"></div>
+
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+
+            <span class="close" id="closePopup">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 17.5L17.5 1.5M1.5 1.5L17.5 17.5" stroke="#C5A059" stroke-width="3" stroke-linecap="round" />
+                </svg>
+            </span>
+
+            <div class="ajout">
+                <div>Ajoutez une nouvel escape game</div>
+                <a href="index.php?action=accueil">Retour à l'accueil</a>
+
+                <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>>
+                    <div>
+                        <h2>Nouvel escape game</h2>
+                    </div>
+                    <div>
+                        <label>
+                            <p>Nom : </p>
+                            <input type="text" name="nom" value="" placeholder="Nom" required>
+                        </label>
+                        <label>
+                            <p>Description : </p>
+                            <input type="text" name="description" value="" placeholder="Description" required>
+                        </label>
+                        <label>
+                            <p>Lieu : </p>
+                            <input type="text" name="lieu" value="" placeholder="Lieu" required>
+                        </label>
+                        <label>
+                            <p>Durée : </p>
+                            <input type="number" name="duree" value="" placeholder="0" required>
+                        </label>
+                        <label>
+                            <p>Nombre de personnes minimum : </p>
+                            <input type="number" name="pers_min" value="" placeholder="1" required>
+                        </label>
+                        <label>
+                            <p>Nombre de personnes maximum : </p>
+                            <input type="number" name="pers_max" value="" placeholder="1" required>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="submit" name="ajoutEscape" value="Ajouter aux escape games">
+                    </div>
+                    <span><?= $message ?></span>
+                </form>
             </div>
-            <div>
-                <label>
-                    <p>Nom : </p>
-                    <input type="text" name="nom" value="" placeholder="Nom" required>
-                </label>
-                <label>
-                    <p>Description : </p>
-                    <input type="text" name="description" value="" placeholder="Description" required>
-                </label>
-                <label>
-                    <p>Lieu : </p>
-                    <input type="text" name="lieu" value="" placeholder="Lieu" required>
-                </label>
-                <label>
-                    <p>Durée : </p>
-                    <input type="number" name="duree" value="" placeholder="0" required>
-                </label>
-                <label>
-                    <p>Nombre de personnes minimum : </p>
-                    <input type="number" name="pers_min" value="" placeholder="1" required>
-                </label>
-                <label>
-                    <p>Nombre de personnes maximum : </p>
-                    <input type="number" name="pers_max" value="" placeholder="1" required>
-                </label>
-            </div>
-            <div>
-                <input type="submit" name="ajoutEscape" value="Ajouter aux escape games">
-            </div>
-            <span><?= $message ?></span>
-        </form>
+        </div>
     </div>
-</div>
 
-<?php
+    <?php
 
-$script = '';
+    $script = '<script src="js/ajoutescape.js"></script>';

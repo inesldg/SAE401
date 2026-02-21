@@ -29,16 +29,10 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
 
             <div class="icones-detail">
-                <div>👥 2 à 12 joueurs</div>
-                <div>🕒 Durée de =
-                    <?= $escapeGame[0]['duree'] ?>h
+                <div>👥 De <?= $escapeGame[0]['nbr_pers_min'] ?> à <?= $escapeGame[0]['nbr_pers_max'] ?> joueurs</div>
+                <div>🕒 Durée de <?= $escapeGame[0]['duree'] ?>h
                 </div>
-
-                <div>
-                    <div>📍 Lieu :</div>
-                    <?= $escapeGame[0]['lieu'] ?>
-                </div>
-
+                <div>📍 Lieu : <?= $escapeGame[0]['lieu'] ?></div>
             </div>
 
             <div class="separateur"></div>
@@ -159,8 +153,6 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
 </div>
 <div>
-    <div>Nombre de personnes minimum = <?= $escapeGame[0]['nbr_pers_min'] ?></div>
-    <div>Nombre de personnes maximum = <?= $escapeGame[0]['nbr_pers_max'] ?></div>
     <div>
         <div>
             <?php
@@ -176,11 +168,15 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
             ?>
         </div>
 
-        <?php
-        if (isset($_SESSION["acces"])) {
-            echo '<form method="post" action=' . $_SERVER["PHP_SELF"] . "?action=ajouterAvis" . '>
+<?php
+if (isset($_SESSION["acces"])){
+    echo '
+    <div>
+        ' . $message .'
+    </div>
+    <form method="post" action=' . $_SERVER["PHP_SELF"] . '?action=ajouterAvis&idEscapeGame=' . $escapeGame[0]['id_escape'] . '>
         <label>
-            <input type="text" name="avis" value="" placeholder="Commentaire">
+            <input type="text" name="commentaire" value="" placeholder="Commentaire">
         </label>
         <label>
             <select name="note">
@@ -193,6 +189,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <option value="5">5/5</option>
             </select>
         </label>
+        <button type="submit" name="ajoutAvis">Ajouter un avis</button>
     </form>';
         }
 

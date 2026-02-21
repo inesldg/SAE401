@@ -37,9 +37,9 @@
     <img class="imglogo" src="images/logo.png" alt="logo elife">
 
     <div class="links">
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Données personnelles</a>
+        <a href="index.php?action=legal#mentionsLegales">Mentions légales</a>
+        <a href="index.php?action=legal#politique">Politique de confidentialité</a>
+        <a href="index.php?action=legal#donneesPerso">Données personnelles</a>
     </div>
 
     <div class="social-icons">
