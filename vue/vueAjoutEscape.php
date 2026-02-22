@@ -82,7 +82,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                             <input type="text" name="nom" value="" placeholder="Nom de l'escape" required>
                         </label>
 
-                        <label>
+                        <label class="image-label">
                             <span>Photo de l’escape</span>
                             <!-- L'attribut accept permet de limiter les types de fichiers -->
                             <input type="file"
@@ -90,6 +90,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                                 accept="image/jpeg,image/png,image/webp,image/gif,image/bmp">
                             <!-- Limite la taille du fichier (500 Ko) -->
                             <input type="hidden" name="MAX_FILE_SIZE" value="500000">
+                            <div class="choix">Choisir un fichier...</div>
                         </label>
 
                         <label>
