@@ -71,8 +71,6 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
             </span>
 
             <div class="ajout">
-                <div>Ajoutez une nouvel escape game</div>
-                <a href="index.php?action=accueil">Retour à l'accueil</a>
 
                 <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>>
                     <div>
@@ -80,32 +78,32 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                     </div>
                     <div>
                         <label>
-                            <p>Nom : </p>
-                            <input type="text" name="nom" value="" placeholder="Nom" required>
+                            <span>Nom</span>
+                            <input type="text" name="nom" value="" placeholder="Nom de l'escape" required>
                         </label>
                         <label>
-                            <p>Description : </p>
-                            <input type="text" name="description" value="" placeholder="Description" required>
+                            <span>Description</span>
+                            <input type="text" name="description" value="" placeholder="Description de l'escape" required>
                         </label>
                         <label>
-                            <p>Lieu : </p>
-                            <input type="text" name="lieu" value="" placeholder="Lieu" required>
+                            <span>Lieu</span>
+                            <input type="text" name="lieu" value="" placeholder="Lieu de l'escape" required>
                         </label>
                         <label>
-                            <p>Durée : </p>
-                            <input type="number" name="duree" value="" placeholder="0" required>
+                            <span>Durée</span>
+                            <input type="number" name="duree" value="" placeholder="Durée de l'escape" required>
                         </label>
                         <label>
-                            <p>Nombre de personnes minimum : </p>
-                            <input type="number" name="pers_min" value="" placeholder="1" required>
+                            <span>Nb de pers min</span>
+                            <input type="number" name="pers_min" value="" placeholder="Nombre de personnes min" required>
                         </label>
                         <label>
-                            <p>Nombre de personnes maximum : </p>
-                            <input type="number" name="pers_max" value="" placeholder="1" required>
+                            <span>Nb de pers max</span>
+                            <input type="number" name="pers_max" value="" placeholder="Nombre de personnes max" required>
                         </label>
                     </div>
                     <div>
-                        <input type="submit" name="ajoutEscape" value="Ajouter aux escape games">
+                        <input type="submit" name="ajoutEscape" value="Ajouter aux escape games" class="valider">
                     </div>
                     <span><?= $message ?></span>
                 </form>
