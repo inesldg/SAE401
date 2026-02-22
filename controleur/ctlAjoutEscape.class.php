@@ -16,13 +16,38 @@ class ctlAjoutEscape
     {
         $vue = new vue("AjoutEscape"); // Instancie la vue appropriée
 
-        if ($duree >= 0) {
-            if ($min <= $max) {
-                $this->ajoutEscape->ajouterEscape($nom, $description, $lieu, $duree, $min, $max);
-                header("location: index.php");
-            } else
-                $vue->afficher(array("message" => "<span>Le nombre de personnes minimum ne peut pas être plus grand que le maximum</span>"));
-        } else
+        // Validation
+        if ($duree < 0) {
             $vue->afficher(array("message" => "<span>La durée doit être supérieure à 0</span>"));
+            return;
+        }
+
+        if ($min > $max) {
+            $vue->afficher(array("message" => "<span>Le nombre de personnes minimum ne peut pas être plus grand que le maximum</span>"));
+            return;
+        }
+
+        // Insertion en BDD
+        $id_escape = $this->ajoutEscape->ajouterEscape($nom, $description, $lieu, $duree, $min, $max);
+
+        // Upload de la photo
+        if (isset($_FILES['photoEscape']) && $_FILES['photoEscape']['error'] === 0 && $id_escape) {
+            $fichier = $_FILES['photoEscape']; // récupère le fichier uploadé
+            $dossier = "photos_escapes/"; // dossier de destination
+
+            // Crée le dossier s'il n'existe pas
+            if (!is_dir($dossier)) mkdir($dossier, 0755, true);
+
+            // Récupère l'extension du fichier (jpg, png, etc.)
+            $extension = pathinfo($fichier['name'], PATHINFO_EXTENSION); // récupère l'extension
+            
+             // Nom du fichier = ID de l'escape + extension
+            $photoNom = $id_escape . "." . $extension;
+            $cheminComplet = $dossier . $photoNom;
+
+            // Déplace le fichier depuis le dossier temporaire vers le dossier final
+            move_uploaded_file($fichier['tmp_name'], $cheminComplet);
+        }
+
     }
 }

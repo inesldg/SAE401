@@ -72,7 +72,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
             <div class="ajout">
 
-                <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>>
+                <form method="post" enctype="multipart/form-data" action="<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>">
                     <div>
                         <h2>Nouvel escape game</h2>
                     </div>
@@ -81,6 +81,17 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                             <span>Nom</span>
                             <input type="text" name="nom" value="" placeholder="Nom de l'escape" required>
                         </label>
+
+                        <label>
+                            <span>Photo de l’escape</span>
+                            <!-- L'attribut accept permet de limiter les types de fichiers -->
+                            <input type="file"
+                                name="photoEscape"
+                                accept="image/jpeg,image/png,image/webp,image/gif,image/bmp">
+                            <!-- Limite la taille du fichier (500 Ko) -->
+                            <input type="hidden" name="MAX_FILE_SIZE" value="500000">
+                        </label>
+
                         <label>
                             <span>Description</span>
                             <input type="text" name="description" value="" placeholder="Description de l'escape" required>
