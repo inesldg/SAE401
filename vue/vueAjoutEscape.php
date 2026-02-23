@@ -13,7 +13,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 6V0H18V6H10ZM0 10V0H8V10H0ZM10 18V8H18V18H10ZM0 18V12H8V18H0ZM2 8H6V2H2V8ZM12 16H16V10H12V16ZM12 4H16V2H12V4ZM2 16H6V14H2V16Z" fill="#F2F2F2" />
                 </svg>
-                <div id="dashAdmin" >Dashboard</div>
+                <div id="dashAdmin">Dashboard</div>
             </a>
             <a href="index.php?action=ajoutEscape" class="escape">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V18L4.467 15.4C4.81319 15.1404 5.23426 15 5.667 15H17C17.5304 15 18.0391 14.7893 18.4142 14.4142C18.7893 14.0391 19 13.5304 19 13V3C19 2.46957 18.7893 1.96086 18.4142 1.58579C18.0391 1.21071 17.5304 1 17 1Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <div id="avisAdmin" >Avis</div>
+                <div id="avisAdmin">Avis</div>
             </a>
         </div>
     </div>
@@ -49,18 +49,97 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
         <div class="haut">
             <div class="part1">
                 <h1 id="gestionAdmin">GESTIONS DES ESCAPES</h1>
-                <div class="sous-titre" id="nbEscapeAdmin" >X escapes actifs</div>
+                <div class="sous-titre" id="nbEscapeAdmin">
+                    <?= isset($escapes) ? count($escapes) : 0 ?> escapes actifs
+                </div>
             </div>
             <div class="part2">
                 <a href="#" class="ajouter" id="btnAjouter">+ Ajouter</a>
             </div>
         </div>
+
+        <div class="bas">
+            <table class="table-escapes">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Lieu</th>
+                        <th>Durée</th>
+                        <th>Joueurs</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($escapes)) : ?>
+                        <?php foreach ($escapes as $escape) : ?>
+                            <tr>
+
+                                <!-- IMAGE -->
+                                <td>
+                                    <?php
+                                    $dossier = "photos_escapes/";
+                                    $id = $escape['id_escape'];
+
+                                    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                                    $imagePath = null;
+
+                                    foreach ($extensions as $ext) {
+                                        if (file_exists($dossier . $id . "." . $ext)) {
+                                            $imagePath = $dossier . $id . "." . $ext;
+                                            break;
+                                        }
+                                    }
+                                    ?>
+
+                                    <?php if ($imagePath) : ?>
+                                        <img src="<?= $imagePath ?>" width="60">
+                                    <?php else : ?>
+                                        <div class="placeholder-img"></div>
+                                    <?php endif; ?>
+                                </td>
+
+                                <!-- NOM -->
+                                <td><?= htmlspecialchars($escape['nom']) ?></td>
+
+                                <!-- DESCRIPTION -->
+                                <td><?= htmlspecialchars($escape['description']) ?></td>
+
+                                <!-- LIEU -->
+                                <td><?= htmlspecialchars($escape['lieu']) ?></td>
+
+                                <!-- DURÉE -->
+                                <td><?= htmlspecialchars($escape['duree']) ?> min</td>
+
+                                <!-- JOUEURS -->
+                                <td><?= $escape['nbr_pers_min'] ?> - <?= $escape['nbr_pers_max'] ?></td>
+
+
+                                <!-- ACTIONS -->
+                                <td>
+                                    <a href="index.php?action=modifierEscape&id=<?= $escape['id_escape'] ?>">✏️</a>
+                                    <a href="index.php?action=supprimerEscape&id=<?= $escape['id_escape'] ?>">🗑️</a>
+                                </td>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <tr>
+                            <td colspan="6">Aucun escape enregistré.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
+
+
+
+
     <div class="overlay" id="overlay"></div>
-
-
     <div class="popup" id="popup">
         <div class="popup-content">
 
@@ -74,11 +153,11 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
                 <form method="post" enctype="multipart/form-data" action="<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>">
                     <div>
-                        <h2 id="nvEscapeAjout" >Nouvel escape game</h2>
+                        <h2 id="nvEscapeAjout">Nouvel escape game</h2>
                     </div>
                     <div>
                         <label>
-                            <span id="nomNvEscape" >Nom</span>
+                            <span id="nomNvEscape">Nom</span>
                             <input type="text" name="nom" value="" placeholder="Nom de l'escape" required>
                         </label>
 
@@ -94,7 +173,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                         </label>
 
                         <label>
-                            <span id="descriptionNvEscape" >Description</span>
+                            <span id="descriptionNvEscape">Description</span>
                             <input type="text" name="description" value="" placeholder="Description de l'escape" required>
                         </label>
                         <label>

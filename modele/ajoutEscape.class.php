@@ -19,4 +19,10 @@ class ajoutEscape extends database
         // Retourne l'ID si trouvé, sinon null
         return $result[0]['id_escape'] ?? null;
     }
+
+    public function getAllEscapes()
+    {
+        $req = "SELECT * FROM escape ORDER BY id_escape DESC";
+        return $this->execReq($req);
+    }
 }
