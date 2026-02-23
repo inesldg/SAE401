@@ -103,14 +103,6 @@ let trad = {
         "fr": "Nouvel escape game",
         "en": "",
     },
-    "#nomNvEscape": {
-        "fr": "Nom",
-        "en": "",
-    },
-    "#PhotoNvEscape": {
-        "fr": "Photo de l’escape",
-        "en": "",
-    },
     "#choixFichier": {
         "fr": "Choisir un fichier...",
         "en": "",
@@ -359,6 +351,51 @@ let trad = {
     },
     "#reserverGames": {
         "fr": "Réserver maintenant",
+        "en": "",
+    },
+
+    // ******************************** vue inscription *************************************************
+
+    "#sinscrireInscr": {
+        "fr": "S'inscrire",
+        "en": "",
+    },
+    "#mpdInscrip": {
+        "fr": "MOT DE PASSE",
+        "en": "",
+    },
+    "#confmpdInscrip": {
+        "fr": "Confirmer le mot de passe :",
+        "en": "",
+    },
+    "#seconnecInscrip": {
+        "fr": "Déjà un compte ? Se connecter",
+        "en": "",
+    },
+
+    // ******************************** vue Legal *************************************************
+    "#mentionsLegalesLegal": {
+        "fr": "Mentions Légales",
+        "en": "",
+    },
+    "#politiqueLegal": {
+        "fr": "Politique de confidentialité",
+        "en": "",
+    },
+    "#donnéesLegal": {
+        "fr": "Données personnelles",
+        "en": "",
+    },
+    "#textmentionsLegal": {
+        "fr": "",
+        "en": "",
+    },
+    "#textpolitiqueLegal": {
+        "fr": "",
+        "en": "",
+    },
+    "#textdonneeLegal": {
+        "fr": "",
         "en": "",
     },
 }
