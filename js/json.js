@@ -446,20 +446,53 @@ let trad = {
     },
 
     // ******************************** vue Propos *************************************************
-    "#panierPanier": {
-        "fr": "Votre Panier",
+    "#soustitrePropos": {
+        "fr": "Découvrez l'envers du décor de votre ville.",
         "en": "",
     },
-    "#supprPanier": {
-        "fr": "SUPPRIMER",
+    "#explicationPropos": {
+        "fr": "L'origine du nom",
         "en": "",
     },
-    "#codePanier": {
-        "fr": "Code Promo / Bons ?",
+    "#explication2Propos": {
+        "fr": "Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ? ELIFE est né d'une vision : briser les frontières de l'escape game traditionnel.",
         "en": "",
     },
-    "#appliquerPanier": {
-        "fr": "Appliquer",
+    "#explicationsuitePropos": {
+        "fr": "Le nom évoque l'alliance entre l'exploration urbaine et l'adrénaline de l'enquête. Nous avons voulu sortir le jeu des sous-sols pour transformer les parcs et les monuments en mécanismes géants.",
+        "en": "",
+    },
+    "#mondePropos": {
+        "fr": "Le monde est votre salle d'évasion",
+        "en": "",
+    },
+    "#libertePropos": {
+        "fr": "Liberté Totale",
+        "en": "",
+    },
+    "#libertéexplicationPropos": {
+        "fr": "Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ? ELIFE est né d'une vision : briser les frontières de l'escape game traditionnel.",
+        "en": "",
+    },
+    "#explicationsuitePropos": {
+        "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
+        "en": "",
+    },
+
+    "#parcoursPropos": {
+        "fr": "Parcours Thématiques",
+        "en": "",
+    },
+    "#parcoursexplicationPropos": {
+        "fr": "Liberté Totale",
+        "en": "",
+    },
+    "#realitéaugPropos": {
+        "fr": "Réalité Augmentée",
+        "en": "",
+    },
+    "#realitePropos": {
+        "fr": "Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à l'œil nu.",
         "en": "",
     },
 }
