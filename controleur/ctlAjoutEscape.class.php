@@ -48,6 +48,10 @@ class ctlAjoutEscape
             // Déplace le fichier depuis le dossier temporaire vers le dossier final
             move_uploaded_file($fichier['tmp_name'], $cheminComplet);
         }
+
+        // Redirection vers la liste après ajout
+        header("Location: index.php?action=pageAjoutEscape");
+        exit;
     }
 
     public function afficherEscapes()
