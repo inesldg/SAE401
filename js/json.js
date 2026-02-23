@@ -44,7 +44,7 @@ let trad = {
         "fr": "CLIENTS",
         "en": "",
     },
-    // ******************************** vue ajout escape game *************************************************
+    // ******************************** vue ajout escape game + qqls elt de dashboard *************************************************
     "#adminAdministrateur": {
         "fr": "Administrateur",
         "en": "",
@@ -198,6 +198,53 @@ let trad = {
     },
     "#goinscrConnexion": {
         "fr": "Pas encore de compte ? S'inscrire",
+        "en": "",
+    },
+
+    // ******************************** vue Dash *************************************************
+
+    "#soustitreDash": {
+        "fr": "Vue d’ensemble de l’activité",
+        "en": "",
+    },
+    "#reservationDash": {
+        "fr": "RÉSERVATION",
+        "en": "",
+    },
+    "#confirmeeDash": {
+        "fr": "confirmées",
+        "en": "",
+    },
+    "#inscritDash": {
+        "fr": "inscrit",
+        "en": "",
+    },
+    "#actifDash": {
+        "fr": "actifs",
+        "en": "",
+    },
+    "#revenusdash": {
+        "fr": "REVENUS",
+        "en": "",
+    },
+    "#cemoisDash": {
+        "fr": "ce mois",
+        "en": "",
+    },
+    "#moyenneDash": {
+        "fr": "NOTE MOYENNE",
+        "en": "",
+    },
+    "#tauxdoccupationDash": {
+        "fr": "TAUX D'OCCUPATION",
+        "en": "",
+    },
+    "#prsnDash": {
+        "fr": "personnes",
+        "en": "",
+    },
+    "#reservationsDash": {
+        "fr": "RÉSERVATIONS RÉCENTES",
         "en": "",
     },
 }
