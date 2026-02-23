@@ -281,12 +281,84 @@ let trad = {
     },
 
     // ******************************** vue Games *************************************************
-    "#titreorEscapGam": {
-        "fr": "mission immersive",
+    "#retourescapeGames": {
+        "fr": "Retour aux escape games",
         "en": "",
     },
-    "#choixEscapGam": {
-        "fr": "Choisissez votre univers !",
+    "#titreGames": {
+        "fr": "In vino Veritas L'escape game mélant nature et découverte locale",
+        "en": "",
+    },
+    "#prixGames": {
+        "fr": "A partir de 55€/pers.",
+        "en": "",
+    },
+    "#nbAvisGames": {
+        "fr": "avis",
+        "en": "",
+    },
+    "#lieuGames": {
+        "fr": "Lieu :",
+        "en": "",
+    },
+    "#detailGames": {
+        "fr": "détails",
+        "en": "",
+    },
+    "#voirAvisGames": {
+        "fr": "Voir tous les avis",
+        "en": "",
+    },
+    "#selectionGames": {
+        "fr": "Sélectionnez vos préférences pour l'aventure.",
+        "en": "",
+    },
+    "#Sélectionnez votre date pour l'aventure": {
+        "fr": "détails",
+        "en": "",
+    },
+    "#lundi": {
+        "fr": "lun",
+        "en": "",
+    },
+    "#mardi": {
+        "fr": "mar",
+        "en": "",
+    },
+    "#mercredi": {
+        "fr": "mer",
+        "en": "",
+    },
+    "#jeudi": {
+        "fr": "jeu",
+        "en": "",
+    },
+    "#vendredi": {
+        "fr": "vend",
+        "en": "",
+    },
+    "#samedi": {
+        "fr": "sam",
+        "en": "",
+    },
+    "#dimanche": {
+        "fr": "dim",
+        "en": "",
+    },
+    "#horaireGames": {
+        "fr": "horaire",
+        "en": "",
+    },
+    "#participGames": {
+        "fr": "Participants",
+        "en": "",
+    },
+    "#totalGames": {
+        "fr": "Total",
+        "en": "",
+    },
+    "#reserverGames": {
+        "fr": "Réserver maintenant",
         "en": "",
     },
 }
