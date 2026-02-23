@@ -159,10 +159,6 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
     </div>
 
 
-
-
-
-
     <div class="overlay" id="overlay"></div>
     <div class="popup" id="popup">
         <div class="popup-content">
@@ -205,7 +201,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                             <input type="text" name="lieu" value="" placeholder="Lieu de l'escape" required>
                         </label>
                         <label>
-                            <span id="dureeNvEscape">Durée</span>
+                            <span id="dureeNvEscape">Durée (en min)</span>
                             <input type="number" name="duree" value="" placeholder="Durée de l'escape" required>
                         </label>
                         <label>
