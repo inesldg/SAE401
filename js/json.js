@@ -158,4 +158,26 @@ let trad = {
         "fr": "Modifier",
         "en": "",
     },
+    // ******************************** vue confirmation *************************************************
+    "#accrocheConf": {
+        "fr": "Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace.",
+        "en": "",
+    },
+    "#bientotConf": {
+        "fr": "À bientôt chez !",
+        "en": "",
+    },
+    "#goldElifeConf": {
+        "fr": "ELIFE",
+        "en": "",
+    },
+    "#retourAccConf": {
+        "fr": "Retour à la page d'accueil",
+        "en": "",
+    },
+    "#voirCommandeConf": {
+        "fr": "Voir ma commande",
+        "en": "",
+    },
+
 }
