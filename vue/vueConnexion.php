@@ -21,16 +21,16 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
     </svg>
 
     <div class="contenu-formulaire">
-        <h1 class="titre-connexion">Connexion</h1>
+        <h1 class="titre-connexion" id="connexConnexion">Connexion</h1>
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=connexion" ?>>
 
-            <label>ADRESSE MAIL</label>
+            <label id="mailConnexion">ADRESSE MAIL</label>
             <input type="email" name="mail" value="" placeholder="mail@exemple.com" required>
 
-            <label>MOT DE PASSE</label>
+            <label id="mdpConnexion">MOT DE PASSE</label>
             <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
 
-            <button type="submit" name="connexion" class="bouton-connexion">SE CONNECTER</button>
+            <button type="submit" name="connexion" class="bouton-connexion" id="seconnecterConnexion">SE CONNECTER</button>
 
             <span>
                 <?= $message ?>
@@ -39,7 +39,7 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
         </form>
 
 
-        <a href="index.php?action=pageInscription" class="lien-inscription">Pas encore de compte ? S'inscrire</a>
+        <a href="index.php?action=pageInscription" class="lien-inscription" id="goinscrConnexion">Pas encore de compte ? S'inscrire</a>
 
     </div>
 </div>

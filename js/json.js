@@ -179,5 +179,25 @@ let trad = {
         "fr": "Voir ma commande",
         "en": "",
     },
-
+    // ******************************** vue connexion *************************************************
+    "#mailConnexion": {
+        "fr": "ADRESSE MAIL",
+        "en": "",
+    },
+    "#connexConnexion": {
+        "fr": "Connexion",
+        "en": "",
+    },
+    "#mdpConnexion": {
+        "fr": "MOT DE PASSE",
+        "en": "",
+    },
+    "#seconnecterConnexion": {
+        "fr": "SE CONNECTER",
+        "en": "",
+    },
+    "#goinscrConnexion": {
+        "fr": "Pas encore de compte ? S'inscrire",
+        "en": "",
+    },
 }
