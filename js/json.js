@@ -519,4 +519,39 @@ let trad = {
         "fr": "Maître du jeu",
         "en": "",
     },
+
+    // ******************************** vue accueil *************************************************
+    "#menuAcc": {
+        "fr": "Accueil",
+        "en": "",
+    },
+    "#menuPropos": {
+        "fr": "A Propos",
+        "en": "",
+    },
+    "#menuNosEscapes": {
+        "fr": "Nos escapes",
+        "en": "",
+    },
+    "#menuContact": {
+        "fr": "Contact",
+        "en": "",
+    },
+    "#menuCompte": {
+        "fr": "Compte",
+        "en": "",
+    },
+
+    "#menuDash": {
+        "fr": "Dashboard",
+        "en": "",
+    },
+    "#menudeco": {
+        "fr": "Déconnexion",
+        "en": "",
+    },
+    "#reserver": {
+        "fr": "Réserver",
+        "en": "",
+    }
 }
