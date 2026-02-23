@@ -52,7 +52,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
     <div class="grille-gardiens">
         <div class="bloc-gardien">
             <div class="photo-gardien"></div>
-            <span class="nom-gardien">L'Architecte</span>
+            <span class="nom-gardien" id="architectePropos">L'Architecte</span>
             <span class="role-gardien">Scénariste & Storyteller</span>
         </div>
         <div class="bloc-gardien">

@@ -495,4 +495,12 @@ let trad = {
         "fr": "Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à l'œil nu.",
         "en": "",
     },
+    "#gardiensPropos": {
+        "fr": "Les gardiens du jeu",
+        "en": "",
+    },
+    "#architectePropos": {
+        "fr": "L'Architecte",
+        "en": "",
+    },
 }
