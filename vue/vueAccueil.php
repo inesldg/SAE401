@@ -10,15 +10,15 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
         <!-- COLONNE TEXTE -->
         <div class="hero-accueil__contenu">
-            <h1 class="hero-accueil__titre">
-                VIVEZ L' <span class="hero-accueil__titre--or">AVENTURE</span>
+            <h1 class="hero-accueil__titre" id="titreAcc">
+                VIVEZ L' <span class="hero-accueil__titre--or" id="aventure">AVENTURE</span>
             </h1>
-            <p class="hero-accueil__sous-titre">
+            <p class="hero-accueil__sous-titre" id="soustitreAcc">
                 Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du
                 temps.
             </p>
-            <a href="index.php?action=escapeGames" class="hero-accueil__bouton">
-                Découvrir nos escape <span class="hero-accueil__bouton-icone"><svg xmlns="http://www.w3.org/2000/svg"
+            <a href="index.php?action=escapeGames" class="hero-accueil__bouton" id="lienBoutonAcc">
+                Découvrir nos escapes <span class="hero-accueil__bouton-icone"><svg xmlns="http://www.w3.org/2000/svg"
                         width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path d="M5 12h13M12 5l7 7-7 7" />
@@ -34,7 +34,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section accueil-experience">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre">L'EXPÉRIENCE <span class="accueil-titre--or">ELIFE</span></h2>
+        <h2 class="accueil-titre" id="titreAcc_h2" >L'EXPÉRIENCE <span class="accueil-titre--or" id="elife" >ELIFE</span></h2>
         <p class="accueil-experience__texte">La Clé ELIFE vous propose des escape games d'exception. Chaque salle est
             conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des
             scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !</p>
@@ -43,7 +43,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section2 accueil-escapes">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre">NOS <span class="accueil-titre--or">ESCAPES</span></h2>
+        <h2 class="accueil-titre" id="nos">NOS <span class="accueil-titre--or" id="suitetitreh2">ESCAPES</span></h2>
         <div class="accueil-escapes__grille">
 
 
@@ -123,7 +123,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section accueil-avis">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre">AVIS <span class="accueil-titre--or">CLIENTS</span></h2>
+        <h2 class="accueil-titre" id="avistitre_h2" >AVIS <span class="accueil-titre--or" id="suiteClient_h2">CLIENTS</span></h2>
         <div class="accueil-avis__grille">
             <article class="accueil-avis-card">
                 <div class="accueil-avis-card__etoiles">★★★★★</div>
