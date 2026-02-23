@@ -4,7 +4,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
 ?>
 
-<a href="index.php?action=accueil">Retour à l'accueil</a>
+<a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
 <a href="index.php?action=escapeGames">Retour aux escape games</a>
 
 <section class="hero-section">

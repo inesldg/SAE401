@@ -5,8 +5,8 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 ?>
 
 <section class="hero-section">
-    <h1>Réservez votre <span class="titre-or">mission immersive</span> dès maintenant</h1>
-    <p>Choisissez votre univers !</p>
+    <h1 id="reserverEscapGam">Réservez votre <span class="titre-or" id="titreorEscapGam">mission immersive</span> dès maintenant</h1>
+    <p id="choixEscapGam">Choisissez votre univers !</p>
 </section>
 
 <section class="escapes-section">
@@ -48,7 +48,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                             <?= $game['prix'] ?>€ / pers
                         </p> -->
 
-                        <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>">
+                        <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" id="detailEscapeGam">
                             Voir détails
                         </a>
 

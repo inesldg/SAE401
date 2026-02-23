@@ -44,6 +44,8 @@ let trad = {
         "fr": "CLIENTS",
         "en": "",
     },
+
+
     // ******************************** vue ajout escape game + qqls elt de dashboard *************************************************
     "#adminAdministrateur": {
         "fr": "Administrateur",
@@ -133,6 +135,8 @@ let trad = {
         "fr": "Nb de pers max",
         "en": "",
     },
+
+
     // ******************************** vue ajout escape game *************************************************
     "#retourAcc": {
         "fr": "Retour à l'accueil",
@@ -158,6 +162,8 @@ let trad = {
         "fr": "Modifier",
         "en": "",
     },
+
+
     // ******************************** vue confirmation *************************************************
     "#accrocheConf": {
         "fr": "Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace.",
@@ -179,6 +185,8 @@ let trad = {
         "fr": "Voir ma commande",
         "en": "",
     },
+
+
     // ******************************** vue connexion *************************************************
     "#mailConnexion": {
         "fr": "ADRESSE MAIL",
@@ -245,6 +253,40 @@ let trad = {
     },
     "#reservationsDash": {
         "fr": "RÉSERVATIONS RÉCENTES",
+        "en": "",
+    },
+
+    // ******************************** vue erreur *************************************************
+    "#erreurErr": {
+        "fr": "Une erreur est survenue",
+        "en": "",
+    },
+
+    // ******************************** vue Escape Games *************************************************
+    "#titreorEscapGam": {
+        "fr": "mission immersive",
+        "en": "",
+    },
+    "#choixEscapGam": {
+        "fr": "Choisissez votre univers !",
+        "en": "",
+    },
+    "#reserverEscapGam": {
+        "fr": "Réservez votre dès maintenant",
+        "en": "",
+    },
+    "#detailEscapeGam": {
+        "fr": "Voir détails",
+        "en": "",
+    },
+
+    // ******************************** vue Games *************************************************
+    "#titreorEscapGam": {
+        "fr": "mission immersive",
+        "en": "",
+    },
+    "#choixEscapGam": {
+        "fr": "Choisissez votre univers !",
         "en": "",
     },
 }
