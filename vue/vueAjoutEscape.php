@@ -52,7 +52,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                 <div class="sous-titre" id="nbEscapeAdmin" >X escapes actifs</div>
             </div>
             <div class="part2">
-                <a href="#" class="ajouter" id="btnAjouter ajouterAdmin">+ Ajouter</a>
+                <a href="#" class="ajouter" id="btnAjouter">+ Ajouter</a>
             </div>
         </div>
     </div>
