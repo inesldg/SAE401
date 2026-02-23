@@ -5,7 +5,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 ?>
 
 <a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
-<a href="index.php?action=escapeGames" id=""retourescapeGames>Retour aux escape games</a>
+<a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a>
 
 <section class="hero-section">
     <h1 id="titreGames">In vino Veritas L'escape game mélant nature et découverte locale</h1>
@@ -20,7 +20,8 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
             </h2>
             <div class="infos-rapides">
                 <div class="prix" id="prixGames">A partir de 55€/pers.</div>
-                <div class="notation">★★★★★ <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">10 avis</span></div>
+                <div class="notation">★★★★★ <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">10
+                        avis</span></div>
             </div>
 
             <div style="font-size: 0.9rem; color: #bbb;">
@@ -29,10 +30,28 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
 
             <div class="icones-detail">
-                <div>👥 De <?= $escapeGame[0]['nbr_pers_min'] ?> à <?= $escapeGame[0]['nbr_pers_max'] ?> joueurs</div>
-                <div>🕒 Durée de <?= $escapeGame[0]['duree'] ?>h
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    De <?= $escapeGame[0]['nbr_pers_min'] ?> à <?= $escapeGame[0]['nbr_pers_max'] ?> joueurs
                 </div>
-                <div id="lieuGames">📍 Lieu : <?= $escapeGame[0]['lieu'] ?></div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Durée de <?= $escapeGame[0]['duree'] ?>h
+                </div>
+                <div id="lieuGames"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z" />
+                    </svg>
+                    Lieu : <?= $escapeGame[0]['lieu'] ?></div>
             </div>
 
             <div class="separateur"></div>
@@ -78,7 +97,8 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
             <h2 style="font-size: 28px;">Invino Veritas</h2>
             <p class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</p>
 
-            <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour l'aventure</p>
+            <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
+                l'aventure</p>
 
             <div class="calendrier-boite">
                 <div class="calendrier-header">
@@ -87,7 +107,9 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                     <span id="nextMois" class="fleche-cal">❯</span>
                 </div>
                 <div class="calendrier-jours">
-                    <span id="lundi">Lun</span><span id="mardi">Mar</span><span id="mercredi">Mer</span><span id="jeudi">Jeu</span><span id="vendredi">Ven</span><span id="samedi">Sam</span><span id="dimanche">Dim</span>
+                    <span id="lundi">Lun</span><span id="mardi">Mar</span><span id="mercredi">Mer</span><span
+                        id="jeudi">Jeu</span><span id="vendredi">Ven</span><span id="samedi">Sam</span><span
+                        id="dimanche">Dim</span>
                 </div>
                 <div id="calendrier-grille" class="calendrier-grille">
                 </div>
@@ -138,7 +160,8 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <span style="color: white;">220.00 €</span>
             </div>
 
-            <button class="bouton-reserver"><a href="index.php?action=panier" id="reserverGames">Réserver maintenant</a></button>
+            <button class="bouton-reserver"><a href="index.php?action=panier" id="reserverGames">Réserver
+                    maintenant</a></button>
         </section>
     </div>
 
@@ -155,15 +178,16 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <div>' . $evaluation['avis_date'] . '</div>
                 <div>' . $evaluation['commentaire'] . '</div>';
                 }
-            };
+            }
+            ;
             ?>
         </div>
 
-<?php
-if (isset($_SESSION["acces"])){
-    echo '
+        <?php
+        if (isset($_SESSION["acces"])) {
+            echo '
     <div>
-        ' . $message .'
+        ' . $message . '
     </div>
     <form method="post" action=' . $_SERVER["PHP_SELF"] . '?action=ajouterAvis&idEscapeGame=' . $escapeGame[0]['id_escape'] . '>
         <label>

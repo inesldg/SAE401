@@ -41,7 +41,6 @@ html {
 
 
 
-
 /* Bouton pour retourner en haut */
 .back-to-top {
     position: fixed;
@@ -74,9 +73,4 @@ html {
     background-color: var(--gold-clair);
     transform: translateY(-4px);
     box-shadow: 0 6px 16px var(--gold-clair);
-}
-
-.back-to-top_arrow {
-    width: 24px;
-    height: 24px;
 }

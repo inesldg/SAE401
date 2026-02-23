@@ -1,0 +1,73 @@
+.page-legal {
+    padding: 4rem 1.5rem 6rem;
+    min-height: 60vh;
+    background: linear-gradient(rgba(34, 49, 61, 0.95), rgba(16, 26, 35, 0.98)),
+        url('../images/EffetBrouillard.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--fond-sombre);
+    font-family: var(--texte);
+    color: var(--blanc-casse);
+}
+
+.page-legal__conteneur {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-legal__bloc {
+    background: rgba(26, 36, 47, 0.85);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    border-radius: 20px;
+    padding: 2rem 2.25rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-legal__bloc:last-child {
+    margin-bottom: 0;
+}
+
+.page-legal__titre {
+    font-family: var(--titre);
+    font-size: 1.35rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.page-legal__texte {
+    font-family: var(--texte);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--blanc-casse);
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .page-legal {
+        padding: 2rem 1rem 4rem;
+    }
+
+    .page-legal__bloc {
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+    }
+
+    .page-legal__titre {
+        font-size: 1.15rem;
+    }
+
+    .page-legal__texte {
+        font-size: 0.95rem;
+    }
+}

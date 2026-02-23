@@ -5,7 +5,8 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 ?>
 
 <section class="hero-section">
-    <h1 id="reserverEscapGam">Réservez votre <span class="titre-or" id="titreorEscapGam">mission immersive</span> dès maintenant</h1>
+    <h1 id="reserverEscapGam">Réservez votre <span class="titre-or" id="titreorEscapGam">mission immersive</span> dès
+        maintenant</h1>
     <p id="choixEscapGam">Choisissez votre univers !</p>
 </section>
 
@@ -74,23 +75,41 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
                         <div class="accueil-escape-card__infos">
                             <span class="accueil-escape-card__duree">
-                                <?= $game['duree'] ?>h
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <?= $game['duree'] ?>
                             </span>
 
                             <span class="accueil-escape-card__personnes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
                                 <?= $game['nbr_pers_min'] ?> - <?= $game['nbr_pers_max'] ?>
+                            </span>
+
+                            <span class="accueil-escape-card__personnes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z" />
+                                </svg>
+                                <?= $game['lieu'] ?>
                             </span>
                         </div>
 
-                        <!-- <p class="accueil-escape-card__prix">
-                            <?= $game['prix'] ?>€ / pers
-                        </p> -->
-
-                        <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" id="detailEscapeGam">
+                        <a class="accueil-escape-card__prix" href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" id="detailEscapeGam">
                             Voir détails
                         </a>
-
-                    </div>
 
                 </article>
 

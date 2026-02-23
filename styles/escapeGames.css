@@ -142,7 +142,7 @@ body {
     border-radius: 32px;
     border: none;
     background: var(--gold-gradient);
-    color: var(--blanc-casse);
+    color: var(--fond-sombre);
     font-family: var(--texte);
     font-weight: bold;
     font-size: 1rem;
@@ -234,15 +234,14 @@ body {
 .accueil-escape-card__prix {
     background: var(--gold-gradient);
     padding: 5px 10px;
-    border-radius: 25px;
+    border-radius: 32px;
     font-family: var(--texte);
     font-size: 1rem;
-    color: #101A23;
+    text-decoration: none;
+    color: var(--fond-sombre);
     font-weight: bold;
-    /* margin: 0 0 1rem; */
-    position: absolute;
-    bottom: 5px;
-    left: 15px;
+    margin-top: 16px;
+    text-align: center;
 }
 
 .accueil-escape-card__badge {
