@@ -71,41 +71,51 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
             </span>
 
             <div class="ajout">
-                <div>Ajoutez une nouvel escape game</div>
-                <a href="index.php?action=accueil">Retour à l'accueil</a>
 
-                <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>>
+                <form method="post" enctype="multipart/form-data" action="<?= $_SERVER["PHP_SELF"] . "?action=ajoutEscape" ?>">
                     <div>
                         <h2>Nouvel escape game</h2>
                     </div>
                     <div>
                         <label>
-                            <p>Nom : </p>
-                            <input type="text" name="nom" value="" placeholder="Nom" required>
+                            <span>Nom</span>
+                            <input type="text" name="nom" value="" placeholder="Nom de l'escape" required>
+                        </label>
+
+                        <label class="image-label">
+                            <span>Photo de l’escape</span>
+                            <!-- L'attribut accept permet de limiter les types de fichiers -->
+                            <input type="file"
+                                name="photoEscape"
+                                accept="image/jpeg,image/png,image/webp,image/gif,image/bmp">
+                            <!-- Limite la taille du fichier (500 Ko) -->
+                            <input type="hidden" name="MAX_FILE_SIZE" value="500000">
+                            <div class="choix">Choisir un fichier...</div>
+                        </label>
+
+                        <label>
+                            <span>Description</span>
+                            <input type="text" name="description" value="" placeholder="Description de l'escape" required>
                         </label>
                         <label>
-                            <p>Description : </p>
-                            <input type="text" name="description" value="" placeholder="Description" required>
+                            <span>Lieu</span>
+                            <input type="text" name="lieu" value="" placeholder="Lieu de l'escape" required>
                         </label>
                         <label>
-                            <p>Lieu : </p>
-                            <input type="text" name="lieu" value="" placeholder="Lieu" required>
+                            <span>Durée</span>
+                            <input type="number" name="duree" value="" placeholder="Durée de l'escape" required>
                         </label>
                         <label>
-                            <p>Durée : </p>
-                            <input type="number" name="duree" value="" placeholder="0" required>
+                            <span>Nb de pers min</span>
+                            <input type="number" name="pers_min" value="" placeholder="Nombre de personnes min" required>
                         </label>
                         <label>
-                            <p>Nombre de personnes minimum : </p>
-                            <input type="number" name="pers_min" value="" placeholder="1" required>
-                        </label>
-                        <label>
-                            <p>Nombre de personnes maximum : </p>
-                            <input type="number" name="pers_max" value="" placeholder="1" required>
+                            <span>Nb de pers max</span>
+                            <input type="number" name="pers_max" value="" placeholder="Nombre de personnes max" required>
                         </label>
                     </div>
                     <div>
-                        <input type="submit" name="ajoutEscape" value="Ajouter aux escape games">
+                        <input type="submit" name="ajoutEscape" value="Ajouter aux escape games" class="valider">
                     </div>
                     <span><?= $message ?></span>
                 </form>
