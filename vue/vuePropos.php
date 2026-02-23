@@ -57,13 +57,13 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         </div>
         <div class="bloc-gardien">
             <div class="photo-gardien"></div>
-            <span class="nom-gardien">Le Chronos</span>
-            <span class="role-gardien">Ingénieur de terrain</span>
+            <span class="nom-gardien" id="chronos">Le Chronos</span>
+            <span class="role-gardien" id="ingenieurPropos">Ingénieur de terrain</span>
         </div>
         <div class="bloc-gardien">
             <div class="photo-gardien"></div>
-            <span class="nom-gardien">Maître</span>
-            <span class="role-gardien">Maître du jeu</span>
+            <span class="nom-gardien" id="maitre">Maître</span>
+            <span class="role-gardien" id="maitre2">Maître du jeu</span>
         </div>
     </div>
 </section>

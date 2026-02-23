@@ -503,4 +503,20 @@ let trad = {
         "fr": "L'Architecte",
         "en": "",
     },
+    "#chronos": {
+        "fr": "Le Chronos",
+        "en": "",
+    },
+    "#ingenieurPropos": {
+        "fr": "Ingénieur de terrain",
+        "en": "",
+    },
+    "#maitre": {
+        "fr": "Maître",
+        "en": "",
+    },
+    "#maitre2": {
+        "fr": "Maître du jeu",
+        "en": "",
+    },
 }
