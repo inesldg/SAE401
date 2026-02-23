@@ -134,4 +134,28 @@ let trad = {
         "en": "",
     },
     // ******************************** vue ajout escape game *************************************************
+    "#retourAcc": {
+        "fr": "Retour à l'accueil",
+        "en": "",
+    },
+    "#nomCompte": {
+        "fr": "Nom",
+        "en": "",
+    },
+    "#prenomCompte": {
+        "fr": "Prénom",
+        "en": "",
+    },
+    "#mailCompte": {
+        "fr": "ADRESSE MAIL",
+        "en": "",
+    },
+    "#entrerMDPCompte": {
+        "fr": "Entrez votre mot de passe pour enregistrer",
+        "en": "",
+    },
+    "#modifCompte": {
+        "fr": "Modifier",
+        "en": "",
+    },
 }
