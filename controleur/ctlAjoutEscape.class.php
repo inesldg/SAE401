@@ -49,7 +49,7 @@ class ctlAjoutEscape
             move_uploaded_file($fichier['tmp_name'], $cheminComplet);
         }
     }
-    
+
     public function afficherEscapes()
     {
         $vue = new vue("AjoutEscape");
@@ -61,4 +61,12 @@ class ctlAjoutEscape
             "message" => ""
         ]);
     }
+
+    // public function supprimerEscape($id)
+    // {
+    //     $id_escape = intval($id); // sécurité
+    //     $this->ajoutEscape->supprimerEscape($id_escape); // ta méthode dans le modèle
+    //     header("Location: index.php?action=afficherEscapes"); // retourne à la liste
+    //     exit;
+    // }
 }
