@@ -310,3 +310,19 @@ label span {
     height: 60px;
 }
 
+td > a{
+    text-decoration: none;
+}
+
+.supp{
+    margin-left: 30px;
+}
+
+.joueurs, .duree{
+    align-items: center;
+    margin-left: 10px;
+}
+
+.case{
+    display: inline-flex;
+}
