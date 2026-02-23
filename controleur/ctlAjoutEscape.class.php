@@ -62,11 +62,11 @@ class ctlAjoutEscape
         ]);
     }
 
-    // public function supprimerEscape($id)
-    // {
-    //     $id_escape = intval($id); // sécurité
-    //     $this->ajoutEscape->supprimerEscape($id_escape); // ta méthode dans le modèle
-    //     header("Location: index.php?action=afficherEscapes"); // retourne à la liste
-    //     exit;
-    // }
+    public function supprimerEscape($id)
+    {
+        $id_escape = intval($id); // sécurité
+        $this->ajoutEscape->supprimerEscape($id_escape); // ta méthode dans le modèle
+        header("Location: index.php?action=ajoutEscape");; // retourne à la liste
+        exit;
+    }
 }

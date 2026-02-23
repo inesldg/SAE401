@@ -119,6 +119,17 @@ class routeur
                                     $this->ctlAjoutEscape->afficherEscapes();
                             }
                             break;
+
+                        case "supprimerEscape":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else {
+                                if (isset($_GET['id']))
+                                    $this->ctlAjoutEscape->supprimerEscape($_GET['id']);
+                                else
+                                    throw new Exception("ID manquant pour la suppression");
+                            }
+                            break;
                         case "changementAcces":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
@@ -140,7 +151,8 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/ else {
+            /********** Pages non connectés **********/
+            else {
 
                 if (isset($_GET["action"])) {
 
@@ -151,7 +163,7 @@ class routeur
                         case "propos":
                             $this->ctlPages->pagePropos();
                             break;
-                            
+
                         case "legal":
                             $this->ctlPages->pageLegal();
                             break;
