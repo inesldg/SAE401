@@ -23,11 +23,25 @@ closePopup.addEventListener("click", fermerPopup);
 overlay.addEventListener("click", fermerPopup);
 
 
-// const fileInputs = document.querySelectorAll('.image-label input[type="file"]');
 
-// fileInputs.forEach(input => {
-//     input.addEventListener('change', e => {
-//         const fileName = e.target.files[0]?.name || 'Choisir un fichier...';
-//         e.target.nextElementSibling.textContent = fileName;
-//     });
-// });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Récupère l'input file (champ photo)
+    const inputFile = document.querySelector('input[name="photoEscape"]');
+    // Récupère la div qui affiche le texte "Choisir un fichier..."
+    const texteChoix = document.getElementById("choixFichier");
+
+    // Quand l'utilisateur sélectionne un fichier, l'événement "change" se déclenche
+    inputFile.addEventListener("change", function () {
+        // Vérifie qu'un fichier a bien été sélectionné
+        if (this.files && this.files.length > 0) {
+            // Remplace le texte par le nom du fichier sélectionné
+            texteChoix.textContent = this.files[0].name;
+        } else {
+            // Si aucun fichier n'est sélectionné, on remet le texte par défaut
+            texteChoix.textContent = "Choisir un fichier...";
+        }
+    });
+
+});
