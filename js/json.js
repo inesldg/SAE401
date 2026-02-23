@@ -398,4 +398,68 @@ let trad = {
         "fr": "",
         "en": "",
     },
+
+    // ******************************** vue Panier *************************************************
+    "#panierPanier": {
+        "fr": "Votre Panier",
+        "en": "",
+    },
+    "#supprPanier": {
+        "fr": "SUPPRIMER",
+        "en": "",
+    },
+    "#codePanier": {
+        "fr": "Code Promo / Bons ?",
+        "en": "",
+    },
+    "#appliquerPanier": {
+        "fr": "Appliquer",
+        "en": "",
+    },
+    "#indiqPanier": {
+        "fr": "Saisissez le code sans espace entre les caractères",
+        "en": "",
+    },
+    "#infoPanier": {
+        "fr": "Vos informations",
+        "en": "",
+    },
+    "#adressepostalPanier": {
+        "fr": "Adresse",
+        "en": "",
+    },
+    "#payerPanier": {
+        "fr": "Payer avec",
+        "en": "",
+    },
+    "#indiqPanier": {
+        "fr": "Saisissez le code sans espace entre les caractères",
+        "en": "",
+    },
+    "#retournercartePanier": {
+        "fr": "Retournez la carte",
+        "en": "",
+    },
+    "#validerPanier": {
+        "fr": "Valider le paiement",
+        "en": "",
+    },
+
+    // ******************************** vue Propos *************************************************
+    "#panierPanier": {
+        "fr": "Votre Panier",
+        "en": "",
+    },
+    "#supprPanier": {
+        "fr": "SUPPRIMER",
+        "en": "",
+    },
+    "#codePanier": {
+        "fr": "Code Promo / Bons ?",
+        "en": "",
+    },
+    "#appliquerPanier": {
+        "fr": "Appliquer",
+        "en": "",
+    },
 }
