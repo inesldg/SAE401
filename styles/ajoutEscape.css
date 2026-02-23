@@ -310,26 +310,3 @@ label span {
     height: 60px;
 }
 
-/* ===== BOUTONS ACTION ===== */
-.actions a {
-    text-decoration: none;
-    margin-right: 8px;
-    font-size: 16px;
-    padding: 6px 10px;
-    border-radius: 8px;
-    transition: 0.2s;
-}
-
-.actions a.edit {
-    background: #e8f0fe;
-    color: #1a73e8;
-}
-
-.actions a.delete {
-    background: #fdecea;
-    color: #d93025;
-}
-
-.actions a:hover {
-    transform: scale(1.1);
-}
