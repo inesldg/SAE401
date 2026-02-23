@@ -38,3 +38,45 @@ html {
 /* html a {
     cursor: url("../images/cursor.png"), default !important;
 } */
+
+
+
+
+/* Bouton pour retourner en haut */
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: var(--orchidee);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 12px var(--gold-clair);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--gold-clair);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--gold-clair);
+}
+
+.back-to-top_arrow {
+    width: 24px;
+    height: 24px;
+}

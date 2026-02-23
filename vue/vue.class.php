@@ -41,19 +41,18 @@ class vue
     $script = "js/script.js";
 
     // Conditions d'affichage du header selon le type de connexion (deconnecté, admin ou simple utilisateur) en vérifiant la session
-
     if (!isset($_SESSION["acces"]) || empty($_SESSION["acces"])) {
-        ob_start();
-        require "composants/header/header_deconnecte.php";
-        $header = ob_get_clean();
+      ob_start();
+      require "composants/header/header_deconnecte.php";
+      $header = ob_get_clean();
     } elseif (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) {
-        ob_start();
-        require "composants/header/header_admin.php";
-        $header = ob_get_clean();
+      ob_start();
+      require "composants/header/header_admin.php";
+      $header = ob_get_clean();
     } else {
-        ob_start();
-        require "composants/header/header_connecte.php";
-        $header = ob_get_clean();
+      ob_start();
+      require "composants/header/header_connecte.php";
+      $header = ob_get_clean();
     }
 
     ob_start();
