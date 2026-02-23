@@ -45,6 +45,7 @@ class routeur
                 $mail = $_SESSION["acces"];
                 $acces = $this->ctlCompte->getAcces($mail);
                 $id = $this->ctlCompte->getId($mail);
+                $_SESSION['statut'] = $acces[0]['statut'] ?? null;
 
                 if (isset($_GET["action"])) {
                     switch ($_GET["action"]) {
@@ -63,14 +64,13 @@ class routeur
                         case "game":
                             $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "");
                             break;
-                        case "ajouterAvis" :
-                            if(isset($_GET['idEscapeGame'])){
+                        case "ajouterAvis":
+                            if (isset($_GET['idEscapeGame'])) {
                                 if (isset($_POST['note'], $_POST['commentaire']) && $_POST['note'] !== "")
                                     $this->ctlEscapeGames->ajouterAvis($_POST['note'], $_POST['commentaire'], $id[0]['id_utilisateur'], $_GET['idEscapeGame'], $message = "<span>Avis ajouté avec succès !</span>");
                                 else
                                     $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que de choisir une note sur 5</span>");
-                            }
-                            else
+                            } else
                                 throw new Exception("<span>Aucun escaape game selectionné</span>");
                             break;
                         case "propos":
@@ -140,8 +140,7 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/
-            else {
+            /********** Pages non connectés **********/ else {
 
                 if (isset($_GET["action"])) {
 
@@ -151,6 +150,10 @@ class routeur
                             break;
                         case "propos":
                             $this->ctlPages->pagePropos();
+                            break;
+                            
+                        case "legal":
+                            $this->ctlPages->pageLegal();
                             break;
 
                         case "confirmation":

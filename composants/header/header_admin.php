@@ -11,7 +11,8 @@
             <a href="index.php?action=accueil">Contact</a> <!-- A MODIFIER -->
             <a href="index.php?action=dash">Dashboard</a>
             <a href="index.php?action=compte">Mon compte</a> <!-- A MODIFIER - ajouter vue pour modifier info compte -->
-        
+            <a href="index.php?action=deconnexion">Déconnexion</a>
+
 
         </nav>
         <a href="index.php?action=escapeGames" class="btn-reserve">
