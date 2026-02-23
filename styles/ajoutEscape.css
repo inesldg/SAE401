@@ -264,53 +264,36 @@ label span {
 }
 
 
-/* ===== CONTAINER GLOBAL ===== */
-.bas {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-/* ===== TITRE + COMPTEUR ===== */
-.sous-titre {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #333;
-}
-
 /* ===== TABLE ===== */
 .table-escapes {
     width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    overflow: hidden;          /* Pour que le radius masque les coins des cellules */
 }
 
 .table-escapes thead {
-    background-color: #f8f9fb;
+    background-color: var(--bleu-fonce);
+    border: 1px solid rgb(43, 67, 89, 0.5);
 }
 
 .table-escapes th {
     text-align: left;
     padding: 15px;
-    font-size: 14px;
-    color: #555;
+    font-size: 12px;
+    color: var(--blanc-casse);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border: 1px solid rgb(43, 67, 89, 0.5);
+    font-weight: normal;
 }
 
 .table-escapes td {
     padding: 15px;
-    border-top: 1px solid #eee;
-    font-size: 14px;
-    color: #333;
-}
-
-/* ===== HOVER LIGNE ===== */
-.table-escapes tbody tr:hover {
-    background-color: #f5f7fa;
-    transition: 0.2s ease;
+    border: 1px solid rgb(43, 67, 89, 0.5);
+    font-size: 12px;
+    color: var(--blanc-casse);
+    background-color: var(--bleu-fonce);
 }
 
 /* ===== IMAGE ===== */
@@ -318,15 +301,13 @@ label span {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* Placeholder si pas d'image */
 .placeholder-img {
     width: 60px;
     height: 60px;
-    background: #e0e0e0;
-    border-radius: 10px;
 }
 
 /* ===== BOUTONS ACTION ===== */
