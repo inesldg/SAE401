@@ -102,4 +102,4 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
 // $main = ob_get_clean();
 
-$script = '';
+$script = '<script src="js/json.js" defer></script>';

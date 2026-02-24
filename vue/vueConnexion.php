@@ -51,3 +51,5 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
 <?php
 
 $script = '<script src="js/json.js" defer></script>';
+$script = '<script src="js/json.js" defer></script>';
+

@@ -35,5 +35,6 @@ $style = '';
     <div>
 
         <?php
+        
+$script = '<script src="js/json.js" defer></script>';
 
-        $script = '';

@@ -57,6 +57,7 @@ $style = '<link rel="stylesheet" href="styles/legal.css">';
 </section>
 
 <?php
-$script = '';
+$script = '<script src="js/json.js" defer></script>';
+
 
 

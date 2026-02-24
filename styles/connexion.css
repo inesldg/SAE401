@@ -44,9 +44,9 @@ main {
 .boite-formulaire {
     position: relative;
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     /* Largeur du SVG */
-    height: 700px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;

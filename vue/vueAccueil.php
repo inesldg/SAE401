@@ -179,3 +179,4 @@ if (isset($acces[0]['statut'])) {
 <?php
 
 $script = '<script type="module" src="js/three-key.js"></script>';
+$script .= '<script src="js/json.js" defer></script>';

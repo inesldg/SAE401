@@ -139,4 +139,4 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
         $main;
 
-        $script = '';
+$script = '<script src="js/json.js" defer></script>';

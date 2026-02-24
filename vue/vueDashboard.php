@@ -194,4 +194,5 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 
 <?php
 
-$script = '';
+$script = '<script src="js/json.js" defer></script>';
+

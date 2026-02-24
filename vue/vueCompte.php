@@ -30,4 +30,4 @@ $style = '';
 
 <?php
 
-$script = '';
+$script = '<script src="js/json.js" defer></script>';

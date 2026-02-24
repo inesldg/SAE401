@@ -70,4 +70,5 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
 <?php
 
-$script = '';
+$script = '<script src="js/json.js" defer></script>';
+

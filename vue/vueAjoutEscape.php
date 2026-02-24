@@ -225,3 +225,5 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
     <?php
 
     $script = '<script src="js/ajoutescape.js"></script>';
+    $script .= '<script src="js/json.js" defer></script>';
+

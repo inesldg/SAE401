@@ -230,3 +230,5 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
         <?php
 
         $script = '<script src="js/infoescape.js"></script>';
+        $script .= '<script src="js/json.js" defer></script>';
+
