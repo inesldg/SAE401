@@ -182,23 +182,23 @@ let trad = {
     // ******************************** vue connexion *************************************************
     "#mailConnexion": {
         "fr": "ADRESSE MAIL",
-        "en": "",
+        "en": "dfghjk",
     },
     "#connexConnexion": {
         "fr": "Connexion",
-        "en": "",
+        "en": "sdfghjklk",
     },
     "#mdpConnexion": {
         "fr": "MOT DE PASSE",
-        "en": "",
+        "en": "cvbhnj",
     },
     "#seconnecterConnexion": {
         "fr": "SE CONNECTER",
-        "en": "",
+        "en": "sdfghjk",
     },
     "#goinscrConnexion": {
         "fr": "Pas encore de compte ? S'inscrire",
-        "en": "",
+        "en": "qsdfcvbhjn,k;",
     },
 
     // ******************************** vue Dash *************************************************
@@ -305,8 +305,8 @@ let trad = {
         "fr": "Sélectionnez vos préférences pour l'aventure.",
         "en": "",
     },
-    "#Sélectionnez votre date pour l'aventure": {
-        "fr": "détails",
+    "#selectionDatesGames": {
+        "fr": "Sélectionnez votre date pour l'aventure",
         "en": "",
     },
     "#lundi": {
@@ -557,11 +557,37 @@ let trad = {
 }
 
 let langue = localStorage.getItem("langue") || "fr";
-traduire();
 
-function traduire () {
-    langue = this.dataset?.langue || langue;
+function appliquerTraduction() {
+    console.log("Tentative de traduction en :", langue);
     document.querySelector("html").lang = langue;
-
     localStorage.setItem("langue", langue);
+
+    Object.entries(trad).forEach(([selecteur, donnee]) => {
+        const element = document.querySelector(selecteur);
+        if (element) {
+            element.innerHTML = donnee[langue];
+        } else {
+            // Si tu vois ça dans la console, c'est que l'ID n'est pas dans ton HTML
+            console.warn("Sélecteur introuvable sur cette page :", selecteur);
+        }
+    });
 }
+
+// On attend que la page soit prête
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM chargé, prêt à traduire");
+    appliquerTraduction();
+
+    // Gestion des boutons
+    const boutons = document.querySelectorAll("button[data-langue]");
+    console.log("Nombre de boutons de langue trouvés :", boutons.length);
+
+    boutons.forEach(b => {
+        b.addEventListener("click", function () {
+            langue = this.dataset.langue;
+            console.log("Bouton cliqué, nouvelle langue :", langue);
+            appliquerTraduction();
+        });
+    });
+});
