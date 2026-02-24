@@ -79,7 +79,7 @@ let trad = {
         "fr": "escapes actifs",
         "en": "",
     },
-    "#ajouterAdmin": {
+    "#btnAjouter": {
         "fr": "+ Ajouter",
         "en": "",
     },

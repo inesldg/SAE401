@@ -107,7 +107,7 @@ class routeur
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
                             else
-                                $this->ctlPages->pageAjoutEscape($message = "");
+                                $this->ctlAjoutEscape->afficherEscapes();
                             break;
                         case "ajoutEscape":
                             if ($acces[0]['statut'] !== 2)
@@ -116,7 +116,18 @@ class routeur
                                 if (isset($_POST['nom'], $_POST['description'], $_POST['lieu'], $_POST['duree'], $_POST['pers_min'], $_POST['pers_max']))
                                     $this->ctlAjoutEscape->ajoutEscape($_POST['nom'], $_POST['description'], $_POST['lieu'], $_POST['duree'], $_POST['pers_min'], $_POST['pers_max']);
                                 else
-                                    $this->ctlPages->pageAjoutEscape($message = "<span>Veuillez remplir tout les champs</span>");
+                                    $this->ctlAjoutEscape->afficherEscapes();
+                            }
+                            break;
+
+                        case "supprimerEscape":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else {
+                                if (isset($_GET['id']))
+                                    $this->ctlAjoutEscape->supprimerEscape($_GET['id']);
+                                else
+                                    throw new Exception("ID manquant pour la suppression");
                             }
                             break;
                         case "changementAcces":
@@ -140,7 +151,8 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/ else {
+            /********** Pages non connectés **********/
+            else {
 
                 if (isset($_GET["action"])) {
 
@@ -151,7 +163,7 @@ class routeur
                         case "propos":
                             $this->ctlPages->pagePropos();
                             break;
-                            
+
                         case "legal":
                             $this->ctlPages->pageLegal();
                             break;

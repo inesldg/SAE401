@@ -40,8 +40,8 @@ class ctlAjoutEscape
 
             // Récupère l'extension du fichier (jpg, png, etc.)
             $extension = pathinfo($fichier['name'], PATHINFO_EXTENSION); // récupère l'extension
-            
-             // Nom du fichier = ID de l'escape + extension
+
+            // Nom du fichier = ID de l'escape + extension
             $photoNom = $id_escape . "." . $extension;
             $cheminComplet = $dossier . $photoNom;
 
@@ -49,5 +49,28 @@ class ctlAjoutEscape
             move_uploaded_file($fichier['tmp_name'], $cheminComplet);
         }
 
+        // Redirection vers la liste après ajout
+        header("Location: index.php?action=pageAjoutEscape");
+        exit;
+    }
+
+    public function afficherEscapes()
+    {
+        $vue = new vue("AjoutEscape");
+
+        $escapes = $this->ajoutEscape->getAllEscapes();
+
+        $vue->afficher([
+            "escapes" => $escapes,
+            "message" => ""
+        ]);
+    }
+
+    public function supprimerEscape($id)
+    {
+        $id_escape = intval($id); // sécurité
+        $this->ajoutEscape->supprimerEscape($id_escape); // ta méthode dans le modèle
+        header("Location: index.php?action=ajoutEscape");; // retourne à la liste
+        exit;
     }
 }

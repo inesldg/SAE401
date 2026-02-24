@@ -19,4 +19,25 @@ class ajoutEscape extends database
         // Retourne l'ID si trouvé, sinon null
         return $result[0]['id_escape'] ?? null;
     }
+
+    public function getAllEscapes()
+    {
+        $req = "SELECT * FROM escape ORDER BY id_escape DESC";
+        return $this->execReq($req);
+    }
+
+    public function supprimerEscape($id_escape)
+    {
+        $id_escape = intval($id_escape); // sécurité
+
+        // Supprimer l'escape de la BDD
+        $req = "DELETE FROM escape WHERE id_escape = ?";
+        $this->execReqPrep($req, [$id_escape]);
+
+        // Supprimer la photo si elle existe
+        $photoJpg = "photos_escapes/" . $id_escape . ".jpg";
+        $photoPng = "photos_escapes/" . $id_escape . ".png"; // au cas où tu as d'autres extensions
+        if (file_exists($photoJpg)) unlink($photoJpg);
+        if (file_exists($photoPng)) unlink($photoPng);
+    }
 }
