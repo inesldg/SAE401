@@ -9,8 +9,11 @@
             <a href="index.php?action=propos" id="menuPropos">À propos</a>
             <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
             <a href="index.php?action=accueil" id="menuContact">Contact</a> <!-- A MODIFIER -->
-            <a href="index.php?action=compte" id="menuCompte">Mon compte</a> <!-- A MODIFIER - ajouter vue pour modifier info compte -->
+            <a href="index.php?action=compte" id="menuCompte">Mon compte</a>
+            <!-- A MODIFIER - ajouter vue pour modifier info compte -->
             <a href="index.php?action=deconnexion" id="menudeco">Déconnexion</a>
+            <button data-langue="fr">FR</button>
+            <button data-langue="en">EN</button>
 
         </nav>
         <a href="index.php?action=escapeGames" class="btn-reserve" id="reserver">

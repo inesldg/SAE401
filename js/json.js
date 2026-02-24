@@ -555,3 +555,13 @@ let trad = {
         "en": "",
     }
 }
+
+let langue = localStorage.getItem("langue") || "fr";
+traduire();
+
+function traduire () {
+    langue = this.dataset?.langue || langue;
+    document.querySelector("html").lang = langue;
+
+    localStorage.setItem("langue", langue);
+}
