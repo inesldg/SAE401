@@ -5,14 +5,14 @@
 
     <div class="header-actions">
         <nav class="nav-menu">
-            <a href="index.php?action=accueil">Accueil</a>
-            <a href="index.php?action=propos">À propos</a>
-            <a href="index.php?action=escapeGames">Nos escapes</a>
-            <a href="index.php?action=accueil">Contact</a> <!-- A MODIFIER -->
-            <a href="index.php?action=pageInscription">Compte</a>
+            <a href="index.php?action=accueil" id="menuAcc">Accueil</a>
+            <a href="index.php?action=propos" id="menuPropos">À propos</a>
+            <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
+            <a href="index.php?action=accueil" id="menuContact">Contact</a> <!-- A MODIFIER -->
+            <a href="index.php?action=pageInscription" id="menuCompte">Compte</a>
 
         </nav>
-        <a href="index.php?action=escapeGames" class="btn-reserve">
+        <a href="index.php?action=escapeGames" class="btn-reserve" id="reserver">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
