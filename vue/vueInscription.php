@@ -56,14 +56,14 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             <input type="email" name="mail" value="" id="inputemail" placeholder="mail@exemple.com" required>
 
 
-            <label id="mpdInscrip">MOT DE PASSE</label>
+            <label id="mdpInscrip">MOT DE PASSE</label>
             <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>
 
             <label id="confmpdInscrip">Confirmer le mot de passe : </label>
             <input type="password" name="mdpConfirm" value="" id="inputconfmdp" placeholder="Confirmer le mot de passe"
                 required>
 
-            <button type="submit" class="inscription" value="S'inscrire" id="sinscrireInscr">S'INSCRIRE</button>
+            <button type="submit" class="inscription" value="S'inscrire" id="sinscrireInscr2">S'INSCRIRE</button>
             <span><?= $message ?></span>
         </form>
 

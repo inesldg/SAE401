@@ -13,25 +13,9 @@
             <a href="index.php?action=compte" id="menuCompte">Mon compte</a>
             <!-- A MODIFIER - ajouter vue pour modifier info compte -->
             <a href="index.php?action=deconnexion" id="menudeco">Déconnexion</a>
-
-
-            <!-- pour le chgt de langues -->
             <div class="lang-switcher">
-                <?php
-                // On récupère tous les paramètres actuels de l'URL (ex: action=escapeGames)
-                $params = $_GET;
-
-                // Pour le bouton FR
-                $params['lang'] = 'fr';
-                $url_fr = "?" . http_build_query($params);
-
-                // Pour le bouton EN
-                $params['lang'] = 'en';
-                $url_en = "?" . http_build_query($params);
-                ?>
-
-                <a href="<?= $url_fr ?>" class="<?= ($_SESSION['lang'] ?? 'fr') == 'fr' ? 'active' : '' ?>">FR</a>
-                <a href="<?= $url_en ?>" class="<?= ($_SESSION['lang'] ?? 'fr') == 'en' ? 'active' : '' ?>">EN</a>
+                <button data-langue="fr" class="active">FR</button>
+                <button data-langue="en">EN</button>
             </div>
 
 

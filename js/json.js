@@ -12,42 +12,42 @@ let trad = {
 
     "#soustitreAcc": {
         "fr": "Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du temps.",
-        "en": "",
+        "en": "ffvfv",
     },
 
     "#textAcc": {
         "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants.Que vous soyez débutant ou expert, venez relever le défi !",
-        "en": "",
+        "en": "dv",
     },
 
     "#lienBoutonAcc": {
         "fr": "Découvrir nos escapes",
-        "en": "",
+        "en": "defd",
     },
 
     "#titreAcc_h2": {
         "fr": "L'EXPÉRIENCE",
-        "en": "",
+        "en": "dd",
     },
     "#elife": {
         "fr": "ELIFE",
-        "en": "",
+        "en": "fd",
     },
     "#nos": {
         "fr": "NOS",
-        "en": "",
+        "en": "szdef",
     },
     "#suitetitreh2": {
         "fr": "ESCAPES",
-        "en": "",
+        "en": "zdef",
     },
     "#avistitre_h2": {
         "fr": "AVIS",
-        "en": "",
+        "en": "df",
     },
     "#suiteClient_h2": {
         "fr": "CLIENTS",
-        "en": "",
+        "en": "sd",
     },
 
 
@@ -126,10 +126,6 @@ let trad = {
     },
     "#ajouterAdmin": {
         "fr": "+ Ajouter",
-        "en": "",
-    },
-    "#nvEscapeAjout": {
-        "fr": "Nouvel escape game",
         "en": "",
     },
     "#choixFichier": {
@@ -393,7 +389,11 @@ let trad = {
         "fr": "S'inscrire",
         "en": "",
     },
-    "#mpdInscrip": {
+    "#sinscrireInscr2": {
+        "fr": "S'inscrire",
+        "en": "",
+    },
+    "#mdpInscrip": {
         "fr": "MOT DE PASSE",
         "en": "",
     },
@@ -507,10 +507,10 @@ let trad = {
         "fr": "Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ? ELIFE est né d'une vision : briser les frontières de l'escape game traditionnel.",
         "en": "",
     },
-    "#explicationsuitePropos": {
-        "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
-        "en": "",
-    },
+    // "#explicationsuitePropos": {
+    //     "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
+    //     "en": "",
+    // },
 
     "#parcoursPropos": {
         "fr": "Parcours Thématiques",
@@ -553,7 +553,7 @@ let trad = {
         "en": "",
     },
 
-    // ******************************** vue accueil *************************************************
+    // ******************************** vue header *************************************************
     "#menuAcc": {
         "fr": "Accueil",
         "en": "",
@@ -622,7 +622,6 @@ let trad = {
 
     // ******************************** required *************************************************
 
-
     "#inputmdp_error": {
         "fr": "Veuillez entrer votre mot de passe.",
         "en": "Please enter your password.",
@@ -671,9 +670,9 @@ let trad = {
 };
 
 
-// 1. Définir la variable TOUT EN HAUT du fichier
-let langue = document.querySelector("html").getAttribute("lang") || localStorage.getItem("langue") || "fr";
-// 1. La fonction de traduction (FERMÉE correctement après la boucle)
+
+let langue = localStorage.getItem("langue") || "fr";
+
 function appliquerTraduction() {
     console.log("Tentative de traduction en :", langue);
     document.querySelector("html").lang = langue;
@@ -681,60 +680,28 @@ function appliquerTraduction() {
 
     Object.entries(trad).forEach(([selecteur, donnee]) => {
         const element = document.querySelector(selecteur);
-
         if (element) {
-            const texte = donnee[langue] || "";
-
-            // 1. Traduction classique (Placeholder vs Texte)
-            if (element.placeholder !== undefined) {
-                element.placeholder = texte;
-            } else {
-                element.innerHTML = texte;
-            }
-
-            // 2. Gestion du REQUIRED
-            if (element.required) {
-                const cleErreur = selecteur + "_error";
-                const messageErreur = (trad[cleErreur]) ? trad[cleErreur][langue] : "";
-
-                if (messageErreur) {
-                    element.setCustomValidity(""); // Reset
-
-                    element.oninvalid = function (e) {
-                        console.log("Validation échouée pour :", selecteur);
-                        e.target.setCustomValidity(messageErreur);
-                    };
-
-                    element.oninput = function (e) {
-                        e.target.setCustomValidity("");
-                    };
-                }
-            }
+            element.innerHTML = donnee[langue];
+        } else {
+            // Si tu vois ça dans la console, c'est que l'ID n'est pas dans ton HTML
+            console.warn("Sélecteur introuvable sur cette page :", selecteur);
         }
     });
-} // <--- C'est ICI qu'il fallait fermer la fonction !
+}
 
-// 2. L'écouteur d'événement unique (AU DEHORS de la fonction)
+// On attend que la page soit prête
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM chargé, prêt à traduire");
-
-    // On lance la traduction initiale
     appliquerTraduction();
 
-    // On branche les boutons de langue
+    // Gestion des boutons
     const boutons = document.querySelectorAll("button[data-langue]");
     console.log("Nombre de boutons de langue trouvés :", boutons.length);
 
     boutons.forEach(b => {
-        // Dans ton document.querySelectorAll("button[data-langue]").forEach...
         b.addEventListener("click", function () {
             langue = this.dataset.langue;
-
-            // --- AJOUT POUR LE STYLE ---
-            document.querySelectorAll(".lang-switcher button").forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-            // ---------------------------
-
+            console.log("Bouton cliqué, nouvelle langue :", langue);
             appliquerTraduction();
         });
     });
