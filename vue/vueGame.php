@@ -1,7 +1,18 @@
 <?php
+// Config Langue
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+}
+$lang = $_SESSION['lang'];
 
+$col_nom = "nom_" . $lang;
+$col_desc = "description_" . $lang;
+
+// Style
 $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
-
 ?>
 
 <a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
@@ -191,7 +202,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
     </div>
     <form method="post" action=' . $_SERVER["PHP_SELF"] . '?action=ajouterAvis&idEscapeGame=' . $escapeGame[0]['id_escape'] . '>
         <label>
-            <input type="text" name="commentaire" value="" placeholder="Commentaire">
+            <input type="text" name="commentaire" value="" id="inputcommentaire" placeholder="Commentaire">
         </label>
         <label>
             <select name="note">
@@ -204,7 +215,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <option value="5">5/5</option>
             </select>
         </label>
-        <button type="submit" name="ajoutAvis">Ajouter un avis</button>
+        <button type="submit" id=ajoutAvisGame name="ajoutAvis">Ajouter un avis</button>
     </form>';
         }
 

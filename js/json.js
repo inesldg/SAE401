@@ -2,47 +2,56 @@ let trad = {
     // ******************************** vue accueil *************************************************
     "#titreAcc": {
         "fr": "VIVEZ L'",
-        "en": "",
+        "en": "zertgyh",
     },
 
     "#aventure": {
-        "fr": "aventure",
-        "en": "",
+        "fr": "AVENTURE",
+        "en": "dfghj",
     },
 
     "#soustitreAcc": {
         "fr": "Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du temps.",
-        "en": "",
+        "en": "ffvfv",
+    },
+
+    "#textAcc": {
+        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants.Que vous soyez débutant ou expert, venez relever le défi !",
+        "en": "dv",
     },
 
     "#lienBoutonAcc": {
         "fr": "Découvrir nos escapes",
-        "en": "",
+        "en": "defd",
     },
 
     "#titreAcc_h2": {
         "fr": "L'EXPÉRIENCE",
-        "en": "",
+        "en": "dd",
     },
     "#elife": {
         "fr": "ELIFE",
-        "en": "",
+        "en": "fd",
     },
     "#nos": {
         "fr": "NOS",
-        "en": "",
+        "en": "szdef",
     },
     "#suitetitreh2": {
         "fr": "ESCAPES",
-        "en": "",
+        "en": "zdef",
+    },
+    "#voirescapeAcc": {
+        "fr": "Voir tout les escapes →",
+        "en": "zdef",
     },
     "#avistitre_h2": {
         "fr": "AVIS",
-        "en": "",
+        "en": "df",
     },
     "#suiteClient_h2": {
         "fr": "CLIENTS",
-        "en": "",
+        "en": "sd",
     },
 
 
@@ -91,16 +100,36 @@ let trad = {
         "fr": "Nom",
         "en": "",
     },
-    "#PhotoNvEscape": {
-        "fr": "Photo de l’escape",
+    "#inputnomEscape": {
+        "fr": "Nom",
         "en": "",
+    },
+    "#inputdescription": {
+        "fr": "Description de l'escape",
+        "en": "",
+    },
+    "#inputlieu": {
+        "fr": "Lieu de l'escape",
+        "en": "",
+    },
+    "#inputduree": {
+        "fr": "Durée de l'escape",
+        "en": "",
+    },
+    "#inputpersmin": {
+        "fr": "Nombre de personnes min",
+        "en": "",
+    },
+    "#inputpersmax": {
+        "fr": "Nombre de personnes max",
+        "en": "",
+    },
+    "#PhotoNvEscape": {
+        "fr": "Nom de l'escape",
+        "en": "azertyhj",
     },
     "#ajouterAdmin": {
         "fr": "+ Ajouter",
-        "en": "",
-    },
-    "#nvEscapeAjout": {
-        "fr": "Nouvel escape game",
         "en": "",
     },
     "#choixFichier": {
@@ -129,7 +158,7 @@ let trad = {
     },
 
 
-    // ******************************** vue ajout escape game *************************************************
+    // ******************************** vue compte *************************************************
     "#retourAcc": {
         "fr": "Retour à l'accueil",
         "en": "",
@@ -353,6 +382,10 @@ let trad = {
         "fr": "Réserver maintenant",
         "en": "",
     },
+    "#ajoutAvisGame": {
+        "fr": "Ajouter un avis",
+        "en": "",
+    },
 
     // ******************************** vue inscription *************************************************
 
@@ -360,7 +393,11 @@ let trad = {
         "fr": "S'inscrire",
         "en": "",
     },
-    "#mpdInscrip": {
+    "#sinscrireInscr2": {
+        "fr": "S'inscrire",
+        "en": "",
+    },
+    "#mdpInscrip": {
         "fr": "MOT DE PASSE",
         "en": "",
     },
@@ -474,10 +511,10 @@ let trad = {
         "fr": "Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ? ELIFE est né d'une vision : briser les frontières de l'escape game traditionnel.",
         "en": "",
     },
-    "#explicationsuitePropos": {
-        "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
-        "en": "",
-    },
+    // "#explicationsuitePropos": {
+    //     "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
+    //     "en": "",
+    // },
 
     "#parcoursPropos": {
         "fr": "Parcours Thématiques",
@@ -503,6 +540,10 @@ let trad = {
         "fr": "L'Architecte",
         "en": "",
     },
+    "#storytellerPropos": {
+        "fr": "L'Architecte",
+        "en": "",
+    },
     "#chronos": {
         "fr": "Le Chronos",
         "en": "",
@@ -519,8 +560,20 @@ let trad = {
         "fr": "Maître du jeu",
         "en": "",
     },
+    "#titreEnigme_1": {
+        "fr": "L'",
+        "en": "The "
+    },
+    "#titreEnigme_2": {
+        "fr": "Énigme",
+        "en": "Riddle"
+    },
+    "#titreEnigme_3": {
+        "fr": " à ciel ouvert",
+        "en": " in the open air"
+    },
 
-    // ******************************** vue accueil *************************************************
+    // ******************************** vue header *************************************************
     "#menuAcc": {
         "fr": "Accueil",
         "en": "",
@@ -553,8 +606,90 @@ let trad = {
     "#reserver": {
         "fr": "Réserver",
         "en": "",
+    },
+
+    // ******************************** les placeholders en commun sur les pages *************************************************
+
+    "#inputmdp": {
+        "fr": "Votre mot de passe",
+        "en": "azertyui",
+    },
+
+    "#inputnom": {
+        "fr": "Votre nom",
+        "en": "",
+    },
+    "#inputprenom": {
+        "fr": "Votre prénom",
+        "en": "",
+    },
+    "#inputemail": {
+        "fr": "Votre adresse email",
+        "en": "",
+    },
+    "#inputadresse": {
+        "fr": "Votre adresse postale",
+        "en": "",
+    },
+    "#inputconfmdp": {
+        "fr": "Confirmer le mot de passe",
+        "en": "",
+    },
+    "#inputcommentaire": {
+        "fr": "Commentaire",
+        "en": "",
+    },
+
+    // ******************************** required *************************************************
+
+    "#inputmdp_error": {
+        "fr": "Veuillez entrer votre mot de passe.",
+        "en": "Please enter your password.",
+    },
+
+    "#inputdescription_error": {
+        "fr": "Veuillez compléter ce champs.",
+        "en": "Please pleaase please hophophop.",
+    },
+    "#inputlieu_error": {
+        "fr": "Veuillez renseigner un lieu",
+        "en": "",
+    },
+
+    "#inputduree_error": {
+        "fr": "Veuillez indiquer la durée de l'escape.",
+        "en": "",
+    },
+    "#inputpersmin_error": {
+        "fr": "Veuillez indiquer le nombre de personnes minimum.",
+        "en": "",
+    },
+
+    "#inputpersmax_error": {
+        "fr": "Veuillez indiquer le nombre de personnes minimum.",
+        "en": "",
+    },
+    "#inputemail_error": {
+        "fr": "Veuillez renseigner ce champs.",
+        "en": "",
+    },
+
+    "#inputconfmdp_error": {
+        "fr": "Veuillez confirmer votre mot de passe.",
+        "en": "Please pleaase please hophophop.",
+    },
+    "#inputprenom_error": {
+        "fr": "Veuillez renseigner votre prénom",
+        "en": "",
+    },
+
+    "#inputnom_error": {
+        "fr": "Veuillez renseigner votre nom.",
+        "en": "",
     }
-}
+};
+
+
 
 let langue = localStorage.getItem("langue") || "fr";
 

@@ -1,9 +1,19 @@
 <?php
+// Config Langue
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+}
+$lang = $_SESSION['lang'];
 
+$col_nom = "nom_" . $lang;
+$col_desc = "description_" . $lang;
+
+// Style
 $style = '<link rel="stylesheet" href="styles/connexion.css">';
-
 ?>
-
 <h1><?= $message ?></h1>
 
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
@@ -28,7 +38,7 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
             <input type="email" name="mail" value="" placeholder="mail@exemple.com" required>
 
             <label id="mdpConnexion">MOT DE PASSE</label>
-            <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
+            <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>
 
             <button type="submit" name="connexion" class="bouton-connexion" id="seconnecterConnexion">SE
                 CONNECTER</button>
@@ -50,6 +60,5 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
 
 <?php
 
-$script = '<script src="js/json.js" defer></script>';
 $script = '<script src="js/json.js" defer></script>';
 
