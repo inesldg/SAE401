@@ -1,8 +1,20 @@
 <?php
+// Config Langue
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+}
+$lang = $_SESSION['lang'];
 
+$col_nom = "nom_" . $lang;
+$col_desc = "description_" . $lang;
+
+// Style
 $style = '<link rel="stylesheet" href="styles/legal.css">';
-
 ?>
+
 
 <section class="page-legal">
     <div class="page-legal__conteneur">

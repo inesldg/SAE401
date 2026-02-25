@@ -1,8 +1,22 @@
 <?php
+$lang = $_SESSION['lang'] ?? 'fr';
+$col_nom = "nom_" . $lang;
+$col_desc = "description_" . $lang;
 
+// On vérifie si la clé existe dans le premier jeu (index 0)
+// Si la clé (ex: nom_fr) n'existe pas, on utilise 'nom'
+if (isset($escapeGames[0][$col_nom])) {
+    $nom = $escapeGames[0][$col_nom];
+    $desc = $escapeGames[0][$col_desc];
+} else {
+    // C'est ici qu'on évite l'erreur "Undefined array key"
+    $nom = $escapeGames[0]['nom'] ?? "Titre indisponible";
+    $desc = $escapeGames[0]['description'] ?? "Description indisponible";
+}
+// Style
 $style = '<link rel="stylesheet" href="styles/accueil.css">';
-
 ?>
+
 
 <section class="hero-accueil">
     <div class="hero-accueil__overlay"></div>
@@ -10,8 +24,9 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
         <!-- COLONNE TEXTE -->
         <div class="hero-accueil__contenu">
-            <h1 class="hero-accueil__titre" id="titreAcc">
-                VIVEZ L' <span class="hero-accueil__titre--or" id="aventure">AVENTURE</span>
+            <h1 class="hero-accueil__titre">
+                <span id="titreAcc">VIVEZ L'</span>
+                <span class="hero-accueil__titre--or" id="aventure">AVENTURE</span>
             </h1>
             <p class="hero-accueil__sous-titre" id="soustitreAcc">
                 Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du
@@ -34,8 +49,10 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section accueil-experience">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre" id="titreAcc_h2" >L'EXPÉRIENCE <span class="accueil-titre--or" id="elife" >ELIFE</span></h2>
-        <p class="accueil-experience__texte">La Clé ELIFE vous propose des escape games d'exception. Chaque salle est
+        <h2 class="accueil-titre" id="titreAcc_h2">L'EXPÉRIENCE <span class="accueil-titre--or" id="elife">ELIFE</span>
+        </h2>
+        <p class="accueil-experience__texte" id="textAcc">La Clé ELIFE vous propose des escape games d'exception. Chaque
+            salle est
             conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des
             scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !</p>
     </div>
@@ -51,10 +68,8 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
             <article class="accueil-escape-card">
                 <div class="accueil-escape-card__img"></div>
                 <div class="accueil-escape-card__corps">
-                    <h3 class="accueil-escape-card__titre"><?= $escapeGames[0]['nom'] ?></h3>
-                    <p class="accueil-escape-card__desc">
-                        <?= $escapeGames[0]['description'] ?>
-                    </p>
+                    <h3 class="accueil-escape-card__titre"><?= $nom ?></h3>
+                    <p class="accueil-escape-card__desc"><?= $desc ?></p>
                     <div class="accueil-escape-card__infos">
                         <span class="accueil-escape-card__duree">
                             <?= $escapeGames[0]['duree'] ?>h
@@ -68,6 +83,10 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
                     <a href="#" class="accueil-escape-card__btn">Voir détails</a>
                 </div>
             </article>
+
+            <h3 class="accueil-escape-card__titre"><?= $nom ?></h3>
+            <p class="accueil-escape-card__desc"><?= $desc ?></p>
+
             <!-- ------------------------------ -->
 
             <article class="accueil-escape-card">
@@ -123,7 +142,8 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section accueil-avis">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre" id="avistitre_h2" >AVIS <span class="accueil-titre--or" id="suiteClient_h2">CLIENTS</span></h2>
+        <h2 class="accueil-titre" id="avistitre_h2">AVIS <span class="accueil-titre--or"
+                id="suiteClient_h2">CLIENTS</span></h2>
         <div class="accueil-avis__grille">
             <article class="accueil-avis-card">
                 <div class="accueil-avis-card__etoiles">★★★★★</div>
@@ -161,7 +181,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 if (isset($acces[0]['statut'])) {
     switch ($acces[0]['statut']) {
         case "1":
-            echo "<div>vous êtes connecté en tant qu'utilisateur</div>";
+            echo "<div>" . ($lang == 'en' ? "You are logged in as a user" : "Vous êtes connecté en tant qu'utilisateur") . "</div>";
             break;
         case "2":
             echo "<div>vous êtes connecté en tant qu'administrateur</div>

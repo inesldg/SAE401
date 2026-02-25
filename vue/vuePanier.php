@@ -1,9 +1,20 @@
 <?php
+// Config Langue
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+}
+$lang = $_SESSION['lang'];
 
+$col_nom = "nom_" . $lang;
+$col_desc = "description_" . $lang;
+
+// Style
 $style = '<link rel="stylesheet" href="styles/panier.css">';
-
-// ob_start();
 ?>
+
 
 <!-- ------ ICI mettre le code HTML ------ -->
 
@@ -88,7 +99,8 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
 
 
-                    <button type="submit" class="bouton-valider"><a href="index.php?action=confirmation" id="validerPanier">Valider le paiement</a></button>
+                    <button type="submit" class="bouton-valider"><a href="index.php?action=confirmation"
+                            id="validerPanier">Valider le paiement</a></button>
                 </form>
             </div>
         </div>

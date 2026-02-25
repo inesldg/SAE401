@@ -4,7 +4,7 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
 -->
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?= $_SESSION['lang'] ?? 'fr' ?>">
 
 <head>
   <meta charset="UTF-8">

@@ -10,9 +10,24 @@
             <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
             <a href="index.php?action=accueil" id="menuContact">Contact</a> <!-- A MODIFIER -->
             <a href="index.php?action=pageInscription" id="menuCompte">Compte</a>
+
+            <!-- pour le changement de langue -->
             <div class="lang-switcher">
-                <button data-langue="fr" class="active">FR</button>
-                <button data-langue="en">EN</button>
+                <?php
+                // On récupère tous les paramètres actuels de l'URL (ex: action=escapeGames)
+                $params = $_GET;
+
+                // Pour le bouton FR
+                $params['lang'] = 'fr';
+                $url_fr = "?" . http_build_query($params);
+
+                // Pour le bouton EN
+                $params['lang'] = 'en';
+                $url_en = "?" . http_build_query($params);
+                ?>
+
+                <a href="<?= $url_fr ?>" class="<?= ($_SESSION['lang'] ?? 'fr') == 'fr' ? 'active' : '' ?>">FR</a>
+                <a href="<?= $url_en ?>" class="<?= ($_SESSION['lang'] ?? 'fr') == 'en' ? 'active' : '' ?>">EN</a>
             </div>
 
         </nav>

@@ -1,8 +1,20 @@
 <?php
+// Config Langue
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+}
+$lang = $_SESSION['lang'];
 
+$col_nom = "nom_" . $lang;
+$col_desc = "description_" . $lang;
+
+// Style
 $style = '<link rel="stylesheet" href="styles/about.css">';
-
 ?>
+
 
 <section class="hero-section">
     <h1>L'<span class="texte-doré">Énigme</span> à ciel ouvert</h1>
@@ -32,15 +44,18 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
     <div class="conteneur-cartes">
         <div class="carte">
             <h3 class="texte-doré" id="libertePropos">Liberté Totale</h3>
-            <p id="libertéexplicationPropos">Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.</p>
+            <p id="libertéexplicationPropos">Respirez, explorez et utilisez l'architecture réelle pour progresser. Le
+                ciel est votre plafond.</p>
         </div>
         <div class="carte">
             <h3 class="texte-doré" id="parcoursPropos">Parcours Thématiques</h3>
-            <p id="parcoursexplicationPropos">Du thriller d'espionnage à la quête historique, chaque quartier cache un secret.</p>
+            <p id="parcoursexplicationPropos">Du thriller d'espionnage à la quête historique, chaque quartier cache un
+                secret.</p>
         </div>
         <div class="carte">
             <h3 class="texte-doré" id="realitéaugPropos">Réalité Augmentée</h3>
-            <p id="realitePropos">Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à l'œil nu.</p>
+            <p id="realitePropos">Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à
+                l'œil nu.</p>
         </div>
     </div>
 

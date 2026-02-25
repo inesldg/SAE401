@@ -2,16 +2,21 @@ let trad = {
     // ******************************** vue accueil *************************************************
     "#titreAcc": {
         "fr": "VIVEZ L'",
-        "en": "",
+        "en": "zertgyh",
     },
 
     "#aventure": {
-        "fr": "aventure",
-        "en": "",
+        "fr": "AVENTURE",
+        "en": "dfghj",
     },
 
     "#soustitreAcc": {
         "fr": "Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du temps.",
+        "en": "",
+    },
+
+    "#textAcc": {
+        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants.Que vous soyez débutant ou expert, venez relever le défi !",
         "en": "",
     },
 
@@ -663,21 +668,11 @@ let trad = {
         "fr": "Veuillez renseigner votre nom.",
         "en": "",
     }
-}
-
-
-
-
-
-
-
-
-
-
+};
 
 
 // 1. Définir la variable TOUT EN HAUT du fichier
-let langue = localStorage.getItem("langue") || "fr";
+let langue = document.querySelector("html").getAttribute("lang") || localStorage.getItem("langue") || "fr";
 // 1. La fonction de traduction (FERMÉE correctement après la boucle)
 function appliquerTraduction() {
     console.log("Tentative de traduction en :", langue);
