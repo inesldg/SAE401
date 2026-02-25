@@ -307,7 +307,7 @@ let trad = {
         "en": "",
     },
     "#titreGames": {
-        "fr": "In vino Veritas L'escape game mélant nature et découverte locale",
+        "fr": "L'escape game mélant nature et découverte locale",
         "en": "",
     },
     "#prixGames": {

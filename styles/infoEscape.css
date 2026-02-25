@@ -59,6 +59,13 @@ h2 {
     font-family: var(--titre);
 }
 
+.titre-or {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .infos-rapides {
     display: flex;
     align-items: center;
@@ -320,7 +327,7 @@ h2 {
     display: none;
 }
 
-a{
+a {
     color: white;
     text-decoration: none;
 }

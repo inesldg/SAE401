@@ -15,11 +15,16 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 ?>
 
-<a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
-<a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a>
+<!-- <a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
+<a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a> -->
 
 <section class="hero-section">
-    <h1 id="titreGames">In vino Veritas L'escape game mélant nature et découverte locale</h1>
+    <h1>
+        <span class="titre-or">
+            <?= $escapeGame[0]['nom'] ?>
+        </span>
+        <span id="titreGames"> L'escape game mêlant nature et découverte locale</span>
+    </h1>
 </section>
 
 <div class="conteneur-reservation">
@@ -80,32 +85,52 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
         <section class="block_avis carte-noire">
             <h2 style="font-size: 24px;" id="nbAvisGames">Avis</h2>
             <div class="grille-avis">
-                <div class="avis-unitaire">
-                    <div class="photo-profil"></div>
-                    <strong>Emilien</strong><br>
-                    <span style="color: var(--gold-clair)">★★★★★</span>
-                    <div>blahblahb bg ydhjfnv jdnvjkdjvkd, ,ndvkjvn</div>
-                </div>
-                <div class="avis-unitaire">
-                    <div class="photo-profil"></div>
-                    <strong>Florian</strong><br>
-                    <span style="color: var(--gold-clair)">★★★★★</span>
-                    <div>blahblahb bg ydhjfnv jdnvjkdjvkd, ,ndvkjvn</div>
-                </div>
-                <div class="avis-unitaire">
-                    <div class="photo-profil"></div>
-                    <strong>Enzo</strong><br>
-                    <span style="color: var(--gold-clair)">★★★★★</span>
-                    <div>blahblahb bg ydhjfnv jdnvjkdjvkd, ,ndvkjvn</div>
-                </div>
+                <?php
+                // On vérifie s'il y a des avis (si $avis n'est pas vide et n'est pas égal à 0)
+                if (!empty($avis) && $avis != 0) {
+                    foreach ($avis as $evaluation) {
+                        // Gestion de la langue pour le commentaire
+                        $commAffichage = ($lang == 'en') ? $evaluation['commentaire_en'] : $evaluation['commentaire'];
+
+                        // Calcul des étoiles
+                        $note = intval($evaluation['note']);
+                        $etoiles = str_repeat('★', $note) . str_repeat('☆', 5 - $note);
+                        ?>
+
+                        <div class="avis-unitaire">
+                            <div class="photo-profil"></div>
+                            <strong><?= htmlspecialchars($evaluation['prenom']) ?></strong><br>
+
+                            <span style="color: var(--gold-clair)"><?= $etoiles ?></span>
+                            <small>(<?= $note ?>/5)</small>
+
+                            <div style="font-size: 0.8em; opacity: 0.7;">
+                                <?= date('d/m/Y', strtotime($evaluation['avis_date'])) ?>
+                            </div>
+
+                            <div><?= htmlspecialchars($commAffichage) ?></div>
+                        </div>
+
+                        <?php
+                    }
+                } else {
+                    // Message si aucun avis n'est trouvé
+                    echo "<p style='grid-column: 1/-1; text-align: center;'>Aucun avis pour le moment.</p>";
+                }
+                ?>
             </div>
-            <center><button class="bouton-avis" id="voirAvisGames">Voir tous les avis</button></center>
+            <center>
+                <button class="bouton-avis" id="voirAvisGames">Voir tous les avis</button>
+            </center>
         </section>
     </div>
 
     <div class="colonne-droite">
         <section class="carte-noire">
-            <h2 style="font-size: 28px;">Invino Veritas</h2>
+            <h2 style="font-size: 28px;">
+                <?= $escapeGame[0]['nom'] ?>
+            </h2>
+
             <p class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</p>
 
             <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
@@ -221,25 +246,8 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
         ?>
 
-        <div>
-            <?php
-            if ($avis != 0) {
-                foreach ($avis as $evaluation) {
-                    $result = '
-                <div>' . $evaluation['nom'] . ' ' . $evaluation['prenom'] . '</div>
-                <div>' . $evaluation['note'] . '</div>
-                <div>' . $evaluation['avis_date'] . '</div>
-                <div>' . $evaluation['commentaire'] . '</div>
-            ';
+<?php
 
-                    echo $result;
-                }
-            }
-            ?>
-        </div>
-
-        <?php
-
-        $script = '<script src="js/infoescape.js"></script>';
-        $script .= '<script src="js/json.js" defer></script>';
+$script = '<script src="js/infoescape.js"></script>';
+$script .= '<script src="js/json.js" defer></script>';
 
