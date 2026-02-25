@@ -719,16 +719,16 @@ let trad = {
     },
     "#inputlieu_error": {
         "fr": "Veuillez renseigner un lieu",
-        "en": "",
+        "en": "dcfgh",
     },
 
     "#inputduree_error": {
         "fr": "Veuillez indiquer la durée de l'escape.",
-        "en": "",
+        "en": "dfghj",
     },
     "#inputpersmin_error": {
         "fr": "Veuillez indiquer le nombre de personnes minimum.",
-        "en": "",
+        "en": "fghjk",
     },
 
     "#inputpersmax_error": {
@@ -737,7 +737,7 @@ let trad = {
     },
     "#inputemail_error": {
         "fr": "Veuillez renseigner ce champs.",
-        "en": "",
+        "en": "dfghjklm",
     },
 
     "#inputconfmdp_error": {
@@ -763,6 +763,32 @@ function appliquerTraduction() {
 
     console.log("Tentative de traduction en :", langueActuelle);
     document.querySelector("html").lang = langueActuelle;
+
+
+    // --- TRADUCTION DES BULLES D'ERREUR ---
+    Object.keys(trad).forEach(cleError => {
+        if (cleError.endsWith("_error")) {
+            const idInput = cleError.replace("_error", "");
+            const inputElement = document.querySelector(idInput);
+
+            if (inputElement) {
+                const message = trad[cleError][langueActuelle];
+
+                // On utilise addEventListener pour ne pas écraser d'autres scripts
+                inputElement.addEventListener("invalid", function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity(message);
+                    }
+                }, false);
+
+                inputElement.addEventListener("input", function (e) {
+                    e.target.setCustomValidity("");
+                }, false);
+            }
+        }
+    });
+
 
     Object.entries(trad).forEach(([selecteur, donnee]) => {
         // On utilise querySelectorAll pour être sûr de tout traduire
