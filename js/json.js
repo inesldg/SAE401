@@ -576,36 +576,35 @@ let trad = {
     // ******************************** vue header *************************************************
     "#menuAcc": {
         "fr": "Accueil",
-        "en": "",
+        "en": "Home",
     },
     "#menuPropos": {
         "fr": "A Propos",
-        "en": "",
+        "en": "About",
     },
     "#menuNosEscapes": {
         "fr": "Nos escapes",
-        "en": "",
+        "en": "Our Escapes",
     },
     "#menuContact": {
         "fr": "Contact",
-        "en": "",
+        "en": "Contact",
     },
     "#menuCompte": {
         "fr": "Compte",
-        "en": "",
+        "en": "Account",
     },
-
     "#menuDash": {
         "fr": "Dashboard",
-        "en": "",
+        "en": "Dashboard",
     },
     "#menudeco": {
         "fr": "Déconnexion",
-        "en": "",
+        "en": "Logout",
     },
     "#reserver": {
         "fr": "Réserver",
-        "en": "",
+        "en": "Book Now",
     },
 
     // ******************************** les placeholders en commun sur les pages *************************************************
