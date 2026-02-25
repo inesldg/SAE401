@@ -121,7 +121,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                                 </td>
 
 
-                                <!-- ACTIONS -->
+                                <!-- ACTION -->
                                 <td>
                                     <a class="supp" href="index.php?action=supprimerEscape&id=<?= $escape['id_escape'] ?>">
                                         <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
