@@ -39,7 +39,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
             <span id="titreAcc_h2">L'EXPÉRIENCE</span>
             <span class="accueil-titre--or" id="elife">ELIFE</span>
         </h2>
-        <p class="accueil-experience__texte">La Clé ELIFE vous propose des escape games d'exception. Chaque salle est
+        <p class="accueil-experience__texte" id="textAcc">La Clé ELIFE vous propose des escape games d'exception. Chaque salle est
             conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des
             scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !</p>
     </div>

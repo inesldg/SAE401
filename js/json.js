@@ -812,39 +812,44 @@ function appliquerTraduction() {
         }
     });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     // 1. On cible les boutons
     const btnFr = document.querySelector('.lang-switcher button[data-langue="fr"]');
     const btnEn = document.querySelector('.lang-switcher button[data-langue="en"]');
 
-    // 2. Fonction pour changer l'apparence
+    // 2. Fonction pour changer l'apparence visuelle
     function toggleVisual(langue) {
-        if (langue === 'en') {
-            btnEn.classList.add('active');
-            btnFr.classList.remove('active');
-        } else {
-            btnFr.classList.add('active');
-            btnEn.classList.remove('active');
+        if (btnFr && btnEn) {
+            if (langue === 'en') {
+                btnEn.classList.add('active');
+                btnFr.classList.remove('active');
+            } else {
+                btnFr.classList.add('active');
+                btnEn.classList.remove('active');
+            }
         }
     }
 
-    // 3. Application au chargement (pour rester doré si on refresh)
+    // --- LE TRUC QUI MANQUAIT : ---
+    // 3. On récupère la langue stockée (ou 'fr' par défaut)
     const currentLang = localStorage.getItem("langue") || "fr";
-    toggleVisual(currentLang);
 
-    // 4. Événement au CLIC
+    // 4. On l'applique DIRECTEMENT au chargement
+    toggleVisual(currentLang);
+    appliquerTraduction(); // On lance la traduction dès que la page s'affiche
+
+    // 5. Événement au CLIC (pour les changements futurs)
     if (btnFr && btnEn) {
         btnFr.addEventListener("click", () => {
             localStorage.setItem("langue", "fr");
             toggleVisual("fr");
-            if (typeof appliquerTraduction === "function") appliquerTraduction();
+            appliquerTraduction();
         });
 
         btnEn.addEventListener("click", () => {
             localStorage.setItem("langue", "en");
             toggleVisual("en");
-            if (typeof appliquerTraduction === "function") appliquerTraduction();
+            appliquerTraduction();
         });
     }
 });
