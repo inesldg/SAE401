@@ -1,6 +1,4 @@
 :root {
-    --dore: #c5a059;
-    --fond-clair: #f9f9f9;
     --texte-sombre: #1a1a1a;
     --texte-gris: #777;
 }
@@ -94,7 +92,7 @@ body {
 }
 
 .bouton-sauvegarder {
-    background-color: var(--dore);
+    background-color: var(--gold-clair);
     color: white;
     border: none;
     padding: 10px 25px;
@@ -120,7 +118,7 @@ body {
 .case input {
     width: 100%;
     padding: 15px;
-    background-color: var(--fond-clair);
+    background-color: var(--blanc-casse);
     border: 1px solid transparent;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -165,6 +163,6 @@ body {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: var(--dore);
+    color: var(--gold-clair);
     font-weight: 600;
 }
