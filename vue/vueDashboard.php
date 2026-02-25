@@ -20,7 +20,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                 </svg>
                 <div id="escapeAdmin">Escapes</div>
             </a>
-            <a href="#" class="user">
+            <a href="index.php?action=utilisateurs" class="user">
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.6 17.2V15.4C13.6 14.4453 13.2207 13.5296 12.5456 12.8545C11.8705 12.1793 10.9548 11.8 10 11.8H4.6C3.64522 11.8 2.72955 12.1793 2.05442 12.8545C1.37928 13.5296 1 14.4453 1 15.4V17.2M13.6 1.11523C14.372 1.31537 15.0557 1.76617 15.5437 2.39689C16.0318 3.02761 16.2966 3.80253 16.2966 4.60003C16.2966 5.39753 16.0318 6.17246 15.5437 6.80318C15.0557 7.4339 14.372 7.8847 13.6 8.08483M19 17.2V15.4C18.9994 14.6024 18.7339 13.8275 18.2452 13.1971C17.7565 12.5667 17.0723 12.1164 16.3 11.917" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M7.3002 8.2C9.28842 8.2 10.9002 6.58822 10.9002 4.6C10.9002 2.61177 9.28842 1 7.3002 1C5.31197 1 3.7002 2.61177 3.7002 4.6C3.7002 6.58822 5.31197 8.2 7.3002 8.2Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
