@@ -65,8 +65,88 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
         <div class="bas">
 
+            <table class="table-escapes">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Contact</th>
+                        <th>Inscrit le</th>
+                        <th>Réservations</th>
+                        <th>Statut</th>
+                        <th>Photo</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <!-- <tbody>
+                    <?php if (!empty($escapes)): ?>
+                        <?php foreach ($escapes as $escape): ?>
+                            <tr>
+                                <!-- NOM -->
+                                <td><?= htmlspecialchars($escape['nom']) ?></td>
 
-            <a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
+                                <!-- DESCRIPTION -->
+                                <td><?= htmlspecialchars($escape['description']) ?></td>
+
+                                <!-- LIEU -->
+                                <td><?= htmlspecialchars($escape['lieu']) ?></td>
+
+                                <!-- DURÉE -->
+                                <td>
+                                    <div class="case">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7 0C10.8661 0 14 3.1339 14 7C14 10.8661 10.8661 14 7 14C3.1339 14 0 10.8661 0 7C0 3.1339 3.1339 0 7 0ZM7 1.4C5.51479 1.4 4.09041 1.99 3.0402 3.0402C1.99 4.09041 1.4 5.51479 1.4 7C1.4 8.48521 1.99 9.90959 3.0402 10.9598C4.09041 12.01 5.51479 12.6 7 12.6C8.48521 12.6 9.90959 12.01 10.9598 10.9598C12.01 9.90959 12.6 8.48521 12.6 7C12.6 5.51479 12.01 4.09041 10.9598 3.0402C9.90959 1.99 8.48521 1.4 7 1.4ZM7 2.8C7.17145 2.80002 7.33694 2.86297 7.46506 2.9769C7.59319 3.09083 7.67504 3.24782 7.6951 3.4181L7.7 3.5V6.7102L9.5949 8.6051C9.72044 8.73107 9.79333 8.9001 9.79876 9.07787C9.80419 9.25563 9.74175 9.4288 9.62413 9.56219C9.5065 9.69559 9.34251 9.77921 9.16547 9.79608C8.98842 9.81295 8.81159 9.76179 8.6709 9.653L8.6051 9.5949L6.5051 7.4949C6.39631 7.38601 6.32643 7.2443 6.3063 7.0917L6.3 7V3.5C6.3 3.31435 6.37375 3.1363 6.50503 3.00503C6.6363 2.87375 6.81435 2.8 7 2.8Z"
+                                                fill="#F2F2F2" />
+                                        </svg>
+                                        <div class="duree"><?= htmlspecialchars($escape['duree']) ?> min</div>
+                                    </div>
+                                </td>
+
+                                <!-- JOUEURS -->
+                                <td>
+                                    <div class="case">
+                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.3 13.1002V11.7002C10.3 10.9576 10.005 10.2454 9.4799 9.72035C8.9548 9.19524 8.24261 8.90024 7.5 8.90024H3.3C2.55739 8.90024 1.8452 9.19524 1.3201 9.72035C0.794999 10.2454 0.5 10.9576 0.5 11.7002V13.1002M10.3 0.589844C10.9004 0.745503 11.4322 1.09613 11.8118 1.58669C12.1914 2.07725 12.3973 2.67997 12.3973 3.30024C12.3973 3.92052 12.1914 4.52324 11.8118 5.0138C11.4322 5.50436 10.9004 5.85498 10.3 6.01064M14.5 13.1002V11.7002C14.4995 11.0799 14.293 10.4772 13.913 9.98686C13.5329 9.49654 13.0007 9.14634 12.4 8.99124"
+                                                stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M5.4001 6.1C6.9465 6.1 8.2001 4.8464 8.2001 3.3C8.2001 1.7536 6.9465 0.5 5.4001 0.5C3.8537 0.5 2.6001 1.7536 2.6001 3.3C2.6001 4.8464 3.8537 6.1 5.4001 6.1Z"
+                                                stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="joueurs"><?= $escape['nbr_pers_min'] ?> - <?= $escape['nbr_pers_max'] ?>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <!-- ACTIONS -->
+                                <td>
+                                    <a class="supp" href="index.php?action=supprimerEscape&id=<?= $escape['id_escape'] ?>">
+                                        <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.5 4.05556H14.5M5.75 7.61111V12.9444M9.25 7.61111V12.9444M1.375 4.05556L2.25 14.7222C2.25 15.1937 2.43437 15.6459 2.76256 15.9793C3.09075 16.3127 3.53587 16.5 4 16.5H11C11.4641 16.5 11.9092 16.3127 12.2374 15.9793C12.5656 15.6459 12.75 15.1937 12.75 14.7222L13.625 4.05556M4.875 4.05556V1.38889C4.875 1.15314 4.96719 0.927048 5.13128 0.760349C5.29538 0.59365 5.51794 0.5 5.75 0.5H9.25C9.48206 0.5 9.70462 0.59365 9.86872 0.760349C10.0328 0.927048 10.125 1.15314 10.125 1.38889V4.05556"
+                                                stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                </td>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="6">Aucun escape enregistré.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody> -->
+            </table>
+
+
+
+
 
             <div>
                 <div><?= $message ?></div>
@@ -93,7 +173,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
                 // var_dump(value: $utilisateurs);
                 ?>
-                
+
             </div>
         </div>
     </div>
