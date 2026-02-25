@@ -1,0 +1,122 @@
+:root {
+    /* Couleurs principales */
+    --blanc-casse: #F2F2F2;
+    --gold-clair: #c5a059;
+    --golf-fonce: #A3730C;
+    --bleu-fonce: #101a23;
+    --bleu-clair: #2b4359;
+    --noir: #0A0A0A;
+    --marron-clair: #4B2009;
+    --marron-fonce: #322611;
+
+    /* Typos */
+    --titre: 'Cinzel', serif;
+    --texte: 'Inter', sans-serif;
+
+    /* Dégradés pour boutons etc */
+    --gold-gradient: linear-gradient(to right, #E6B856, #806630);
+    --gold-gradient-transition: linear-gradient(to right, #E6B856, #806630, #E6B856, #806630);
+
+    --gold-fade: linear-gradient(to bottom, transparent 0%, #E6B856 50%, transparent 100%);
+    --gold-fade-horizontal: linear-gradient(to right, transparent 0%, #E6B856 50%, transparent 100%);
+    --dark-bg: #101A23;
+}
+
+body {
+    background-color: var(--noir);
+    font-family: var(--texte);
+    color: var(--blanc-casse);
+}
+
+.admin {
+    font-size: 12px;
+    color: var(--blanc-casse);
+    opacity: 50%;
+}
+
+.menu-gauche {
+    width: 300px;
+    background-color: var(--bleu-fonce);
+    padding: 20px;
+}
+
+.menu-categorie {
+    color: var(--blanc-casse);
+    display: inline-block;
+    width: 100%;
+}
+
+.dash,
+.escape,
+.calendrier,
+.avis,
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--blanc-casse);
+}
+
+.user {
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin: -10px;
+    margin-bottom: 20px;
+    border-right: solid #A3730C 3px;
+}
+
+.dash>div,
+.escape>div,
+.calendrier>div,
+.avis>div,
+.user>div {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.dash:hover,
+.calendrier:hover,
+.avis:hover,
+.user:hover {
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: -10px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.ligne {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 1px;
+    width: 340px;
+    background-color: var(--bleu-clair);
+    margin-left: -20px;
+}
+
+.contenu {
+    display: flex;
+}
+
+.droite {
+    margin: 32px;
+    flex: 1;
+}
+
+h1 {
+    margin: 0;
+    font-family: var(--titre);
+    margin-bottom: 5px;
+}
+
+.sous-titre {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-bottom: 32px;
+}

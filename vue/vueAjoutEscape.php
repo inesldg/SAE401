@@ -71,8 +71,8 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
         <div class="haut">
             <div class="part1">
-                <h1 id="gestionAdmin">GESTIONS DES ESCAPES</h1>
-                <div class="sous-titre" id="nbEscapeAdmin">
+                <h1 id="gestionAdmin">GESTION DES ESCAPES</h1>
+                <div class="sous-titre" id="#"> <!-- l'id nique mon truc -->
                     <?= isset($escapes) ? count($escapes) : 0 ?> escapes actifs
                 </div>
             </div>
