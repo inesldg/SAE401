@@ -91,9 +91,33 @@ let trad = {
         "fr": "Nom",
         "en": "",
     },
-    "#PhotoNvEscape": {
-        "fr": "Photo de l’escape",
+    "#inputnomEscape": {
+        "fr": "Nom",
         "en": "",
+    },
+    "#inputdescription": {
+        "fr": "Description de l'escape",
+        "en": "",
+    },
+    "#inputlieu": {
+        "fr": "Lieu de l'escape",
+        "en": "",
+    },
+    "#inputduree": {
+        "fr": "Durée de l'escape",
+        "en": "",
+    },
+    "#inputpersmin": {
+        "fr": "Nombre de personnes min",
+        "en": "",
+    },
+    "#inputpersmax": {
+        "fr": "Nombre de personnes max",
+        "en": "",
+    },
+    "#PhotoNvEscape": {
+        "fr": "Nom de l'escape",
+        "en": "azertyhj",
     },
     "#ajouterAdmin": {
         "fr": "+ Ajouter",
@@ -129,7 +153,7 @@ let trad = {
     },
 
 
-    // ******************************** vue ajout escape game *************************************************
+    // ******************************** vue compte *************************************************
     "#retourAcc": {
         "fr": "Retour à l'accueil",
         "en": "",
@@ -353,6 +377,10 @@ let trad = {
         "fr": "Réserver maintenant",
         "en": "",
     },
+    "#ajoutAvisGame": {
+        "fr": "Ajouter un avis",
+        "en": "",
+    },
 
     // ******************************** vue inscription *************************************************
 
@@ -553,11 +581,105 @@ let trad = {
     "#reserver": {
         "fr": "Réserver",
         "en": "",
+    },
+
+    // ******************************** les placeholders en commun sur les pages *************************************************
+
+    "#inputmdp": {
+        "fr": "Votre mot de passe",
+        "en": "azertyui",
+    },
+
+    "#inputnom": {
+        "fr": "Votre nom",
+        "en": "",
+    },
+    "#inputprenom": {
+        "fr": "Votre prénom",
+        "en": "",
+    },
+    "#inputemail": {
+        "fr": "Votre adresse email",
+        "en": "",
+    },
+    "#inputadresse": {
+        "fr": "Votre adresse postale",
+        "en": "",
+    },
+    "#inputconfmdp": {
+        "fr": "Confirmer le mot de passe",
+        "en": "",
+    },
+    "#inputcommentaire": {
+        "fr": "Commentaire",
+        "en": "",
+    },
+
+    // ******************************** required *************************************************
+
+
+    "#inputmdp_error": {
+        "fr": "Veuillez entrer votre mot de passe.",
+        "en": "Please enter your password.",
+    },
+
+    "#inputdescription_error": {
+        "fr": "Veuillez compléter ce champs.",
+        "en": "Please pleaase please hophophop.",
+    },
+    "#inputlieu_error": {
+        "fr": "Veuillez renseigner un lieu",
+        "en": "",
+    },
+
+    "#inputduree_error": {
+        "fr": "Veuillez indiquer la durée de l'escape.",
+        "en": "",
+    },
+    "#inputpersmin_error": {
+        "fr": "Veuillez indiquer le nombre de personnes minimum.",
+        "en": "",
+    },
+
+    "#inputpersmax_error": {
+        "fr": "Veuillez indiquer le nombre de personnes minimum.",
+        "en": "",
+    },
+    "#inputemail_error": {
+        "fr": "Veuillez renseigner ce champs.",
+        "en": "",
+    },
+
+    "#inputconfmdp_error": {
+        "fr": "Veuillez confirmer votre mot de passe.",
+        "en": "Please pleaase please hophophop.",
+    },
+    "#inputprenom_error": {
+        "fr": "Veuillez renseigner votre prénom",
+        "en": "",
+    },
+
+    "#inputnom_error": {
+        "fr": "Veuillez renseigner votre nom.",
+        "en": "",
     }
 }
 
-let langue = localStorage.getItem("langue") || "fr";
 
+
+
+
+
+
+
+
+
+
+
+// 1. Définir la variable TOUT EN HAUT du fichier
+let langue = localStorage.getItem("langue") || "fr";
+// 1. La fonction de traduction (FERMÉE correctement après la boucle)
+// 1. La fonction de traduction (FERMÉE correctement après la boucle)
 function appliquerTraduction() {
     console.log("Tentative de traduction en :", langue);
     document.querySelector("html").lang = langue;
@@ -565,27 +687,53 @@ function appliquerTraduction() {
 
     Object.entries(trad).forEach(([selecteur, donnee]) => {
         const element = document.querySelector(selecteur);
+
         if (element) {
-            element.innerHTML = donnee[langue];
-        } else {
-            // Si tu vois ça dans la console, c'est que l'ID n'est pas dans ton HTML
-            console.warn("Sélecteur introuvable sur cette page :", selecteur);
+            const texte = donnee[langue] || "";
+
+            // 1. Traduction classique (Placeholder vs Texte)
+            if (element.placeholder !== undefined) {
+                element.placeholder = texte;
+            } else {
+                element.innerHTML = texte;
+            }
+
+            // 2. Gestion du REQUIRED
+            if (element.required) {
+                const cleErreur = selecteur + "_error";
+                const messageErreur = (trad[cleErreur]) ? trad[cleErreur][langue] : "";
+
+                if (messageErreur) {
+                    element.setCustomValidity(""); // Reset
+
+                    element.oninvalid = function (e) {
+                        console.log("Validation échouée pour :", selecteur);
+                        e.target.setCustomValidity(messageErreur);
+                    };
+
+                    element.oninput = function (e) {
+                        e.target.setCustomValidity("");
+                    };
+                }
+            }
         }
     });
-}
+} // <--- C'est ICI qu'il fallait fermer la fonction !
 
-// On attend que la page soit prête
+// 2. L'écouteur d'événement unique (AU DEHORS de la fonction)
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM chargé, prêt à traduire");
+
+    // On lance la traduction initiale
     appliquerTraduction();
 
-    // Gestion des boutons
+    // On branche les boutons de langue
     const boutons = document.querySelectorAll("button[data-langue]");
     console.log("Nombre de boutons de langue trouvés :", boutons.length);
 
     boutons.forEach(b => {
         b.addEventListener("click", function () {
-            langue = this.dataset.langue;
+            langue = this.dataset.langue; // Mise à jour de la variable globale
             console.log("Bouton cliqué, nouvelle langue :", langue);
             appliquerTraduction();
         });

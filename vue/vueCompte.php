@@ -20,7 +20,7 @@ $style = '';
 
 
     <label id="entrerMDPCompte">Entrez votre mot de passe pour enregistrer
-        <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
+        <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>
     </label>
     <button type="submit" name="modifierInfos" id="modifCompte">Modifier</button>
     <span>

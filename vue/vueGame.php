@@ -191,7 +191,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
     </div>
     <form method="post" action=' . $_SERVER["PHP_SELF"] . '?action=ajouterAvis&idEscapeGame=' . $escapeGame[0]['id_escape'] . '>
         <label>
-            <input type="text" name="commentaire" value="" placeholder="Commentaire">
+            <input type="text" name="commentaire" value="" id="inputcommentaire" placeholder="Commentaire">
         </label>
         <label>
             <select name="note">
@@ -204,7 +204,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 <option value="5">5/5</option>
             </select>
         </label>
-        <button type="submit" name="ajoutAvis">Ajouter un avis</button>
+        <button type="submit" id=ajoutAvisGame name="ajoutAvis">Ajouter un avis</button>
     </form>';
         }
 

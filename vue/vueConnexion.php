@@ -28,7 +28,7 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
             <input type="email" name="mail" value="" placeholder="mail@exemple.com" required>
 
             <label id="mdpConnexion">MOT DE PASSE</label>
-            <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
+            <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>
 
             <button type="submit" name="connexion" class="bouton-connexion" id="seconnecterConnexion">SE
                 CONNECTER</button>

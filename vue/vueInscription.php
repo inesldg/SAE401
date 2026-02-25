@@ -25,11 +25,11 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             <div class="groupe-ligne">
                 <div class="groupe-input">
                     <label id="nomCompte">NOM</label>
-                    <input type="text" name="nom" value="" placeholder="Votre nom" required>
+                    <input type="text" name="nom" value="" id="inputnom" placeholder="Votre nom" required>
                 </div>
                 <div class="groupe-input">
                     <label id="prenomCompte">PRÉNOM</label>
-                    <input type="text" name="prenom" value="" placeholder="Votre prénom" required>
+                    <input type="text" name="prenom" value="" id="inputprenom" placeholder="Votre prénom" required>
                 </div>
             </div>
 
@@ -42,20 +42,22 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
 
 
             <label id="mailCompte">ADRESSE MAIL</label>
-            <input type="email" name="mail" value="" placeholder="mail@exemple.com" required>
+            <input type="email" name="mail" value="" id="inputemail" placeholder="mail@exemple.com" required>
 
 
             <label id="mpdInscrip">MOT DE PASSE</label>
-            <input type="password" name="mdp" value="" placeholder="Votre mot de passe" required>
+            <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>
 
             <label id="confmpdInscrip">Confirmer le mot de passe : </label>
-            <input type="password" name="mdpConfirm" value="" placeholder="Confirmer le mot de passe" required>
+            <input type="password" name="mdpConfirm" value="" id="inputconfmdp" placeholder="Confirmer le mot de passe"
+                required>
 
             <button type="submit" class="inscription" value="S'inscrire" id="sinscrireInscr">S'INSCRIRE</button>
             <span><?= $message ?></span>
         </form>
 
-        <a href="index.php?action=pageConnexion" class="lien-inscription" id="seconnecInscrip">Déjà un compte ? Se connecter</a>
+        <a href="index.php?action=pageConnexion" class="lien-inscription" id="seconnecInscrip">Déjà un compte ? Se
+            connecter</a>
     </div>
 </div>
 </body>

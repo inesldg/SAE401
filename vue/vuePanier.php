@@ -48,22 +48,22 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <div class="grille-nom-prenom">
                         <div class="ligne-formulaire">
                             <label id="nomCompte">Nom</label>
-                            <input type="text" placeholder="Votre nom">
+                            <input type="text" id="inputnom" placeholder="Votre nom">
                         </div>
                         <div class="ligne-formulaire">
                             <label id="prenomCompte">Prénom</label>
-                            <input type="text" placeholder="Votre prénom">
+                            <input type="text" id="inputprenom" placeholder="Votre prénom">
                         </div>
                     </div>
 
                     <div class="ligne-formulaire">
                         <label id="mailCompte">Email</label>
-                        <input type="email" placeholder="Votre adresse email">
+                        <input type="email" id="inputemail" placeholder="Votre adresse email">
                     </div>
 
                     <div class="ligne-formulaire">
                         <label id="adressepostalPanier">Adresse</label>
-                        <input type="text" placeholder="Votre adresse postale">
+                        <input type="text" id="inputadresse" placeholder="Votre adresse postale">
                     </div>
 
                     <h2 style="margin-top: 40px; margin-bottom: 10px;" id="payerPanier">Payer avec</h2>

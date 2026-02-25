@@ -178,7 +178,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                     <div>
                         <label>
                             <span id="nomNvEscape">Nom</span>
-                            <input type="text" name="nom" value="" placeholder="Nom de l'escape" required>
+                            <input type="text" name="nom" value="" id="inputnomEscape" placeholder="Nom de l'escape" required>
                         </label>
 
                         <label class="image-label">
@@ -194,23 +194,23 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 
                         <label>
                             <span id="descriptionNvEscape">Description</span>
-                            <input type="text" name="description" value="" placeholder="Description de l'escape" required>
+                            <input type="text" name="description" value="" id="inputdescription" placeholder="Description de l'escape" required>
                         </label>
                         <label>
                             <span id="lieuNvEscape">Lieu</span>
-                            <input type="text" name="lieu" value="" placeholder="Lieu de l'escape" required>
+                            <input type="text" name="lieu" value="" id="inputlieu" placeholder="Lieu de l'escape" required>
                         </label>
                         <label>
                             <span id="dureeNvEscape">Durée (en min)</span>
-                            <input type="number" name="duree" value="" placeholder="Durée de l'escape" required>
+                            <input type="number" name="duree" value="" id="inputduree" placeholder="Durée de l'escape" required>
                         </label>
                         <label>
                             <span id="prsnMin">Nb de pers min</span>
-                            <input type="number" name="pers_min" value="" placeholder="Nombre de personnes min" required>
+                            <input type="number" name="pers_min" value="" id="inputpersmin" placeholder="Nombre de personnes min" required>
                         </label>
                         <label>
                             <span id="prsnMax">Nb de pers max</span>
-                            <input type="number" name="pers_max" value="" placeholder="Nombre de personnes max" required>
+                            <input type="number" name="pers_max" value="" id="inputpersmax" placeholder="Nombre de personnes max" required>
                         </label>
                     </div>
                     <div>
