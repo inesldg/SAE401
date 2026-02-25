@@ -7,6 +7,55 @@ body>header {
     transition: height 0.3s ease;
 }
 
+/* Conteneur des boutons de langue */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    /* Petit trait séparateur */
+    padding-left: 15px;
+}
+
+/* Style des boutons FR/EN */
+.lang-switcher button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    /* Un peu transparent par défaut */
+    font-family: var(--texte);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* État survol et état actif (quand on clique) */
+.lang-switcher button:hover,
+.lang-switcher button.active {
+    color: var(--gold-clair);
+    text-shadow: 0 0 5px rgba(197, 160, 89, 0.3);
+}
+
+/* Petit indicateur sous le bouton actif (optionnel) */
+.lang-switcher button.active {
+    position: relative;
+}
+
+.lang-switcher button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 5px;
+    right: 5px;
+    height: 1px;
+    background: var(--gold-clair);
+}
+
 .main-header {
     display: flex;
     justify-content: space-between;

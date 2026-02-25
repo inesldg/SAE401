@@ -679,7 +679,6 @@ let trad = {
 // 1. Définir la variable TOUT EN HAUT du fichier
 let langue = localStorage.getItem("langue") || "fr";
 // 1. La fonction de traduction (FERMÉE correctement après la boucle)
-// 1. La fonction de traduction (FERMÉE correctement après la boucle)
 function appliquerTraduction() {
     console.log("Tentative de traduction en :", langue);
     document.querySelector("html").lang = langue;
@@ -732,9 +731,15 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Nombre de boutons de langue trouvés :", boutons.length);
 
     boutons.forEach(b => {
+        // Dans ton document.querySelectorAll("button[data-langue]").forEach...
         b.addEventListener("click", function () {
-            langue = this.dataset.langue; // Mise à jour de la variable globale
-            console.log("Bouton cliqué, nouvelle langue :", langue);
+            langue = this.dataset.langue;
+
+            // --- AJOUT POUR LE STYLE ---
+            document.querySelectorAll(".lang-switcher button").forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            // ---------------------------
+
             appliquerTraduction();
         });
     });

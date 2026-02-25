@@ -13,8 +13,10 @@
             <a href="index.php?action=compte" id="menuCompte">Mon compte</a>
             <!-- A MODIFIER - ajouter vue pour modifier info compte -->
             <a href="index.php?action=deconnexion" id="menudeco">Déconnexion</a>
-            <button data-langue="fr">FR</button>
-            <button data-langue="en">EN</button>
+            <div class="lang-switcher">
+                <button data-langue="fr" class="active">FR</button>
+                <button data-langue="en">EN</button>
+            </div>
 
 
 
