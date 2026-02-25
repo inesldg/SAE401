@@ -607,6 +607,73 @@ let trad = {
         "en": "Book Now",
     },
 
+    // ******************************** vue footer *************************************************
+
+    "#footerServices": {
+        "fr": "Services",
+        "en": "Services"
+    },
+    "#footerResa": {
+        "fr": "Réservations",
+        "en": "Bookings"
+    },
+    "#footerJeux": {
+        "fr": "Nos jeux",
+        "en": "Our Games"
+    },
+    "#footerInfos": {
+        "fr": "Informations",
+        "en": "Information"
+    },
+    "#footerFaq": {
+        "fr": "FAQ",
+        "en": "FAQ"
+    },
+    "#footerAssistance": {
+        "fr": "Assistance",
+        "en": "Support"
+    },
+    "#footerEntreprise": {
+        "fr": "Notre entreprise",
+        "en": "Our Company"
+    },
+    "#footerApropos": {
+        "fr": "À propos de nous",
+        "en": "About Us"
+    },
+    "#footerInsta": {
+        "fr": "Notre Instagram",
+        "en": "Our Instagram"
+    },
+    "#footerNewsTitre": {
+        "fr": "S'inscrire à la Newsletter !",
+        "en": "Join our Newsletter!"
+    },
+    "#footerNewsInput": {
+        "fr": "Adresse mail",
+        "en": "Email address"
+    },
+    "#footerNewsTexte": {
+        "fr": "Inscrivez-vous à la Newsletter ELIFE pour ne rien manquer des nouveautés et des jeux de saisons !",
+        "en": "Subscribe to the ELIFE Newsletter and never miss out on news and seasonal games!"
+    },
+    "#footerMentions": {
+        "fr": "Mentions légales",
+        "en": "Legal Mentions"
+    },
+    "#footerPolitique": {
+        "fr": "Politique de confidentialité",
+        "en": "Privacy Policy"
+    },
+    "#footerDonnees": {
+        "fr": "Données personnelles",
+        "en": "Personal Data"
+    },
+    "#footerCopyright": {
+        "fr": "&copy; 2026 ELIFE. Tous droits réservés.",
+        "en": "&copy; 2026 ELIFE. All rights reserved."
+    },
+
     // ******************************** les placeholders en commun sur les pages *************************************************
 
     "#inputmdp": {
