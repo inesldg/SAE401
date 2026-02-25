@@ -690,39 +690,69 @@ let trad = {
 };
 
 
-
-let langue = localStorage.getItem("langue") || "fr";
-
+// On ne définit plus "langue" ici de façon fixe
 function appliquerTraduction() {
-    console.log("Tentative de traduction en :", langue);
-    document.querySelector("html").lang = langue;
-    localStorage.setItem("langue", langue);
+    // On récupère la langue AU MOMENT de traduire
+    const langueActuelle = localStorage.getItem("langue") || "fr";
+
+    console.log("Tentative de traduction en :", langueActuelle);
+    document.querySelector("html").lang = langueActuelle;
 
     Object.entries(trad).forEach(([selecteur, donnee]) => {
-        const element = document.querySelector(selecteur);
-        if (element) {
-            element.innerHTML = donnee[langue];
+        // On utilise querySelectorAll pour être sûr de tout traduire
+        const elements = document.querySelectorAll(selecteur);
+
+        if (elements.length > 0) {
+            elements.forEach(element => {
+                const texte = donnee[langueActuelle];
+
+                // Gestion des Placeholders (pour les inputs)
+                if (element.placeholder !== undefined) {
+                    element.placeholder = texte;
+                }
+                // Gestion du texte normal
+                if (element.tagName !== 'INPUT' && element.tagName !== 'TEXTAREA') {
+                    element.innerHTML = texte;
+                }
+            });
         } else {
-            // Si tu vois ça dans la console, c'est que l'ID n'est pas dans ton HTML
             console.warn("Sélecteur introuvable sur cette page :", selecteur);
         }
     });
 }
 
-// On attend que la page soit prête
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM chargé, prêt à traduire");
-    appliquerTraduction();
+    // 1. On cible les boutons
+    const btnFr = document.querySelector('.lang-switcher button[data-langue="fr"]');
+    const btnEn = document.querySelector('.lang-switcher button[data-langue="en"]');
 
-    // Gestion des boutons
-    const boutons = document.querySelectorAll("button[data-langue]");
-    console.log("Nombre de boutons de langue trouvés :", boutons.length);
+    // 2. Fonction pour changer l'apparence
+    function toggleVisual(langue) {
+        if (langue === 'en') {
+            btnEn.classList.add('active');
+            btnFr.classList.remove('active');
+        } else {
+            btnFr.classList.add('active');
+            btnEn.classList.remove('active');
+        }
+    }
 
-    boutons.forEach(b => {
-        b.addEventListener("click", function () {
-            langue = this.dataset.langue;
-            console.log("Bouton cliqué, nouvelle langue :", langue);
-            appliquerTraduction();
+    // 3. Application au chargement (pour rester doré si on refresh)
+    const currentLang = localStorage.getItem("langue") || "fr";
+    toggleVisual(currentLang);
+
+    // 4. Événement au CLIC
+    if (btnFr && btnEn) {
+        btnFr.addEventListener("click", () => {
+            localStorage.setItem("langue", "fr");
+            toggleVisual("fr");
+            if (typeof appliquerTraduction === "function") appliquerTraduction();
         });
-    });
+
+        btnEn.addEventListener("click", () => {
+            localStorage.setItem("langue", "en");
+            toggleVisual("en");
+            if (typeof appliquerTraduction === "function") appliquerTraduction();
+        });
+    }
 });
