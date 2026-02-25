@@ -41,6 +41,10 @@ let trad = {
         "fr": "ESCAPES",
         "en": "zdef",
     },
+    "#voirescapeAcc": {
+        "fr": "Voir tout les escapes →",
+        "en": "zdef",
+    },
     "#avistitre_h2": {
         "fr": "AVIS",
         "en": "df",
@@ -536,6 +540,10 @@ let trad = {
         "fr": "L'Architecte",
         "en": "",
     },
+    "#storytellerPropos": {
+        "fr": "L'Architecte",
+        "en": "",
+    },
     "#chronos": {
         "fr": "Le Chronos",
         "en": "",
@@ -551,6 +559,18 @@ let trad = {
     "#maitre2": {
         "fr": "Maître du jeu",
         "en": "",
+    },
+    "#titreEnigme_1": {
+        "fr": "L'",
+        "en": "The "
+    },
+    "#titreEnigme_2": {
+        "fr": "Énigme",
+        "en": "Riddle"
+    },
+    "#titreEnigme_3": {
+        "fr": " à ciel ouvert",
+        "en": " in the open air"
     },
 
     // ******************************** vue header *************************************************

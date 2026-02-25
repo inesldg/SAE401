@@ -17,7 +17,10 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
 
 <section class="hero-section">
-    <h1>L'<span class="texte-doré">Énigme</span> à ciel ouvert</h1>
+    <h1>
+        <span id="titreEnigme_1">L'</span><span class="texte-doré" id="titreEnigme_2">Énigme</span> <span
+            id="titreEnigme_3">à ciel ouvert</span>
+    </h1>
     <p id="soustitrePropos">Découvrez l'envers du décor de votre ville.</p>
 </section>
 
@@ -68,7 +71,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         <div class="bloc-gardien">
             <div class="photo-gardien"></div>
             <span class="nom-gardien" id="architectePropos">L'Architecte</span>
-            <span class="role-gardien">Scénariste & Storyteller</span>
+            <span class="role-gardien" id="storytellerPropos">Scénariste & Storyteller</span>
         </div>
         <div class="bloc-gardien">
             <div class="photo-gardien"></div>
