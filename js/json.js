@@ -576,36 +576,102 @@ let trad = {
     // ******************************** vue header *************************************************
     "#menuAcc": {
         "fr": "Accueil",
-        "en": "",
+        "en": "Home",
     },
     "#menuPropos": {
         "fr": "A Propos",
-        "en": "",
+        "en": "About",
     },
     "#menuNosEscapes": {
         "fr": "Nos escapes",
-        "en": "",
+        "en": "Our Escapes",
     },
     "#menuContact": {
         "fr": "Contact",
-        "en": "",
+        "en": "Contact",
     },
     "#menuCompte": {
         "fr": "Compte",
-        "en": "",
+        "en": "Account",
     },
-
     "#menuDash": {
         "fr": "Dashboard",
-        "en": "",
+        "en": "Dashboard",
     },
     "#menudeco": {
         "fr": "Déconnexion",
-        "en": "",
+        "en": "Logout",
     },
     "#reserver": {
         "fr": "Réserver",
-        "en": "",
+        "en": "Book Now",
+    },
+
+    // ******************************** vue footer *************************************************
+
+    "#footerServices": {
+        "fr": "Services",
+        "en": "Services"
+    },
+    "#footerResa": {
+        "fr": "Réservations",
+        "en": "Bookings"
+    },
+    "#footerJeux": {
+        "fr": "Nos jeux",
+        "en": "Our Games"
+    },
+    "#footerInfos": {
+        "fr": "Informations",
+        "en": "Information"
+    },
+    "#footerFaq": {
+        "fr": "FAQ",
+        "en": "FAQ"
+    },
+    "#footerAssistance": {
+        "fr": "Assistance",
+        "en": "Support"
+    },
+    "#footerEntreprise": {
+        "fr": "Notre entreprise",
+        "en": "Our Company"
+    },
+    "#footerApropos": {
+        "fr": "À propos de nous",
+        "en": "About Us"
+    },
+    "#footerInsta": {
+        "fr": "Notre Instagram",
+        "en": "Our Instagram"
+    },
+    "#footerNewsTitre": {
+        "fr": "S'inscrire à la Newsletter !",
+        "en": "Join our Newsletter!"
+    },
+    "#footerNewsInput": {
+        "fr": "Adresse mail",
+        "en": "Email address"
+    },
+    "#footerNewsTexte": {
+        "fr": "Inscrivez-vous à la Newsletter ELIFE pour ne rien manquer des nouveautés et des jeux de saisons !",
+        "en": "Subscribe to the ELIFE Newsletter and never miss out on news and seasonal games!"
+    },
+    "#footerMentions": {
+        "fr": "Mentions légales",
+        "en": "Legal Mentions"
+    },
+    "#footerPolitique": {
+        "fr": "Politique de confidentialité",
+        "en": "Privacy Policy"
+    },
+    "#footerDonnees": {
+        "fr": "Données personnelles",
+        "en": "Personal Data"
+    },
+    "#footerCopyright": {
+        "fr": "&copy; 2026 ELIFE. Tous droits réservés.",
+        "en": "&copy; 2026 ELIFE. All rights reserved."
     },
 
     // ******************************** les placeholders en commun sur les pages *************************************************
@@ -653,16 +719,16 @@ let trad = {
     },
     "#inputlieu_error": {
         "fr": "Veuillez renseigner un lieu",
-        "en": "",
+        "en": "dcfgh",
     },
 
     "#inputduree_error": {
         "fr": "Veuillez indiquer la durée de l'escape.",
-        "en": "",
+        "en": "dfghj",
     },
     "#inputpersmin_error": {
         "fr": "Veuillez indiquer le nombre de personnes minimum.",
-        "en": "",
+        "en": "fghjk",
     },
 
     "#inputpersmax_error": {
@@ -671,7 +737,7 @@ let trad = {
     },
     "#inputemail_error": {
         "fr": "Veuillez renseigner ce champs.",
-        "en": "",
+        "en": "dfghjklm",
     },
 
     "#inputconfmdp_error": {
@@ -690,39 +756,100 @@ let trad = {
 };
 
 
-
-let langue = localStorage.getItem("langue") || "fr";
-
+// On ne définit plus "langue" ici de façon fixe
 function appliquerTraduction() {
-    console.log("Tentative de traduction en :", langue);
-    document.querySelector("html").lang = langue;
-    localStorage.setItem("langue", langue);
+    // On récupère la langue AU MOMENT de traduire
+    const langueActuelle = localStorage.getItem("langue") || "fr";
+
+    console.log("Tentative de traduction en :", langueActuelle);
+    document.querySelector("html").lang = langueActuelle;
+
+
+    // --- TRADUCTION DES BULLES D'ERREUR ---
+    Object.keys(trad).forEach(cleError => {
+        if (cleError.endsWith("_error")) {
+            const idInput = cleError.replace("_error", "");
+            const inputElement = document.querySelector(idInput);
+
+            if (inputElement) {
+                const message = trad[cleError][langueActuelle];
+
+                // On utilise addEventListener pour ne pas écraser d'autres scripts
+                inputElement.addEventListener("invalid", function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity(message);
+                    }
+                }, false);
+
+                inputElement.addEventListener("input", function (e) {
+                    e.target.setCustomValidity("");
+                }, false);
+            }
+        }
+    });
+
 
     Object.entries(trad).forEach(([selecteur, donnee]) => {
-        const element = document.querySelector(selecteur);
-        if (element) {
-            element.innerHTML = donnee[langue];
+        // On utilise querySelectorAll pour être sûr de tout traduire
+        const elements = document.querySelectorAll(selecteur);
+
+        if (elements.length > 0) {
+            elements.forEach(element => {
+                const texte = donnee[langueActuelle];
+
+                // Gestion des Placeholders (pour les inputs)
+                if (element.placeholder !== undefined) {
+                    element.placeholder = texte;
+                }
+                // Gestion du texte normal
+                if (element.tagName !== 'INPUT' && element.tagName !== 'TEXTAREA') {
+                    element.innerHTML = texte;
+                }
+            });
         } else {
-            // Si tu vois ça dans la console, c'est que l'ID n'est pas dans ton HTML
             console.warn("Sélecteur introuvable sur cette page :", selecteur);
         }
     });
 }
-
-// On attend que la page soit prête
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM chargé, prêt à traduire");
-    appliquerTraduction();
+    // 1. On cible les boutons
+    const btnFr = document.querySelector('.lang-switcher button[data-langue="fr"]');
+    const btnEn = document.querySelector('.lang-switcher button[data-langue="en"]');
 
-    // Gestion des boutons
-    const boutons = document.querySelectorAll("button[data-langue]");
-    console.log("Nombre de boutons de langue trouvés :", boutons.length);
+    // 2. Fonction pour changer l'apparence visuelle
+    function toggleVisual(langue) {
+        if (btnFr && btnEn) {
+            if (langue === 'en') {
+                btnEn.classList.add('active');
+                btnFr.classList.remove('active');
+            } else {
+                btnFr.classList.add('active');
+                btnEn.classList.remove('active');
+            }
+        }
+    }
 
-    boutons.forEach(b => {
-        b.addEventListener("click", function () {
-            langue = this.dataset.langue;
-            console.log("Bouton cliqué, nouvelle langue :", langue);
+    // --- LE TRUC QUI MANQUAIT : ---
+    // 3. On récupère la langue stockée (ou 'fr' par défaut)
+    const currentLang = localStorage.getItem("langue") || "fr";
+
+    // 4. On l'applique DIRECTEMENT au chargement
+    toggleVisual(currentLang);
+    appliquerTraduction(); // On lance la traduction dès que la page s'affiche
+
+    // 5. Événement au CLIC (pour les changements futurs)
+    if (btnFr && btnEn) {
+        btnFr.addEventListener("click", () => {
+            localStorage.setItem("langue", "fr");
+            toggleVisual("fr");
             appliquerTraduction();
         });
-    });
+
+        btnEn.addEventListener("click", () => {
+            localStorage.setItem("langue", "en");
+            toggleVisual("en");
+            appliquerTraduction();
+        });
+    }
 });

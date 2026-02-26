@@ -1,32 +1,32 @@
 <div class="footer-top">
     <div class="colonne">
-        <h2>Services</h2>
-        <a href="#">Réservations</a>
-        <a href="index.php?action=escapeGames">Nos jeux</a>
+        <h2 id="footerServices">Services</h2>
+        <a href="#" id="footerResa">Réservations</a>
+        <a href="index.php?action=escapeGames" id="footerJeux">Nos jeux</a>
     </div>
 
     <div class="colonne">
-        <h2>Informations</h2>
-        <a href="#">FAQ</a>
-        <a href="#">Assistance</a>
+        <h2 id="footerInfos">Informations</h2>
+        <a href="#" id="footerFaq">FAQ</a>
+        <a href="#" id="footerAssistance">Assistance</a>
     </div>
 
     <div class="colonne">
-        <h2>Notre entreprise</h2>
-        <a href="index.php?action=propos">À propos de nous</a>
-        <a href="#">Notre Instagram</a>
+        <h2 id="footerEntreprise">Notre entreprise</h2>
+        <a href="index.php?action=propos" id="footerApropos">À propos de nous</a>
+        <a href="#" id="footerInsta">Notre Instagram</a>
     </div>
 
     <div class="blockNewsletter">
-        <h2>S'inscrire à la Newsletter !</h2>
+        <h2 id="footerNewsTitre">S'inscrire à la Newsletter !</h2>
         <div class="groupeNewletter">
-            <input type="email" placeholder="Adresse mail">
+            <input type="email" placeholder="Adresse mail" id="footerNewsInput">
             <button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h13M12 5l7 7-7 7" />
                 </svg></button>
         </div>
-        <p class="infoNewsletter">
+        <p class="infoNewsletter" id="footerNewsTexte">
             Inscrivez-vous à la Newsletter ELIFE pour ne rien manquer des nouveautés et des jeux de
             saisons !
         </p>
@@ -37,9 +37,9 @@
     <img class="imglogo" src="images/logo.png" alt="logo elife">
 
     <div class="links">
-        <a href="index.php?action=legal#mentionsLegales">Mentions légales</a>
-        <a href="index.php?action=legal#politique">Politique de confidentialité</a>
-        <a href="index.php?action=legal#donneesPerso">Données personnelles</a>
+        <a href="index.php?action=legal#mentionsLegales" id="footerMentions">Mentions légales</a>
+        <a href="index.php?action=legal#politique" id="footerPolitique">Politique de confidentialité</a>
+        <a href="index.php?action=legal#donneesPerso" id="footerDonnees">Données personnelles</a>
     </div>
 
     <div class="social-icons">
@@ -62,6 +62,6 @@
     </div>
 </div>
 
-<div class="copyright">
+<div class="copyright" id="footerCopyright">
     &copy; 2026 ELIFE. Tous droits réservés.
 </div>
