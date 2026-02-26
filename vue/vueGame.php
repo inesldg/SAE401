@@ -15,8 +15,7 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 ?>
 
-<a href="index.php?action=accueil" id="retourAcc">Retour à l'accueil</a>
-<a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a>
+<a href="index.php?action=escapeGames" id="retourescapeGames">Retour aux escape games</a>
 
 <section class="hero-section">
     <h1 id="titreGames">In vino Veritas L'escape game mélant nature et découverte locale</h1>
