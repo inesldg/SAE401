@@ -30,7 +30,7 @@ let trad = {
         "en": "universe",
     },
     "#textAcc": {
-        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants.Que vous soyez débutant ou expert, venez relever le défi !",
+        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
         "en": "La Clé ELIFE offers you exceptional escape games. Each room is designed to transport you into another world, with realistic scenery, ingenious mechanisms and captivating scenarios. Whether you are a beginner or an expert, come challenge yourself !",
     },
 
