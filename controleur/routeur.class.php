@@ -11,6 +11,7 @@ require "controleur/ctlAjoutEscape.class.php";
 
 require "controleur/ctlAdmin.class.php";
 require "controleur/ctlDashAvis.class.php";
+require "controleur/ctlDashCalendrier.class.php";
 
 class routeur
 {
@@ -23,6 +24,7 @@ class routeur
     private $ctlAjoutEscape;
     private $ctlAdmin;
     private $ctlDashAvis;
+    private $ctlDashCalendrier;
 
 
 
@@ -37,6 +39,7 @@ class routeur
         $this->ctlAjoutEscape = new ctlAjoutEscape();
         $this->ctlAdmin = new ctlAdmin();
         $this->ctlDashAvis = new ctlDashAvis();
+        $this->ctlDashCalendrier = new ctlDashCalendrier();
     }
 
     public function routerRequete()
@@ -105,6 +108,12 @@ class routeur
                                 throw new Exception("Action non valide");
                             else
                                 $this->ctlUtilisateurs->afficherUtilisateurs($message = "", $mail);
+                            break;
+                            case "dashCalendrier":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else
+                                $this->ctlDashCalendrier->afficherdashCalendrier();
                             break;
                             case "dashAvis":
                             if ($acces[0]['statut'] !== 2)
