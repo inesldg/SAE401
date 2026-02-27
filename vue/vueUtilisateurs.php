@@ -96,7 +96,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
                                 <!-- NB RÉSERVATIONS -->
                                 <td>
-                                    <?= $utilisateur['nb_reservations'] ?>
+                                    <!-- <?= $utilisateur['nb_reservations'] ?> SOSSSS CA MARCHE PAS, j'ai supp ce que j'avais fais dans modele et ctl car ca marchait pas donc ca m'a souler et je met ca en com histoire de pas voir un truc moche (on cache la misère ici) -->
                                 </td>
 
                                 <!-- STATUT -->
