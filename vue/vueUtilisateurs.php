@@ -82,15 +82,15 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
                                 <!-- NOM -->
                                 <td>
-                                    <?= htmlspecialchars($utilisateur['prenom']) ?>
-                                    <?= htmlspecialchars($utilisateur['nom']) ?>
+                                    <?= ($utilisateur['prenom']) ?>
+                                    <?= ($utilisateur['nom']) ?>
                                 </td>
 
                                 <!-- CONTACT -->
                                 <td>
                                     <div class="contact">
-                                        <div><?= htmlspecialchars($utilisateur['mail']) ?></div>
-                                        <div><?= htmlspecialchars($utilisateur['tel']) ?></div>
+                                        <div><?= ($utilisateur['mail']) ?></div>
+                                        <div><?= ($utilisateur['tel']) ?></div>
                                     </div>
                                 </td>
 
@@ -102,8 +102,8 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                                 <!-- STATUT -->
                                 <td>
                                     <form method="post"
-                                          action="<?= $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] ?>">
-                                        
+                                        action="<?= $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] ?>">
+
                                         <select name="niveauAcces" class="select-statut">
                                             <option value="1" <?= $utilisateur['statut'] == 1 ? 'selected' : '' ?>>
                                                 Membre
@@ -124,7 +124,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                                     $id = $utilisateur['id_utilisateur'];
                                     $photoPath = null;
 
-                                    foreach (['jpg','jpeg','png','webp'] as $ext) {
+                                    foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
                                         if (file_exists($dossier . $id . "." . $ext)) {
                                             $photoPath = $dossier . $id . "." . $ext;
                                             break;
@@ -142,9 +142,13 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                                 <!-- SUPPRESSION -->
                                 <td>
                                     <a class="supp"
-                                       href="index.php?action=supprimerUtilisateur&id=<?= $utilisateur['id_utilisateur'] ?>"
-                                       onclick="return confirm('Supprimer cet utilisateur ?')">
-                                        🗑
+                                        href="index.php?action=supprimerUtilisateur&id=<?= $utilisateur['id_utilisateur'] ?>">
+                                        <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.5 4.05556H14.5M5.75 7.61111V12.9444M9.25 7.61111V12.9444M1.375 4.05556L2.25 14.7222C2.25 15.1937 2.43437 15.6459 2.76256 15.9793C3.09075 16.3127 3.53587 16.5 4 16.5H11C11.4641 16.5 11.9092 16.3127 12.2374 15.9793C12.5656 15.6459 12.75 15.1937 12.75 14.7222L13.625 4.05556M4.875 4.05556V1.38889C4.875 1.15314 4.96719 0.927048 5.13128 0.760349C5.29538 0.59365 5.51794 0.5 5.75 0.5H9.25C9.48206 0.5 9.70462 0.59365 9.86872 0.760349C10.0328 0.927048 10.125 1.15314 10.125 1.38889V4.05556"
+                                                stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
                                     </a>
                                 </td>
 
@@ -162,7 +166,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
 
 
-            
+
         </div>
     </div>
 </div>
