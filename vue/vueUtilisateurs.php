@@ -76,90 +76,84 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (!empty($utilisateurs)): ?>
-                        <?php foreach ($utilisateurs as $utilisateur): ?>
-                            <tr>
-
-                                <!-- NOM -->
-                                <td>
-                                    <?= ($utilisateur['prenom']) ?>
-                                    <?= ($utilisateur['nom']) ?>
-                                </td>
-
-                                <!-- CONTACT -->
-                                <td>
-                                    <div class="contact">
-                                        <div><?= ($utilisateur['mail']) ?></div>
-                                        <div><?= ($utilisateur['tel']) ?></div>
-                                    </div>
-                                </td>
-
-                                <!-- NB RÉSERVATIONS -->
-                                <td>
-                                    <!-- <?= $utilisateur['nb_reservations'] ?> SOSSSS CA MARCHE PAS, j'ai supp ce que j'avais fais dans modele et ctl car ca marchait pas donc ca m'a souler et je met ca en com histoire de pas voir un truc moche (on cache la misère ici) -->
-                                </td>
-
-                                <!-- STATUT -->
-                                <td>
-                                    <form method="post"
-                                        action="<?= $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] ?>">
-
-                                        <select name="niveauAcces" class="select-statut">
-                                            <?php if ($utilisateur['statut'] == 1): ?>
-                                                <option value="1" selected>Membre</option>
-                                                <option value="2">Administrateur</option>
-                                            <?php else: ?>
-                                                <option value="2" selected>Administrateur</option>
-                                                <option value="1">Membre</option>
-                                            <?php endif; ?>
-                                        </select>
-
-                                        <input type="submit" name="changerAcces" value="✔" class="btn-mini">
-                                    </form>
-                                </td>
-
-                                <!-- PHOTO -->
-                                <td>
-                                    <?php
-                                    $dossier = "photos_users/";
-                                    $id = $utilisateur['id_utilisateur'];
-                                    $photoPath = null;
-
-                                    foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
-                                        if (file_exists($dossier . $id . "." . $ext)) {
-                                            $photoPath = $dossier . $id . "." . $ext;
-                                            break;
-                                        }
-                                    }
-                                    ?>
-
-                                    <?php if ($photoPath): ?>
-                                        <img src="<?= $photoPath ?>" class="avatar">
-                                    <?php else: ?>
-                                        <div class="avatar placeholder"></div>
-                                    <?php endif; ?>
-                                </td>
-
-                                <!-- SUPPRESSION -->
-                                <td>
-                                    <a class="supp"
-                                        href="index.php?action=supprimerUtilisateur&id=<?= $utilisateur['id_utilisateur'] ?>">
-                                        <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.5 4.05556H14.5M5.75 7.61111V12.9444M9.25 7.61111V12.9444M1.375 4.05556L2.25 14.7222C2.25 15.1937 2.43437 15.6459 2.76256 15.9793C3.09075 16.3127 3.53587 16.5 4 16.5H11C11.4641 16.5 11.9092 16.3127 12.2374 15.9793C12.5656 15.6459 12.75 15.1937 12.75 14.7222L13.625 4.05556M4.875 4.05556V1.38889C4.875 1.15314 4.96719 0.927048 5.13128 0.760349C5.29538 0.59365 5.51794 0.5 5.75 0.5H9.25C9.48206 0.5 9.70462 0.59365 9.86872 0.760349C10.0328 0.927048 10.125 1.15314 10.125 1.38889V4.05556"
-                                                stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </td>
-
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php else: ?>
+                    <?php foreach ($utilisateurs as $utilisateur): ?>
                         <tr>
-                            <td colspan="6">Aucun utilisateur enregistré.</td>
+
+                            <!-- NOM -->
+                            <td>
+                                <?= ($utilisateur['prenom']) ?>
+                                <?= ($utilisateur['nom']) ?>
+                            </td>
+
+                            <!-- CONTACT -->
+                            <td>
+                                <div class="contact">
+                                    <div><?= ($utilisateur['mail']) ?></div>
+                                    <div><?= ($utilisateur['tel']) ?></div>
+                                </div>
+                            </td>
+
+                            <!-- NB RÉSERVATIONS -->
+                            <td>
+                                <!-- <?= $utilisateur['nb_reservations'] ?> SOSSSS CA MARCHE PAS, j'ai supp ce que j'avais fais dans modele et ctl car ca marchait pas donc ca m'a souler et je met ca en com histoire de pas voir un truc moche (on cache la misère ici) -->
+                            </td>
+
+                            <!-- STATUT -->
+                            <td>
+                                <form method="post"
+                                    action="<?= $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] ?>">
+
+                                    <select name="niveauAcces" class="select-statut">
+                                        <?php if ($utilisateur['statut'] == 1): ?>
+                                            <option value="1" selected>Membre</option>
+                                            <option value="2">Administrateur</option>
+                                        <?php else: ?>
+                                            <option value="2" selected>Administrateur</option>
+                                            <option value="1">Membre</option>
+                                        <?php endif; ?>
+                                    </select>
+
+                                    <input type="submit" name="changerAcces" value="✔" class="btn-mini">
+                                </form>
+                            </td>
+
+                            <!-- PHOTO -->
+                            <td>
+                                <?php
+                                $dossier = "photos_users/";
+                                $id = $utilisateur['id_utilisateur'];
+                                $photoPath = null;
+
+                                foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
+                                    if (file_exists($dossier . $id . "." . $ext)) {
+                                        $photoPath = $dossier . $id . "." . $ext;
+                                        break;
+                                    }
+                                }
+                                ?>
+
+                                <?php if ($photoPath): ?>
+                                    <img src="<?= $photoPath ?>" class="avatar">
+                                <?php else: ?>
+                                    <div class="avatar placeholder"></div>
+                                <?php endif; ?>
+                            </td>
+
+                            <!-- SUPPRESSION -->
+                            <td>
+                                <a class="supp"
+                                    href="index.php?action=supprimerUtilisateur&id=<?= $utilisateur['id_utilisateur'] ?>">
+                                    <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.5 4.05556H14.5M5.75 7.61111V12.9444M9.25 7.61111V12.9444M1.375 4.05556L2.25 14.7222C2.25 15.1937 2.43437 15.6459 2.76256 15.9793C3.09075 16.3127 3.53587 16.5 4 16.5H11C11.4641 16.5 11.9092 16.3127 12.2374 15.9793C12.5656 15.6459 12.75 15.1937 12.75 14.7222L13.625 4.05556M4.875 4.05556V1.38889C4.875 1.15314 4.96719 0.927048 5.13128 0.760349C5.29538 0.59365 5.51794 0.5 5.75 0.5H9.25C9.48206 0.5 9.70462 0.59365 9.86872 0.760349C10.0328 0.927048 10.125 1.15314 10.125 1.38889V4.05556"
+                                            stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </td>
+
                         </tr>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
 
