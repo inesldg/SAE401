@@ -105,12 +105,13 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                                         action="<?= $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] ?>">
 
                                         <select name="niveauAcces" class="select-statut">
-                                            <option value="1" <?= $utilisateur['statut'] == 1 ? 'selected' : '' ?>>
-                                                Membre
-                                            </option>
-                                            <option value="2" <?= $utilisateur['statut'] == 2 ? 'selected' : '' ?>>
-                                                Administrateur
-                                            </option>
+                                            <?php if ($utilisateur['statut'] == 1): ?>
+                                                <option value="1" selected>Membre</option>
+                                                <option value="2">Administrateur</option>
+                                            <?php else: ?>
+                                                <option value="2" selected>Administrateur</option>
+                                                <option value="1">Membre</option>
+                                            <?php endif; ?>
                                         </select>
 
                                         <input type="submit" name="changerAcces" value="✔" class="btn-mini">
