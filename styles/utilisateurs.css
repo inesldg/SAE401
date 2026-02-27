@@ -81,7 +81,7 @@ body {
 .dash:hover,
 .calendrier:hover,
 .avis:hover,
-.user:hover {
+.escape:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
