@@ -13,7 +13,7 @@ $col_desc = "description_" . $lang;
 
 
 // Style
-$style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
+$style = '<link rel="stylesheet" href="styles/dashAvis.css">';
 ?>
 <div class="contenu">
     <div class="menu-gauche">
@@ -34,8 +34,8 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
             </a>
             <a href="index.php?action=utilisateurs" class="user">
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.6 17.2V15.4C13.6 14.4453 13.2207 13.5296 12.5456 12.8545C11.8705 12.1793 10.9548 11.8 10 11.8H4.6C3.64522 11.8 2.72955 12.1793 2.05442 12.8545C1.37928 13.5296 1 14.4453 1 15.4V17.2M13.6 1.11523C14.372 1.31537 15.0557 1.76617 15.5437 2.39689C16.0318 3.02761 16.2966 3.80253 16.2966 4.60003C16.2966 5.39753 16.0318 6.17246 15.5437 6.80318C15.0557 7.4339 14.372 7.8847 13.6 8.08483M19 17.2V15.4C18.9994 14.6024 18.7339 13.8275 18.2452 13.1971C17.7565 12.5667 17.0723 12.1164 16.3 11.917" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M7.3002 8.2C9.28842 8.2 10.9002 6.58822 10.9002 4.6C10.9002 2.61177 9.28842 1 7.3002 1C5.31197 1 3.7002 2.61177 3.7002 4.6C3.7002 6.58822 5.31197 8.2 7.3002 8.2Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M13.6 17.2V15.4C13.6 14.4453 13.2207 13.5296 12.5456 12.8545C11.8705 12.1793 10.9548 11.8 10 11.8H4.6C3.64522 11.8 2.72955 12.1793 2.05442 12.8545C1.37928 13.5296 1 14.4453 1 15.4V17.2M13.6 1.11523C14.372 1.31537 15.0557 1.76617 15.5437 2.39689C16.0318 3.02761 16.2966 3.80253 16.2966 4.60003C16.2966 5.39753 16.0318 6.17246 15.5437 6.80318C15.0557 7.4339 14.372 7.8847 13.6 8.08483M19 17.2V15.4C18.9994 14.6024 18.7339 13.8275 18.2452 13.1971C17.7565 12.5667 17.0723 12.1164 16.3 11.917" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7.3002 8.2C9.28842 8.2 10.9002 6.58822 10.9002 4.6C10.9002 2.61177 9.28842 1 7.3002 1C5.31197 1 3.7002 2.61177 3.7002 4.6C3.7002 6.58822 5.31197 8.2 7.3002 8.2Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <div id="utilisateurAdmin">Utilisateurs</div>
             </a>
@@ -47,7 +47,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
             </a>
             <a href="index.php?action=dashAvis" class="avis">
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V18L4.467 15.4C4.81319 15.1404 5.23426 15 5.667 15H17C17.5304 15 18.0391 14.7893 18.4142 14.4142C18.7893 14.0391 19 13.5304 19 13V3C19 2.46957 18.7893 1.96086 18.4142 1.58579C18.0391 1.21071 17.5304 1 17 1Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V18L4.467 15.4C4.81319 15.1404 5.23426 15 5.667 15H17C17.5304 15 18.0391 14.7893 18.4142 14.4142C18.7893 14.0391 19 13.5304 19 13V3C19 2.46957 18.7893 1.96086 18.4142 1.58579C18.0391 1.21071 17.5304 1 17 1Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <div id="avisAdmin">Avis</div>
             </a>
@@ -57,115 +57,12 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
     <div class="droite">
         <div class="haut">
-            <h1 id="#">GESTION DES UTILISATEURS</h1>
+            <h1 id="#">TOUS LES AVIS</h1>
             <div class="sous-titre" id="#">
-                x utilisateurs inscrits
+                x avis
             </div>
         </div>
-
         <div class="bas">
-            <table class="table-utilisateur">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Contact</th>
-                        <th>Réservations</th>
-                        <th>Statut</th>
-                        <th>Photo</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($utilisateurs as $utilisateur): ?>
-                        <tr>
-
-                            <!-- NOM -->
-                            <td>
-                                <?= ($utilisateur['prenom']) ?>
-                                <?= ($utilisateur['nom']) ?>
-                            </td>
-
-                            <!-- CONTACT -->
-                            <td>
-                                <div class="contact">
-                                    <div><?= ($utilisateur['mail']) ?></div>
-                                    <div><?= ($utilisateur['tel']) ?></div>
-                                </div>
-                            </td>
-
-                            <!-- NB RÉSERVATIONS -->
-                            <td>
-                                <!-- <?= $utilisateur['nb_reservations'] ?> SOSSSS CA MARCHE PAS, j'ai supp ce que j'avais fais dans modele et ctl car ca marchait pas donc ca m'a souler et je met ca en com histoire de pas voir un truc moche (on cache la misère ici) -->
-                            </td>
-
-                            <!-- STATUT -->
-                            <td>
-                                <form method="post"
-                                    action="<?= $_SERVER["PHP_SELF"] . '?action=changementAcces&id=' . $utilisateur['id_utilisateur'] ?>">
-
-                                    <select name="niveauAcces" class="select-statut">
-                                        <?php if ($utilisateur['statut'] == 1): ?>
-                                            <option value="1" selected>Membre</option>
-                                            <option value="2">Administrateur</option>
-                                        <?php else: ?>
-                                            <option value="2" selected>Administrateur</option>
-                                            <option value="1">Membre</option>
-                                        <?php endif; ?>
-                                    </select>
-
-                                    <input type="submit" name="changerAcces" value="✔" class="btn-mini">
-                                </form>
-                            </td>
-
-                            <!-- PHOTO -->
-                            <td>
-                                <?php
-                                $dossier = "photos_users/";
-                                $id = $utilisateur['id_utilisateur'];
-                                $photoPath = null;
-
-                                foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
-                                    if (file_exists($dossier . $id . "." . $ext)) {
-                                        $photoPath = $dossier . $id . "." . $ext;
-                                        break;
-                                    }
-                                }
-                                ?>
-
-                                <?php if ($photoPath): ?>
-                                    <img src="<?= $photoPath ?>" class="avatar">
-                                <?php else: ?>
-                                    <div class="avatar placeholder"></div>
-                                <?php endif; ?>
-                            </td>
-
-                            <!-- SUPPRESSION -->
-                            <td>
-                                <a class="supp"
-                                    href="index.php?action=supprimerUtilisateur&id=<?= $utilisateur['id_utilisateur'] ?>">
-                                    <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.5 4.05556H14.5M5.75 7.61111V12.9444M9.25 7.61111V12.9444M1.375 4.05556L2.25 14.7222C2.25 15.1937 2.43437 15.6459 2.76256 15.9793C3.09075 16.3127 3.53587 16.5 4 16.5H11C11.4641 16.5 11.9092 16.3127 12.2374 15.9793C12.5656 15.6459 12.75 15.1937 12.75 14.7222L13.625 4.05556M4.875 4.05556V1.38889C4.875 1.15314 4.96719 0.927048 5.13128 0.760349C5.29538 0.59365 5.51794 0.5 5.75 0.5H9.25C9.48206 0.5 9.70462 0.59365 9.86872 0.760349C10.0328 0.927048 10.125 1.15314 10.125 1.38889V4.05556"
-                                            stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </td>
-
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-
-
-
-
-
-
         </div>
     </div>
 </div>
-
-<?php
-
-$script = '<script src="js/json.js" defer></script>';

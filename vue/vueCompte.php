@@ -15,7 +15,6 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
 <body>
 
     <div class="background-fond">
-        <a href="index.php?action=accueil" id="retourAcc">← Retour à l'accueil</a>
 
         <div class="carte">
             <div class="carte-couleur"></div>
@@ -60,7 +59,7 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                 </div>
 
                 <div class="email">
-                    <p class="adresseemail" id="mailCompte">ADRESSE MAIL ACTUELLE</p>
+                    <p class="adresseemail" id="mailCompteActuel">ADRESSE MAIL ACTUELLE</p>
                     <div class="boite-email">
                         <?= $infosCompte[0]['mail'] ?>
                     </div>

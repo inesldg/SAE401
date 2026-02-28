@@ -47,7 +47,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
             <div class="carte">
                 <h2 id="codePanier">Code Promo / Bons ?</h2>
                 <div class="groupe-saisie">
-                    <input type="text" class="saisie-promo" placeholder="Entrez le code inscrit sur le bon">
+                    <input type="text" class="saisie-promo" id="inputcodepromo" placeholder="Entrez le code inscrit sur le bon">
                     <button class="bouton-or" id="appliquerPanier">Appliquer</button>
                 </div>
                 <div class="indication" id="indiqPanier">Saisissez le code sans espace entre les caractères</div>

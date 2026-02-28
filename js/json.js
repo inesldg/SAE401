@@ -1,576 +1,600 @@
 let trad = {
     // ******************************** vue accueil *************************************************
     "#titreAcc": {
-        "fr": "VIVEZ L'",
-        "en": "zertgyh",
+        "fr": "Vivez l'",
+        "en": "Live the",
     },
 
     "#aventure": {
-        "fr": "AVENTURE",
-        "en": "dfghj",
+        "fr": "aventure",
+        "en": "adventure",
     },
 
     "#soustitreAcc": {
         "fr": "Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du temps.",
-        "en": "ffvfv",
-    },
-
-    "#textAcc": {
-        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants.Que vous soyez débutant ou expert, venez relever le défi !",
-        "en": "dv",
+        "en": "Dive into immersive universes, solve captivating puzzles and escape before the end of time.",
     },
 
     "#lienBoutonAcc": {
-        "fr": "Découvrir nos escapes",
-        "en": "defd",
+        "fr": "Découvrir nos escape games",
+        "en": "Discover our escape games",
     },
 
+
     "#titreAcc_h2": {
-        "fr": "L'EXPÉRIENCE",
-        "en": "dd",
+        "fr": "l'expérience",
+        "en": "ELIFE",
     },
     "#elife": {
         "fr": "ELIFE",
-        "en": "fd",
+        "en": "universe",
     },
+    "#textAcc": {
+        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
+        "en": "La Clé ELIFE offers you exceptional escape games. Each room is designed to transport you into another world, with realistic scenery, ingenious mechanisms and captivating scenarios. Whether you are a beginner or an expert, come challenge yourself !",
+    },
+
     "#nos": {
-        "fr": "NOS",
-        "en": "szdef",
+        "fr": "Nos",
+        "en": "Our",
     },
     "#suitetitreh2": {
-        "fr": "ESCAPES",
-        "en": "zdef",
+        "fr": "Escape games",
+        "en": "Escape games",
     },
     "#voirescapeAcc": {
-        "fr": "Voir tout les escapes →",
-        "en": "zdef",
+        "fr": "Voir tout les jeux →",
+        "en": "See all the games →",
     },
+
     "#avistitre_h2": {
-        "fr": "AVIS",
-        "en": "df",
+        "fr": "Avis",
+        "en": "Clients",
     },
     "#suiteClient_h2": {
-        "fr": "CLIENTS",
-        "en": "sd",
+        "fr": "Clients",
+        "en": "Reviews",
     },
 
 
     // ******************************** vue ajout escape game + qqls elt de dashboard *************************************************
-    "#adminAdministrateur": {
-        "fr": "Administrateur",
-        "en": "",
-    },
-    "#dashAdmin": {
-        "fr": "Dashboard",
-        "en": "",
-    },
-    "#escapeAdmin": {
-        "fr": "Escapes",
-        "en": "",
-    },
-    "#utilisateurAdmin": {
-        "fr": "Utilisateurs",
-        "en": "",
-    },
-    "#calendrierAdmin": {
-        "fr": "Calendrier",
-        "en": "",
-    },
-    "#avisAdmin": {
-        "fr": "Avis",
-        "en": "",
-    },
     "#gestionAdmin": {
         "fr": "GESTIONS DES ESCAPES",
-        "en": "",
+        "en": "ESCAPES MANAGEMENT",
     },
-    "#nbEscapeAdmin": {
-        "fr": "escapes actifs",
-        "en": "",
-    },
+
+    // "l'id nique mon truc" -> je touche pas promis
+    // "#nbEscapeAdmin": {
+    //     "fr": "escapes actifs",
+    //     "en": "active escapes",
+    // },
+
     "#btnAjouter": {
-        "fr": "+ Ajouter",
-        "en": "",
+        "fr": "+ Ajouter un jeu",
+        "en": "+ Add a game",
     },
     "#nvEscapeAjout": {
         "fr": "Nouvel escape game",
-        "en": "",
+        "en": "New escape game",
     },
     "#nomNvEscape": {
-        "fr": "Nom",
-        "en": "",
+        "fr": "Nom du jeu",
+        "en": "Escape name",
     },
     "#inputnomEscape": {
-        "fr": "Nom",
-        "en": "",
+        "fr": "Veuillez entrer le nom du nouveau jeu",
+        "en": "Please enter the name of the new game",
     },
-    "#inputdescription": {
-        "fr": "Description de l'escape",
-        "en": "",
-    },
-    "#inputlieu": {
-        "fr": "Lieu de l'escape",
-        "en": "",
-    },
-    "#inputduree": {
-        "fr": "Durée de l'escape",
-        "en": "",
-    },
-    "#inputpersmin": {
-        "fr": "Nombre de personnes min",
-        "en": "",
-    },
-    "#inputpersmax": {
-        "fr": "Nombre de personnes max",
-        "en": "",
-    },
+
     "#PhotoNvEscape": {
-        "fr": "Nom de l'escape",
-        "en": "azertyhj",
-    },
-    "#ajouterAdmin": {
-        "fr": "+ Ajouter",
-        "en": "",
+        "fr": "Photo de présentation",
+        "en": "Illustration photo",
     },
     "#choixFichier": {
         "fr": "Choisir un fichier...",
-        "en": "",
+        "en": "Select a file...",
     },
+
     "#descriptionNvEscape": {
         "fr": "Description",
-        "en": "",
+        "en": "Description",
+    },
+    "#inputdescription": {
+        "fr": "Description du jeu",
+        "en": "Game description",
     },
     "#lieuNvEscape": {
-        "fr": "NLieum",
-        "en": "",
+        "fr": "Lieu",
+        "en": "Location",
+    },
+    "#inputlieu": {
+        "fr": "Lieu du jeu",
+        "en": "Game location",
     },
     "#dureeNvEscape": {
         "fr": "Durée",
-        "en": "",
+        "en": "Duration",
     },
+    "#inputduree": {
+        "fr": "Durée du jeu",
+        "en": "Game duration",
+    },
+
     "#prsnMin": {
-        "fr": "Nb de pers min",
-        "en": "",
+        "fr": "Capacité minimum",
+        "en": "Minimum capacity",
     },
     "#prsnMax": {
-        "fr": "Nb de pers max",
-        "en": "",
+        "fr": "Capacité maximum",
+        "en": "Maximum capacity",
     },
-
+    "#inputpersmin": {
+        "fr": "Nombres minimum de participants",
+        "en": "Minimum number of participants",
+    },
+    "#inputpersmax": {
+        "fr": "Nombre maximum de participants",
+        "en": "Maximum number of participants",
+    },
 
     // ******************************** vue compte *************************************************
-    "#retourAcc": {
-        "fr": "Retour à l'accueil",
-        "en": "",
-    },
     "#nomCompte": {
         "fr": "Nom",
-        "en": "",
+        "en": "Name",
     },
     "#prenomCompte": {
         "fr": "Prénom",
-        "en": "",
+        "en": "First name",
     },
-    "#mailCompte": {
-        "fr": "ADRESSE MAIL",
-        "en": "",
+    "#mailCompteActuel": {
+        "fr": "Email actuel",
+        "en": "Current Email",
     },
     "#entrerMDPCompte": {
-        "fr": "Entrez votre mot de passe pour enregistrer",
-        "en": "",
+        "fr": "Entrez votre mot de passe pour enregistrer les changements",
+        "en": "Please enter you password to save changes",
     },
     "#modifCompte": {
         "fr": "Modifier",
-        "en": "",
+        "en": "Change",
     },
 
 
     // ******************************** vue confirmation *************************************************
     "#accrocheConf": {
-        "fr": "Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace.",
-        "en": "",
+        "fr": "Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace",
+        "en": "We are excited to welcoming you and guiding you through our beautiful landscapes of Alsace",
     },
     "#bientotConf": {
-        "fr": "À bientôt chez !",
-        "en": "",
-    },
-    "#goldElifeConf": {
-        "fr": "ELIFE",
-        "en": "",
+        "fr": "À bientôt chez",
+        "en": "See you soon at",
     },
     "#retourAccConf": {
         "fr": "Retour à la page d'accueil",
-        "en": "",
-    },
-    "#voirCommandeConf": {
-        "fr": "Voir ma commande",
-        "en": "",
+        "en": "Back to the home page",
     },
 
+    // On garde ça ou pas ? 
+    // "#voirCommandeConf": {
+    //     "fr": "Voir ma commande",
+    //     "en": "",
+    // },
 
-    // ******************************** vue connexion *************************************************
-    "#mailConnexion": {
-        "fr": "ADRESSE MAIL",
-        "en": "dfghjk",
-    },
-    "#connexConnexion": {
-        "fr": "Connexion",
-        "en": "sdfghjklk",
-    },
-    "#mdpConnexion": {
-        "fr": "MOT DE PASSE",
-        "en": "cvbhnj",
-    },
-    "#seconnecterConnexion": {
-        "fr": "SE CONNECTER",
-        "en": "sdfghjk",
-    },
-    "#goinscrConnexion": {
-        "fr": "Pas encore de compte ? S'inscrire",
-        "en": "qsdfcvbhjn,k;",
-    },
 
     // ******************************** vue Dash *************************************************
 
     "#soustitreDash": {
         "fr": "Vue d’ensemble de l’activité",
-        "en": "",
+        "en": "Overview of the activity",
     },
     "#reservationDash": {
-        "fr": "RÉSERVATION",
-        "en": "",
+        "fr": "RÉSERVATIONS",
+        "en": "BOOKINGS",
     },
     "#confirmeeDash": {
-        "fr": "confirmées",
-        "en": "",
+        "fr": "Confirmées",
+        "en": "Confirmed",
     },
+
+    // manque user
     "#inscritDash": {
-        "fr": "inscrit",
-        "en": "",
+        "fr": "Inscrits",
+        "en": "Registered",
     },
     "#actifDash": {
-        "fr": "actifs",
-        "en": "",
+        "fr": "Actifs",
+        "en": "Active",
     },
     "#revenusdash": {
         "fr": "REVENUS",
-        "en": "",
+        "en": "INCOMES",
     },
     "#cemoisDash": {
-        "fr": "ce mois",
-        "en": "",
+        "fr": "Ce mois",
+        "en": "This month",
     },
     "#moyenneDash": {
         "fr": "NOTE MOYENNE",
-        "en": "",
+        "en": "AVERAGE REVIEW",
     },
     "#tauxdoccupationDash": {
-        "fr": "TAUX D'OCCUPATION",
-        "en": "",
+        "fr": "TAUX DE PARTICIPANTS",
+        "en": "PARTICIPANTS RATE",
     },
     "#prsnDash": {
-        "fr": "personnes",
-        "en": "",
+        "fr": "Personnes",
+        "en": "People",
     },
     "#reservationsDash": {
         "fr": "RÉSERVATIONS RÉCENTES",
-        "en": "",
+        "en": "LATEST BOOKINGS",
     },
+    "#utilisateurAdmin": {
+        "fr": "UTILISATEURS",
+        "en": "USERS",
+    },
+    "#escapeAdmin": {
+        "fr": "ESCAPES GAMES",
+        "en": "ESCAPES GAMES",
+    },
+    "#adminAdministrateur": {
+        "fr": "ADMINISTRATEUR",
+        "en": "SYSTEM ADMINISTRATOR",
+    },
+    "#dashAdmin": {
+        "fr": "TABLEAU DE BORD",
+        "en": "DASHBOARD",
+    },
+
+    "#calendrierAdmin": {
+        "fr": "CALENDRIER",
+        "en": "CALENDAR",
+    },
+
+    "#avisAdmin": {
+        "fr": "AVIS",
+        "en": "REVIEWS",
+    },
+
+
 
     // ******************************** vue erreur *************************************************
     "#erreurErr": {
         "fr": "Une erreur est survenue",
-        "en": "",
+        "en": "An error occurred",
     },
 
     // ******************************** vue Escape Games *************************************************
-    "#titreorEscapGam": {
-        "fr": "mission immersive",
-        "en": "",
-    },
+
+    // ICI LE TITRE DORE NE MARCHE PAS ON DIRAIT QUE IL EST EFFACE PAR LE TITRE BLANC "Réserver blbalblab"
+    // "#titreorEscapGam": {
+    //     "fr": "mission immersive",
+    //     "en": "prout2marchepas",
+    // }, 
     "#choixEscapGam": {
         "fr": "Choisissez votre univers !",
-        "en": "",
+        "en": "Choose your universe !",
     },
     "#reserverEscapGam": {
-        "fr": "Réservez votre dès maintenant",
-        "en": "",
+        "fr": "Réservez votre expérience immersive dès maintenant",
+        "en": "Book your immersive experience now",
     },
     "#detailEscapeGam": {
         "fr": "Voir détails",
-        "en": "",
+        "en": "View details",
     },
+
+    // Pleins de trucs à ajouter avce les filtres etc
 
     // ******************************** vue Games *************************************************
     "#retourescapeGames": {
         "fr": "Retour aux escape games",
-        "en": "",
+        "en": "Back to the games",
     },
     "#titreGames": {
         "fr": "L'escape game mélant nature et découverte locale",
         "en": "",
     },
     "#prixGames": {
-        "fr": "A partir de 55€/pers.",
-        "en": "",
+        "fr": "À partir de 55€/pers.",
+        "en": "From €55/person.",
     },
     "#nbAvisGames": {
         "fr": "avis",
-        "en": "",
+        "en": "reviews",
     },
-    "#lieuGames": {
-        "fr": "Lieu :",
-        "en": "",
-    },
+    // Si on mets la trad ça casse tout et le lieu n'apparait plus
+    // "#lieuGames": {
+    //     "fr": "Lieu :",
+    //     "en": "Place :",
+    // },
     "#detailGames": {
-        "fr": "détails",
-        "en": "",
+        "fr": "Détails",
+        "en": "Details",
+    },
+    "#nbAvisGames": {
+        "fr": "Avis",
+        "en": "Reviews",
     },
     "#voirAvisGames": {
         "fr": "Voir tous les avis",
-        "en": "",
+        "en": "See all reviews",
     },
     "#selectionGames": {
-        "fr": "Sélectionnez vos préférences pour l'aventure.",
-        "en": "",
+        "fr": "Préparez votre départ pour le voyage !",
+        "en": "Get ready for the journey !",
     },
     "#selectionDatesGames": {
         "fr": "Sélectionnez votre date pour l'aventure",
-        "en": "",
+        "en": "Please select a date for the adventure",
     },
     "#lundi": {
         "fr": "lun",
-        "en": "",
+        "en": "mon",
     },
     "#mardi": {
         "fr": "mar",
-        "en": "",
+        "en": "tue",
     },
     "#mercredi": {
         "fr": "mer",
-        "en": "",
+        "en": "wed",
     },
     "#jeudi": {
         "fr": "jeu",
-        "en": "",
+        "en": "thu",
     },
     "#vendredi": {
-        "fr": "vend",
-        "en": "",
+        "fr": "ven",
+        "en": "fri",
     },
     "#samedi": {
         "fr": "sam",
-        "en": "",
+        "en": "sat",
     },
     "#dimanche": {
         "fr": "dim",
-        "en": "",
+        "en": "sun",
     },
     "#horaireGames": {
-        "fr": "horaire",
-        "en": "",
+        "fr": "Créneau horaire",
+        "en": "Time slot",
     },
     "#participGames": {
         "fr": "Participants",
-        "en": "",
+        "en": "Participants",
     },
     "#totalGames": {
         "fr": "Total",
-        "en": "",
+        "en": "Total",
     },
     "#reserverGames": {
-        "fr": "Réserver maintenant",
-        "en": "",
+        "fr": "Réserver maintenant !",
+        "en": "Book now !",
     },
+
     "#ajoutAvisGame": {
         "fr": "Ajouter un avis",
-        "en": "",
+        "en": "Add a review",
     },
 
     // ******************************** vue inscription *************************************************
 
     "#sinscrireInscr": {
         "fr": "S'inscrire",
-        "en": "",
+        "en": "Sign up",
     },
     "#sinscrireInscr2": {
         "fr": "S'inscrire",
-        "en": "",
+        "en": "Sign up",
     },
     "#mdpInscrip": {
-        "fr": "MOT DE PASSE",
-        "en": "",
+        "fr": "Mot de passe",
+        "en": "Password",
     },
     "#confmpdInscrip": {
         "fr": "Confirmer le mot de passe :",
-        "en": "",
+        "en": "Confirm Password :",
     },
     "#seconnecInscrip": {
         "fr": "Déjà un compte ? Se connecter",
-        "en": "",
+        "en": "Already an account ? Log in",
+    },
+
+    // ******************************** vue connexion *************************************************
+    "#connexConnexion": {
+        "fr": "Connexion",
+        "en": "Log in",
+    },
+    "#mailConnexion": {
+        "fr": "ADRESSE MAIL",
+        "en": "Email",
+    },
+    "#mdpConnexion": {
+        "fr": "Mot de passe",
+        "en": "Password",
+    },
+    "#seconnecterConnexion": {
+        "fr": "Se connecter",
+        "en": "Log in",
+    },
+    "#goinscrConnexion": {
+        "fr": "Pas encore de compte ? S'inscrire",
+        "en": "No account yet? Sign up",
+    },
+    "#mailConnexion": {
+        "fr": "mail@exemple.com",
+        "en": "mail@example.com",
     },
 
     // ******************************** vue Legal *************************************************
     "#mentionsLegalesLegal": {
         "fr": "Mentions Légales",
-        "en": "",
+        "en": "Legal notice",
     },
     "#politiqueLegal": {
         "fr": "Politique de confidentialité",
-        "en": "",
+        "en": "Privacy policy",
     },
     "#donnéesLegal": {
         "fr": "Données personnelles",
-        "en": "",
+        "en": "Personal data",
     },
-    "#textmentionsLegal": {
-        "fr": "",
-        "en": "",
-    },
-    "#textpolitiqueLegal": {
-        "fr": "",
-        "en": "",
-    },
-    "#textdonneeLegal": {
-        "fr": "",
-        "en": "",
-    },
+
+    // PAS ENCORE DE TEXTE OFFICIEL DONC PAS ENCORE DE TRADUCTION, A REMPLIR SVP
+
+    // "#textmentionsLegal": {
+    //     "fr": "",
+    //     "en": "",
+    // },
+    // "#textpolitiqueLegal": {
+    //     "fr": "",
+    //     "en": "",
+    // },
+    // "#textdonneeLegal": {
+    //     "fr": "",
+    //     "en": "",
+    // },
 
     // ******************************** vue Panier *************************************************
     "#panierPanier": {
-        "fr": "Votre Panier",
-        "en": "",
+        "fr": "Votre panier",
+        "en": "Your cart",
     },
     "#supprPanier": {
-        "fr": "SUPPRIMER",
-        "en": "",
+        "fr": "Supprimer",
+        "en": "Delete",
     },
     "#codePanier": {
         "fr": "Code Promo / Bons ?",
-        "en": "",
+        "en": "Promotionnal codes / Vouchers?",
     },
     "#appliquerPanier": {
         "fr": "Appliquer",
-        "en": "",
+        "en": "Apply",
     },
     "#indiqPanier": {
-        "fr": "Saisissez le code sans espace entre les caractères",
-        "en": "",
+        "fr": "Saisissez le code sans espace entre les caractères.",
+        "en": "Enter the code with no spaces between the characters.",
     },
     "#infoPanier": {
         "fr": "Vos informations",
-        "en": "",
+        "en": "Your details",
+    },
+    "#nomCompte": {
+        "fr": "Nom",
+        "en": "Name",
+    },
+    "#prenomCompte": {
+        "fr": "Prénom",
+        "en": "First name",
+    },
+    "#mailCompte": {
+        "fr": "Email",
+        "en": "Email",
     },
     "#adressepostalPanier": {
         "fr": "Adresse",
-        "en": "",
+        "en": "Address",
     },
     "#payerPanier": {
-        "fr": "Payer avec",
-        "en": "",
-    },
-    "#indiqPanier": {
-        "fr": "Saisissez le code sans espace entre les caractères",
-        "en": "",
+        "fr": "Payer avec...",
+        "en": "Pay with...",
     },
     "#retournercartePanier": {
-        "fr": "Retournez la carte",
-        "en": "",
+        "fr": "Retourner la carte en passant la souris dessus",
+        "en": "Flip the card by hovering the mouse over it",
     },
     "#validerPanier": {
         "fr": "Valider le paiement",
-        "en": "",
+        "en": "Confirm the payment",
     },
 
     // ******************************** vue Propos *************************************************
     "#soustitrePropos": {
         "fr": "Découvrez l'envers du décor de votre ville.",
-        "en": "",
+        "en": "Discover the other side of your city.",
     },
     "#explicationPropos": {
-        "fr": "L'origine du nom",
-        "en": "",
+        "fr": "L'origine de l'entreprise",
+        "en": "The origin of the company",
     },
     "#explication2Propos": {
         "fr": "Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ? ELIFE est né d'une vision : briser les frontières de l'escape game traditionnel.",
-        "en": "",
+        "en": "Why limit yourself to four walls when the most enthralling mysteries are right in front of you? ELIFE was created with the intention of breaking the boundaries of traditional escape games.",
     },
     "#explicationsuitePropos": {
         "fr": "Le nom évoque l'alliance entre l'exploration urbaine et l'adrénaline de l'enquête. Nous avons voulu sortir le jeu des sous-sols pour transformer les parcs et les monuments en mécanismes géants.",
-        "en": "",
+        "en": "The name evokes the connection between urban exploration and the excitement of investigation. Our aim was to move the game from basements and transform parks and monuments into massive mechanisms.",
     },
     "#mondePropos": {
         "fr": "Le monde est votre salle d'évasion",
-        "en": "",
+        "en": "The world is your escape room",
     },
     "#libertePropos": {
         "fr": "Liberté Totale",
-        "en": "",
+        "en": "Complete freedom",
     },
     "#libertéexplicationPropos": {
-        "fr": "Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ? ELIFE est né d'une vision : briser les frontières de l'escape game traditionnel.",
-        "en": "",
+        "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
+        "en": "In order to advance, one must breathe, explore, and use real architecture. Your ceiling is the sky.",
     },
-    // "#explicationsuitePropos": {
-    //     "fr": "Respirez, explorez et utilisez l'architecture réelle pour progresser. Le ciel est votre plafond.",
-    //     "en": "",
-    // },
-
     "#parcoursPropos": {
         "fr": "Parcours Thématiques",
-        "en": "",
+        "en": "Themed trails",
     },
     "#parcoursexplicationPropos": {
-        "fr": "Liberté Totale",
-        "en": "",
+        "fr": "Du thriller d'espionnage à la quête historique, chaque quartier cache un secret.",
+        "en": "There is a mystery in every neighborhood, whether it's a spy thriller or a historical quest.",
     },
     "#realitéaugPropos": {
         "fr": "Réalité Augmentée",
-        "en": "",
+        "en": "Augmented reality",
     },
     "#realitePropos": {
         "fr": "Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à l'œil nu.",
-        "en": "",
+        "en": "Use your briefcases and compasses to interact with elements that can't be seen with the naked eye.",
     },
     "#gardiensPropos": {
         "fr": "Les gardiens du jeu",
-        "en": "",
+        "en": "The guardians of the game",
     },
     "#architectePropos": {
         "fr": "L'Architecte",
-        "en": "",
+        "en": "The architect",
     },
     "#storytellerPropos": {
-        "fr": "L'Architecte",
-        "en": "",
+        "fr": "Il s'occupe de la création des jeux et des parcours",
+        "en": "He is in charge of the creation of games and trails",
     },
     "#chronos": {
-        "fr": "Le Chronos",
-        "en": "",
+        "fr": "L'ingénieur de terrains",
+        "en": "The field engineer",
     },
     "#ingenieurPropos": {
-        "fr": "Ingénieur de terrain",
-        "en": "",
+        "fr": "Il collabore avec l'architecte et mets en place les éléments pour des jeux totalement immersifs",
+        "en": "In collaboration with the architect, he sets up the elements for fully immersive games",
     },
     "#maitre": {
-        "fr": "Maître",
-        "en": "",
+        "fr": "Le maître du jeu",
+        "en": "The game master",
     },
     "#maitre2": {
-        "fr": "Maître du jeu",
-        "en": "",
+        "fr": "Rôle clé, le maître du jeu accompagne les participants à travers les jeux et les guides pour résoudre les mystères de la ville",
+        "en": "The game master plays a key role in assisting participants through games and guides to solve the mysteries of the city.",
     },
+
     "#titreEnigme_1": {
         "fr": "L'",
-        "en": "The "
+        "en": "Live an "
     },
     "#titreEnigme_2": {
         "fr": "Énigme",
-        "en": "Riddle"
+        "en": "adventure"
     },
     "#titreEnigme_3": {
         "fr": " à ciel ouvert",
-        "en": " in the open air"
+        "en": ",outdoors !"
     },
 
     // ******************************** vue header *************************************************
@@ -579,12 +603,12 @@ let trad = {
         "en": "Home",
     },
     "#menuPropos": {
-        "fr": "A Propos",
+        "fr": "À Propos",
         "en": "About",
     },
     "#menuNosEscapes": {
         "fr": "Nos escapes",
-        "en": "Our Escapes",
+        "en": "Our escapes",
     },
     "#menuContact": {
         "fr": "Contact",
@@ -595,7 +619,7 @@ let trad = {
         "en": "Account",
     },
     "#menuDash": {
-        "fr": "Dashboard",
+        "fr": "Tableau de bord",
         "en": "Dashboard",
     },
     "#menudeco": {
@@ -603,8 +627,8 @@ let trad = {
         "en": "Logout",
     },
     "#reserver": {
-        "fr": "Réserver",
-        "en": "Book Now",
+        "fr": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> Réserver",
+        "en": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> Book now",
     },
 
     // ******************************** vue footer *************************************************
@@ -619,7 +643,7 @@ let trad = {
     },
     "#footerJeux": {
         "fr": "Nos jeux",
-        "en": "Our Games"
+        "en": "Our games"
     },
     "#footerInfos": {
         "fr": "Informations",
@@ -635,11 +659,11 @@ let trad = {
     },
     "#footerEntreprise": {
         "fr": "Notre entreprise",
-        "en": "Our Company"
+        "en": "Our company"
     },
     "#footerApropos": {
         "fr": "À propos de nous",
-        "en": "About Us"
+        "en": "About us"
     },
     "#footerInsta": {
         "fr": "Notre Instagram",
@@ -647,7 +671,7 @@ let trad = {
     },
     "#footerNewsTitre": {
         "fr": "S'inscrire à la Newsletter !",
-        "en": "Join our Newsletter!"
+        "en": "Join our Newsletter !"
     },
     "#footerNewsInput": {
         "fr": "Adresse mail",
@@ -655,19 +679,19 @@ let trad = {
     },
     "#footerNewsTexte": {
         "fr": "Inscrivez-vous à la Newsletter ELIFE pour ne rien manquer des nouveautés et des jeux de saisons !",
-        "en": "Subscribe to the ELIFE Newsletter and never miss out on news and seasonal games!"
+        "en": "Subscribe to the ELIFE Newsletter and never miss out on news and seasonal games !"
     },
     "#footerMentions": {
         "fr": "Mentions légales",
-        "en": "Legal Mentions"
+        "en": "Legal notice"
     },
     "#footerPolitique": {
         "fr": "Politique de confidentialité",
-        "en": "Privacy Policy"
+        "en": "Privacy policy"
     },
     "#footerDonnees": {
         "fr": "Données personnelles",
-        "en": "Personal Data"
+        "en": "Personal data"
     },
     "#footerCopyright": {
         "fr": "&copy; 2026 ELIFE. Tous droits réservés.",
@@ -678,32 +702,36 @@ let trad = {
 
     "#inputmdp": {
         "fr": "Votre mot de passe",
-        "en": "azertyui",
+        "en": "Your password",
     },
 
     "#inputnom": {
         "fr": "Votre nom",
-        "en": "",
+        "en": "Your name",
     },
     "#inputprenom": {
         "fr": "Votre prénom",
-        "en": "",
+        "en": "Your first name",
     },
     "#inputemail": {
         "fr": "Votre adresse email",
-        "en": "",
+        "en": "Your email address",
     },
     "#inputadresse": {
         "fr": "Votre adresse postale",
-        "en": "",
+        "en": "Your postal address",
     },
     "#inputconfmdp": {
         "fr": "Confirmer le mot de passe",
-        "en": "",
+        "en": "Confirm password",
     },
     "#inputcommentaire": {
-        "fr": "Commentaire",
-        "en": "",
+        "fr": "Un commentaire ? Partagez-nous votre avis !",
+        "en": "A comment? Share your opinion!",
+    },
+    "#inputcodepromo": {
+        "fr": "Entrez le code inscrit sur le bon",
+        "en": "Please enter the code written on the voucher",
     },
 
     // ******************************** required *************************************************
@@ -715,43 +743,43 @@ let trad = {
 
     "#inputdescription_error": {
         "fr": "Veuillez compléter ce champs.",
-        "en": "Please pleaase please hophophop.",
+        "en": "Please complete this field.",
     },
     "#inputlieu_error": {
         "fr": "Veuillez renseigner un lieu",
-        "en": "dcfgh",
+        "en": "Please enter a location.",
     },
 
     "#inputduree_error": {
         "fr": "Veuillez indiquer la durée de l'escape.",
-        "en": "dfghj",
+        "en": "Please indicate the duration of the escape.",
     },
     "#inputpersmin_error": {
         "fr": "Veuillez indiquer le nombre de personnes minimum.",
-        "en": "fghjk",
+        "en": "Please indicate the minimum number of people.",
     },
 
     "#inputpersmax_error": {
-        "fr": "Veuillez indiquer le nombre de personnes minimum.",
-        "en": "",
+        "fr": "Veuillez indiquer le nombre de personnes maximum.",
+        "en": "Please indicate the maximum number of people.",
     },
     "#inputemail_error": {
-        "fr": "Veuillez renseigner ce champs.",
-        "en": "dfghjklm",
+        "fr": "Veuillez indiquer une adresse mail valide.",
+        "en": "Please indicate a valid email address.",
     },
 
     "#inputconfmdp_error": {
         "fr": "Veuillez confirmer votre mot de passe.",
-        "en": "Please pleaase please hophophop.",
+        "en": "Please confirm your password.",
     },
     "#inputprenom_error": {
-        "fr": "Veuillez renseigner votre prénom",
-        "en": "",
+        "fr": "Veuillez renseigner votre prénom.",
+        "en": "Please enter your first name.",
     },
 
     "#inputnom_error": {
         "fr": "Veuillez renseigner votre nom.",
-        "en": "",
+        "en": "Please fill in your name.",
     }
 };
 

@@ -30,8 +30,9 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
     </div>
 
     <div class="titre" id="bientotConf">
-        À bientôt chez <span class="goldText" id="goldElifeConf">ELIFE</span> !
+        À bientôt chez
     </div>
+    <img src="images/logo.png" width="50%" alt="Logo de la compagnie ELIFE">
 
     <div class="separation"></div>
 
@@ -40,7 +41,7 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
         <div class="liens-footer">
             <a href="index.php?action=accueil" id="retourAccConf">Retour à la page d'accueil</a>
-            <a href="#" id="voirCommandeConf">Voir ma commande</a>
+            <!-- <a href="#" id="voirCommandeConf">Voir ma commande</a> -->
         </div>
     </div>
 
