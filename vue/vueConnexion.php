@@ -35,7 +35,7 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=connexion" ?>>
 
             <label id="mailConnexion">ADRESSE MAIL</label>
-            <input type="email" name="mail" value="" id="mailConnexion" placeholder="mail@exemple.com" required>
+            <input type="email" name="mail" value="" id="mailConnexion2" placeholder="mail@exemple.com" required>
 
             <label id="mdpConnexion">MOT DE PASSE</label>
             <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>

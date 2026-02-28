@@ -179,7 +179,14 @@ let trad = {
     //     "fr": "Voir ma commande",
     //     "en": "",
     // },
-
+    "#merciGold": {
+        "fr": "Merci",
+        "en": "Thank you"
+    },
+    "#txtReservation": {
+        "fr": "pour votre réservation !",
+        "en": "for your booking!"
+    },
 
     // ******************************** vue Dash *************************************************
 
@@ -266,25 +273,74 @@ let trad = {
 
     // ******************************** vue Escape Games *************************************************
 
-    // ICI LE TITRE DORE NE MARCHE PAS ON DIRAIT QUE IL EST EFFACE PAR LE TITRE BLANC "Réserver blbalblab"
-    // "#titreorEscapGam": {
-    //     "fr": "mission immersive",
-    //     "en": "prout2marchepas",
-    // }, 
+    "#txtReserver": {
+        "fr": "Réservez votre ",
+        "en": "Book your "
+    },
+    "#titreorEscapGam": {
+        "fr": "mission immersive",
+        "en": "immersive mission"
+    },
+    "#txtMaintenant": {
+        "fr": " dès maintenant",
+        "en": " now"
+    },
     "#choixEscapGam": {
         "fr": "Choisissez votre univers !",
         "en": "Choose your universe !",
     },
-    "#reserverEscapGam": {
-        "fr": "Réservez votre expérience immersive dès maintenant",
-        "en": "Book your immersive experience now",
-    },
+    // "#reserverEscapGam": {
+    //     "fr": "Réservez votre expérience immersive dès maintenant",
+    //     "en": "Book your immersive experience now",
+    // },
     "#detailEscapeGam": {
         "fr": "Voir détails",
         "en": "View details",
     },
-
-    // Pleins de trucs à ajouter avce les filtres etc
+    "#legendePrix": {
+        "fr": "Prix (€ / pers)",
+        "en": "Price (€ / pers)"
+    },
+    "#labelMin": {
+        "fr": "Min",
+        "en": "Min"
+    },
+    "#labelMax": {
+        "fr": "Max",
+        "en": "Max"
+    },
+    "#legendePers": {
+        "fr": "Nombre max de personnes",
+        "en": "Max number of people"
+    },
+    "#legendeLieu": {
+        "fr": "Lieu",
+        "en": "Location"
+    },
+    "#lieuTous": {
+        "fr": "Tous",
+        "en": "All"
+    },
+    "#legendeNote": {
+        "fr": "Note des avis (étoiles)",
+        "en": "Review rating (stars)"
+    },
+    "#legendeDuree": {
+        "fr": "Durée du jeu en minutes",
+        "en": "Game duration (minutes)"
+    },
+    "#labelDureeMin": {
+        "fr": "Minimum",
+        "en": "Minimum"
+    },
+    "#labelDureeMax": {
+        "fr": "Maximum",
+        "en": "Maximum"
+    },
+    "#btnFiltrer": {
+        "fr": "Filtrer",
+        "en": "Filter"
+    },
 
     // ******************************** vue Games *************************************************
     "#retourescapeGames": {
@@ -292,7 +348,7 @@ let trad = {
         "en": "Back to the games",
     },
     "#titreGames": {
-        "fr": "L'escape game mélant nature et découverte locale",
+        "fr": "",
         "en": "",
     },
     "#prixGames": {
@@ -303,11 +359,10 @@ let trad = {
         "fr": "avis",
         "en": "reviews",
     },
-    // Si on mets la trad ça casse tout et le lieu n'apparait plus
-    // "#lieuGames": {
-    //     "fr": "Lieu :",
-    //     "en": "Place :",
-    // },
+    "#labelLieu": {
+        "fr": "Lieu :",
+        "en": "Place :",
+    },
     "#detailGames": {
         "fr": "Détails",
         "en": "Details",
@@ -422,7 +477,7 @@ let trad = {
         "fr": "Pas encore de compte ? S'inscrire",
         "en": "No account yet? Sign up",
     },
-    "#mailConnexion": {
+    "#mailConnexion2": {
         "fr": "mail@exemple.com",
         "en": "mail@example.com",
     },
@@ -590,11 +645,11 @@ let trad = {
     },
     "#titreEnigme_2": {
         "fr": "Énigme",
-        "en": "adventure"
+        "en": "adventure,"
     },
     "#titreEnigme_3": {
         "fr": " à ciel ouvert",
-        "en": ",outdoors !"
+        "en": "outdoors !"
     },
 
     // ******************************** vue header *************************************************

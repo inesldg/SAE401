@@ -66,19 +66,20 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                         <circle cx="12" cy="12" r="10" />
                         <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z" />
                     </svg>
-                    Lieu : <?= $escapeGame[0]['lieu'] ?></div>
-            </div>
-
-            <div class="separateur"></div>
-
-            <div class="detail">
-                <h3 id="detailGames">Détails</h3>
-                <div style="font-size: 0.85rem; color: #bbb;">
-                    <?= $escapeGame[0]['description'] ?>
+                    <span id="labelLieu">Lieu :</span>
+                    <?= $escapeGame[0]['lieu'] ?>
                 </div>
-            </div>
 
-            <div class="separateur"></div>
+                <div class="separateur"></div>
+
+                <div class="detail">
+                    <h3 id="detailGames">Détails</h3>
+                    <div style="font-size: 0.85rem; color: #bbb;">
+                        <?= $escapeGame[0]['description'] ?>
+                    </div>
+                </div>
+
+                <div class="separateur"></div>
         </section>
 
         <section class="block_avis carte-noire">
@@ -245,8 +246,8 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
         ?>
 
-<?php
+        <?php
 
-$script = '<script src="js/infoescape.js"></script>';
-$script .= '<script src="js/json.js" defer></script>';
+        $script = '<script src="js/infoescape.js"></script>';
+        $script .= '<script src="js/json.js" defer></script>';
 
