@@ -432,7 +432,10 @@ let trad = {
         "fr": "Ajouter un avis",
         "en": "Add a review",
     },
-
+    "#btnRetourTexte": {
+        "fr": "Retour aux escape games",
+        "en": "Back to escape games"
+    },
     // ******************************** vue inscription *************************************************
 
     "#sinscrireInscr": {
