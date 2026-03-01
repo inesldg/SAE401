@@ -120,3 +120,86 @@ h1 {
     font-weight: lighter;
     margin-bottom: 32px;
 }
+
+
+.avis-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-avis {
+    position: relative; /* nécessaire pour positionner le bouton */
+    background-color: #1c1f28; /* fond sombre */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.avis-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555; /* placeholder si pas d'image */
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.infos h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.infos span {
+    display: block;
+    font-size: 12px;
+    color: #c5a059; /* couleur dorée pour l'escape */
+}
+
+.etoiles {
+    margin: 5px 0 10px 50px; /* aligne sous le texte du nom */
+}
+
+.star {
+    font-size: 16px;
+    color: #555;
+    margin-right: 2px;
+}
+
+.star.gold {
+    color: #c5a059;
+}
+
+.commentaire {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #f2f2f2;
+    margin-left: 50px; /* aligne avec le texte du nom */
+    white-space: pre-wrap;
+}
+
+/* Bouton supprimer en haut à droite */
+.btn-supprimer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #A3730C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.btn-supprimer:hover {
+    background-color: #c5a059;
+}
