@@ -129,11 +129,11 @@ h1 {
 }
 
 .card-avis {
-    position: relative; /* nécessaire pour positionner le bouton */
-    background-color: #1c1f28; /* fond sombre */
+    position: relative;
+    background-color: var(--bleu-fonce);
+    border: solid var(--bleu-clair) 1px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .avis-header {
@@ -143,46 +143,43 @@ h1 {
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    background-color: #555; /* placeholder si pas d'image */
-    margin-right: 10px;
-    flex-shrink: 0;
+    background-color: #D9D9D9; /* placeholder si pas d'image */
+    margin-right: 15px;
 }
 
 .infos h3 {
     margin: 0;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .infos span {
     display: block;
-    font-size: 12px;
-    color: #c5a059; /* couleur dorée pour l'escape */
+    font-size: 14px;
+    color: var(--gold-clair); 
 }
 
 .etoiles {
-    margin: 5px 0 10px 50px; /* aligne sous le texte du nom */
+    margin-bottom: 10px;
 }
 
 .star {
-    font-size: 16px;
-    color: #555;
+    font-size: 25px;
+    color: var(--bleu-clair);
     margin-right: 2px;
 }
 
 .star.gold {
-    color: #c5a059;
+    color: var(--gold-clair);
 }
 
 .commentaire {
     font-size: 13px;
     line-height: 1.5;
-    color: #f2f2f2;
-    margin-left: 50px; /* aligne avec le texte du nom */
-    white-space: pre-wrap;
+    color: var(--blanc-casse);
 }
 
 /* Bouton supprimer en haut à droite */
@@ -190,16 +187,17 @@ h1 {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #A3730C;
-    color: #fff;
+    background-color: var(--golf-fonce);
+    color: var(--blanc-casse);
     border: none;
     border-radius: 5px;
     padding: 4px 8px;
     cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.btn-supprimer:hover {
-    background-color: #c5a059;
+.btn-supprimer:hover{
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
 }
