@@ -79,7 +79,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                     <h2 id="utilisateurAdmin">UTILISATEURS</h2>
                     <div class="donnee">
                         <div class="chiffre"><?= $utilisateurs ?></div>
-                        <div class="texte"id="inscritDash">inscrit</div>
+                        <div class="texte" id="inscritDash">inscrit</div>
                     </div>
                 </div>
                 <div class="part2">
@@ -96,7 +96,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                     <h2 id="escapeAdmin">ESCAPES</h2>
                     <div class="donnee">
                         <div class="chiffre"><?= $escapes ?></div>
-                        <div class="texte" id="actifDash" >actifs</div>
+                        <div class="texte" id="actifDash">actifs</div>
                     </div>
                 </div>
                 <div class="part2">
@@ -157,48 +157,36 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
         </div>
 
         <h1 id="reservationsDash">RÉSERVATIONS RÉCENTES</h1>
-
-        <!-- <table class="table">
+        <table class="table-reservations">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>ESCAPE</th>
-                    <th>CLIENT</th>
-                    <th>DATE</th>
-                    <th>TOTAL</th>
+                    <th>Escape</th>
+                    <th>Client</th>
+                    <th>Date</th>
+                    <th>Horaire</th>
+                    <th>Nombre de pers</th>
+                    <th>Total (€)</th>
                 </tr>
             </thead>
             <tbody>
-
-                <?php if (!empty($listeReservations)): ?>
-                    <?php foreach ($listeReservations as $reservation): ?>
+                <?php if (!empty($reservationsRecente)): ?>
+                    <?php foreach ($reservationsRecente as $res): ?>
                         <tr>
-                            <td><?= $reservation['id_reserver'] ?></td>
-
-                            <td><?= $reservation['nom_escape'] ?></td>
-
-                            <td>
-                                <?= $reservation['prenom'] . " " . $reservation['nom'] ?>
-                            </td>
-
-                            <td>
-                                <?= date("d/m/Y", strtotime($reservation['reserver_date'])) ?>
-                                - <?= $reservation['reserver_heure'] ?>
-                            </td>
-
-                            <td>
-                                <?= $reservation['nbr_pers'] * $reservation['prix'] ?> €
-                            </td>
+                            <td><?= htmlspecialchars($res['nom_escape']) ?></td>
+                            <td><?= htmlspecialchars($res['nom_utilisateur'] . ' ' . $res['prenom_utilisateur']) ?></td>
+                            <td><?= $res['reserver_date'] ?></td>
+                            <td><?= $res['horaire'] ?></td>
+                            <td><?= $res['nbr_pers'] ?></td>
+                            <td><?= number_format($res['total_reservation'], 2, ',', ' ') ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="5">Aucune réservation</td>
+                        <td colspan="6">Aucune réservation récente</td>
                     </tr>
                 <?php endif; ?>
-
             </tbody>
-        </table> -->
+        </table>
 
     </div>
 </div>
@@ -206,4 +194,3 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 <?php
 
 $script = '<script src="js/json.js" defer></script>';
-

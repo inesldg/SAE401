@@ -68,30 +68,27 @@ class admin extends database
     }
 
 
-    // public function getListeReservations()
-    // {
-    //     $req = "SELECT 
-    //             reserver.id_reserver,
-    //             escape.libelle AS nom_escape,
-    //             utilisateur.nom,
-    //             utilisateur.prenom,
-    //             reserver.reserver_date,
-    //             reserver.reserver_heure,
-    //             reserver.nbr_pers,
-    //             tarif.prix
-    //         FROM reserver
-    //         JOIN escape ON reserver.id_escape = escape.id_escape
-    //         JOIN utilisateur ON reserver.id_utilisateur = utilisateur.id_utilisateur
-    //         JOIN tarif ON reserver.id_escape = tarif.id_escape
-    //         ORDER BY reserver.reserver_date DESC";
 
-    //     $res = $this->execReq($req);
 
-    //     // Sécurité si vide
-    //     if (!is_array($res)) {
-    //         return [];
-    //     }
+    // Récupérer les réservations récentes
+    public function getReservationsRecentes($limit = 5)
+    {
+        $sql = "
+    SELECT 
+        r.id_reserver,
+        r.reserver_date,
+        r.horaire,
+        r.nbr_pers,
+        e.nom AS nom_escape,
+        u.nom AS nom_utilisateur,
+        u.prenom AS prenom_utilisateur
+    FROM reserver r
+    INNER JOIN escape e ON r.id_escape = e.id_escape
+    INNER JOIN utilisateur u ON r.id_utilisateur = u.id_utilisateur
+    ORDER BY r.reserver_date DESC, r.horaire DESC
+    LIMIT ?
+";
 
-    //     return $res;
-    // }
+        return $this->execReqPrep($sql, array($limit));
+    }
 }
