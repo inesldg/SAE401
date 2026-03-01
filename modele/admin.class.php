@@ -70,25 +70,25 @@ class admin extends database
 
 
 
-    // Récupérer les réservations récentes
-    public function getReservationsRecentes($limit = 5)
-    {
-        $sql = "
-    SELECT 
-        r.id_reserver,
-        r.reserver_date,
-        r.horaire,
-        r.nbr_pers,
-        e.nom AS nom_escape,
-        u.nom AS nom_utilisateur,
-        u.prenom AS prenom_utilisateur
-    FROM reserver r
-    INNER JOIN escape e ON r.id_escape = e.id_escape
-    INNER JOIN utilisateur u ON r.id_utilisateur = u.id_utilisateur
-    ORDER BY r.reserver_date DESC, r.horaire DESC
-    LIMIT ?
-";
+//     // Récupérer les réservations récentes
+//     public function getReservationsRecentes($limit = 5)
+//     {
+//         $sql = "
+//     SELECT 
+//         r.id_reserver,
+//         r.reserver_date,
+//         r.horaire,
+//         r.nbr_pers,
+//         e.nom AS nom_escape,
+//         u.nom AS nom_utilisateur,
+//         u.prenom AS prenom_utilisateur
+//     FROM reserver r
+//     INNER JOIN escape e ON r.id_escape = e.id_escape
+//     INNER JOIN utilisateur u ON r.id_utilisateur = u.id_utilisateur
+//     ORDER BY r.reserver_date DESC, r.horaire DESC
+//     LIMIT ?
+// ";
 
-        return $this->execReqPrep($sql, array($limit));
-    }
+//         return $this->execReqPrep($sql, array($limit));
+//     }
 }
