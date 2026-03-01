@@ -109,18 +109,30 @@ class routeur
                             else
                                 $this->ctlUtilisateurs->afficherUtilisateurs($message = "", $mail);
                             break;
-                            case "dashCalendrier":
+                        case "dashCalendrier":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
                             else
                                 $this->ctlDashCalendrier->afficherdashCalendrier();
                             break;
-                            case "dashAvis":
+                        case "dashAvis":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
                             else
                                 $this->ctlDashAvis->afficherdashAvis();
                             break;
+
+                        case "supprimerAvis":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else {
+                                if (isset($_POST['id_avis']))
+                                    $this->ctlDashAvis->supprimer();
+                                else
+                                    throw new Exception("ID avis manquant");
+                            }
+                            break;
+
                         case "pageAjoutEscape":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");

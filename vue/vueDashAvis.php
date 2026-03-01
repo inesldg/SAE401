@@ -59,10 +59,49 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
         <div class="haut">
             <h1 id="#">TOUS LES AVIS</h1>
             <div class="sous-titre" id="#">
-                x avis
+                <?= count($avis) ?> avis
             </div>
         </div>
-        <div class="bas">
+        <div class="avis-container">
+
+            <?php foreach ($avis as $a) { ?>
+
+                <div class="card-avis">
+
+                    <div class="avis-header">
+                        <div class="avatar"></div>
+
+                        <div class="infos">
+                            <h3><?= htmlspecialchars($a['prenom']) . " " . htmlspecialchars($a['nom']) ?></h3>
+                            <span><?= htmlspecialchars($a['nom_escape']) ?></span>
+                        </div>
+
+                        <form method="POST" action="index.php?action=supprimerAvis">
+                            <input type="hidden" name="id_avis" value="<?= $a['id_avis'] ?>">
+                            <button type="submit" class="btn-supprimer">
+                                Supprimer
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="etoiles">
+                        <?php for ($i = 1; $i <= 5; $i++) { ?>
+                            <?php if ($i <= $a['note']) { ?>
+                                <span class="star gold">★</span>
+                            <?php } else { ?>
+                                <span class="star">★</span>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
+
+                    <p class="commentaire">
+                        <?= nl2br(htmlspecialchars($a['commentaire'])) ?>
+                    </p>
+
+                </div>
+
+            <?php } ?>
+
         </div>
     </div>
 </div>
