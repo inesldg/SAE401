@@ -25,17 +25,200 @@
 }
 
 body {
-    margin: 0;
+    color: var(--blanc-casse);
+    font-family: var(--texte);
+    font-size: 18px;
+    display: flex;
+    margin: 0px;
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-color: var(--fond-sombre);
+}
+
+main {
+    width: calc(100% - 96px);
+    margin: 48px;
+    border: solid 3px var(--gold-clair);
+    border-radius: 32px;
+    box-sizing: border-box;
+}
+
+.avis-filtre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 32px;
+    padding: 12px 18px;
+    background: transparent;
+}
+
+.avis-titre {
+    font-family: var(--texte);
+    font-size: 50px;
+    line-height: 1;
+    color: var(--blanc-casse);
+}
+
+.avis-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.avis-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px var(--gold-clair);
+    border-radius: 999px;
+    padding: 6px 14px;
+    min-height: 18px;
+    font-family: var(--texte);
+    font-size: 22px;
+    line-height: 1;
+    color: var(--gold-clair);
+}
+
+.avis-pill-add {
+    font-size: 24px;
+    background-color: var(--gold-clair);
+    color: var(--noir);
+    cursor: pointer;
+}
+
+.avis-fenetre-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.72);
+    z-index: 1000;
+}
+
+.avis-fenetre-overlay.ouvert {
+    display: flex;
+}
+
+.avis-fenetre {
+    width: min(920px, calc(100vw - 64px));
+    min-height: 320px;
+    border: solid 2px var(--gold-clair);
+    border-radius: 20px;
+    background-color: var(--fond-sombre);
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.avis-fenetre-fermer {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.avis-fenetre-titre,
+.avis-fenetre-libelle {
+    font-size: 34px;
+    color: var(--blanc-casse);
+    margin-bottom: 10px;
+}
+
+.avis-obligatoire {
+    color: #ff4545;
+}
+
+.avis-fenetre-etoiles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.avis-fenetre-etoile {
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+}
+
+.avis-fenetre-zone {
+    width: 100%;
+    min-height: 170px;
+    border: solid 2px var(--gold-clair);
+    border-radius: 24px;
+    padding: 14px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #7c93a9;
+    font-family: var(--texte);
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+.avis-fenetre-zone::placeholder {
+    color: #7c93a9;
+}
+
+.avis-fenetre-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.avis-fenetre-valider {
+    border: solid 2px var(--gold-clair);
+    border-radius: 999px;
+    padding: 8px 18px;
+    background-color: var(--gold-clair);
+    color: var(--noir);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.dore {
+    color: var(--gold-clair);
+}
+
+.grise {
+    color: var(--blanc-casse);
+}
+
+.avis{
+    margin: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    border: solid 3px var(--gold-clair);
+    background-color: color-mix(in srgb, var(--gold-clair) 50%, transparent);
+    border-radius: 32px;
+    width: calc(100% - 64px);
+    box-sizing: border-box;
 }
 
 .photo-de-profil img {
-    width: 100px;
-    height: 100px;
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     object-fit: cover;
+}
+
+.photo-de-profil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .contentAvis {
@@ -44,8 +227,32 @@ body {
     gap: 12px;
 }
 
-.container-avis {
+.top-avis {
+    width: 100%;
+}
+
+.meta-avis {
     display: flex;
     align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.note {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.message {
+    width: 100%;
+}
+
+.container-avis {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
     gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
