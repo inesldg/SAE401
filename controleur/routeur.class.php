@@ -1,5 +1,5 @@
 <?php
-
+require "controleur/ctlAccueil.class.php";
 require "controleur/ctlPages.class.php";
 require "controleur/ctlEscapeGames.class.php";
 require "controleur/ctlCompte.class.php";
@@ -15,6 +15,7 @@ require "controleur/ctlDashCalendrier.class.php";
 
 class routeur
 {
+    private $ctlAccueil;
     private $ctlPages;
     private $ctlEscapeGames;
     private $ctlCompte;
@@ -30,6 +31,7 @@ class routeur
 
     public function __construct()
     {
+        $this->ctlAccueil = new ctlAccueil();
         $this->ctlPages = new ctlPages();
         $this->ctlEscapeGames = new ctlEscapeGames();
         $this->ctlCompte = new ctlCompte();
@@ -59,7 +61,7 @@ class routeur
                             $this->ctlCompte->deconnexion();
                             break;
                         case "accueil":
-                            $this->ctlEscapeGames->accueil($acces);
+                            $this->ctlAccueil->afficherAccueil($acces);
                             break;
                         case "legal":
                             $this->ctlPages->pageLegal();
@@ -177,7 +179,7 @@ class routeur
                             throw new Exception("Action non valide");
                     }
                 } else
-                    $this->ctlEscapeGames->accueil($acces);
+                    $this->ctlAccueil->afficherAccueil("0");
             }
 
 
