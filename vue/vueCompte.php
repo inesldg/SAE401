@@ -12,12 +12,12 @@ $lang = $_SESSION['lang'];
 $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
 ?>
 
-<body>
-
     <div class="background-fond">
 
         <div class="carte">
-            <div class="carte-couleur"></div>
+            <div class="carte-couleur">
+                <h1 class="carte-couleur__titre" id="titreModifCompte">Modification de vos informations</h1>
+            </div>
 
             <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>" class="carte-contenu">
 
@@ -43,18 +43,28 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                 <div class="grille-formulaire">
                     <div class="case">
                         <label id="nomCompte">NOM</label>
-                        <input type="text" name="nom" placeholder="<?= $infosCompte[0]['nom'] ?>" value="">
+                        <input type="text" name="nom" placeholder="<?= htmlspecialchars($infosCompte[0]['nom'] ?? '') ?>" value="">
                     </div>
                     <div class="case">
                         <label id="prenomCompte">PRÉNOM</label>
-                        <input type="text" name="prenom" placeholder="<?= $infosCompte[0]['prenom'] ?>" value="">
+                        <input type="text" name="prenom" placeholder="<?= htmlspecialchars($infosCompte[0]['prenom'] ?? '') ?>" value="">
+                    </div>
+                    <div class="case case--pleine">
+                        <label id="telCompte">NUMÉRO DE TÉLÉPHONE</label>
+                        <input type="tel" name="tel" id="inputtel" placeholder="<?= htmlspecialchars(!empty($infosCompte[0]['tel']) ? $infosCompte[0]['tel'] : '06 06 06 06 06') ?>"
+                            pattern="[0-9]{2}(\s[0-9]{2}){4}" title="Format : 06 06 06 06 06">
                     </div>
                 </div>
 
                 <div class="section-mdp">
+                    <p class="section-mdp__intro" id="introModifCompte">Pour enregistrer vos modifications, saisissez votre mot de passe actuel.</p>
                     <div class="case">
-                        <label id="entrerMDPCompte">Entrez votre mot de passe pour enregistrer</label>
+                        <label id="entrerMDPCompte">MOT DE PASSE ACTUEL</label>
                         <input type="password" name="mdp" id="inputmdp" placeholder="Votre mot de passe" required>
+                    </div>
+                    <div class="case case--confirmer-mdp">
+                        <label id="confirmerMDPCompte">Confirmer le mot de passe</label>
+                        <input type="password" name="mdp_confirm" id="inputmdpconfirm" placeholder="Confirmer votre mot de passe" required>
                     </div>
                 </div>
 
@@ -64,6 +74,7 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                         <?= $infosCompte[0]['mail'] ?>
                     </div>
                     <div class="case" style="margin-top:15px; width: 100%; max-width: 400px;">
+                        <label id="nouvelleMailCompte">Nouvelle adresse mail (optionnel)</label>
                         <input type="email" name="mail" placeholder="Nouvelle adresse mail (optionnel)">
                     </div>
                     <span class="message-php"><?= $message ?></span>
@@ -73,6 +84,3 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
     </div>
 
     <script src="js/json.js" defer></script>
-</body>
-
-</html>

@@ -89,10 +89,10 @@ class routeur
                             $this->ctlCompte->infosCompte($message = "", $mail);
                             break;
                         case "modifInfos":
-                            if (isset($_POST['mdp']))
-                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], ancienMail: $mail);
+                            if (isset($_POST['mdp']) && isset($_POST['mdp_confirm']))
+                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['tel'] ?? '', $_POST['mdp'], $_POST['mdp_confirm'], ancienMail: $mail);
                             else
-                                $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer votre mot de passe si vous souhaitez modifier vos informations</span>", $mail);
+                                $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer et confirmer votre mot de passe pour enregistrer vos modifications</span>", $mail);
                             break;
 
 

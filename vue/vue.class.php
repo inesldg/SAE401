@@ -38,7 +38,7 @@ class vue
     global $Conf;
     $titre = $Conf->titreOnglet;
 
-    $script = "js/script.js";
+    $script = "";
 
     // Conditions d'affichage du header selon le type de connexion (deconnecté, admin ou simple utilisateur) en vérifiant la session
     if (!isset($_SESSION["acces"]) || empty($_SESSION["acces"])) {

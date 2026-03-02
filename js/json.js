@@ -138,6 +138,14 @@ let trad = {
     },
 
     // ******************************** vue compte *************************************************
+    "#titreModifCompte": {
+        "fr": "Modification de vos informations",
+        "en": "Edit your information",
+    },
+    "#introModifCompte": {
+        "fr": "Pour enregistrer vos modifications, saisissez votre mot de passe actuel.",
+        "en": "To save your changes, enter your current password.",
+    },
     "#nomCompte": {
         "fr": "Nom",
         "en": "Name",
@@ -146,17 +154,29 @@ let trad = {
         "fr": "Prénom",
         "en": "First name",
     },
+    "#telCompte": {
+        "fr": "NUMÉRO DE TÉLÉPHONE",
+        "en": "PHONE NUMBER",
+    },
     "#mailCompteActuel": {
-        "fr": "Email actuel",
-        "en": "Current Email",
+        "fr": "Adresse mail actuelle",
+        "en": "Current email address",
+    },
+    "#nouvelleMailCompte": {
+        "fr": "Nouvelle adresse mail (optionnel)",
+        "en": "New email address (optional)",
     },
     "#entrerMDPCompte": {
-        "fr": "Entrez votre mot de passe pour enregistrer les changements",
-        "en": "Please enter you password to save changes",
+        "fr": "Mot de passe actuel",
+        "en": "Current password",
+    },
+    "#confirmerMDPCompte": {
+        "fr": "Confirmer le mot de passe",
+        "en": "Confirm password",
     },
     "#modifCompte": {
-        "fr": "Modifier",
-        "en": "Change",
+        "fr": "Sauvegarder",
+        "en": "Save",
     },
 
 
@@ -676,8 +696,8 @@ let trad = {
         "en": "The architect",
     },
     "#storytellerPropos": {
-        "fr": "Il s'occupe de la création des jeux et des parcours",
-        "en": "He is in charge of the creation of games and trails",
+        "fr": "Elle s'occupe de la création des jeux et des parcours",
+        "en": "She is in charge of the creation of games and trails",
     },
     "#chronos": {
         "fr": "L'ingénieur de terrains",
@@ -688,7 +708,7 @@ let trad = {
         "en": "In collaboration with the architect, he sets up the elements for fully immersive games",
     },
     "#maitre": {
-        "fr": "Le maître du jeu",
+        "fr": "Maître du jeu",
         "en": "The game master",
     },
     "#maitre2": {

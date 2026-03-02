@@ -59,9 +59,9 @@ class ctlCompte
     //     $vue->afficher(array("infos" => $infos, "message" => $message));
     // }
 
-    function modifInfos($nom, $prenom, $mail, $mdp, $ancienMail)
+    function modifInfos($nom, $prenom, $mail, $tel, $mdp, $mdp_confirm, $ancienMail)
     {
-        $vue = new vue("Compte"); // Instancie la vue appropriée
+        $vue = new vue("Compte");
         $infosCompte = $this->compte->infosCompte($ancienMail);
         $mdpUtilisateur = $this->compte->getMdp($ancienMail);
 
@@ -71,14 +71,22 @@ class ctlCompte
             $prenom = $infosCompte[0]['prenom'];
         if ($mail === "")
             $mail = $ancienMail;
+        if ($tel === "")
+            $tel = $infosCompte[0]['tel'] ?? '';
+
+        if ($mdp !== $mdp_confirm) {
+            $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Les deux mots de passe ne correspondent pas</span>"));
+            return;
+        }
 
         if (password_verify($mdp, $mdpUtilisateur[0]['mdp'])) {
-            $this->compte->modifInfos($nom, $prenom, $mail, $ancienMail);
+            $this->compte->modifInfos($nom, $prenom, $mail, $tel, $ancienMail);
             $_SESSION["acces"] = $mail;
             $infosCompte = $this->compte->infosCompte($mail);
 
             $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Le ou les changement(s) ont été réalisé(s) avec succès</span>"));
-        } else
+        } else {
             $vue->afficher(array("infosCompte" => $infosCompte, "message" => "<span>Mot de passe incorrect</span>"));
+        }
     }
 }

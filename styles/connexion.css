@@ -14,6 +14,7 @@ body {
 
 main {
     flex: 1;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +28,7 @@ main {
     z-index: -1;
     pointer-events: none;
     opacity: 0.7;
+    animation: pulsationDouce 4s ease-in-out infinite alternate;
 }
 
 .haut-droit {
@@ -38,15 +40,16 @@ main {
     bottom: -40px;
     left: -40px;
     transform: rotate(180deg);
+    animation: pulsationDouceBas 4s ease-in-out infinite alternate;
 }
 
-/* --- CONTENEUR FORMULAIRE + SVG --- */
+/* --- CONTENEUR FORMULAIRE + SVG (taille pour que le rouage soit visible en entier) --- */
 .boite-formulaire {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    /* Largeur du SVG */
-    height: 650px;
+    max-width: 760px;
+    height: 732px;
+    margin-top: -2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,16 +57,19 @@ main {
     text-align: center;
 }
 
-/* Le SVG centré en fond */
+/* SVG central : rotation + ombre dorée marquée */
 .svg-arriere-plan {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: rotationLente 60s linear infinite;
     z-index: 1;
     width: 100%;
     height: auto;
     pointer-events: none;
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25))
+        drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
 }
 
 /* Contenu au-dessus du SVG */
@@ -141,7 +147,7 @@ main {
 }
 
 .boite-formulaire input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65);
     font-style: italic;
 }
 
@@ -166,43 +172,25 @@ main {
 
 .lien-inscription {
     margin-top: 20px;
-    color: #a0aab4;
+    color: #b0bac4;
     text-decoration: none;
     font-size: 14px;
-    transition: color 0.3s;
+    transition: color 0.25s ease;
 }
 
-.lien-inscription:hover {
+.lien-inscription:hover,
+.lien-inscription:focus-visible {
     color: #E6B856;
 }
 
-
-/* Animation de rotation lente pour la boussole/engrenage */
+/* Animation de rotation lente pour le SVG central */
 @keyframes rotationLente {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
-
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
-}
-
-/* On applique l'animation au SVG */
-.svg-arriere-plan {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* On garde le translate pour le centrage ET on ajoute l'animation */
-    transform: translate(-50%, -50%);
-    animation: rotationLente 60s linear infinite;
-    /* 60s pour un mouvement très calme */
-    z-index: 1;
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-    filter: drop-shadow(0 0 10px rgba(163, 115, 12, 0.2));
-    /* Légère lueur dorée */
 }
 
 @keyframes pulsationDouce {
@@ -210,23 +198,21 @@ main {
         opacity: 0.6;
         transform: scale(1);
     }
-
     100% {
         opacity: 0.8;
         transform: scale(1.02);
     }
 }
 
-.decoration-coin {
-    /* ... tes propriétés actuelles ... */
-    animation: pulsationDouce 4s ease-in-out infinite alternate;
-}
-
-/* Note: pour la bas-gauche qui a déjà un rotate(180deg), il faudra ajuster ainsi : */
-.bas-gauche {
-    bottom: -40px;
-    left: -40px;
-    animation: pulsationDouceBas 4s ease-in-out infinite alternate;
+@keyframes pulsationDouceBas {
+    0% {
+        opacity: 0.6;
+        transform: rotate(180deg) scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: rotate(180deg) scale(1.02);
+    }
 }
 
 @keyframes pulsationDouceBas {
@@ -244,10 +230,10 @@ main {
 /* Responsive */
 @media (max-width: 768px) {
     .decoration-coin {
-        width: 180px;
+        width: 150px;
     }
 
     .boite-formulaire {
-        transform: scale(0.9);
+        transform: scale(0.85);
     }
 }
