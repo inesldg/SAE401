@@ -1,0 +1,52 @@
+/* Loader plein écran (boussole) – affiché au chargement, masqué quand la page est prête */
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(rgba(16, 26, 35, 0.97), rgba(16, 26, 35, 0.97)), var(--loader-bg, #101A23);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Cinzel', serif;
+  color: white;
+  text-align: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-loader__texte {
+  font-size: 20px;
+}
+
+/* Boussole : centre de rotation (viewBox 620x642, centre ~308,324) */
+.page-loader .aiguille {
+  transform-origin: 308px 324px;
+  animation: loader-rotation 10s linear infinite;
+}
+
+@keyframes loader-rotation {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.page-loader svg {
+  width: 200px;
+  height: auto;
+  max-height: 40vh;
+}
+
+@media (min-width: 768px) {
+  .page-loader svg {
+    width: 280px;
+  }
+}
