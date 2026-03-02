@@ -22,7 +22,8 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 <main class="container">
 
     <div class="titre">
-        <span class="goldText">Merci</span> pour votre réservation !
+        <span class="goldText" id="merciGold">Merci</span>
+        <span id="txtReservation">pour votre réservation !</span>
     </div>
 
     <div class="message-principal" id="accrocheConf">
