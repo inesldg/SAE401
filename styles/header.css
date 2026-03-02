@@ -1,10 +1,10 @@
 /* Conteneur header global (hauteur gérée par script.js au scroll) */
+/* Pas de transition sur height : le script met à jour à chaque frame, une transition crée des saccades en haut de page */
 body>header {
     position: sticky;
     top: 0;
     z-index: 1000;
     overflow: hidden;
-    transition: height 0.3s ease;
 }
 
 /* Conteneur des boutons de langue */
