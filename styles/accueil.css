@@ -1,3 +1,48 @@
+/* --- BOUTON SON (page d'accueil uniquement) --- */
+.accueil-btn-son {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.accueil-btn-son:hover {
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--gold-clair);
+    transform: scale(1.05);
+}
+.accueil-btn-son:focus-visible {
+    outline: 2px solid var(--gold-clair);
+    outline-offset: 2px;
+}
+.accueil-btn-son__icon {
+    width: 22px;
+    height: 22px;
+}
+.accueil-btn-son .accueil-btn-son__icon--on {
+    display: none;
+}
+.accueil-btn-son .accueil-btn-son__icon--off {
+    display: block;
+}
+.accueil-btn-son.accueil-btn-son--playing .accueil-btn-son__icon--on {
+    display: block;
+}
+.accueil-btn-son.accueil-btn-son--playing .accueil-btn-son__icon--off {
+    display: none;
+}
+
 /* --- HERO PREMIÈRE SECTION --- */
 .hero-accueil {
     position: relative;
