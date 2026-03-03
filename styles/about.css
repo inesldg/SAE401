@@ -159,6 +159,8 @@ h3 {
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 1rem;
+    background-color: rgba(197, 197, 197, 0.48);
+
 }
 
 .photo-gardien img {
@@ -268,10 +270,10 @@ body {
 
     .bloc-gardien {
         display: flex;
+        flex-direction: row;
+        /* Image à gauche, texte à droite */
         align-items: center;
-        text-align: left;
         gap: 20px;
-        width: 100%;
     }
 
     .photo-gardien {
@@ -280,9 +282,10 @@ body {
         height: 150px;
         flex-shrink: 0;
         border-radius: 12px;
+        background-color: rgba(197, 197, 197, 0.48);
+        /* Ton gris par défaut */
     }
 
-    /* Conteneur pour forcer le titre au-dessus du rôle */
     /* Conteneur pour forcer le titre au-dessus du rôle */
     .bloc-gardien-infos {
         display: flex;
@@ -302,5 +305,15 @@ body {
         /* S'assure qu'elle ne dépasse pas */
         margin-top: 30px;
         height: auto;
+    }
+
+    /* mobile */
+    @media (max-width: 425px) {
+        .grille-gardiens {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 50px;
+        }
     }
 }
