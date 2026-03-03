@@ -160,7 +160,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <polyline points="12 6 12 12 16 14"></polyline>
                                 </svg>
-                                <?= $game['duree'] ?>
+                                <?= $game['duree'] ?> min
                             </span>
 
                             <span class="accueil-escape-card__personnes">
@@ -172,7 +172,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                 </svg>
-                                <?= $game['nbr_pers_min'] ?> - <?= $game['nbr_pers_max'] ?>
+                                <?= $game['nbr_pers_min'] ?> à <?= $game['nbr_pers_max'] ?>
                             </span>
 
                             <span class="accueil-escape-card__personnes">

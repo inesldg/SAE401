@@ -35,14 +35,14 @@ let trad = {
     },
 
     "#nos": {
-        "fr": "Nos",
-        "en": "Our",
+        "fr": "Nos derniers",
+        "en": "Our latest",
     },
     "#suitetitreh2": {
         "fr": "Escape games",
         "en": "Escape games",
     },
-    "#voirescapeAcc": {
+    "#toutEscapes": {
         "fr": "Voir tout les jeux →",
         "en": "See all the games →",
     },
