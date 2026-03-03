@@ -62,7 +62,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         </div>
     </div>
 
-    <img src="images/paysage_transparent.png" class="image-separation" alt="Décoration forêt">
+    <img src="images/paysage_transparent.png" class="image-separation" alt="Décoration forêt" loading="lazy">
 </section>
 
 <section class="section-gardiens">
@@ -70,7 +70,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
     <div class="grille-gardiens">
         <div class="bloc-gardien">
             <div class="photo-gardien">
-                <img src="images/architecte.jpg" alt="L'Architecte">
+                <img src="images/architecte.jpg" alt="L'Architecte" loading="lazy">
             </div>
             <div class="bloc-gardien__texte">
                 <span class="nom-gardien" id="architectePropos">L'Architecte</span>
@@ -79,7 +79,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         </div>
         <div class="bloc-gardien">
             <div class="photo-gardien">
-                <img src="images/ingenieur.jpg" alt="Le Chronos">
+                <img src="images/ingenieur.jpg" alt="Le Chronos" loading="lazy">
             </div>
             <div class="bloc-gardien__texte">
                 <span class="nom-gardien" id="chronos">Le Chronos</span>
@@ -88,7 +88,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         </div>
         <div class="bloc-gardien">
             <div class="photo-gardien">
-                <img src="images/maitrejeu.jpg" alt="Maître du jeu">
+                <img src="images/maitrejeu.jpg" alt="Maître du jeu" loading="lazy">
             </div>
             <div class="bloc-gardien__texte">
                 <span class="nom-gardien" id="maitre">Maître</span>

@@ -94,7 +94,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                                     ?>
 
                                     <?php if ($imagePath): ?>
-                                        <img src="<?= $imagePath ?>" width="100%">
+                                        <img alt="Image de présentation de l'escape game" loading="lazy" src="<?= $imagePath ?>" width="100%">
                                     <?php else: ?>
                                         <div class="placeholder-img"></div>
                                     <?php endif; ?>
