@@ -34,38 +34,88 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePrix">Prix (€ / pers)</legend>
-                    <label><span id="labelMin">Min</span> <input type="number" name="prix_min" min="0" step="5"
-                            placeholder="0"></label>
-                    <label><span id="labelMax">Max</span> <input type="number" name="prix_max" min="0" step="5"
-                            placeholder="50"></label>
+                    <label>
+                        <span id="labelMin">Min</span>
+                        <input
+                            type="number"
+                            name="prix_min"
+                            min="0"
+                            step="5"
+                            placeholder="0"
+                            value="<?= isset($filtres['prix_min']) ? htmlspecialchars($filtres['prix_min']) : '' ?>">
+                    </label>
+                    <label>
+                        <span id="labelMax">Max</span>
+                        <input
+                            type="number"
+                            name="prix_max"
+                            min="0"
+                            step="5"
+                            placeholder="50"
+                            value="<?= isset($filtres['prix_max']) ? htmlspecialchars($filtres['prix_max']) : '' ?>">
+                    </label>
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePers">Nombre max de personnes</legend>
-                    <input type="number" name="pers_max" min="1" max="20" placeholder="Ex: 6">
+                    <input
+                        type="number"
+                        name="pers_max"
+                        min="1"
+                        max="20"
+                        placeholder="Ex: 6"
+                        value="<?= isset($filtres['pers_max']) ? htmlspecialchars($filtres['pers_max']) : '' ?>">
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendeLieu">Lieu</legend>
-                    <label><input type="radio" name="lieu" value=""> <span id="lieuTous">Tous</span></label>
-                    <label><input type="radio" name="lieu" value="Mulhouse"> Mulhouse</label>
+                    <?php $lieuActuel = $filtres['lieu'] ?? ''; ?>
+                    <label>
+                        <input type="radio" name="lieu" value="" <?= $lieuActuel === '' ? 'checked' : '' ?>>
+                        <span id="lieuTous">Tous</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="lieu" value="Mulhouse" <?= $lieuActuel === 'Mulhouse' ? 'checked' : '' ?>>
+                        Mulhouse
+                    </label>
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
-                    <legend id="legendeNote">Note des avis (étoiles)</legend>
-                    <label><input type="radio" name="etoiles" value="1"> 1 ★</label>
-                    <label><input type="radio" name="etoiles" value="2"> 2 ★</label>
-                    <label><input type="radio" name="etoiles" value="3"> 3 ★</label>
-                    <label><input type="radio" name="etoiles" value="4"> 4 ★</label>
-                    <label><input type="radio" name="etoiles" value="5"> 5 ★</label>
+                    <legend id="legendeNote">Note des avis (étoiles) – optionnel</legend>
+                    <?php
+                    $etoilesCochees = $filtres['etoiles'] ?? [];
+                    if (!is_array($etoilesCochees)) {
+                        $etoilesCochees = $etoilesCochees !== '' ? [$etoilesCochees] : [];
+                    }
+                    $etoilesCochees = array_map('strval', $etoilesCochees);
+                    ?>
+                    <label><input type="checkbox" name="etoiles[]" value="1" <?= in_array('1', $etoilesCochees, true) ? 'checked' : '' ?>> 1 ★</label>
+                    <label><input type="checkbox" name="etoiles[]" value="2" <?= in_array('2', $etoilesCochees, true) ? 'checked' : '' ?>> 2 ★</label>
+                    <label><input type="checkbox" name="etoiles[]" value="3" <?= in_array('3', $etoilesCochees, true) ? 'checked' : '' ?>> 3 ★</label>
+                    <label><input type="checkbox" name="etoiles[]" value="4" <?= in_array('4', $etoilesCochees, true) ? 'checked' : '' ?>> 4 ★</label>
+                    <label><input type="checkbox" name="etoiles[]" value="5" <?= in_array('5', $etoilesCochees, true) ? 'checked' : '' ?>> 5 ★</label>
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendeDuree">Durée du jeu en minutes</legend>
-                    <label><span id="labelDureeMin">Minimum</span> <input type="number" name="duree_min" min="0"
-                            placeholder="0"></label>
-                    <label><span id="labelDureeMax">Maximum</span> <input type="number" name="duree_max" min="0"
-                            placeholder="120"></label>
+                    <label>
+                        <span id="labelDureeMin">Minimum</span>
+                        <input
+                            type="number"
+                            name="duree_min"
+                            min="0"
+                            placeholder="0"
+                            value="<?= isset($filtres['duree_min']) ? htmlspecialchars($filtres['duree_min']) : '' ?>">
+                    </label>
+                    <label>
+                        <span id="labelDureeMax">Maximum</span>
+                        <input
+                            type="number"
+                            name="duree_max"
+                            min="0"
+                            placeholder="120"
+                            value="<?= isset($filtres['duree_max']) ? htmlspecialchars($filtres['duree_max']) : '' ?>">
+                    </label>
                 </fieldset>
 
                 <button type="submit" id="btnFiltrer">Filtrer</button>
