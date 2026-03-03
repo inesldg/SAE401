@@ -76,7 +76,29 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
             <?php foreach ($escapeGames as $game): ?>
                 <article class="accueil-escape-card">
-                    <div class="accueil-escape-card__img"></div>
+
+                    <div class="accueil-escape-card__img">
+                        <?php
+                                    $dossier = "photos_escapes/";
+                                    $id = $game['id_escape'];
+
+                                    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                                    $imagePath = null;
+
+                                    foreach ($extensions as $ext) {
+                                        if (file_exists($dossier . $id . "." . $ext)) {
+                                            $imagePath = $dossier . $id . "." . $ext;
+                                            break;
+                                        }
+                                    }
+                                    ?>
+
+                                    <?php if ($imagePath): ?>
+                                        <img src="<?= $imagePath ?>" width="100%">
+                                    <?php else: ?>
+                                        <div class="placeholder-img"></div>
+                                    <?php endif; ?>
+                    </div>
 
                     <div class="accueil-escape-card__corps">
                         <h3 class="accueil-escape-card__titre">
