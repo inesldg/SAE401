@@ -43,8 +43,6 @@ body {
     color: transparent;
 }
 
-
-
 .escapes-section {
     position: relative;
     width: 100%;
@@ -153,13 +151,6 @@ body {
 .filtres-escape__form button[type="submit"]:hover {
     opacity: 0.9;
 }
-
-
-
-
-
-
-
 
 
 
@@ -276,4 +267,175 @@ body {
 .accueil-escape-card__btn:hover {
     background: var(--gold-clair);
     color: var(--fond-sombre);
+}
+
+/* Cache le bouton filtre par défaut sur PC */
+.mobile-filter-trigger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    #btnFiltrer {
+        display: none;
+    }
+
+    /* 1. HERO SECTION */
+    .hero-section h1 {
+        font-size: 32px;
+        width: 90%;
+    }
+
+    /* 1. CONTENEUR GLOBAL */
+    .escapes-container {
+        flex-direction: column;
+        /* Empile Bouton -> Filtre -> Cartes */
+        align-items: center;
+        width: 100%;
+        gap: 0;
+        /* On gère les espaces nous-mêmes */
+    }
+
+    /* 2. LE BOUTON (Centré) */
+    .mobile-filter-trigger {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 12px;
+        background: var(--gold-gradient);
+        color: #101a23;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    /* 3. LE BLOC FILTRE (Sous le bouton, pousse les cartes) */
+    .filtres-tri {
+        display: none;
+        /* Caché par défaut */
+        width: 90%;
+        max-width: 400px;
+        /* Pas trop large sur tablette */
+        max-height: 400px;
+        /* Taille max en hauteur */
+        margin: 0 auto 20px auto;
+        /* Centré, avec marge sous le filtre */
+        background: #1a242f;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid rgba(197, 160, 89, 0.4);
+
+        /* SYSTÈME DE SCROLL */
+        overflow-y: auto;
+        position: static;
+        /* Important : pour pousser les cartes en dessous */
+    }
+
+    /* Affiche le filtre quand la classe active est ajoutée */
+    .filtres-tri.active {
+        display: block;
+    }
+
+    /* 4. PERSONNALISATION DE LA BARRE DE SCROLL (SAE GOLD) */
+    .filtres-tri::-webkit-scrollbar {
+        width: 6px;
+        border-radius: 10px;
+    }
+
+    .filtres-tri::-webkit-scrollbar-track {
+        background: #101a23;
+        border-radius: 10px;
+    }
+
+    .filtres-tri::-webkit-scrollbar-thumb {
+        background: var(--gold-gradient);
+        /* Utilise ton dégradé doré */
+        border-radius: 10px;
+    }
+
+    /* 5. LES CARTES (Restent en dessous) */
+    .escapes-cartes {
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colonnes */
+        gap: 15px;
+    }
+
+    .accueil-escape-card__corps {
+        padding: 1rem;
+    }
+
+    .accueil-escape-card__titre {
+        font-size: 0.9rem;
+    }
+
+    .accueil-escape-card__infos {
+        flex-direction: column;
+        /* Infos l'une sous l'autre pour gagner de la place */
+        gap: 0.5rem;
+    }
+
+    /* --- VERSION SMARTPHONE (425px et moins) --- */
+    @media (max-width: 425px) {
+
+        /* 1. HERO SECTION */
+        .hero-section h1 {
+            font-size: 26px;
+            /* Titre plus compact */
+            width: 100%;
+        }
+
+        .escapes-cartes {
+            grid-template-columns: 1fr;
+            /* Garde une colonne */
+            width: 100%;
+            padding: 5px;
+            /* Ajoute de l'air sur les côtés de la grille */
+            gap: 25px;
+            /* Plus d'espace entre les cartes verticalement */
+        }
+
+        .accueil-escape-card {
+            width: 85%;
+            /* La carte ne prend que 85% de son conteneur */
+            margin: 0 auto;
+            /* Elle se centre dans l'espace restant */
+            max-width: 320px;
+            /* On évite qu'elle s'étale trop */
+        }
+
+        /* 2. ON AJUSTE L'IMAGE POUR QU'ELLE RESTE PROPRE */
+        .accueil-escape-card__img {
+            aspect-ratio: 16/9;
+            /* Image un peu moins haute pour un look plus moderne */
+        }
+
+        /* 3. ON AJUSTE LE TEXTE POUR NE PAS QU'IL SOIT ÉTOUFFÉ */
+        .accueil-escape-card__corps {
+            padding: 1rem;
+        }
+
+        .accueil-escape-card__desc {
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 3. LE FILTRE */
+        .filtres-tri {
+            width: 75%;
+            /* On utilise presque toute la largeur */
+            max-height: 380px;
+            /* On réduit un peu la hauteur pour voir le bouton Fermer */
+        }
+
+        .mobile-filter-trigger {
+            width: 180px;
+            /* Bouton légèrement plus petit */
+            font-size: 14px;
+        }
+
+    }
 }

@@ -24,8 +24,15 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
     <p id="choixEscapGam">Choisissez votre univers !</p>
 </section>
 
+
+
+
 <section class="escapes-section">
     <div class="escapes-container">
+
+        <button id="btn-toggle-filtres" class="mobile-filter-trigger">
+            <span>Afficher les Filtres</span>
+        </button>
 
         <!-- COLONNE FILTRE -->
         <aside class="filtres-tri">
@@ -69,6 +76,14 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                 </fieldset>
 
                 <button type="submit" id="btnFiltrer">Filtrer</button>
+
+                <button id="btn-toggle-filtres" class="mobile-filter-trigger">
+                    <span>Filtrer</span>
+                </button>
+
+                <aside class="filtres-tri">
+                </aside>
+
             </form>
         </aside>
         <!-- COLONNE ESCAPES -->
@@ -79,25 +94,25 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
                     <div class="accueil-escape-card__img">
                         <?php
-                                    $dossier = "photos_escapes/";
-                                    $id = $game['id_escape'];
+                        $dossier = "photos_escapes/";
+                        $id = $game['id_escape'];
 
-                                    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
-                                    $imagePath = null;
+                        $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                        $imagePath = null;
 
-                                    foreach ($extensions as $ext) {
-                                        if (file_exists($dossier . $id . "." . $ext)) {
-                                            $imagePath = $dossier . $id . "." . $ext;
-                                            break;
-                                        }
-                                    }
-                                    ?>
+                        foreach ($extensions as $ext) {
+                            if (file_exists($dossier . $id . "." . $ext)) {
+                                $imagePath = $dossier . $id . "." . $ext;
+                                break;
+                            }
+                        }
+                        ?>
 
-                                    <?php if ($imagePath): ?>
-                                        <img src="<?= $imagePath ?>" width="100%">
-                                    <?php else: ?>
-                                        <div class="placeholder-img"></div>
-                                    <?php endif; ?>
+                        <?php if ($imagePath): ?>
+                            <img src="<?= $imagePath ?>" width="100%">
+                        <?php else: ?>
+                            <div class="placeholder-img"></div>
+                        <?php endif; ?>
                     </div>
 
                     <div class="accueil-escape-card__corps">
@@ -149,8 +164,8 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                         </a>
                     </div>
 
-                    <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>"
-                        class="accueil-escape-card__link" aria-label="Voir détails : <?= htmlspecialchars($game['nom']) ?>"></a>
+                    <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" class="accueil-escape-card__link"
+                        aria-label="Voir détails : <?= htmlspecialchars($game['nom']) ?>"></a>
                 </article>
             <?php endforeach; ?>
 
@@ -179,3 +194,4 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
         $main;
 
         $script = '<script src="js/json.js" defer></script>';
+        $script .= '<script src="js/filtre.js" defer></script>';

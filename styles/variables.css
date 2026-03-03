@@ -74,3 +74,26 @@ html {
     transform: translateY(-4px);
     box-shadow: 0 6px 16px var(--gold-clair);
 }
+
+/* --- PERSONNALISATION SCROLLBAR GLOBALE (PC) --- */
+/* Pour Chrome, Edge et Safari */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #101a23;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-gradient);
+    /* Ton dégradé doré */
+    border-radius: 10px;
+}
+
+/* Pour Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #c5a059 #101a23;
+    /* Or et Sombre */
+}
