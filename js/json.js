@@ -138,6 +138,14 @@ let trad = {
     },
 
     // ******************************** vue compte *************************************************
+    "#titreModifCompte": {
+        "fr": "Modification de vos informations",
+        "en": "Edit your information",
+    },
+    "#introModifCompte": {
+        "fr": "Pour enregistrer vos modifications, saisissez votre mot de passe actuel.",
+        "en": "To save your changes, enter your current password.",
+    },
     "#nomCompte": {
         "fr": "Nom",
         "en": "Name",
@@ -146,17 +154,29 @@ let trad = {
         "fr": "Prénom",
         "en": "First name",
     },
+    "#telCompte": {
+        "fr": "NUMÉRO DE TÉLÉPHONE",
+        "en": "PHONE NUMBER",
+    },
     "#mailCompteActuel": {
-        "fr": "Email actuel",
-        "en": "Current Email",
+        "fr": "Adresse mail actuelle",
+        "en": "Current email address",
+    },
+    "#nouvelleMailCompte": {
+        "fr": "Nouvelle adresse mail (optionnel)",
+        "en": "New email address (optional)",
     },
     "#entrerMDPCompte": {
-        "fr": "Entrez votre mot de passe pour enregistrer les changements",
-        "en": "Please enter you password to save changes",
+        "fr": "Mot de passe actuel",
+        "en": "Current password",
+    },
+    "#confirmerMDPCompte": {
+        "fr": "Confirmer le mot de passe",
+        "en": "Confirm password",
     },
     "#modifCompte": {
-        "fr": "Modifier",
-        "en": "Change",
+        "fr": "Sauvegarder",
+        "en": "Save",
     },
 
 
@@ -361,8 +381,28 @@ let trad = {
     },
     "#labelLieu": {
         "fr": "Lieu :",
-        "en": "Place :",
+        "en": "Location :",
     },
+    "#labelDuree": {
+        "fr": "Durée de",
+        "en": "Duration of",
+    },
+
+    "#labelParticipants1": {
+        "fr": "De",
+        "en": "From",
+    },
+    "#labelParticipants2": {
+        "fr": "à",
+        "en": "to",
+    },
+    "#labelParticipants3": {
+        "fr": "joueurs",
+        "en": "players",
+    },
+    
+
+
     "#detailGames": {
         "fr": "Détails",
         "en": "Details",
@@ -465,7 +505,7 @@ let trad = {
         "en": "Log in",
     },
     "#mailConnexion": {
-        "fr": "ADRESSE MAIL",
+        "fr": "Email",
         "en": "Email",
     },
     "#mdpConnexion": {
@@ -493,19 +533,19 @@ let trad = {
     },
     "#ml1": {
         "fr": "Conformément aux dispositions de l’article 6 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l’Économie Numérique (LCEN), les utilisateurs du site sont informés de l'identité des différents intervenants. Le présent site est édité par la société exploitant l'enseigne d'Escape Game, dont le siège social est situé à l'adresse indiquée sur la page contact, immatriculée au Registre du Commerce et des Sociétés sous le numéro SIRET correspondant.",
-        "en": ""
+        "en": "In accordance with the provisions of article 6 of Law No. 2004-575 of 21 June 2004 on Trust in the Digital Economy (LCEN), users of the site are informed of the identity of the various stakeholders. This site is published by the company operating the Escape Game brand, whose registered office is located at the address indicated on the contact page, registered in the Trade and Companies Register under the corresponding SIRET number."
     },
     "#ml2": {
         "fr": "La direction de la publication est assurée par le responsable légal de l'établissement. Pour toute question ou réclamation concernant le contenu du site, vous pouvez nous contacter directement par email ou via le formulaire de contact dédié. Le site est hébergé par un prestataire professionnel garantissant la sécurité et la continuité du service, dont les coordonnées sont disponibles sur demande ou consultables dans nos registres officiels.",
-        "en": ""
+        "en": "The direction of the publication is ensured by the legal manager of the establishment. For any question or complaint concerning the content of the site, you can contact us directly by email or via the dedicated contact form. The site is hosted by a professional provider who guarantees security and continuity of service, whose contact details are available on request or can be consulted in our official records."
     },
     "#ml3": {
         "fr": "L’ensemble des contenus présents sur ce site (textes, photographies, logos, codes sources) est protégé par le droit d'auteur. Toute reproduction, même partielle, sans accord préalable écrit de l'éditeur est strictement interdite et constituerait une contrefaçon sanctionnée par le Code de la propriété intellectuelle. Nous nous efforçons de maintenir des informations à jour, toutefois, les tarifs et disponibilités des salles peuvent être modifiés sans préavis.",
-        "en": ""
+        "en": "All content on this site (texts, photographs, logos, source codes) is protected by copyright. Any reproduction, even partial, without the prior written consent of the publisher is strictly prohibited and constitutes an infringement sanctioned by the Code of intellectual property. We strive to keep information up to date, however, room rates and availability are subject to change without notice."
     },
     "#ml4": {
         "fr": "L'accès au site implique l'acceptation pleine et entière des conditions générales d'utilisation. L'éditeur ne pourra être tenu responsable des dommages directs ou indirects causés au matériel de l'utilisateur lors de l'accès au site, ou de l'apparition de bugs ou d'incompatibilités. Des liens hypertextes peuvent renvoyer vers des sites tiers ; notre responsabilité ne saurait être engagée quant au contenu ou aux pratiques de ces sites externes.",
-        "en": ""
+        "en": "Access to the site implies full and complete acceptance of the general conditions of use. The publisher cannot be held responsible for direct or indirect damage caused to the user’s material when accessing the site, or the appearance of bugs or incompatibilities. Hypertext links may lead to third-party sites; we cannot be held liable for the content or practices of these external sites."
     },
 
     // --- SECTION CONFIDENTIALITÉ ---
@@ -515,15 +555,15 @@ let trad = {
     },
     "#pc1": {
         "fr": "La protection de votre vie privée est une priorité absolue pour notre établissement. Cette politique de confidentialité détaille la manière dont nous collectons et traitons vos informations lorsque vous naviguez sur notre plateforme ou effectuez une réservation en ligne. Nous nous engageons à ce que la collecte de vos données soit limitée au strict nécessaire, conformément au principe de minimisation des données.",
-        "en": ""
+        "en": "Protecting your privacy is a top priority for our establishment. This privacy policy details how we collect and process your information when you browse our platform or make an online reservation. We are committed to ensuring that the collection of your data is limited to what is strictly necessary, in accordance with the principle of data minimisation."
     },
     "#pc2": {
         "fr": "Les informations que vous nous transmettez sont utilisées exclusivement pour la gestion de vos réservations, l'amélioration de nos services et, si vous y avez consenti, l'envoi de nos actualités. Vos données ne sont jamais vendues, louées ou cédées à des tiers à des fins commerciales. Seuls nos services internes et nos prestataires techniques (comme l'outil de paiement sécurisé) ont accès aux informations nécessaires à la finalisation de votre commande.",
-        "en": ""
+        "en": "The information you provide us is used exclusively for managing your reservations, improving our services and, if you have consented to it, sending our news. Your data is never sold, rented or transferred to third parties for commercial purposes. Only our internal services and technical service providers (such as the secure payment tool) have access to the information necessary to finalize your order."
     },
     "#pc3": {
         "fr": "La sécurité de vos transactions est garantie par l'utilisation de protocoles de chiffrement SSL (Secure Socket Layer), assurant que vos coordonnées bancaires ne circulent jamais en clair sur le réseau. Nous conservons vos données de réservation pendant la durée légale nécessaire à la gestion administrative et comptable de nos activités, après quoi elles sont anonymisées ou supprimées de nos bases actives.",
-        "en": ""
+        "en": "The security of your transactions is guaranteed by the use of SSL (Secure Socket Layer) encryption protocols, ensuring that your bank details never circulate in clear on the network. We keep your reservation data for the legal period necessary for the administrative and accounting management of our activities, after which they are anonymized or deleted from our active databases."
     },
 
     // --- SECTION DONNÉES PERSONNELLES ---
@@ -532,20 +572,20 @@ let trad = {
         "en": "Personal Data"
     },
     "#dp1": {
-        "fr": "En conformité avec le Règlement Général sur la Protection des Données (RGPD) et la loi << Informatique et Libertés >>, vous disposez d'un contrôle total sur vos informations personnelles. Les données collectées (nom, prénom, email, téléphone) sont indispensables au traitement de votre dossier et à l'envoi de votre confirmation de réservation par voie électronique ou SMS.",
-        "en": ""
+        "fr": "En conformité avec le Règlement Général sur la Protection des Données (RGPD) et la loi \"Informatique et Libertés\", vous disposez d'un contrôle total sur vos informations personnelles. Les données collectées (nom, prénom, email, téléphone) sont indispensables au traitement de votre dossier et à l'envoi de votre confirmation de réservation par voie électronique ou SMS.",
+        "en": "In compliance with the General Data Protection Regulation (GDPR) and the French Data Protection Act (Law \"Computing and Liberties\"), you have full control over your personal information. The data collected (last name, first name, email, phone) are essential for processing your file and sending your booking confirmation by electronic means or SMS."
     },
     "#dp2": {
         "fr": "Vous disposez d'un droit d'accès, de rectification, de portabilité et d'effacement de vos données. Vous pouvez également demander la limitation du traitement ou vous opposer à celui-ci pour des motifs légitimes. Pour exercer ces droits, il vous suffit de nous adresser une demande écrite accompagnée d'un justificatif d'identité à l'adresse de contact principale de l'établissement.",
-        "en": ""
+        "en": "You have the right to access, rectify, transfer and delete your data. You can also request the limitation of processing or object to it for legitimate reasons. To exercise these rights, simply send us a written request accompanied by proof of identity to the main contact address of the establishment."
     },
     "#dp3": {
         "fr": "Nous prenons toutes les mesures de sécurité techniques et organisationnelles nécessaires pour protéger vos données personnelles contre tout accès non autorisé, perte ou altération. Nos systèmes sont régulièrement mis à jour et l'accès aux données est restreint au personnel habilité ayant besoin d'en connaître dans le cadre de ses fonctions (accueil des joueurs, support client, comptabilité).",
-        "en": ""
+        "en": "We take all necessary technical and organisational security measures to protect your personal data against unauthorised access, loss or alteration. Our systems are regularly updated and access to data is restricted to authorized personnel who need to know it as part of their duties (player reception, customer support, accounting)."
     },
     "#dp4": {
-        "fr": "Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous avez la possibilité d'introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés). Nous restons à votre entière disposition pour toute précision concernant notre politique de gestion des données et pour vous accompagner dans l'exercice de Fvos droits.",
-        "en": ""
+        "fr": "Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous avez la possibilité d'introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés). Nous restons à votre entière disposition pour toute précision concernant notre politique de gestion des données et pour vous accompagner dans l'exercice de vos droits.",
+        "en": "If, after contacting us, you consider that your rights are not being respected, you have the possibility to file a complaint with the CNIL (Commission Nationale de l'Informatique et des Libertés). We remain at your entire disposal for any clarification regarding our data management policy and to assist you in exercising your rights."
     },
 
     // ******************************** vue Panier *************************************************
@@ -656,8 +696,8 @@ let trad = {
         "en": "The architect",
     },
     "#storytellerPropos": {
-        "fr": "Il s'occupe de la création des jeux et des parcours",
-        "en": "He is in charge of the creation of games and trails",
+        "fr": "Elle s'occupe de la création des jeux et des parcours",
+        "en": "She is in charge of the creation of games and trails",
     },
     "#chronos": {
         "fr": "L'ingénieur de terrains",
@@ -668,7 +708,7 @@ let trad = {
         "en": "In collaboration with the architect, he sets up the elements for fully immersive games",
     },
     "#maitre": {
-        "fr": "Le maître du jeu",
+        "fr": "Maître du jeu",
         "en": "The game master",
     },
     "#maitre2": {

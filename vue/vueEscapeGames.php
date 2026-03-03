@@ -75,13 +75,32 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
         <div class="escapes-cartes">
 
             <?php foreach ($escapeGames as $game): ?>
-
                 <article class="accueil-escape-card">
 
-                    <div class="accueil-escape-card__img"></div>
+                    <div class="accueil-escape-card__img">
+                        <?php
+                                    $dossier = "photos_escapes/";
+                                    $id = $game['id_escape'];
+
+                                    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                                    $imagePath = null;
+
+                                    foreach ($extensions as $ext) {
+                                        if (file_exists($dossier . $id . "." . $ext)) {
+                                            $imagePath = $dossier . $id . "." . $ext;
+                                            break;
+                                        }
+                                    }
+                                    ?>
+
+                                    <?php if ($imagePath): ?>
+                                        <img src="<?= $imagePath ?>" width="100%">
+                                    <?php else: ?>
+                                        <div class="placeholder-img"></div>
+                                    <?php endif; ?>
+                    </div>
 
                     <div class="accueil-escape-card__corps">
-
                         <h3 class="accueil-escape-card__titre">
                             <?= $game['nom'] ?>
                         </h3>
@@ -128,9 +147,11 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                             href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" id="detailEscapeGam">
                             Voir détails
                         </a>
+                    </div>
 
+                    <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>"
+                        class="accueil-escape-card__link" aria-label="Voir détails : <?= htmlspecialchars($game['nom']) ?>"></a>
                 </article>
-
             <?php endforeach; ?>
 
         </div>

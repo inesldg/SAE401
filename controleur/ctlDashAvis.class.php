@@ -4,7 +4,6 @@ require_once "vue/vue.class.php";
 
 class ctlDashAvis
 {
-
     private $dashAvis;
 
     public function __construct()
@@ -12,9 +11,23 @@ class ctlDashAvis
         $this->dashAvis = new dashAvis();
     }
 
-    public function afficherDashAvis(){
-        $vue = new vue("DashAvis"); // Instancie la vue appropriée
+    public function afficherDashAvis()
+    {
+        $avis = $this->dashAvis->getAvis();
 
-        $vue->afficher([]);
+        $vue = new vue("DashAvis");
+        $vue->afficher([
+            "avis" => $avis
+        ]);
+    }
+
+    public function supprimer()
+    {
+        if (isset($_POST['id_avis'])) {
+            $this->dashAvis->supprimerAvis($_POST['id_avis']);
+        }
+
+        header("Location: index.php?action=dashAvis");
+        exit();
     }
 }

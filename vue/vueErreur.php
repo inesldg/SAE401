@@ -15,7 +15,7 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/erreur.css">';
 ?>
 
-<div id="erreurErr">Une erreur est survenue<div>
+<div id="erreurErr">Une erreur est survenue</div>
         <div><?= $message ?></div>
 
         <?php

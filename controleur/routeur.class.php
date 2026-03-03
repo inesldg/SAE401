@@ -1,5 +1,5 @@
 <?php
-
+require "controleur/ctlAccueil.class.php";
 require "controleur/ctlPages.class.php";
 require "controleur/ctlEscapeGames.class.php";
 require "controleur/ctlCompte.class.php";
@@ -15,6 +15,7 @@ require "controleur/ctlDashCalendrier.class.php";
 
 class routeur
 {
+    private $ctlAccueil;
     private $ctlPages;
     private $ctlEscapeGames;
     private $ctlCompte;
@@ -30,6 +31,7 @@ class routeur
 
     public function __construct()
     {
+        $this->ctlAccueil = new ctlAccueil();
         $this->ctlPages = new ctlPages();
         $this->ctlEscapeGames = new ctlEscapeGames();
         $this->ctlCompte = new ctlCompte();
@@ -59,7 +61,7 @@ class routeur
                             $this->ctlCompte->deconnexion();
                             break;
                         case "accueil":
-                            $this->ctlEscapeGames->accueil($acces);
+                            $this->ctlAccueil->afficherAccueil($acces);
                             break;
                         case "legal":
                             $this->ctlPages->pageLegal();
@@ -89,10 +91,10 @@ class routeur
                             $this->ctlCompte->infosCompte($message = "", $mail);
                             break;
                         case "modifInfos":
-                            if (isset($_POST['mdp']))
-                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], ancienMail: $mail);
+                            if (isset($_POST['mdp']) && isset($_POST['mdp_confirm']))
+                                $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['tel'] ?? '', $_POST['mdp'], $_POST['mdp_confirm'], ancienMail: $mail);
                             else
-                                $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer votre mot de passe si vous souhaitez modifier vos informations</span>", $mail);
+                                $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer et confirmer votre mot de passe pour enregistrer vos modifications</span>", $mail);
                             break;
 
 
@@ -109,18 +111,30 @@ class routeur
                             else
                                 $this->ctlUtilisateurs->afficherUtilisateurs($message = "", $mail);
                             break;
-                            case "dashCalendrier":
+                        case "dashCalendrier":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
                             else
                                 $this->ctlDashCalendrier->afficherdashCalendrier();
                             break;
-                            case "dashAvis":
+                        case "dashAvis":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
                             else
                                 $this->ctlDashAvis->afficherdashAvis();
                             break;
+
+                        case "supprimerAvis":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else {
+                                if (isset($_POST['id_avis']))
+                                    $this->ctlDashAvis->supprimer();
+                                else
+                                    throw new Exception("ID avis manquant");
+                            }
+                            break;
+
                         case "pageAjoutEscape":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
@@ -165,7 +179,7 @@ class routeur
                             throw new Exception("Action non valide");
                     }
                 } else
-                    $this->ctlEscapeGames->accueil($acces);
+                    $this->ctlAccueil->afficherAccueil("0");
             }
 
 

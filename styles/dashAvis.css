@@ -120,3 +120,84 @@ h1 {
     font-weight: lighter;
     margin-bottom: 32px;
 }
+
+
+.avis-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-avis {
+    position: relative;
+    background-color: var(--bleu-fonce);
+    border: solid var(--bleu-clair) 1px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.avis-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #D9D9D9; /* placeholder si pas d'image */
+    margin-right: 15px;
+}
+
+.infos h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.infos span {
+    display: block;
+    font-size: 14px;
+    color: var(--gold-clair); 
+}
+
+.etoiles {
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 25px;
+    color: var(--bleu-clair);
+    margin-right: 2px;
+}
+
+.star.gold {
+    color: var(--gold-clair);
+}
+
+.commentaire {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--blanc-casse);
+}
+
+/* Bouton supprimer en haut à droite */
+.btn-supprimer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--golf-fonce);
+    color: var(--blanc-casse);
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-supprimer:hover{
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+}

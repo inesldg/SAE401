@@ -15,12 +15,6 @@ class ctlAdmin
         $this->admin = new admin();
     }
 
-    // public function afficherDash(){
-    //     $vue = new vue("Dashboard"); // Instancie la vue appropriée
-
-    //     $vue->afficher([]);
-    // }
-
     public function afficherDash()
     {
 
@@ -34,7 +28,6 @@ class ctlAdmin
         $annee = date("Y");    // année courante
 
         $revenus = $this->admin->getRevenus($mois, $annee);
-        // $reservationsListe = $this->admin->getListeReservations();
 
 
         $vue = new vue("Dashboard");
@@ -46,7 +39,6 @@ class ctlAdmin
             "revenus" => $revenus['revenus'],
             "noteMoyenne" => $noteMoyenne['moyenne'],
             "occupation" => $occupation['totalPers'],
-            // "listeReservations" => $reservationsListe
         ));
     }
 }

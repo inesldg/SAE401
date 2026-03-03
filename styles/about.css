@@ -142,27 +142,53 @@ h3 {
 
 .grille-gardiens {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+}
+
+.bloc-gardien {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .photo-gardien {
-    background-color: rgba(197, 197, 197, 0.482);
-    /* Gris clair pour simuler la photo */
-    height: 350px;
     width: 100%;
-    border-radius: 25px;
-    margin-bottom: 20px;
+    max-width: 360px;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.photo-gardien img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.85);
+    transition: filter 0.35s ease;
+}
+
+.bloc-gardien:hover .photo-gardien img {
+    filter: grayscale(0);
+}
+
+.bloc-gardien__texte {
+    text-align: center;
 }
 
 .nom-gardien {
+    font-family: var(--titre);
     font-weight: bold;
+    font-size: 1rem;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.25rem;
+    color: var(--blanc-casse);
 }
 
 .role-gardien {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--gold-clair);
 }
 

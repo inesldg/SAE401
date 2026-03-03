@@ -4,24 +4,39 @@
 //     header.classList.toggle("sticky", window.scrollY > 70);
 // });
 
+// Animation de header fait en vibe coding 
 const header = document.querySelector('header');
 
-window.addEventListener('scroll', function (e) {
-
-  let scroll = this.scrollY;
-  if (scroll > 254 && header.clientHeight > 60) {
-    header.style.height = `60px`;
-    return;
+if (header) {
+  const HEADER_MAX_HEIGHT = 100;
+  const HEADER_MIN_HEIGHT = 60;
+  // Hauteur = 60 quand scrollY >= (100 - 60) * 7 = 280 (formule continue, pas de seuil magique)
+  function headerHeightFromScroll(scrollY) {
+    const h = HEADER_MAX_HEIGHT - scrollY / 7;
+    return Math.max(HEADER_MIN_HEIGHT, Math.min(HEADER_MAX_HEIGHT, h));
   }
-  if (scroll > 254) return;
 
-  const defaultHeight = 100;
+  let ticking = false;
+  let lastHeight = -1;
+  function updateHeaderHeight() {
+    const raw = headerHeightFromScroll(window.scrollY);
+    const newHeight = Math.round(raw);
+    if (newHeight !== lastHeight) {
+      lastHeight = newHeight;
+      header.style.height = `${newHeight}px`;
+    }
+    ticking = false;
+  }
 
-  let newHeight = defaultHeight - scroll / 7;
-  if (newHeight < 60) newHeight = 60;
-  header.style.height = `${newHeight}px`;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateHeaderHeight);
+  }, { passive: true });
 
-});
+  // Éviter un saut au chargement : appliquer la hauteur une première fois
+  updateHeaderHeight();
+}
 
 
 

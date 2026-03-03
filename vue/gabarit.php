@@ -26,6 +26,7 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
     </script>
 
   <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/loader.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="icon" href="/images/favicon.ico">
@@ -48,6 +49,23 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
 </head>
 
 <body>
+
+  <?php require "composants/loader.php"; ?>
+  <script>
+    (function () {
+      var loader = document.getElementById('page-loader');
+      if (!loader) return;
+      function hideLoader() {
+        loader.classList.add('page-loader--hidden');
+        loader.setAttribute('aria-hidden', 'true');
+      }
+      if (document.readyState === 'complete') {
+        hideLoader();
+      } else {
+        window.addEventListener('load', hideLoader);
+      }
+    })();
+  </script>
 
   <header><?= $header ?></header>
 

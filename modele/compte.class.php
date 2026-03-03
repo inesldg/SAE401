@@ -44,11 +44,11 @@ class compte extends database
         return $infosCompte;
     }
 
-    public function modifInfos($nom, $prenom, $mail, $ancienMail)
+    public function modifInfos($nom, $prenom, $mail, $tel, $ancienMail)
     {
-        $req = 'UPDATE utilisateur SET nom = ?, prenom = ?, mail = ? 
+        $req = 'UPDATE utilisateur SET nom = ?, prenom = ?, mail = ?, tel = ? 
         WHERE mail = ?;';
-        $modifMail = $this->execReqPrep($req, array($nom, $prenom, $mail, $ancienMail));
+        $modifMail = $this->execReqPrep($req, array($nom, $prenom, $mail, $tel, $ancienMail));
         return $modifMail;
     }
 }
