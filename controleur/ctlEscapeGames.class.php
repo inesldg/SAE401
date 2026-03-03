@@ -14,7 +14,7 @@ class ctlEscapeGames
 
     public function accueil($acces)
     {
-        $escapeGames = $this->escapeGames->listeEscapeGames();
+        $escapeGames = $this->escapeGames->listeEscapeGamesRecents(4);
 
         $vue = new vue("Accueil"); // Instancie la vue appropriée
         $vue->afficher(array("escapeGames" => $escapeGames, "acces" => $acces));

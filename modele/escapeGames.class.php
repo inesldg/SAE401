@@ -13,6 +13,16 @@ class escapeGames extends database
     }
 
     /**
+     * Les N jeux les plus récents (pour la page d'accueil).
+     */
+    public function listeEscapeGamesRecents($limit = 4)
+    {
+        $limit = max(1, (int) $limit);
+        $req = 'SELECT * FROM escape ORDER BY id_escape DESC LIMIT ' . $limit;
+        return $this->execReq($req);
+    }
+
+    /**
      * Recherche d'escapes avec filtres
      * $filtres est un tableau associatif contenant des valeurs
      */
