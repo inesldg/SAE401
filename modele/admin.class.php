@@ -32,22 +32,25 @@ class admin extends database
     // Revenus des escapes pour le mois 
     public function getRevenus($mois, $annee)
     {
-        $req = "SELECT reserver.nbr_pers, tarif.prix
-                FROM reserver
-                JOIN tarif ON reserver.id_escape = tarif.id_escape
-                WHERE MONTH(reserver.reserver_date) = ? 
-                AND YEAR(reserver.reserver_date) = ?";
+
+        // REQUETE A MODIF SELON LES EFFECTIFS !!!!! la j'ai juste fais des test !
+        $req = "SELECT tarif.prix
+            FROM reserver
+            JOIN tarif 
+                ON reserver.id_escape = tarif.id_escape
+            WHERE MONTH(reserver.reserver_date) = ?
+            AND YEAR(reserver.reserver_date) = ?
+            AND (
+                (tarif.effectif = '1-3' AND reserver.nbr_pers BETWEEN 1 AND 3)
+                OR
+                (tarif.effectif = '4' AND reserver.nbr_pers = 4)
+            )";
 
         $res = $this->execReqPrep($req, array($mois, $annee));
 
-        // Si la requête ne retourne rien, on force un tableau vide
-        if (!is_array($res)) {
-            $res = [];
-        }
-
         $total = 0;
         foreach ($res as $ligne) {
-            $total += $ligne['nbr_pers'] * $ligne['prix'];
+            $total += $ligne['prix'];
         }
 
         return array("revenus" => $total);
@@ -70,25 +73,25 @@ class admin extends database
 
 
 
-//     // Récupérer les réservations récentes
-//     public function getReservationsRecentes($limit = 5)
-//     {
-//         $sql = "
-//     SELECT 
-//         r.id_reserver,
-//         r.reserver_date,
-//         r.horaire,
-//         r.nbr_pers,
-//         e.nom AS nom_escape,
-//         u.nom AS nom_utilisateur,
-//         u.prenom AS prenom_utilisateur
-//     FROM reserver r
-//     INNER JOIN escape e ON r.id_escape = e.id_escape
-//     INNER JOIN utilisateur u ON r.id_utilisateur = u.id_utilisateur
-//     ORDER BY r.reserver_date DESC, r.horaire DESC
-//     LIMIT ?
-// ";
+    //     // Récupérer les réservations récentes
+    //     public function getReservationsRecentes($limit = 5)
+    //     {
+    //         $sql = "
+    //     SELECT 
+    //         r.id_reserver,
+    //         r.reserver_date,
+    //         r.horaire,
+    //         r.nbr_pers,
+    //         e.nom AS nom_escape,
+    //         u.nom AS nom_utilisateur,
+    //         u.prenom AS prenom_utilisateur
+    //     FROM reserver r
+    //     INNER JOIN escape e ON r.id_escape = e.id_escape
+    //     INNER JOIN utilisateur u ON r.id_utilisateur = u.id_utilisateur
+    //     ORDER BY r.reserver_date DESC, r.horaire DESC
+    //     LIMIT ?
+    // ";
 
-//         return $this->execReqPrep($sql, array($limit));
-//     }
+    //         return $this->execReqPrep($sql, array($limit));
+    //     }
 }
