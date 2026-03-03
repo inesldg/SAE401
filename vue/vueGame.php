@@ -13,11 +13,25 @@ $col_desc = "description_" . $lang;
 
 // Style
 $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
+
+// Image de la bannière : photo de l'escape game si elle existe
+$bannerImageUrl = null;
+if (!empty($escapeGame[0]['id_escape'])) {
+    $dossier = "photos_escapes/";
+    $id = $escapeGame[0]['id_escape'];
+    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+    foreach ($extensions as $ext) {
+        if (file_exists($dossier . $id . "." . $ext)) {
+            $bannerImageUrl = $dossier . $id . "." . $ext;
+            break;
+        }
+    }
+}
 ?>
 
 <!-- <a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a> -->
 
-<section class="hero-section">
+<section class="hero-section"<?= $bannerImageUrl ? ' style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--fond-sombre)), url(\'' . htmlspecialchars($bannerImageUrl) . '\'); background-size: cover; background-position: center;"' : '' ?>>
     <a href="index.php?action=escapeGames" class="btn-retour btn-retour-absolu">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -28,8 +42,7 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
     </a>
 
     <h1>
-        <span class="titre-or"><?= $escapeGame[0]['nom'] ?></span>
-        <span id="titreGames"> L'escape game mêlant nature et découverte locale</span>
+        <span class="titre-hero-nom"><?= $escapeGame[0]['nom'] ?></span>
     </h1>
 </section>
 
@@ -38,17 +51,13 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
     <div class="colonne-gauche">
         <section class="block_description carte-noire">
-            <h2>
+            <h2 class="titre-or">
                 <?= $escapeGame[0]['nom'] ?>
             </h2>
             <div class="infos-rapides">
                 <div class="prix" id="prixGames">A partir de 55€/pers.</div>
                 <div class="notation">★★★★★ <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">10
                         avis</span></div>
-            </div>
-
-            <div style="font-size: 0.9rem; color: #bbb;">
-                <?= $escapeGame[0]['description'] ?>
             </div>
 
 
@@ -92,7 +101,6 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                     </div>
                 </div>
 
-                <div class="separateur"></div>
         </section>
 
         <section class="block_avis carte-noire">
@@ -132,19 +140,14 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                 }
                 ?>
             </div>
-            <center>
+            <div class="bouton-avis-wrap" style="text-align: center;">
                 <button class="bouton-avis" id="voirAvisGames">Voir tous les avis</button>
-            </center>
+            </div>
         </section>
     </div>
 
     <div class="colonne-droite">
         <section class="carte-noire">
-            <h2 style="font-size: 28px;">
-                <?= $escapeGame[0]['nom'] ?>
-            </h2>
-
-            <p class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</p>
 
             <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
                 l'aventure</p>
@@ -181,11 +184,11 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
             <div class="selecteur-ligne">
                 <span id="participGames">Participants</span>
                 <select class="choix-horaire">
-                    <option value="1">1 personne</option>
+                    <!-- <option value="1">1 personne</option>
                     <option value="2">2 personnes</option>
                     <option value="3">3 personnes</option>
                     <option value="4">4 personnes</option>
-                    <option value="5">5 personnes</option>
+                    <option value="5">5 personnes</option> -->
                     <option value="6" selected>6 personnes</option>
                     <option value="7">7 personnes</option>
                     <option value="8">8 personnes</option>

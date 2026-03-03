@@ -415,10 +415,6 @@ let trad = {
         "fr": "Voir tous les avis",
         "en": "See all reviews",
     },
-    "#selectionGames": {
-        "fr": "Préparez votre départ pour le voyage !",
-        "en": "Get ready for the journey !",
-    },
     "#selectionDatesGames": {
         "fr": "Sélectionnez votre date pour l'aventure",
         "en": "Please select a date for the adventure",

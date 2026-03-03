@@ -31,7 +31,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
         <aside class="filtres-tri">
             <form class="filtres-escape__form" method="get" action="index.php">
                 <input type="hidden" name="action" value="escapeGames">
-
+<!--  JSP si on garde
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePrix">Prix max (€ / pers)</legend>
                     <label>
@@ -44,7 +44,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                             placeholder="50"
                             value="<?= isset($filtres['prix_max']) ? htmlspecialchars($filtres['prix_max']) : '' ?>">
                     </label>
-                </fieldset>
+                </fieldset> -->
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePers">Nombre minimum de personnes</legend>
@@ -67,6 +67,18 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     <label>
                         <input type="radio" name="lieu" value="Mulhouse" <?= $lieuActuel === 'Mulhouse' ? 'checked' : '' ?>>
                         Mulhouse
+                    </label>
+                    <label>
+                        <input type="radio" name="lieu" value="Sundgau" <?= $lieuActuel === 'Sundgau' ? 'checked' : '' ?>>
+                        Sundgau
+                    </label>
+                    <label>
+                        <input type="radio" name="lieu" value="Colmar" <?= $lieuActuel === 'Colmar' ? 'checked' : '' ?>>
+                        Colmar
+                    </label>
+                    <label>
+                        <input type="radio" name="lieu" value="Eguisheim" <?= $lieuActuel === 'Eguisheim' ? 'checked' : '' ?>>
+                        Eguisheim
                     </label>
                 </fieldset>
 
