@@ -48,7 +48,7 @@ h3 {
 
 /* --- SECTION 2 : ORIGINE --- */
 .section-origine {
-    padding: 20px 10%;
+    padding: 40px 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -63,7 +63,6 @@ h3 {
 }
 
 .section-origine img {
-    width: 100%;
     max-width: 400px;
     justify-self: center;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
@@ -175,22 +174,107 @@ h3 {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
-/* Responsive */
+/* --- RESPONSIVE DESIGN --- */
+
+/* --- VERSION TABLETTE (Smartphone) --- */
+/* --- CORRECTION GLOBALE (Pour éviter le décalage sur le côté) --- */
+html,
+body {
+    overflow-x: hidden;
+    /* Empêche le scroll horizontal parasite */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 @media (max-width: 768px) {
-    .section-origine {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
 
     .hero-section h1 {
-        font-size: 36px;
+        font-size: 42px;
+    }
+
+    /* --- SECTION ORIGINE (Boussole au-dessus) --- */
+    .section-origine {
+        display: flex;
+        flex-direction: column;
+        /* Empile les éléments verticalement */
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
     }
 
     .imgBoussole {
+        order: -1;
+        /* Force l'image à passer en premier */
+        width: 200px;
+        /* Taille adaptée au mobile */
+    }
+
+    /* --- SECTION MONDE (3ème carte centrée) --- */
+    .conteneur-cartes--propos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centre les enfants horizontalement */
+        gap: 20px;
         width: 100%;
-        max-width: 200px;
-        /* Réduit de 400px à 250px */
-        justify-self: center;
-        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    }
+
+    .carte {
+        width: 100%;
+        /* Les deux premières prennent toute la largeur */
+        max-width: 650px;
+        /* Évite qu'elles soient trop larges sur grande tablette */
+    }
+
+    .carte--centree {
+        /* Comme on est en flex column center, elle est déjà alignée */
+        margin-top: 10px;
+    }
+
+    /* --- GARDIENS (3 Lignes : Photo à gauche, Texte à droite) --- */
+    .grille-gardiens {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .bloc-gardien {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .photo-gardien {
+        width: 150px;
+        /* Ajusté pour éviter de pousser le texte hors écran */
+        height: 150px;
+        flex-shrink: 0;
+        border-radius: 12px;
+    }
+
+    /* Conteneur pour forcer le titre au-dessus du rôle */
+    /* Conteneur pour forcer le titre au-dessus du rôle */
+    .bloc-gardien-infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .nom-gardien {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    /* --- IMAGE SÉPARATION --- */
+    .image-separation {
+        width: 100%;
+        max-width: 100%;
+        /* S'assure qu'elle ne dépasse pas */
+        margin-top: 30px;
+        height: auto;
     }
 }
