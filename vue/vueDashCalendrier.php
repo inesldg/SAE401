@@ -61,6 +61,110 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
             <div class="sous-titre" id="#">Visualisez les créneaux réservés et disponibles par date et par escape.</div>
         </div>
         <div class="bas">
+
+            <form method="GET">
+                <input type="hidden" name="action" value="dashCalendrier">
+
+                <input type="date" name="date" value="<?= $date ?>">
+
+
+                <div class="droite2">
+                    <div class="filtre">
+                        <div class="titre">Filtrer par escape</div>
+                        <select name="escape">
+                            <option value="">Tous les escapes</option>
+                            <?php foreach ($escapes as $e): ?>
+                                <option value="<?= $e['id_escape'] ?>"
+                                    <?= ($escapeSelected == $e['id_escape']) ? 'selected' : '' ?>>
+                                    <?= $e['nom'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+
+                        <button type="submit">Filtrer</button>
+                    </div>
+
+                    <div class="joursj">
+                        <div class="datejours">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M13.6 1.6H12V0.8C12 0.587827 11.9157 0.384344 11.7657 0.234315C11.6157 0.0842854 11.4122 0 11.2 0C10.9878 0 10.7843 0.0842854 10.6343 0.234315C10.4843 0.384344 10.4 0.587827 10.4 0.8V1.6H5.6V0.8C5.6 0.587827 5.51571 0.384344 5.36569 0.234315C5.21566 0.0842854 5.01217 0 4.8 0C4.58783 0 4.38434 0.0842854 4.23431 0.234315C4.08429 0.384344 4 0.587827 4 0.8V1.6H2.4C1.76348 1.6 1.15303 1.85286 0.702944 2.30294C0.252856 2.75303 0 3.36348 0 4V13.6C0 14.2365 0.252856 14.847 0.702944 15.2971C1.15303 15.7471 1.76348 16 2.4 16H13.6C14.2365 16 14.847 15.7471 15.2971 15.2971C15.7471 14.847 16 14.2365 16 13.6V4C16 3.36348 15.7471 2.75303 15.2971 2.30294C14.847 1.85286 14.2365 1.6 13.6 1.6ZM14.4 13.6C14.4 13.8122 14.3157 14.0157 14.1657 14.1657C14.0157 14.3157 13.8122 14.4 13.6 14.4H2.4C2.18783 14.4 1.98434 14.3157 1.83431 14.1657C1.68429 14.0157 1.6 13.8122 1.6 13.6V8H14.4V13.6ZM14.4 6.4H1.6V4C1.6 3.78783 1.68429 3.58434 1.83431 3.43431C1.98434 3.28429 2.18783 3.2 2.4 3.2H4V4C4 4.21217 4.08429 4.41566 4.23431 4.56569C4.38434 4.71571 4.58783 4.8 4.8 4.8C5.01217 4.8 5.21566 4.71571 5.36569 4.56569C5.51571 4.41566 5.6 4.21217 5.6 4V3.2H10.4V4C10.4 4.21217 10.4843 4.41566 10.6343 4.56569C10.7843 4.71571 10.9878 4.8 11.2 4.8C11.4122 4.8 11.6157 4.71571 11.7657 4.56569C11.9157 4.41566 12 4.21217 12 4V3.2H13.6C13.8122 3.2 14.0157 3.28429 14.1657 3.43431C14.3157 3.58434 14.4 3.78783 14.4 4V6.4Z" fill="#C5A059" />
+                            </svg>
+                            mardi 3 février 2026
+                        </div>
+
+                        <div class="indicateur">
+                            <div class="ok">
+                                <div class="rond1"></div>
+                                Réservé
+                            </div>
+
+                            <div class="libre">
+                                <div class="rond2"></div>
+                                Libre
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+
+
+            <h2>Créneaux horaires</h2>
+
+            <?php
+            $creneaux = ["09:00:00", "11:00:00", "13:00:00", "15:00:00", "17:00:00"];
+
+            foreach ($creneaux as $heure):
+
+                $reservationTrouvee = null;
+
+                foreach ($reservations as $r) {
+                    if ($r['horaire'] == $heure) {
+                        $reservationTrouvee = $r;
+                        break;
+                    }
+                }
+            ?>
+
+                <?php if ($reservationTrouvee): ?>
+                    <div class="creneau reserve">
+                        <strong><?= substr($heure, 0, 5) ?></strong>
+
+                        <div class="nom">
+                            <?= $reservationTrouvee['nom_escape'] ?>
+                        </div>
+
+                        <div class="prenom">
+                            <?= $reservationTrouvee['prenom'] . " " . $reservationTrouvee['nom'] ?>
+                        </div>
+
+                        <div class="mail">
+                            <?= $reservationTrouvee['mail'] ?>
+                        </div>
+
+                        <div class="nbr">
+                            <?= $reservationTrouvee['nbr_pers'] ?> joueurs
+                        </div>
+
+                        <div class="supp">
+                            Sup. 
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="creneau libre">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 0C12.4184 0 16 3.5816 16 8C16 12.4184 12.4184 16 8 16C3.5816 16 0 12.4184 0 8C0 3.5816 3.5816 0 8 0ZM8 1.6C6.30261 1.6 4.67475 2.27428 3.47452 3.47452C2.27428 4.67475 1.6 6.30261 1.6 8C1.6 9.69739 2.27428 11.3253 3.47452 12.5255C4.67475 13.7257 6.30261 14.4 8 14.4C9.69739 14.4 11.3253 13.7257 12.5255 12.5255C13.7257 11.3253 14.4 9.69739 14.4 8C14.4 6.30261 13.7257 4.67475 12.5255 3.47452C11.3253 2.27428 9.69739 1.6 8 1.6ZM8 3.2C8.19595 3.20003 8.38507 3.27196 8.5315 3.40217C8.67793 3.53238 8.77147 3.7118 8.7944 3.9064L8.8 4V7.6688L10.9656 9.8344C11.1091 9.97837 11.1924 10.1715 11.1986 10.3747C11.2048 10.5779 11.1334 10.7758 10.999 10.9282C10.8646 11.0807 10.6772 11.1762 10.4748 11.1955C10.2725 11.2148 10.0704 11.1563 9.9096 11.032L9.8344 10.9656L7.4344 8.5656C7.31006 8.44116 7.23021 8.2792 7.2072 8.1048L7.2 8V4C7.2 3.78783 7.28429 3.58434 7.43431 3.43431C7.58434 3.28429 7.78783 3.2 8 3.2Z" fill="#F2F2F2" />
+                            </svg>
+                            <strong><?= substr($heure, 0, 5) ?></strong>
+                        </div>
+                        - Créneau libre
+                    </div>
+                <?php endif; ?>
+
+            <?php endforeach; ?>
+
         </div>
     </div>
 </div>
