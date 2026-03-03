@@ -34,20 +34,16 @@ class escapeGames extends database
         $conditions = [];
         $params = [];
 
-        // Prix min / max (tarif.prix = prix par personne)
-        if (!empty($filtres['prix_min']) || $filtres['prix_min'] === 0 || $filtres['prix_min'] === '0') {
-            $conditions[] = "t.prix >= ?";
-            $params[] = (float) $filtres['prix_min'];
-        }
+        // Prix max (tarif.prix = prix par personne)
         if (!empty($filtres['prix_max'])) {
             $conditions[] = "t.prix <= ?";
             $params[] = (float) $filtres['prix_max'];
         }
 
-        // Nombre max de personnes : on veut les escapes qui acceptent au moins ce nombre
-        if (!empty($filtres['pers_max'])) {
+        // Nombre minimum de personnes : jeux qui acceptent au moins ce nombre
+        if (!empty($filtres['pers_min'])) {
             $conditions[] = "e.nbr_pers_max >= ?";
-            $params[] = (int) $filtres['pers_max'];
+            $params[] = (int) $filtres['pers_min'];
         }
 
         // Lieu
@@ -75,11 +71,7 @@ class escapeGames extends database
             $conditions[] = "(" . implode(" OR ", $etoilesConditions) . ")";
         }
 
-        // Durée min / max
-        if (!empty($filtres['duree_min']) || $filtres['duree_min'] === 0 || $filtres['duree_min'] === '0') {
-            $conditions[] = "e.duree >= ?";
-            $params[] = (int) $filtres['duree_min'];
-        }
+        // Durée max
         if (!empty($filtres['duree_max'])) {
             $conditions[] = "e.duree <= ?";
             $params[] = (int) $filtres['duree_max'];

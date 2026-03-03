@@ -30,22 +30,18 @@ class ctlEscapeGames
         $etoilesGet = $etoilesGet ?? [];
 
         $filtres = [
-            'prix_min'   => $_GET['prix_min']   ?? null,
             'prix_max'   => $_GET['prix_max']   ?? null,
-            'pers_max'   => $_GET['pers_max']   ?? null,
+            'pers_min'   => $_GET['pers_min']   ?? null,
             'lieu'       => $_GET['lieu']       ?? null,
             'etoiles'    => $etoilesGet,
-            'duree_min'  => $_GET['duree_min']  ?? null,
             'duree_max'  => $_GET['duree_max']  ?? null,
         ];
 
         // Au moins un filtre rempli ?
-        $auMoinsUnFiltre = !empty($filtres['prix_min']) || $filtres['prix_min'] === '0' || $filtres['prix_min'] === 0
-            || !empty($filtres['prix_max'])
-            || !empty($filtres['pers_max'])
+        $auMoinsUnFiltre = !empty($filtres['prix_max'])
+            || !empty($filtres['pers_min'])
             || (isset($filtres['lieu']) && $filtres['lieu'] !== '')
             || !empty($filtres['etoiles'])
-            || !empty($filtres['duree_min']) || $filtres['duree_min'] === '0' || $filtres['duree_min'] === 0
             || !empty($filtres['duree_max']);
 
         if ($auMoinsUnFiltre) {

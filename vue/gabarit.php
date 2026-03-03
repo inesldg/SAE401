@@ -23,7 +23,7 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
         "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
       }
     }
-    </script>
+  </script>
 
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/loader.css">
@@ -49,6 +49,35 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
 </head>
 
 <body>
+
+  <audio id="ambiance" loop>
+    <source src="sons/ambiance.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("ambiance");
+      const btn = document.getElementById("btn-son");
+      if (!audio || !btn) return;
+
+      audio.volume = 0.2;
+
+      function updateIcon() {
+        btn.classList.toggle("header-btn-son--playing", !audio.paused);
+      }
+
+      btn.addEventListener("click", function () {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+        updateIcon();
+      });
+
+      updateIcon();
+    });
+  </script>
 
   <?php require "composants/loader.php"; ?>
   <script>

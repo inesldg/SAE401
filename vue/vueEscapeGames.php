@@ -33,17 +33,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                 <input type="hidden" name="action" value="escapeGames">
 
                 <fieldset class="filtres-escape__bloc">
-                    <legend id="legendePrix">Prix (€ / pers)</legend>
-                    <label>
-                        <span id="labelMin">Min</span>
-                        <input
-                            type="number"
-                            name="prix_min"
-                            min="0"
-                            step="5"
-                            placeholder="0"
-                            value="<?= isset($filtres['prix_min']) ? htmlspecialchars($filtres['prix_min']) : '' ?>">
-                    </label>
+                    <legend id="legendePrix">Prix max (€ / pers)</legend>
                     <label>
                         <span id="labelMax">Max</span>
                         <input
@@ -57,14 +47,14 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
-                    <legend id="legendePers">Nombre max de personnes</legend>
+                    <legend id="legendePers">Nombre minimum de personnes</legend>
                     <input
                         type="number"
-                        name="pers_max"
+                        name="pers_min"
                         min="1"
                         max="20"
-                        placeholder="Ex: 6"
-                        value="<?= isset($filtres['pers_max']) ? htmlspecialchars($filtres['pers_max']) : '' ?>">
+                        placeholder="Ex: 4"
+                        value="<?= isset($filtres['pers_min']) ? htmlspecialchars($filtres['pers_min']) : '' ?>">
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
@@ -97,16 +87,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
-                    <legend id="legendeDuree">Durée du jeu en minutes</legend>
-                    <label>
-                        <span id="labelDureeMin">Minimum</span>
-                        <input
-                            type="number"
-                            name="duree_min"
-                            min="0"
-                            placeholder="0"
-                            value="<?= isset($filtres['duree_min']) ? htmlspecialchars($filtres['duree_min']) : '' ?>">
-                    </label>
+                    <legend id="legendeDuree">Durée max du jeu (minutes)</legend>
                     <label>
                         <span id="labelDureeMax">Maximum</span>
                         <input

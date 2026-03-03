@@ -56,6 +56,55 @@ body>header {
     background: var(--gold-clair);
 }
 
+/* Bouton son (à droite du sélecteur de langue) */
+.header-btn-son {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-left: 4px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.2s ease;
+}
+
+.header-btn-son:hover {
+    color: var(--gold-clair);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.header-btn-son:focus-visible {
+    outline: 2px solid var(--gold-clair);
+    outline-offset: 2px;
+}
+
+.header-btn-son__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Son coupé : on affiche l’icône « off », on cache « on » */
+.header-btn-son .header-btn-son__icon--on {
+    display: none;
+}
+.header-btn-son .header-btn-son__icon--off {
+    display: block;
+}
+
+/* Son activé : on affiche l’icône « on », on cache « off » */
+.header-btn-son.header-btn-son--playing .header-btn-son__icon--on {
+    display: block;
+}
+.header-btn-son.header-btn-son--playing .header-btn-son__icon--off {
+    display: none;
+}
+
 .main-header {
     display: flex;
     justify-content: space-between;
