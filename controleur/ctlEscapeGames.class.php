@@ -14,7 +14,7 @@ class ctlEscapeGames
 
     public function accueil($acces)
     {
-        $escapeGames = $this->escapeGames->listeEscapeGames();
+        $escapeGames = $this->escapeGames->listeEscapeGamesRecents(4);
 
         $vue = new vue("Accueil"); // Instancie la vue appropriée
         $vue->afficher(array("escapeGames" => $escapeGames, "acces" => $acces));
@@ -22,10 +22,39 @@ class ctlEscapeGames
 
     public function pageEscapeGames()
     {
-        $escapeGames = $this->escapeGames->listeEscapeGames();
+        // Récupération des filtres depuis la query string (tous les critères sont cumulés en AND)
+        $etoilesGet = $_GET['etoiles'] ?? null;
+        if (!is_array($etoilesGet) && $etoilesGet !== null && $etoilesGet !== '') {
+            $etoilesGet = [$etoilesGet];
+        }
+        $etoilesGet = $etoilesGet ?? [];
+
+        $filtres = [
+            'prix_max'   => $_GET['prix_max']   ?? null,
+            'pers_min'   => $_GET['pers_min']   ?? null,
+            'lieu'       => $_GET['lieu']       ?? null,
+            'etoiles'    => $etoilesGet,
+            'duree_max'  => $_GET['duree_max']  ?? null,
+        ];
+
+        // Au moins un filtre rempli ?
+        $auMoinsUnFiltre = !empty($filtres['prix_max'])
+            || !empty($filtres['pers_min'])
+            || (isset($filtres['lieu']) && $filtres['lieu'] !== '')
+            || !empty($filtres['etoiles'])
+            || !empty($filtres['duree_max']);
+
+        if ($auMoinsUnFiltre) {
+            $escapeGames = $this->escapeGames->filtrerEscapeGames($filtres);
+        } else {
+            $escapeGames = $this->escapeGames->listeEscapeGames();
+        }
 
         $vue = new vue("EscapeGames"); // Instancie la vue appropriée
-        $vue->afficher(array("escapeGames" => $escapeGames)); // Affiche la liste des clients dans la vue
+        $vue->afficher(array(
+            "escapeGames" => $escapeGames,
+            "filtres"     => $filtres
+        ));
     }
 
     public function pageGame($idEscapeGame, $message = "")

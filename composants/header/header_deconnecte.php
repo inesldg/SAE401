@@ -9,7 +9,7 @@
             <a href="index.php?action=propos" id="menuPropos">À propos</a>
             <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
             <a href="index.php?action=accueil" id="menuContact">Contact</a> <!-- A MODIFIER -->
-            <a href="index.php?action=pageInscription" id="menuCompte">Compte</a>
+            <a href="index.php?action=pageConnexion" id="menuCompte">Compte</a>
             <div class="lang-switcher">
                 <button data-langue="fr" class="active">FR</button>
                 <button data-langue="en">EN</button>

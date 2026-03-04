@@ -1,3 +1,48 @@
+/* --- BOUTON SON (page d'accueil uniquement) --- */
+.accueil-btn-son {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.accueil-btn-son:hover {
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--gold-clair);
+    transform: scale(1.05);
+}
+.accueil-btn-son:focus-visible {
+    outline: 2px solid var(--gold-clair);
+    outline-offset: 2px;
+}
+.accueil-btn-son__icon {
+    width: 22px;
+    height: 22px;
+}
+.accueil-btn-son .accueil-btn-son__icon--on {
+    display: none;
+}
+.accueil-btn-son .accueil-btn-son__icon--off {
+    display: block;
+}
+.accueil-btn-son.accueil-btn-son--playing .accueil-btn-son__icon--on {
+    display: block;
+}
+.accueil-btn-son.accueil-btn-son--playing .accueil-btn-son__icon--off {
+    display: none;
+}
+
 /* --- HERO PREMIÈRE SECTION --- */
 .hero-accueil {
     position: relative;
@@ -227,13 +272,18 @@
 /* --- NOS ESCAPES --- */
 
 .accueil-escapes__grille {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
 }
 
 .accueil-escape-card {
+    position: relative;
+    flex: 0 0 300px;
+    min-width: 300px;
     background: #1a242f;
     border-radius: 15px;
     overflow: hidden;
@@ -248,11 +298,33 @@
     border-color: var(--gold-clair);
 }
 
+.accueil-escape-card__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    text-decoration: none;
+}
+
 
 .accueil-escape-card__img {
-    aspect-ratio: 1;
+    height: 200px;
     background: #2a3441;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.accueil-escape-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.accueil-escape-card__img .placeholder-img {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    background: #2a3441;
 }
 
 .accueil-escape-card__corps {
@@ -290,17 +362,19 @@
 }
 
 .accueil-escape-card__prix {
+    position: relative;
+    z-index: 2;
     background: var(--gold-gradient);
     padding: 5px 10px;
-    border-radius: 25px;
+    border-radius: 32px;
     font-family: var(--texte);
     font-size: 1rem;
-    color: #101A23;
+    text-decoration: none;
+    color: var(--fond-sombre);
     font-weight: bold;
-    /* margin: 0 0 1rem; */
-    position: absolute;
-    bottom: 5px;
-    left: 15px;
+    margin-top: 16px;
+    text-align: center;
+    display: inline-block;
 }
 
 .accueil-escape-card__badge {
@@ -329,15 +403,21 @@
 
 .accueil-escapes__lien-wrap {
     text-align: center;
-    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .accueil-escapes__lien {
     font-family: var(--titre);
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--gold-clair);
     text-decoration: none;
     transition: color 0.3s;
+}
+
+.accueil-escapes__lien:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .accueil-escapes__lien:hover {

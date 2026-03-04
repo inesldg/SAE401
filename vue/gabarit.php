@@ -23,7 +23,7 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
         "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
       }
     }
-    </script>
+  </script>
 
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/loader.css">

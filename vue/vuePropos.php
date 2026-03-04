@@ -62,7 +62,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         </div>
     </div>
 
-    <img src="images/paysage_transparent.png" class="image-separation" alt="Décoration forêt">
+    <img src="images/paysage_transparent.png" class="image-separation" alt="Décoration forêt" loading="lazy">
 </section>
 
 
@@ -70,22 +70,28 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
     <h2 class="texte-doré" id="gardiensPropos">Les gardiens du jeu</h2>
     <div class="grille-gardiens">
         <div class="bloc-gardien">
-            <div class="photo-gardien"></div>
-            <div class="bloc-gardien-infos">
+            <div class="photo-gardien">
+                <img src="images/architecte.jpg" alt="L'Architecte" loading="lazy">
+            </div>
+            <div class="bloc-gardien__texte">
                 <span class="nom-gardien" id="architectePropos">L'Architecte</span>
                 <span class="role-gardien" id="storytellerPropos">Scénariste & Storyteller</span>
             </div>
         </div>
         <div class="bloc-gardien">
-            <div class="photo-gardien"></div>
-            <div class="bloc-gardien-infos">
+            <div class="photo-gardien">
+                <img src="images/ingenieur.jpg" alt="Le Chronos" loading="lazy">
+            </div>
+            <div class="bloc-gardien__texte">
                 <span class="nom-gardien" id="chronos">Le Chronos</span>
                 <span class="role-gardien" id="ingenieurPropos">Ingénieur de terrain</span>
             </div>
         </div>
         <div class="bloc-gardien">
-            <div class="photo-gardien"></div>
-            <div class="bloc-gardien-infos">
+            <div class="photo-gardien">
+                <img src="images/maitrejeu.jpg" alt="Maître du jeu" loading="lazy">
+            </div>
+            <div class="bloc-gardien__texte">
                 <span class="nom-gardien" id="maitre">Maître</span>
                 <span class="role-gardien" id="maitre2">Maître du jeu</span>
             </div>

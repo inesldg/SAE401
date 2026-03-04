@@ -12,9 +12,20 @@ class ctlDashCalendrier
         $this->dashCalendrier = new dashCalendrier();
     }
 
-    public function afficherDashCalendrier(){
-        $vue = new vue("DashCalendrier"); // Instancie la vue appropriée
+    public function afficherDashCalendrier()
+{
+    $date = $_GET['date'] ?? date('Y-m-d');
+    $escape = $_GET['escape'] ?? null;
 
-        $vue->afficher([]);
-    }
+    $escapes = $this->dashCalendrier->getEscapes();
+    $reservations = $this->dashCalendrier->getReservationsByDate($date, $escape);
+
+    $vue = new vue("DashCalendrier");
+    $vue->afficher([
+        "escapes" => $escapes,
+        "reservations" => $reservations,
+        "date" => $date,
+        "escapeSelected" => $escape
+    ]);
+}
 }

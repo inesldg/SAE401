@@ -35,14 +35,14 @@ let trad = {
     },
 
     "#nos": {
-        "fr": "Nos",
-        "en": "Our",
+        "fr": "Nos derniers",
+        "en": "Our latest",
     },
     "#suitetitreh2": {
         "fr": "Escape games",
         "en": "Escape games",
     },
-    "#voirescapeAcc": {
+    "#toutEscapes": {
         "fr": "Voir tout les jeux →",
         "en": "See all the games →",
     },
@@ -414,10 +414,6 @@ let trad = {
     "#voirAvisGames": {
         "fr": "Voir tous les avis",
         "en": "See all reviews",
-    },
-    "#selectionGames": {
-        "fr": "Préparez votre départ pour le voyage !",
-        "en": "Get ready for the journey !",
     },
     "#selectionDatesGames": {
         "fr": "Sélectionnez votre date pour l'aventure",

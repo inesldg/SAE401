@@ -56,6 +56,9 @@ body>header {
     background: var(--gold-clair);
 }
 
+/* Son coupé : on affiche l’icône « off », on cache « on » */
+
+/* Son activé : on affiche l’icône « on », on cache « off » */
 .main-header {
     display: flex;
     justify-content: space-between;
