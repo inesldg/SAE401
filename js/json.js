@@ -1021,7 +1021,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // animation scroll
 window.onload = () => {
     const observerOptions = {
-        threshold: 0.35 // Déclenche quand 15% de l'élément est visible
+        threshold: 0.15 // Déclenche quand 15% de l'élément est visible
     };
 
     const observer = new IntersectionObserver((entries) => {

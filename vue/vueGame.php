@@ -49,7 +49,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
 <div class="conteneur-reservation">
 
-    <div class="colonne-gauche">
+    <div class="colonne-gauche reveal reveal-up">
         <section class="block_description carte-noire">
             <h2 class="titre-or">
                 <?= $escapeGame[0]['nom'] ?>
@@ -61,7 +61,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
             </div>
 
 
-            <div class="icones-detail">
+            <div class="icones-detail ">
                 <div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                         stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -102,7 +102,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 </div>
         </section>
 
-        <section class="block_avis carte-noire">
+        <section class="block_avis carte-noire reveal reveal-up">
             <h2 style="font-size: 24px;" id="nbAvisGames">Avis</h2>
             <div class="grille-avis">
                 <?php
@@ -147,7 +147,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
         </section>
     </div>
 
-    <div class="colonne-droite">
+    <div class="colonne-droite reveal reveal-up">
         <section class="carte-noire">
             <div class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</div>
 
