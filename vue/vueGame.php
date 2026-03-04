@@ -222,8 +222,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 <span style="color: white;">220.00 €</span>
             </div>
 
-            <button class="bouton-reserver"><a href="index.php?action=panier" id="reserverGames">Réserver
-                    maintenant</a></button>
+            <a href="index.php?action=panier" class="bouton-reserver" id="reserverGames">Réserver maintenant</a>
         </section>
     </div>
 
