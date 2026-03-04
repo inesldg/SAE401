@@ -453,55 +453,75 @@ a {
     .grille-avis {
         grid-template-columns: 1fr 1fr;
     }
+
+    #horaireGames {
+        padding-bottom: 15px;
+    }
+
+    #participGames {
+        padding-bottom: 15px;
+    }
 }
 
 /* --- MOBILE (425px et moins) --- */
 @media screen and (max-width: 425px) {
 
-    /* 1. ON CASSE LE GRID GÉNÉRAL */
-    /* Ta classe .conteneur-reservation est en grid (2 colonnes) par défaut.
-       On la force en simple bloc pour que les enfants s'empilent. */
-    .conteneur-reservation {
-        display: block !important;
-        width: 100% !important;
-        margin-top: 20px !important;
-        /* Pour bien voir le haut du cadre */
-        padding: 10px !important;
+    .hero-section {
+        height: auto;
+        min-height: 300px;
+        padding: 100px 20px 40px;
     }
 
-    /* 2. ON FORCE LES COLONNES GAUCHE ET DROITE À PRENDRE TOUTE LA LARGEUR */
+    /* 1. ON FORCE LA GRILLE À NE FAIRE QU'UNE SEULE COLONNE */
+    .conteneur-reservation {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        /* Force une seule colonne */
+        margin-top: 10px !important;
+        padding: 15px !important;
+        gap: 20px !important;
+    }
+
+    /* 2. ON S'ASSURE QUE CHAQUE COLONNE PREND TOUTE LA PLACE */
     .colonne-gauche,
     .colonne-droite {
-        display: block !important;
+        grid-column: 1 / -1 !important;
+        /* Force l'occupation de toute la largeur */
         width: 100% !important;
-        margin-bottom: 30px !important;
-        /* Espace entre description et calendrier */
     }
 
-    /* 3. LE CONTENEUR DU CALENDRIER (L'intérieur du bloc noir) */
+    /* 3. RÉORGANISATION DE L'ORDRE DES BLOCS */
+    /* On place la description et les avis en premier, le calendrier en dernier */
+    .colonne-gauche {
+        order: 1 !important;
+    }
+
+    .colonne-droite {
+        order: 2 !important;
+    }
+
+    /* 4. ON CASSE LE CÔTÉ-À-CÔTÉ INTERNE DU CALENDRIER */
     .calendrier-container-flex {
         display: block !important;
-        /* On tue le flex horizontal ici aussi */
     }
 
-    /* 4. LE CALENDRIER LUI-MÊME */
     .calendrier-boite {
         width: 100% !important;
-        max-width: 350px !important;
+        max-width: 300px !important;
         margin: 0 auto 20px auto !important;
     }
 
-    /* 5. LES BOUTONS EN DESSOUS */
+    /* 5. LES BOUTONS (HORAIRES / PARTICIPANTS) */
     .selection-options-mobile {
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
         width: 100% !important;
         max-width: 350px !important;
         margin: 0 auto !important;
+        gap: 12px !important;
     }
 
-    /* 6. STYLE DES LIGNES (Label gauche / Select droite) */
+    /* 6. STYLE DES LIGNES (Look PC horizontal) */
     .selection-options-mobile .selecteur-ligne {
         display: flex !important;
         flex-direction: row !important;
@@ -509,7 +529,21 @@ a {
         align-items: center !important;
         background: #1c252e !important;
         border: 1px solid #c5a059 !important;
-        padding: 12px 20px !important;
+        padding: 10px 20px !important;
         border-radius: 30px !important;
     }
+
+    .selecteur-ligne span {
+        font-size: 0.85rem !important;
+        color: #c5a059 !important;
+    }
+
+    .choix-horaire {
+        background: transparent !important;
+        border: none !important;
+        color: white !important;
+        text-align: right !important;
+        width: auto !important;
+    }
+
 }
