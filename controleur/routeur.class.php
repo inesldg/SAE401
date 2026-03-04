@@ -119,6 +119,9 @@ class routeur
                             else
                                 $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer et confirmer votre mot de passe pour enregistrer vos modifications</span>", $mail);
                             break;
+                        case "panier":
+                            $this->ctlPages->pagePanier($message = "");
+                            break;
 
 
                         /********** Pages administrateur **********/
@@ -225,10 +228,6 @@ class routeur
                         // case "confirmation":
                         //     $this->ctlPages->pageConfirmation();
                         //     break;
-
-                        case "panier":
-                            $this->ctlPages->pageConnexion($message = "");
-                            break;
 
                         case "pageConnexion":
                             $this->ctlPages->pageConnexion($message = "");
