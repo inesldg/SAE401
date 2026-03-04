@@ -24,21 +24,22 @@
     --fond-sombre: #101A23;
 }
 
-body {
+.avis-page-wrapper {
     color: var(--blanc-casse);
     font-family: var(--texte);
     font-size: 18px;
     display: flex;
-    margin: 0px;
+    margin: 0;
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
     background-color: var(--fond-sombre);
 }
 
-main {
-    width: calc(100% - 96px);
+.avis-page {
     margin: 48px;
+    padding: 0;
+    width: calc(100% - 96px);
     border: solid 3px var(--gold-clair);
     border-radius: 32px;
     box-sizing: border-box;
@@ -61,6 +62,15 @@ main {
     color: var(--blanc-casse);
 }
 
+.avis-filtre-message {
+    margin: 0 32px 16px;
+    padding: 10px 16px;
+    border: solid 2px var(--gold-clair);
+    border-radius: 16px;
+    color: var(--blanc-casse);
+    background-color: color-mix(in srgb, var(--gold-clair) 50%, transparent);
+}
+
 .avis-actions {
     display: flex;
     align-items: center;
@@ -81,6 +91,20 @@ main {
     font-size: 22px;
     line-height: 1;
     color: var(--gold-clair);
+}
+
+.avis-pill-filtre {
+    cursor: pointer;
+}
+
+.avis-pill-filtre.actif {
+    background-color: var(--gold-clair);
+    color: var(--noir);
+}
+
+.avis-pill-filtre.actif .dore,
+.avis-pill-filtre.actif .grise {
+    color: var(--noir);
 }
 
 .avis-pill-add {
