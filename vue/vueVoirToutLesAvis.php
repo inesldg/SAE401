@@ -13,7 +13,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
             <div class="avis-pill avis-pill-filtre" data-filter-note="3"><span class="dore">★★★</span><span class="grise">★★</span></div>
             <div class="avis-pill avis-pill-filtre" data-filter-note="4"><span class="dore">★★★★</span><span class="grise">★</span></div>
             <div class="avis-pill avis-pill-filtre" data-filter-note="5"><span class="dore">★★★★★</span></div>
-            <div class="avis-pill avis-pill-add">Ajouter un avis</div>
+            <div class="avis-pill avis-pill-add" id="txt-ajt-avis">Ajouter un avis</div>
         </div>
     </div>
     <div class="avis-filtre-message" id="avisFiltreMessage" style="display:none;"></div>
