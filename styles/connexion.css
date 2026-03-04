@@ -33,7 +33,7 @@ main {
 
 .haut-droit {
     top: -40px;
-    right: -40px;
+    right: -20px;
 }
 
 .bas-gauche {
@@ -65,11 +65,10 @@ main {
     transform: translate(-50%, -50%);
     animation: rotationLente 60s linear infinite;
     z-index: 1;
-    width: 100%;
+    width: 150%;
     height: auto;
     pointer-events: none;
-    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25))
-        drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
 }
 
 /* Contenu au-dessus du SVG */
@@ -188,6 +187,7 @@ main {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
+
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
@@ -198,6 +198,7 @@ main {
         opacity: 0.6;
         transform: scale(1);
     }
+
     100% {
         opacity: 0.8;
         transform: scale(1.02);
@@ -209,6 +210,7 @@ main {
         opacity: 0.6;
         transform: rotate(180deg) scale(1);
     }
+
     100% {
         opacity: 0.8;
         transform: rotate(180deg) scale(1.02);
@@ -227,13 +229,96 @@ main {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* --- TABLETTE (768px) --- */
+@media screen and (max-width: 768px) {
     .decoration-coin {
-        width: 150px;
+        width: 170px;
+        /* Réduction des engrenages de coin */
+        opacity: 0.4;
     }
 
     .boite-formulaire {
-        transform: scale(0.85);
+        transform: scale(0.8);
+        /* Réduction globale pour que le SVG tienne */
+        margin-top: -1rem;
+    }
+
+    .titre-connexion {
+        font-size: 2.2rem;
+    }
+
+    .haut-droit {
+        top: 80px;
+        right: -20px;
+    }
+
+    .bas-gauche {
+        bottom: -10px;
+        left: -20px;
+        transform: rotate(180deg);
+        animation: pulsationDouceBas 4s ease-in-out infinite alternate;
+    }
+
+}
+
+/* --- MOBILE (425px) --- */
+@media screen and (max-width: 425px) {
+*
+    /* 1. On cache les engrenages de coins pour épurer et éviter les bugs de scroll */
+    .decoration-coin {
+        display: none;
+    }
+
+    /* 2. Ajustement du conteneur principal */
+    main {
+        padding: 0 10px;
+        align-items: center;
+        /* Centrage vertical */
+    }
+
+    /* 3. Le SVG et sa boîte */
+    .boite-formulaire {
+        transform: scale(0.65);
+        /* On réduit encore plus pour le mobile */
+        height: 600px;
+        /* On réduit la hauteur de la zone */
+        margin-top: -4rem;
+        /* On remonte pour compenser le scale */
+    }
+
+    /* On s'assure que le SVG ne crée pas de scroll horizontal */
+    .svg-arriere-plan {
+        width: 150%;
+        /* Légèrement plus grand que le parent pour l'effet */
+        max-width: none;
+    }
+
+    /* 4. Le formulaire au centre */
+    .contenu-formulaire {
+        max-width: 280px;
+        /* Un peu plus étroit pour tenir dans le cercle du SVG réduit */
+    }
+
+    .titre-connexion {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    /* 5. Inputs et Bouton */
+    .boite-formulaire input {
+        padding: 12px 18px;
+        /* Plus facile à toucher */
+        font-size: 14px;
+    }
+
+    .boite-formulaire .bouton-connexion {
+        font-size: 14px;
+        padding: 14px;
+        margin-top: 10px;
+    }
+
+    .lien-inscription {
+        font-size: 13px;
+        margin-top: 25px;
     }
 }
