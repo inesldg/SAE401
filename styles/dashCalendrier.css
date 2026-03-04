@@ -120,3 +120,168 @@ h1 {
     font-weight: lighter;
     margin-bottom: 32px;
 }
+
+/* ===== FILTRE ===== */
+
+.droite2{
+    display: block;
+}
+
+.bas form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.filtre {
+    padding: 25px;
+    background-color: var(--bleu-fonce);
+    border: solid var(--bleu-clair) 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.titre {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bas input[type="date"],
+.bas select {
+    background-color: var(--noir);
+    border: 1px solid var(--bleu-clair);
+    color: var(--blanc-casse);
+    opacity: 50%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.bas button {
+    background: var(--gold-gradient);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: var(--noir);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bas button:hover {
+    opacity: 0.8;
+}
+
+.joursj{
+    background-color: var(--bleu-fonce);
+    border: 1px solid var(--bleu-clair);
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.datejours>svg {
+    margin-right: 15px;
+}
+
+.datejours {
+    margin-bottom: 15px;
+}
+
+.indicateur, .ok, .libre {
+    display: flex;
+}
+
+.ok{
+    align-items: center;
+    margin-right: 20px;
+    color: var(--blanc-casse);
+    opacity: 50%;
+}
+
+.rond1 {
+    width: 10px;
+    height: 10px;
+    background-color: var(--gold-clair);
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.libre{
+    align-items: center;
+    color: var(--blanc-casse);
+    opacity: 50%;
+}
+
+.rond2{
+    width: 10px;
+    height: 10px;
+    background-color: var(--bleu-fonce);
+    border: 1px solid var(--bleu-clair);
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+
+/* ===== TITRE CRENEAUX ===== */
+
+.bas h2 {
+    font-family: var(--titre);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* ===== CARTE CRENEAU ===== */
+
+.creneau {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* ===== CRENEAU LIBRE ===== */
+
+.creneau.libre {
+    background-color: var(--bleu-fonce);
+    border: 1px solid var(--bleu-clair);
+    color: var(--blanc-casse);
+    opacity: 50%;
+}
+
+.grp>svg{
+    margin-right: 10px;
+}
+
+/* ===== CRENEAU RESERVE ===== */
+
+.creneau.reserve {
+    background: linear-gradient(90deg, #2b1e0f, #3b2a16);
+    border: 1px solid #c5a059;
+    color: #f2f2f2;
+}
+
+.creneau.reserve strong {
+    color: #c5a059;
+}
+
+/* ===== CONTENU INTERNE ===== */
+
+.creneau.reserve span {
+    margin-right: 15px;
+}
+
+/* ===== EFFET HOVER ===== */
+
+.creneau:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
