@@ -50,7 +50,7 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                         <input type="text" name="prenom" placeholder="<?= htmlspecialchars($infosCompte[0]['prenom'] ?? '') ?>" value="">
                     </div>
                     <div class="case case--pleine">
-                        <label id="telCompte">NUMÉRO DE TÉLÉPHONE</label>
+                        <label id="telCompte">Numéro de téléphone</label>
                         <input type="tel" name="tel" id="inputtel" placeholder="<?= htmlspecialchars(!empty($infosCompte[0]['tel']) ? $infosCompte[0]['tel'] : '06 06 06 06 06') ?>"
                             pattern="[0-9]{2}(\s[0-9]{2}){4}" title="Format : 06 06 06 06 06">
                     </div>
