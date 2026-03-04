@@ -31,7 +31,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
 <!-- <a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a> -->
 
-<section class="hero-section"<?= $bannerImageUrl ? ' style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--fond-sombre)), url(\'' . htmlspecialchars($bannerImageUrl) . '\'); background-size: cover; background-position: center;"' : '' ?>>
+<section class="hero-section" <?= $bannerImageUrl ? ' style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--fond-sombre)), url(\'' . htmlspecialchars($bannerImageUrl) . '\'); background-size: cover; background-position: center;"' : '' ?>>
     <a href="index.php?action=escapeGames" class="btn-retour btn-retour-absolu">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -140,18 +140,16 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 ?>
             </div>
             <div class="bouton-avis-wrap" style="text-align: center;">
-                <a class="bouton-avis" id="voirAvisGames" href="index.php?action=pageVoirToutLesAvis&idEscapeGame=<?= $escapeGame[0]['id_escape'] ?>">Voir tous les avis</a>
+                <a class="bouton-avis" id="voirAvisGames"
+                    href="index.php?action=pageVoirToutLesAvis&idEscapeGame=<?= $escapeGame[0]['id_escape'] ?>">Voir
+                    tous les avis</a>
             </div>
         </section>
     </div>
 
     <div class="colonne-droite">
         <section class="carte-noire">
-            <h2 style="font-size: 28px;">
-                <?= $escapeGame[0]['nom'] ?>
-            </h2>
-
-            <p class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</p>
+            <div class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</div>
 
             <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
                 l'aventure</p>
@@ -191,38 +189,39 @@ if (!empty($escapeGame[0]['id_escape'])) {
                         </select>
                     </div>
 
-            <div class="selecteur-ligne">
-                <span id="participGames">Participants</span>
-                <select class="choix-horaire" id="nbrParticipantsGame">
-                    <option value="1">1 personne</option>
-                    <option value="2">2 personnes</option>
-                    <option value="3">3 personnes</option>
-                    <option value="4">4 personnes</option>
-                    <option value="5">5 personnes</option>
-                    <option value="6" selected>6 personnes</option>
-                    <option value="7">7 personnes</option>
-                    <option value="8">8 personnes</option>
-                    <option value="9">9 personnes</option>
-                    <option value="10">10 personnes</option>
-                    <option value="11">11 personnes</option>
-                    <option value="12">12 personnes</option>
-                    <option value="13">13 personnes</option>
-                    <option value="14">14 personnes</option>
-                    <option value="15">15 personnes</option>
-                    <option value="16">16 personnes</option>
-                    <option value="17">17 personnes</option>
-                    <option value="18">18 personnes</option>
-                    <option value="19">19 personnes</option>
-                    <option value="20">20 personnes</option>
-                </select>
-            </div>
+                    <div class="selecteur-ligne">
+                        <span id="participGames">Participants</span>
+                        <select class="choix-horaire" id="nbrParticipantsGame">
+                            <option value="1">1 personne</option>
+                            <option value="2">2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5 personnes</option>
+                            <option value="6" selected>6 personnes</option>
+                            <option value="7">7 personnes</option>
+                            <option value="8">8 personnes</option>
+                            <option value="9">9 personnes</option>
+                            <option value="10">10 personnes</option>
+                            <option value="11">11 personnes</option>
+                            <option value="12">12 personnes</option>
+                            <option value="13">13 personnes</option>
+                            <option value="14">14 personnes</option>
+                            <option value="15">15 personnes</option>
+                            <option value="16">16 personnes</option>
+                            <option value="17">17 personnes</option>
+                            <option value="18">18 personnes</option>
+                            <option value="19">19 personnes</option>
+                            <option value="20">20 personnes</option>
+                        </select>
+                    </div>
 
-            <div class="total-ligne">
-                <span id="totalGames">Total</span>
-                <span style="color: white;">220.00 €</span>
-            </div>
+                    <div class="total-ligne">
+                        <span id="totalGames">Total</span>
+                        <span style="color: white;">220.00 €</span>
+                    </div>
 
-            <a href="index.php?action=panier" class="bouton-reserver" id="boutonReserverGames reserverGames">Réserver maintenant</a>
+                    <a href="index.php?action=panier" class="bouton-reserver"
+                        id="boutonReserverGames reserverGames">Réserver maintenant</a>
         </section>
     </div>
 

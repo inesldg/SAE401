@@ -65,7 +65,7 @@ main {
     transform: translate(-50%, -50%);
     animation: rotationLente 60s linear infinite;
     z-index: 1;
-    width: 150%;
+    width: 100%;
     height: auto;
     pointer-events: none;
     filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
