@@ -20,7 +20,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 <main class="panier">
     <div class="conteneur-principal">
 
-        <div class="section-panier carte">
+        <div class="section-panier carte reveal reveal-up">
             <h1 id="panierPanier">Votre Panier</h1>
 
             <div class="produit">
@@ -41,9 +41,9 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
         </div>
 
-        <div class="colonne-laterale">
+        <div class="colonne-laterale reveal reveal-up">
 
-            <div class="carte">
+            <div class="carte reveal reveal-up">
                 <h2 id="codePanier">Code Promo / Bons ?</h2>
                 <div class="groupe-saisie">
                     <input type="text" class="saisie-promo" id="inputcodepromo"
@@ -53,7 +53,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                 <div class="indication" id="indiqPanier">Saisissez le code sans espace entre les caractères</div>
             </div>
 
-            <div class="carte">
+            <div class="carte reveal reveal-up">
                 <h2 id="infoPanier">Vos Informations</h2>
                 <form>
                     <div class="grille-nom-prenom">
