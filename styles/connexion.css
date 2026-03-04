@@ -182,6 +182,15 @@ main {
     color: #E6B856;
 }
 
+.erreur-connexion {
+    font-family: var(--texte);
+    font-size: bold;
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
 /* Animation de rotation lente pour le SVG central */
 @keyframes rotationLente {
     from {

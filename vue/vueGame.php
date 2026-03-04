@@ -108,7 +108,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 <?php
                 // On vérifie s'il y a des avis (si $avis n'est pas vide et n'est pas égal à 0)
                 if (!empty($avis) && $avis != 0) {
-                    foreach ($avis as $evaluation) {
+                    foreach (array_slice($avis, 0, 3) as $evaluation) {
                         // Gestion de la langue pour le commentaire
                         $commAffichage = ($lang == 'en') ? $evaluation['commentaire_en'] : $evaluation['commentaire'];
 
@@ -140,7 +140,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 ?>
             </div>
             <div class="bouton-avis-wrap" style="text-align: center;">
-                <button class="bouton-avis" id="voirAvisGames">Voir tous les avis</button>
+                <a class="bouton-avis" id="voirAvisGames" href="index.php?action=pageVoirToutLesAvis&idEscapeGame=<?= $escapeGame[0]['id_escape'] ?>">Voir tous les avis</a>
             </div>
         </section>
     </div>
@@ -179,7 +179,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
                     <div class="selecteur-ligne">
                         <span id="horaireGames">Horaire</span>
-                        <select class="choix-horaire">
+                        <select class="choix-horaire" id="DemandeHoraireGame">
                             <option value="09:30">09 : 30</option>
                             <option value="10:30">10 : 30</option>
                             <option value="11:30">11 : 30</option>
@@ -193,7 +193,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
             <div class="selecteur-ligne">
                 <span id="participGames">Participants</span>
-                <select class="choix-horaire">
+                <select class="choix-horaire" id="nbrParticipantsGame">
                     <option value="1">1 personne</option>
                     <option value="2">2 personnes</option>
                     <option value="3">3 personnes</option>
@@ -222,58 +222,13 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 <span style="color: white;">220.00 €</span>
             </div>
 
-            <button class="bouton-reserver"><a href="index.php?action=panier" id="reserverGames">Réserver
-                    maintenant</a></button>
+            <a href="index.php?action=panier" class="bouton-reserver" id="boutonReserverGames reserverGames">Réserver maintenant</a>
         </section>
     </div>
 
 </div>
-<div>
-    <div>
-        <div>
-            <?php
-            if ($avis != 0) {
-                foreach ($avis as $evaluation) {
-                    $result = '
-                <div>' . $evaluation['nom'] . ' ' . $evaluation['prenom'] . '</div>
-                <div>' . $evaluation['note'] . '</div>
-                <div>' . $evaluation['avis_date'] . '</div>
-                <div>' . $evaluation['commentaire'] . '</div>';
-                }
-            }
-            ;
-            ?>
-        </div>
+<?php
 
-        <?php
-        if (isset($_SESSION["acces"])) {
-            echo '
-    <div>
-        ' . $message . '
-    </div>
-    <form method="post" action=' . $_SERVER["PHP_SELF"] . '?action=ajouterAvis&idEscapeGame=' . $escapeGame[0]['id_escape'] . '>
-        <label>
-            <input type="text" name="commentaire" value="" id="inputcommentaire" placeholder="Commentaire">
-        </label>
-        <label>
-            <select name="note">
-                <option value="">Choisissez une note</option>
-                <option value="0">0/5</option>
-                <option value="1">1/5</option>
-                <option value="2">2/5</option>
-                <option value="3">3/5</option>
-                <option value="4">4/5</option>
-                <option value="5">5/5</option>
-            </select>
-        </label>
-        <button type="submit" id=ajoutAvisGame name="ajoutAvis">Ajouter un avis</button>
-    </form>';
-        }
-
-        ?>
-
-        <?php
-
-        $script = '<script src="js/infoescape.js"></script>';
-        $script .= '<script src="js/json.js" defer></script>';
+$script = '<script src="js/infoescape.js"></script>';
+$script .= '<script src="js/json.js" defer></script>';
 
