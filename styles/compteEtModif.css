@@ -14,7 +14,9 @@ body {
     background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+
 }
 
 .background-fond {
@@ -179,7 +181,7 @@ body {
 
 .boite-email {
     background: #e9dcc5;
-    padding: 12px 60px;
+    padding: 12px 150px;
     border-radius: 10px;
     font-size: 0.9rem;
     min-width: 300px;
@@ -217,7 +219,7 @@ body {
         /* On resserre un peu */
     }
 
-    p{
+    p {
         font-size: 16px;
     }
 }
