@@ -88,6 +88,9 @@ class routeur
                             else
                                 throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
+                        case "panier":
+                            $this->ctlPages->pagePanier($message = "");
+                            break;
                         case "ajouterAvis":
                             if (isset($_GET['idEscapeGame'])) {
                                 if (isset($_POST['note'], $_POST['commentaire']) && $_POST['note'] !== "")
@@ -99,7 +102,7 @@ class routeur
                                         $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que de choisir une note sur 5</span>");
                                 }
                             } else
-                                throw new Exception("<span>Aucun escaape game selectionné</span>");
+                                throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
                         case "propos":
                             $this->ctlPages->pagePropos();
@@ -203,8 +206,7 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/
-            else {
+            /********** Pages non connectés **********/ else {
 
                 if (isset($_GET["action"])) {
 
@@ -220,12 +222,12 @@ class routeur
                             $this->ctlPages->pageLegal();
                             break;
 
-                        case "confirmation":
-                            $this->ctlPages->pageConfirmation();
-                            break;
+                        // case "confirmation":
+                        //     $this->ctlPages->pageConfirmation();
+                        //     break;
 
                         case "panier":
-                            $this->ctlPages->pagePanier($message = "");
+                            $this->ctlPages->pageConnexion($message = "");
                             break;
 
                         case "pageConnexion":
