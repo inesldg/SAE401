@@ -91,8 +91,6 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
                         <?= $escapeGame[0]['description'] ?>
                     </div>
                 </div>
-
-                <div class="separateur"></div>
         </section>
 
         <section class="block_avis carte-noire">
@@ -140,69 +138,74 @@ $style = '<link rel="stylesheet" href="styles/infoEscape.css">';
 
     <div class="colonne-droite">
         <section class="carte-noire">
-            <h2 style="font-size: 28px;">
-                <?= $escapeGame[0]['nom'] ?>
-            </h2>
-
-            <p class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</p>
+            <div class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</div>
 
             <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
                 l'aventure</p>
 
-            <div class="calendrier-boite">
-                <div class="calendrier-header">
-                    <span id="prevMois" class="fleche-cal">❮</span>
-                    <strong id="moisAnnee"></strong>
-                    <span id="nextMois" class="fleche-cal">❯</span>
+
+            <div class="calendrier-container-flex">
+
+                <div class="calendrier-boite">
+                    <div class="calendrier-header">
+                        <span id="prevMois" class="fleche-cal">❮</span>
+                        <strong id="moisAnnee"></strong>
+                        <span id="nextMois" class="fleche-cal">❯</span>
+                    </div>
+                    <div class="calendrier-jours">
+                        <span id="lundi">Lun</span><span id="mardi">Mar</span><span id="mercredi">Mer</span><span
+                            id="jeudi">Jeu</span><span id="vendredi">Ven</span><span id="samedi">Sam</span><span
+                            id="dimanche">Dim</span>
+                    </div>
+                    <div id="calendrier-grille" class="calendrier-grille">
+                    </div>
                 </div>
-                <div class="calendrier-jours">
-                    <span id="lundi">Lun</span><span id="mardi">Mar</span><span id="mercredi">Mer</span><span
-                        id="jeudi">Jeu</span><span id="vendredi">Ven</span><span id="samedi">Sam</span><span
-                        id="dimanche">Dim</span>
-                </div>
-                <div id="calendrier-grille" class="calendrier-grille">
+
+
+                <div class="selection-options-mobile">
+
+                    <div class="selecteur-ligne">
+                        <span id="horaireGames">Horaire</span>
+                        <select class="choix-horaire">
+                            <option value="09:30">09 : 30</option>
+                            <option value="10:30">10 : 30</option>
+                            <option value="11:30">11 : 30</option>
+                            <option value="12:30">12 : 30</option>
+                            <option value="13:30">13 : 30</option>
+                            <option value="14:30">14 : 30</option>
+                            <option value="15:30">15 : 30</option>
+                            <option value="16:30" selected>16 : 30</option>
+                        </select>
+                    </div>
+
+                    <div class="selecteur-ligne">
+                        <span id="participGames">Participants</span>
+                        <select class="choix-horaire">
+                            <option value="1">1 personne</option>
+                            <option value="2">2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5 personnes</option>
+                            <option value="6" selected>6 personnes</option>
+                            <option value="7">7 personnes</option>
+                            <option value="8">8 personnes</option>
+                            <option value="9">9 personnes</option>
+                            <option value="10">10 personnes</option>
+                            <option value="11">11 personnes</option>
+                            <option value="12">12 personnes</option>
+                            <option value="13">13 personnes</option>
+                            <option value="14">14 personnes</option>
+                            <option value="15">15 personnes</option>
+                            <option value="16">16 personnes</option>
+                            <option value="17">17 personnes</option>
+                            <option value="18">18 personnes</option>
+                            <option value="19">19 personnes</option>
+                            <option value="20">20 personnes</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
-            <div class="selecteur-ligne">
-                <span id="horaireGames">Horaire</span>
-                <select class="choix-horaire">
-                    <option value="09:30">09 : 30</option>
-                    <option value="10:30">10 : 30</option>
-                    <option value="11:30">11 : 30</option>
-                    <option value="12:30">12 : 30</option>
-                    <option value="13:30">13 : 30</option>
-                    <option value="14:30">14 : 30</option>
-                    <option value="15:30">15 : 30</option>
-                    <option value="16:30" selected>16 : 30</option>
-                </select>
-            </div>
-
-            <div class="selecteur-ligne">
-                <span id="participGames">Participants</span>
-                <select class="choix-horaire">
-                    <option value="1">1 personne</option>
-                    <option value="2">2 personnes</option>
-                    <option value="3">3 personnes</option>
-                    <option value="4">4 personnes</option>
-                    <option value="5">5 personnes</option>
-                    <option value="6" selected>6 personnes</option>
-                    <option value="7">7 personnes</option>
-                    <option value="8">8 personnes</option>
-                    <option value="9">9 personnes</option>
-                    <option value="10">10 personnes</option>
-                    <option value="11">11 personnes</option>
-                    <option value="12">12 personnes</option>
-                    <option value="13">13 personnes</option>
-                    <option value="14">14 personnes</option>
-                    <option value="15">15 personnes</option>
-                    <option value="16">16 personnes</option>
-                    <option value="17">17 personnes</option>
-                    <option value="18">18 personnes</option>
-                    <option value="19">19 personnes</option>
-                    <option value="20">20 personnes</option>
-                </select>
-            </div>
 
             <div class="total-ligne">
                 <span id="totalGames">Total</span>
