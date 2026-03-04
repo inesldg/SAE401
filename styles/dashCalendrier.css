@@ -264,13 +264,23 @@ h1 {
 /* ===== CRENEAU RESERVE ===== */
 
 .creneau.reserve {
-    background: linear-gradient(90deg, #2b1e0f, #3b2a16);
-    border: 1px solid #c5a059;
-    color: #f2f2f2;
+    background: rgb(197, 160, 89, 0.2);
+    border: 1px solid var(--gold-clair);
+    color: var(--blanc-casse);
 }
 
 .creneau.reserve strong {
     color: #c5a059;
+}
+
+.supp{
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 75px;
+    display: flex;
+    align-items: center; /* alignement vertical */
+    gap: 10px;            /* espace entre texte et svg */
+    cursor: pointer;
 }
 
 /* ===== CONTENU INTERNE ===== */
