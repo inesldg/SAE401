@@ -68,8 +68,7 @@ main {
     width: 100%;
     height: auto;
     pointer-events: none;
-    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25))
-        drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
 }
 
 /* Contenu au-dessus du SVG */
@@ -183,11 +182,21 @@ main {
     color: #E6B856;
 }
 
+.erreur-connexion {
+    font-family: var(--texte);
+    font-size: bold;
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
 /* Animation de rotation lente pour le SVG central */
 @keyframes rotationLente {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
+
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
@@ -198,6 +207,7 @@ main {
         opacity: 0.6;
         transform: scale(1);
     }
+
     100% {
         opacity: 0.8;
         transform: scale(1.02);
@@ -209,6 +219,7 @@ main {
         opacity: 0.6;
         transform: rotate(180deg) scale(1);
     }
+
     100% {
         opacity: 0.8;
         transform: rotate(180deg) scale(1.02);
