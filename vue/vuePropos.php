@@ -44,7 +44,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
 <section class="section-monde">
     <h2 class="texte-doré" id="mondePropos">Le monde est votre salle d'évasion</h2>
-    <div class="conteneur-cartes">
+    <div class="conteneur-cartes conteneur-cartes--propos">
         <div class="carte">
             <h3 class="texte-doré" id="libertePropos">Liberté Totale</h3>
             <p id="libertéexplicationPropos">Respirez, explorez et utilisez l'architecture réelle pour progresser. Le
@@ -55,7 +55,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
             <p id="parcoursexplicationPropos">Du thriller d'espionnage à la quête historique, chaque quartier cache un
                 secret.</p>
         </div>
-        <div class="carte">
+        <div class="carte carte--centree">
             <h3 class="texte-doré" id="realitéaugPropos">Réalité Augmentée</h3>
             <p id="realitePropos">Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à
                 l'œil nu.</p>
@@ -64,6 +64,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
     <img src="images/paysage_transparent.png" class="image-separation" alt="Décoration forêt" loading="lazy">
 </section>
+
 
 <section class="section-gardiens">
     <h2 class="texte-doré" id="gardiensPropos">Les gardiens du jeu</h2>
