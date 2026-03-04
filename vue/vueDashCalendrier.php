@@ -113,7 +113,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
             <h2>Créneaux horaires</h2>
 
             <?php
-            $creneaux = ["09:00:00", "11:00:00", "13:00:00", "15:00:00", "17:00:00"];
+            $creneaux = ["09:30:00", "10:30:00", "11:30:00", "12:30:00", "13:30:00", "14:30:00", "15:30:00", "16:30:00"];
 
             foreach ($creneaux as $heure):
 
