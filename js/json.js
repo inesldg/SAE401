@@ -910,7 +910,7 @@ let trad = {
         "en": "Please fill in your name.",
     },
 
-// ******************************** vue Tout Les Avis + Ajout Avis *************************************************
+    // ******************************** vue Tout Les Avis + Ajout Avis *************************************************
     "#txt-ajt-avis": {
         "fr": "Ajouter un avis",
         "en": "Add a review",
@@ -1016,3 +1016,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+// animation scroll
+window.onload = () => {
+    const observerOptions = {
+        threshold: 0.35 // Déclenche quand 15% de l'élément est visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                // Optionnel : on arrête d'observer une fois l'animation faite
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    // On récupère tous les éléments à animer
+    const items = document.querySelectorAll('.reveal');
+    items.forEach(item => {
+        observer.observe(item);
+    });
+};
