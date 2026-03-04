@@ -72,14 +72,17 @@ class routeur
                         case "game":
                             $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "");
                             break;
+                        case "panier":
+                            $this->ctlPages->pagePanier($message = "");
+                            break;
                         case "ajouterAvis":
                             if (isset($_GET['idEscapeGame'])) {
                                 if (isset($_POST['note'], $_POST['commentaire']) && $_POST['note'] !== "")
                                     $this->ctlEscapeGames->ajouterAvis($_POST['note'], $_POST['commentaire'], $id[0]['id_utilisateur'], $_GET['idEscapeGame'], $message = "<span>Avis ajouté avec succès !</span>");
                                 else
-                                    $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que de choisir une note sur 5</span>");
+                                    $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que choisir une note sur 5</span>");
                             } else
-                                throw new Exception("<span>Aucun escaape game selectionné</span>");
+                                throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
                         case "propos":
                             $this->ctlPages->pagePropos();
@@ -183,8 +186,7 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/
-            else {
+            /********** Pages non connectés **********/ else {
 
                 if (isset($_GET["action"])) {
 
@@ -200,12 +202,12 @@ class routeur
                             $this->ctlPages->pageLegal();
                             break;
 
-                        case "confirmation":
-                            $this->ctlPages->pageConfirmation();
-                            break;
+                        // case "confirmation":
+                        //     $this->ctlPages->pageConfirmation();
+                        //     break;
 
                         case "panier":
-                            $this->ctlPages->pagePanier($message = "");
+                            $this->ctlPages->pageConnexion($message = "");
                             break;
 
                         case "pageConnexion":
