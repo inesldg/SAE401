@@ -400,7 +400,7 @@ let trad = {
         "fr": "joueurs",
         "en": "players",
     },
-    
+
 
 
     "#detailGames": {
@@ -908,7 +908,14 @@ let trad = {
     "#inputnom_error": {
         "fr": "Veuillez renseigner votre nom.",
         "en": "Please fill in your name.",
+    },
+
+// ******************************** vue Tout Les Avis + Ajout Avis *************************************************
+    "#txt-ajt-avis": {
+        "fr": "Ajouter un avis",
+        "en": "Add a review",
     }
+
 };
 
 
