@@ -124,9 +124,6 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     <span>Filtrer</span>
                 </button>
 
-                <aside class="filtres-tri">
-                </aside>
-
             </form>
         </aside>
         <!-- COLONNE ESCAPES -->
