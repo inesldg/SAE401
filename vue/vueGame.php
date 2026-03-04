@@ -179,7 +179,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
                     <div class="selecteur-ligne">
                         <span id="horaireGames">Horaire</span>
-                        <select class="choix-horaire">
+                        <select class="choix-horaire" id="DemandeHoraireGame">
                             <option value="09:30">09 : 30</option>
                             <option value="10:30">10 : 30</option>
                             <option value="11:30">11 : 30</option>
@@ -193,7 +193,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
             <div class="selecteur-ligne">
                 <span id="participGames">Participants</span>
-                <select class="choix-horaire">
+                <select class="choix-horaire" id="nbrParticipantsGame">
                     <option value="1">1 personne</option>
                     <option value="2">2 personnes</option>
                     <option value="3">3 personnes</option>
@@ -222,7 +222,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 <span style="color: white;">220.00 €</span>
             </div>
 
-            <a href="index.php?action=panier" class="bouton-reserver" id="reserverGames">Réserver maintenant</a>
+            <a href="index.php?action=panier" class="bouton-reserver" id="boutonReserverGames reserverGames">Réserver maintenant</a>
         </section>
     </div>
 
