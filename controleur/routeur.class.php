@@ -61,7 +61,7 @@ class routeur
                             $this->ctlCompte->deconnexion();
                             break;
                         case "accueil":
-                            $this->ctlAccueil->afficherAccueil($acces);
+                            $this->ctlAccueil->afficherAccueil();
                             break;
                         case "legal":
                             $this->ctlPages->pageLegal();
@@ -70,16 +70,39 @@ class routeur
                             $this->ctlEscapeGames->pageEscapeGames();
                             break;
                         case "game":
-                            $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "");
+                            $message = $_SESSION['flash_avis'] ?? "";
+                            if (isset($_SESSION['flash_avis'])) {
+                                unset($_SESSION['flash_avis']);
+                            }
+                            $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message);
+                            break;
+                        case "pageVoirToutLesAvis":
+                            if (isset($_GET['idEscapeGame']))
+                                $this->ctlEscapeGames->pageVoirToutLesAvis($_GET['idEscapeGame'], (function () {
+                                    $message = $_SESSION['flash_avis'] ?? "";
+                                    if (isset($_SESSION['flash_avis'])) {
+                                        unset($_SESSION['flash_avis']);
+                                    }
+                                    return $message;
+                                })());
+                            else
+                                throw new Exception("<span>Aucun escape game selectionné</span>");
+                            break;
+                        case "panier":
+                            $this->ctlPages->pagePanier($message = "");
                             break;
                         case "ajouterAvis":
                             if (isset($_GET['idEscapeGame'])) {
                                 if (isset($_POST['note'], $_POST['commentaire']) && $_POST['note'] !== "")
-                                    $this->ctlEscapeGames->ajouterAvis($_POST['note'], $_POST['commentaire'], $id[0]['id_utilisateur'], $_GET['idEscapeGame'], $message = "<span>Avis ajouté avec succès !</span>");
-                                else
-                                    $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que de choisir une note sur 5</span>");
+                                    $this->ctlEscapeGames->ajouterAvis($_POST['note'], $_POST['commentaire'], $id[0]['id_utilisateur'], $_GET['idEscapeGame'], $message = "<span>Avis ajouté avec succès !</span>", $_POST['retour'] ?? "game");
+                                else {
+                                    if (isset($_POST['retour']) && $_POST['retour'] === "all")
+                                        $this->ctlEscapeGames->pageVoirToutLesAvis($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que de choisir une note sur 5</span>");
+                                    else
+                                        $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message = "<span>Veuillez écrire un commentaire ainsi que de choisir une note sur 5</span>");
+                                }
                             } else
-                                throw new Exception("<span>Aucun escaape game selectionné</span>");
+                                throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
                         case "propos":
                             $this->ctlPages->pagePropos();
@@ -179,12 +202,11 @@ class routeur
                             throw new Exception("Action non valide");
                     }
                 } else
-                    $this->ctlAccueil->afficherAccueil("0");
+                    $this->ctlAccueil->afficherAccueil();
             }
 
 
-            /********** Pages non connectés **********/
-            else {
+            /********** Pages non connectés **********/ else {
 
                 if (isset($_GET["action"])) {
 
@@ -200,16 +222,19 @@ class routeur
                             $this->ctlPages->pageLegal();
                             break;
 
-                        case "confirmation":
-                            $this->ctlPages->pageConfirmation();
-                            break;
+                        // case "confirmation":
+                        //     $this->ctlPages->pageConfirmation();
+                        //     break;
 
                         case "panier":
-                            $this->ctlPages->pagePanier($message = "");
+                            $this->ctlPages->pageConnexion($message = "");
                             break;
 
                         case "pageConnexion":
                             $this->ctlPages->pageConnexion($message = "");
+                            break;
+                        case "ajouterAvis":
+                            $this->ctlPages->pageConnexion($message = "<span>Veuillez vous connecter pour ajouter un avis</span>");
                             break;
                         case "inscription":
                             if (isset($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['mdpConfirm'])) {
@@ -235,6 +260,12 @@ class routeur
                             break;
                         case "game":
                             $this->ctlEscapeGames->pageGame($_GET['idEscapeGame']);
+                            break;
+                        case "pageVoirToutLesAvis":
+                            if (isset($_GET['idEscapeGame']))
+                                $this->ctlEscapeGames->pageVoirToutLesAvis($_GET['idEscapeGame']);
+                            else
+                                throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
 
                         default:

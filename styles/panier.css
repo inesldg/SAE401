@@ -248,3 +248,196 @@ input:focus {
     font-size: 1.1rem;
     cursor: pointer;
 }
+
+/* --- RESPONSIVE TABLETTE (768px) --- */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        height: auto !important;
+        overflow-x: hidden;
+        /* Évite le scroll horizontal bizarre */
+    }
+
+    .conteneur-principal {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 0 10px !important;
+    }
+
+    /* 2. CHAQUE SECTION PREND TOUTE LA LARGEUR */
+    .section-panier,
+    .colonne-laterale {
+        width: 95% !important;
+        flex: none !important;
+    }
+
+    /* 3. LES BLOCS À L'INTÉRIEUR DE LA COLONNE LATERALE */
+    /* Cela gère le bloc "Code Promo" et le bloc "Infos/Paiement" */
+    .colonne-laterale {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .panier {
+        padding: 20px 10px !important;
+        background-attachment: scroll !important;
+        /* Pour que le fond suive le scroll */
+        background-position: center top !important;
+    }
+
+    /* 5. AJUSTEMENT DES CARTES */
+    .carte {
+        padding: 25px 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. On ajuste le Header (H1 / Titres) */
+    .section-panier h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+
+    /* 3. On centre le conteneur principal */
+    .conteneur-principal {
+        width: 100% !important;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-panier,
+    .colonne-laterale {
+        flex: none;
+        width: 100%;
+    }
+
+    .prix-unitaire {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .indication {
+        font-size: 16px;
+    }
+
+    .indication2 {
+        font-size: 16px;
+    }
+
+    svg {
+        max-width: 350px;
+        text-align: center;
+    }
+
+}
+
+/* --- RESPONSIVE MOBILE (425px) --- */
+@media screen and (max-width: 425px) {
+
+
+    .panier {
+        padding: 10px 10px !important;
+    }
+
+    h1 {
+        font-size: 1.4rem !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2;
+    }
+
+    /* On s'assure que les cartes ne collent pas aux bords */
+    .carte {
+        padding: 20px 15px !important;
+        border-radius: 15px !important;
+    }
+
+    svg {
+        max-width: 350px;
+        text-align: center;
+    }
+
+    /* 1. Ajustement des textes */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    /* 2. Produit : on passe en vertical pour gagner de la place */
+    .produit {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .image-remplacement {
+        width: 80px;
+        height: 80px;
+    }
+
+    .infos-produit {
+        max-width: 100%;
+    }
+
+    .ligne-prix {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .prix-unitaire {
+        margin-left: 0;
+        margin-top: 10px;
+        display: block;
+    }
+
+    /* 3. Formulaires : on empile Labels et Inputs */
+    .ligne-formulaire {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .ligne-formulaire label {
+        width: 100%;
+    }
+
+    .grille-nom-prenom {
+        grid-template-columns: 1fr;
+        /* Prénom et Nom l'un sous l'autre */
+    }
+
+    .groupe-saisie {
+        flex-direction: column;
+    }
+
+    .bouton-or {
+        width: 100%;
+    }
+
+    /* 4. Carte Bleue : on réduit la taille des polices */
+    .numero-carte {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .carte-bleue {
+        padding: 15px;
+    }
+
+    .bouton-valider {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}

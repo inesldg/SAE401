@@ -69,16 +69,44 @@ class ctlEscapeGames
             throw new Exception("L'escape Game demandé n'existe pas");
     }
 
-    public function ajouterAvis($note, $avis, $id, $idEscape, $message){
+    public function pageVoirToutLesAvis($idEscapeGame, $message = "")
+    {
+        $game = $this->escapeGames->afficherGame($idEscapeGame);
+        $avis = $this->escapeGames->afficherAvis($idEscapeGame);
+
+        if ($game != 0) {
+            $vue = new vue("VoirToutLesAvis");
+            $vue->afficher(array("escapeGame" => $game, "avis" => $avis, "message" => $message));
+        } else {
+            throw new Exception("L'escape Game demandé n'existe pas");
+        }
+    }
+
+    public function ajouterAvis($note, $avis, $id, $idEscape, $message, $retour = "game"){
+        $note = (int) $note;
+        $avis = trim((string) $avis);
+
+        if ($note < 0 || $note > 5 || $avis === "") {
+            $messageErreur = "<span>Veuillez écrire un commentaire ainsi que choisir une note valide sur 5</span>";
+            if ($retour === "all") {
+                $this->pageVoirToutLesAvis($idEscape, $messageErreur);
+            } else {
+                $this->pageGame($idEscape, $messageErreur);
+            }
+            return;
+        }
+
         $date = date("Y-m-d");
-
         $this->escapeGames->ajouterAvis($note, $avis, $date, $id, $idEscape);
+        $_SESSION['flash_avis'] = $message;
 
-        $game = $this->escapeGames->afficherGame($idEscape);
-        $avis = $this->escapeGames->afficherAvis($idEscape);
-
-        $vue = new vue("Game"); // Instancie la vue appropriée
-        $vue->afficher(array("escapeGame" => $game, "avis" => $avis, "message" => $message));
+        if ($retour === "all") {
+            header("Location: index.php?action=pageVoirToutLesAvis&idEscapeGame=" . urlencode((string) $idEscape));
+            exit;
+        } else {
+            header("Location: index.php?action=game&idEscapeGame=" . urlencode((string) $idEscape));
+            exit;
+        }
     }
 
 }

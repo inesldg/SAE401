@@ -14,7 +14,6 @@ $col_desc = "description_" . $lang;
 // Style
 $style = '<link rel="stylesheet" href="styles/connexion.css">';
 ?>
-<h1><?= $message ?></h1>
 
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
@@ -50,7 +49,8 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
             <button type="submit" name="connexion" class="bouton-connexion" id="seconnecterConnexion">SE
                 CONNECTER</button>
 
-            <span>
+            <!-- Message d'erreur -->
+            <span class="erreur-connexion">
                 <?= $message ?>
             </span>
 

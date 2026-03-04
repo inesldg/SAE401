@@ -7,6 +7,10 @@ const nextBtn = document.getElementById('nextMois'); // bouton mois suivant
 // Date actuelle utilisée pour afficher le calendrier
 let dateActuelle = new Date();
 
+let jourDemande = null;
+let horaireDemande = null;
+let nbrPersonnes = null;
+
 // Fonction principale qui génère le calendrier
 function genererCalendrier() {
 
@@ -59,6 +63,11 @@ function genererCalendrier() {
         div.classList.add('jour-cal'); // classe principale pour le style
         div.innerText = jour; // affiche le numéro du jour
 
+        //-----------------------------------------------
+        div.dataset.jour = jour; // ajoute le numéro du jour dans un dataset pour pouvoir le récupérer
+        // console.log(div.dataset.jour);
+        //-----------------------------------------------
+
         // Date précise du jour dans la boucle
         const dateDuJourBoucle = new Date(annee, mois, jour);
 
@@ -94,6 +103,11 @@ function genererCalendrier() {
 
                 // On ajoute la sélection sur le jour cliqué
                 div.classList.add('selectionne');
+                
+                //-----------------------------------------------
+                jourDemande = div.dataset.jour; // ajoute la valeur du jour cliqué dans la variable
+                // console.log(jourDemande);
+                //-----------------------------------------------
             };
         }
 
