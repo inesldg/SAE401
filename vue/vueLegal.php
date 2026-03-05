@@ -16,7 +16,7 @@ $style = '<link rel="stylesheet" href="styles/legal.css">';
 ?>
 
 <section class="page-legal">
-    <div class="page-legal__conteneur">
+    <div class="page-legal__conteneur reveal reveal-up">
         <article class="page-legal__bloc" id="mentionsLegales">
             <h2 class="page-legal__titre" id="mentionsLegalesLegal">Mentions légales</h2>
             <div class="page-legal__texte" id="ml1">Conformément aux dispositions de l’article 6 de la Loi n° 2004-575
@@ -41,7 +41,7 @@ $style = '<link rel="stylesheet" href="styles/legal.css">';
                 ne saurait être engagée quant au contenu ou aux pratiques de ces sites externes.</div>
         </article>
 
-        <article class="page-legal__bloc" id="politique">
+        <article class="page-legal__bloc reveal reveal-up" id="politique">
             <h2 class="page-legal__titre" id="politiqueLegal">Politique de confidentialité</h2>
             <div class="page-legal__texte" id="pc1">La protection de votre vie privée est une priorité absolue pour
                 notre établissement. Cette politique de confidentialité détaille la manière dont nous collectons et
@@ -60,7 +60,7 @@ $style = '<link rel="stylesheet" href="styles/legal.css">';
                 ou supprimées de nos bases actives.</div>
         </article>
 
-        <article class="page-legal__bloc" id="donneesPerso">
+        <article class="page-legal__bloc reveal reveal-up" id="donneesPerso">
             <h2 class="page-legal__titre" id="donneesLegal">Données personnelles</h2>
             <div class="page-legal__texte" id="dp1">En conformité avec le Règlement Général sur la Protection des
                 Données (RGPD) et la loi "Informatique et Libertés", vous disposez d'un contrôle total sur vos

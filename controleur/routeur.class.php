@@ -110,6 +110,9 @@ class routeur
                         case "confirmation":
                             $this->ctlPages->pageConfirmation();
                             break;
+                        case "contact":
+                            $this->ctlPages->pageContact();
+                            break;
                         case "compte":
                             $this->ctlCompte->infosCompte($message = "", $mail);
                             break;
@@ -219,6 +222,10 @@ class routeur
                             break;
                         case "propos":
                             $this->ctlPages->pagePropos();
+                            break;
+
+                        case "contact":
+                            $this->ctlPages->pageContact();
                             break;
 
                         case "legal":

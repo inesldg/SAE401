@@ -97,3 +97,38 @@ html {
     scrollbar-color: #c5a059 #101a23;
     /* Or et Sombre */
 }
+
+/* --- animations.css --- */
+
+/* État initial : caché et décalé */
+.reveal {
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal-up {
+    transform: translateY(50px);
+}
+
+.reveal-down {
+    transform: translateY(-50px);
+}
+
+/* État final : visible et à sa place (activé par JS) */
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+/* Optionnel : Delays pour l'ordre d'apparition (ex: cartes côte à côte) */
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
+}

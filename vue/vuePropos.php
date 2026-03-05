@@ -26,13 +26,13 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
 <section class="section-origine">
     <div class="contenu-origine">
-        <h2 class="texte-doré" id="explicationPropos">L'origine du nom</h2>
-        <div id="explication2Propos">
+        <h2 class="texte-doré reveal reveal-up" id="explicationPropos">L'origine du nom</h2>
+        <div class="reveal reveal-up" id="explication2Propos">
             Pourquoi s'enfermer entre quatre murs quand le plus grand des mystères se trouve sous vos yeux ?
             <strong>ELIFE</strong> est né d'une vision : briser les frontières de l'escape game
             traditionnel.
         </div>
-        <div id="explicationsuitePropos">
+        <div class="reveal reveal-up" id="explicationsuitePropos">
             Le nom évoque l'alliance entre l'exploration urbaine et l'adrénaline de l'enquête. Nous avons voulu
             sortir
             le jeu des sous-sols pour transformer les parcs et les monuments en mécanismes géants.
@@ -43,19 +43,19 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 </section>
 
 <section class="section-monde">
-    <h2 class="texte-doré" id="mondePropos">Le monde est votre salle d'évasion</h2>
+    <h2 class="texte-doré reveal reveal-up" id="mondePropos">Le monde est votre salle d'évasion</h2>
     <div class="conteneur-cartes conteneur-cartes--propos">
-        <div class="carte">
+        <div class="carte reveal reveal-up">
             <h3 class="texte-doré" id="libertePropos">Liberté Totale</h3>
             <p id="libertéexplicationPropos">Respirez, explorez et utilisez l'architecture réelle pour progresser. Le
                 ciel est votre plafond.</p>
         </div>
-        <div class="carte">
+        <div class="carte reveal reveal-up">
             <h3 class="texte-doré" id="parcoursPropos">Parcours Thématiques</h3>
             <p id="parcoursexplicationPropos">Du thriller d'espionnage à la quête historique, chaque quartier cache un
                 secret.</p>
         </div>
-        <div class="carte carte--centree">
+        <div class="carte carte--centree reveal reveal-up">
             <h3 class="texte-doré" id="realitéaugPropos">Réalité Augmentée</h3>
             <p id="realitePropos">Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à
                 l'œil nu.</p>
@@ -67,7 +67,7 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
 
 <section class="section-gardiens">
-    <h2 class="texte-doré" id="gardiensPropos">Les gardiens du jeu</h2>
+    <h2 class="texte-doré reveal reveal-up" id="gardiensPropos">Les gardiens du jeu</h2>
     <div class="grille-gardiens">
         <div class="bloc-gardien">
             <div class="photo-gardien">

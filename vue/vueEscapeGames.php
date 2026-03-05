@@ -21,7 +21,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
         <span class="titre-or" id="titreorEscapGam">mission immersive</span>
         <span id="txtMaintenant"> dès maintenant</span>
     </h1>
-    <p id="choixEscapGam">Choisissez votre univers !</p>
+    <p class="reveal reveal-up" id="choixEscapGam">Choisissez votre univers !</p>
 </section>
 
 
@@ -31,14 +31,14 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
     <div class="escapes-container">
 
         <button id="btn-toggle-filtres" class="mobile-filter-trigger">
-            <span>Afficher les Filtres</span>
+            <span class="reveal reveal-up">Afficher les Filtres</span>
         </button>
 
         <!-- COLONNE FILTRE -->
-        <aside class="filtres-tri">
+        <aside class="filtres-tri reveal reveal-up">
             <form class="filtres-escape__form" method="get" action="index.php">
                 <input type="hidden" name="action" value="escapeGames">
-<!--  JSP si on garde
+                <!--  JSP si on garde
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePrix">Prix max (€ / pers)</legend>
                     <label>
@@ -55,12 +55,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePers">Nombre minimum de personnes</legend>
-                    <input
-                        type="number"
-                        name="pers_min"
-                        min="1"
-                        max="20"
-                        placeholder="Ex: 4"
+                    <input type="number" name="pers_min" min="1" max="20" placeholder="Ex: 4"
                         value="<?= isset($filtres['pers_min']) ? htmlspecialchars($filtres['pers_min']) : '' ?>">
                 </fieldset>
 
@@ -109,11 +104,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     <legend id="legendeDuree">Durée max du jeu (minutes)</legend>
                     <label>
                         <span id="labelDureeMax">Maximum</span>
-                        <input
-                            type="number"
-                            name="duree_max"
-                            min="0"
-                            placeholder="120"
+                        <input type="number" name="duree_max" min="0" placeholder="120"
                             value="<?= isset($filtres['duree_max']) ? htmlspecialchars($filtres['duree_max']) : '' ?>">
                     </label>
                 </fieldset>
@@ -127,7 +118,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
             </form>
         </aside>
         <!-- COLONNE ESCAPES -->
-        <div class="escapes-cartes">
+        <div class="escapes-cartes reveal reveal-up">
 
             <?php foreach ($escapeGames as $game): ?>
                 <article class="accueil-escape-card">

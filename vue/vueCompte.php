@@ -14,10 +14,10 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
 
 <div class="background-fond">
 
-    <div class="carte">
-        <div class="carte-couleur">
-            <h1 class="carte-couleur__titre" id="titreModifCompte">Modification de vos informations</h1>
-        </div>
+        <div class="carte">
+            <div class="carte-couleur">
+                <h1 class="carte-couleur__titre reveal reveal-up" id="titreModifCompte">Modification de vos informations</h1>
+            </div>
 
         <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>" class="carte-contenu">
 

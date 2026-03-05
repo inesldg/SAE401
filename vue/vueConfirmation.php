@@ -21,12 +21,12 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
 <main class="container">
 
-    <div class="titre">
+    <div class="titre reveal reveal-up">
         <span class="goldText" id="merciGold">Merci</span>
         <span id="txtReservation">pour votre réservation !</span>
     </div>
 
-    <div class="message-principal" id="accrocheConf">
+    <div class="message-principal reveal reveal-up" id="accrocheConf">
         Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace.
     </div>
 
@@ -37,7 +37,7 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
     <div class="separation"></div>
 
-    <div class="footer-content">
+    <div class="footer-content reveal reveal-up">
         <img src="images/bouton_home.svg" alt="Logo" class="logo-svg">
 
         <div class="liens-footer">

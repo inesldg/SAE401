@@ -48,11 +48,11 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section accueil-experience">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre">
+        <h2 class="accueil-titre reveal reveal-up">
             <span id="titreAcc_h2">L'EXPÉRIENCE</span>
             <span class="accueil-titre--or" id="elife">ELIFE</span>
         </h2>
-        <p class="accueil-experience__texte" id="textAcc">La Clé ELIFE vous propose des escape games d'exception. Chaque salle est
+        <p class="accueil-experience__texte reveal reveal-up" id="textAcc">La Clé ELIFE vous propose des escape games d'exception. Chaque salle est
             conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des
             scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !</p>
     </div>
@@ -60,11 +60,11 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
 <section class="accueil-section2 accueil-escapes">
     <div class="accueil-conteneur">
-        <h2 class="accueil-titre">
+        <h2 class="accueil-titre reveal reveal-up">
             <span id="nos">Nos derniers</span>
             <span class="accueil-titre--or" id="suitetitreh2">ESCAPES</span>
         </h2>
-        <div class="accueil-escapes__grille">
+        <div class="accueil-escapes__grille reveal delay-1">
 
 
             <!-- ------------------------------ -->

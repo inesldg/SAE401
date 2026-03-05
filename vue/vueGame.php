@@ -31,7 +31,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
 <!-- <a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a> -->
 
-<section class="hero-section"<?= $bannerImageUrl ? ' style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--fond-sombre)), url(\'' . htmlspecialchars($bannerImageUrl) . '\'); background-size: cover; background-position: center;"' : '' ?>>
+<section class="hero-section" <?= $bannerImageUrl ? ' style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--fond-sombre)), url(\'' . htmlspecialchars($bannerImageUrl) . '\'); background-size: cover; background-position: center;"' : '' ?>>
     <a href="index.php?action=escapeGames" class="btn-retour btn-retour-absolu">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,7 +49,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
 <div class="conteneur-reservation">
 
-    <div class="colonne-gauche">
+    <div class="colonne-gauche reveal reveal-up">
         <section class="block_description carte-noire">
             <h2 class="titre-or">
                 <?= $escapeGame[0]['nom'] ?>
@@ -61,7 +61,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
             </div>
 
 
-            <div class="icones-detail">
+            <div class="icones-detail ">
                 <div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                         stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -102,7 +102,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 </div>
         </section>
 
-        <section class="block_avis carte-noire">
+        <section class="block_avis carte-noire reveal reveal-up">
             <h2 style="font-size: 24px;" id="nbAvisGames">Avis</h2>
             <div class="grille-avis">
                 <?php
@@ -140,18 +140,16 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 ?>
             </div>
             <div class="bouton-avis-wrap" style="text-align: center;">
-                <a class="bouton-avis" id="voirAvisGames" href="index.php?action=pageVoirToutLesAvis&idEscapeGame=<?= $escapeGame[0]['id_escape'] ?>">Voir tous les avis</a>
+                <a class="bouton-avis" id="voirAvisGames"
+                    href="index.php?action=pageVoirToutLesAvis&idEscapeGame=<?= $escapeGame[0]['id_escape'] ?>">Voir
+                    tous les avis</a>
             </div>
         </section>
     </div>
 
-    <div class="colonne-droite">
+    <div class="colonne-droite reveal reveal-up">
         <section class="carte-noire">
-            <h2 style="font-size: 28px;">
-                <?= $escapeGame[0]['nom'] ?>
-            </h2>
-
-            <p class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</p>
+            <div class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</div>
 
             <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
                 l'aventure</p>
@@ -227,10 +225,11 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     <span style="color: white;">220.00 €</span>
                 </div>
 
-                <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="" required>
+                        <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="" required>
                 <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
 
-                <button type="submit" class="bouton-reserver" id="boutonReserverGames reserverGames">Réserver maintenant</button>
+                <button type="submit" class="bouton-reserver"
+                        id="boutonReserverGames reserverGames">Réserver maintenant</button>
             </form>
         </section>
     </div>

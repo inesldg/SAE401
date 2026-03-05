@@ -22,7 +22,7 @@ $style = '<link rel="stylesheet" href="styles/erreur.css">';
 <span id="erreurErr" aria-hidden="true">Une erreur est survenue</span>
 
 <section class="page-erreur" aria-labelledby="titre-erreur">
-    <div class="page-erreur__contenu">
+    <div class="page-erreur__contenu reveal reveal-up">
         <h1 id="titre-erreur" class="page-erreur__titre">
             Une erreur est survenue
         </h1>

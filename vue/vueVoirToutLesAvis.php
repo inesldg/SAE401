@@ -6,7 +6,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
 <div class="avis-page-wrapper">
 <div class="avis-page">
     <div class="avis-filtre">
-        <div class="avis-titre">Avis</div>
+        <div class="avis-titre reveal reveal-up">Avis</div>
         <div class="avis-actions">
             <div class="avis-pill avis-pill-filtre" data-filter-note="1"><span class="dore">★</span><span class="grise">★★★★</span></div>
             <div class="avis-pill avis-pill-filtre" data-filter-note="2"><span class="dore">★★</span><span class="grise">★★★</span></div>

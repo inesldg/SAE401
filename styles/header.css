@@ -4,7 +4,15 @@ body>header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    overflow: hidden;
+    /* On enlève l'overflow: hidden qui empêche le menu de sortir du bandeau */
+    overflow: visible !important;
+}
+
+.main-header {
+    position: relative;
+    /* Pour que le menu se base sur le header */
+    z-index: 1001;
+    /* ... tes autres styles ... */
 }
 
 /* Conteneur des boutons de langue */
@@ -134,9 +142,112 @@ body>header {
     transform: translateY(-2px);
 }
 
+/* --- BURGER MENU STYLE --- */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    /* Important */
+    z-index: 2100;
+    /* Supérieur au nav-menu (qui est à 2000) */
+    padding: 10px;
+}
+
+/* Gestion des boutons Réserver */
+.mobile-only {
+    display: none;
+}
+
+/* Caché par défaut */
+
+.burger-menu span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVE 1024px (Tablettes et Mobiles) --- */
+@media (max-width: 1024px) {
+    .header-actions {
+        gap: 20px;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    /* Cache le bouton du header */
+    .mobile-only {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+.nav-menu {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #101A23;
+        padding: 100px 40px;
+        gap: 20px;
+        transition: right 0.4s ease;
+        z-index: 2000; /* Juste en dessous du burger */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-menu.active {
+        right: 0 !important;
+    }
+
+    /* Animation du burger en croix */
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--gold-clair);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--gold-clair);
+    }
+
+    .lang-switcher {
+        margin-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        padding-left: 0;
+    }
+
+    /* Masquer le texte "Réserver" sur petit mobile pour gagner de la place */
+    @media (max-width: 500px) {
+        .imglogo2 {
+            height: 45px;
+        }
+    }
+}
+
 /* Responsive : On cache le menu sur mobile (à adapter avec un menu burger plus tard) */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .nav-menu {
         display: none;
     }
-}
+} */

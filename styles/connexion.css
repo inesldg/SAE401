@@ -65,7 +65,7 @@ main {
     transform: translate(-50%, -50%);
     animation: rotationLente 60s linear infinite;
     z-index: 1;
-    width: 150%;
+    width: 100%;
     height: auto;
     pointer-events: none;
     filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
@@ -272,7 +272,8 @@ main {
 
 /* --- MOBILE (425px) --- */
 @media screen and (max-width: 425px) {
-*
+    *
+
     /* 1. On cache les engrenages de coins pour épurer et éviter les bugs de scroll */
     .decoration-coin {
         display: none;
@@ -284,6 +285,11 @@ main {
         align-items: center;
         /* Centrage vertical */
     }
+
+    .boite-formulaire input {
+        font-size: 20px;
+    }
+
 
     /* 3. Le SVG et sa boîte */
     .boite-formulaire {
@@ -297,7 +303,7 @@ main {
 
     /* On s'assure que le SVG ne crée pas de scroll horizontal */
     .svg-arriere-plan {
-        width: 150%;
+        width: 100%;
         /* Légèrement plus grand que le parent pour l'effet */
         max-width: none;
     }
