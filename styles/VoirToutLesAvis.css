@@ -1,100 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-
-:root {
-    /* Couleurs principales */
-    --blanc-casse: #F2F2F2;
-    --gold-clair: #C5A059;
-    --gold-fonce: #A3730C;
-    --bleu-fonce: #101A23;
-    --noir: #0A0A0A;
-    --marron-clair: #4B2009;
-    --marron-fonce: #322611;
-
-    /* Typos */
-    --titre: 'Cinzel', serif;
-    --texte: 'Inter', sans-serif;
-
-    /* Dégradés pour boutons etc */
-    --gold-gradient: linear-gradient(to right, #E6B856, #806630);
-    --gold-gradient-transition: linear-gradient(to right, #E6B856, #806630, #E6B856, #806630);
-
-    --gold-fade: linear-gradient(to bottom, transparent 0%, #E6B856 50%, transparent 100%);
-    --gold-fade-horizontal: linear-gradient(to right, transparent 0%, #E6B856 50%, transparent 100%);
-    --fond-sombre: #101A23;
-}
+/* Page "Voir tout les avis" – alignée sur variables et typo du site */
 
 .avis-page-wrapper {
     color: var(--blanc-casse);
     font-family: var(--texte);
-    font-size: 18px;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 75vh;
+    padding: 2rem 1.25rem 3rem;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(16, 26, 35, 0.85), rgba(16, 26, 35, 0.85)),
+        url("../images/EffetBrouillard.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-color: var(--fond-sombre);
 }
 
 .avis-page {
-    margin: 48px;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0;
-    width: calc(100% - 96px);
-    border: solid 3px var(--gold-clair);
-    border-radius: 32px;
-    box-sizing: border-box;
 }
 
+/* En-tête : titre + filtres */
 .avis-filtre {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    margin: 32px;
-    padding: 12px 18px;
-    background: transparent;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(16, 26, 35, 0.85);
+    border: 1px solid var(--gold-clair);
+    border-radius: 1.25rem;
 }
 
 .avis-titre {
-    font-family: var(--texte);
-    font-size: 50px;
-    line-height: 1;
+    font-family: var(--titre);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.2;
     color: var(--blanc-casse);
-}
-
-.avis-filtre-message {
-    margin: 0 32px 16px;
-    padding: 10px 16px;
-    border: solid 2px var(--gold-clair);
-    border-radius: 16px;
-    color: var(--blanc-casse);
-    background-color: color-mix(in srgb, var(--gold-clair) 50%, transparent);
+    margin: 0;
 }
 
 .avis-actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem 0.75rem;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
 
 .avis-pill {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: solid 2px var(--gold-clair);
+    border: 1px solid var(--gold-clair);
     border-radius: 999px;
-    padding: 6px 14px;
-    min-height: 18px;
+    padding: 0.4rem 0.9rem;
     font-family: var(--texte);
-    font-size: 22px;
-    line-height: 1;
+    font-size: 0.95rem;
+    line-height: 1.2;
     color: var(--gold-clair);
 }
 
 .avis-pill-filtre {
     cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.avis-pill-filtre:hover {
+    background: rgba(197, 160, 89, 0.2);
 }
 
 .avis-pill-filtre.actif {
@@ -108,19 +86,44 @@
 }
 
 .avis-pill-add {
-    font-size: 24px;
-    background-color: var(--gold-clair);
+    font-size: 1rem;
+    font-weight: 600;
+    background: var(--gold-gradient);
     color: var(--noir);
+    border: none;
     cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
+.avis-pill-add:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.avis-page-message {
+    margin: 0 0 1rem;
+    color: var(--blanc-casse);
+    font-size: 0.95rem;
+}
+
+.avis-filtre-message {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--gold-clair);
+    border-radius: 0.75rem;
+    color: var(--blanc-casse);
+    font-size: 0.9rem;
+    background: rgba(197, 160, 89, 0.15);
+}
+
+/* Popup formulaire avis */
 .avis-fenetre-overlay {
     position: fixed;
     inset: 0;
     display: none;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.72);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 1000;
 }
 
@@ -129,43 +132,49 @@
 }
 
 .avis-fenetre {
-    width: min(920px, calc(100vw - 64px));
-    min-height: 320px;
-    border: solid 2px var(--gold-clair);
-    border-radius: 20px;
-    background-color: var(--fond-sombre);
-    padding: 24px;
+    width: min(90vw, 28rem);
+    min-height: 18rem;
+    border: 1px solid var(--gold-clair);
+    border-radius: 1.25rem;
+    background-color: var(--bleu-fonce);
+    padding: 1.5rem;
     box-sizing: border-box;
     position: relative;
 }
 
 .avis-fenetre-fermer {
     position: absolute;
-    top: 14px;
-    right: 14px;
-    color: #ffffff;
-    font-size: 20px;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: var(--blanc-casse);
+    font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
+    opacity: 0.9;
+}
+
+.avis-fenetre-fermer:hover {
+    opacity: 1;
 }
 
 .avis-fenetre-titre,
 .avis-fenetre-libelle {
-    font-size: 34px;
+    font-family: var(--titre);
+    font-size: 1.15rem;
     color: var(--blanc-casse);
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .avis-obligatoire {
-    color: #ff4545;
+    color: #e74c3c;
 }
 
 .avis-fenetre-etoiles {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 42px;
-    margin-bottom: 16px;
+    gap: 0.25rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
 }
 
 .avis-fenetre-etoile {
@@ -176,38 +185,46 @@
 
 .avis-fenetre-zone {
     width: 100%;
-    min-height: 170px;
-    border: solid 2px var(--gold-clair);
-    border-radius: 24px;
-    padding: 14px;
+    min-height: 8rem;
+    border: 1px solid var(--gold-clair);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
     box-sizing: border-box;
-    background-color: transparent;
-    color: #7c93a9;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--blanc-casse);
     font-family: var(--texte);
-    font-size: 16px;
-    resize: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
     outline: none;
 }
 
 .avis-fenetre-zone::placeholder {
-    color: #7c93a9;
+    color: rgba(242, 242, 242, 0.5);
 }
 
 .avis-fenetre-actions {
-    margin-top: 16px;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
 }
 
 .avis-fenetre-valider {
-    border: solid 2px var(--gold-clair);
+    border: none;
     border-radius: 999px;
-    padding: 8px 18px;
-    background-color: var(--gold-clair);
+    padding: 0.5rem 1.25rem;
+    background: var(--gold-gradient);
     color: var(--noir);
-    font-size: 22px;
-    line-height: 1;
+    font-family: var(--titre);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
     cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.avis-fenetre-valider:hover {
+    opacity: 0.95;
 }
 
 .dore {
@@ -215,40 +232,58 @@
 }
 
 .grise {
-    color: var(--blanc-casse);
+    color: rgba(242, 242, 242, 0.5);
 }
 
-.avis{
-    margin: 32px;
+/* Carte avis unitaire */
+.avis-page .avis {
+    margin: 0 0 1.25rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 16px;
-    border: solid 3px var(--gold-clair);
-    background-color: color-mix(in srgb, var(--gold-clair) 50%, transparent);
-    border-radius: 32px;
-    width: calc(100% - 64px);
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--gold-clair);
+    background: rgba(16, 26, 35, 0.9);
+    border-radius: 1.25rem;
     box-sizing: border-box;
 }
 
+
+.avis-page .avis .message {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--blanc-casse);
+}
+
 .photo-de-profil img {
-    width: 64px;
-    height: 64px;
-    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
     object-fit: cover;
+}
+
+.photo-de-profil-placeholder {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(242, 242, 242, 0.5);
+    flex-shrink: 0;
+}
+
+.photo-de-profil-placeholder svg {
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .photo-de-profil {
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-
-.contentAvis {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
 }
 
 .top-avis {
@@ -258,25 +293,48 @@
 .meta-avis {
     display: flex;
     align-items: center;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
     width: 100%;
+    font-size: 0.875rem;
+    color: rgba(242, 242, 242, 0.85);
 }
 
 .note {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 0.15rem;
 }
 
-.message {
-    width: 100%;
+.note img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+.nom-escape {
+    font-family: var(--titre);
+    font-size: 0.95rem;
+    color: var(--gold-clair);
+}
+
+.date-publication {
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 .container-avis {
     display: flex;
     flex-direction: column;
-    justify-content: center;    
-    gap: 20px;
+    gap: 0.75rem;
     width: 100%;
     box-sizing: border-box;
+}
+
+/* Message "Aucun avis" */
+.avis-page .avis .message:only-child {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: rgba(242, 242, 242, 0.8);
 }

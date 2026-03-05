@@ -19,7 +19,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
     <div class="avis-filtre-message" id="avisFiltreMessage" style="display:none;"></div>
 
     <?php if (!empty($message)): ?>
-        <div style="margin: 0 32px 16px; color: var(--blanc-casse);"><?= $message ?></div>
+        <p class="avis-page-message"><?= $message ?></p>
     <?php endif; ?>
 
     <div class="avis-fenetre-overlay" id="avisPopupOverlay" aria-hidden="true">
@@ -50,7 +50,28 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
                 <div class="container-avis">
                     <div class="top-avis">
                         <div class="photo-de-profil">
-                            <img src="images/default-profile-picture.png" alt="Photo de profil">
+                            <?php
+                            $dossier = "photos_users/";
+                            $idUser = $evaluation['id_utilisateur'] ?? null;
+                            $photoPath = null;
+                            if ($idUser) {
+                                foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
+                                    if (file_exists($dossier . $idUser . "." . $ext)) {
+                                        $photoPath = $dossier . $idUser . "." . $ext;
+                                        break;
+                                    }
+                                }
+                            }
+                            ?>
+                            <?php if ($photoPath): ?>
+                                <img src="<?= htmlspecialchars($photoPath) ?>" alt="Photo de profil de <?= htmlspecialchars($evaluation['prenom']) ?>">
+                            <?php else: ?>
+                                <div class="photo-de-profil-placeholder" aria-hidden="true">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            <?php endif; ?>
                             <div class="pseudo"><?= htmlspecialchars($evaluation['prenom']) ?></div>
                         </div>
                     </div>

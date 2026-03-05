@@ -111,7 +111,7 @@ class escapeGames extends database
 
     public function afficherAvis($idEscapeGame)
     {
-        $req = 'SELECT evaluer.id_avis, evaluer.note, evaluer.commentaire, evaluer.avis_date, evaluer.id_escape, utilisateur.nom, utilisateur.prenom
+        $req = 'SELECT evaluer.id_avis, evaluer.note, evaluer.commentaire, evaluer.avis_date, evaluer.id_escape, evaluer.id_utilisateur, utilisateur.nom, utilisateur.prenom
         FROM `evaluer` 
         INNER JOIN escape ON evaluer.id_escape = escape.id_escape 
         INNER JOIN utilisateur ON evaluer.id_utilisateur = utilisateur.id_utilisateur 
