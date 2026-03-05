@@ -239,12 +239,19 @@ h1 {
 
 .creneau {
     font-size: 14px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 
+        1fr   /* heure */
+        2fr     /* nom escape */
+        1fr   /* client */
+        1fr     /* mail */
+        1fr     /* joueurs */
+        auto;  /* bouton sup */
     align-items: center;
-    justify-content: space-between;
     padding: 20px 25px;
     margin-bottom: 15px;
     border-radius: 10px;
+    gap: 20px;
     transition: 0.3s;
 }
 
