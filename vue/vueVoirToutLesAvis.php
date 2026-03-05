@@ -23,7 +23,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
     <?php endif; ?>
 
     <div class="avis-fenetre-overlay" id="avisPopupOverlay" aria-hidden="true">
-        <form class="avis-fenetre" id="avisForm" method="post" action="index.php?action=ajouterAvis&idEscapeGame=<?= urlencode($idEscapeGame) ?>">
+        <form class="avis-fenetre" id="avisForm" method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajouterAvis&idEscapeGame=" . urlencode($idEscapeGame)?>">
             <div class="avis-fenetre-fermer" id="avisPopupClose">✕</div>
             <div class="avis-fenetre-titre">Quelle note donneriez vous ? <span class="avis-obligatoire">*</span></div>
             <div class="avis-fenetre-etoiles">

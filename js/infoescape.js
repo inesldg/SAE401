@@ -7,10 +7,6 @@ const nextBtn = document.getElementById('nextMois'); // bouton mois suivant
 // Date actuelle utilisée pour afficher le calendrier
 let dateActuelle = new Date();
 
-let jourDemande = null;
-let horaireDemande = null;
-let nbrPersonnes = null;
-
 // Fonction principale qui génère le calendrier
 function genererCalendrier() {
 
@@ -105,8 +101,8 @@ function genererCalendrier() {
                 div.classList.add('selectionne');
                 
                 //-----------------------------------------------
-                jourDemande = div.dataset.jour; // ajoute la valeur du jour cliqué dans la variable
-                // console.log(jourDemande);
+                document.getElementById('inputJourEscape').value = div.dataset.jour;
+                // ajoute la valeur du jour cliqué dans le formulaire
                 //-----------------------------------------------
             };
         }
@@ -142,3 +138,4 @@ nextBtn.onclick = () => {
 // Génération initiale au chargement
 // =============================
 genererCalendrier();
+

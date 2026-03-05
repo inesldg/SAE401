@@ -157,7 +157,7 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 l'aventure</p>
 
 
-            <div class="calendrier-container-flex">
+            <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=panier" ?> class="calendrier-container-flex">
 
                 <div class="calendrier-boite">
                     <div class="calendrier-header">
@@ -178,51 +178,60 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 <div class="selection-options-mobile">
 
                     <div class="selecteur-ligne">
-                        <span id="horaireGames">Horaire</span>
-                        <select class="choix-horaire" id="DemandeHoraireGame">
-                            <option value="09:30">09 : 30</option>
-                            <option value="10:30">10 : 30</option>
-                            <option value="11:30">11 : 30</option>
-                            <option value="12:30">12 : 30</option>
-                            <option value="13:30">13 : 30</option>
-                            <option value="14:30">14 : 30</option>
-                            <option value="15:30">15 : 30</option>
-                            <option value="16:30" selected>16 : 30</option>
-                        </select>
+                        <label>
+                            <span id="horaireGames">Horaire</span>
+                            <select name="horaireEscape" class="choix-horaire" id="DemandeHoraireGame">
+                                <option value="09:30">09 : 30</option>
+                                <option value="10:30">10 : 30</option>
+                                <option value="11:30">11 : 30</option>
+                                <option value="12:30">12 : 30</option>
+                                <option value="13:30">13 : 30</option>
+                                <option value="14:30">14 : 30</option>
+                                <option value="15:30">15 : 30</option>
+                                <option value="16:30" selected>16 : 30</option>
+                            </select>
+                        </label>
                     </div>
+                </div>
 
-            <div class="selecteur-ligne">
-                <span id="participGames">Participants</span>
-                <select class="choix-horaire" id="nbrParticipantsGame">
-                    <option value="1">1 personne</option>
-                    <option value="2">2 personnes</option>
-                    <option value="3">3 personnes</option>
-                    <option value="4">4 personnes</option>
-                    <option value="5">5 personnes</option>
-                    <option value="6" selected>6 personnes</option>
-                    <option value="7">7 personnes</option>
-                    <option value="8">8 personnes</option>
-                    <option value="9">9 personnes</option>
-                    <option value="10">10 personnes</option>
-                    <option value="11">11 personnes</option>
-                    <option value="12">12 personnes</option>
-                    <option value="13">13 personnes</option>
-                    <option value="14">14 personnes</option>
-                    <option value="15">15 personnes</option>
-                    <option value="16">16 personnes</option>
-                    <option value="17">17 personnes</option>
-                    <option value="18">18 personnes</option>
-                    <option value="19">19 personnes</option>
-                    <option value="20">20 personnes</option>
-                </select>
-            </div>
+                <div class="selecteur-ligne">
+                    <label>
+                        <span id="participGames">Participants</span>
+                        <select name="nbrPersonnesEscape" class="choix-horaire" id="nbrParticipantsGame">
+                            <option value="1">1 personne</option>
+                            <option value="2">2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5 personnes</option>
+                            <option value="6" selected>6 personnes</option>
+                            <option value="7">7 personnes</option>
+                            <option value="8">8 personnes</option>
+                            <option value="9">9 personnes</option>
+                            <option value="10">10 personnes</option>
+                            <option value="11">11 personnes</option>
+                            <option value="12">12 personnes</option>
+                            <option value="13">13 personnes</option>
+                            <option value="14">14 personnes</option>
+                            <option value="15">15 personnes</option>
+                            <option value="16">16 personnes</option>
+                            <option value="17">17 personnes</option>
+                            <option value="18">18 personnes</option>
+                            <option value="19">19 personnes</option>
+                            <option value="20">20 personnes</option>
+                        </select>
+                    </label>
+                </div>
 
-            <div class="total-ligne">
-                <span id="totalGames">Total</span>
-                <span style="color: white;">220.00 €</span>
-            </div>
+                <div class="total-ligne">
+                    <span id="totalGames">Total</span>
+                    <span style="color: white;">220.00 €</span>
+                </div>
 
-            <a href="index.php?action=panier" class="bouton-reserver" id="boutonReserverGames reserverGames">Réserver maintenant</a>
+                <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="" required>
+                <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
+
+                <button type="submit" class="bouton-reserver" id="boutonReserverGames reserverGames">Réserver maintenant</button>
+            </form>
         </section>
     </div>
 
