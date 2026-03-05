@@ -765,10 +765,6 @@ let trad = {
         "fr": "Services",
         "en": "Services"
     },
-    "#footerResa": {
-        "fr": "Réservations",
-        "en": "Bookings"
-    },
     "#footerJeux": {
         "fr": "Nos jeux",
         "en": "Our games"
