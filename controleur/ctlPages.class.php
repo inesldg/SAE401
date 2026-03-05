@@ -34,6 +34,12 @@ class ctlPages
         $vue->afficher(array());
     }
 
+    public function pageContact()
+    {
+        $vue = new vue("Contact");
+        $vue->afficher(array());
+    }
+
     public function pagePropos()
     {
         $vue = new vue("Propos");

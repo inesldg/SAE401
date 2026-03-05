@@ -8,7 +8,7 @@
             <a href="index.php?action=accueil" id="menuAcc">Accueil</a>
             <a href="index.php?action=propos" id="menuPropos">À propos</a>
             <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
-            <a href="index.php?action=accueil" id="menuContact">Contact</a> <!-- A MODIFIER -->
+            <a href="index.php?action=contact" id="menuContact">Contact</a> <!-- A MODIFIER -->
             <a href="index.php?action=dash" id="menuDash">Dashboard</a>
             <a href="index.php?action=compte" id="menuCompte">Mon compte</a>
             <!-- A MODIFIER - ajouter vue pour modifier info compte -->
