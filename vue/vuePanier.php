@@ -1,4 +1,7 @@
 <?php
+
+// var_dump($jour, $horaire, $nbrPersonnes, $panier);
+
 // Config Langue
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
@@ -55,26 +58,26 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
             <div class="carte reveal reveal-up">
                 <h2 id="infoPanier">Vos Informations</h2>
-                <form>
+                <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=confirmation" ?>>
                     <div class="grille-nom-prenom">
                         <div class="ligne-formulaire">
-                            <label id="nomCompte">Nom</label>
-                            <input type="text" id="inputnom" placeholder="Votre nom">
+                            <label for="inputnom" id="nomCompte">Nom</label>
+                            <input type="text" name="nom" id="inputnom" placeholder="Votre nom" required>
                         </div>
                         <div class="ligne-formulaire">
-                            <label id="prenomCompte">Prénom</label>
-                            <input type="text" id="inputprenom" placeholder="Votre prénom">
+                            <label for="inputprenom" id="prenomCompte">Prénom</label>
+                            <input type="text" name="prenom" id="inputprenom" placeholder="Votre prénom" required>
                         </div>
                     </div>
 
                     <div class="ligne-formulaire">
-                        <label id="mailCompte">Email</label>
-                        <input type="email" id="inputemail" placeholder="Votre adresse email">
+                        <label for="inputemail" id="mailCompte">Email</label>
+                        <input type="email" name="mail" id="inputemail" placeholder="Votre adresse email" required>
                     </div>
 
                     <div class="ligne-formulaire">
-                        <label id="adressepostalPanier">Adresse</label>
-                        <input type="text" id="inputadresse" placeholder="Votre adresse postale">
+                        <label for="inputadresse" id="adressepostalPanier">Adresse</label>
+                        <input type="text" name="adresse" id="inputadresse" placeholder="Votre adresse postale" required>
                     </div>
 
                     <h2 style="margin-top: 40px; margin-bottom: 10px;" id="payerPanier">Payer avec</h2>
@@ -98,9 +101,40 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <div class="indication2" id="retournercartePanier">Retournez la carte</div>
 
 
+                    <!-- ---------------------------------------------------------------- -->
+                    <!-- intégrer dans le style -->
 
-                    <button type="submit" class="bouton-valider"><a href="index.php?action=confirmation"
-                            id="validerPanier">Valider le paiement</a></button>
+                    <label>Numéro de carte
+                    <input type="text" name="numCarte" value="" placeholder="0000 0000 0000 0000"maxlength="16" required></label>
+
+                    <br>
+                    
+                    <label>Expiration
+                    <input type="text" name="moisExpiration" value="" placeholder="MM" maxlength="2"required>/<input type="text" name="anneeExpiration" value="" placeholder="AA"maxlength="2" required></label>
+
+                    <br>
+                    
+                    <label>Code au dos
+                    <input type="text" name="numCarteDos" value="" placeholder="000" maxlength="3" required></label>
+                    
+                    <!-- ---------------------------------------------------------------- -->
+
+                    <!-- ---------------------------------------------------------------- -->
+                    <!-- Ne pas toucher -->
+
+                    <input type="hidden" name="jourReserve" value="<?= $jour ?>">
+
+                    <input type="hidden" name="horaireReserve" value="<?= $horaire ?>">
+
+                    <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm" value="<?= $nbrPersonnes?>">
+
+                    <input type="hidden" name="idEscapeReserve" value="<?= $panier[0]['id_escape'] ?>">
+
+                    <!-- ---------------------------------------------------------------- -->
+
+
+
+                    <button type="submit" class="bouton-valider"><span id="validerPanier">Valider le paiement</span></button>
                 </form>
             </div>
         </div>

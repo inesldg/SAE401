@@ -8,10 +8,10 @@ require "controleur/ctlConnexion.class.php";
 require "controleur/ctlUtilisateurs.class.php";
 require "controleur/ctlAjoutEscape.class.php";
 
-
 require "controleur/ctlAdmin.class.php";
 require "controleur/ctlDashAvis.class.php";
 require "controleur/ctlDashCalendrier.class.php";
+require "controleur/ctlPanier.class.php";
 
 class routeur
 {
@@ -26,6 +26,7 @@ class routeur
     private $ctlAdmin;
     private $ctlDashAvis;
     private $ctlDashCalendrier;
+    private $ctlPanier;
 
 
 
@@ -42,6 +43,7 @@ class routeur
         $this->ctlAdmin = new ctlAdmin();
         $this->ctlDashAvis = new ctlDashAvis();
         $this->ctlDashCalendrier = new ctlDashCalendrier();
+        $this->ctlPanier = new ctlPanier();
     }
 
     public function routerRequete()
@@ -89,7 +91,12 @@ class routeur
                                 throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
                         case "panier":
-                            $this->ctlPages->pagePanier($message = "");
+                            if(isset($_POST)){
+                                if(isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape']))
+                                    $this->ctlPanier->pagePanier($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'], $message = "");
+                            }
+                            else
+                                throw new Exception("Vous n'avez aucun panier actif");
                             break;
                         case "ajouterAvis":
                             if (isset($_GET['idEscapeGame'])) {
@@ -121,9 +128,6 @@ class routeur
                                 $this->ctlCompte->modifInfos($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['tel'] ?? '', $_POST['mdp'], $_POST['mdp_confirm'], ancienMail: $mail);
                             else
                                 $this->ctlCompte->infosCompte($message = "<span>Veuillez entrer et confirmer votre mot de passe pour enregistrer vos modifications</span>", $mail);
-                            break;
-                        case "panier":
-                            $this->ctlPages->pagePanier($message = "");
                             break;
 
 
