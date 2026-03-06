@@ -3,57 +3,69 @@ let trad = {
     "#titreAcc": {
         "fr": "Vivez l'",
         "en": "Live the",
+        "de": "Erleben Sie das"
     },
 
     "#aventure": {
         "fr": "aventure",
         "en": "adventure",
+        "de": "Abenteuer"
     },
 
     "#soustitreAcc": {
         "fr": "Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du temps.",
         "en": "Dive into immersive universes, solve captivating puzzles and escape before the end of time.",
+        "de": "Tauchen Sie ein in immersive Universen, lösen Sie fesselnde Rätsel und entkommen Sie, bevor die Zeit abläuft."
     },
 
     "#lienBoutonAcc": {
         "fr": "Découvrir nos escape games",
         "en": "Discover our escape games",
+        "de": "Entdecken Sie unsere Escape Spiele"
     },
 
 
     "#titreAcc_h2": {
         "fr": "l'expérience",
         "en": "ELIFE",
+        "de": "ELIFE"
     },
     "#elife": {
         "fr": "ELIFE",
         "en": "universe",
+        "de": "Univers"
     },
     "#textAcc": {
         "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
         "en": "La Clé ELIFE offers you exceptional escape games. Each room is designed to transport you into another world, with realistic scenery, ingenious mechanisms and captivating scenarios. Whether you are a beginner or an expert, come challenge yourself !",
+        "de": "Die Schlüssel ELIFE bietet Ihnen exklusive Escape Spiele. Jede Raum ist so gestaltet, dass Sie in eine andere Welt versetzt werden, mit realistischen Kulissen, genialen Mechanismen und fesselnden Szenarien. Ob Anfänger oder Experte, kommen Sie und stellen Sie sich der Herausforderung !"
     },
 
     "#nos": {
         "fr": "Nos derniers",
         "en": "Our latest",
+        "de": "Unsere neuesten"
     },
     "#suitetitreh2": {
         "fr": "Escape games",
         "en": "Escape games",
+        "de": "Escape Spiele"
     },
     "#toutEscapes": {
         "fr": "Voir tout les jeux →",
         "en": "See all the games →",
+        "de": "Alle Spiele ansehen →"
     },
 
     "#avistitre_h2": {
         "fr": "Avis",
         "en": "Clients",
+        "de": "Kunden"
     },
     "#suiteClient_h2": {
         "fr": "Clients",
         "en": "Reviews",
+        "de": "Rezensionen"
     },
 
 
@@ -61,6 +73,7 @@ let trad = {
     "#gestionAdmin": {
         "fr": "GESTIONS DES ESCAPES",
         "en": "ESCAPES MANAGEMENT",
+        "de": "ESCAPES VERWALTUNG"
     },
 
     // "l'id nique mon truc" -> je touche pas promis
@@ -72,111 +85,137 @@ let trad = {
     "#btnAjouter": {
         "fr": "+ Ajouter un jeu",
         "en": "+ Add a game",
+        "de": "+ Ein Spiel hinzufügen",
     },
     "#nvEscapeAjout": {
         "fr": "Nouvel escape game",
         "en": "New escape game",
+        "de": "Neues Escape Spiel",
     },
     "#nomNvEscape": {
         "fr": "Nom du jeu",
         "en": "Escape name",
+        "de": "Escape Name",
     },
     "#inputnomEscape": {
         "fr": "Veuillez entrer le nom du nouveau jeu",
         "en": "Please enter the name of the new game",
+        "de": "Bitte geben Sie den Namen des neuen Spiels ein",
     },
 
     "#PhotoNvEscape": {
         "fr": "Photo de présentation",
         "en": "Illustration photo",
+        "de": "Illustrationsfoto",
     },
     "#choixFichier": {
         "fr": "Choisir un fichier...",
         "en": "Select a file...",
+        "de": "Datei auswählen...",
     },
 
     "#descriptionNvEscape": {
         "fr": "Description",
         "en": "Description",
+        "de": "Beschreibung"
     },
     "#inputdescription": {
         "fr": "Description du jeu",
         "en": "Game description",
+        "de": "Spielbeschreibung"
     },
     "#lieuNvEscape": {
         "fr": "Lieu",
         "en": "Location",
+        "de": "Ort"
     },
     "#inputlieu": {
         "fr": "Lieu du jeu",
         "en": "Game location",
+        "de": "Spielort"
     },
     "#dureeNvEscape": {
         "fr": "Durée",
         "en": "Duration",
+        "de": "Dauer"
     },
     "#inputduree": {
         "fr": "Durée du jeu",
         "en": "Game duration",
+        "de": "Spielzeit"
     },
 
     "#prsnMin": {
         "fr": "Capacité minimum",
         "en": "Minimum capacity",
+        "de": "Minimale Kapazität"
     },
     "#prsnMax": {
         "fr": "Capacité maximum",
-        "en": "Maximum capacity",
+        "en": "Maximum capacity",  
+        "de": "Maximale Kapazität"
     },
     "#inputpersmin": {
         "fr": "Nombres minimum de participants",
         "en": "Minimum number of participants",
+        "de": "Minimale Anzahl an Teilnehmern"
     },
     "#inputpersmax": {
         "fr": "Nombre maximum de participants",
         "en": "Maximum number of participants",
+        "de": "Maximale Anzahl an Teilnehmern"
     },
 
     // ******************************** vue compte *************************************************
     "#titreModifCompte": {
         "fr": "Modification de vos informations",
         "en": "Edit your information",
+        "de": "Ihre Informationen bearbeiten"
     },
     "#introModifCompte": {
         "fr": "Pour enregistrer vos modifications, saisissez votre mot de passe actuel.",
         "en": "To save your changes, enter your current password.",
+        "de": "Um Ihre Änderungen zu speichern, geben Sie Ihr aktuelles Passwort ein."
     },
     "#nomCompte": {
         "fr": "Nom",
         "en": "Name",
+        "de": "Name"
     },
     "#prenomCompte": {
         "fr": "Prénom",
         "en": "First name",
+        "de": "Vorname"
     },
     "#telCompte": {
         "fr": "NUMÉRO DE TÉLÉPHONE",
         "en": "PHONE NUMBER",
+        "de": "TELEFONNUMMER"
     },
     "#mailCompteActuel": {
         "fr": "Adresse mail actuelle",
         "en": "Current email address",
+        "de": "Aktuelle E-Mail-Adresse"
     },
     "#nouvelleMailCompte": {
         "fr": "Nouvelle adresse mail (optionnel)",
         "en": "New email address (optional)",
+        "de": "Neue E-Mail-Adresse (optional)"
     },
     "#entrerMDPCompte": {
         "fr": "Mot de passe actuel",
         "en": "Current password",
+        "de": "Aktuelles Passwort"
     },
     "#confirmerMDPCompte": {
         "fr": "Confirmer le mot de passe",
         "en": "Confirm password",
+        "de": "Passwort bestätigen"
     },
     "#modifCompte": {
         "fr": "Sauvegarder",
         "en": "Save",
+        "de": "Speichern"
     },
 
 
@@ -184,14 +223,17 @@ let trad = {
     "#accrocheConf": {
         "fr": "Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace",
         "en": "We are excited to welcoming you and guiding you through our beautiful landscapes of Alsace",
+        "de": "Wir freuen uns darauf, Sie willkommen zu heißen und Sie durch unsere schönen Landschaften von Alsace zu führen"
     },
     "#bientotConf": {
         "fr": "À bientôt chez",
         "en": "See you soon at",
+        "de": "Bis bald bei"
     },
     "#retourAccConf": {
         "fr": "Retour à la page d'accueil",
         "en": "Back to the home page",
+        "de": "Zurück zur Startseite"
     },
 
     // On garde ça ou pas ? 
@@ -201,11 +243,13 @@ let trad = {
     // },
     "#merciGold": {
         "fr": "Merci",
-        "en": "Thank you"
+        "en": "Thank you",
+        "de": "Danke"
     },
     "#txtReservation": {
         "fr": "pour votre réservation !",
-        "en": "for your booking!"
+        "en": "for your booking!",
+        "de": "für Ihre Buchung!"
     },
 
     // ******************************** vue Dash *************************************************
@@ -213,6 +257,7 @@ let trad = {
     "#soustitreDash": {
         "fr": "Vue d’ensemble de l’activité",
         "en": "Overview of the activity",
+        "de": "Übersicht der Aktivität"
     },
     "#reservationDash": {
         "fr": "RÉSERVATIONS",
@@ -975,12 +1020,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. On cible les boutons
     const btnFr = document.querySelector('.lang-switcher button[data-langue="fr"]');
     const btnEn = document.querySelector('.lang-switcher button[data-langue="en"]');
+    const btnDe = document.querySelector('.lang-switcher button[data-langue="de"]');
 
     // 2. Fonction pour changer l'apparence visuelle
     function toggleVisual(langue) {
-        if (btnFr && btnEn) {
+        if (btnFr && btnEn && btnDe) {
             if (langue === 'en') {
                 btnEn.classList.add('active');
+                btnFr.classList.remove('active');
+            } else if (langue === 'de') {
+                btnDe.classList.add('active');
                 btnFr.classList.remove('active');
             } else {
                 btnFr.classList.add('active');
@@ -1008,6 +1057,12 @@ document.addEventListener("DOMContentLoaded", () => {
         btnEn.addEventListener("click", () => {
             localStorage.setItem("langue", "en");
             toggleVisual("en");
+            appliquerTraduction();
+        });
+
+        btnDe.addEventListener("click", () => {
+            localStorage.setItem("langue", "de");
+            toggleVisual("de");
             appliquerTraduction();
         });
     }
