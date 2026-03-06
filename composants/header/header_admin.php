@@ -1,3 +1,6 @@
+<?php
+$currentAction = $_GET['action'] ?? 'accueil';
+?>
 <header class="main-header">
 
     <a href="index.php?action=accueil"><img class="imglogo2" src="images/logo.png" alt="logo elife"></a>
@@ -10,17 +13,18 @@
         </button>
 
         <nav class="nav-menu" id="navMenu">
-            <a href="index.php?action=accueil" id="menuAcc">Accueil</a>
-            <a href="index.php?action=propos" id="menuPropos">À propos</a>
-            <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
-            <a href="index.php?action=contact" id="menuContact">Contact</a>
-            <a href="index.php?action=dash" id="menuDash">Dashboard</a>
-            <a href="index.php?action=compte" id="menuCompte">Mon compte</a>
+            <a href="index.php?action=accueil" id="menuAcc" <?= $currentAction === 'accueil' ? 'class="active"' : '' ?>>Accueil</a>
+            <a href="index.php?action=propos" id="menuPropos" <?= $currentAction === 'propos' ? 'class="active"' : '' ?>>À propos</a>
+            <a href="index.php?action=escapeGames" id="menuNosEscapes" <?= in_array($currentAction, ['escapeGames', 'game', 'pageVoirToutLesAvis']) ? 'class="active"' : '' ?>>Nos escapes</a>
+            <a href="index.php?action=contact" id="menuContact" <?= $currentAction === 'contact' ? 'class="active"' : '' ?>>Contact</a>
+            <a href="index.php?action=dash" id="menuDash" <?= in_array($currentAction, ['dash', 'dashCalendrier', 'dashAvis', 'pageAjoutEscape', 'utilisateurs']) ? 'class="active"' : '' ?>>Dashboard</a>
+            <a href="index.php?action=compte" id="menuCompte" <?= in_array($currentAction, ['compte', 'modifInfos']) ? 'class="active"' : '' ?>>Mon compte</a>
             <a href="index.php?action=deconnexion" id="menudeco">Déconnexion</a>
             
             <div class="lang-switcher">
                 <button data-langue="fr" class="active">FR</button>
                 <button data-langue="en">EN</button>
+                <button data-langue="de">DE</button>
             </div>
 
             <a href="index.php?action=escapeGames" class="btn-reserve mobile-only">

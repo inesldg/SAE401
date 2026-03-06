@@ -1,3 +1,6 @@
+<?php
+$currentAction = $_GET['action'] ?? 'accueil';
+?>
 <header class="main-header">
     <a href="index.php?action=accueil">
         <img class="imglogo2" src="images/logo.png" alt="logo elife">
@@ -11,15 +14,16 @@
         </button>
 
         <nav class="nav-menu" id="navMenu">
-            <a href="index.php?action=accueil" id="menuAcc">Accueil</a>
-            <a href="index.php?action=propos" id="menuPropos">À propos</a>
-            <a href="index.php?action=escapeGames" id="menuNosEscapes">Nos escapes</a>
-            <a href="index.php?action=contact" id="menuContact">Contact</a>
-            <a href="index.php?action=pageConnexion" id="menuCompte">Compte</a>
+            <a href="index.php?action=accueil" id="menuAcc" <?= $currentAction === 'accueil' ? 'class="active"' : '' ?>>Accueil</a>
+            <a href="index.php?action=propos" id="menuPropos" <?= $currentAction === 'propos' ? 'class="active"' : '' ?>>À propos</a>
+            <a href="index.php?action=escapeGames" id="menuNosEscapes" <?= in_array($currentAction, ['escapeGames', 'game', 'pageVoirToutLesAvis']) ? 'class="active"' : '' ?>>Nos escapes</a>
+            <a href="index.php?action=contact" id="menuContact" <?= $currentAction === 'contact' ? 'class="active"' : '' ?>>Contact</a>
+            <a href="index.php?action=pageConnexion" id="menuCompte" <?= in_array($currentAction, ['pageConnexion', 'pageInscription']) ? 'class="active"' : '' ?>>Compte</a>
 
             <div class="lang-switcher">
                 <button data-langue="fr" class="active">FR</button>
                 <button data-langue="en">EN</button>
+                <button data-langue="de">DE</button>
             </div>
 
             <a href="index.php?action=escapeGames" class="btn-reserve mobile-only">

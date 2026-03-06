@@ -113,6 +113,23 @@ body>header {
     color: #E6B856;
 }
 
+.nav-menu a.active {
+    color: var(--gold-clair);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold-clair);
+    border-radius: 2px;
+}
+
 /* Actions (Panier + Bouton) */
 .header-actions {
     display: flex;
