@@ -1,5 +1,7 @@
 <?php
 
+// var_dump($jour, $horaire, $nbrPersonnes, $panier);
+
 // Config Langue
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
