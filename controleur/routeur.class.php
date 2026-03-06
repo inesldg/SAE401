@@ -91,11 +91,10 @@ class routeur
                                 throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
                         case "panier":
-                            if(isset($_POST)){
-                                if(isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape']))
+                            if (isset($_POST)) {
+                                if (isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape']))
                                     $this->ctlPanier->pagePanier($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'], $message = "");
-                            }
-                            else
+                            } else
                                 throw new Exception("Vous n'avez aucun panier actif");
                             break;
                         case "ajouterAvis":
@@ -234,6 +233,10 @@ class routeur
 
                         case "legal":
                             $this->ctlPages->pageLegal();
+                            break;
+
+                        case "panier":
+                            $this->ctlPages->pageConnexion($message= "");
                             break;
 
                         // case "confirmation":

@@ -208,9 +208,91 @@ input:focus {
 .icones-paiement {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin: 20px 0;
-    filter: grayscale(0.5);
+    min-height: 50px;
+}
+
+#card-brand-zone .card-brand-img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.paiement-attente {
+    margin-top: 15px;
+    padding: 12px 18px;
+    background: rgba(197, 160, 89, 0.15);
+    border: 1px solid var(--gold-clair);
+    border-radius: 20px;
+    font-size: 0.95rem;
+    color: var(--gold-fonce);
+    text-align: center;
+}
+
+/* --- CARTE BLEUE AVEC CHAMPS SUPERPOSÉS --- */
+.carte-bleue-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 25px auto 0;
+}
+
+.carte-bleue-wrapper svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carte-bleue-contenu {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.carte-bleue-contenu label {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.carte-bleue-contenu input {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+}
+
+.carte-bleue-contenu .ligne-carte {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.carte-bleue-contenu .ligne-carte-exp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carte-bleue-contenu .input-carte-court {
+    max-width: 48px;
+    text-align: center;
+    padding-inline: 6px;
+}
+
+.carte-bleue-contenu .input-carte-cvc {
+    max-width: 60px;
+    text-align: center;
+    padding-inline: 6px;
 }
 
 .carte-bleue {
@@ -336,7 +418,7 @@ input:focus {
     }
 
     svg {
-        max-width: 350px;
+        max-width: 420px;
         text-align: center;
     }
 
@@ -363,7 +445,7 @@ input:focus {
     }
 
     svg {
-        max-width: 350px;
+        max-width: 420px;
         text-align: center;
     }
 
