@@ -35,7 +35,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                         avec une vue imprenable sur la plaine du Rhin.
                     </div>
                     <div class="ligne-prix">
-                        <div class="selecteur-personnes">⌵ 6 pers</div>
+                        <div class="selecteur-personnes">6 pers</div>
                         <div class="bouton-supprimer" id="supprPanier">SUPPRIMER</div>
                         <div class="prix-unitaire">141 €</div>
                     </div>

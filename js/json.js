@@ -630,8 +630,8 @@ let trad = {
         "en": "Pay with...",
     },
     "#retournercartePanier": {
-        "fr": "Retourner la carte en passant la souris dessus",
-        "en": "Flip the card by hovering the mouse over it",
+        "fr": "Veuillez rentrer vos coordonnées bancaires",
+        "en": "Please enter your bank details ",
     },
     "#validerPanier": {
         "fr": "Valider le paiement",
