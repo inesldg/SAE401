@@ -14,6 +14,26 @@ $lang = $_SESSION['lang'];
 $col_nom = "nom_" . $lang;
 $col_desc = "description_" . $lang;
 
+// Données de l'escape game pour l'affichage (avec colonnes multilingues si elles existent)
+$escape = isset($panier[0]) ? $panier[0] : null;
+$nomEscape = $escape ? (isset($escape[$col_nom]) ? $escape[$col_nom] : $escape['nom']) : '';
+$descEscape = $escape ? (isset($escape[$col_desc]) ? $escape[$col_desc] : $escape['description']) : '';
+$prixEscape = $escape && isset($escape['prix']) ? (int) $escape['prix'] : 0;
+
+// Image de l'escape si elle existe
+$imageEscape = null;
+if ($escape && !empty($escape['id_escape'])) {
+    $dossier = "photos_escapes/";
+    $id = $escape['id_escape'];
+    $extensions = array('jpg', 'jpeg', 'png', 'webp');
+    foreach ($extensions as $ext) {
+        if (file_exists($dossier . $id . "." . $ext)) {
+            $imageEscape = $dossier . $id . "." . $ext;
+            break;
+        }
+    }
+}
+
 // Style
 $style = '<link rel="stylesheet" href="styles/panier.css">';
 ?>
@@ -26,17 +46,23 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                 <h1 id="panierPanier">Votre Panier</h1>
 
                 <div class="produit">
-                    <div class="image-remplacement">img</div>
+                    <?php if ($imageEscape): ?>
+                        <img src="<?= htmlspecialchars($imageEscape) ?>" alt="<?= htmlspecialchars($nomEscape) ?>" class="image-panier">
+                    <?php else: ?>
+                        <div class="image-remplacement">img</div>
+                    <?php endif; ?>
                     <div class="infos-produit">
-                        <h3>In Vino Veritas</h3>
+                        <h3><?= htmlspecialchars($nomEscape) ?></h3>
                         <div class="description">
-                            L'aventure d'évasion "In Vino Veritas" vous emmène à travers la partie sud-ouest du Kaiserstuhl
-                            avec une vue imprenable sur la plaine du Rhin.
+                            <?= htmlspecialchars($descEscape) ?>
+                        </div>
+                        <div class="ligne-recap">
+                            <span class="recap-date">Date : <?= $jour ?></span>
+                            <span class="recap-horaire">Horaire : <?= $horaire ?></span>
+                            <span class="recap-personnes"><?= $nbrPersonnes ?> personne(s)</span>
                         </div>
                         <div class="ligne-prix">
-                            <div class="selecteur-personnes">Nombre pers.</div>
-                            <div class="bouton-supprimer" id="supprPanier">SUPPRIMER</div>
-                            <div class="prix-unitaire"> prix€</div>
+                            <div class="prix-unitaire"><?= $prixEscape ?> €</div>
                         </div>
                     </div>
                 </div>
@@ -122,15 +148,12 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <!-- Ne pas toucher -->
 
                     <input type="hidden" name="montant" id="montantPanier"
-                        value="<?= isset($panier[0]['prix']) ? (int) $panier[0]['prix'] : 141 ?>">
-                    <input type="hidden" name="jourReserve" value="<?= $jour ?>">
-
-                    <input type="hidden" name="horaireReserve" value="<?= $horaire ?>">
-
+                        value="<?= $prixEscape ? $prixEscape : 141 ?>">
+                    <input type="hidden" name="jourReserve" value="<?= htmlspecialchars($jour) ?>">
+                    <input type="hidden" name="horaireReserve" value="<?= htmlspecialchars($horaire) ?>">
                     <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm"
-                        value="<?= $nbrPersonnes ?>">
-
-                    <input type="hidden" name="idEscapeReserve" value="<?= $panier[0]['id_escape'] ?>">
+                        value="<?= htmlspecialchars($nbrPersonnes) ?>">
+                    <input type="hidden" name="idEscapeReserve" value="<?= $escape ? (int) $escape['id_escape'] : '' ?>">
 
                     <!-- ---------------------------------------------------------------- -->
 
