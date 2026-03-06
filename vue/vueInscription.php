@@ -62,7 +62,6 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             <label id="mailCompte">ADRESSE MAIL</label>
             <input type="email" name="mail" value="" id="inputemail" placeholder="mail@exemple.com" required>
 
-
             <label id="mdpInscrip">MOT DE PASSE</label>
             <input type="password" name="mdp" value="" id="inputmdp" placeholder="Votre mot de passe" required>
 
