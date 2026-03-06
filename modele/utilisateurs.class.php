@@ -7,7 +7,7 @@ class utilisateurs extends database
 
     public function listeUtilisateurs($mail)
     {
-        $req = 'SELECT id_utilisateur, nom, prenom, mail, tel, statut FROM utilisateur';
+        $req = 'SELECT id_utilisateur, nom, prenom, mail, tel, statut FROM utilisateur;';
         $listeUtilisateurs = $this->execReqPrep($req, array());
         return $listeUtilisateurs;
     }
