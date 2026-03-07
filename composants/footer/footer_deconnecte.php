@@ -1,4 +1,8 @@
+<!-- Footer global pour toutes les pages du site -->
+
+
 <div class="footer-top">
+    <!-- Liens -->
     <div class="colonne">
         <h2 id="footerServices">Services</h2>
         <a href="index.php?action=escapeGames" id="footerJeux">Nos jeux</a>
@@ -16,6 +20,7 @@
         <a href="https://www.instagram.com/we_escape_abenteuer/" id="footerInsta">Notre Instagram</a>
     </div>
 
+    <!-- Newsletter -->
     <div class="blockNewsletter">
         <h2 id="footerNewsTitre">S'inscrire à la Newsletter !</h2>
         <div class="groupeNewletter">
@@ -35,12 +40,14 @@
 <div class="footer-bottom">
     <a href="index.php?action=accueil"><img class="imglogo" src="images/logo.png" alt="logo elife"></a>
 
+    <!-- Mentions légales -->
     <div class="links">
         <a href="index.php?action=legal#mentionsLegales" id="footerMentions">Mentions légales</a>
         <a href="index.php?action=legal#politique" id="footerPolitique">Politique de confidentialité</a>
         <a href="index.php?action=legal#donneesPerso" id="footerDonnees">Données personnelles</a>
     </div>
 
+    <!-- Liens réseaux sociaux -->
     <div class="social-icons">
         <a href="https://www.instagram.com/we_escape_abenteuer/"><svg xmlns="http://www.w3.org/2000/svg" width="18"
                 height="18" viewBox="0 0 24 24" fill="#ffffff">

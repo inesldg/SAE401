@@ -1,4 +1,7 @@
 <?php
+
+// Header qui s'affiche lorsque l'utilisateur est connecté en tant qu'admin
+
 $currentAction = $_GET['action'] ?? 'accueil';
 ?>
 <header class="main-header">
@@ -12,21 +15,25 @@ $currentAction = $_GET['action'] ?? 'accueil';
             <span></span>
         </button>
 
+        <!-- Liens menu navigateur +  dashboard -->
         <nav class="nav-menu" id="navMenu">
             <a href="index.php?action=accueil" id="menuAcc" <?= $currentAction === 'accueil' ? 'class="active"' : '' ?>>Accueil</a>
-            <a href="index.php?action=propos" id="menuPropos" <?= $currentAction === 'propos' ? 'class="active"' : '' ?>>À propos</a>
+            <a href="index.php?action=propos" id="menuPropos" <?= $currentAction === 'propos' ? 'class="active"' : '' ?>>À
+                propos</a>
             <a href="index.php?action=escapeGames" id="menuNosEscapes" <?= in_array($currentAction, ['escapeGames', 'game', 'pageVoirToutLesAvis']) ? 'class="active"' : '' ?>>Nos escapes</a>
             <a href="index.php?action=contact" id="menuContact" <?= $currentAction === 'contact' ? 'class="active"' : '' ?>>Contact</a>
             <a href="index.php?action=dash" id="menuDash" <?= in_array($currentAction, ['dash', 'dashCalendrier', 'dashAvis', 'pageAjoutEscape', 'utilisateurs']) ? 'class="active"' : '' ?>>Dashboard</a>
             <a href="index.php?action=compte" id="menuCompte" <?= in_array($currentAction, ['compte', 'modifInfos']) ? 'class="active"' : '' ?>>Mon compte</a>
             <a href="index.php?action=deconnexion" id="menudeco">Déconnexion</a>
-            
+
+            <!-- Boutons pour changer la langue -->
             <div class="lang-switcher">
                 <button data-langue="fr" class="active">FR</button>
                 <button data-langue="en">EN</button>
                 <button data-langue="de">DE</button>
             </div>
 
+            <!-- Boutons de réservation mobile & ordi -->
             <a href="index.php?action=escapeGames" class="btn-reserve mobile-only">
                 Réserver
             </a>
