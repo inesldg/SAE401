@@ -1,3 +1,13 @@
+// function ouvrirPopup(id) {
+//     document.getElementById('popupSupp').style.display = 'block';
+//     document.getElementById('id_reserver').value = id; // ← injecte l'ID ici
+// }
+
+// function fermerPopup() {
+//     document.getElementById('popupSupp').style.display = 'none';
+// }
+
+
 const moisAnnee = document.getElementById("mois-annee");
 const joursContainer = document.getElementById("jours");
 const dateSelectionnee = document.getElementById("inputDate").value;

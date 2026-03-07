@@ -414,3 +414,76 @@ h1 {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* 
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: #2b4359;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    color: #fff;
+    position: relative;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #c5a059;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-confirm {
+    background-color: #c5a059;
+    border: none;
+    padding: 8px 15px;
+    color: #101a23;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-cancel {
+    background-color: #101a23;
+    border: 1px solid #c5a059;
+    padding: 8px 15px;
+    color: #c5a059;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    resize: vertical;
+} */
