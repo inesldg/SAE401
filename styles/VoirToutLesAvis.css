@@ -169,7 +169,7 @@
     min-height: 18rem;
     border: 2px solid var(--gold-clair);
     border-radius: 1.25rem;
-    background: linear-gradient(180deg, rgba(16, 26, 35, 0.98) 0%, rgba(10, 19, 31, 0.98) 100%);
+    background-color: var(--bleu-fonce);
     padding: 1.5rem;
     box-sizing: border-box;
     position: relative;
