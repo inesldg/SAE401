@@ -332,7 +332,13 @@ td > a{
 }
 
 .supp{
-    margin-left: 30px;
+    display: block;       /* ou inline-block */
+    text-align: center;   /* centre le contenu si c’est un texte ou icône */
+    margin: 0 auto;       /* centre horizontalement le block */
+}
+
+.supp:hover svg path {
+    stroke: red;
 }
 
 .joueurs, .duree{

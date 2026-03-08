@@ -70,28 +70,24 @@ class admin extends database
         return array("totalPers" => $res[0]['totalPers'] ?? 0);
     }
 
+    // Réservations récentes
+    public function getReservationsRecentes($limit = 5)
+    {
+        $req = "SELECT 
+escape.nom AS nom_escape,
+utilisateur.nom AS nom_utilisateur,
+utilisateur.prenom,
+reserver.reserver_date,
+reserver.horaire,
+reserver.nbr_pers,
+tarif.prix AS total_reservation
+FROM reserver
+JOIN escape ON reserver.id_escape = escape.id_escape
+JOIN utilisateur ON reserver.id_utilisateur = utilisateur.id_utilisateur
+JOIN tarif ON escape.id_escape = tarif.id_escape
+ORDER BY reserver.reserver_date DESC
+LIMIT 5;";
 
-
-
-    //     // Récupérer les réservations récentes
-    //     public function getReservationsRecentes($limit = 5)
-    //     {
-    //         $sql = "
-    //     SELECT 
-    //         r.id_reserver,
-    //         r.reserver_date,
-    //         r.horaire,
-    //         r.nbr_pers,
-    //         e.nom AS nom_escape,
-    //         u.nom AS nom_utilisateur,
-    //         u.prenom AS prenom_utilisateur
-    //     FROM reserver r
-    //     INNER JOIN escape e ON r.id_escape = e.id_escape
-    //     INNER JOIN utilisateur u ON r.id_utilisateur = u.id_utilisateur
-    //     ORDER BY r.reserver_date DESC, r.horaire DESC
-    //     LIMIT ?
-    // ";
-
-    //         return $this->execReqPrep($sql, array($limit));
-    //     }
+        return $this->execReq($req);
+    }
 }

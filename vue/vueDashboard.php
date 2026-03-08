@@ -173,7 +173,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                     <?php foreach ($reservationsRecente as $res): ?>
                         <tr>
                             <td><?= $res['nom_escape'] ?></td>
-                            <td><?= $res['nom_utilisateur'] . ' ' . $res['prenom_utilisateur'] ?></td>
+                            <td><?= $res['nom_utilisateur'] . ' ' . $res['prenom'] ?></td>
                             <td><?= $res['reserver_date'] ?></td>
                             <td><?= $res['horaire'] ?></td>
                             <td><?= $res['nbr_pers'] ?></td>

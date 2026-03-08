@@ -1,11 +1,40 @@
-// function ouvrirPopup(id) {
-//     document.getElementById('popupSupp').style.display = 'block';
-//     document.getElementById('id_reserver').value = id; // ← injecte l'ID ici
-// }
+document.addEventListener("DOMContentLoaded", () => {
+    let idReservation = null;
 
-// function fermerPopup() {
-//     document.getElementById('popupSupp').style.display = 'none';
-// }
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("overlay");
+
+    // Ouvrir le popup
+    document.querySelectorAll(".btnSupprimer").forEach(btn => {
+        btn.addEventListener("click", function() {
+            idReservation = this.dataset.id;
+
+            // Affiche le popup et l'overlay
+            popup.style.display = "block";
+            overlay.style.display = "block";
+
+            // Vide la zone de texte
+            document.getElementById("motif").value = "";
+        });
+    });
+
+    // Fermer le popup
+    document.getElementById("closePopup").addEventListener("click", () => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+    });
+
+    // Valider la suppression
+    document.getElementById("validerSuppression").addEventListener("click", () => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+
+        // Redirection vers le contrôleur sans mail
+        window.location.href = `index.php?action=dashCalendrier&supprimer=${idReservation}`;
+    });
+});
+
+
 
 
 const moisAnnee = document.getElementById("mois-annee");
