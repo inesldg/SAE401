@@ -3,13 +3,16 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const container = document.getElementById("three-container");
+if (!container) throw new Error("three-container introuvable");
 
-// Ajout de la scène, du moteur de rendun puis de la caméra
+// Ajout de la scène, du moteur de rendu puis de la caméra
 const scene = new THREE.Scene();
-const renderer = new THREE.WebGLRenderer({ alpha: true }); // ici j'ai ajouté l'alpha car le fond est transparent
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, powerPreference: 'high-performance' });
+const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 
 const clock = new THREE.Clock();
+let animationId = null;
+let isVisible = true;
 
 
 // Ajout de la lumière sinon la texture n'apparaît pas
@@ -20,7 +23,7 @@ scene.add(light);
 // Lumière principale -> un peu moins intense
 const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
 dirLight.position.set(5, 10, 7);
-dirLight.castShadow = true;
+dirLight.castShadow = false;
 scene.add(dirLight);
 
 // Lumière secondaire pour éviter trop d'ombres
@@ -70,11 +73,19 @@ loader.load(
 
 );
 
-function resizeRendererToDisplaySize() {
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Mettre le parent à la bonne taille pour bien afficher la clé
+function resizeRendererToDisplaySize() {
     const width = container.clientWidth;
     const height = container.clientHeight;
+    if (width === 0 || height === 0) return false;
+    if (renderer.domElement.width !== width || renderer.domElement.height !== height) {
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        return true;
+    }
+    return false;
 }
 
 // Ici on configure la caméra en rapport avec le parent pour qu'elle ne soit pas déformée 
@@ -85,24 +96,37 @@ camera.updateProjectionMatrix();
 renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement);
 
-// Définition de la fonction qui va permettre à la clé de tourner sur elle même dan sle bon axe
 function animate() {
-
-    // Ces paramètres permettent d'adapter le temps réel entre les images pour chaque écran et leurs temps de
-    // raffraichisement différent (144Hz, etc...)
-    requestAnimationFrame(animate);
-    const delta = clock.getDelta(); // temps écoulé depuis la dernière frame (en secondes)
-
-    if (window.cleAnimation) { // si le modèle est chargé, on lance l'animation
-
-        // Définition de la vitesse
+    if (!isVisible) return;
+    animationId = requestAnimationFrame(animate);
+    const delta = clock.getDelta();
+    if (window.cleAnimation) {
         const speed = 0.5;
-
-        window.cleAnimation.rotation.y += speed * delta; // rotation basée sur le temps réel et le rafraichissement
-        window.cleAnimation.rotation.z = -Math.PI / 2.5; // la clé est légèrement inclinée et verticale
-
+        window.cleAnimation.rotation.y += speed * delta;
+        window.cleAnimation.rotation.z = -Math.PI / 2.5;
         resizeRendererToDisplaySize();
-        renderer.render(scene, camera);  // le rendu final !!
+        renderer.render(scene, camera);
     }
 }
-animate(); // on appelle la fonction d'animation pour qu'elle se lance
+
+const heroSection = container.closest('.hero-accueil');
+if (heroSection) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const nowVisible = entry.isIntersecting;
+            if (nowVisible && !isVisible) {
+                isVisible = true;
+                animate();
+            } else {
+                isVisible = nowVisible;
+                if (!isVisible && animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+    observer.observe(heroSection);
+}
+window.addEventListener('resize', resizeRendererToDisplaySize);
+animate();

@@ -119,6 +119,14 @@ Grande bannière immersive avec image de fond
     color: transparent;
 }
 
+/* Allemand : dernier mot du hero sur une deuxième ligne pour ne pas dépasser sur la clé */
+html[lang="de"] .hero-accueil__titre {
+    white-space: normal;
+}
+html[lang="de"] .hero-accueil__titre #aventure {
+    display: block;
+}
+
 /* sous titre */
 .hero-accueil__sous-titre {
     font-family: var(--texte);

@@ -40,7 +40,7 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 
         <!-- lien retour page d'accueil -->
         <div class="liens-footer">
-            <a href="index.php?action=accueil" id="retourAccConf reveal reveal-up">Retour à la page d'accueil</a>
+            <a href="index.php?action=accueil" id="retourAccConf">Retour à la page d'accueil</a>
         </div>
     </div>
 

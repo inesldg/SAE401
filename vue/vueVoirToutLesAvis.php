@@ -16,24 +16,13 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <span id="btnRetourTexte">Retour aux escape games</span>
     </a>
 <div class="avis-page">
-    <div class="avis-filtre">
-        <div class="avis-titre reveal reveal-up">Avis</div>
-        <div class="avis-actions">
-            <div class="avis-pill avis-pill-filtre" data-filter-note="1"><span class="dore">★</span><span class="grise">★★★★</span></div>
-            <div class="avis-pill avis-pill-filtre" data-filter-note="2"><span class="dore">★★</span><span class="grise">★★★</span></div>
-            <div class="avis-pill avis-pill-filtre" data-filter-note="3"><span class="dore">★★★</span><span class="grise">★★</span></div>
-            <div class="avis-pill avis-pill-filtre" data-filter-note="4"><span class="dore">★★★★</span><span class="grise">★</span></div>
-            <div class="avis-pill avis-pill-filtre" data-filter-note="5"><span class="dore">★★★★★</span></div>
-            <div class="avis-pill avis-pill-add" id="txt-ajt-avis">Ajouter un avis</div>
-        </div>
-    </div>
     <div class="avis-filtre-message" id="avisFiltreMessage" style="display:none;"></div>
     <div class="avis-page">
         <!-- ========================= -->
         <!-- SECTION FILTRES ET ACTIONS -->
         <!-- ========================= -->
         <div class="avis-filtre reveal reveal-up">
-            <div class="avis-titre reveal reveal-up">Avis</div>
+            <div class="avis-titre reveal reveal-up" id="avisTitre">Avis</div>
             <!-- Boutons de filtre par note -->
             <div class="avis-actions">
                 <div class="avis-pill avis-pill-filtre" data-filter-note="1"><span class="dore">★</span><span
@@ -91,7 +80,6 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <?php if (!empty($avis) && $avis != 0): ?>
             <?php foreach ($avis as $evaluation): ?>
 
-                // Sécurisation et limitation de la note entre 0 et 5
                 <?php $note = max(0, min(5, (int) $evaluation['note'])); ?>
                 <div class="avis" data-note="<?= $note ?>">
                     <div class="container-avis">

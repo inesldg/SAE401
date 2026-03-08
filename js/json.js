@@ -188,9 +188,9 @@ let trad = {
         "de": "Vorname"
     },
     "#telCompte": {
-        "fr": "NUMÉRO DE TÉLÉPHONE",
-        "en": "PHONE NUMBER",
-        "de": "TELEFONNUMMER"
+        "fr": "Numéro de téléphone",
+        "en": "Phone number",
+        "de": "Telefonnummer"
     },
     "#mailCompteActuel": {
         "fr": "Adresse mail actuelle",
@@ -235,12 +235,6 @@ let trad = {
         "en": "Back to the home page",
         "de": "Zurück zur Startseite"
     },
-
-    // On garde ça ou pas ? 
-    // "#voirCommandeConf": {
-    //     "fr": "Voir ma commande",
-    //     "en": "",
-    // },
     "#merciGold": {
         "fr": "Merci",
         "en": "Thank you",
@@ -251,6 +245,11 @@ let trad = {
         "en": "for your booking!",
         "de": "für Ihre Buchung!"
     },
+    "#retourAccConf": {
+        "fr": "Retour à la page d'accueil",
+        "en": "Back to the home page",
+        "de": "Zurück zur Startseite"
+    }, 
 
     // ******************************** vue Dash *************************************************
 
@@ -375,10 +374,6 @@ let trad = {
         "en": "Choose your universe !",
         "de": "Wählen Sie Ihre Welt !"
     },
-    // "#reserverEscapGam": {
-    //     "fr": "Réservez votre expérience immersive dès maintenant",
-    //     "en": "Book your immersive experience now",
-    // },
     "#detailEscapeGam": {
         "fr": "Voir détails",
         "en": "View details",
@@ -436,15 +431,18 @@ let trad = {
     },
     "#btnFiltrer": {
         "fr": "Filtrer",
-        "en": "Filter"
+        "en": "Filter",
+        "de": "filtern"
     },
     "#aucunJeuCriteres": {
         "fr": "Aucun jeu trouvé correspondant à ces critères.",
-        "en": "No game found matching these criteria."
+        "en": "No game found matching these criteria.",
+        "de": "Kein Spiel, das diesen Kriterien entspricht."
     },
     "#btnSupprimerFiltres": {
         "fr": "Supprimer les filtres",
-        "en": "Clear filters"
+        "en": "Clear filters",
+        "de": "Filter löschen"
     },
 
     // ******************************** vue Games *************************************************
@@ -452,11 +450,6 @@ let trad = {
         "fr": "Retour aux escape games",
         "en": "Back to the games",
         "de": "Zurück zu den Spielen"
-    },
-    "#titreGames": {
-        "fr": "",
-        "en": "",
-        "de": ""
     },
     "#prixGames": {
         "fr": "À partir de 55€/pers.",
@@ -495,8 +488,6 @@ let trad = {
         "de": "Spieler"
     },
 
-
-
     "#detailGames": {
         "fr": "Détails",
         "en": "Details",
@@ -515,12 +506,19 @@ let trad = {
     "#selectionDatesGames": {
         "fr": "Sélectionnez votre date pour l'aventure",
         "en": "Please select a date for the adventure",
+        "de": "Wählen Sie Ihr Datum für das Abenteuer"
     },
     "#erreurDateReservation": {
         "fr": "Veuillez sélectionner une date.",
         "en": "Please select a date.",
         "de": "Bitte wählen Sie ein Datum."
     },
+    "#selectionGames": {
+        "fr": "Sélectionnez vos préférences pour l'aventure.",
+        "en": "Select your preferences for the adventure.",
+        "de": "Wählen Sie Ihre Präferenzen für das Abenteuer."
+    },
+
     "#lundi": {
         "fr": "lun",
         "en": "mon",
@@ -571,12 +569,17 @@ let trad = {
         "en": "Total",
         "de": "Gesamt"
     },
-    "#reserverGames": {
+    "#boutonReserverGames": {
         "fr": "Réserver maintenant !",
         "en": "Book now !",
         "de": "Jetzt buchen !"
     },
 
+    "#avisTitre": {
+        "fr": "Avis",
+        "en": "Review",
+        "de": "Meinung"
+    },
     "#ajoutAvisGame": {
         "fr": "Ajouter un avis",
         "en": "Add a review",
@@ -728,6 +731,7 @@ let trad = {
     "#panierPanier": {
         "fr": "Votre réservation",
         "en": "Your booking",
+        "de": "Ihre Buchung"
     },
     "#supprPanier": {
         "fr": "Supprimer",
@@ -955,7 +959,7 @@ let trad = {
     "#footerInfos": {
         "fr": "Informations",
         "en": "Information",
-        "de": "Information" 
+        "de": "Information"
     },
     "#footerFaq": {
         "fr": "FAQ",
@@ -1034,7 +1038,7 @@ let trad = {
     "#inputprenom": {
         "fr": "Votre prénom",
         "en": "Your first name",
-        "de": "Ihr Vorname" 
+        "de": "Ihr Vorname"
     },
     "#inputemail": {
         "fr": "Votre adresse email",
@@ -1071,7 +1075,7 @@ let trad = {
     },
 
     "#inputdescription_error": {
-        "fr": "Veuillez compléter ce champs.",
+        "fr": "Veuillez compléter ce champ.",
         "en": "Please complete this field.",
         "de": "Bitte füllen Sie dieses Feld aus."
     },
@@ -1083,18 +1087,18 @@ let trad = {
 
     "#inputduree_error": {
         "fr": "Veuillez indiquer la durée de l'escape.",
-        "en": "Please indicate the duration of the escape.",
-        "de": "Bitte geben Sie die Dauer des Escapes an."
+        "en": "Please indicate the duration of the escape game.",
+        "de": "Bitte geben Sie die Dauer des Spiels an."
     },
     "#inputpersmin_error": {
         "fr": "Veuillez indiquer le nombre de personnes minimum.",
-        "en": "Please indicate the minimum number of people.",
+        "en": "Please indicate the minimum number of participants.",
         "de": "Bitte geben Sie die minimale Anzahl an Personen an."
     },
 
     "#inputpersmax_error": {
         "fr": "Veuillez indiquer le nombre de personnes maximum.",
-        "en": "Please indicate the maximum number of people.",
+        "en": "Please indicate the maximum number of participants.",
         "de": "Bitte geben Sie die maximale Anzahl an Personen an."
     },
     "#inputemail_error": {
