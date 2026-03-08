@@ -79,6 +79,7 @@ body>header {
     box-sizing: border-box;
 }
 
+/* logo */
 .imglogo2 {
     height: 65px;
     max-height: 100%;
@@ -113,12 +114,14 @@ body>header {
     color: #E6B856;
 }
 
+/* lien actife donx page actuelle */
 .nav-menu a.active {
     color: var(--gold-clair);
     font-weight: 600;
     position: relative;
 }
 
+/* petit trait sous le lien actif */
 .nav-menu a.active::after {
     content: '';
     position: absolute;
