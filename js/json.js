@@ -472,6 +472,11 @@ let trad = {
         "fr": "Sélectionnez votre date pour l'aventure",
         "en": "Please select a date for the adventure",
     },
+    "#erreurDateReservation": {
+        "fr": "Veuillez sélectionner une date.",
+        "en": "Please select a date.",
+        "de": "Bitte wählen Sie ein Datum."
+    },
     "#lundi": {
         "fr": "lun",
         "en": "mon",

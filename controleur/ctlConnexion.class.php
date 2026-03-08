@@ -25,10 +25,13 @@ class ctlConnexion
             if (password_verify($mdp, $mdpUtilisateur[0]['mdp'])) {
                 $_SESSION["acces"] = $mail;
 
-                if (isset($_COOKIE["page"]))
-                    header("Location: index.php" . $_COOKIE["page"]);
-                else
-                    header("location: index.php");
+                if (isset($_COOKIE["page"]) && $_COOKIE["page"] !== '') {
+                    $retour = $_COOKIE["page"];
+                    setcookie('page', '', time() - 3600, '/');
+                    header("Location: index.php" . $retour);
+                } else {
+                    header("Location: index.php");
+                }
             } else
                 $vue->afficher(array("message" => "<span>Mot de passe incorrect</span>"));
         } else

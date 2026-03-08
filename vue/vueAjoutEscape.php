@@ -117,7 +117,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                                     ?>
 
                                     <?php if ($imagePath): ?>
-                                        <img src="<?= $imagePath ?>" width="60">
+                                        <img src="<?= $imagePath ?>" loading="lazy" width="60">
                                     <?php else: ?>
                                         <div class="placeholder-img"></div>
                                     <?php endif; ?>

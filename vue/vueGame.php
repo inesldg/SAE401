@@ -225,13 +225,15 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     <span style="color: white;">220.00 €</span>
                 </div>
 
-                        <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="" required>
-                        <input type="hidden" name="moisEscape" id="inputMoisEscape" value="">
-                        <input type="hidden" name="anneeEscape" id="inputAnneeEscape" value="">
-                                <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
+                <p class="reservation-erreur-date" id="erreurDateReservation" role="alert" aria-live="polite" style="display: none;">Veuillez sélectionner une date.</p>
+
+                <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="">
+                <input type="hidden" name="moisEscape" id="inputMoisEscape" value="">
+                <input type="hidden" name="anneeEscape" id="inputAnneeEscape" value="">
+                <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
 
                 <button type="submit" class="bouton-reserver"
-                        id="boutonReserverGames reserverGames">Réserver maintenant</button>
+                        id="boutonReserverGames">Réserver maintenant</button>
             </form>
         </section>
     </div>
