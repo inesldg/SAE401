@@ -19,7 +19,7 @@ let trad = {
     },
 
     "#lienBoutonAcc": {
-        "fr": "Découvrir nos escape games",
+        "fr": "Découvrir nos escapes games",
         "en": "Discover our escape games",
         "de": "Entdecken Sie unsere Escape Spiele"
     },
@@ -36,7 +36,7 @@ let trad = {
         "de": "Univers"
     },
     "#textAcc": {
-        "fr": "La Clé ELIFE vous propose des escape games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
+        "fr": "La Clé ELIFE vous propose des escapes games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
         "en": "La Clé ELIFE offers you exceptional escape games. Each room is designed to transport you into another world, with realistic scenery, ingenious mechanisms and captivating scenarios. Whether you are a beginner or an expert, come challenge yourself !",
         "de": "Die Schlüssel ELIFE bietet Ihnen exklusive Escape Spiele. Jede Raum ist so gestaltet, dass Sie in eine andere Welt versetzt werden, mit realistischen Kulissen, genialen Mechanismen und fesselnden Szenarien. Ob Anfänger oder Experte, kommen Sie und stellen Sie sich der Herausforderung !"
     },
@@ -47,7 +47,7 @@ let trad = {
         "de": "Unsere neuesten"
     },
     "#suitetitreh2": {
-        "fr": "Escape games",
+        "fr": "Escapes games",
         "en": "Escape games",
         "de": "Escape Spiele"
     },
@@ -447,7 +447,7 @@ let trad = {
 
     // ******************************** vue Games *************************************************
     "#retourescapeGames": {
-        "fr": "Retour aux escape games",
+        "fr": "Retour aux escapes games",
         "en": "Back to the games",
         "de": "Zurück zu den Spielen"
     },
@@ -522,37 +522,37 @@ let trad = {
     "#lundi": {
         "fr": "lun",
         "en": "mon",
-        "de": "Mo"
+        "de": "Mon"
     },
     "#mardi": {
         "fr": "mar",
         "en": "tue",
-        "de": "Di"
+        "de": "Die"
     },
     "#mercredi": {
         "fr": "mer",
         "en": "wed",
-        "de": "Mi"
+        "de": "Mit"
     },
     "#jeudi": {
         "fr": "jeu",
         "en": "thu",
-        "de": "Do"
+        "de": "Don"
     },
     "#vendredi": {
         "fr": "ven",
         "en": "fri",
-        "de": "Fr"
+        "de": "Fre"
     },
     "#samedi": {
         "fr": "sam",
         "en": "sat",
-        "de": "Sa"
+        "de": "Sat"
     },
     "#dimanche": {
         "fr": "dim",
         "en": "sun",
-        "de": "So"
+        "de": "Son"
     },
     "#horaireGames": {
         "fr": "Créneau horaire",
@@ -581,12 +581,12 @@ let trad = {
         "de": "Meinung"
     },
     "#ajoutAvisGame": {
-        "fr": "Ajouter un avis",
+        "fr": "Ajoutez un avis",
         "en": "Add a review",
         "de": "Bewertung hinzufügen"
     },
     "#btnRetourTexte": {
-        "fr": "Retour aux escape games",
+        "fr": "Retour aux escapes games",
         "en": "Back to escape games",
         "de": "Zurück zu den Escape Games"
     },
@@ -608,7 +608,7 @@ let trad = {
         "de": "Passwort"
     },
     "#confmpdInscrip": {
-        "fr": "Confirmer le mot de passe :",
+        "fr": "Confirmez le mot de passe :",
         "en": "Confirm Password :",
         "de": "Passwort bestätigen :"
     },
@@ -734,17 +734,17 @@ let trad = {
         "de": "Ihre Buchung"
     },
     "#supprPanier": {
-        "fr": "Supprimer",
+        "fr": "Supprimez",
         "en": "Delete",
         "de": "Löschen"
     },
     "#codePanier": {
-        "fr": "Code Promo / Bons ?",
-        "en": "Promotionnal codes / Vouchers?",
+        "fr": "Code Promo / Bon ?",
+        "en": "Promotionnal codes / Voucher?",
         "de": "Förderscheine / Gutscheine?"
     },
     "#appliquerPanier": {
-        "fr": "Appliquer",
+        "fr": "Appliquez",
         "en": "Apply",
         "de": "Anwenden"
     },
@@ -779,17 +779,17 @@ let trad = {
         "de": "Adresse"
     },
     "#payerPanier": {
-        "fr": "Payer avec...",
+        "fr": "Payez avec...",
         "en": "Pay with...",
         "de": "Zahlen mit..."
     },
     "#retournercartePanier": {
-        "fr": "Retourner la carte en passant la souris dessus",
+        "fr": "Retournez la carte en passant la souris dessus",
         "en": "Flip the card by hovering the mouse over it",
         "de": "Karte umdrehen, indem Sie den Mauszeiger darüber bewegen"
     },
     "#validerPanier": {
-        "fr": "Valider le paiement",
+        "fr": "Validez le paiement",
         "en": "Confirm the payment",
         "de": "Zahlung bestätigen"
     },
@@ -846,7 +846,7 @@ let trad = {
         "de": "Erweiterte Realität"
     },
     "#realitePropos": {
-        "fr": "Équipés de mallettes et de boussoles, interagissez avec des éléments invisibles à l'œil nu.",
+        "fr": "Équipées de mallettes et de boussoles, interagissez avec des éléments invisibles à l'œil nu.",
         "en": "Use your briefcases and compasses to interact with elements that can't be seen with the naked eye.",
         "de": "Nutzen Sie Ihre Aktentaschen und Kompassen, um mit Elementen zu interagieren, die mit dem bloßen Auge nicht sichtbar sind."
     },
@@ -1126,7 +1126,7 @@ let trad = {
 
     // ******************************** vue Tout Les Avis + Ajout Avis *************************************************
     "#txt-ajt-avis": {
-        "fr": "Ajouter un avis",
+        "fr": "Ajoutez un avis",
         "en": "Add a review",
         "de": "Eine Bewertung hinzufügen"
     }
