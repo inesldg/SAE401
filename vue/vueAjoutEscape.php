@@ -108,7 +108,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                         <th>Lieu</th>
                         <th>Durée</th>
                         <th>Joueurs</th>
-                        <th>Actions</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
