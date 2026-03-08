@@ -57,8 +57,8 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
     <div class="droite">
         <div class="haut">
-            <h1 id="#">CALENDRIER</h1>
-            <div class="sous-titre" id="#">Visualisez les créneaux réservés et disponibles par date et par escape.</div>
+            <h1 id="dashCalendrierTitre">CALENDRIER</h1>
+            <div class="sous-titre" id="dashCalendrierSousTitre">Visualisez les créneaux réservés et disponibles par date et par escape.</div>
         </div>
         <div class="bas">
 
@@ -74,13 +74,13 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                     </div>
 
                     <div class="calendrier-jours">
-                        <div>LUN</div>
-                        <div>MAR</div>
-                        <div>MER</div>
-                        <div>JEU</div>
-                        <div>VEN</div>
-                        <div>SAM</div>
-                        <div>DIM</div>
+                        <div id="dashCalLundi">LUN</div>
+                        <div id="dashCalMardi">MAR</div>
+                        <div id="dashCalMercredi">MER</div>
+                        <div id="dashCalJeudi">JEU</div>
+                        <div id="dashCalVendredi">VEN</div>
+                        <div id="dashCalSamedi">SAM</div>
+                        <div id="dashCalDimanche">DIM</div>
                     </div>
 
                     <div class="calendrier-grille" id="jours"></div>
@@ -92,9 +92,9 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
                 <div class="droite2">
                     <div class="filtre">
-                        <div class="titre">Filtrer par escape</div>
+                        <div class="titre" id="dashCalFiltrerParEscape">Filtrer par escape</div>
                         <select name="escape">
-                            <option value="">Tous les escapes</option>
+                            <option value="" id="dashCalTousEscapes">Tous les escapes</option>
                             <?php foreach ($escapes as $e): ?>
                                 <option value="<?= $e['id_escape'] ?>"
                                     <?= ($escapeSelected == $e['id_escape']) ? 'selected' : '' ?>>
@@ -103,7 +103,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                             <?php endforeach; ?>
                         </select>
 
-                        <button type="submit">Filtrer</button>
+                        <button type="submit" id="dashCalBtnFiltrer">Filtrer</button>
                     </div>
 
                     <div class="joursj">
@@ -111,18 +111,18 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M13.6 1.6H12V0.8C12 0.587827 11.9157 0.384344 11.7657 0.234315C11.6157 0.0842854 11.4122 0 11.2 0C10.9878 0 10.7843 0.0842854 10.6343 0.234315C10.4843 0.384344 10.4 0.587827 10.4 0.8V1.6H5.6V0.8C5.6 0.587827 5.51571 0.384344 5.36569 0.234315C5.21566 0.0842854 5.01217 0 4.8 0C4.58783 0 4.38434 0.0842854 4.23431 0.234315C4.08429 0.384344 4 0.587827 4 0.8V1.6H2.4C1.76348 1.6 1.15303 1.85286 0.702944 2.30294C0.252856 2.75303 0 3.36348 0 4V13.6C0 14.2365 0.252856 14.847 0.702944 15.2971C1.15303 15.7471 1.76348 16 2.4 16H13.6C14.2365 16 14.847 15.7471 15.2971 15.2971C15.7471 14.847 16 14.2365 16 13.6V4C16 3.36348 15.7471 2.75303 15.2971 2.30294C14.847 1.85286 14.2365 1.6 13.6 1.6ZM14.4 13.6C14.4 13.8122 14.3157 14.0157 14.1657 14.1657C14.0157 14.3157 13.8122 14.4 13.6 14.4H2.4C2.18783 14.4 1.98434 14.3157 1.83431 14.1657C1.68429 14.0157 1.6 13.8122 1.6 13.6V8H14.4V13.6ZM14.4 6.4H1.6V4C1.6 3.78783 1.68429 3.58434 1.83431 3.43431C1.98434 3.28429 2.18783 3.2 2.4 3.2H4V4C4 4.21217 4.08429 4.41566 4.23431 4.56569C4.38434 4.71571 4.58783 4.8 4.8 4.8C5.01217 4.8 5.21566 4.71571 5.36569 4.56569C5.51571 4.41566 5.6 4.21217 5.6 4V3.2H10.4V4C10.4 4.21217 10.4843 4.41566 10.6343 4.56569C10.7843 4.71571 10.9878 4.8 11.2 4.8C11.4122 4.8 11.6157 4.71571 11.7657 4.56569C11.9157 4.41566 12 4.21217 12 4V3.2H13.6C13.8122 3.2 14.0157 3.28429 14.1657 3.43431C14.3157 3.58434 14.4 3.78783 14.4 4V6.4Z" fill="#C5A059" />
                             </svg>
-                            mardi 3 février 2026
+                            <span id="dashCalDateExemple">mardi 3 février 2026</span>
                         </div>
 
                         <div class="indicateur">
                             <div class="ok">
                                 <div class="rond1"></div>
-                                Réservé
+                                <span id="dashCalReserveTexte">Réservé</span>
                             </div>
 
                             <div class="libre">
                                 <div class="rond2"></div>
-                                Libre
+                                <span id="dashCalLibreTexte">Libre</span>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
 
 
-            <h2>Créneaux horaires</h2>
+            <h2 id="dashCalCreneauxTitre">Créneaux horaires</h2>
 
             <?php
             $creneaux = ["09:30:00", "10:30:00", "11:30:00", "12:30:00", "13:30:00", "14:30:00", "15:30:00", "16:30:00"];
@@ -177,11 +177,11 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                                 <path d="M11.7 14.9V13.3C11.7 12.4513 11.3629 11.6374 10.7627 11.0373C10.1626 10.4372 9.34869 10.1 8.5 10.1H3.7C2.85131 10.1 2.03737 10.4372 1.43726 11.0373C0.837142 11.6374 0.5 12.4513 0.5 13.3V14.9M11.7 0.602432C12.3862 0.780328 12.9939 1.18104 13.4277 1.74168C13.8616 2.30232 14.097 2.99114 14.097 3.70003C14.097 4.40892 13.8616 5.09774 13.4277 5.65838C12.9939 6.21902 12.3862 6.61974 11.7 6.79763M16.5 14.9V13.3C16.4995 12.591 16.2635 11.9023 15.8291 11.3419C15.3947 10.7815 14.7865 10.3813 14.1 10.204" stroke="#F2F2F2" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M6.10039 6.9C7.8677 6.9 9.30039 5.46731 9.30039 3.7C9.30039 1.93269 7.8677 0.5 6.10039 0.5C4.33308 0.5 2.90039 1.93269 2.90039 3.7C2.90039 5.46731 4.33308 6.9 6.10039 6.9Z" stroke="#F2F2F2" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <?= $reservationTrouvee['nbr_pers'] ?> joueurs
+                            <?= $reservationTrouvee['nbr_pers'] ?> <span class="dashCalJoueursTexte">joueurs</span>
                         </div>
 
                         <div class="supp">
-                            Sup.
+                            <span class="dashCalSupprimerTexte">Sup.</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M18 5V19C18 19.5 17.5 20 17 20H12H7C6.5 20 6 19.5 6 19V5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M4 5H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -197,7 +197,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                             </svg>
                             <strong><?= substr($heure, 0, 5) ?></strong>
                         </div>
-                        - Créneau libre
+                        - <span class="dashCalCreneauLibreTexte">Créneau libre</span>
                     </div>
                 <?php endif; ?>
 
@@ -209,3 +209,4 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
 <?php
 $script = '<script src="js/dashCalendrier.js"></script>';
+$script .= '<script src="js/json.js" defer></script>';

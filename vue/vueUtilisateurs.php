@@ -85,9 +85,9 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
     <!-- ========================= -->
     <div class="droite">
         <div class="haut">
-            <h1 id="#">GESTION DES UTILISATEURS</h1>
-            <div class="sous-titre" id="#">
-                x utilisateurs inscrits
+            <h1 id="usersGestionTitre">GESTION DES UTILISATEURS</h1>
+            <div class="sous-titre">
+                <?= count($utilisateurs) ?> <span id="usersInscritsSuffixe">utilisateurs inscrits</span>
             </div>
         </div>
         <!-- Tableau des utilisateurs -->
@@ -96,12 +96,12 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
             <table class="table-utilisateur">
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Contact</th>
-                        <th>Réservations</th>
-                        <th>Statut</th>
-                        <th>Photo</th>
-                        <th>Action</th>
+                        <th id="usersColNom">Nom</th>
+                        <th id="usersColContact">Contact</th>
+                        <th id="usersColReservations">Réservations</th>
+                        <th id="usersColStatut">Statut</th>
+                        <th id="usersColPhoto">Photo</th>
+                        <th id="usersColAction">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -134,11 +134,11 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
 
                                     <select name="niveauAcces" class="select-statut">
                                         <?php if ($utilisateur['statut'] == 1): ?>
-                                            <option value="1" selected>Membre</option>
-                                            <option value="2">Administrateur</option>
+                                            <option value="1" selected class="usersStatutMembre">Membre</option>
+                                            <option value="2" class="usersStatutAdmin">Administrateur</option>
                                         <?php else: ?>
-                                            <option value="2" selected>Administrateur</option>
-                                            <option value="1">Membre</option>
+                                            <option value="2" selected class="usersStatutAdmin">Administrateur</option>
+                                            <option value="1" class="usersStatutMembre">Membre</option>
                                         <?php endif; ?>
                                     </select>
 

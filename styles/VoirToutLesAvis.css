@@ -167,12 +167,13 @@
 .avis-fenetre {
     width: min(90vw, 28rem);
     min-height: 18rem;
-    border: 1px solid var(--gold-clair);
+    border: 2px solid var(--gold-clair);
     border-radius: 1.25rem;
-    background-color: var(--bleu-fonce);
+    background: linear-gradient(180deg, rgba(16, 26, 35, 0.98) 0%, rgba(10, 19, 31, 0.98) 100%);
     padding: 1.5rem;
     box-sizing: border-box;
     position: relative;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(197, 160, 89, 0.25) inset;
 }
 
 .avis-fenetre-fermer {

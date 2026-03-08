@@ -1125,6 +1125,348 @@ let trad = {
         "fr": "Ajouter un avis",
         "en": "Add a review",
         "de": "Eine Bewertung hinzufügen"
+    },
+    "#titreAvisTous2": {
+        "fr": "Avis",
+        "en": "Reviews",
+        "de": "Bewertungen"
+    },
+    "#avisPopupQuestion": {
+        "fr": "Quelle note donneriez vous ?",
+        "en": "What rating would you give?",
+        "de": "Welche Bewertung würden Sie geben?"
+    },
+    "#avisPopupLabel": {
+        "fr": "Votre avis",
+        "en": "Your review",
+        "de": "Ihre Bewertung"
+    },
+    "#avisTexte": {
+        "fr": "Qu'avez vous pensé de notre escape game ? faites part de votre ressenti aux autres !",
+        "en": "What did you think of our escape game? Share your feedback with others!",
+        "de": "Wie hat Ihnen unser Escape Game gefallen? Teilen Sie Ihre Meinung mit anderen!"
+    },
+    "#avisPopupValider": {
+        "fr": "Valider",
+        "en": "Submit",
+        "de": "Bestätigen"
+    },
+    "#avisAucunMessage": {
+        "fr": "Aucun avis pour le moment.",
+        "en": "No reviews yet.",
+        "de": "Noch keine Bewertungen."
+    },
+
+    // ******************************** contact *************************************************
+    "#contactTitre": {
+        "fr": "Contact",
+        "en": "Contact",
+        "de": "Kontakt"
+    },
+    "#contactSousTitre": {
+        "fr": "Nous espérons avoir de vos nouvelles bientôt !",
+        "en": "We hope to hear from you soon!",
+        "de": "Wir hoffen, bald von Ihnen zu hören!"
+    },
+    "#contactAppelezNous": {
+        "fr": "Appelez-nous",
+        "en": "Call us",
+        "de": "Rufen Sie uns an"
+    },
+    "#contactHoraires": {
+        "fr": "Lun - Ven<br>9h00 - 12h00 / 13h00 - 16h00",
+        "en": "Mon - Fri<br>9:00am - 12:00pm / 1:00pm - 4:00pm",
+        "de": "Mo - Fr<br>9:00 - 12:00 / 13:00 - 16:00"
+    },
+    "#contactEcrivezNous": {
+        "fr": "Ecrivez-nous",
+        "en": "Write to us",
+        "de": "Schreiben Sie uns"
+    },
+    "#contactSlogan": {
+        "fr": "L'epreuve par equipe pour le meilleur moment d'equipe.",
+        "en": "A team challenge for the best team moment.",
+        "de": "Die Team-Challenge fur den besten Teammoment."
+    },
+    "#contactSuivezNous": {
+        "fr": "Suivez-nous",
+        "en": "Follow us",
+        "de": "Folgen Sie uns"
+    },
+    "#contactReseauxTexte": {
+        "fr": "Rejoignez l'aventure sur les reseaux",
+        "en": "Join the adventure on social media",
+        "de": "Begleiten Sie das Abenteuer in den sozialen Medien"
+    },
+    "#contactHashtag": {
+        "fr": "#WeEscapeChallenge",
+        "en": "#WeEscapeChallenge",
+        "de": "#WeEscapeChallenge"
+    },
+    "#contactGalerieTitre": {
+        "fr": "Apercus de l'Aventure",
+        "en": "Adventure Highlights",
+        "de": "Einblicke ins Abenteuer"
+    },
+    "#contactCitation": {
+        "fr": "\"Le secret le mieux garde est celui que l'on partage au bon moment\"",
+        "en": "\"The best-kept secret is the one shared at the right time\"",
+        "de": "\"Das bestgehutete Geheimnis ist das, das man im richtigen Moment teilt\""
+    },
+
+    // ******************************** dashboard avis *************************************************
+    "#dashAvisTitreListe": {
+        "fr": "TOUS LES AVIS",
+        "en": "ALL REVIEWS",
+        "de": "ALLE BEWERTUNGEN"
+    },
+    "#dashAvisSuffixeNombre": {
+        "fr": "avis",
+        "en": "reviews",
+        "de": "Bewertungen"
+    },
+    ".dashAvisSupprimerTexte": {
+        "fr": "Supprimer",
+        "en": "Delete",
+        "de": "Loschen"
+    },
+
+    // ******************************** dashboard calendrier *************************************************
+    "#dashCalendrierTitre": {
+        "fr": "CALENDRIER",
+        "en": "CALENDAR",
+        "de": "KALENDER"
+    },
+    "#dashCalendrierSousTitre": {
+        "fr": "Visualisez les creneaux reserves et disponibles par date et par escape.",
+        "en": "View booked and available slots by date and escape game.",
+        "de": "Sehen Sie gebuchte und verfugbare Zeitfenster nach Datum und Escape-Game."
+    },
+    "#dashCalLundi": {
+        "fr": "LUN",
+        "en": "MON",
+        "de": "MO"
+    },
+    "#dashCalMardi": {
+        "fr": "MAR",
+        "en": "TUE",
+        "de": "DI"
+    },
+    "#dashCalMercredi": {
+        "fr": "MER",
+        "en": "WED",
+        "de": "MI"
+    },
+    "#dashCalJeudi": {
+        "fr": "JEU",
+        "en": "THU",
+        "de": "DO"
+    },
+    "#dashCalVendredi": {
+        "fr": "VEN",
+        "en": "FRI",
+        "de": "FR"
+    },
+    "#dashCalSamedi": {
+        "fr": "SAM",
+        "en": "SAT",
+        "de": "SA"
+    },
+    "#dashCalDimanche": {
+        "fr": "DIM",
+        "en": "SUN",
+        "de": "SO"
+    },
+    "#dashCalFiltrerParEscape": {
+        "fr": "Filtrer par escape",
+        "en": "Filter by escape",
+        "de": "Nach Escape filtern"
+    },
+    "#dashCalTousEscapes": {
+        "fr": "Tous les escapes",
+        "en": "All escapes",
+        "de": "Alle Escapes"
+    },
+    "#dashCalBtnFiltrer": {
+        "fr": "Filtrer",
+        "en": "Filter",
+        "de": "Filtern"
+    },
+    "#dashCalDateExemple": {
+        "fr": "mardi 3 fevrier 2026",
+        "en": "tuesday, february 3, 2026",
+        "de": "dienstag, 3. februar 2026"
+    },
+    "#dashCalReserveTexte": {
+        "fr": "Reserve",
+        "en": "Booked",
+        "de": "Reserviert"
+    },
+    "#dashCalLibreTexte": {
+        "fr": "Libre",
+        "en": "Free",
+        "de": "Frei"
+    },
+    "#dashCalCreneauxTitre": {
+        "fr": "Creneaux horaires",
+        "en": "Time slots",
+        "de": "Zeitfenster"
+    },
+    ".dashCalJoueursTexte": {
+        "fr": "joueurs",
+        "en": "players",
+        "de": "Spieler"
+    },
+    ".dashCalSupprimerTexte": {
+        "fr": "Sup.",
+        "en": "Del.",
+        "de": "Losch."
+    },
+    ".dashCalCreneauLibreTexte": {
+        "fr": "Creneau libre",
+        "en": "Available slot",
+        "de": "Freies Zeitfenster"
+    },
+
+    // ******************************** utilisateurs *************************************************
+    "#usersGestionTitre": {
+        "fr": "GESTION DES UTILISATEURS",
+        "en": "USER MANAGEMENT",
+        "de": "BENUTZERVERWALTUNG"
+    },
+    "#usersInscritsSuffixe": {
+        "fr": "utilisateurs inscrits",
+        "en": "registered users",
+        "de": "registrierte Benutzer"
+    },
+    "#usersColNom": {
+        "fr": "Nom",
+        "en": "Name",
+        "de": "Name"
+    },
+    "#usersColContact": {
+        "fr": "Contact",
+        "en": "Contact",
+        "de": "Kontakt"
+    },
+    "#usersColReservations": {
+        "fr": "Reservations",
+        "en": "Bookings",
+        "de": "Buchungen"
+    },
+    "#usersColStatut": {
+        "fr": "Statut",
+        "en": "Status",
+        "de": "Status"
+    },
+    "#usersColPhoto": {
+        "fr": "Photo",
+        "en": "Photo",
+        "de": "Foto"
+    },
+    "#usersColAction": {
+        "fr": "Action",
+        "en": "Action",
+        "de": "Aktion"
+    },
+    ".usersStatutMembre": {
+        "fr": "Membre",
+        "en": "Member",
+        "de": "Mitglied"
+    },
+    ".usersStatutAdmin": {
+        "fr": "Administrateur",
+        "en": "Administrator",
+        "de": "Administrator"
+    },
+
+    // ******************************** game + erreur + loader + headers *************************************************
+    "#selectionGames": {
+        "fr": "Selectionnez vos preferences pour l'aventure.",
+        "en": "Select your preferences for the adventure.",
+        "de": "Wahlen Sie Ihre Einstellungen fur das Abenteuer."
+    },
+    "#gameAucunAvis": {
+        "fr": "Aucun avis pour le moment.",
+        "en": "No reviews yet.",
+        "de": "Noch keine Bewertungen."
+    },
+    "#boutonReserverGames": {
+        "fr": "Reserver maintenant",
+        "en": "Book now",
+        "de": "Jetzt buchen"
+    },
+    "#loaderTexte": {
+        "fr": "Chargement...",
+        "en": "Loading...",
+        "de": "Wird geladen..."
+    },
+    "#titre-erreur": {
+        "fr": "Une erreur est survenue",
+        "en": "An error occurred",
+        "de": "Ein Fehler ist aufgetreten"
+    },
+    "#erreurRetourAccueil": {
+        "fr": "Retour a l'accueil",
+        "en": "Back to home",
+        "de": "Zuruck zur Startseite"
+    },
+    "#reserverMobile": {
+        "fr": "Reserver",
+        "en": "Book now",
+        "de": "Jetzt buchen"
+    },
+    "#reserverDesktopTexte": {
+        "fr": "Reserver",
+        "en": "Book now",
+        "de": "Jetzt buchen"
+    },
+
+    // ******************************** ajout escape *************************************************
+    "#ajoutEscapeActifsSuffixe": {
+        "fr": "escapes actifs",
+        "en": "active escapes",
+        "de": "aktive Escapes"
+    },
+    "#ajoutEscapeColImage": {
+        "fr": "Image",
+        "en": "Image",
+        "de": "Bild"
+    },
+    "#ajoutEscapeColNom": {
+        "fr": "Nom",
+        "en": "Name",
+        "de": "Name"
+    },
+    "#ajoutEscapeColDescription": {
+        "fr": "Description",
+        "en": "Description",
+        "de": "Beschreibung"
+    },
+    "#ajoutEscapeColLieu": {
+        "fr": "Lieu",
+        "en": "Location",
+        "de": "Ort"
+    },
+    "#ajoutEscapeColDuree": {
+        "fr": "Duree",
+        "en": "Duration",
+        "de": "Dauer"
+    },
+    "#ajoutEscapeColJoueurs": {
+        "fr": "Joueurs",
+        "en": "Players",
+        "de": "Spieler"
+    },
+    "#ajoutEscapeColActions": {
+        "fr": "Actions",
+        "en": "Actions",
+        "de": "Aktionen"
+    },
+    "#ajoutEscapeAucun": {
+        "fr": "Aucun escape enregistre.",
+        "en": "No escape registered.",
+        "de": "Kein Escape registriert."
     }
 
 };

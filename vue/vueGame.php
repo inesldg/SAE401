@@ -158,7 +158,7 @@ CONTENEUR GLOBAL (2 colonnes)
                     }
                 } else {
                     // Message si aucun avis n'est trouvé
-                    echo "<p style='grid-column: 1/-1; text-align: center;'>Aucun avis pour le moment.</p>";
+                    echo "<p style='grid-column: 1/-1; text-align: center;' id='gameAucunAvis'>Aucun avis pour le moment.</p>";
                 }
                 ?>
             </div>
@@ -272,8 +272,7 @@ CONTENEUR GLOBAL (2 colonnes)
                 <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
 
                 <!-- bouton reserver -->
-                <button type="submit" class="bouton-reserver" id="boutonReserverGames">Réserver
-                    maintenant</button>
+                <button type="submit" class="bouton-reserver" id="boutonReserverGames">Réserver maintenant</button>
             </form>
         </section>
     </div>

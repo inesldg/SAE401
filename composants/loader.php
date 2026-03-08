@@ -68,5 +68,5 @@
     </svg>
 
     <!-- Texte affiché sous l’animation -->
-    <p class="page-loader__texte">Chargement…</p>
+    <p class="page-loader__texte" id="loaderTexte">Chargement…</p>
 </div>
