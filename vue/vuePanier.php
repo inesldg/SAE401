@@ -141,8 +141,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
                     <input type="hidden" name="horaireReserve" value="<?= $horaire ?>">
 
-                    <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm"
-                        value="<?= $nbrPersonnes ?>">
+                    <input type="hidden" name="nbrPersonneReserve" value="<?= $nbrPersonnes ?>">
 
                     <input type="hidden" name="idEscapeReserve" value="<?= $panier[0]['id_escape'] ?>">
 
