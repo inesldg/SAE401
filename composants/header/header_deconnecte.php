@@ -1,6 +1,6 @@
+<?php
 // Récupère l'action dans l'URL (ex: index.php?action=contact)
 // Si aucune action n'est définie, la page par défaut est "accueil"
-<?php
 
 // Header qui s'affiche lorsque l'utilisateur n'est pas connecté (ni en admin ni en utilisateur)
 
