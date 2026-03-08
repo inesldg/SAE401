@@ -15,18 +15,26 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/contact.css">';
 ?>
 
-<!-- ------ ICI mettre le code HTML ------ -->
 
-
+<!-- -------------------------------
+PAGE CONTACT
+Contient les informations de contact,
+les réseaux sociaux et une galerie
+-------------------------------- -->
 
 <main class="container">
     <div class="page-wrapper">
         <div class="overlay"></div>
 
         <main class="content">
+            <!-- Titre de la page -->
             <h1>Contact</h1>
             <p class="subtitle">Nous espérons avoir de vos nouvelles bientôt !</p>
 
+            <!-- -------------------------------
+            SECTION CARDS CONTACT
+            téléphone / mail / réseaux
+            -------------------------------- -->
             <div class="contact-grid">
                 <div class="contact-card">
                     <h3>Appelez-nous</h3>
@@ -42,6 +50,9 @@ $style = '<link rel="stylesheet" href="styles/contact.css">';
                     <p>L'épreuve par équipe pour le meilleur moment d'équipe.</p>
                 </div>
 
+                <!-- -------------------------------
+                    Icônes réseaux sociaux (SVG)
+                    -------------------------------- -->
                 <div class="contact-card">
                     <h3>Suivez-nous</h3>
                     <p>Rejoignez l'aventure sur les réseaux</p>
@@ -83,6 +94,10 @@ $style = '<link rel="stylesheet" href="styles/contact.css">';
                 </div>
             </div>
 
+
+            <!-- -------------------------------
+            GALERIE PHOTOS
+            -------------------------------- -->
             <section class="gallery-section">
                 <h2 class="gallery-title">Aperçus de l'Aventure</h2>
                 <div class="gallery-container">
@@ -100,7 +115,10 @@ $style = '<link rel="stylesheet" href="styles/contact.css">';
 
             <section class="footer-quote">
                 <div class="horizontal-line"></div>
-                <p class="quote-text reveal reveal-up">"Le secret le mieux gardé est celui que l'on partage au bon moment"</p>
+
+                <!-- Citation -->
+                <p class="quote-text reveal reveal-up">"Le secret le mieux gardé est celui que l'on partage au bon
+                    moment"</p>
             </section>
         </main>
     </div>
