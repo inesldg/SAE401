@@ -410,9 +410,9 @@ let trad = {
         "de": "Alle"
     },
     "#legendeNote": {
-        "fr": "Note des avis (étoiles)",
-        "en": "Review rating (stars)",
-        "de": "Bewertung (Sterne)"
+        "fr": "Note des avis (moyenne)",
+        "en": "Review rating (average)",
+        "de": "Bewertung (Durchschnitt)"
     },
     "#legendeDuree": {
         "fr": "Durée du jeu en minutes",

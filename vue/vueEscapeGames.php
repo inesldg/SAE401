@@ -96,7 +96,7 @@ SECTION HERO (titre principal)
                 FILTRE PAR NOTE (étoiles)
                 -------------------------------- -->
                 <fieldset class="filtres-escape__bloc">
-                    <legend id="legendeNote">Note des avis (étoiles)</legend>
+                    <legend id="legendeNote">Note des avis (moyenne)</legend>
                     <?php
                     $etoilesCochees = $filtres['etoiles'] ?? [];
                     if (!is_array($etoilesCochees)) {

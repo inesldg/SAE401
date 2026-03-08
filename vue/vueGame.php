@@ -235,11 +235,6 @@ CONTENEUR GLOBAL (2 colonnes)
                     <label>
                         <span id="participGames">Participants</span>
                         <select name="nbrPersonnesEscape" class="choix-horaire" id="nbrParticipantsGame">
-                            <!-- <option value="1">1 personne</option>
-                            <option value="2">2 personnes</option>
-                            <option value="3">3 personnes</option> -->
-                            <option value="4">4 personnes</option>
-                            <option value="5">5 personnes</option>
                             <option value="6" selected>6 personnes</option>
                             <option value="7">7 personnes</option>
                             <option value="8">8 personnes</option>
