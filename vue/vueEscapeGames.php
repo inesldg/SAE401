@@ -15,26 +15,35 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 ?>
 
+<!-- -------------------------------
+SECTION HERO (titre principal)
+-------------------------------- -->
 <section class="hero-section">
+    <!-- titre principal -->
     <h1 id="reserverEscapGam">
         <span id="txtReserver">Réservez votre </span>
         <span class="titre-or" id="titreorEscapGam">mission immersive</span>
         <span id="txtMaintenant"> dès maintenant</span>
     </h1>
+    <!-- sous-titre -->
     <p class="reveal reveal-up" id="choixEscapGam">Choisissez votre univers !</p>
 </section>
 
 
-
-
+<!-- -------------------------------
+SECTION HERO (titre principal)
+-------------------------------- -->
 <section class="escapes-section">
     <div class="escapes-container">
 
+        <!-- Bouton mobile pour afficher les filtres -->
         <button id="btn-toggle-filtres" class="mobile-filter-trigger">
             <span class="reveal reveal-up">Afficher les Filtres</span>
         </button>
 
-        <!-- COLONNE FILTRE -->
+        <!-- ===============================
+        COLONNE FILTRES
+        =============================== -->
         <aside class="filtres-tri reveal reveal-up">
             <form class="filtres-escape__form" method="get" action="index.php">
                 <input type="hidden" name="action" value="escapeGames">
@@ -53,12 +62,18 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     </label>
                 </fieldset> -->
 
+                <!-- -------------------------------
+                FILTRE NOMBRE MINIMUM DE JOUEURS
+                -------------------------------- -->
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePers">Nombre minimum de personnes</legend>
                     <input type="number" name="pers_min" min="1" max="20" placeholder="Ex: 4"
                         value="<?= isset($filtres['pers_min']) ? htmlspecialchars($filtres['pers_min']) : '' ?>">
                 </fieldset>
 
+                <!-- -------------------------------
+                FILTRE PAR LIEU
+                -------------------------------- -->
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendeLieu">Lieu</legend>
                     <?php $lieuActuel = $filtres['lieu'] ?? ''; ?>
@@ -84,6 +99,9 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     </label>
                 </fieldset>
 
+                <!-- -------------------------------
+                FILTRE PAR NOTE (étoiles)
+                -------------------------------- -->
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendeNote">Note des avis (étoiles) – optionnel</legend>
                     <?php
@@ -100,6 +118,9 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                     <label><input type="checkbox" name="etoiles[]" value="5" <?= in_array('5', $etoilesCochees, true) ? 'checked' : '' ?>> 5 ★</label>
                 </fieldset>
 
+                <!-- -------------------------------
+                FILTRE DURÉE MAX DU JEU
+                -------------------------------- -->
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendeDuree">Durée max du jeu (minutes)</legend>
                     <label>
@@ -116,6 +137,11 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                 </button>
 
             </form>
+
+
+            <!-- ===============================
+        COLONNE DES CARTES ESCAPES
+        =============================== -->
         </aside>
         <!-- COLONNE ESCAPES -->
         <div class="escapes-cartes reveal reveal-up">
@@ -123,6 +149,9 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
             <?php foreach ($escapeGames as $game): ?>
                 <article class="accueil-escape-card">
 
+                    <!-- -------------------------------
+                    IMAGE DE L'ESCAPE
+                    -------------------------------- -->
                     <div class="accueil-escape-card__img">
                         <?php
                         $dossier = "photos_escapes/";
@@ -146,6 +175,9 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                         <?php endif; ?>
                     </div>
 
+                    <!-- -------------------------------
+                    CONTENU DE LA CARTE
+                    -------------------------------- -->
                     <div class="accueil-escape-card__corps">
                         <h3 class="accueil-escape-card__titre">
                             <?= $game['nom'] ?>
@@ -189,12 +221,14 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                             </span>
                         </div>
 
+                        <!-- bouton voir détails -->
                         <a class="accueil-escape-card__prix"
                             href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" id="detailEscapeGam">
                             Voir détails
                         </a>
                     </div>
 
+                    <!-- lien invisible pour rendre toute la carte cliquable -->
                     <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" class="accueil-escape-card__link"
                         aria-label="Voir détails : <?= htmlspecialchars($game['nom']) ?>"></a>
                 </article>

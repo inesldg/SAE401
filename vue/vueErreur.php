@@ -19,6 +19,8 @@ if (empty($message)) {
 $style = '<link rel="stylesheet" href="styles/erreur.css">';
 ?>
 
+<!-- Vue message d'erreur quand une erreur survient -->
+
 <span id="erreurErr" aria-hidden="true">Une erreur est survenue</span>
 
 <section class="page-erreur" aria-labelledby="titre-erreur">
@@ -29,6 +31,8 @@ $style = '<link rel="stylesheet" href="styles/erreur.css">';
         <p class="page-erreur__message">
             <?= $message ?>
         </p>
+
+        <!-- bouton pour revenir à l'accueil -->
         <a href="index.php?action=accueil" class="page-erreur__lien">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
