@@ -1,5 +1,7 @@
 <?php
-// Ta logique de config
+// -----------------------------
+// Gestion de la langue du site
+// -----------------------------
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
@@ -12,13 +14,16 @@ $lang = $_SESSION['lang'];
 $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
 ?>
 
+<!-- Fond de la page -->
 <div class="background-fond">
+    <!-- Carte principale contenant le formulaire -->
+    <div class="carte">
+        <div class="carte-couleur">
+            <h1 class="carte-couleur__titre reveal reveal-up" id="titreModifCompte">Modification de vos informations
+            </h1>
+        </div>
 
-        <div class="carte">
-            <div class="carte-couleur">
-                <h1 class="carte-couleur__titre reveal reveal-up" id="titreModifCompte">Modification de vos informations</h1>
-            </div>
-
+        <!-- Formulaire de modification des informations utilisateur -->
         <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>" class="carte-contenu">
 
             <div class="ligne-profil">
@@ -30,6 +35,8 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                                 fill="#888" />
                         </svg>
                     </div>
+
+                    <!-- Texte avec prénom, nom et mail -->
                     <div class="infos-texte">
                         <h2><?= $infosCompte[0]['prenom'] . ' ' . $infosCompte[0]['nom'] ?></h2>
                         <p><?= $infosCompte[0]['mail'] ?></p>
@@ -39,6 +46,7 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                     id="modifCompte">Sauvegarder</button>
             </div>
 
+            <!-- Grille contenant les champs du formulaire -->
             <div class="grille-formulaire">
                 <div class="case">
                     <label id="nomCompte">NOM</label>
@@ -57,6 +65,7 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                 </div>
             </div>
 
+            <!-- Section email -->
             <div class="email">
                 <p class="adresseemail" id="mailCompteActuel">ADRESSE MAIL ACTUELLE</p>
                 <div class="boite-email">
@@ -69,6 +78,7 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                 <span class="message-php"><?= $message ?></span>
             </div>
 
+            <!-- Section sécurité : confirmation du mot de passe -->
             <div class="section-mdp">
                 <p class="section-mdp__intro" id="introModifCompte">Pour enregistrer vos modifications, saisissez votre
                     mot de passe actuel.</p>
@@ -86,4 +96,5 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
     </div>
 </div>
 
+<!-- Script JS utilisé pour la gestion JSON / traduction -->
 <script src="js/json.js" defer></script>
