@@ -18,7 +18,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
 
     <div class="avis-page">
         <!-- ========================= -->
-        <!-- SECTION FILTRES ET ACTIONS -->
+        <!-- SECTION FILTRES ET AACTIONS -->
         <!-- ========================= -->
         <div class="avis-filtre reveal reveal-up">
             <div class="avis-titre reveal reveal-up" id="titreAvisTous2">Avis</div>
