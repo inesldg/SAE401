@@ -1,27 +1,38 @@
+// =========================================================
+// POPUP – Ajout / Fermeture
+// =========================================================
 
+// selection des elt pour le popup
 const btnAjouter = document.getElementById("btnAjouter");
 const overlay = document.getElementById("overlay");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
 
+// quand on clique sur le bouton "ajouter", ca ouvre le popup
 btnAjouter.addEventListener("click", function(e) {
     e.preventDefault();
+
+    // affiche le fond
     overlay.style.display = "block";
+    // affiche le contenu
     popup.style.display = "block";
+
+    // on ajoute la classe active legerement apres pour permettre l'animation CSS
     setTimeout(() => {
         popup.classList.add("active");
     }, 10);
 });
 
+// fonction pour fermer le popup
 function fermerPopup() {
     overlay.style.display = "none";
     popup.style.display = "none";
     popup.classList.remove("active");
 }
 
+// quand on clique sur la croix du popup, ca ferme le popup
 closePopup.addEventListener("click", fermerPopup);
 overlay.addEventListener("click", fermerPopup);
-
 
 
 
