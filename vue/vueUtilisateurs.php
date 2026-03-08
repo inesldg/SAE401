@@ -142,6 +142,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                             <!-- SUPPRESSION -->
                             <td>
                                 <a class="supp"
+                                    onclick="return confirm('Supprimer cet utilisateur ?')"
                                     href="index.php?action=supprimerUtilisateur&id=<?= $utilisateur['id_utilisateur'] ?>">
                                     <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">

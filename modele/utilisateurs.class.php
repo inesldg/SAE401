@@ -18,4 +18,11 @@ class utilisateurs extends database
         $modifPrenom = $this->execReqPrep($req, array($acces, $id));
         return $modifPrenom;
     }
+
+    public function supprimerUtilisateur($id)
+    {
+        $req = 'DELETE FROM utilisateur WHERE id_utilisateur = ?';
+        $supp = $this->execReqPrep($req, array($id));
+        return $supp;
+    }
 }
