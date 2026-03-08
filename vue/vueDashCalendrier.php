@@ -180,7 +180,9 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                             <?= $reservationTrouvee['nbr_pers'] ?> joueurs
                         </div>
 
-                        <div class="supp">
+                        <div class="supp btnSupprimer"
+                            data-id="<?= $reservationTrouvee['id_reserver'] ?>"
+                            data-mail="<?= htmlspecialchars($reservationTrouvee['mail']) ?>">
                             Sup.
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M18 5V19C18 19.5 17.5 20 17 20H12H7C6.5 20 6 19.5 6 19V5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -203,6 +205,18 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
             <?php endforeach; ?>
 
+
+            <div id="overlay"></div>
+
+            <div id="popup" class="popup-suppression">
+                <h3>Supprimer la réservation ?</h3>
+                <p>Motif de l'annulation :</p>
+                <textarea id="motif" rows="3" placeholder="Indiquez le motif..."></textarea>
+                <div class="popup-actions">
+                    <button id="validerSuppression">Valider</button>
+                    <button id="closePopup">Annuler</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
