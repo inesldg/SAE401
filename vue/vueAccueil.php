@@ -1,6 +1,7 @@
 <?php
 
 $style = '<link rel="stylesheet" href="styles/accueil.css">';
+$head_extra = '<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>';
 
 ?>
 

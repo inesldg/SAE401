@@ -135,13 +135,13 @@ let trad = {
         "de": "Spielort"
     },
     "#dureeNvEscape": {
-        "fr": "Durée",
-        "en": "Duration",
+        "fr": "Durée (minutes)",
+        "en": "Duration (minutes)",
         "de": "Dauer"
     },
     "#inputduree": {
-        "fr": "Durée du jeu",
-        "en": "Game duration",
+        "fr": "Durée du jeu en minutes",
+        "en": "Game duration in minutes",
         "de": "Spielzeit"
     },
 
@@ -1092,8 +1092,7 @@ window.onload = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-visible');
-                // Optionnel : on arrête d'observer une fois l'animation faite
-                // observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);

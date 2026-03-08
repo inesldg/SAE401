@@ -45,14 +45,14 @@ if (header) {
 const backToTopBtn = document.querySelector('.back-to-top');
 
 if (backToTopBtn) {
-  // Afficher/masquer le bouton selon le scroll
+  // Afficher/masquer le bouton selon le scroll (passive = meilleure fluidité)
   window.addEventListener('scroll', function () {
     if (window.scrollY > 300) {
       backToTopBtn.classList.add('show');
     } else {
       backToTopBtn.classList.remove('show');
     }
-  });
+  }, { passive: true });
 
   // Smooth scroll vers le haut au clic
   backToTopBtn.addEventListener('click', function (e) {
