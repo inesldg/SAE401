@@ -2,6 +2,8 @@
 require_once "modele/accueil.class.php";
 require_once "vue/vue.class.php";
 
+// Controleur pour afficher la page d'accueil
+
 class ctlAccueil
 {
     private $accueil;

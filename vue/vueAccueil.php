@@ -1,6 +1,7 @@
 <?php
 // Ajout dynamique de la feuille de style spécifique à la page accueil
 $style = '<link rel="stylesheet" href="styles/accueil.css">';
+$head_extra = '<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>';
 
 ?>
 
@@ -79,7 +80,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
             <span id="nos">Nos derniers</span>
             <span class="accueil-titre--or" id="suitetitreh2">ESCAPES</span>
         </h2>
-        <div class="accueil-escapes__grille reveal delay-1">
+        <div class="accueil-escapes__grille">
 
 
             <!-- ===== BOUCLE PHP ===== -->

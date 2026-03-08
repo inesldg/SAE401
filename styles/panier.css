@@ -26,11 +26,13 @@ Objectif : cohérence avec l’identité du site
 }
 
 .conteneur-principal {
+    width: 100%;
     max-width: 1500px;
     margin: 0 auto;
     display: flex;
     gap: 40px;
     align-items: flex-start;
+    box-sizing: border-box;
 }
 
 /* --- BLOCS COMMUNS (3 cartes blanches : blur + texte blanc) --- */
@@ -122,7 +124,8 @@ COLONNE GAUCHE
 Panier + bons d’achat
 ========================================================= */
 .colonne-gauche {
-    flex: 1.4;
+    flex: 0.8;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -132,30 +135,54 @@ Panier + bons d’achat
 SECTION PANIER
 ========================================================= */
 .section-panier {
-    flex: none;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .produit {
     display: flex;
     gap: 20px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: 25px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.image-remplacement,
+.image-panier {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .image-remplacement {
-    width: 110px;
-    height: 110px;
     background: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
     font-size: 2rem;
 }
 
 .infos-produit {
-    max-width: 250px;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.ligne-recap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 12px;
+}
+
+.recap-date,
+.recap-horaire,
+.recap-personnes {
+    display: block;
 }
 
 .infos-produit h3 {
@@ -167,6 +194,8 @@ SECTION PANIER
     font-size: 0.9rem;
     line-height: 1.3;
     margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* ligne prix */
@@ -207,9 +236,11 @@ Code promo + paiement
 ========================================================= */
 .colonne-laterale {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    box-sizing: border-box;
 }
 
 /* --- INPUTS ET FOCUS --- */
@@ -310,11 +341,28 @@ input:focus {
     pointer-events: none;
 }
 
-.card-brand-zone .card-brand-img,
-#card-brand-zone .card-brand-img {
-    max-height: 36px;
-    width: auto;
-    object-fit: contain;
+/* Label type de carte : carré en bas à droite */
+.card-brand-label {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Visa : bleu + Inter */
+.card-brand-zone.card-brand--visa .card-brand-label {
+    background: #1a1f71;
+    color: #fff;
+}
+
+/* Mastercard : dégradé rouge / orange / jaune + Inter */
+.card-brand-zone.card-brand--mastercard .card-brand-label {
+    background: linear-gradient(90deg, #eb001b, #f79e1b, #ffc107);
+    color: #fff;
 }
 
 .paiement-attente {

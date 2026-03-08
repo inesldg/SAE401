@@ -1,6 +1,9 @@
 // Récupère l'action dans l'URL (ex: index.php?action=contact)
 // Si aucune action n'est définie, la page par défaut est "accueil"
 <?php
+
+// Header qui s'affiche lorsque l'utilisateur n'est pas connecté (ni en admin ni en utilisateur)
+
 $currentAction = $_GET['action'] ?? 'accueil';
 ?>
 
@@ -19,6 +22,7 @@ $currentAction = $_GET['action'] ?? 'accueil';
             <span></span>
         </button>
 
+        <!-- Liens menu navigateur -->
         <nav class="nav-menu" id="navMenu">
             <!-- Chaque lien vérifie si l'action actuelle correspond pour appliquer la classe "active" -->
             <!-- Cela permet de surligner la page active dans le menu -->
@@ -29,12 +33,14 @@ $currentAction = $_GET['action'] ?? 'accueil';
             <a href="index.php?action=contact" id="menuContact" <?= $currentAction === 'contact' ? 'class="active"' : '' ?>>Contact</a>
             <a href="index.php?action=pageConnexion" id="menuCompte" <?= in_array($currentAction, ['pageConnexion', 'pageInscription']) ? 'class="active"' : '' ?>>Compte</a>
 
+            <!-- Boutons pour changer la langue -->
             <div class="lang-switcher">
                 <button data-langue="fr" class="active">FR</button>
                 <button data-langue="en">EN</button>
                 <button data-langue="de">DE</button>
             </div>
 
+            <!-- Boutons de réservation mobile & ordi -->
             <a href="index.php?action=escapeGames" class="btn-reserve mobile-only">
                 Réserver
             </a>

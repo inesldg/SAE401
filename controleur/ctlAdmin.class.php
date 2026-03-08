@@ -1,6 +1,6 @@
 <?php
 
-// A VERIFIERRRRRRR SVP
+// Controleur pour afficher le tableau de bord pour l'admin
 
 require_once "modele/admin.class.php";
 require_once "vue/vue.class.php";
@@ -17,7 +17,7 @@ class ctlAdmin
 
     public function afficherDash()
     {
-
+        // On appelle différentes fonctions du modèle pour récupérer les données de la base
         $reservations = $this->admin->getReservations();
         $utilisateurs = $this->admin->getUtilisateurs();
         $escapes = $this->admin->getEscapes();
@@ -32,6 +32,8 @@ class ctlAdmin
 
         $vue = new vue("Dashboard");
 
+        // On envoie les données à la vue sous forme de tableau associatif
+        // La vue pourra ensuite afficher ces informations
         $vue->afficher(array(
             "reservations" => $reservations['total'],
             "utilisateurs" => $utilisateurs['total'],

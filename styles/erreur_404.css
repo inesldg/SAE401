@@ -1,34 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-
-:root {
-    /* Couleurs principales */
-    --blanc-casse: #F2F2F2;
-    --gold-clair: #C5A059;
-    --gold-fonce: #A3730C;
-    --bleu-fonce: #101A23;
-    --noir: #0A0A0A;
-    --marron-clair: #4B2009;
-    --marron-fonce: #322611;
-
-    /* Typos */
-    --titre: 'Cinzel', serif;
-    --texte: 'Inter', sans-serif;
-
-    /* Dégradés pour boutons etc */
-    --gold-gradient: linear-gradient(to right, #E6B856, #806630);
-    --gold-gradient-transition: linear-gradient(to right, #E6B856, #806630, #E6B856, #806630);
-
-    --gold-fade: linear-gradient(to bottom, transparent 0%, #E6B856 50%, transparent 100%);
-    --gold-fade-horizontal: linear-gradient(to right, transparent 0%, #E6B856 50%, transparent 100%);
-    --fond-sombre: #101A23;
-}
-
-/* ---------------------------------------------------
-BODY
-Configuration générale de la page 404
-Centre le contenu verticalement et horizontalement
---------------------------------------------------- */
 body {
     margin: 0;
     padding: 0;

@@ -7,6 +7,27 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
 <!-- PAGE DES AVIS -->
 <!-- ========================= -->
 <div class="avis-page-wrapper">
+    <a href="index.php?action=escapeGames" class="btn-retour btn-retour-absolu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span id="btnRetourTexte">Retour aux escape games</span>
+    </a>
+<div class="avis-page">
+    <div class="avis-filtre">
+        <div class="avis-titre reveal reveal-up">Avis</div>
+        <div class="avis-actions">
+            <div class="avis-pill avis-pill-filtre" data-filter-note="1"><span class="dore">★</span><span class="grise">★★★★</span></div>
+            <div class="avis-pill avis-pill-filtre" data-filter-note="2"><span class="dore">★★</span><span class="grise">★★★</span></div>
+            <div class="avis-pill avis-pill-filtre" data-filter-note="3"><span class="dore">★★★</span><span class="grise">★★</span></div>
+            <div class="avis-pill avis-pill-filtre" data-filter-note="4"><span class="dore">★★★★</span><span class="grise">★</span></div>
+            <div class="avis-pill avis-pill-filtre" data-filter-note="5"><span class="dore">★★★★★</span></div>
+            <div class="avis-pill avis-pill-add" id="txt-ajt-avis">Ajouter un avis</div>
+        </div>
+    </div>
+    <div class="avis-filtre-message" id="avisFiltreMessage" style="display:none;"></div>
     <div class="avis-page">
         <!-- ========================= -->
         <!-- SECTION FILTRES ET ACTIONS -->

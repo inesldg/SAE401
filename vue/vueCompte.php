@@ -10,12 +10,32 @@ if (!isset($_SESSION['lang'])) {
 }
 $lang = $_SESSION['lang'];
 
-// Style dynamique (si besoin)
+// Style
 $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
+
+// Photo de profil : chercher dans photos_utilisateurs (id_utilisateur.ext)
+// ?t=filemtime évite le cache navigateur après un nouvel upload (image à jour sans recharger)
+$photoProfilPath = null;
+$idUtilisateur = $infosCompte[0]['id_utilisateur'] ?? null;
+if ($idUtilisateur) {
+    $dossier = "photos_utilisateurs/";
+    $dossierAbsolu = dirname(__DIR__) . DIRECTORY_SEPARATOR . "photos_utilisateurs" . DIRECTORY_SEPARATOR;
+    foreach (array('jpg', 'jpeg', 'png', 'webp') as $ext) {
+        $fichierAbsolu = $dossierAbsolu . $idUtilisateur . "." . $ext;
+        if (file_exists($fichierAbsolu)) {
+            $photoProfilPath = $dossier . $idUtilisateur . "." . $ext . '?t=' . filemtime($fichierAbsolu);
+            break;
+        }
+    }
+}
 ?>
 
 <!-- Fond de la page -->
 <div class="background-fond">
+    <?php if (!empty($message)): ?>
+        <p class="compte-message"><?= $message ?></p>
+    <?php endif; ?>
+
     <!-- Carte principale contenant le formulaire -->
     <div class="carte">
         <div class="carte-couleur">
@@ -23,7 +43,6 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
             </h1>
         </div>
 
-        <!-- Formulaire de modification des informations utilisateur -->
         <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>" class="carte-contenu">
 
             <div class="ligne-profil">
@@ -35,8 +54,6 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                                 fill="#888" />
                         </svg>
                     </div>
-
-                    <!-- Texte avec prénom, nom et mail -->
                     <div class="infos-texte">
                         <h2><?= $infosCompte[0]['prenom'] . ' ' . $infosCompte[0]['nom'] ?></h2>
                         <p><?= $infosCompte[0]['mail'] ?></p>
@@ -75,7 +92,6 @@ $style = '<link rel="stylesheet" href="styles/compteEtModif.css">';
                     <label id="nouvelleMailCompte">Nouvelle adresse mail (optionnel)</label>
                     <input type="email" name="mail" placeholder="Nouvelle adresse mail (optionnel)">
                 </div>
-                <span class="message-php"><?= $message ?></span>
             </div>
 
             <!-- Section sécurité : confirmation du mot de passe -->

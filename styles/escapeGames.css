@@ -182,6 +182,35 @@ Grille principale des jeux
     margin-bottom: 6rem;
 }
 
+.escapes-aucun-resultat {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--blanc-casse);
+    font-family: var(--texte);
+    font-size: 1.1rem;
+    padding: 2rem;
+    margin: 0;
+}
+
+.btn-supprimer-filtres {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-family: var(--texte);
+    font-size: 0.9rem;
+    color: var(--gold-clair);
+    background: transparent;
+    border: 1px solid var(--gold-clair);
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-supprimer-filtres:hover {
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--blanc-casse);
+}
 
 .accueil-escape-card {
     position: relative;

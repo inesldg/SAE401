@@ -135,13 +135,13 @@ let trad = {
         "de": "Spielort"
     },
     "#dureeNvEscape": {
-        "fr": "Durée",
-        "en": "Duration",
+        "fr": "Durée (minutes)",
+        "en": "Duration (minutes)",
         "de": "Dauer"
     },
     "#inputduree": {
-        "fr": "Durée du jeu",
-        "en": "Game duration",
+        "fr": "Durée du jeu en minutes",
+        "en": "Game duration in minutes",
         "de": "Spielzeit"
     },
 
@@ -436,8 +436,15 @@ let trad = {
     },
     "#btnFiltrer": {
         "fr": "Filtrer",
-        "en": "Filter",
-        "de": "Filtern"
+        "en": "Filter"
+    },
+    "#aucunJeuCriteres": {
+        "fr": "Aucun jeu trouvé correspondant à ces critères.",
+        "en": "No game found matching these criteria."
+    },
+    "#btnSupprimerFiltres": {
+        "fr": "Supprimer les filtres",
+        "en": "Clear filters"
     },
 
     // ******************************** vue Games *************************************************
@@ -508,7 +515,11 @@ let trad = {
     "#selectionDatesGames": {
         "fr": "Sélectionnez votre date pour l'aventure",
         "en": "Please select a date for the adventure",
-        "de": "Bitte wählen Sie ein Datum für die Abenteuer"
+    },
+    "#erreurDateReservation": {
+        "fr": "Veuillez sélectionner une date.",
+        "en": "Please select a date.",
+        "de": "Bitte wählen Sie ein Datum."
     },
     "#lundi": {
         "fr": "lun",
@@ -715,9 +726,8 @@ let trad = {
 
     // ******************************** vue Panier *************************************************
     "#panierPanier": {
-        "fr": "Votre panier",
-        "en": "Your cart",
-        "de": "Ihr Warenkorb"
+        "fr": "Votre réservation",
+        "en": "Your booking",
     },
     "#supprPanier": {
         "fr": "Supprimer",
@@ -1182,19 +1192,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnEn = document.querySelector('.lang-switcher button[data-langue="en"]');
     const btnDe = document.querySelector('.lang-switcher button[data-langue="de"]');
 
-    // 2. Fonction pour changer l'apparence visuelle
+    // 2. Fonction pour changer l'apparence visuelle (un seul bouton doré = langue active)
     function toggleVisual(langue) {
         if (btnFr && btnEn && btnDe) {
-            if (langue === 'en') {
-                btnEn.classList.add('active');
-                btnFr.classList.remove('active');
-            } else if (langue === 'de') {
-                btnDe.classList.add('active');
-                btnFr.classList.remove('active');
-            } else {
-                btnFr.classList.add('active');
-                btnEn.classList.remove('active');
-            }
+            btnFr.classList.remove('active');
+            btnEn.classList.remove('active');
+            btnDe.classList.remove('active');
+            const btn = langue === 'en' ? btnEn : (langue === 'de' ? btnDe : btnFr);
+            if (btn) btn.classList.add('active');
         }
     }
 
@@ -1239,8 +1244,7 @@ window.onload = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-visible');
-                // Optionnel : on arrête d'observer une fois l'animation faite
-                // observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);

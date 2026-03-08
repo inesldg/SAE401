@@ -56,6 +56,7 @@ class routeur
                 $acces = $this->ctlCompte->getAcces($mail);
                 $id = $this->ctlCompte->getId($mail);
                 $_SESSION['statut'] = $acces[0]['statut'] ?? null;
+                $_SESSION['id_utilisateur'] = $id[0]['id_utilisateur'] ?? null;
 
                 if (isset($_GET["action"])) {
                     switch ($_GET["action"]) {
@@ -91,11 +92,20 @@ class routeur
                                 throw new Exception("<span>Aucun escape game selectionné</span>");
                             break;
                         case "panier":
-                            if (isset($_POST)) {
-                                if (isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape']))
-                                    $this->ctlPanier->pagePanier($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'], $message = "");
-                            } else
+                            $donneesPanier = null;
+                            if (isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'])) {
+                                $donneesPanier = $_POST;
+                            } elseif (isset($_SESSION['retour_panier']) && !empty($_SESSION['retour_panier'])) {
+                                $donneesPanier = $_SESSION['retour_panier'];
+                                unset($_SESSION['retour_panier']);
+                            }
+                            if ($donneesPanier) {
+                                $mois = !empty($donneesPanier['moisEscape']) ? $donneesPanier['moisEscape'] : date('n');
+                                $annee = !empty($donneesPanier['anneeEscape']) ? $donneesPanier['anneeEscape'] : date('Y');
+                                $this->ctlPanier->pagePanier($donneesPanier['jourEscape'], $mois, $annee, $donneesPanier['horaireEscape'], $donneesPanier['nbrPersonnesEscape'], $donneesPanier['idEscape'], $message = "");
+                            } else {
                                 throw new Exception("Vous n'avez aucun panier actif");
+                            }
                             break;
                         case "ajouterAvis":
                             if (isset($_GET['idEscapeGame'])) {
@@ -254,6 +264,20 @@ class routeur
                             break;
 
                         case "panier":
+                            // Retour après connexion : on garde les infos de résa en session et on met le cookie pour rediriger vers panier
+                            if (isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'])) {
+                                $_SESSION['retour_panier'] = [
+                                    'jourEscape' => $_POST['jourEscape'],
+                                    'moisEscape' => isset($_POST['moisEscape']) ? $_POST['moisEscape'] : date('n'),
+                                    'anneeEscape' => isset($_POST['anneeEscape']) ? $_POST['anneeEscape'] : date('Y'),
+                                    'horaireEscape' => $_POST['horaireEscape'],
+                                    'nbrPersonnesEscape' => $_POST['nbrPersonnesEscape'],
+                                    'idEscape' => $_POST['idEscape'],
+                                ];
+                                setcookie('page', '?action=panier', time() + 300, '/');
+                            } else {
+                                setcookie('page', '?action=panier', time() + 300, '/');
+                            }
                             $this->ctlPages->pageConnexion($message = "");
                             break;
 
@@ -265,6 +289,9 @@ class routeur
                             $this->ctlPages->pageConnexion($message = "");
                             break;
                         case "ajouterAvis":
+                            if (isset($_GET['idEscapeGame'])) {
+                                setcookie('page', '?action=game&idEscapeGame=' . urlencode($_GET['idEscapeGame']), time() + 300, '/');
+                            }
                             $this->ctlPages->pageConnexion($message = "<span>Veuillez vous connecter pour ajouter un avis</span>");
                             break;
                         case "inscription":

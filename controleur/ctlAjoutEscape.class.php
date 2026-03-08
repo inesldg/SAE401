@@ -1,4 +1,7 @@
 <?php
+
+// Controleur pour l'ajout d'un escape game en tant qu'Admin
+
 require_once "modele/ajoutEscape.class.php";
 require_once "vue/vue.class.php";
 
@@ -36,7 +39,8 @@ class ctlAjoutEscape
             $dossier = "photos_escapes/"; // dossier de destination
 
             // Crée le dossier s'il n'existe pas
-            if (!is_dir($dossier)) mkdir($dossier, 0755, true);
+            if (!is_dir($dossier))
+                mkdir($dossier, 0755, true);
 
             // Récupère l'extension du fichier (jpg, png, etc.)
             $extension = pathinfo($fichier['name'], PATHINFO_EXTENSION); // récupère l'extension
@@ -54,6 +58,7 @@ class ctlAjoutEscape
         exit;
     }
 
+    // Afficher les escapes game
     public function afficherEscapes()
     {
         $vue = new vue("AjoutEscape");
@@ -66,11 +71,13 @@ class ctlAjoutEscape
         ]);
     }
 
+    // Afficher les escapes game
     public function supprimerEscape($id)
     {
         $id_escape = intval($id); // sécurité
         $this->ajoutEscape->supprimerEscape($id_escape); // ta méthode dans le modèle
-        header("Location: index.php?action=ajoutEscape");; // retourne à la liste
+        header("Location: index.php?action=ajoutEscape");
+        ; // retourne à la liste
         exit;
     }
 }
