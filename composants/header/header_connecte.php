@@ -1,7 +1,5 @@
 <?php
-
 // Header qui s'affiche lorsque l'utilisateur est connecté en tant qu'utilisateur
-
 $currentAction = $_GET['action'] ?? 'accueil';
 ?>
 <header class="main-header">
@@ -48,5 +46,6 @@ $currentAction = $_GET['action'] ?? 'accueil';
             </svg>
             <span class="btn-text">Réserver</span>
         </a>
+
     </div>
 </header>

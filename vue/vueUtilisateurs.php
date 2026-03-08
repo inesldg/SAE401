@@ -120,7 +120,7 @@ $style = '<link rel="stylesheet" href="styles/utilisateurs.css">';
                             <!-- PHOTO -->
                             <td>
                                 <?php
-                                $dossier = "photos_users/";
+                                $dossier = "photos_utilisateurs/";
                                 $id = $utilisateur['id_utilisateur'];
                                 $photoPath = null;
 

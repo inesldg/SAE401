@@ -38,7 +38,7 @@ class compte extends database
 
     public function infosCompte($mail)
     {
-        $req = 'SELECT nom, prenom, mail, tel FROM utilisateur 
+        $req = 'SELECT id_utilisateur, nom, prenom, mail, tel FROM utilisateur 
         WHERE mail = ?;';
         $infosCompte = $this->execReqPrep($req, array($mail));
         return $infosCompte;

@@ -12,12 +12,14 @@ body {
 
 .background-fond {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background: rgba(0, 0, 0, 0.4);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
+    padding: 20px 0 40px;
 }
 
 /* Bouton Retour Accueil */
@@ -86,6 +88,12 @@ body {
     gap: 20px;
 }
 
+.pdp-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
 .pdp {
     width: 80px;
     height: 80px;
@@ -94,6 +102,40 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.pdp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pdp-crayon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--gold-clair, #C5A059);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.pdp-wrapper:hover .pdp-crayon {
+    background: var(--gold-fonce, #8e6d35);
+}
+
+.pdp-input-hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .infos-texte h2 {
@@ -188,12 +230,23 @@ body {
     text-align: center;
 }
 
-.message-php {
-    display: block;
+/* Message succès/erreur : au-dessus de la carte, bien visible */
+.compte-message {
+    margin: 0 auto 20px;
+    padding: 14px 24px;
+    max-width: 900px;
     text-align: center;
-    margin-top: 10px;
-    color: var(--gold-clair);
     font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.compte-message span {
+    color: inherit;
 }
 
 /* --- TABLETTE (768px) --- */

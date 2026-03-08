@@ -59,7 +59,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
                     <div class="top-avis">
                         <div class="photo-de-profil">
                             <?php
-                            $dossier = "photos_users/";
+                            $dossier = "photos_utilisateurs/";
                             $idUser = $evaluation['id_utilisateur'] ?? null;
                             $photoPath = null;
                             if ($idUser) {

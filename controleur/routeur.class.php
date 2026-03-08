@@ -56,6 +56,7 @@ class routeur
                 $acces = $this->ctlCompte->getAcces($mail);
                 $id = $this->ctlCompte->getId($mail);
                 $_SESSION['statut'] = $acces[0]['statut'] ?? null;
+                $_SESSION['id_utilisateur'] = $id[0]['id_utilisateur'] ?? null;
 
                 if (isset($_GET["action"])) {
                     switch ($_GET["action"]) {
