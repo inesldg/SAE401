@@ -1,5 +1,7 @@
+/* Fond sombre avec effet brouillard */
 body {
     min-height: 100vh;
+    /* Dégradé sombre + texture brouillard */
     background: linear-gradient(rgba(54, 78, 98, 0.9), rgba(16, 26, 35, 0.9), rgba(16, 26, 35, 0.9)),
         url('../images/EffetBrouillard.png');
     background-size: cover;
@@ -131,6 +133,7 @@ main {
     }
 }
 
+/* version smartphone */
 @media (max-width: 425px) {
     .container {
         gap: 35px;
