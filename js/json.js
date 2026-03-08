@@ -1035,19 +1035,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnEn = document.querySelector('.lang-switcher button[data-langue="en"]');
     const btnDe = document.querySelector('.lang-switcher button[data-langue="de"]');
 
-    // 2. Fonction pour changer l'apparence visuelle
+    // 2. Fonction pour changer l'apparence visuelle (un seul bouton doré = langue active)
     function toggleVisual(langue) {
         if (btnFr && btnEn && btnDe) {
-            if (langue === 'en') {
-                btnEn.classList.add('active');
-                btnFr.classList.remove('active');
-            } else if (langue === 'de') {
-                btnDe.classList.add('active');
-                btnFr.classList.remove('active');
-            } else {
-                btnFr.classList.add('active');
-                btnEn.classList.remove('active');
-            }
+            btnFr.classList.remove('active');
+            btnEn.classList.remove('active');
+            btnDe.classList.remove('active');
+            const btn = langue === 'en' ? btnEn : (langue === 'de' ? btnDe : btnFr);
+            if (btn) btn.classList.add('active');
         }
     }
 
