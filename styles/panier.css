@@ -1,4 +1,10 @@
+/* =========================================================
+PAGE PANIER
+Fond immersif avec image + overlay sombre
+Objectif : cohérence avec l’identité du site
+========================================================= */
 .panier {
+    /* Dégradé sombre par-dessus l’image pour la lisibilité */
     background: linear-gradient(rgba(16, 26, 35, 0.85), rgba(24, 38, 51, 0.699)),
         url("../images/fossane-trees-4896953_1920.jpg");
     background-size: cover;
@@ -14,6 +20,7 @@
     opacity: 1;
     transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .panier .reveal-visible {
     opacity: 1 !important;
 }
@@ -38,6 +45,7 @@
     color: #fff;
 }
 
+/* Titres dans les cartes (dégradé doré) */
 .panier .carte h1,
 .panier .carte h2,
 .panier .carte h3 {
@@ -48,6 +56,7 @@
     color: transparent;
 }
 
+/* couleurs textes des cartes */
 .panier .carte label {
     color: #fff;
 }
@@ -108,7 +117,10 @@ h3 {
     margin-top: 0;
 }
 
-/* --- COLONNE GAUCHE (panier + bons d'achat) --- */
+/* =========================================================
+COLONNE GAUCHE
+Panier + bons d’achat
+========================================================= */
 .colonne-gauche {
     flex: 1.4;
     display: flex;
@@ -116,7 +128,9 @@ h3 {
     gap: 40px;
 }
 
-/* --- PANIER --- */
+/* =========================================================
+SECTION PANIER
+========================================================= */
 .section-panier {
     flex: none;
 }
@@ -148,18 +162,21 @@ h3 {
     margin-bottom: 8px;
 }
 
+/* description */
 .description {
     font-size: 0.9rem;
     line-height: 1.3;
     margin-bottom: 15px;
 }
 
+/* ligne prix */
 .ligne-prix {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* selecteur de personnes */
 .selecteur-personnes {
     border: 1.5px solid var(--bleu-fonce);
     padding: 6px 12px;
@@ -184,7 +201,10 @@ h3 {
     font-size: 1.3rem;
 }
 
-/* --- COLONNE DROITE --- */
+/* =========================================================
+COLONNE DROITE
+Code promo + paiement
+========================================================= */
 .colonne-laterale {
     flex: 1;
     display: flex;
@@ -199,6 +219,7 @@ h3 {
     margin-top: 15px;
 }
 
+/* style général des inputs */
 input {
     background: white;
     border: 1px solid #ccc;
@@ -307,7 +328,10 @@ input:focus {
     text-align: center;
 }
 
-/* --- CARTE BLEUE AVEC CHAMPS SUPERPOSÉS --- */
+/* =========================================================
+CARTE BLEUE VISUELLE
+Formulaire superposé sur une carte SVG
+========================================================= */
 .carte-bleue-wrapper {
     position: relative;
     width: 100%;
@@ -321,6 +345,7 @@ input:focus {
     display: block;
 }
 
+/* zone contenant les champs */
 .carte-bleue-contenu {
     position: absolute;
     inset: 0;
@@ -331,6 +356,7 @@ input:focus {
     padding: 18px 24px;
     box-sizing: border-box;
     pointer-events: none;
+    /* empeche le clic hors input */
 }
 
 .carte-bleue-contenu label {
@@ -339,6 +365,7 @@ input:focus {
     font-size: 0.8rem;
 }
 
+/* input dans la carte */
 .carte-bleue-contenu input {
     pointer-events: auto;
     background: rgba(255, 255, 255, 0.9);
@@ -400,6 +427,7 @@ input:focus {
     word-spacing: 5px;
 }
 
+/* bouton validation finale */
 .bouton-valider {
     width: 100%;
     margin-top: 30px;

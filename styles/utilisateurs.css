@@ -28,24 +28,30 @@ body {
     color: var(--blanc-casse);
 }
 
+/* texte admin avec opacité pour le distingué */
 .admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
+/* =========================================================
+MENU LATÉRAL GAUCHE
+========================================================= */
 .menu-gauche {
     width: 300px;
     background-color: var(--bleu-fonce);
     padding: 20px;
 }
 
+/* categorie menu */
 .menu-categorie {
     color: var(--blanc-casse);
     display: inline-block;
     width: 100%;
 }
 
+/* liens du menu */
 .dash,
 .escape,
 .calendrier,
@@ -69,6 +75,7 @@ body {
     border-right: solid #A3730C 3px;
 }
 
+/* Icones ou textes à l’intérieur des liens menu */
 .dash>div,
 .escape>div,
 .calendrier>div,
@@ -78,6 +85,7 @@ body {
     font-size: 14px;
 }
 
+/* hober sur les liens menu 'sauf user) */
 .dash:hover,
 .calendrier:hover,
 .avis:hover,
@@ -91,6 +99,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* ligne de séparation */
 .ligne {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -100,15 +109,18 @@ body {
     margin-left: -20px;
 }
 
+/* contenu principal de la page */
 .contenu {
     display: flex;
 }
 
+/* colonne de droite */
 .droite {
     margin: 32px;
     flex: 1;
 }
 
+/* titre */
 h1 {
     margin: 0;
     font-family: var(--titre);
@@ -121,6 +133,9 @@ h1 {
     margin-bottom: 32px;
 }
 
+/* =========================================================
+TABLE UTILISATEURS
+========================================================= */
 .table-utilisateur {
     width: 100%;
     border-collapse: collapse;
@@ -152,11 +167,14 @@ h1 {
     font-weight: normal;
 }
 
+/* avatar */
 .avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    /* pour avoir un cercle parfait */
     object-fit: cover;
+    /* recadrage image */
 }
 
 .avatar.placeholder {
@@ -167,6 +185,10 @@ h1 {
     display: inline-block;
 }
 
+
+/* =========================================================
+CONTACT ET INFOS
+========================================================= */
 .contact div {
     line-height: 2;
 }
@@ -179,6 +201,7 @@ h1 {
     padding: 3px 5px;
 }
 
+/* petit bouton */
 .btn-mini {
     background: #4caf50;
     color: #fff;
@@ -192,6 +215,9 @@ h1 {
     background: #45a049;
 }
 
+/* =========================================================
+BOUTON SUPPRIMER SVG
+========================================================= */
 .supp svg path {
     stroke: #f00;
     transition: stroke 0.3s;
