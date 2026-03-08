@@ -20,7 +20,7 @@ main {
     align-items: center;
 }
 
-/* Engrenages dans les coins */
+/* Engrenages dans les coins (décoratifs) */
 .decoration-coin {
     position: fixed;
     width: 280px;
@@ -43,6 +43,7 @@ main {
     animation: pulsationDouceBas 4s ease-in-out infinite alternate;
 }
 
+/* formulaire */
 .boite-formulaire {
     margin: 20px 50px 50px 50px;
     margin-top: -2.5rem;
@@ -57,6 +58,7 @@ main {
     text-align: center;
 }
 
+/* svg mis en arriere plan + on peut pas cliquer dessus (purement décoratifs) */
 .svg-arriere-plan {
     position: absolute;
     top: 50%;
@@ -67,10 +69,10 @@ main {
     width: 100%;
     height: auto;
     pointer-events: none;
-    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25))
-        drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
 }
 
+/* contenu formulaire */
 .contenu-formulaire {
     position: relative;
     z-index: 2;
@@ -82,6 +84,7 @@ main {
     padding: 20px;
 }
 
+/* titre */
 .titre-connexion {
     background: var(--gold-gradient-transition);
     background-size: 300% auto;
@@ -118,6 +121,7 @@ main {
     margin-bottom: 4px;
     margin-left: 12px;
     letter-spacing: 1px;
+    /* espacement des caracteres */
     color: var(--blanc-casse);
 }
 
@@ -180,7 +184,10 @@ main {
     color: #E6B856;
 }
 
-/* Animations existantes */
+/* =========================================================
+ANIMATIONS
+========================================================= */
+/* Animations engrenage */
 @keyframes rotationLente {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -196,6 +203,7 @@ main {
         opacity: 0.6;
         transform: scale(1);
     }
+
     100% {
         opacity: 0.8;
         transform: scale(1.02);
@@ -207,12 +215,14 @@ main {
         opacity: 0.6;
         transform: rotate(180deg) scale(1);
     }
+
     100% {
         opacity: 0.8;
         transform: rotate(180deg) scale(1.02);
     }
 }
 
+/* responsive */
 @media (max-width: 768px) {
     .decoration-coin {
         width: 150px;
