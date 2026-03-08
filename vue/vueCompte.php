@@ -43,17 +43,28 @@ if ($idUtilisateur) {
             </h1>
         </div>
 
-        <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>" class="carte-contenu">
+        <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=modifInfos" ?>" class="carte-contenu" enctype="multipart/form-data">
 
             <div class="ligne-profil">
                 <div class="infos-utilisateur">
-                    <div class="pdp">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"
-                                fill="#888" />
-                        </svg>
-                    </div>
+                    <label class="pdp-wrapper" for="inputPhotoProfil" title="Changer la photo de profil">
+                        <div class="pdp">
+                            <?php if ($photoProfilPath): ?>
+                                <img src="<?= htmlspecialchars($photoProfilPath) ?>" alt="Photo de profil" class="pdp-img">
+                            <?php else: ?>
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#888" />
+                                </svg>
+                            <?php endif; ?>
+                        </div>
+                        <span class="pdp-crayon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </span>
+                        <input type="file" name="photoProfil" id="inputPhotoProfil" accept="image/jpeg,image/png,image/webp" class="pdp-input-hidden">
+                    </label>
                     <div class="infos-texte">
                         <h2><?= $infosCompte[0]['prenom'] . ' ' . $infosCompte[0]['nom'] ?></h2>
                         <p><?= $infosCompte[0]['mail'] ?></p>
