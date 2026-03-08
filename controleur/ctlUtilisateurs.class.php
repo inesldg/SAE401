@@ -29,4 +29,18 @@ class ctlUtilisateurs
         $vue = new vue("Utilisateurs"); // Instancie la vue appropriée
         $vue->afficher(array("utilisateurs" => $listeUtilisateurs, "message" => "<span>Le changement d'accès à été réalisé avec succès</span>"));
     }
+
+
+    public function supprimerUtilisateur($id, $mail)
+    {
+        $this->utilisateurs->supprimerUtilisateur($id);
+
+        $listeUtilisateurs = $this->utilisateurs->listeUtilisateurs($mail);
+
+        $vue = new vue("Utilisateurs");
+        $vue->afficher(array(
+            "utilisateurs" => $listeUtilisateurs,
+            "message" => "<span>L'utilisateur a été supprimé avec succès</span>"
+        ));
+    }
 }

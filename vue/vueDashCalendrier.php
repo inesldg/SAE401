@@ -65,7 +65,29 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
             <form method="GET">
                 <input type="hidden" name="action" value="dashCalendrier">
 
-                <input type="date" name="date" value="<?= $date ?>">
+                <div class="calendrier-boite">
+
+                    <div class="calendrier-header">
+                        <span class="fleche-cal" id="prev">&#10094;</span>
+                        <span id="mois-annee"></span>
+                        <span class="fleche-cal" id="next">&#10095;</span>
+                    </div>
+
+                    <div class="calendrier-jours">
+                        <div>LUN</div>
+                        <div>MAR</div>
+                        <div>MER</div>
+                        <div>JEU</div>
+                        <div>VEN</div>
+                        <div>SAM</div>
+                        <div>DIM</div>
+                    </div>
+
+                    <div class="calendrier-grille" id="jours"></div>
+
+                </div>
+
+                <input type="hidden" name="date" id="inputDate" value="<?= $date ?>">
 
 
                 <div class="droite2">
@@ -184,3 +206,6 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
         </div>
     </div>
 </div>
+
+<?php
+$script = '<script src="js/dashCalendrier.js"></script>';

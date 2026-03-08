@@ -148,6 +148,18 @@ class routeur
                             else
                                 $this->ctlUtilisateurs->afficherUtilisateurs($message = "", $mail);
                             break;
+
+                        case "supprimerUtilisateur":
+                            if ($acces[0]['statut'] !== 2)
+                                throw new Exception("Action non valide");
+                            else {
+                                if (isset($_GET['id']))
+                                    $this->ctlUtilisateurs->supprimerUtilisateur($_GET['id'], $mail);
+                                else
+                                    throw new Exception("ID utilisateur manquant");
+                            }
+                            break;
+
                         case "dashCalendrier":
                             if ($acces[0]['statut'] !== 2)
                                 throw new Exception("Action non valide");
@@ -220,7 +232,8 @@ class routeur
             }
 
 
-            /********** Pages non connectés **********/ else {
+            /********** Pages non connectés **********/
+            else {
 
                 if (isset($_GET["action"])) {
 
@@ -241,7 +254,7 @@ class routeur
                             break;
 
                         case "panier":
-                            $this->ctlPages->pageConnexion($message= "");
+                            $this->ctlPages->pageConnexion($message = "");
                             break;
 
                         // case "confirmation":
