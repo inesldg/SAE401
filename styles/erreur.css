@@ -1,11 +1,15 @@
-
+/* ---------------------------------------------------
+SECTION PAGE ERREUR (404)
+Conteneur principal occupant presque toute la hauteur
+de l'écran avec image de fond immersive
+--------------------------------------------------- */
 .page-erreur {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px);/* hauteur écran moins le header/footer */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* centre verticalement */
+    justify-content: center; /* centre horizontalement */
     padding: 2rem;
-    box-sizing: border-box;
+    box-sizing: border-box; /* inclut padding dans la taille */
     background-image: url('../images/labyrinthe-erreur.jpeg');
     background-size: cover;
     background-position: center;
@@ -14,13 +18,23 @@
     position: relative;
 }
 
+/* ---------------------------------------------------
+OVERLAY SOMBRE
+Permet d'assombrir l'image pour améliorer la lisibilité
+du contenu texte
+--------------------------------------------------- */
 .page-erreur::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(16, 26, 35, 0.75) 0%, rgba(16, 26, 35, 0.85) 100%);
-    pointer-events: none;
+    pointer-events: none; /* laisse passer les clics */
 }
+
+/* ---------------------------------------------------
+BLOC CONTENU ERREUR
+Carte centrale contenant le message et le bouton
+--------------------------------------------------- */
 
 .page-erreur__contenu {
     position: relative;
@@ -34,6 +48,9 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
+/* ---------------------------------------------------
+TITRE PAGE ERREUR
+--------------------------------------------------- */
 .page-erreur__titre {
     font-family: var(--titre);
     font-weight: 700;
@@ -43,6 +60,10 @@
     letter-spacing: 0.05em;
 }
 
+/* ---------------------------------------------------
+MESSAGE D'ERREUR
+Texte explicatif sous le titre
+--------------------------------------------------- */
 .page-erreur__message {
     font-family: var(--texte);
     font-size: 1rem;
@@ -51,7 +72,10 @@
     margin: 0 0 1.5rem 0;
 }
 
-
+/* ---------------------------------------------------
+BOUTON RETOUR ACCUEIL
+Call-to-action pour rediriger l'utilisateur
+--------------------------------------------------- */
 .page-erreur__lien {
     display: inline-flex;
     align-items: center;
