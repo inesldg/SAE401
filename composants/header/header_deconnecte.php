@@ -3,11 +3,15 @@
 <?php
 $currentAction = $_GET['action'] ?? 'accueil';
 ?>
+
+<!-- ===== HEADER PRINCIPAL DU SITE ===== -->
 <header class="main-header">
+    <!-- Logo du site redirigeant vers la page d'accueil -->
     <a href="index.php?action=accueil">
         <img class="imglogo2" src="images/logo.png" alt="logo elife">
     </a>
 
+    <!-- Bouton burger utilisé pour afficher/masquer le menu sur mobile -->
     <div class="header-actions">
         <button class="burger-menu" id="burgerBtn">
             <span></span>
@@ -16,8 +20,11 @@ $currentAction = $_GET['action'] ?? 'accueil';
         </button>
 
         <nav class="nav-menu" id="navMenu">
+            <!-- Chaque lien vérifie si l'action actuelle correspond pour appliquer la classe "active" -->
+            <!-- Cela permet de surligner la page active dans le menu -->
             <a href="index.php?action=accueil" id="menuAcc" <?= $currentAction === 'accueil' ? 'class="active"' : '' ?>>Accueil</a>
-            <a href="index.php?action=propos" id="menuPropos" <?= $currentAction === 'propos' ? 'class="active"' : '' ?>>À propos</a>
+            <a href="index.php?action=propos" id="menuPropos" <?= $currentAction === 'propos' ? 'class="active"' : '' ?>>À
+                propos</a>
             <a href="index.php?action=escapeGames" id="menuNosEscapes" <?= in_array($currentAction, ['escapeGames', 'game', 'pageVoirToutLesAvis']) ? 'class="active"' : '' ?>>Nos escapes</a>
             <a href="index.php?action=contact" id="menuContact" <?= $currentAction === 'contact' ? 'class="active"' : '' ?>>Contact</a>
             <a href="index.php?action=pageConnexion" id="menuCompte" <?= in_array($currentAction, ['pageConnexion', 'pageInscription']) ? 'class="active"' : '' ?>>Compte</a>
@@ -33,6 +40,8 @@ $currentAction = $_GET['action'] ?? 'accueil';
             </a>
         </nav>
 
+        <!-- Bouton principal de réservation visible sur desktop -->
+        <!-- Contient une icône SVG calendrier -->
         <a href="index.php?action=escapeGames" class="btn-reserve desktop-only" id="reserver">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
