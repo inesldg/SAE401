@@ -15,13 +15,16 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/inscription.css">';
 ?>
 
+<!-- images décoratives en coin -->
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
 
+<!-- Conteneur principal du formulaire -->
 <div class="boite-formulaire">
     <svg class="svg-arriere-plan" width="685" height="658" viewBox="0 0 685 658" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <defs>
+            <!-- Dégradé doré utilisé pour les contours -->
             <linearGradient id="goldStrokeInscription" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style="stop-color:#E6B856;stop-opacity:0.85" />
                 <stop offset="50%" style="stop-color:#C5A059;stop-opacity:0.75" />
@@ -36,7 +39,9 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             stroke="url(#goldStrokeInscription)" stroke-width="5" opacity="0.85" />
     </svg>
 
+    <!-- Contenu du formulaire -->
     <div class="contenu-formulaire">
+        <!-- Titre de la page d'inscription -->
         <h1 class="titre-connexion reveal reveal-up" id="sinscrireInscr">S'inscrire</h1>
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=inscription" ?>>
 
@@ -70,11 +75,15 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             <input type="password" name="mdpConfirm" value="" id="inputconfmdp" placeholder="Confirmer le mot de passe"
                 required>
 
+            <!-- bouton d'inscription -->
             <button type="submit" class="inscription" value="S'inscrire" id="sinscrireInscr2">S'INSCRIRE</button>
+            <!-- Message de retour (erreur / succès) -->
             <span><?= $message ?></span>
         </form>
 
-        <a href="index.php?action=pageConnexion" class="lien-inscription reveal reveal-up" id="seconnecInscrip">Déjà un compte ? Se
+        <!-- Lien vers la page de connexion -->
+        <a href="index.php?action=pageConnexion" class="lien-inscription reveal reveal-up" id="seconnecInscrip">Déjà un
+            compte ? Se
             connecter</a>
     </div>
 </div>

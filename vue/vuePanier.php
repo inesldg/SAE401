@@ -21,6 +21,9 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 <main class="panier">
     <div class="conteneur-principal">
 
+        <!-- ---------------------------
+             Colonne gauche : Panier et codes promo
+             --------------------------- -->
         <div class="colonne-gauche reveal reveal-up">
             <div class="section-panier carte reveal reveal-up">
                 <h1 id="panierPanier">Votre Panier</h1>
@@ -30,7 +33,8 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <div class="infos-produit">
                         <h3>In Vino Veritas</h3>
                         <div class="description">
-                            L'aventure d'évasion "In Vino Veritas" vous emmène à travers la partie sud-ouest du Kaiserstuhl
+                            L'aventure d'évasion "In Vino Veritas" vous emmène à travers la partie sud-ouest du
+                            Kaiserstuhl
                             avec une vue imprenable sur la plaine du Rhin.
                         </div>
                         <div class="ligne-prix">
@@ -43,6 +47,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
             </div>
 
+            <!-- Section code promo / bons -->
             <div class="carte reveal reveal-up carte-bons">
                 <h2 id="codePanier">Code Promo / Bons ?</h2>
                 <div class="groupe-saisie">
@@ -54,6 +59,10 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
             </div>
         </div>
 
+
+        <!-- ---------------------------
+             Colonne latérale : Informations utilisateur et paiement
+             --------------------------- -->
         <div class="colonne-laterale reveal reveal-up">
 
             <div class="carte reveal reveal-up">
@@ -86,8 +95,9 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <div class="carte-bleue-wrapper">
                         <svg width="100%" height="auto" viewBox="0 0 273 167" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-                            <rect width="273" height="167" rx="12" fill="#2B3893"/>
+                            <rect width="273" height="167" rx="12" fill="#2B3893" />
                         </svg>
+                        <!-- Carte bancaire graphique + champs -->
                         <div class="carte-bleue-contenu">
                             <div class="ligne-carte">
                                 <label for="inputNumCarte">Numéro de carte</label>
@@ -110,6 +120,8 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                                     value="" placeholder="000" maxlength="3" required>
                             </div>
                         </div>
+                        <!-- Logo de la carte -->
+
                         <div class="card-brand-zone" id="card-brand-zone" aria-hidden="true">
                             <img id="card-brand-logo"
                                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='40' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23f0f0f0' rx='4'/%3E%3Ctext x='30' y='26' font-family='Inter' font-size='12' fill='%23999' text-anchor='middle'%3ECarte%3C/text%3E%3C/svg%3E"
@@ -120,7 +132,9 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
                     <!-- ---------------------------------------------------------------- -->
                     <!-- Ne pas toucher -->
-
+                    <!-- ---------------------------
+                         Champs cachés pour la gestion du panier
+                         --------------------------- -->
                     <input type="hidden" name="montant" id="montantPanier"
                         value="<?= isset($panier[0]['prix']) ? (int) $panier[0]['prix'] : 141 ?>">
                     <input type="hidden" name="jourReserve" value="<?= $jour ?>">
@@ -135,12 +149,17 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <!-- ---------------------------------------------------------------- -->
 
 
-
+                    <!-- ---------------------------
+                         Message d'attente lors de la transaction
+                         --------------------------- -->
                     <div id="paiement-attente" class="paiement-attente" aria-live="polite" hidden>
                         Veuillez patienter, validation de la transaction en cours par la banque…
                     </div>
+                    
+                    <!-- Bouton de validation -->
                     <button type="submit" class="bouton-valider" id="boutonValiderPaiement"><span
-                            id="validerPanier">Valider le paiement</span></button>
+                            id="validerPanier">Valider le
+                            paiement</span></button>
                 </form>
             </div>
         </div>
