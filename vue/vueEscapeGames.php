@@ -114,7 +114,7 @@ $filtresActifs = !empty($filtres['prix_max'])
             </form>
         </aside>
         <!-- COLONNE ESCAPES -->
-        <div class="escapes-cartes reveal reveal-up">
+        <div class="escapes-cartes">
             <?php if (empty($escapeGames)): ?>
                 <p class="escapes-aucun-resultat" id="aucunJeuCriteres">Aucun jeu trouvé correspondant à ces critères.</p>
             <?php else: ?>

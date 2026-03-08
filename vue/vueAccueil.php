@@ -65,7 +65,7 @@ $head_extra = '<script type="importmap">{"imports":{"three":"https://unpkg.com/t
             <span id="nos">Nos derniers</span>
             <span class="accueil-titre--or" id="suitetitreh2">ESCAPES</span>
         </h2>
-        <div class="accueil-escapes__grille reveal delay-1">
+        <div class="accueil-escapes__grille">
 
 
             <!-- ------------------------------ -->
