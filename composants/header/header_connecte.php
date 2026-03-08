@@ -1,3 +1,5 @@
+// Récupère l'action dans l'URL (ex: index.php?action=contact)
+// Si aucune action n'est définie, la page par défaut est "accueil"
 <?php
 $currentAction = $_GET['action'] ?? 'accueil';
 ?>
