@@ -99,6 +99,7 @@
     color: var(--gold-clair);
 }
 
+/* Interaction pour les filtres */
 .avis-pill-filtre {
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
@@ -108,6 +109,7 @@
     background: rgba(197, 160, 89, 0.2);
 }
 
+/* Filtre actif */
 .avis-pill-filtre.actif {
     background-color: var(--gold-clair);
     color: var(--noir);
@@ -118,6 +120,7 @@
     color: var(--noir);
 }
 
+/* Bouton "Ajouter un avis" */
 .avis-pill-add {
     font-size: 1rem;
     font-weight: 600;
@@ -149,23 +152,29 @@
     background: rgba(197, 160, 89, 0.15);
 }
 
-/* Popup formulaire avis */
+/* =========================================================
+POPUP FORMULAIRE AJOUT AVIS
+========================================================= */
 .avis-fenetre-overlay {
     position: fixed;
     inset: 0;
+    /* occupe tout l'ecran */
     display: none;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.75);
+    /* fond semi transparent */
     z-index: 1000;
 }
 
 .avis-fenetre-overlay.ouvert {
     display: flex;
+    /* affiche le popup */
 }
 
 .avis-fenetre {
     width: min(90vw, 28rem);
+    /* responsive */
     min-height: 18rem;
     border: 1px solid var(--gold-clair);
     border-radius: 1.25rem;
@@ -175,6 +184,7 @@
     position: relative;
 }
 
+/* bouton fermer */
 .avis-fenetre-fermer {
     position: absolute;
     top: 0.75rem;
@@ -190,6 +200,7 @@
     opacity: 1;
 }
 
+/* titre dans le popup */
 .avis-fenetre-titre,
 .avis-fenetre-libelle {
     font-family: var(--titre);
@@ -198,10 +209,12 @@
     margin-bottom: 0.5rem;
 }
 
+/* champs obligatoires */
 .avis-obligatoire {
     color: #e74c3c;
 }
 
+/* etoiles notation */
 .avis-fenetre-etoiles {
     display: flex;
     align-items: center;
@@ -216,6 +229,7 @@
     line-height: 1;
 }
 
+/* zone de textes avis */
 .avis-fenetre-zone {
     width: 100%;
     min-height: 8rem;
@@ -236,6 +250,7 @@
     color: rgba(242, 242, 242, 0.5);
 }
 
+/* boutons du popup */
 .avis-fenetre-actions {
     margin-top: 1rem;
     display: flex;
@@ -260,6 +275,7 @@
     opacity: 0.95;
 }
 
+/* couleurs pour notation */
 .dore {
     color: var(--gold-clair);
 }
@@ -268,7 +284,9 @@
     color: rgba(242, 242, 242, 0.5);
 }
 
-/* Carte avis unitaire */
+/* =========================================================
+CARTE AVIS UNITAIRES
+========================================================= */
 .avis-page .avis {
     margin: 0 0 1.25rem;
     display: flex;
@@ -289,6 +307,7 @@
     color: var(--blanc-casse);
 }
 
+/* pdp */
 .photo-de-profil img {
     width: 2.5rem;
     height: 2.5rem;
@@ -319,10 +338,12 @@
     gap: 0.75rem;
 }
 
+/* bloc sup des avis */
 .top-avis {
     width: 100%;
 }
 
+/* meta info avis */
 .meta-avis {
     display: flex;
     align-items: center;
@@ -351,11 +372,13 @@
     color: var(--gold-clair);
 }
 
+/* date de publication */
 .date-publication {
     font-size: 0.8rem;
     opacity: 0.8;
 }
 
+/* le conteneur general avis */
 .container-avis {
     display: flex;
     flex-direction: column;
@@ -364,7 +387,7 @@
     box-sizing: border-box;
 }
 
-/* Message "Aucun avis" */
+/* Message "Aucun avis" centré */
 .avis-page .avis .message:only-child {
     text-align: center;
     padding: 1.5rem;
