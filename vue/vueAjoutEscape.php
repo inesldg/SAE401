@@ -85,8 +85,8 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
         <div class="haut">
             <div class="part1">
                 <h1 id="gestionAdmin">GESTION DES ESCAPES</h1>
-                <div class="sous-titre"> <!-- l'id nique mon truc -->
-                    <?= isset($escapes) ? count($escapes) : 0 ?> escapes actifs
+                <div class="sous-titre">
+                    <?= isset($escapes) ? count($escapes) : 0 ?> <span id="ajoutEscapeActifsSuffixe">escapes actifs</span>
                 </div>
             </div>
             <!-- Bouton pour ouvrir la popup d'ajout -->
@@ -102,13 +102,13 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
             <table class="table-escapes">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Nom</th>
-                        <th>Description</th>
-                        <th>Lieu</th>
-                        <th>Durée</th>
-                        <th>Joueurs</th>
-                        <th>Action</th>
+                        <th id="ajoutEscapeColImage">Image</th>
+                        <th id="ajoutEscapeColNom">Nom</th>
+                        <th id="ajoutEscapeColDescription">Description</th>
+                        <th id="ajoutEscapeColLieu">Lieu</th>
+                        <th id="ajoutEscapeColDuree">Durée</th>
+                        <th id="ajoutEscapeColJoueurs">Joueurs</th>
+                        <th id="ajoutEscapeColActions">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -210,7 +210,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6">Aucun escape enregistré.</td>
+                            <td colspan="6" id="ajoutEscapeAucun">Aucun escape enregistré.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

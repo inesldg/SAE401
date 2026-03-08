@@ -19,10 +19,10 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
     <div class="avis-filtre-message" id="avisFiltreMessage" style="display:none;"></div>
     <div class="avis-page">
         <!-- ========================= -->
-        <!-- SECTION FILTRES ET ACTIONS -->
+        <!-- SECTION FILTRES ET AACTIONS -->
         <!-- ========================= -->
         <div class="avis-filtre reveal reveal-up">
-            <div class="avis-titre reveal reveal-up" id="avisTitre">Avis</div>
+            <div class="avis-titre reveal reveal-up" id="titreAvisTous2">Avis</div>
             <!-- Boutons de filtre par note -->
             <div class="avis-actions">
                 <div class="avis-pill avis-pill-filtre" data-filter-note="1"><span class="dore">★</span><span
@@ -47,11 +47,11 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <!-- POPUP AJOUT D'AVIS -->
         <!-- ========================= -->
         <div class="avis-fenetre-overlay" id="avisPopupOverlay" aria-hidden="true">
-            <form class="avis-fenetr" id="avisForm" method="post"
+            <form class="avis-fenetre" id="avisForm" method="post"
                 action="<?= $_SERVER["PHP_SELF"] . "?action=ajouterAvis&idEscapeGame=" . urlencode($idEscapeGame) ?>">
                 <div class="avis-fenetre-fermer" id="avisPopupClose">✕</div>
                 <!-- Choix de la note -->
-                <div class="avis-fenetre-titre">Quelle note donneriez vous ? <span class="avis-obligatoire">*</span>
+                <div class="avis-fenetre-titre"><span id="avisPopupQuestion">Quelle note donneriez vous ?</span> <span class="avis-obligatoire">*</span>
                 </div>
                 <div class="avis-fenetre-etoiles">
                     <!-- Étoiles interactives -->
@@ -64,7 +64,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
                 <!-- Données cachées -->
                 <input type="hidden" name="note" id="avisNote" value="2" required>
                 <input type="hidden" name="retour" value="all">
-                <div class="avis-fenetre-libelle">Votre avis <span class="avis-obligatoire">*</span></div>
+                <div class="avis-fenetre-libelle"><span id="avisPopupLabel">Votre avis</span> <span class="avis-obligatoire">*</span></div>
                 <textarea class="avis-fenetre-zone" name="commentaire" id="avisTexte" required
                     placeholder="Qu'avez vous pensé de notre escape game ? faites part de votre ressenti aux autres !"></textarea>
                 <div class="avis-fenetre-actions">
@@ -80,6 +80,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <?php if (!empty($avis) && $avis != 0): ?>
             <?php foreach ($avis as $evaluation): ?>
 
+                <?php // Sécurisation et limitation de la note entre 0 et 5 ?>
                 <?php $note = max(0, min(5, (int) $evaluation['note'])); ?>
                 <div class="avis" data-note="<?= $note ?>">
                     <div class="container-avis">
@@ -137,7 +138,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <?php else: ?>
             <!-- Cas où il n'y a aucun avis -->
             <div class="avis">
-                <div class="message">Aucun avis pour le moment.</div>
+                <div class="message" id="avisAucunMessage">Aucun avis pour le moment.</div>
             </div>
         <?php endif; ?>
     </div>

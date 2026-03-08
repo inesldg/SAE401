@@ -39,7 +39,7 @@ $currentAction = $_GET['action'] ?? 'accueil';
             </div>
 
             <!-- Boutons de réservation mobile & ordi -->
-            <a href="index.php?action=escapeGames" class="btn-reserve mobile-only">
+            <a href="index.php?action=escapeGames" class="btn-reserve mobile-only" id="reserverMobile">
                 Réserver
             </a>
         </nav>
@@ -54,7 +54,7 @@ $currentAction = $_GET['action'] ?? 'accueil';
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
-            <span class="btn-text">Réserver</span>
+            <span class="btn-text" id="reserverDesktopTexte">Réserver</span>
         </a>
 
     </div>

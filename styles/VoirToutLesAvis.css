@@ -176,12 +176,13 @@ POPUP FORMULAIRE AJOUT AVIS
     width: min(90vw, 28rem);
     /* responsive */
     min-height: 18rem;
-    border: 1px solid var(--gold-clair);
+    border: 2px solid var(--gold-clair);
     border-radius: 1.25rem;
     background-color: var(--bleu-fonce);
     padding: 1.5rem;
     box-sizing: border-box;
     position: relative;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(197, 160, 89, 0.25) inset;
 }
 
 /* bouton fermer */

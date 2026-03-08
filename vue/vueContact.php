@@ -28,8 +28,8 @@ les réseaux sociaux et une galerie
 
         <main class="content">
             <!-- Titre de la page -->
-            <h1>Contact</h1>
-            <p class="subtitle">Nous espérons avoir de vos nouvelles bientôt !</p>
+            <h1 id="contactTitre">Contact</h1>
+            <p class="subtitle" id="contactSousTitre">Nous espérons avoir de vos nouvelles bientôt !</p>
 
             <!-- -------------------------------
             SECTION CARDS CONTACT
@@ -37,25 +37,25 @@ les réseaux sociaux et une galerie
             -------------------------------- -->
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h3>Appelez-nous</h3>
+                    <h3 id="contactAppelezNous">Appelez-nous</h3>
                     <p><strong>07668 996660</strong></p>
                     <div class="divider"></div>
-                    <p>Lun - Ven<br>9h00 – 12h00 / 13h00 – 16h00</p>
+                    <p id="contactHoraires">Lun - Ven<br>9h00 – 12h00 / 13h00 – 16h00</p>
                 </div>
 
                 <div class="contact-card">
-                    <h3>Écrivez-nous</h3>
+                    <h3 id="contactEcrivezNous">Écrivez-nous</h3>
                     <p><a href="mailto:booking@we-escape.de">booking@we-escape.de</a></p>
                     <div class="divider"></div>
-                    <p>L'épreuve par équipe pour le meilleur moment d'équipe.</p>
+                    <p id="contactSlogan">L'épreuve par équipe pour le meilleur moment d'équipe.</p>
                 </div>
 
                 <!-- -------------------------------
                     Icônes réseaux sociaux (SVG)
                     -------------------------------- -->
                 <div class="contact-card">
-                    <h3>Suivez-nous</h3>
-                    <p>Rejoignez l'aventure sur les réseaux</p>
+                    <h3 id="contactSuivezNous">Suivez-nous</h3>
+                    <p id="contactReseauxTexte">Rejoignez l'aventure sur les réseaux</p>
                     <div class="social-icons-wrapper">
                         <a href="https://www.instagram.com/we_escape_abenteuer/" target="_blank" aria-label="Instagram">
                             <svg viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ les réseaux sociaux et une galerie
                         </a>
                     </div>
                     <div class="divider"></div>
-                    <p>#WeEscapeChallenge</p>
+                    <p id="contactHashtag">#WeEscapeChallenge</p>
                 </div>
             </div>
 
@@ -93,7 +93,7 @@ les réseaux sociaux et une galerie
             GALERIE PHOTOS
             -------------------------------- -->
             <section class="gallery-section">
-                <h2 class="gallery-title">Aperçus de l'Aventure</h2>
+                <h2 class="gallery-title" id="contactGalerieTitre">Aperçus de l'Aventure</h2>
                 <div class="gallery-container">
                     <div class="photo-frame">
                         <img src="images/escape_grp.png" alt="Escape Groupe">
@@ -111,7 +111,7 @@ les réseaux sociaux et une galerie
                 <div class="horizontal-line"></div>
 
                 <!-- Citation -->
-                <p class="quote-text reveal reveal-up">"Le secret le mieux gardé est celui que l'on partage au bon
+                <p class="quote-text reveal reveal-up" id="contactCitation">"Le secret le mieux gardé est celui que l'on partage au bon
                     moment"</p>
             </section>
         </main>
