@@ -52,7 +52,7 @@ let trad = {
         "de": "Escape Spiele"
     },
     "#toutEscapes": {
-        "fr": "Voir tout les jeux →",
+        "fr": "Voir tous les jeux →",
         "en": "See all the games →",
         "de": "Alle Spiele ansehen →"
     },

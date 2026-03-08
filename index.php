@@ -1,6 +1,8 @@
 <?php
+// Initialise ou récupère la session utilisateur
 session_start();
 
+// Chargement des paramètres de configuration
 require "includes/default_config.php";
 require "controleur/routeur.class.php";
 

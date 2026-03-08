@@ -23,15 +23,15 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
 
         <!-- COLONNE TEXTE -->
         <div class="hero-accueil__contenu">
-            <h1 class="hero-accueil__titre">
+            <h1 class="hero-accueil__titre reveal reveal-up">
                 <span id="titreAcc">VIVEZ L'</span>
                 <span class="hero-accueil__titre--or" id="aventure">AVENTURE</span>
             </h1>
-            <p class="hero-accueil__sous-titre" id="soustitreAcc">
+            <p class="hero-accueil__sous-titre reveal reveal-up" id="soustitreAcc">
                 Plongez dans des univers immersifs, résolvez des énigmes captivantes et échappez-vous avant la fin du
                 temps.
             </p>
-            <a href="index.php?action=escapeGames" class="hero-accueil__bouton" id="lienBoutonAcc">
+            <a href="index.php?action=escapeGames" class="hero-accueil__bouton reveal reveal-up" id="lienBoutonAcc">
                 Découvrir nos escapes <span class="hero-accueil__bouton-icone"><svg xmlns="http://www.w3.org/2000/svg"
                         width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -147,7 +147,7 @@ $style = '<link rel="stylesheet" href="styles/accueil.css">';
         </div>
 
         <div class="accueil-escapes__lien-wrap">
-            <a href="index.php?action=escapeGames" id="toutEscapes" class="accueil-escapes__lien">Voir tous les escapes →</a>
+            <a href="index.php?action=escapeGames" id="toutEscapes" class="accueil-escapes__lien reveal reveal-up">Voir tous les escapes →</a>
         </div>
     </div>
 </section>

@@ -37,7 +37,7 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
     </svg>
 
     <div class="contenu-formulaire">
-        <h1 class="titre-connexion" id="sinscrireInscr">S'inscrire</h1>
+        <h1 class="titre-connexion reveal reveal-up" id="sinscrireInscr">S'inscrire</h1>
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=inscription" ?>>
 
             <div class="groupe-ligne">
@@ -74,7 +74,7 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
             <span><?= $message ?></span>
         </form>
 
-        <a href="index.php?action=pageConnexion" class="lien-inscription" id="seconnecInscrip">Déjà un compte ? Se
+        <a href="index.php?action=pageConnexion" class="lien-inscription reveal reveal-up" id="seconnecInscrip">Déjà un compte ? Se
             connecter</a>
     </div>
 </div>

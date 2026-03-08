@@ -5,7 +5,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
 
 <div class="avis-page-wrapper">
 <div class="avis-page">
-    <div class="avis-filtre">
+    <div class="avis-filtre reveal reveal-up">
         <div class="avis-titre reveal reveal-up">Avis</div>
         <div class="avis-actions">
             <div class="avis-pill avis-pill-filtre" data-filter-note="1"><span class="dore">★</span><span class="grise">★★★★</span></div>
@@ -23,7 +23,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
     <?php endif; ?>
 
     <div class="avis-fenetre-overlay" id="avisPopupOverlay" aria-hidden="true">
-        <form class="avis-fenetre" id="avisForm" method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajouterAvis&idEscapeGame=" . urlencode($idEscapeGame)?>">
+        <form class="avis-fenetr" id="avisForm" method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajouterAvis&idEscapeGame=" . urlencode($idEscapeGame)?>">
             <div class="avis-fenetre-fermer" id="avisPopupClose">✕</div>
             <div class="avis-fenetre-titre">Quelle note donneriez vous ? <span class="avis-obligatoire">*</span></div>
             <div class="avis-fenetre-etoiles">

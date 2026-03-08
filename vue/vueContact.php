@@ -100,7 +100,7 @@ $style = '<link rel="stylesheet" href="styles/contact.css">';
 
             <section class="footer-quote">
                 <div class="horizontal-line"></div>
-                <p class="quote-text">"Le secret le mieux gardé est celui que l'on partage au bon moment"</p>
+                <p class="quote-text reveal reveal-up">"Le secret le mieux gardé est celui que l'on partage au bon moment"</p>
             </section>
         </main>
     </div>
