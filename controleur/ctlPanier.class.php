@@ -12,12 +12,12 @@ class ctlPanier
         $this->panier = new panier();
     }
 
-    public function pagePanier($jour, $horaire, $nbrPersonnes, $idEscape, $message)
+    public function pagePanier($jour, $mois, $annee, $horaire, $nbrPersonnes, $idEscape, $message)
     {
         $panier = $this->panier->affichagePanier($idEscape);
 
-        $vue = new vue("Panier"); // Instancie la vue appropriée
-        $vue->afficher(array("jour" => $jour, "horaire" => $horaire, "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "message" => $message));
+        $vue = new vue("Panier");
+        $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire, "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "message" => $message));
     }
 
 

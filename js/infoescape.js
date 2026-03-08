@@ -99,11 +99,10 @@ function genererCalendrier() {
 
                 // On ajoute la sélection sur le jour cliqué
                 div.classList.add('selectionne');
-                
-                //-----------------------------------------------
+                // Jour, mois et année dans le formulaire (mois +1 car getMonth() est 0-indexé)
                 document.getElementById('inputJourEscape').value = div.dataset.jour;
-                // ajoute la valeur du jour cliqué dans le formulaire
-                //-----------------------------------------------
+                document.getElementById('inputMoisEscape').value = dateActuelle.getMonth() + 1;
+                document.getElementById('inputAnneeEscape').value = dateActuelle.getFullYear();
             };
         }
 

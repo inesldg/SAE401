@@ -1,6 +1,7 @@
 /* Page "Voir tout les avis" – alignée sur variables et typo du site */
 
 .avis-page-wrapper {
+    position: relative;
     color: var(--blanc-casse);
     font-family: var(--texte);
     font-size: 1rem;
@@ -14,6 +15,34 @@
     background-position: center;
     background-attachment: fixed;
     background-color: var(--fond-sombre);
+}
+
+/* Bouton retour (même style et emplacement que page escape game) */
+.btn-retour-absolu {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+}
+
+.btn-retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(16, 26, 35, 0.9);
+    border: 1px solid var(--gold-clair);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-retour:hover {
+    background: var(--gold-gradient);
+    transform: translateX(-5px);
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
 }
 
 .avis-page {

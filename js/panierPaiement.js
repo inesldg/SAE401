@@ -40,6 +40,34 @@ document.addEventListener("DOMContentLoaded", function () {
         this.value = avecEspaces;
     });
 
+    // --- Type de carte : afficher Visa / Mastercard dans le carré en bas à droite ---
+    var cardBrandZone = document.getElementById("card-brand-zone");
+    var cardBrandLabel = document.getElementById("card-brand-label");
+
+    function mettreAJourTypeCarte() {
+        if (!cardBrandZone || !cardBrandLabel) return;
+        var valeur = inputNumCarte.value.split(" ").join("");
+        cardBrandZone.removeAttribute("class");
+        cardBrandZone.className = "card-brand-zone";
+        if (valeur.charAt(0) === "4") {
+            cardBrandLabel.textContent = "Visa";
+            cardBrandZone.classList.add("card-brand--visa");
+        } else if (valeur.length >= 2) {
+            var deux = valeur.substring(0, 2);
+            if (deux >= "51" && deux <= "55") {
+                cardBrandLabel.textContent = "Mastercard";
+                cardBrandZone.classList.add("card-brand--mastercard");
+            } else {
+                cardBrandLabel.textContent = "Carte";
+            }
+        } else {
+            cardBrandLabel.textContent = "Carte";
+        }
+    }
+
+    inputNumCarte.addEventListener("input", mettreAJourTypeCarte);
+    mettreAJourTypeCarte();
+
     // --- Mois : uniquement des chiffres ---
     inputMois.addEventListener("keypress", function (e) {
         var caractere = e.key;

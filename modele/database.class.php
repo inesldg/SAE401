@@ -34,10 +34,7 @@ abstract class database
     $reponse = $this->connexionBDD()->prepare($req);
     if ($reponse->execute($data)) {
       $resultat = $reponse->fetchAll(PDO::FETCH_ASSOC);
-      if (!empty($resultat))
-        return $resultat;
-      else
-        return $reponse->rowCount();
+      return is_array($resultat) ? $resultat : [];
     }
     return FALSE;
   }

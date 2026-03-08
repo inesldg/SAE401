@@ -406,6 +406,14 @@ let trad = {
         "fr": "Filtrer",
         "en": "Filter"
     },
+    "#aucunJeuCriteres": {
+        "fr": "Aucun jeu trouvé correspondant à ces critères.",
+        "en": "No game found matching these criteria."
+    },
+    "#btnSupprimerFiltres": {
+        "fr": "Supprimer les filtres",
+        "en": "Clear filters"
+    },
 
     // ******************************** vue Games *************************************************
     "#retourescapeGames": {
@@ -631,8 +639,8 @@ let trad = {
 
     // ******************************** vue Panier *************************************************
     "#panierPanier": {
-        "fr": "Votre panier",
-        "en": "Your cart",
+        "fr": "Votre réservation",
+        "en": "Your booking",
     },
     "#supprPanier": {
         "fr": "Supprimer",

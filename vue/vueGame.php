@@ -196,9 +196,9 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     <label>
                         <span id="participGames">Participants</span>
                         <select name="nbrPersonnesEscape" class="choix-horaire" id="nbrParticipantsGame">
-                            <option value="1">1 personne</option>
+                            <!-- <option value="1">1 personne</option>
                             <option value="2">2 personnes</option>
-                            <option value="3">3 personnes</option>
+                            <option value="3">3 personnes</option> -->
                             <option value="4">4 personnes</option>
                             <option value="5">5 personnes</option>
                             <option value="6" selected>6 personnes</option>
@@ -226,7 +226,9 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 </div>
 
                         <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="" required>
-                <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
+                        <input type="hidden" name="moisEscape" id="inputMoisEscape" value="">
+                        <input type="hidden" name="anneeEscape" id="inputAnneeEscape" value="">
+                                <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
 
                 <button type="submit" class="bouton-reserver"
                         id="boutonReserverGames reserverGames">Réserver maintenant</button>

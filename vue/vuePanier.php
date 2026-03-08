@@ -9,16 +9,21 @@ if (isset($_GET['lang'])) {
 if (!isset($_SESSION['lang'])) {
     $_SESSION['lang'] = 'fr';
 }
-$lang = $_SESSION['lang'];
 
-$col_nom = "nom_" . $lang;
-$col_desc = "description_" . $lang;
-
-// Données de l'escape game pour l'affichage (avec colonnes multilingues si elles existent)
+// Données de l'escape game pour l'affichage
 $escape = isset($panier[0]) ? $panier[0] : null;
-$nomEscape = $escape ? (isset($escape[$col_nom]) ? $escape[$col_nom] : $escape['nom']) : '';
-$descEscape = $escape ? (isset($escape[$col_desc]) ? $escape[$col_desc] : $escape['description']) : '';
+$nomEscape = $escape && isset($escape['nom']) ? $escape['nom'] : '';
+$descEscape = $escape && isset($escape['description']) ? $escape['description'] : '';
 $prixEscape = $escape && isset($escape['prix']) ? (int) $escape['prix'] : 0;
+
+// Date complète : jour + mois + année (mois/année par défaut si non passés ou vides)
+$mois = (isset($mois) && $mois !== '') ? (int) $mois : (int) date('n');
+$annee = (isset($annee) && $annee !== '') ? (int) $annee : (int) date('Y');
+$jour = (isset($jour) && $jour !== '') ? (int) $jour : (int) date('j');
+$mois = max(1, min(12, $mois));
+$dateReserve = sprintf('%04d-%02d-%02d', $annee, $mois, $jour);
+$nomsMois = array(1 => 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+$dateAffichage = $jour . ' ' . $nomsMois[$mois] . ' ' . $annee;
 
 // Image de l'escape si elle existe
 $imageEscape = null;
@@ -43,7 +48,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
         <div class="colonne-gauche reveal reveal-up">
             <div class="section-panier carte reveal reveal-up">
-                <h1 id="panierPanier">Votre Panier</h1>
+                <h1 id="panierPanier">Votre réservation</h1>
 
                 <div class="produit">
                     <?php if ($imageEscape): ?>
@@ -57,7 +62,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                             <?= htmlspecialchars($descEscape) ?>
                         </div>
                         <div class="ligne-recap">
-                            <span class="recap-date">Date : <?= $jour ?></span>
+                            <span class="recap-date">Date : <?= htmlspecialchars($dateAffichage) ?></span>
                             <span class="recap-horaire">Horaire : <?= $horaire ?></span>
                             <span class="recap-personnes"><?= $nbrPersonnes ?> personne(s)</span>
                         </div>
@@ -137,9 +142,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                             </div>
                         </div>
                         <div class="card-brand-zone" id="card-brand-zone" aria-hidden="true">
-                            <img id="card-brand-logo"
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='40' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23f0f0f0' rx='4'/%3E%3Ctext x='30' y='26' font-family='Inter' font-size='12' fill='%23999' text-anchor='middle'%3ECarte%3C/text%3E%3C/svg%3E"
-                                alt="" class="card-brand-img">
+                            <span class="card-brand-label" id="card-brand-label">Carte</span>
                         </div>
                     </div>
                     <div class="indication2" id="retournercartePanier">Veuillez rentrer vos coordonnées bancaires</div>
@@ -149,7 +152,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
                     <input type="hidden" name="montant" id="montantPanier"
                         value="<?= $prixEscape ? $prixEscape : 141 ?>">
-                    <input type="hidden" name="jourReserve" value="<?= htmlspecialchars($jour) ?>">
+                    <input type="hidden" name="dateReserve" value="<?= htmlspecialchars($dateReserve) ?>">
                     <input type="hidden" name="horaireReserve" value="<?= htmlspecialchars($horaire) ?>">
                     <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm"
                         value="<?= htmlspecialchars($nbrPersonnes) ?>">

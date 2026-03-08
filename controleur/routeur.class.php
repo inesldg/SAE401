@@ -92,8 +92,11 @@ class routeur
                             break;
                         case "panier":
                             if (isset($_POST)) {
-                                if (isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape']))
-                                    $this->ctlPanier->pagePanier($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'], $message = "");
+                                if (isset($_POST['jourEscape'], $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'])) {
+                                    $mois = !empty($_POST['moisEscape']) ? $_POST['moisEscape'] : date('n');
+                                    $annee = !empty($_POST['anneeEscape']) ? $_POST['anneeEscape'] : date('Y');
+                                    $this->ctlPanier->pagePanier($_POST['jourEscape'], $mois, $annee, $_POST['horaireEscape'], $_POST['nbrPersonnesEscape'], $_POST['idEscape'], $message = "");
+                                }
                             } else
                                 throw new Exception("Vous n'avez aucun panier actif");
                             break;

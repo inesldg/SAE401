@@ -13,6 +13,13 @@ $col_desc = "description_" . $lang;
 
 // Style
 $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
+
+// Au moins un filtre est-il appliqué ?
+$filtresActifs = !empty($filtres['prix_max'])
+    || !empty($filtres['pers_min'])
+    || (isset($filtres['lieu']) && $filtres['lieu'] !== '')
+    || !empty($filtres['etoiles'])
+    || !empty($filtres['duree_max']);
 ?>
 
 <section class="hero-section">
@@ -38,20 +45,6 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
         <aside class="filtres-tri reveal reveal-up">
             <form class="filtres-escape__form" method="get" action="index.php">
                 <input type="hidden" name="action" value="escapeGames">
-                <!--  JSP si on garde
-                <fieldset class="filtres-escape__bloc">
-                    <legend id="legendePrix">Prix max (€ / pers)</legend>
-                    <label>
-                        <span id="labelMax">Max</span>
-                        <input
-                            type="number"
-                            name="prix_max"
-                            min="0"
-                            step="5"
-                            placeholder="50"
-                            value="<?= isset($filtres['prix_max']) ? htmlspecialchars($filtres['prix_max']) : '' ?>">
-                    </label>
-                </fieldset> -->
 
                 <fieldset class="filtres-escape__bloc">
                     <legend id="legendePers">Nombre minimum de personnes</legend>
@@ -85,7 +78,7 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                 </fieldset>
 
                 <fieldset class="filtres-escape__bloc">
-                    <legend id="legendeNote">Note des avis (étoiles) – optionnel</legend>
+                    <legend id="legendeNote">Note des avis (étoiles)</legend>
                     <?php
                     $etoilesCochees = $filtres['etoiles'] ?? [];
                     if (!is_array($etoilesCochees)) {
@@ -111,15 +104,20 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
 
                 <button type="submit" id="btnFiltrer">Filtrer</button>
 
-                <button id="btn-toggle-filtres" class="mobile-filter-trigger">
+                <button type="submit" id="btn-filtrer-mobile" class="mobile-filter-trigger">
                     <span>Filtrer</span>
                 </button>
 
+                <?php if ($filtresActifs): ?>
+                    <a href="index.php?action=escapeGames" class="btn-supprimer-filtres" id="btnSupprimerFiltres">Supprimer les filtres</a>
+                <?php endif; ?>
             </form>
         </aside>
         <!-- COLONNE ESCAPES -->
         <div class="escapes-cartes reveal reveal-up">
-
+            <?php if (empty($escapeGames)): ?>
+                <p class="escapes-aucun-resultat" id="aucunJeuCriteres">Aucun jeu trouvé correspondant à ces critères.</p>
+            <?php else: ?>
             <?php foreach ($escapeGames as $game): ?>
                 <article class="accueil-escape-card">
 
@@ -199,30 +197,12 @@ $style = '<link rel="stylesheet" href="styles/escapeGames.css">';
                         aria-label="Voir détails : <?= htmlspecialchars($game['nom']) ?>"></a>
                 </article>
             <?php endforeach; ?>
+            <?php endif; ?>
 
         </div>
     </div>
 </section>
 
-
-<div>
-    <!-- <?php
-    foreach ($escapeGames as $game) {
-        $result = '
-            <div>' . $game['nom'] . '</div>
-            <div>' . $game['lieu'] . '</div>
-            <a href=index.php?action=game&idEscapeGame=' . $game['id_escape'] . '>Lien</a>
-        ';
-
-        echo $result;
-    }
-
-    ?> -->
-    <div>
-
-        <?php
-
-        $main;
-
-        $script = '<script src="js/json.js" defer></script>';
-        $script .= '<script src="js/filtre.js" defer></script>';
+<?php
+$script = '<script src="js/json.js" defer></script>';
+$script .= '<script src="js/filtre.js" defer></script>';
