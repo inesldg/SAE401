@@ -16,7 +16,6 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <span id="btnRetourTexte">Retour aux escape games</span>
     </a>
 
-    <div class="avis-filtre-message" id="avisFiltreMessage" style="display:none;"></div>
     <div class="avis-page">
         <!-- ========================= -->
         <!-- SECTION FILTRES ET ACTIONS -->
@@ -80,7 +79,7 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
         <?php if (!empty($avis) && $avis != 0): ?>
             <?php foreach ($avis as $evaluation): ?>
 
-                // Sécurisation et limitation de la note entre 0 et 5
+                <?php // Sécurisation et limitation de la note entre 0 et 5 ?>
                 <?php $note = max(0, min(5, (int) $evaluation['note'])); ?>
                 <div class="avis" data-note="<?= $note ?>">
                     <div class="container-avis">
