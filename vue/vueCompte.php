@@ -101,7 +101,7 @@ if ($idUtilisateur) {
                 </div>
                 <div class="case" style="margin-top:15px; width: 100%; max-width: 400px;">
                     <label id="nouvelleMailCompte">Nouvelle adresse mail (optionnel)</label>
-                    <input type="email" name="mail" placeholder="Nouvelle adresse mail (optionnel)">
+                    <input type="email" name="mail" id="inputNewMail" placeholder="Nouvelle adresse mail (optionnel)">
                 </div>
             </div>
 

@@ -33,12 +33,12 @@ let trad = {
     "#elife": {
         "fr": "ELIFE",
         "en": "universe",
-        "de": "Univers"
+        "de": "Universum"
     },
     "#textAcc": {
-        "fr": "La Clé ELIFE vous propose des escapes games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
-        "en": "La Clé ELIFE offers you exceptional escape games. Each room is designed to transport you into another world, with realistic scenery, ingenious mechanisms and captivating scenarios. Whether you are a beginner or an expert, come challenge yourself !",
-        "de": "Die Schlüssel ELIFE bietet Ihnen exklusive Escape Spiele. Jede Raum ist so gestaltet, dass Sie in eine andere Welt versetzt werden, mit realistischen Kulissen, genialen Mechanismen und fesselnden Szenarien. Ob Anfänger oder Experte, kommen Sie und stellen Sie sich der Herausforderung !"
+        "fr": "ELIFE vous propose des escapes games d'exception. Chaque salle est conçue pour vous transporter dans un autre monde, avec des décors réalistes, des mécanismes ingénieux et des scénarios captivants. Que vous soyez débutant ou expert, venez relever le défi !",
+        "en": "ELIFE offers you exceptional escape games. Each room is designed to transport you into another world, with realistic scenery, ingenious mechanisms and captivating scenarios. Whether you are a beginner or an expert, come challenge yourself !",
+        "de": "ELIFE bietet Ihnen exklusive Escape Spiele. Jede Raum ist so gestaltet, dass Sie in eine andere Welt versetzt werden, mit realistischen Kulissen, genialen Mechanismen und fesselnden Szenarien. Ob Anfänger oder Experte, kommen Sie und stellen Sie sich der Herausforderung !"
     },
 
     "#nos": {
@@ -47,7 +47,7 @@ let trad = {
         "de": "Unsere neuesten"
     },
     "#suitetitreh2": {
-        "fr": "Escapes games",
+        "fr": "Escape games",
         "en": "Escape games",
         "de": "Escape Spiele"
     },
@@ -202,6 +202,11 @@ let trad = {
         "en": "New email address (optional)",
         "de": "Neue E-Mail-Adresse (optional)"
     },
+    "#inputNewMail": {
+        "fr": "Veuillez entrer une nouvelle adresse mail",
+        "en": "Please enter a new email address",
+        "de": "Bitte eine neue E-Mail-Adresse eingeben"
+    },
     "#entrerMDPCompte": {
         "fr": "Mot de passe actuel",
         "en": "Current password",
@@ -211,6 +216,11 @@ let trad = {
         "fr": "Confirmer le mot de passe",
         "en": "Confirm password",
         "de": "Passwort bestätigen"
+    },
+    "#inputmdpconfirm": {
+        "fr": "Veuillez confirmer votre mot de passe",
+        "en": "Please confirm your password",
+        "de": "Bitte bestätigen Sie Ihr Passwort"
     },
     "#modifCompte": {
         "fr": "Sauvegarder",
@@ -249,7 +259,7 @@ let trad = {
         "fr": "Retour à la page d'accueil",
         "en": "Back to the home page",
         "de": "Zurück zur Startseite"
-    }, 
+    },
 
     // ******************************** vue Dash *************************************************
 
@@ -783,15 +793,15 @@ let trad = {
         "en": "Pay with...",
         "de": "Zahlen mit..."
     },
-    "#retournercartePanier": {
-        "fr": "Retournez la carte en passant la souris dessus",
-        "en": "Flip the card by hovering the mouse over it",
-        "de": "Karte umdrehen, indem Sie den Mauszeiger darüber bewegen"
-    },
     "#validerPanier": {
         "fr": "Validez le paiement",
         "en": "Confirm the payment",
         "de": "Zahlung bestätigen"
+    },
+    "#retournercartePanier": {
+        "fr": "Veuillez rentrer vos coordonnées bancaires",
+        "en": "Please enter your bank details",
+        "de": "Bitte geben Sie Ihre Bankverbindung ein"
     },
 
     // ******************************** vue Propos *************************************************
@@ -1208,7 +1218,7 @@ let trad = {
         "de": "#WeEscapeChallenge"
     },
     "#contactGalerieTitre": {
-        "fr": "Apercus de l'Aventure",
+        "fr": "Aperçus de l'Aventure",
         "en": "Adventure Highlights",
         "de": "Einblicke ins Abenteuer"
     },
@@ -1394,11 +1404,6 @@ let trad = {
         "fr": "Aucun avis pour le moment.",
         "en": "No reviews yet.",
         "de": "Noch keine Bewertungen."
-    },
-    "#boutonReserverGames": {
-        "fr": "Reserver maintenant",
-        "en": "Book now",
-        "de": "Jetzt buchen"
     },
     "#loaderTexte": {
         "fr": "Chargement...",

@@ -220,15 +220,11 @@ Bannière principale avec image
 }
 
 /* --- RESPONSIVE DESIGN --- */
-
-/* --- VERSION TABLETTE --- */
-html,
-body {
+/* Pas de overflow sur html/body : ça casserait position:sticky du header.
+   On limite le dépassement horizontal au contenu de la page (main). */
+main {
     overflow-x: hidden;
-    /* Empêche le scroll horizontal parasite */
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 @media (max-width: 768px) {
