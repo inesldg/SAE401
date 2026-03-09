@@ -269,9 +269,9 @@ let trad = {
         "de": "Übersicht der Aktivität"
     },
     "#reservationDash": {
-        "fr": "RÉSERVATIONS",
-        "en": "BOOKINGS",
-        "de": "BUCHUNGEN"
+        "fr": "Réservations",
+        "en": "Bookings",
+        "de": "Buchungen"
     },
     "#confirmeeDash": {
         "fr": "Confirmées",
@@ -291,9 +291,9 @@ let trad = {
         "de": "Aktiv"
     },
     "#revenusdash": {
-        "fr": "REVENUS",
-        "en": "INCOMES",
-        "de": "EINNAHMEN"
+        "fr": "Revenus",
+        "en": "Incomes",
+        "de": "Einnahmen"
     },
     "#cemoisDash": {
         "fr": "Ce mois",
@@ -301,19 +301,19 @@ let trad = {
         "de": "Diesen Monat"
     },
     "#moyenneDash": {
-        "fr": "NOTE MOYENNE",
-        "en": "AVERAGE REVIEW",
-        "de": "DURCHSCHNITTLICHE BEWERTUNG"
+        "fr": "Note moyenne",
+        "en": "Average review",
+        "de": "Durchschnittliche bewertung"
     },
     "#tauxdoccupationDash": {
-        "fr": "TAUX DE PARTICIPANTS",
-        "en": "PARTICIPANTS RATE",
-        "de": "ANTEIL DER BENUTZER"
+        "fr": "Taux de participants",
+        "en": "Participants rate",
+        "de": "Anteil der benutzer"
     },
     "#prsnDash": {
         "fr": "Personnes",
-        "en": "People",
-        "de": "Leute"
+        "en": "Participants",
+        "de": "Teilnehmer"
     },
     "#reservationsDash": {
         "fr": "RÉSERVATIONS RÉCENTES",
@@ -321,39 +321,37 @@ let trad = {
         "de": "NEUESTE BUCHUNGEN"
     },
     "#utilisateurAdmin": {
-        "fr": "UTILISATEURS",
-        "en": "USERS",
-        "de": "BENUTZER"
+        "fr": "Utilisateurs",
+        "en": "Users",
+        "de": "Benutzer"
     },
     "#escapeAdmin": {
-        "fr": "ESCAPES GAMES",
-        "en": "ESCAPES GAMES",
-        "de": "ESCAPES GAMES"
+        "fr": "Escape games",
+        "en": "Escape games",
+        "de": "Escape games"
     },
     "#adminAdministrateur": {
         "fr": "ADMINISTRATEUR",
         "en": "SYSTEM ADMINISTRATOR",
-        "de": "SYSTEMADMINISTRATOR"
+        "de": "SYSTEM ADMINISTRATOR"
     },
     "#dashAdmin": {
-        "fr": "TABLEAU DE BORD",
-        "en": "DASHBOARD",
-        "de": "DASHBOARD"
+        "fr": "Tableau de bord",
+        "en": "Dashboard",
+        "de": "Dashboard"
     },
 
     "#calendrierAdmin": {
-        "fr": "CALENDRIER",
-        "en": "CALENDAR",
-        "de": "KALENDER"
+        "fr": "Calendrier",
+        "en": "Calendar",
+        "de": "Kalender"
     },
 
     "#avisAdmin": {
-        "fr": "AVIS",
-        "en": "REVIEWS",
-        "de": "BEWERTUNGEN"
+        "fr": "Avis",
+        "en": "Reviews",
+        "de": "Bewertungen"
     },
-
-
 
     // ******************************** vue erreur *************************************************
     "#erreurErr": {
@@ -802,6 +800,27 @@ let trad = {
         "fr": "Veuillez rentrer vos coordonnées bancaires",
         "en": "Please enter your bank details",
         "de": "Bitte geben Sie Ihre Bankverbindung ein"
+    },
+
+    "#inputNumTitre": {
+        "fr": "Numéro de carte",
+        "en": "Card number",
+        "de": "Kartennummer"
+    },
+    "#inputExpiration": {
+        "fr": "Expiration",
+        "en": "Expiration",
+        "de": "Ablauf"
+    },
+    "#inputCVV": {
+        "fr": "Code CVV",
+        "en": "CVV Code",
+        "de": "CVV Code"
+    },
+    "#inputAnneeExpiration": {
+        "fr": "AA",
+        "en": "YY",
+        "de": "JJ"
     },
 
     // ******************************** vue Propos *************************************************

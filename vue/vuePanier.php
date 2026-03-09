@@ -131,12 +131,12 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                         <!-- Carte bancaire graphique + champs -->
                         <div class="carte-bleue-contenu">
                             <div class="ligne-carte">
-                                <label for="inputNumCarte">Numéro de carte</label>
+                                <label for="inputNumCarte" id="inputNumTitre">Numéro de carte</label>
                                 <input type="text" name="numCarte" id="inputNumCarte" value=""
                                     placeholder="0000 0000 0000 0000" maxlength="19" required autocomplete="cc-number">
                             </div>
                             <div class="ligne-carte">
-                                <label for="inputMoisExpiration">Expiration</label>
+                                <label for="inputMoisExpiration" id="inputExpiration">Expiration</label>
                                 <div class="ligne-carte-exp">
                                     <input type="text" name="moisExpiration" id="inputMoisExpiration"
                                         class="input-carte-court" value="" placeholder="MM" maxlength="2" required>
@@ -146,7 +146,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                                 </div>
                             </div>
                             <div class="ligne-carte">
-                                <label for="inputNumCarteDos">Code CVV</label>
+                                <label for="inputNumCarteDos" id="inputCVV">Code CVV</label>
                                 <input type="text" name="numCarteDos" id="inputNumCarteDos" class="input-carte-cvc"
                                     value="" placeholder="000" maxlength="3" required>
                             </div>
