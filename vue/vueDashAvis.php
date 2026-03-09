@@ -57,9 +57,9 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
 
     <div class="droite">
         <div class="haut">
-            <h1 id="#">TOUS LES AVIS</h1>
-            <div class="sous-titre" id="#">
-                <?= count($avis) ?> avis
+            <h1 id="dashAvisTitreListe">TOUS LES AVIS</h1>
+            <div class="sous-titre">
+                <?= count($avis) ?> <span id="dashAvisSuffixeNombre">avis</span>
             </div>
         </div>
         <div class="avis-container">
@@ -79,7 +79,7 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
                         <form method="POST" action="index.php?action=supprimerAvis">
                             <input type="hidden" name="id_avis" value="<?= $a['id_avis'] ?>">
                             <button type="submit" class="btn-supprimer">
-                                Supprimer
+                                <span class="dashAvisSupprimerTexte">Supprimer</span>
                             </button>
                         </form>
                     </div>
@@ -105,3 +105,7 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
         </div>
     </div>
 </div>
+
+<?php
+$script = '<script src="js/json.js" defer></script>';
+?>

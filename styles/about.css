@@ -6,15 +6,22 @@ body {
     line-height: 1.6;
 }
 
-/* --- TYPOGRAPHIE --- */
+/* ------------------------------
+TYPOGRAPHIE
+Styles communs pour les titres
+------------------------------ */
 h1,
 h2,
 h3 {
     font-family: var(--titre);
     text-transform: uppercase;
+    /* mettre texte en majuscule */
     letter-spacing: 2px;
+    /* espacer les lettre */
     margin: 0;
 }
+
+/* Texte avec effet doré */
 
 .texte-doré {
     background: var(--gold-gradient);
@@ -23,7 +30,10 @@ h3 {
     font-weight: bold;
 }
 
-/* --- SECTION 1 : ACCUEIL --- */
+/* ------------------------------
+SECTION 1 : HERO / ACCUEIL
+Bannière principale avec image
+------------------------------ */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(16, 26, 35, 1)), url('../images/paysage-kaiserstuhl.jpg');
     background-size: cover;
@@ -87,9 +97,12 @@ h3 {
 .conteneur-cartes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Le navigateur va mettre autant de colonnes que possible sur une seule ligne. */
+    /*Si la largeur < 280px, saut de ligne */
     gap: 30px;
 }
 
+/* style d'une carte */
 .carte {
     background-color: #16212c;
     padding: 40px 30px;
@@ -132,7 +145,7 @@ h3 {
 .section-gardiens {
     padding: 80px 10%;
     text-align: center;
-    /* Ajout du dégradé radial (identique à l'origine pour la cohérence) */
+    /* même dégradé que la section origine pour cohérence */
     background: radial-gradient(circle, #253E54 0%, #0b161f91 50%, #0B161F 100%);
 }
 
@@ -143,7 +156,7 @@ h3 {
 .grille-gardiens {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2.5rem;
+    gap: 40px;
 }
 
 .bloc-gardien {
@@ -156,9 +169,10 @@ h3 {
     width: 100%;
     max-width: 360px;
     aspect-ratio: 1;
+    /* image carrée */
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     background-color: rgba(197, 197, 197, 0.48);
 
 }
@@ -167,11 +181,14 @@ h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* remplit le conteneur */
     display: block;
     filter: grayscale(0.85);
+    /* image en noir et blanc */
     transition: filter 0.35s ease;
 }
 
+/* au survol : couleur */
 .bloc-gardien:hover .photo-gardien img {
     filter: grayscale(0);
 }
@@ -204,8 +221,7 @@ h3 {
 
 /* --- RESPONSIVE DESIGN --- */
 
-/* --- VERSION TABLETTE (Smartphone) --- */
-/* --- CORRECTION GLOBALE (Pour éviter le décalage sur le côté) --- */
+/* --- VERSION TABLETTE --- */
 html,
 body {
     overflow-x: hidden;

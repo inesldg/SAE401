@@ -15,16 +15,10 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
   <!-- styles pour cette page -->
 
   <?= $style ?>
+  <?= $head_extra ?? '' ?>
 
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-      }
-    }
-  </script>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/loader.css">
   <link rel="stylesheet" href="styles/footer.css">

@@ -1,30 +1,39 @@
+<!-- Footer global pour toutes les pages du site -->
+
+
 <div class="footer-top">
+    <!-- Liens -->
     <div class="colonne">
         <h2 id="footerServices">Services</h2>
         <a href="index.php?action=escapeGames" id="footerJeux">Nos jeux</a>
     </div>
 
+    <!-- Colonne regroupant les informations utiles pour les utilisateurs -->
     <div class="colonne">
         <h2 id="footerInfos">Informations</h2>
         <a href="index.php?action=contact" id="footerFaq">FAQ</a>
         <a href="index.php?action=legal" id="footerAssistance">Assistance</a>
     </div>
 
+    <!-- Colonne présentant les informations liées à l'entreprise -->
     <div class="colonne">
         <h2 id="footerEntreprise">Notre entreprise</h2>
         <a href="index.php?action=propos" id="footerApropos">À propos de nous</a>
         <a href="https://www.instagram.com/we_escape_abenteuer/" id="footerInsta">Notre Instagram</a>
     </div>
 
+    <!-- Newsletter -->
     <div class="blockNewsletter">
         <h2 id="footerNewsTitre">S'inscrire à la Newsletter !</h2>
         <div class="groupeNewletter">
             <input type="email" placeholder="Adresse mail" id="footerNewsInput">
+            <!-- Bouton avec icône flèche pour envoyer l'adresse email -->
             <button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h13M12 5l7 7-7 7" />
                 </svg></button>
         </div>
+        <!-- Petit texte informatif expliquant l'intérêt de la newsletter -->
         <p class="infoNewsletter" id="footerNewsTexte">
             Inscrivez-vous à la Newsletter ELIFE pour ne rien manquer des nouveautés et des jeux de
             saisons !
@@ -32,15 +41,20 @@
     </div>
 </div>
 
+<!-- ====== PARTIE BASSE DU FOOTER ====== -->
+<!-- Contient le logo, les liens légaux et les réseaux sociaux -->
 <div class="footer-bottom">
+    <!-- Logo du site renvoyant vers la page d'accueil -->
     <a href="index.php?action=accueil"><img class="imglogo" src="images/logo.png" alt="logo elife"></a>
 
+    <!-- Mentions légales -->
     <div class="links">
         <a href="index.php?action=legal#mentionsLegales" id="footerMentions">Mentions légales</a>
         <a href="index.php?action=legal#politique" id="footerPolitique">Politique de confidentialité</a>
         <a href="index.php?action=legal#donneesPerso" id="footerDonnees">Données personnelles</a>
     </div>
 
+    <!-- Liens réseaux sociaux -->
     <div class="social-icons">
         <a href="https://www.instagram.com/we_escape_abenteuer/"><svg xmlns="http://www.w3.org/2000/svg" width="18"
                 height="18" viewBox="0 0 24 24" fill="#ffffff">
@@ -65,6 +79,8 @@
     </div>
 </div>
 
+<!-- ====== COPYRIGHT ====== -->
+<!-- Mention légale indiquant la propriété du site -->
 <div class="copyright" id="footerCopyright">
     &copy; 2026 ELIFE. Tous droits réservés.
 </div>

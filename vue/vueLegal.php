@@ -15,6 +15,7 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/legal.css">';
 ?>
 
+<!-- section mentions legales -->
 <section class="page-legal">
     <div class="page-legal__conteneur reveal reveal-up">
         <article class="page-legal__bloc" id="mentionsLegales">
@@ -41,6 +42,7 @@ $style = '<link rel="stylesheet" href="styles/legal.css">';
                 ne saurait être engagée quant au contenu ou aux pratiques de ces sites externes.</div>
         </article>
 
+        <!-- section politique de confidentialité -->
         <article class="page-legal__bloc reveal reveal-up" id="politique">
             <h2 class="page-legal__titre" id="politiqueLegal">Politique de confidentialité</h2>
             <div class="page-legal__texte" id="pc1">La protection de votre vie privée est une priorité absolue pour
@@ -60,6 +62,7 @@ $style = '<link rel="stylesheet" href="styles/legal.css">';
                 ou supprimées de nos bases actives.</div>
         </article>
 
+        <!-- section données personnelles -->
         <article class="page-legal__bloc reveal reveal-up" id="donneesPerso">
             <h2 class="page-legal__titre" id="donneesLegal">Données personnelles</h2>
             <div class="page-legal__texte" id="dp1">En conformité avec le Règlement Général sur la Protection des

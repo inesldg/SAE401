@@ -9,10 +9,35 @@ if (isset($_GET['lang'])) {
 if (!isset($_SESSION['lang'])) {
     $_SESSION['lang'] = 'fr';
 }
-$lang = $_SESSION['lang'];
 
-$col_nom = "nom_" . $lang;
-$col_desc = "description_" . $lang;
+// Données de l'escape game pour l'affichage
+$escape = isset($panier[0]) ? $panier[0] : null;
+$nomEscape = $escape && isset($escape['nom']) ? $escape['nom'] : '';
+$descEscape = $escape && isset($escape['description']) ? $escape['description'] : '';
+$prixEscape = $escape && isset($escape['prix']) ? (int) $escape['prix'] : 0;
+
+// Date complète : jour + mois + année (mois/année par défaut si non passés ou vides)
+$mois = (isset($mois) && $mois !== '') ? (int) $mois : (int) date('n');
+$annee = (isset($annee) && $annee !== '') ? (int) $annee : (int) date('Y');
+$jour = (isset($jour) && $jour !== '') ? (int) $jour : (int) date('j');
+$mois = max(1, min(12, $mois));
+$dateReserve = sprintf('%04d-%02d-%02d', $annee, $mois, $jour);
+$nomsMois = array(1 => 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+$dateAffichage = $jour . ' ' . $nomsMois[$mois] . ' ' . $annee;
+
+// Image de l'escape si elle existe
+$imageEscape = null;
+if ($escape && !empty($escape['id_escape'])) {
+    $dossier = "photos_escapes/";
+    $id = $escape['id_escape'];
+    $extensions = array('jpg', 'jpeg', 'png', 'webp');
+    foreach ($extensions as $ext) {
+        if (file_exists($dossier . $id . "." . $ext)) {
+            $imageEscape = $dossier . $id . "." . $ext;
+            break;
+        }
+    }
+}
 
 // Style
 $style = '<link rel="stylesheet" href="styles/panier.css">';
@@ -21,28 +46,39 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 <main class="panier">
     <div class="conteneur-principal">
 
+        <!-- ---------------------------
+             Colonne gauche : Panier et codes promo
+             --------------------------- -->
         <div class="colonne-gauche reveal reveal-up">
             <div class="section-panier carte reveal reveal-up">
-                <h1 id="panierPanier">Votre Panier</h1>
+                <h1 id="panierPanier">Votre réservation</h1>
 
                 <div class="produit">
-                    <div class="image-remplacement">img</div>
+                    <?php if ($imageEscape): ?>
+                        <img src="<?= htmlspecialchars($imageEscape) ?>" alt="<?= htmlspecialchars($nomEscape) ?>"
+                            class="image-panier">
+                    <?php else: ?>
+                        <div class="image-remplacement">img</div>
+                    <?php endif; ?>
                     <div class="infos-produit">
-                        <h3>In Vino Veritas</h3>
+                        <h3><?= htmlspecialchars($nomEscape) ?></h3>
                         <div class="description">
-                            L'aventure d'évasion "In Vino Veritas" vous emmène à travers la partie sud-ouest du Kaiserstuhl
-                            avec une vue imprenable sur la plaine du Rhin.
+                            <?= htmlspecialchars($descEscape) ?>
+                        </div>
+                        <div class="ligne-recap">
+                            <span class="recap-date">Date : <?= htmlspecialchars($dateAffichage) ?></span>
+                            <span class="recap-horaire">Horaire : <?= $horaire ?></span>
+                            <span class="recap-personnes"><?= $nbrPersonnes ?> personne(s)</span>
                         </div>
                         <div class="ligne-prix">
-                            <div class="selecteur-personnes">Nombre pers.</div>
-                            <div class="bouton-supprimer" id="supprPanier">SUPPRIMER</div>
-                            <div class="prix-unitaire"> prix€</div>
+                            <div class="prix-unitaire"><?= $prixEscape ?> €</div>
                         </div>
                     </div>
                 </div>
 
             </div>
 
+            <!-- Section code promo / bons -->
             <div class="carte reveal reveal-up carte-bons">
                 <h2 id="codePanier">Code Promo / Bons ?</h2>
                 <div class="groupe-saisie">
@@ -54,6 +90,10 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
             </div>
         </div>
 
+
+        <!-- ---------------------------
+             Colonne latérale : Informations utilisateur et paiement
+             --------------------------- -->
         <div class="colonne-laterale reveal reveal-up">
 
             <div class="carte reveal reveal-up">
@@ -86,8 +126,9 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <div class="carte-bleue-wrapper">
                         <svg width="100%" height="auto" viewBox="0 0 273 167" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-                            <rect width="273" height="167" rx="12" fill="#2B3893"/>
+                            <rect width="273" height="167" rx="12" fill="#2B3893" />
                         </svg>
+                        <!-- Carte bancaire graphique + champs -->
                         <div class="carte-bleue-contenu">
                             <div class="ligne-carte">
                                 <label for="inputNumCarte">Numéro de carte</label>
@@ -110,36 +151,52 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                                     value="" placeholder="000" maxlength="3" required>
                             </div>
                         </div>
+                        <!-- Logo de la carte -->
+
                         <div class="card-brand-zone" id="card-brand-zone" aria-hidden="true">
-                            <img id="card-brand-logo"
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='40' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23f0f0f0' rx='4'/%3E%3Ctext x='30' y='26' font-family='Inter' font-size='12' fill='%23999' text-anchor='middle'%3ECarte%3C/text%3E%3C/svg%3E"
-                                alt="" class="card-brand-img">
+                            <span class="card-brand-label" id="card-brand-label">Carte</span>
                         </div>
                     </div>
                     <div class="indication2" id="retournercartePanier">Veuillez rentrer vos coordonnées bancaires</div>
 
                     <!-- ---------------------------------------------------------------- -->
                     <!-- Ne pas toucher -->
-
-                    <input type="hidden" name="montant" id="montantPanier"
+                    <!-- ---------------------------
+                         Champs cachés pour la gestion du panier
+                         --------------------------- -->
+                    <!-- <input type="hidden" name="montant" id="montantPanier"
                         value="<?= isset($panier[0]['prix']) ? (int) $panier[0]['prix'] : 141 ?>">
                     <input type="hidden" name="jourReserve" value="<?= $jour ?>">
 
                     <input type="hidden" name="horaireReserve" value="<?= $horaire ?>">
 
-                    <input type="hidden" name="nbrPersonneReserve" value="<?= $nbrPersonnes ?>">
+                    <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm" value="<?= $nbrPersonnes ?>">
 
-                    <input type="hidden" name="idEscapeReserve" value="<?= $panier[0]['id_escape'] ?>">
+                    <input type="hidden" name="idEscapeReserve" value="<?= $panier[0]['id_escape'] ?>"> -->
+
+                    <input type="hidden" name="montant" id="montantPanier"
+                        value="<?= $prixEscape ? $prixEscape : 141 ?>">
+                    <input type="hidden" name="dateReserve" value="<?= htmlspecialchars($dateReserve) ?>">
+                    <input type="hidden" name="horaireReserve" value="<?= htmlspecialchars($horaire) ?>">
+                    <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm"
+                        value="<?= htmlspecialchars($nbrPersonnes) ?>">
+                    <input type="hidden" name="idEscapeReserve"
+                        value="<?= $escape ? (int) $escape['id_escape'] : '' ?>">
 
                     <!-- ---------------------------------------------------------------- -->
 
 
-
+                    <!-- ---------------------------
+                         Message d'attente lors de la transaction
+                         --------------------------- -->
                     <div id="paiement-attente" class="paiement-attente" aria-live="polite" hidden>
                         Veuillez patienter, validation de la transaction en cours par la banque…
                     </div>
+
+                    <!-- Bouton de validation -->
                     <button type="submit" class="bouton-valider" id="boutonValiderPaiement"><span
-                            id="validerPanier">Valider le paiement</span></button>
+                            id="validerPanier">Valider le
+                            paiement</span></button>
                 </form>
             </div>
         </div>

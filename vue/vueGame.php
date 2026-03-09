@@ -29,9 +29,14 @@ if (!empty($escapeGame[0]['id_escape'])) {
 }
 ?>
 
-<!-- <a href="index.php?action=escapeGames" id="" retourescapeGames>Retour aux escape games</a> -->
+<!-- ===============================
+SECTION HERO (bannière du jeu)
+================================ -->
 
 <section class="hero-section" <?= $bannerImageUrl ? ' style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--fond-sombre)), url(\'' . htmlspecialchars($bannerImageUrl) . '\'); background-size: cover; background-position: center;"' : '' ?>>
+    <!-- Si une image de bannière existe, on l'applique en background -->
+
+    <!-- Bouton retour vers la liste des escape games -->
     <a href="index.php?action=escapeGames" class="btn-retour btn-retour-absolu">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -41,15 +46,25 @@ if (!empty($escapeGame[0]['id_escape'])) {
         <span id="btnRetourTexte">Retour aux escape games</span>
     </a>
 
+    <!-- Nom de l'escape game -->
     <h1>
         <span class="titre-hero-nom"><?= $escapeGame[0]['nom'] ?></span>
     </h1>
 </section>
 
-
+<!-- ===============================
+CONTENEUR GLOBAL (2 colonnes)
+================================ -->
 <div class="conteneur-reservation">
 
+    <!-- ===============================
+CONTENEUR GLOBAL (2 colonnes)
+================================ -->
     <div class="colonne-gauche reveal reveal-up">
+
+        <!-- ===============================
+        DESCRIPTION DU JEU
+        =============================== -->
         <section class="block_description carte-noire">
             <h2 class="titre-or">
                 <?= $escapeGame[0]['nom'] ?>
@@ -60,7 +75,9 @@ if (!empty($escapeGame[0]['id_escape'])) {
                         avis</span></div>
             </div>
 
-
+            <!-- ===============================
+            ICÔNES INFORMATIONS
+            =============================== -->
             <div class="icones-detail ">
                 <div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                         stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -94,6 +111,9 @@ if (!empty($escapeGame[0]['id_escape'])) {
 
                 <div class="separateur"></div>
 
+                <!-- ===============================
+                DESCRIPTION DÉTAILLÉE
+                =============================== -->
                 <div class="detail">
                     <h3 id="detailGames">Détails</h3>
                     <div style="font-size: 0.85rem; color: #bbb;">
@@ -102,6 +122,9 @@ if (!empty($escapeGame[0]['id_escape'])) {
                 </div>
         </section>
 
+        <!-- ===============================
+        SECTION AVIS UTILISATEURS
+        =============================== -->
         <section class="block_avis carte-noire reveal reveal-up">
             <h2 style="font-size: 24px;" id="nbAvisGames">Avis</h2>
             <div class="grille-avis">
@@ -135,10 +158,12 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     }
                 } else {
                     // Message si aucun avis n'est trouvé
-                    echo "<p style='grid-column: 1/-1; text-align: center;'>Aucun avis pour le moment.</p>";
+                    echo "<p style='grid-column: 1/-1; text-align: center;' id='gameAucunAvis'>Aucun avis pour le moment.</p>";
                 }
                 ?>
             </div>
+
+            <!-- bouton voir tous les avis -->
             <div class="bouton-avis-wrap" style="text-align: center;">
                 <a class="bouton-avis" id="voirAvisGames"
                     href="index.php?action=pageVoirToutLesAvis&idEscapeGame=<?= $escapeGame[0]['id_escape'] ?>">Voir
@@ -147,6 +172,10 @@ if (!empty($escapeGame[0]['id_escape'])) {
         </section>
     </div>
 
+    <!-- ===============================
+    COLONNE DROITE
+    réservation + calendrier
+    =============================== -->
     <div class="colonne-droite reveal reveal-up">
         <section class="carte-noire">
             <div class="preferences-titre" id="selectionGames">Sélectionnez vos préférences pour l'aventure.</div>
@@ -154,9 +183,14 @@ if (!empty($escapeGame[0]['id_escape'])) {
             <p style="text-align: center; font-size: 0.9rem;" id="selectionDatesGames">Sélectionnez votre date pour
                 l'aventure</p>
 
-
+            <!-- ===============================
+            FORMULAIRE DE RÉSERVATION
+            =============================== -->
             <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=panier" ?> class="calendrier-container-flex">
 
+                <!-- ===============================
+                CALENDRIER
+                =============================== -->
                 <div class="calendrier-boite">
                     <div class="calendrier-header">
                         <span id="prevMois" class="fleche-cal">❮</span>
@@ -172,7 +206,9 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     </div>
                 </div>
 
-
+                <!-- ===============================
+                SÉLECTION HORAIRE
+                =============================== -->
                 <div class="selection-options-mobile">
 
                     <div class="selecteur-ligne">
@@ -192,15 +228,13 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     </div>
                 </div>
 
+                <!-- ===============================
+                NOMBRE DE PARTICIPANTS
+                =============================== -->
                 <div class="selecteur-ligne">
                     <label>
                         <span id="participGames">Participants</span>
                         <select name="nbrPersonnesEscape" class="choix-horaire" id="nbrParticipantsGame">
-                            <option value="1">1 personne</option>
-                            <option value="2">2 personnes</option>
-                            <option value="3">3 personnes</option>
-                            <option value="4">4 personnes</option>
-                            <option value="5">5 personnes</option>
                             <option value="6" selected>6 personnes</option>
                             <option value="7">7 personnes</option>
                             <option value="8">8 personnes</option>
@@ -225,11 +259,15 @@ if (!empty($escapeGame[0]['id_escape'])) {
                     <span style="color: white;">220.00 €</span>
                 </div>
 
-                        <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="" required>
+                <p class="reservation-erreur-date" id="erreurDateReservation" role="alert" aria-live="polite" style="display: none;">Veuillez sélectionner une date.</p>
+
+                <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="">
+                <input type="hidden" name="moisEscape" id="inputMoisEscape" value="">
+                <input type="hidden" name="anneeEscape" id="inputAnneeEscape" value="">
                 <input type="hidden" name="idEscape" value="<?= $escapeGame[0]['id_escape'] ?>">
 
-                <button type="submit" class="bouton-reserver"
-                        id="boutonReserverGames reserverGames">Réserver maintenant</button>
+                <!-- bouton reserver -->
+                <button type="submit" class="bouton-reserver" id="boutonReserverGames">Réserver maintenant</button>
             </form>
         </section>
     </div>

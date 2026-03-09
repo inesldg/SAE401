@@ -80,10 +80,9 @@ function genererCalendrier() {
         }
 
         // =============================
-        // 2. Bloquer les jours passés
+        // 2. Bloquer les jours passés et le jour même (on ne peut réserver qu'à partir de demain)
         // =============================
-        if (dateDuJourBoucle < aujourdhui) {
-            // Si la date est passée → on grise et bloque le clic
+        if (dateDuJourBoucle.getTime() <= aujourdhui.getTime()) {
             div.style.opacity = "0.2";
             div.style.cursor = "not-allowed";
         } else {
@@ -99,11 +98,11 @@ function genererCalendrier() {
 
                 // On ajoute la sélection sur le jour cliqué
                 div.classList.add('selectionne');
-                
-                //-----------------------------------------------
+                // Jour, mois et année dans le formulaire (mois +1 car getMonth() est 0-indexé)
                 document.getElementById('inputJourEscape').value = div.dataset.jour;
-                // ajoute la valeur du jour cliqué dans le formulaire
-                //-----------------------------------------------
+                document.getElementById('inputMoisEscape').value = dateActuelle.getMonth() + 1;
+                document.getElementById('inputAnneeEscape').value = dateActuelle.getFullYear();
+                document.getElementById('erreurDateReservation').style.display = 'none';
             };
         }
 
@@ -135,7 +134,21 @@ nextBtn.onclick = () => {
 };
 
 // =============================
-// Génération initiale au chargement
+// Validation à la soumission : date obligatoire
 // =============================
+var formReservation = document.querySelector('form.calendrier-container-flex');
+if (formReservation) {
+    formReservation.addEventListener('submit', function (e) {
+        var inputJour = document.getElementById('inputJourEscape');
+        var errElt = document.getElementById('erreurDateReservation');
+        if (!inputJour.value.trim()) {
+            e.preventDefault();
+            errElt.style.display = 'block';
+        } else {
+            errElt.style.display = 'none';
+        }
+    });
+}
+
 genererCalendrier();
 

@@ -62,8 +62,8 @@ class escapeGames extends database
             $params[] = $filtres['lieu'];
         }
 
-        // Note (étoiles) : cases cochées = jeux dont la note moyenne est dans la tranche [N ; N+1[
-        // Ex. cocher "1 ★" = uniquement jeux avec moyenne entre 1.0 et 1.99 → sans aucun si aucun n'a 1 étoile
+        // Note (étoiles) : cases cochées = jeux dont la note moyenne arrondie vaut N (au moins un avis)
+        // Ex. cocher "5 ★" = jeux avec moyenne arrondie à 5 (ex. 4.5 à 5.4)
         $etoiles = $filtres['etoiles'] ?? [];
         if (!is_array($etoiles)) {
             $etoiles = $etoiles !== '' && $etoiles !== null ? [$etoiles] : [];
@@ -74,9 +74,8 @@ class escapeGames extends database
         if (!empty($etoiles)) {
             $etoilesConditions = [];
             foreach ($etoiles as $n) {
-                $etoilesConditions[] = "(ev.note_moy >= ? AND ev.note_moy < ?)";
+                $etoilesConditions[] = "(ev.note_moy IS NOT NULL AND ROUND(ev.note_moy) = ?)";
                 $params[] = $n;
-                $params[] = $n + 1;
             }
             $conditions[] = "(" . implode(" OR ", $etoilesConditions) . ")";
         }

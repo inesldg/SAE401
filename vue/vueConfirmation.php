@@ -15,10 +15,7 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
 ?>
 
-<!-- ------ ICI mettre le code HTML ------ -->
-
-
-
+<!-- contenu du remerciement -->
 <main class="container">
 
     <div class="titre reveal reveal-up">
@@ -30,19 +27,20 @@ $style = '<link rel="stylesheet" href="styles/confirmationAchat.css">';
         Nous avons hâte de vous accueillir et vous guider à travers nos beaux paysages d’ Alsace.
     </div>
 
-    <div class="titre" id="bientotConf">
+    <div class="titre reveal reveal-up" id="bientotConf">
         À bientôt chez
     </div>
     <img src="images/logo.png" width="50%" alt="Logo de la compagnie ELIFE">
 
     <div class="separation"></div>
 
+    <!-- logo ELIFE -->
     <div class="footer-content reveal reveal-up">
         <img src="images/bouton_home.svg" alt="Logo" class="logo-svg">
 
+        <!-- lien retour page d'accueil -->
         <div class="liens-footer">
             <a href="index.php?action=accueil" id="retourAccConf">Retour à la page d'accueil</a>
-            <!-- <a href="#" id="voirCommandeConf">Voir ma commande</a> -->
         </div>
     </div>
 

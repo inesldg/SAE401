@@ -1,27 +1,34 @@
-/* --- BOUTON SON (page d'accueil uniquement) --- */
+/* ---------------------------------------------------
+BOUTON SON (PAGE D'ACCUEIL)
+Permet d'activer ou couper la musique d'ambiance
+Positionné en fixe en bas à gauche de l'écran
+--------------------------------------------------- */
 .accueil-btn-son {
     position: fixed;
+    /* reste visible même au scroll */
     bottom: 24px;
     left: 24px;
-    z-index: 100;
+    z-index: 100; /* passe au-dessus des autres éléments */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
     padding: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4); /* fond semi transparent */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
+    border-radius: 50%;  /* bouton rond */
     color: #fff;
     cursor: pointer;
     transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+/* Effet au survol */
 .accueil-btn-son:hover {
     background: rgba(0, 0, 0, 0.6);
     color: var(--gold-clair);
     transform: scale(1.05);
+    /* zoom */
 }
 
 .accueil-btn-son:focus-visible {
@@ -29,11 +36,13 @@
     outline-offset: 2px;
 }
 
+/* Taille des icônes */
 .accueil-btn-son__icon {
     width: 22px;
     height: 22px;
 }
 
+/* Gestion de l'état lecture / pause */
 .accueil-btn-son .accueil-btn-son__icon--on {
     display: none;
 }
@@ -42,6 +51,7 @@
     display: block;
 }
 
+/* Lorsque la musique joue */
 .accueil-btn-son.accueil-btn-son--playing .accueil-btn-son__icon--on {
     display: block;
 }
@@ -51,7 +61,10 @@
 }
 
 
-/* --- HERO PREMIÈRE SECTION --- */
+/* ---------------------------------------------------
+HERO SECTION (PREMIÈRE SECTION)
+Grande bannière immersive avec image de fond
+--------------------------------------------------- */
 .hero-accueil {
     position: relative;
     width: 100%;
@@ -75,9 +88,10 @@
             #101A23AA 50%,
             #101A23CC 100%);
     pointer-events: none;
+     /* laisse passer les clics */
 }
 
-
+/* Contenu principal du hero */
 .hero-accueil__contenu {
     position: relative;
     z-index: 1;
@@ -86,6 +100,7 @@
     max-width: 720px;
 }
 
+/* Titre principal */
 .hero-accueil__titre {
     font-family: var(--titre);
     font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -104,6 +119,15 @@
     color: transparent;
 }
 
+/* Allemand : dernier mot du hero sur une deuxième ligne pour ne pas dépasser sur la clé */
+html[lang="de"] .hero-accueil__titre {
+    white-space: normal;
+}
+html[lang="de"] .hero-accueil__titre #aventure {
+    display: block;
+}
+
+/* sous titre */
 .hero-accueil__sous-titre {
     font-family: var(--texte);
     font-size: clamp(0.95rem, 2vw, 1.1rem);
@@ -113,6 +137,7 @@
     opacity: 0.95;
 }
 
+/* bouton */
 .hero-accueil__bouton {
     display: inline-flex;
     align-items: center;
@@ -170,7 +195,7 @@
     margin-left: 60px;
 }
 
-/* texte à droite */
+/* texte du hero à droite */
 .hero-accueil__contenu {
     flex: 1;
     text-align: left;
@@ -216,13 +241,16 @@
     color: var(--blanc-casse);
 }
 
-
+/* Conteneur central pour limiter la largeur */
 .accueil-conteneur {
     max-width: 1300px;
     margin: 0 auto;
     align-items: center;
 }
 
+/* ---------------------------------------------------
+TITRES DE SECTION
+--------------------------------------------------- */
 .accueil-titre {
     font-family: var(--titre);
     font-size: clamp(1.5rem, 3vw, 2rem);
@@ -295,13 +323,14 @@
     min-width: 300px;
     background: #1a242f;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: hidden;/* masque les débordements (image, hover, etc.) */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
 }
 
+/* Effet au survol : la carte se soulève légèrement */
 .accueil-escape-card:hover {
     transform: translateY(-5px);
     border-color: var(--gold-clair);
@@ -314,7 +343,6 @@
     text-decoration: none;
 }
 
-
 .accueil-escape-card__img {
     height: 200px;
     background: #2a3441;
@@ -322,6 +350,7 @@
     overflow: hidden;
 }
 
+/* Image responsive */
 .accueil-escape-card__img img {
     width: 100%;
     height: 100%;
@@ -329,6 +358,7 @@
     display: block;
 }
 
+/* Placeholder si aucune image n'est chargée */
 .accueil-escape-card__img .placeholder-img {
     width: 100%;
     height: 100%;
@@ -336,12 +366,15 @@
     background: #2a3441;
 }
 
+/* ---------------------------------------------------
+CORPS DE LA CARTE (TEXTE + INFOS)
+--------------------------------------------------- */
 .accueil-escape-card__corps {
     position: relative;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1; /* permet d'étirer le contenu pour aligner les cartes */
 }
 
 .accueil-escape-card__titre {
@@ -353,6 +386,7 @@
     text-transform: uppercase;
 }
 
+/* Description de l'aventure */
 .accueil-escape-card__desc {
     font-family: var(--texte);
     font-size: 0.85rem;
@@ -370,9 +404,12 @@
     color: var(--blanc-casse);
 }
 
+/* ---------------------------------------------------
+PRIX / BADGE
+--------------------------------------------------- */
 .accueil-escape-card__prix {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* passe au-dessus du lien invisible */
     background: var(--gold-gradient);
     padding: 5px 10px;
     border-radius: 32px;
@@ -392,6 +429,10 @@
     right: 15px;
 }
 
+
+/* ---------------------------------------------------
+BOUTON D'ACTION
+--------------------------------------------------- */
 .accueil-escape-card__btn {
     align-self: flex-end;
     padding: 0.5rem 1rem;
@@ -410,6 +451,9 @@
     color: var(--fond-sombre);
 }
 
+/* ---------------------------------------------------
+LIEN "VOIR TOUS LES ESCAPES"
+--------------------------------------------------- */
 .accueil-escapes__lien-wrap {
     text-align: center;
     margin-top: 2rem;
@@ -433,7 +477,9 @@
     color: #E6B856;
 }
 
-/* --- AVIS CLIENTS --- */
+/* ---------------------------------------------------
+SECTION AVIS CLIENTS
+--------------------------------------------------- */
 .accueil-avis__grille {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -470,7 +516,10 @@
     margin: 0;
 }
 
-/* --- Responsive --- */
+/* ---------------------------------------------------
+RESPONSIVE DESIGN
+Adaptation tablette et mobile
+--------------------------------------------------- */
 @media (max-width: 1024px) {
 
     .accueil-escapes__grille,

@@ -1,9 +1,10 @@
-/* --- FOOTER AMELIORE --- */
+/* --- FOOTER --- */
 footer {
     background-color: #101923;
     padding: 60px 10% 30px 10%;
 }
 
+/* hauyt du footer */
 .footer-top {
     display: flex;
     justify-content: space-between;
@@ -17,6 +18,7 @@ footer {
     width: auto;
 }
 
+/* chaque colonne */
 .colonne {
     position: relative;
     /* AJOUTER : indispensable pour placer la barre */
@@ -37,7 +39,7 @@ footer {
     z-index: 1;
 }
 
-/* Reste du code (Inchangé mais vérifie la police) */
+/* Reste du code*/
 .colonne h2 {
     background: var(--gold-gradient);
     -webkit-background-clip: text;
@@ -48,9 +50,9 @@ footer {
     margin-bottom: 25px;
     letter-spacing: 1px;
     font-family: 'Cinzel', serif;
-    /* Garde Cinzel pour les titres si tu veux */
 }
 
+/* liens et textes */
 .colonne div,
 .colonne a {
     color: #a0aab4;
@@ -85,6 +87,7 @@ footer {
     margin-bottom: 20px;
 }
 
+/* formulaire newletters */
 .groupeNewletter {
     display: flex;
     background: white;
@@ -124,7 +127,7 @@ footer {
     line-height: 1.4;
 }
 
-/* Footer Bottom */
+/* --- Footer bottom : copyright et liens --- */
 .footer-bottom {
     position: relative;
     /* Indispensable pour placer la barre */
@@ -170,6 +173,7 @@ footer {
     text-decoration: none;
 }
 
+/* icones sociales */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -204,8 +208,8 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive mobile*/
+@media (max-width: 425px) {
     .colonne {
         border-left: none;
         padding-left: 0;

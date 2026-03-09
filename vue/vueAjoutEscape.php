@@ -1,11 +1,19 @@
 <?php
+// -----------------------------
+// Gestion de la langue du site
+// -----------------------------
 // Config Langue
+// Si une langue est passée dans l'URL (?lang=fr par exemple)
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
+
+// Si aucune langue n'est encore définie
 if (!isset($_SESSION['lang'])) {
     $_SESSION['lang'] = 'fr';
 }
+
+// On récupère la langue active
 $lang = $_SESSION['lang'];
 
 $col_nom = "nom_" . $lang;
@@ -16,6 +24,9 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 ?>
 
 <div class="contenu">
+    <!-- =========================
+         MENU ADMIN (Côté gauche)
+    ========================== -->
     <div class="menu-gauche">
         <div class="admin" id="adminAdministrateur">Administrateur</div>
         <div class="ligne"></div>
@@ -66,40 +77,49 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
         </div>
     </div>
 
-
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================== -->
     <div class="droite">
-
+        <!-- Partie supérieure : titre + bouton -->
         <div class="haut">
             <div class="part1">
                 <h1 id="gestionAdmin">GESTION DES ESCAPES</h1>
-                <div class="sous-titre" id="#"> <!-- l'id nique mon truc -->
-                    <?= isset($escapes) ? count($escapes) : 0 ?> escapes actifs
+                <div class="sous-titre">
+                    <?= isset($escapes) ? count($escapes) : 0 ?> <span id="ajoutEscapeActifsSuffixe">escapes actifs</span>
                 </div>
             </div>
+            <!-- Bouton pour ouvrir la popup d'ajout -->
             <div class="part2">
                 <a href="#" class="ajouter" id="btnAjouter">+ Ajouter</a>
             </div>
         </div>
 
+        <!-- =========================
+             TABLEAU DES ESCAPES
+        ========================== -->
         <div class="bas">
             <table class="table-escapes">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Nom</th>
-                        <th>Description</th>
-                        <th>Lieu</th>
-                        <th>Durée</th>
-                        <th>Joueurs</th>
-                        <th>Actions</th>
+                        <th id="ajoutEscapeColImage">Image</th>
+                        <th id="ajoutEscapeColNom">Nom</th>
+                        <th id="ajoutEscapeColDescription">Description</th>
+                        <th id="ajoutEscapeColLieu">Lieu</th>
+                        <th id="ajoutEscapeColDuree">Durée</th>
+                        <th id="ajoutEscapeColJoueurs">Joueurs</th>
+                        <th id="ajoutEscapeColActions">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Vérifie s'il y a des escapes -->
                     <?php if (!empty($escapes)): ?>
                         <?php foreach ($escapes as $escape): ?>
                             <tr>
 
-                                <!-- IMAGE -->
+                                <!-- =================
+                                     IMAGE
+                                ================== -->
                                 <td>
                                     <?php
                                     $dossier = "photos_escapes/";
@@ -117,22 +137,30 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                                     ?>
 
                                     <?php if ($imagePath): ?>
-                                        <img src="<?= $imagePath ?>" width="60">
+                                        <img src="<?= $imagePath ?>" loading="lazy" width="60">
                                     <?php else: ?>
                                         <div class="placeholder-img"></div>
                                     <?php endif; ?>
                                 </td>
 
-                                <!-- NOM -->
+                                <!-- =================
+                                     NOM
+                                ================== -->
                                 <td><?= $escape['nom'] ?></td>
 
-                                <!-- DESCRIPTION -->
+                                <!-- =================
+                                     DESCRIPTION
+                                ================== -->
                                 <td><?= $escape['description'] ?></td>
 
-                                <!-- LIEU -->
+                                <!-- =================
+                                     LIEU
+                                ================== -->
                                 <td><?= $escape['lieu'] ?></td>
 
-                                <!-- DURÉE -->
+                                <!-- =================
+                                     DURÉE
+                                ================== -->
                                 <td>
                                     <div class="case">
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
@@ -163,16 +191,10 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                                 </td>
 
 
-                                <!-- ACTIONS -->
+                                <!-- =================
+                                     ACTIONS
+                                ================== -->
                                 <td>
-                                    <a class="modif" href="index.php?action=modifierEscape&id=<?= $escape['id_escape'] ?>">
-                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M14.8371 6.61186L15.5787 5.87025C16.1686 5.2803 16.5 4.48014 16.5 3.64582C16.5 2.8115 16.1686 2.01135 15.5787 1.42139C14.9887 0.831434 14.1886 0.5 13.3543 0.5C12.5201 0.5 11.7199 0.831434 11.13 1.42139L10.3884 2.163L3.57109 8.9791C3.1095 9.4415 2.87831 9.67271 2.67992 9.92711C2.44584 10.2275 2.24495 10.5523 2.08074 10.8959C1.94234 11.1871 1.83915 11.4975 1.63276 12.1167L0.757587 14.7416M14.8371 6.61186C14.8371 6.61186 13.2619 6.51906 11.8716 5.12864C10.4812 3.73902 10.3892 2.163 10.3892 2.163M14.8371 6.61186L8.02053 13.428C7.55894 13.8896 7.32775 14.1208 7.07336 14.3192C6.77299 14.5533 6.44818 14.7542 6.1046 14.9184C5.81341 15.0568 5.50382 15.16 4.88384 15.3664L2.25913 16.2416M2.25913 16.2416L1.61756 16.456C1.468 16.5062 1.30743 16.5136 1.15388 16.4775C1.00033 16.4414 0.8599 16.3632 0.748365 16.2516C0.636829 16.1401 0.558614 15.9996 0.522511 15.8461C0.486408 15.6925 0.493848 15.5319 0.543995 15.3824L0.758387 14.7408L2.25913 16.2416Z"
-                                                stroke="#F2F2F2" />
-                                        </svg>
-                                    </a>
                                     <a class="supp" href="index.php?action=supprimerEscape&id=<?= $escape['id_escape'] ?>">
                                         <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +210,7 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6">Aucun escape enregistré.</td>
+                            <td colspan="6" id="ajoutEscapeAucun">Aucun escape enregistré.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -196,6 +218,9 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
         </div>
     </div>
 
+    <!-- =========================
+         POPUP AJOUT ESCAPE
+    ========================== -->
 
     <div class="overlay" id="overlay"></div>
     <div class="popup" id="popup">
@@ -268,7 +293,10 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
     </div>
 
     <?php
-
+// -----------------------------
+// Chargement des scripts JS
+// -----------------------------
     $script = '<script src="js/ajoutescape.js"></script>';
     $script .= '<script src="js/json.js" defer></script>';
 
+    ?>

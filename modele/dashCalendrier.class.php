@@ -32,4 +32,11 @@ class dashCalendrier extends database
 
         return $this->execReq($sql);
     }
+
+    public function supprimerReservation($id_reserver)
+{
+    $sql = "DELETE FROM reserver WHERE id_reserver = " . intval($id_reserver);
+    return $this->execReq($sql);
+}
+    
 }

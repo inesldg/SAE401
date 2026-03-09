@@ -20,6 +20,7 @@ body {
     padding: 20px;
 }
 
+/* titre principal de la page */
 .hero-section h1 {
     font-family: var(--titre);
     text-transform: uppercase;
@@ -30,6 +31,7 @@ body {
     margin-bottom: 10px;
 
     width: 60%;
+    /* limite la largeur pour meilleure lisibilité */
 }
 
 .hero-section p {
@@ -43,17 +45,25 @@ body {
     color: transparent;
 }
 
+/* ---------------------------------------------------
+SECTION PRINCIPALE DES ESCAPES
+Contient :
+- colonne filtres
+- grille des cartes
+--------------------------------------------------- */
 .escapes-section {
     position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
+    /* aligne en haut */
     justify-content: center;
     overflow: hidden;
     padding-top: 2rem;
 }
 
+/* Conteneur global (layout en deux colonnes) */
 .escapes-container {
     position: relative;
     z-index: 1;
@@ -64,9 +74,11 @@ body {
     width: min(1300px, 90%);
 }
 
-
-/*  PARTIE FILTRE */
-
+/* ---------------------------------------------------
+PARTIE FILTRES (SIDEBAR)
+Permet de trier les escapes
+Important pour UX et e-commerce
+--------------------------------------------------- */
 .filtres-tri {
     background: #1a242f;
     position: relative;
@@ -83,6 +95,7 @@ body {
     }
 }
 
+/* Formulaire des filtres */
 .filtres-escape__form {
     display: flex;
     flex-direction: column;
@@ -121,6 +134,7 @@ body {
     margin-bottom: 0;
 }
 
+/* Champ nombre (ex: prix ou joueurs) */
 .filtres-escape__bloc input[type="number"] {
     width: 70px;
     padding: 6px 8px;
@@ -135,6 +149,7 @@ body {
     accent-color: var(--gold-clair);
 }
 
+/* *bouton de validation des filtres */
 .filtres-escape__form button[type="submit"] {
     margin-top: 0.5rem;
     padding: 10px 20px;
@@ -153,18 +168,49 @@ body {
     opacity: 0.9;
 }
 
-
-
-/* PARTIE CARTES */
+/* ---------------------------------------------------
+PARTIE CARTES ESCAPES
+Grille principale des jeux
+--------------------------------------------------- */
 .escapes-cartes {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* 3colonnes */
     gap: 2rem;
     margin-top: 0;
     margin-bottom: 6rem;
 }
 
+.escapes-aucun-resultat {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--blanc-casse);
+    font-family: var(--texte);
+    font-size: 1.1rem;
+    padding: 2rem;
+    margin: 0;
+}
+
+.btn-supprimer-filtres {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-family: var(--texte);
+    font-size: 0.9rem;
+    color: var(--gold-clair);
+    background: transparent;
+    border: 1px solid var(--gold-clair);
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-supprimer-filtres:hover {
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--blanc-casse);
+}
 
 .accueil-escape-card {
     position: relative;
@@ -182,6 +228,7 @@ body {
     border-color: var(--gold-clair);
 }
 
+/* lien invisible rendant carte cliquable */
 .accueil-escape-card__link {
     position: absolute;
     inset: 0;
@@ -196,6 +243,7 @@ body {
     overflow: hidden;
 }
 
+/* img responsive */
 .accueil-escape-card__img img {
     width: 100%;
     height: 100%;
@@ -266,6 +314,7 @@ body {
     right: 15px;
 }
 
+/* bouton secondaire */
 .accueil-escape-card__btn {
     align-self: flex-end;
     padding: 0.5rem 1rem;

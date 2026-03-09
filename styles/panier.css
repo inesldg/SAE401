@@ -1,4 +1,10 @@
+/* =========================================================
+PAGE PANIER
+Fond immersif avec image + overlay sombre
+Objectif : cohérence avec l’identité du site
+========================================================= */
 .panier {
+    /* Dégradé sombre par-dessus l’image pour la lisibilité */
     background: linear-gradient(rgba(16, 26, 35, 0.85), rgba(24, 38, 51, 0.699)),
         url("../images/fossane-trees-4896953_1920.jpg");
     background-size: cover;
@@ -14,16 +20,19 @@
     opacity: 1;
     transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .panier .reveal-visible {
     opacity: 1 !important;
 }
 
 .conteneur-principal {
+    width: 100%;
     max-width: 1500px;
     margin: 0 auto;
     display: flex;
     gap: 40px;
     align-items: flex-start;
+    box-sizing: border-box;
 }
 
 /* --- BLOCS COMMUNS (3 cartes blanches : blur + texte blanc) --- */
@@ -38,6 +47,7 @@
     color: #fff;
 }
 
+/* Titres dans les cartes (dégradé doré) */
 .panier .carte h1,
 .panier .carte h2,
 .panier .carte h3 {
@@ -48,6 +58,7 @@
     color: transparent;
 }
 
+/* couleurs textes des cartes */
 .panier .carte label {
     color: #fff;
 }
@@ -108,58 +119,93 @@ h3 {
     margin-top: 0;
 }
 
-/* --- COLONNE GAUCHE (panier + bons d'achat) --- */
+/* =========================================================
+COLONNE GAUCHE
+Panier + bons d’achat
+========================================================= */
 .colonne-gauche {
-    flex: 1.4;
+    flex: 0.8;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* --- PANIER --- */
+/* =========================================================
+SECTION PANIER
+========================================================= */
 .section-panier {
-    flex: none;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .produit {
     display: flex;
     gap: 20px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: 25px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.image-remplacement,
+.image-panier {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .image-remplacement {
-    width: 110px;
-    height: 110px;
     background: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
     font-size: 2rem;
 }
 
 .infos-produit {
-    max-width: 250px;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.ligne-recap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 12px;
+}
+
+.recap-date,
+.recap-horaire,
+.recap-personnes {
+    display: block;
 }
 
 .infos-produit h3 {
     margin-bottom: 8px;
 }
 
+/* description */
 .description {
     font-size: 0.9rem;
     line-height: 1.3;
     margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
+/* ligne prix */
 .ligne-prix {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* selecteur de personnes */
 .selecteur-personnes {
     border: 1.5px solid var(--bleu-fonce);
     padding: 6px 12px;
@@ -184,12 +230,17 @@ h3 {
     font-size: 1.3rem;
 }
 
-/* --- COLONNE DROITE --- */
+/* =========================================================
+COLONNE DROITE
+Code promo + paiement
+========================================================= */
 .colonne-laterale {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    box-sizing: border-box;
 }
 
 /* --- INPUTS ET FOCUS --- */
@@ -199,6 +250,7 @@ h3 {
     margin-top: 15px;
 }
 
+/* style général des inputs */
 input {
     background: white;
     border: 1px solid #ccc;
@@ -289,11 +341,28 @@ input:focus {
     pointer-events: none;
 }
 
-.card-brand-zone .card-brand-img,
-#card-brand-zone .card-brand-img {
-    max-height: 36px;
-    width: auto;
-    object-fit: contain;
+/* Label type de carte : carré en bas à droite */
+.card-brand-label {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Visa : bleu + Inter */
+.card-brand-zone.card-brand--visa .card-brand-label {
+    background: #1a1f71;
+    color: #fff;
+}
+
+/* Mastercard : dégradé rouge / orange / jaune + Inter */
+.card-brand-zone.card-brand--mastercard .card-brand-label {
+    background: linear-gradient(90deg, #eb001b, #f79e1b, #ffc107);
+    color: #fff;
 }
 
 .paiement-attente {
@@ -307,7 +376,10 @@ input:focus {
     text-align: center;
 }
 
-/* --- CARTE BLEUE AVEC CHAMPS SUPERPOSÉS --- */
+/* =========================================================
+CARTE BLEUE VISUELLE
+Formulaire superposé sur une carte SVG
+========================================================= */
 .carte-bleue-wrapper {
     position: relative;
     width: 100%;
@@ -321,6 +393,7 @@ input:focus {
     display: block;
 }
 
+/* zone contenant les champs */
 .carte-bleue-contenu {
     position: absolute;
     inset: 0;
@@ -331,6 +404,7 @@ input:focus {
     padding: 18px 24px;
     box-sizing: border-box;
     pointer-events: none;
+    /* empeche le clic hors input */
 }
 
 .carte-bleue-contenu label {
@@ -339,6 +413,7 @@ input:focus {
     font-size: 0.8rem;
 }
 
+/* input dans la carte */
 .carte-bleue-contenu input {
     pointer-events: auto;
     background: rgba(255, 255, 255, 0.9);
@@ -400,6 +475,7 @@ input:focus {
     word-spacing: 5px;
 }
 
+/* bouton validation finale */
 .bouton-valider {
     width: 100%;
     margin-top: 30px;
@@ -412,205 +488,4 @@ input:focus {
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-}
-
-/* --- RESPONSIVE TABLETTE (768px) --- */
-@media screen and (max-width: 768px) {
-
-    html,
-    body {
-        height: auto !important;
-        overflow-x: hidden;
-        /* Évite le scroll horizontal bizarre */
-    }
-
-    .conteneur-principal {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-        padding: 0 10px !important;
-    }
-
-    /* 2. CHAQUE SECTION PREND TOUTE LA LARGEUR */
-    .colonne-gauche,
-    .section-panier,
-    .colonne-laterale {
-        width: 95% !important;
-        flex: none !important;
-    }
-
-    .colonne-gauche {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    /* 3. LES BLOCS À L'INTÉRIEUR DE LA COLONNE LATERALE */
-    /* Cela gère le bloc "Code Promo" et le bloc "Infos/Paiement" */
-    .colonne-laterale {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-    }
-
-    .panier {
-        padding: 20px 10px !important;
-        background-attachment: scroll !important;
-        /* Pour que le fond suive le scroll */
-        background-position: center top !important;
-    }
-
-    /* 5. AJUSTEMENT DES CARTES */
-    .carte {
-        padding: 25px 20px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 2. On ajuste le Header (H1 / Titres) */
-    .section-panier h1 {
-        font-size: 24px;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 25px;
-    }
-
-    /* 3. On centre le conteneur principal */
-    .conteneur-principal {
-        width: 100% !important;
-        margin: 0 !important;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .colonne-gauche,
-    .section-panier,
-    .colonne-laterale {
-        flex: none;
-        width: 100%;
-    }
-
-    .prix-unitaire {
-        font-size: 1.1rem;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    .indication {
-        font-size: 16px;
-    }
-
-    .indication2 {
-        font-size: 16px;
-    }
-
-    svg {
-        max-width: 420px;
-        text-align: center;
-    }
-
-}
-
-/* --- RESPONSIVE MOBILE (425px) --- */
-@media screen and (max-width: 425px) {
-
-
-    .panier {
-        padding: 10px 10px !important;
-    }
-
-    h1 {
-        font-size: 1.4rem !important;
-        letter-spacing: 1px !important;
-        line-height: 1.2;
-    }
-
-    /* On s'assure que les cartes ne collent pas aux bords */
-    .carte {
-        padding: 20px 15px !important;
-        border-radius: 15px !important;
-    }
-
-    svg {
-        max-width: 420px;
-        text-align: center;
-    }
-
-    /* 1. Ajustement des textes */
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    /* 2. Produit : on passe en vertical pour gagner de la place */
-    .produit {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-
-    .image-remplacement {
-        width: 80px;
-        height: 80px;
-    }
-
-    .infos-produit {
-        max-width: 100%;
-    }
-
-    .ligne-prix {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .prix-unitaire {
-        margin-left: 0;
-        margin-top: 10px;
-        display: block;
-    }
-
-    /* 3. Formulaires : on empile Labels et Inputs */
-    .ligne-formulaire {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-
-    .ligne-formulaire label {
-        width: 100%;
-    }
-
-    .grille-nom-prenom {
-        grid-template-columns: 1fr;
-        /* Prénom et Nom l'un sous l'autre */
-    }
-
-    .groupe-saisie {
-        flex-direction: column;
-    }
-
-    .bouton-or {
-        width: 100%;
-    }
-
-    /* 4. Carte Bleue : on réduit la taille des polices */
-    .numero-carte {
-        font-size: 1rem;
-        letter-spacing: 1px;
-    }
-
-    .carte-bleue {
-        padding: 15px;
-    }
-
-    .bouton-valider {
-        padding: 15px;
-        font-size: 1rem;
-    }
 }

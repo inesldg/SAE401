@@ -2,6 +2,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* Fond sombre + texture de brouillard */
     background: linear-gradient(rgba(16, 26, 35, 0.85), rgba(16, 26, 35, 0.85)),
         url("../images/EffetBrouillard.png");
     background-size: cover;
@@ -12,6 +13,7 @@ body {
     color: var(--blanc-casse);
 }
 
+/* Zone principale centrée dans la page */
 main {
     flex: 1;
     min-height: 100vh;
@@ -20,14 +22,19 @@ main {
     align-items: center;
 }
 
-/* Engrenages dans les coins */
+/* ============================= */
+/* DÉCORATIONS (ENGRENAGES) */
+/* ============================= */
+
+/* Engrenages décoratifs positionnés dans les coins */
 .decoration-coin {
     position: fixed;
     width: 280px;
     height: auto;
+    /* Placé derrière le contenu */
     z-index: -1;
-    pointer-events: none;
-    opacity: 0.7;
+    pointer-events: none;     /* Empêche toute interaction */
+    opacity: 0.7;     /* Légère transparence */
     animation: pulsationDouce 4s ease-in-out infinite alternate;
 }
 
@@ -50,6 +57,7 @@ main {
     max-width: 760px;
     height: 732px;
     margin-top: -2.5rem;
+        /* Centrage du contenu */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,14 +75,16 @@ main {
     z-index: 1;
     width: 100%;
     height: auto;
-    pointer-events: none;
+    pointer-events: none;     /* Le SVG reste purement décoratif */
     filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
 }
 
-/* Contenu au-dessus du SVG */
+/* ============================= */
+/* CONTENU DU FORMULAIRE */
+/* ============================= */
 .contenu-formulaire {
     position: relative;
-    z-index: 2;
+    z-index: 2;    /* Placé au-dessus du SVG */
     width: 100%;
     max-width: 320px;
     /* Largeur des champs */
@@ -83,6 +93,10 @@ main {
     gap: 5px;
 }
 
+
+/* ============================= */
+/* TITRE CONNEXION */
+/* ============================= */
 .titre-connexion {
     background: var(--gold-gradient-transition);
     background-size: 300% auto;
@@ -100,6 +114,7 @@ main {
     animation: glissementOr 2s ease-in-out infinite alternate;
 }
 
+/* Animation du dégradé */
 @keyframes glissementOr {
     0% {
         background-position: 0% center;
@@ -125,6 +140,9 @@ main {
     color: var(--blanc-casse);
 }
 
+/* ============================= */
+/* INPUTS */
+/* ============================= */
 .boite-formulaire input {
     width: 100%;
     padding: 10px 15px;
@@ -150,6 +168,9 @@ main {
     font-style: italic;
 }
 
+/* ============================= */
+/* BOUTON DE CONNEXION */
+/* ============================= */
 .boite-formulaire .bouton-connexion {
     padding: 12px;
     border-radius: 30px;
@@ -169,6 +190,9 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
+/* ============================= */
+/* LIEN INSCRIPTION */
+/* ============================= */
 .lien-inscription {
     margin-top: 20px;
     color: #b0bac4;
@@ -182,14 +206,22 @@ main {
     color: #E6B856;
 }
 
+
+/* ============================= */
+/* MESSAGE D'ERREUR */
+/* ============================= */
 .erreur-connexion {
     font-family: var(--texte);
-    font-size: bold;
+    font-weight: bold;
     color: red;
     display: flex;
     justify-content: center;
     margin-top: 22px;
 }
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
 
 /* Animation de rotation lente pour le SVG central */
 @keyframes rotationLente {
@@ -211,18 +243,6 @@ main {
     100% {
         opacity: 0.8;
         transform: scale(1.02);
-    }
-}
-
-@keyframes pulsationDouceBas {
-    0% {
-        opacity: 0.6;
-        transform: rotate(180deg) scale(1);
-    }
-
-    100% {
-        opacity: 0.8;
-        transform: rotate(180deg) scale(1.02);
     }
 }
 
@@ -272,7 +292,6 @@ main {
 
 /* --- MOBILE (425px) --- */
 @media screen and (max-width: 425px) {
-    *
 
     /* 1. On cache les engrenages de coins pour épurer et éviter les bugs de scroll */
     .decoration-coin {

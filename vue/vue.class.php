@@ -62,6 +62,7 @@ class vue
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 
+    $head_extra = '';   // Optionnel : scripts/style dans le head (ex. Three.js uniquement sur accueil)
     ob_start();
 
     require $this->fichierVue;   // Génère le contenu de la page en fonction de l'action

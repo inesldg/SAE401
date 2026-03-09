@@ -181,9 +181,10 @@ h2 {
     margin-top: 15px;
 }
 
-.bouton-avis-wrap{
+.bouton-avis-wrap {
     margin-top: 25px;
 }
+
 /* --- SECTION DROITE (RESERVATION) --- */
 .preferences-titre {
     color: var(--gold-clair);
@@ -253,6 +254,25 @@ h2 {
     padding: 10px;
 }
 
+.reservation-erreur-date {
+    margin: 1rem 0 0 0;
+    padding: 0.5rem 0;
+    color: #e53935;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.reservation-erreur-date {
+    margin: 1rem 0 0 0;
+    padding: 0.5rem 0;
+    color: #e53935;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* bouton */
 .bouton-reserver {
     display: block;
     width: 100%;
@@ -278,6 +298,7 @@ h2 {
     margin-top: 25px;
 }
 
+/* calendrier */
 .calendrier-header {
     display: flex;
     justify-content: space-between;
@@ -388,175 +409,163 @@ a {
     text-decoration: none;
 }
 
-/* --- TABLETTE ET MOBILE (768px) --- */
-/* --- TABLETTE (Entre 426px et 768px) --- */
-@media screen and (min-width: 426px) and (max-width: 768px) {
+/* =====================================================
+TABLETTE (768px)
+===================================================== */
+@media screen and (max-width: 768px) {
+
+    /* HERO */
     .hero-section {
-        height: auto;
-        min-height: 300px;
-        padding: 100px 20px 40px;
+        height: 35vh;
+        padding: 30px 20px;
     }
 
     .hero-section h1 {
-        font-size: 26px;
-        width: 100%;
+        font-size: 32px;
+        max-width: 600px;
     }
 
+    /* BOUTON RETOUR */
+    .btn-retour-absolu {
+        top: 20px;
+        left: 20px;
+    }
+
+    /* CONTENEUR PRINCIPAL */
     .conteneur-reservation {
-        display: flex;
-        flex-direction: column;
-        margin-top: 0;
-        padding: 20px;
+        grid-template-columns: 1fr;
         gap: 30px;
+        margin-top: 30px;
     }
 
-    /* Ordre des blocs */
-    .colonne-gauche {
-        order: 1;
+    /* CARTES */
+    .carte-noire {
+        padding: 25px;
     }
 
-    .colonne-droite {
-        order: 2;
+    /* AVIS */
+    .grille-avis {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .block_avis {
-        order: 3;
+    /* TITRES */
+    .block_description h2 {
+        font-size: 26px;
     }
 
-    /* LE MODE CÔTE À CÔTE (TABLETTE UNIQUEMENT) */
-    .calendrier-container-flex {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        gap: 15px;
-        width: 100%;
-    }
-
+    /* CALENDRIER */
     .calendrier-boite {
-        flex: 2;
-        padding: 15px;
-        background: #1c252e;
-        border-radius: 15px;
-    }
-
-    .selection-options-mobile {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Reset des lignes en mode tablette */
-    .selecteur-ligne {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        background: transparent !important;
-        border: none !important;
-        padding: 0 !important;
+        padding: 18px;
     }
 
     .choix-horaire {
-        width: 100%;
+        margin-left: 10px;
     }
 
-    .grille-avis {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #horaireGames {
-        padding-bottom: 15px;
-    }
-
-    #participGames {
-        padding-bottom: 15px;
-    }
 }
 
-/* --- MOBILE (425px et moins) --- */
+
+/* =====================================================
+MOBILE (425px)
+===================================================== */
 @media screen and (max-width: 425px) {
 
-    .hero-section {
-        height: auto;
-        min-height: 300px;
-        padding: 100px 20px 40px;
+    body {
+        padding-bottom: 30px;
     }
 
+    .choix-horaire {
+        margin-top: 15px;
+        margin-left: 0;
+
+    }
+
+    /* HERO */
+    .hero-section {
+        height: 30vh;
+        padding: 20px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    /* BOUTON RETOUR */
+    .btn-retour {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .btn-retour-absolu {
+        top: 15px;
+        left: 15px;
+    }
+
+    /* CONTENEUR */
+    .conteneur-reservation {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    /* CARTES */
+    .carte-noire {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    /* TITRES */
+    .block_description h2 {
+        font-size: 22px;
+    }
+
+    /* INFOS RAPIDES */
+    .infos-rapides {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* AVIS */
     .grille-avis {
         grid-template-columns: 1fr;
     }
 
-    /* 1. ON FORCE LA GRILLE À NE FAIRE QU'UNE SEULE COLONNE */
-    .conteneur-reservation {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        /* Force une seule colonne */
-        margin-top: 10px !important;
-        padding: 15px !important;
-        gap: 20px !important;
+    .avis-unitaire {
+        font-size: 12px;
     }
 
-    /* 2. ON S'ASSURE QUE CHAQUE COLONNE PREND TOUTE LA PLACE */
-    .colonne-gauche,
-    .colonne-droite {
-        grid-column: 1 / -1 !important;
-        /* Force l'occupation de toute la largeur */
-        width: 100% !important;
+    /* CALENDRIER */
+    .calendrier-jours {
+        font-size: 0.6rem;
     }
 
-    /* 3. RÉORGANISATION DE L'ORDRE DES BLOCS */
-    /* On place la description et les avis en premier, le calendrier en dernier */
-    .colonne-gauche {
-        order: 1 !important;
+    .jour-cal {
+        font-size: 0.7rem;
     }
 
-    .colonne-droite {
-        order: 2 !important;
-    }
-
-    /* 4. ON CASSE LE CÔTÉ-À-CÔTÉ INTERNE DU CALENDRIER */
-    .calendrier-container-flex {
-        display: block !important;
-    }
-
-    .calendrier-boite {
-        width: 100% !important;
-        max-width: 300px !important;
-        margin: 0 auto 20px auto !important;
-    }
-
-    /* 5. LES BOUTONS (HORAIRES / PARTICIPANTS) */
-    .selection-options-mobile {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        max-width: 350px !important;
-        margin: 0 auto !important;
-        gap: 12px !important;
-    }
-
-    /* 6. STYLE DES LIGNES (Look PC horizontal) */
-    .selection-options-mobile .selecteur-ligne {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        background: #1c252e !important;
-        border: 1px solid #c5a059 !important;
-        padding: 10px 20px !important;
-        border-radius: 30px !important;
-    }
-
-    .selecteur-ligne span {
-        font-size: 0.85rem !important;
-        color: #c5a059 !important;
+    /* SELECTEUR HORAIRE */
+    .selecteur-ligne {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
     }
 
     .choix-horaire {
-        background: transparent !important;
-        border: none !important;
-        color: white !important;
-        text-align: right !important;
-        width: auto !important;
+        width: 100%;
+    }
+
+    /* BOUTON RESERVER */
+    .bouton-reserver {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    /* TOTAL */
+    .total-ligne {
+        font-size: 18px;
     }
 
 }

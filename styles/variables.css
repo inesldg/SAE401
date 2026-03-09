@@ -1,3 +1,6 @@
+/* Ce fichier est relié sur toutes les pages, il permet d'initialiser la base de toutes les pages */
+
+/* typographiecinzel */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
@@ -103,7 +106,7 @@ html {
 /* État initial : caché et décalé */
 .reveal {
     opacity: 0;
-    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .reveal-up {

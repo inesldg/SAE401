@@ -1,39 +1,21 @@
-:root {
-    /* Couleurs principales */
-    --blanc-casse: #F2F2F2;
-    --gold-clair: #c5a059;
-    --golf-fonce: #A3730C;
-    --bleu-fonce: #101a23;
-    --bleu-clair: #2b4359;
-    --noir: #0A0A0A;
-    --marron-clair: #4B2009;
-    --marron-fonce: #322611;
-
-    /* Typos */
-    --titre: 'Cinzel', serif;
-    --texte: 'Inter', sans-serif;
-
-    /* Dégradés pour boutons etc */
-    --gold-gradient: linear-gradient(to right, #E6B856, #806630);
-    --gold-gradient-transition: linear-gradient(to right, #E6B856, #806630, #E6B856, #806630);
-
-    --gold-fade: linear-gradient(to bottom, transparent 0%, #E6B856 50%, transparent 100%);
-    --gold-fade-horizontal: linear-gradient(to right, transparent 0%, #E6B856 50%, transparent 100%);
-    --dark-bg: #101A23;
-}
-
 body {
     background-color: var(--noir);
     font-family: var(--texte);
     color: var(--blanc-casse);
 }
 
+/* ========================= */
+/* INDICATION UTILISATEUR ADMIN */
+/* ========================= */
 .admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
+/* ========================= */
+/* MENU LATÉRAL GAUCHE */
+/* ========================= */
 .menu-gauche {
     width: 300px;
     background-color: var(--bleu-fonce);
@@ -46,6 +28,9 @@ body {
     width: 100%;
 }
 
+/* ========================= */
+/* ÉLÉMENTS DU MENU */
+/* ========================= */
 .dash,
 .escape,
 .calendrier,
@@ -59,6 +44,7 @@ body {
     color: var(--blanc-casse);
 }
 
+/* Élément actif du menu */
 .escape {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
@@ -69,6 +55,7 @@ body {
     border-right: solid #A3730C 3px;
 }
 
+/* Texte à côté des icônes */
 .dash>div,
 .escape>div,
 .calendrier>div,
@@ -91,6 +78,9 @@ body {
     margin-bottom: 20px;
 }
 
+/* ========================= */
+/* SÉPARATEUR MENU */
+/* ========================= */
 .ligne {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -100,6 +90,9 @@ body {
     margin-left: -20px;
 }
 
+/* ========================= */
+/* STRUCTURE PRINCIPALE */
+/* ========================= */
 .contenu {
     display: flex;
 }
@@ -109,6 +102,10 @@ body {
     flex: 1;
 }
 
+
+/* ========================= */
+/* TITRES */
+/* ========================= */
 h1 {
     margin: 0;
     font-family: var(--titre);
@@ -121,6 +118,9 @@ h1 {
     margin-bottom: 32px;
 }
 
+/* ========================= */
+/* BOUTONS */
+/* ========================= */
 .ajouter {
     text-decoration: none;
     color: var(--blanc-casse);
@@ -130,6 +130,10 @@ h1 {
     font-weight: 500;
 }
 
+
+/* ========================= */
+/* STRUCTURE HEADER PAGE ADMIN */
+/* ========================= */
 .part2 {
     margin-top: 10px;
     margin-left: auto;
@@ -141,7 +145,9 @@ h1 {
 }
 
 
-
+/* ========================= */
+/* POPUP / MODAL */
+/* ========================= */
 
 /* Overlay noir */
 .overlay {
@@ -171,12 +177,12 @@ h1 {
     transition: 0.3s ease;
 }
 
-/* Animation ouverture */
+/* Animation ouverture popup */
 .popup.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* Croix */
+/* fermeture popup */
 .close {
     position: absolute;
     top: 15px;
@@ -185,6 +191,9 @@ h1 {
     cursor: pointer;
 }
 
+/* ========================= */
+/* FORMULAIRES */
+/* ========================= */
 h2{
     font-family: var(--titre);
     font-size: 24px;
@@ -235,7 +244,9 @@ label span {
     color: var(--noir);
 }
 
-/* Champ file custom */
+/* ========================= */
+/* CHAMP UPLOAD IMAGE CUSTOM */
+/* ========================= */
 .image-label {
     position: relative;
     display: flex;
@@ -264,7 +275,9 @@ label span {
 }
 
 
-/* ===== TABLE ===== */
+/* ========================= */
+/* TABLEAU DES ESCAPE GAMES */
+/* ========================= */
 .table-escapes {
     width: 100%;
     border-collapse: collapse;
@@ -296,7 +309,9 @@ label span {
     background-color: var(--bleu-fonce);
 }
 
-/* ===== IMAGE ===== */
+/* ========================= */
+/* IMAGE DANS LE TABLEAU */
+/* ========================= */
 .table-escapes td img {
     width: 60px;
     height: 60px;
@@ -309,13 +324,21 @@ label span {
     width: 60px;
     height: 60px;
 }
-
+/* ========================= */
+/* LIENS DANS LE TABLEAU */
+/* ========================= */
 td > a{
     text-decoration: none;
 }
 
 .supp{
-    margin-left: 30px;
+    display: block;       /* ou inline-block */
+    text-align: center;   /* centre le contenu si c’est un texte ou icône */
+    margin: 0 auto;       /* centre horizontalement le block */
+}
+
+.supp:hover svg path {
+    stroke: red;
 }
 
 .joueurs, .duree{

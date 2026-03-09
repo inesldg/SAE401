@@ -1,29 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-
-:root {
-    /* Couleurs principales */
-    --blanc-casse: #F2F2F2;
-    --gold-clair: #C5A059;
-    --gold-fonce: #A3730C;
-    --bleu-fonce: #101A23;
-    --noir: #0A0A0A;
-    --marron-clair: #4B2009;
-    --marron-fonce: #322611;
-
-    /* Typos */
-    --titre: 'Cinzel', serif;
-    --texte: 'Inter', sans-serif;
-
-    /* Dégradés pour boutons etc */
-    --gold-gradient: linear-gradient(to right, #E6B856, #806630);
-    --gold-gradient-transition: linear-gradient(to right, #E6B856, #806630, #E6B856, #806630);
-
-    --gold-fade: linear-gradient(to bottom, transparent 0%, #E6B856 50%, transparent 100%);
-    --gold-fade-horizontal: linear-gradient(to right, transparent 0%, #E6B856 50%, transparent 100%);
-    --fond-sombre: #101A23;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -32,29 +6,43 @@ body {
     align-items: center;
     height: 100vh;
     overflow-x: hidden;
+    /* évite le scroll horizontal */
     scroll-behavior: smooth;
     background-image: url('/images/fond_erreur_404.png');
     background-color: #1E1E1E;
     background-size: cover;
 }
 
+/* ---------------------------------------------------
+TEXTE PRINCIPAL (ERREUR)
+Style du texte "404"
+--------------------------------------------------- */
 .erreur_txt {
     font-family: var(--titre);
     font-weight: 900;
     font-size: 5rem;
     color: transparent;
+    /* effet texte doré avec dégradé */
     background: linear-gradient(to bottom, #FFF2D5, #A3730C 50%, #A3730C 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+/* ---------------------------------------------------
+CONTENEUR GLOBAL
+Centre le bloc erreur
+--------------------------------------------------- */
 .content_404 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* ---------------------------------------------------
+BLOC PRINCIPAL ERREUR
+Contient image + texte + message
+--------------------------------------------------- */
 .Erreur_404 {
     display: flex;
     align-items: center;
@@ -67,6 +55,7 @@ body {
     margin-bottom: 24px;
 }
 
+/* Grand texte "404" */
 .Erreur_404 span {
     background: linear-gradient(to bottom, #FFF2D5, #A3730C 50%, #A3730C 100%);
     background-clip: text;
@@ -78,6 +67,10 @@ body {
     font-size: 20rem;
 }
 
+/* ---------------------------------------------------
+MESSAGE D'ERREUR
+Texte explicatif sous le 404
+--------------------------------------------------- */
 .msg_erreur {
     font-family: var(--titre);
     font-size: 2.5rem;

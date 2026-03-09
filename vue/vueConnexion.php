@@ -1,5 +1,7 @@
 <?php
-// Config Langue
+// -----------------------------
+// Gestion de la langue du site
+// -----------------------------
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
@@ -15,10 +17,13 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/connexion.css">';
 ?>
 
+<!-- Images décoratives dans les coins -->
 <img src="images/engrenages.png" class="decoration-coin haut-droit" alt="engrenages">
 <img src="images/engrenages.png" class="decoration-coin bas-gauche" alt="engrenages">
 
+<!-- Conteneur principal du formulaire -->
 <div class="boite-formulaire">
+        <!-- SVG décoratif en arrière-plan -->
     <svg class="svg-arriere-plan" width="685" height="658" viewBox="0 0 685 658" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -36,8 +41,9 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
             stroke="url(#goldStrokeConnexion)" stroke-width="5" opacity="0.85" />
     </svg>
 
+        <!-- Contenu du formulaire -->
     <div class="contenu-formulaire">
-        <h1 class="titre-connexion" id="connexConnexion">Connexion</h1>
+        <h1 class="titre-connexion reveal reveal-up" id="connexConnexion">Connexion</h1>
         <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=connexion" ?>>
 
             <label id="mailConnexion">ADRESSE MAIL</label>
@@ -56,8 +62,8 @@ $style = '<link rel="stylesheet" href="styles/connexion.css">';
 
         </form>
 
-
-        <a href="index.php?action=pageInscription" class="lien-inscription" id="goinscrConnexion">Pas encore de compte ?
+        <!-- Lien vers la page d'inscription -->
+        <a href="index.php?action=pageInscription" class="lien-inscription reveal reveal-up" id="goinscrConnexion">Pas encore de compte ?
             S'inscrire</a>
 
     </div>

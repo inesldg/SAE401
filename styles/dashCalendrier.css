@@ -1,27 +1,3 @@
-:root {
-    /* Couleurs principales */
-    --blanc-casse: #F2F2F2;
-    --gold-clair: #c5a059;
-    --golf-fonce: #A3730C;
-    --bleu-fonce: #101a23;
-    --bleu-clair: #2b4359;
-    --noir: #0A0A0A;
-    --marron-clair: #4B2009;
-    --marron-fonce: #322611;
-
-    /* Typos */
-    --titre: 'Cinzel', serif;
-    --texte: 'Inter', sans-serif;
-
-    /* Dégradés pour boutons etc */
-    --gold-gradient: linear-gradient(to right, #E6B856, #806630);
-    --gold-gradient-transition: linear-gradient(to right, #E6B856, #806630, #E6B856, #806630);
-
-    --gold-fade: linear-gradient(to bottom, transparent 0%, #E6B856 50%, transparent 100%);
-    --gold-fade-horizontal: linear-gradient(to right, transparent 0%, #E6B856 50%, transparent 100%);
-    --dark-bg: #101A23;
-}
-
 body {
     background-color: var(--noir);
     font-family: var(--texte);
@@ -120,6 +96,118 @@ h1 {
     font-weight: lighter;
     margin-bottom: 32px;
 }
+
+
+/* ================= CALENDRIER ================= */
+
+.calendrier-boite {
+    background: var(--bleu-fonce);
+    border: 1px solid var(--bleu-clair);
+    border-radius: 12px;
+    padding: 30px;
+    width: 420px;
+}
+
+/* Header mois + flèches */
+.calendrier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: var(--titre);
+}
+
+.fleche-cal {
+    cursor: pointer;
+    color: var(--gold-clair);
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.fleche-cal:hover {
+    color: white;
+}
+
+/* Jours de la semaine */
+.calendrier-jours {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--gold-clair);
+    margin-bottom: 10px;
+}
+
+/* Grille des jours */
+.calendrier-grille {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+/* Jour */
+.jour-cal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 14px;
+    margin: auto;
+}
+
+#mois-annee {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hover jour */
+.jour-cal:hover:not(.vide) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Case vide */
+.jour-cal.vide {
+    cursor: default;
+}
+
+/* Jour actuel */
+.jour-aujourdhui {
+    color: var(--gold-clair) !important;
+    font-weight: 900 !important;
+}
+
+/* Point sous aujourd'hui */
+.jour-aujourdhui::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--gold-clair);
+    border-radius: 50%;
+}
+
+/* Jour sélectionné */
+.jour-cal.selectionne,
+.jour-cal.jour-aujourdhui.selectionne {
+    background: var(--gold-gradient) !important;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Si aujourd'hui est sélectionné on cache le point */
+.jour-cal.jour-aujourdhui.selectionne::after {
+    display: none;
+}
+
+
 
 /* ===== FILTRE ===== */
 
@@ -301,4 +389,94 @@ h1 {
 .creneau:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay sombre avec effet flou */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* sombre mais translucide */
+    backdrop-filter: blur(5px);   /* flou */
+    z-index: 1000;
+}
+
+/* Popup central */
+.popup-suppression {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--blanc-casse);
+    color: var(--noir);
+    padding: 30px;
+    border-radius: 15px;
+    width: 450px;
+    max-width: 90%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    z-index: 1001;
+    text-align: center;
+    font-family: var(--texte);
+    transition: all 0.3s ease;
+}
+
+/* Animation popup */
+.popup-suppression.show {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Titres et texte */
+.popup-suppression h3 {
+    font-size: 22px;
+    font-family: var(--titre);
+    margin-bottom: 15px;
+}
+
+.popup-suppression p {
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-family: var(--texte);
+}
+
+/* Zone de texte */
+.popup-suppression textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: solid var(--gold-clair) 1px;
+    resize: none;
+    font-family: var(--texte);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Conteneur pour les boutons */
+.popup-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Boutons */
+.popup-actions button {
+    flex: 1;
+    padding: 10px 0;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Bouton Annuler */
+#closePopup {
+    background: var(--gold-gradient);
+    color: var(--blanc-casse);
+}
+
+/* Bouton Valider / Supprimer */
+#validerSuppression {
+    background: var(--gold-gradient);
+    color: var(--blanc-casse);
 }

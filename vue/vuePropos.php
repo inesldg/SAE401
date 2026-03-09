@@ -15,7 +15,9 @@ $col_desc = "description_" . $lang;
 $style = '<link rel="stylesheet" href="styles/about.css">';
 ?>
 
-
+<!-- ========================= -->
+<!-- SECTION HERO (Bannière principale) -->
+<!-- ========================= -->
 <section class="hero-section">
     <h1>
         <span id="titreEnigme_1">L'</span><span class="texte-doré" id="titreEnigme_2">Énigme</span> <span
@@ -24,6 +26,9 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
     <p id="soustitrePropos">Découvrez l'envers du décor de votre ville.</p>
 </section>
 
+<!-- ========================= -->
+<!-- SECTION : ORIGINE DU PROJET -->
+<!-- ========================= -->
 <section class="section-origine">
     <div class="contenu-origine">
         <h2 class="texte-doré reveal reveal-up" id="explicationPropos">L'origine du nom</h2>
@@ -38,12 +43,19 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
             le jeu des sous-sols pour transformer les parcs et les monuments en mécanismes géants.
         </div>
     </div>
+    <!-- Image décorative -->
     <img class="imgBoussole" src="images/—Pngtree—a beautifully detailed pocket compass_20379386 1 (1).png"
         alt="Boussole ancienne">
 </section>
 
+
+<!-- ========================= -->
+<!-- SECTION : CONCEPT DU JEU -->
+<!-- ========================= -->
 <section class="section-monde">
     <h2 class="texte-doré reveal reveal-up" id="mondePropos">Le monde est votre salle d'évasion</h2>
+    <!-- Cartes de présentation des fonctionnalités -->
+
     <div class="conteneur-cartes conteneur-cartes--propos">
         <div class="carte reveal reveal-up">
             <h3 class="texte-doré" id="libertePropos">Liberté Totale</h3>
@@ -62,10 +74,13 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
         </div>
     </div>
 
+    <!-- Image de séparation décorative -->
     <img src="images/paysage_transparent.png" class="image-separation" alt="Décoration forêt" loading="lazy">
 </section>
 
-
+<!-- ========================= -->
+<!-- SECTION : LES GARDIENS -->
+<!-- ========================= -->
 <section class="section-gardiens">
     <h2 class="texte-doré reveal reveal-up" id="gardiensPropos">Les gardiens du jeu</h2>
     <div class="grille-gardiens">
