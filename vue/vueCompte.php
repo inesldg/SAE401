@@ -123,5 +123,6 @@ if ($idUtilisateur) {
     </div>
 </div>
 
-<!-- Script JS utilisé pour la gestion JSON / traduction -->
-<script src="js/json.js" defer></script>
+<?php
+$script = '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradCompte.js" defer></script><script src="js/traduction.js" defer></script>';
+?>

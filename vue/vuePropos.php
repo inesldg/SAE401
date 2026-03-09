@@ -116,5 +116,5 @@ $style = '<link rel="stylesheet" href="styles/about.css">';
 
 <?php
 
-$script = '<script src="js/json.js" defer></script>';
+$script = '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradPropos.js" defer></script><script src="js/traduction.js" defer></script>';
 

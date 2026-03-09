@@ -44,5 +44,5 @@ $style = '<link rel="stylesheet" href="styles/erreur.css">';
 </section>
 
 <?php
-$script = '<script src="js/json.js" defer></script>';
+$script = '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradErreur.js" defer></script><script src="js/traduction.js" defer></script>';
 ?>

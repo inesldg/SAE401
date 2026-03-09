@@ -193,4 +193,4 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 
 <?php
 
-$script = '<script src="js/json.js" defer></script>';
+$script = '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradDashboard.js" defer></script><script src="js/traduction.js" defer></script>';

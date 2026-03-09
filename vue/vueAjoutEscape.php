@@ -297,6 +297,6 @@ $style = '<link rel="stylesheet" href="styles/ajoutEscape.css">';
 // Chargement des scripts JS
 // -----------------------------
     $script = '<script src="js/ajoutescape.js"></script>';
-    $script .= '<script src="js/json.js" defer></script>';
+    $script .= '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradAjoutEscape.js" defer></script><script src="js/traduction.js" defer></script>';
 
     ?>

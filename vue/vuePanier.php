@@ -209,4 +209,4 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 <?php
 
 
-$script = '<script src="js/json.js" defer></script><script src="js/panierPaiement.js" defer></script>';
+$script = '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradPanier.js" defer></script><script src="js/traduction.js" defer></script><script src="js/panierPaiement.js" defer></script>';

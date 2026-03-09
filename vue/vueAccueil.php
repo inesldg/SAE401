@@ -206,8 +206,8 @@ if (isset($acces[0]['statut'])) {
 
 $script = '<script type="module" src="js/three-key.js"></script>';
 
-// Script pour la gestion des traductions JSON
-$script .= '<script src="js/json.js" defer></script>';
+// Scripts traduction (commun + header + footer + page)
+$script .= '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradAccueil.js" defer></script><script src="js/traduction.js" defer></script>';
 
 // Script contrôlant l'activation / désactivation du son d'ambiance
 $script .= '<script>

@@ -146,5 +146,5 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
 
 <?php
 $script = '<script src="js/avisPopup.js"></script>';
-$script .= '<script src="js/json.js" defer></script>';
+$script .= '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradAvis.js" defer></script><script src="js/traduction.js" defer></script>';
 ?>
