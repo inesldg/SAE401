@@ -287,7 +287,7 @@ label span {
 
 .table-escapes thead {
     background-color: var(--bleu-fonce);
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid var(--bleu-clair);
 }
 
 .table-escapes th {
@@ -297,13 +297,13 @@ label span {
     color: var(--blanc-casse);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid var(--bleu-clair);
     font-weight: normal;
 }
 
 .table-escapes td {
     padding: 15px;
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid var(--bleu-clair);
     font-size: 12px;
     color: var(--blanc-casse);
     background-color: var(--bleu-fonce);
@@ -332,9 +332,9 @@ td > a{
 }
 
 .supp{
-    display: block;       /* ou inline-block */
-    text-align: center;   /* centre le contenu si c’est un texte ou icône */
-    margin: 0 auto;       /* centre horizontalement le block */
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .supp:hover svg path {
