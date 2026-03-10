@@ -160,3 +160,58 @@ h1 {
 .part2 {
     margin-left: auto;
 }
+
+/* ========================= */
+/* TABLEAU DES RÉSERVATIONS */
+/* ========================= */
+
+#reservationsDash{
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.table-reservations{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* HEAD */
+.table-reservations thead{
+    background-color: var(--bleu-fonce);
+    border: 1px solid rgb(43, 67, 89, 0.5);
+}
+
+.table-reservations th{
+    text-align: left;
+    padding: 15px;
+    font-size: 12px;
+    color: var(--blanc-casse);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgb(43, 67, 89, 0.5);
+    font-weight: normal;
+}
+
+/* BODY */
+.table-reservations td{
+    padding: 15px;
+    border: 1px solid rgb(43, 67, 89, 0.5);
+    font-size: 12px;
+    color: var(--blanc-casse);
+    background-color: var(--bleu-fonce);
+}
+
+/* Ligne hover (optionnel mais propre) */
+.table-reservations tbody tr:hover{
+    background-color: rgba(255,255,255,0.05);
+}
+
+
+/* Message si aucune réservation */
+.table-reservations tbody tr td[colspan]{
+    text-align: center;
+    font-style: italic;
+    opacity: 0.7;
+}
