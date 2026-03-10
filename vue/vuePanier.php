@@ -98,7 +98,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
 
             <div class="carte reveal reveal-up">
                 <h2 id="infoPanier">Vos Informations</h2>
-                <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=confirmation" ?>>
+                <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=paiement" ?>>
                     <div class="grille-nom-prenom">
                         <div class="ligne-formulaire">
                             <label for="inputnom" id="nomCompte">Nom</label>

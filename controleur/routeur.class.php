@@ -140,8 +140,8 @@ class routeur
                             break;
 
                         case "paiement":
-                                if (isset($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['jourReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'])) {
-                                    $this->ctlPanier->paiement($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['jourReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant']);
+                                if (isset($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['dateReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'])) {
+                                    $this->ctlPanier->paiement($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['dateReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'], $id);
                                 }
                             break;
 
