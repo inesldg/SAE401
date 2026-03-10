@@ -374,10 +374,8 @@ td>a {
 
     .menu-categorie {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 20px;
-        padding-bottom: 5px;
+        flex-wrap: wrap;
+        gap: 30px;
     }
 
     .menu-categorie::-webkit-scrollbar {
@@ -443,39 +441,6 @@ td>a {
 /* MOBILE */
 /* ========================= */
 @media (max-width: 700px) {
-
-    .menu-categorie {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 20px;
-        padding-bottom: 5px;
-    }
-
-    .menu-categorie::-webkit-scrollbar {
-        display: none;
-    }
-
-    .dash:hover,
-    .calendrier:hover,
-    .avis:hover,
-    .user:hover {
-        margin-left: 0;
-        margin-top: 0;
-    }
-
-    .escape {
-        margin: 0;
-    }
-
-    .ligne {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .droite {
-        overflow-x: hidden;
-    }
 
     /* titres */
     h1 {

@@ -202,3 +202,96 @@ BOUTON SUPPRIMER SVG
 .supp:hover svg path {
     stroke: #ff4d4d;
 }
+
+
+/* =========================
+   TABLEAU RESPONSIVE MOBILE
+========================= */
+@media (max-width: 1024px) {
+    .contenu {
+        flex-direction: column;
+    }
+
+    /* menu admin */
+    .menu-gauche {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .menu-categorie {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .menu-categorie::-webkit-scrollbar {
+        display: none;
+    }
+
+    .escape:hover,
+    .calendrier:hover,
+    .avis:hover,
+    .dash:hover {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .user {
+        color: var(--gold-clair);
+        background-color: transparent;
+        border-right: none;
+        margin: 0;
+    }
+
+    .dash,
+    .escape,
+    .calendrier,
+    .avis,
+    .user {
+        margin-bottom: 0;
+    }
+
+    .droite {
+        margin: 25px 20px;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .ligne {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .sous-titre {
+        font-size: 12px;
+    }
+
+    .menu-categorie {
+        gap: 15px;
+    }
+
+    .table-utilisateur {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table-utilisateur th,
+    .table-utilisateur td {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .droite {
+        margin: 20px 10px;
+    }
+}
