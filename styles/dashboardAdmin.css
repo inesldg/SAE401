@@ -251,7 +251,8 @@ h1 {
     .escape:hover,
     .calendrier:hover,
     .avis:hover,
-    .user:hover {
+    .user:hover,
+    .tarif:hover {
         margin-left: 0;
         margin-top: 0;
     }
@@ -267,7 +268,8 @@ h1 {
     .escape,
     .calendrier,
     .avis,
-    .user {
+    .user,
+    .tarif {
         margin-bottom: 0;
     }
 

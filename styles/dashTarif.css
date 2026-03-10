@@ -211,28 +211,65 @@ h1 {
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
+@media (max-width: 1024px) {
 
-@media (max-width: 700px) {
+    .contenu {
+        flex-direction: column;
+    }
 
-    .escape-tarif {
+    /* menu admin */
+    .menu-gauche {
+        width: 100%;
         padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
-    .tarif-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    .menu-categorie {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
     }
 
-    .tarif-table th,
-    .tarif-table td {
-        padding: 10px;
-        font-size: 11px;
+    .menu-categorie::-webkit-scrollbar {
+        display: none;
     }
 
-    .tarif-table input[type="number"] {
-        width: 90px;
-        font-size: 11px;
+    .escape:hover,
+    .calendrier:hover,
+    .avis:hover,
+    .user:hover,
+    .tarif:hover {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .dash {
+        color: var(--gold-clair);
+        background-color: transparent;
+        border-right: none;
+        margin: 0;
+    }
+
+    .dash,
+    .escape,
+    .calendrier,
+    .avis,
+    .user,
+    .tarif {
+        margin-bottom: 0;
+    }
+
+    .droite {
+        margin: 25px 20px;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .ligne {
+        width: 100%;
+        margin-left: 0;
     }
 
 }
