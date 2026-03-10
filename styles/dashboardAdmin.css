@@ -230,8 +230,9 @@ h1 {
     /* menu admin */
     .menu-gauche {
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .menu-categorie {
@@ -240,10 +241,23 @@ h1 {
         gap: 30px;
     }
 
+    .menu-categorie::-webkit-scrollbar {
+        display: none;
+    }
+
+    .escape:hover,
+    .calendrier:hover,
+    .avis:hover,
+    .user:hover {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
     .dash {
         color: var(--gold-clair);
         background-color: transparent;
         border-right: none;
+        margin: 0;
     }
 
     .dash,
@@ -252,6 +266,13 @@ h1 {
     .avis,
     .user {
         margin-bottom: 0;
+    }
+
+    .droite {
+        margin: 25px 20px;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .ligne {
@@ -272,13 +293,35 @@ h1 {
 /* ========================= */
 @media (max-width: 600px) {
 
-    .ligne{
-    width: 100%;
-    margin-left: 0;
-}
+    .menu-categorie {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .menu-categorie::-webkit-scrollbar {
+        display: none;
+    }
+
+    .dash:hover,
+    .calendrier:hover,
+    .avis:hover,
+    .user:hover {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .escape {
+        margin: 0;
+    }
+
+    .ligne {
+        width: 100%;
+        margin-left: 0;
+    }
 
     .droite {
-        margin: 20px;
+        overflow-x: hidden;
     }
 
     h1 {
