@@ -165,12 +165,12 @@ h1 {
 /* TABLEAU DES RÉSERVATIONS */
 /* ========================= */
 
-#reservationsDash{
+#reservationsDash {
     margin-top: 40px;
     margin-bottom: 15px;
 }
 
-.table-reservations{
+.table-reservations {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
@@ -178,12 +178,12 @@ h1 {
 }
 
 /* HEAD */
-.table-reservations thead{
+.table-reservations thead {
     background-color: var(--bleu-fonce);
     border: 1px solid rgb(43, 67, 89, 0.5);
 }
 
-.table-reservations th{
+.table-reservations th {
     text-align: left;
     padding: 15px;
     font-size: 12px;
@@ -195,7 +195,7 @@ h1 {
 }
 
 /* BODY */
-.table-reservations td{
+.table-reservations td {
     padding: 15px;
     border: 1px solid rgb(43, 67, 89, 0.5);
     font-size: 12px;
@@ -204,14 +204,111 @@ h1 {
 }
 
 /* Ligne hover (optionnel mais propre) */
-.table-reservations tbody tr:hover{
-    background-color: rgba(255,255,255,0.05);
+.table-reservations tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 
 /* Message si aucune réservation */
-.table-reservations tbody tr td[colspan]{
+.table-reservations tbody tr td[colspan] {
     text-align: center;
     font-style: italic;
     opacity: 0.7;
+}
+
+
+
+/* ========================= */
+/* TABLETTE */
+/* ========================= */
+@media (max-width: 1024px) {
+
+    .contenu {
+        flex-direction: column;
+    }
+
+    /* menu admin */
+    .menu-gauche {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-categorie {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .dash {
+        color: var(--gold-clair);
+        background-color: transparent;
+        border-right: none;
+    }
+
+    .dash,
+    .escape,
+    .calendrier,
+    .avis,
+    .user {
+        margin-bottom: 0;
+    }
+
+    .ligne {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* cartes */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 600px) {
+
+    .droite {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .sous-titre {
+        font-size: 12px;
+    }
+
+    /* cartes */
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .chiffre {
+        font-size: 20px;
+    }
+
+    /* tableau responsive */
+    .table-reservations {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table-reservations th,
+    .table-reservations td {
+        padding: 12px;
+        font-size: 11px;
+    }
+
 }
