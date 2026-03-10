@@ -1,0 +1,235 @@
+body {
+    background-color: var(--noir);
+    font-family: var(--texte);
+    color: var(--blanc-casse);
+}
+
+.admin {
+    font-size: 12px;
+    color: var(--blanc-casse);
+    opacity: 50%;
+}
+
+.menu-gauche {
+    width: 300px;
+    background-color: var(--bleu-fonce);
+    padding: 20px;
+}
+
+.menu-categorie {
+    color: var(--blanc-casse);
+    display: inline-block;
+    width: 100%;
+}
+
+.dash,
+.escape,
+.calendrier,
+.avis,
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--blanc-casse);
+}
+
+.dash {
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin: -10px;
+    margin-bottom: 20px;
+    border-right: solid #A3730C 3px;
+}
+
+.dash>div,
+.escape>div,
+.calendrier>div,
+.avis>div,
+.user>div {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.escape:hover,
+.calendrier:hover,
+.avis:hover,
+.user:hover {
+    color: var(--gold-clair);
+    background-color: rgba(197, 160, 89, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: -10px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.ligne {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 1px;
+    width: 340px;
+    background-color: var(--bleu-clair);
+    margin-left: -20px;
+}
+
+.contenu {
+    display: flex;
+}
+
+.droite {
+    margin: 32px;
+    flex: 1;
+}
+
+h1 {
+    margin: 0;
+    font-family: var(--titre);
+    margin-bottom: 5px;
+}
+
+/* ========================= */
+/* SECTION TARIFS */
+/* ========================= */
+
+.escape-tarif {
+    background-color: var(--bleu-fonce);
+    border: 1px solid rgba(43, 67, 89, 0.5);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.escape-tarif h2 {
+    font-family: var(--titre);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.escape-tarif p {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+/* ========================= */
+/* TABLEAU TARIFS */
+/* ========================= */
+
+.tarif-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* HEAD */
+.tarif-table thead {
+    background-color: rgba(43, 67, 89, 0.3);
+}
+
+.tarif-table th {
+    text-align: left;
+    padding: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(43, 67, 89, 0.5);
+    font-weight: normal;
+}
+
+/* BODY */
+
+.tarif-table td {
+    padding: 14px;
+    border: 1px solid rgba(43, 67, 89, 0.5);
+    font-size: 13px;
+}
+
+/* hover ligne */
+
+.tarif-table tbody tr:hover {
+    background-color: rgba(255,255,255,0.03);
+}
+
+/* ========================= */
+/* INPUT PRIX */
+/* ========================= */
+
+.tarif-table input[type="number"] {
+    width: 120px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--bleu-clair);
+    background-color: var(--bleu-fonce);
+    color: var(--blanc-casse);
+    font-size: 13px;
+}
+
+.tarif-table input[type="number"]:focus {
+    outline: none;
+    border: 1px solid var(--gold-clair);
+    box-shadow: 0 0 4px rgba(197,160,89,0.4);
+}
+
+/* enlever les flèches input number */
+
+.tarif-table input::-webkit-outer-spin-button,
+.tarif-table input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+/* ========================= */
+/* BOUTON */
+/* ========================= */
+
+.btn-enregistrer {
+    background-color: var(--gold-clair);
+    border: none;
+    color: var(--bleu-fonce);
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.btn-enregistrer:hover {
+    background-color: #A3730C;
+    color: white;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .escape-tarif {
+        padding: 20px;
+    }
+
+    .tarif-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tarif-table th,
+    .tarif-table td {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .tarif-table input[type="number"] {
+        width: 90px;
+        font-size: 11px;
+    }
+
+}
