@@ -151,4 +151,3 @@ if (formReservation) {
 }
 
 genererCalendrier();
-
