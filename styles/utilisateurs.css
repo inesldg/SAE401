@@ -32,7 +32,8 @@ MENU LATÉRAL GAUCHE
 .escape,
 .calendrier,
 .avis,
-.user {
+.user,
+.tarif {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
@@ -56,7 +57,8 @@ MENU LATÉRAL GAUCHE
 .escape>div,
 .calendrier>div,
 .avis>div,
-.user>div {
+.user>div,
+.tarif>div {
     margin-left: 10px;
     font-size: 14px;
 }
@@ -65,7 +67,8 @@ MENU LATÉRAL GAUCHE
 .dash:hover,
 .calendrier:hover,
 .avis:hover,
-.escape:hover {
+.escape:hover,
+.tarif:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
