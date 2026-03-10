@@ -6,7 +6,7 @@ class DashTarif extends database
     // Récupère tous les escape games
     public function getEscapes()
     {
-        $res = $this->execReq("SELECT * FROM escape ORDER BY id_escape ASC");
+        $res = $this->execReq("SELECT * FROM escape ORDER BY id_escape DESC");
         return $res;
     }
 
