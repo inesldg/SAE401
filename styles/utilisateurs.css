@@ -236,7 +236,8 @@ BOUTON SUPPRIMER SVG
     .escape:hover,
     .calendrier:hover,
     .avis:hover,
-    .dash:hover {
+    .dash:hover,
+    .tarif:hover {
         margin-left: 0;
         margin-top: 0;
     }
@@ -252,7 +253,8 @@ BOUTON SUPPRIMER SVG
     .escape,
     .calendrier,
     .avis,
-    .user {
+    .user,
+    .tarif {
         margin-bottom: 0;
     }
 

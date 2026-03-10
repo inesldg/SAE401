@@ -239,12 +239,12 @@ h1 {
     .calendrier:hover,
     .avis:hover,
     .user:hover,
-    .tarif:hover {
+    .dash:hover {
         margin-left: 0;
         margin-top: 0;
     }
 
-    .dash {
+    .tarif {
         color: var(--gold-clair);
         background-color: transparent;
         border-right: none;
