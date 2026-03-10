@@ -84,9 +84,14 @@ tarif.prix AS total_reservation
 FROM reserver
 JOIN escape ON reserver.id_escape = escape.id_escape
 JOIN utilisateur ON reserver.id_utilisateur = utilisateur.id_utilisateur
-JOIN tarif ON escape.id_escape = tarif.id_escape
+JOIN tarif ON reserver.id_escape = tarif.id_escape
+AND (
+    (tarif.effectif = '1-3' AND reserver.nbr_pers BETWEEN 1 AND 3)
+    OR
+    (tarif.effectif = '4' AND reserver.nbr_pers = 4)
+)
 ORDER BY reserver.reserver_date DESC
-LIMIT 5;";
+LIMIT 5";
 
         return $this->execReq($req);
     }
