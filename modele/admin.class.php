@@ -33,18 +33,14 @@ class admin extends database
     public function getRevenus($mois, $annee)
     {
 
-        // REQUETE A MODIF SELON LES EFFECTIFS !!!!! la j'ai juste fais des test !
+        // Requete qui permettra de calculer le revenus
         $req = "SELECT tarif.prix
-            FROM reserver
-            JOIN tarif 
-                ON reserver.id_escape = tarif.id_escape
-            WHERE MONTH(reserver.reserver_date) = ?
-            AND YEAR(reserver.reserver_date) = ?
-            AND (
-                (tarif.effectif = '1-3' AND reserver.nbr_pers BETWEEN 1 AND 3)
-                OR
-                (tarif.effectif = '4' AND reserver.nbr_pers = 4)
-            )";
+FROM reserver
+JOIN tarif 
+ON reserver.id_escape = tarif.id_escape
+AND reserver.nbr_pers = tarif.effectif
+WHERE MONTH(reserver.reserver_date) = ?
+AND YEAR(reserver.reserver_date) = ?";
 
         $res = $this->execReqPrep($req, array($mois, $annee));
 
@@ -71,7 +67,7 @@ class admin extends database
     }
 
     // Réservations récentes
-    public function getReservationsRecentes($limit = 5)
+    public function getReservationsRecentes()
     {
         $req = "SELECT 
 escape.nom AS nom_escape,
@@ -84,12 +80,9 @@ tarif.prix AS total_reservation
 FROM reserver
 JOIN escape ON reserver.id_escape = escape.id_escape
 JOIN utilisateur ON reserver.id_utilisateur = utilisateur.id_utilisateur
-JOIN tarif ON reserver.id_escape = tarif.id_escape
-AND (
-    (tarif.effectif = '1-3' AND reserver.nbr_pers BETWEEN 1 AND 3)
-    OR
-    (tarif.effectif = '4' AND reserver.nbr_pers = 4)
-)
+JOIN tarif 
+    ON reserver.id_escape = tarif.id_escape
+    AND reserver.nbr_pers = tarif.effectif
 ORDER BY reserver.reserver_date DESC
 LIMIT 5";
 
