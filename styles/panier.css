@@ -563,101 +563,32 @@ TABLETTE (768px)
 /* =====================================================
 MOBILE (425px)
 ===================================================== */
-@media screen and (max-width: 425px) {
+@media (max-width: 425px) {
 
-    .panier {
-        padding: 30px 15px;
-        background-attachment: scroll;
+    .page-legal {
+        padding: 1.5rem 0.8rem 3rem;
     }
 
-    /* cartes */
-    .panier .carte {
-        padding: 25px 20px;
-        border-radius: 20px;
+    .page-legal__bloc {
+        padding: 1.2rem 1rem;
+        border-radius: 14px;
     }
 
-    /* produit */
-    .produit {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .image-panier,
-    .image-remplacement {
-        width: 100%;
-        height: 180px;
-    }
-
-    /* infos produit */
-    .infos-produit h3 {
+    .page-legal__titre {
         font-size: 1rem;
     }
 
-    .description {
-        font-size: 0.85rem;
-    }
-
-    /* recap ligne */
-    .ligne-recap {
-        font-size: 0.75rem;
-        gap: 6px 10px;
-    }
-
-    /* prix */
-    .prix-unitaire {
-        font-size: 1.1rem;
-    }
-
-    /* select personnes */
-    .selecteur-personnes {
-        font-size: 0.8rem;
-        padding: 6px 10px;
-    }
-
-    /* formulaire nom prenom */
-    .grille-nom-prenom {
-        grid-template-columns: 1fr;
-    }
-
-    /* inputs */
-    input {
-        padding: 10px 14px;
+    .page-legal__texte {
         font-size: 0.9rem;
     }
 
-    /* groupe promo */
-    .groupe-saisie {
+    .page-legal__texte p {
         flex-direction: column;
+        gap: 0.2rem;
     }
 
-    .bouton-or {
-        width: 100%;
+    .page-legal__texte strong {
+        min-width: auto;
     }
 
-    /* carte bancaire */
-    .carte-bleue-wrapper {
-        max-width: 100%;
-    }
-
-    .carte-bleue-contenu {
-        padding: 15px;
-    }
-
-    .carte-bleue-contenu input {
-        font-size: 0.8rem;
-    }
-
-    /* bouton valider */
-    .bouton-valider {
-        font-size: 0.95rem;
-        padding: 14px;
-    }
-
-    /* indication */
-    .indication,
-    .indication2 {
-        font-size: 0.7rem;
-        text-align: center;
-    }
 }

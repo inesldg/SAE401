@@ -50,7 +50,8 @@
 .avis-page {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0;
+    padding: 40px 0 0 0;
+    /* espace pour le bouton */
 }
 
 /* En-tête : titre + filtres */
@@ -395,3 +396,12 @@ CARTE AVIS UNITAIRES
     font-size: 1rem;
     color: rgba(242, 242, 242, 0.8);
 }
+
+
+/* @media (max-width: 425px) {
+
+.avis-filtre:first-child{
+    margin-bottom: 20px;
+}
+
+} */
