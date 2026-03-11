@@ -284,6 +284,10 @@ CONTENEUR GLOBAL (2 colonnes)
                     <span style="color: white;">220.00 €</span>
                 </div>
 
+                <?php if (!empty($message)): ?>
+                <p class="reservation-erreur-date reservation-erreur-horaire" role="alert" aria-live="polite"><?= htmlspecialchars($message) ?></p>
+                <?php endif; ?>
+
                 <p class="reservation-erreur-date" id="erreurDateReservation" role="alert" aria-live="polite" style="display: none;">Veuillez sélectionner une date.</p>
 
                 <input type="text" name="jourEscape" id="inputJourEscape" style="display: none;" value="">

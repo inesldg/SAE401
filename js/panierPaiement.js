@@ -7,7 +7,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    var formulaire = document.querySelector("form[action*='confirmation']");
+    var formulaire = document.querySelector("form[action*='paiement']");
     var inputNumCarte = document.getElementById("inputNumCarte");
     var inputMois = document.getElementById("inputMoisExpiration");
     var inputAnnee = document.getElementById("inputAnneeExpiration");
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // --- Numéro de carte : après saisie, mettre un espace tous les 4 chiffres ---
-    inputNumCarte.addEventListener("blur", function () {
+    // --- Numéro de carte : mettre un espace tous les 4 chiffres à chaque saisie ---
+    inputNumCarte.addEventListener("input", function () {
         var valeur = this.value;
         var sansEspaces = valeur.split(" ").join("");
         var avecEspaces = "";
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Tout est bon : afficher le message puis envoyer le formulaire
+        // Tout est bon : envoyer le formulaire
         formulaire.submit();
     });
 });

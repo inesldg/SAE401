@@ -76,9 +76,12 @@ class routeur
                             $this->ctlEscapeGames->pageEscapeGames();
                             break;
                         case "game":
-                            $message = $_SESSION['flash_avis'] ?? "";
+                            $message = $_SESSION['flash_avis'] ?? $_SESSION['flash_erreur_horaire'] ?? "";
                             if (isset($_SESSION['flash_avis'])) {
                                 unset($_SESSION['flash_avis']);
+                            }
+                            if (isset($_SESSION['flash_erreur_horaire'])) {
+                                unset($_SESSION['flash_erreur_horaire']);
                             }
                             $this->ctlEscapeGames->pageGame($_GET['idEscapeGame'], $message);
                             break;

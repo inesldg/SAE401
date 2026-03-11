@@ -26,19 +26,16 @@ class ctlPanier
 
         $verifHoraire = $this->panier->verifierHoraire($dateReserve, $horaireMin,$horaireMax, $idEscape);
         
-        if(empty($verifHoraire)){
+        if (empty($verifHoraire)) {
             $panier = $this->panier->affichagePanier($idEscape);
 
             $vue = new vue("Panier");
-            $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire,    "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "message" => $message));
-        }
-        else{
-            throw new Exception('
-                <span>Cette horaire n\'est plus disponible veuillez en choisir une autre</span>
-                <a href="index.php?action=game&idEscapeGame=' . $idEscape . '" class="page-erreur__lien">
-                    Retourner sur la page de réservation
-                </a>
-            ');
+            $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire, "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "message" => $message));
+        } else {
+            // Créneau plus disponible : on redirige vers la page de réservation avec un message
+            $_SESSION['flash_erreur_horaire'] = 'Cette horaire n\'est plus disponible, veuillez en choisir une autre.';
+            header('Location: index.php?action=game&idEscapeGame=' . urlencode((string) $idEscape));
+            exit;
         }
         
     }
@@ -78,13 +75,11 @@ class ctlPanier
                 else
                     throw new Exception('Une erreur est survenue lors de l\'enregistrement de votre réservation');
             }
-            else{
-                throw new Exception('
-                    <span>Cette horaire n\'est plus disponible veuillez en choisir une autre</span>
-                    <a href="index.php?action=game&idEscapeGame=' . $idEscapeReserve . '" class="page-erreur__lien">
-                        Retourner sur la page de réservation
-                    </a>
-                ');
+            else {
+                // Créneau plus disponible : on redirige vers la page de réservation avec un message
+                $_SESSION['flash_erreur_horaire'] = 'Cette horaire n\'est plus disponible, veuillez en choisir une autre.';
+                header('Location: index.php?action=game&idEscapeGame=' . urlencode((string) $idEscapeReserve));
+                exit;
             }
         }
         else

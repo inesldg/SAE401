@@ -99,6 +99,9 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
             <div class="carte reveal reveal-up">
                 <h2 id="infoPanier">Vos Informations</h2>
                 <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=paiement" ?>>
+                    <?php if (!empty($message)): ?>
+                    <div class="panier-erreur-paiement" role="alert" aria-live="polite"><?= $message ?></div>
+                    <?php endif; ?>
                     <div class="grille-nom-prenom">
                         <div class="ligne-formulaire">
                             <label for="inputnom" id="nomCompte">Nom</label>
