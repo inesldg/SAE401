@@ -35,12 +35,20 @@ class ajoutEscape extends database
         return $result[0]['id_escape'] ?? null;
     }
 
+    /**
+     * Retourne tous les escape games, du plus récent au plus ancien.
+     * @return array Liste de tous les escapes
+     */
     public function getAllEscapes()
     {
         $req = "SELECT * FROM escape ORDER BY id_escape DESC";
         return $this->execReq($req);
     }
 
+    /**
+     * Supprime un escape en base et les fichiers image associés (jpg, png) dans photos_escapes/.
+     * @param int|string $id_escape Identifiant de l'escape à supprimer (sécurisé via intval)
+     */
     public function supprimerEscape($id_escape)
     {
         $id_escape = intval($id_escape); // sécurité
