@@ -78,8 +78,8 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
                         <div class="avatar"></div>
 
                         <div class="infos">
-                            <h3><?= htmlspecialchars($a['prenom']) . " " . htmlspecialchars($a['nom']) ?></h3>
-                            <span><?= htmlspecialchars($a['nom_escape']) ?></span>
+                            <h3><?= $a['prenom'] . " " . $a['nom'] ?></h3>
+                            <span><?= $a['nom_escape'] ?></span>
                         </div>
 
                         <form method="POST" action="index.php?action=supprimerAvis">
@@ -101,7 +101,7 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
                     </div>
 
                     <p class="commentaire">
-                        <?= nl2br(htmlspecialchars($a['commentaire'])) ?>
+                        <?= nl2br($a['commentaire']) ?>
                     </p>
 
                 </div>

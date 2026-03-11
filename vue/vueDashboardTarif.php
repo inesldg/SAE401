@@ -64,8 +64,8 @@ $style = '<link rel="stylesheet" href="styles/dashTarif.css">';
 
         <?php foreach ($escapes as $escape): ?>
             <div class="escape-tarif">
-                <h2><?= htmlspecialchars($escape['nom']) ?> (<?= $escape['nbr_pers_min'] ?> à <?= $escape['nbr_pers_max'] ?> pers)</h2>
-                <p><?= htmlspecialchars($escape['description']) ?></p>
+                <h2><?= $escape['nom'] ?> (<?= $escape['nbr_pers_min'] ?> à <?= $escape['nbr_pers_max'] ?> pers)</h2>
+                <p><?= $escape['description'] ?></p>
 
                 <form method="POST" action="index.php?action=enregistrerTarifs">
                     <input type="hidden" name="id_escape" value="<?= $escape['id_escape'] ?>">
