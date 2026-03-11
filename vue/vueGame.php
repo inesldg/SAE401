@@ -77,7 +77,7 @@ CONTENEUR GLOBAL (2 colonnes)
                 <?= $escapeGame[0]['nom'] ?>
             </h2>
             <div class="infos-rapides">
-                <div class="prix">A partir de <?= $tarifs[0]['prix'] ?>€ pour <?= $tarifs[0]['effectif'] ?> personnes.</div>
+                <div class="prix"><span id="aPartir">A partir de</span><?= $tarifs[0]['prix'] ?><span id="pour">pour</span> <?= $tarifs[0]['effectif'] ?><span id="personne">personnes</span></div>
                 <div class="notation"><?= $nbAvis ?> <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">avis</span></div>
             </div>
             <!-- ===============================

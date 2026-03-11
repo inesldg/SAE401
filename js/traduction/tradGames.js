@@ -5,7 +5,9 @@
     window.trad = window.trad || {};
     Object.assign(window.trad, {
         "#retourescapeGames": { "fr": "Retour aux escapes games", "en": "Back to the games", "de": "Zurück zu den Spielen" },
-        "#prixGames": { "fr": "À partir de 55€/pers.", "en": "From €55/person.", "de": "Ab €55/Person." },
+        "#aPartir": { "fr": "À partir de ", "en": "From ", "de": "Ab " },
+        "#pour": { "fr": "€ pour ", "en": "€ for", "de": "€ um" },
+        "#personne": { "fr": " personnes", "en": " participants", "de": " personen" },
         "#nbAvisGames": { "fr": "Avis", "en": "Reviews", "de": "Bewertungen" },
         "#labelLieu": { "fr": "Lieu :", "en": "Location :", "de": "Ort :" },
         "#labelDuree": { "fr": "Durée de", "en": "Duration of", "de": "Dauer von" },

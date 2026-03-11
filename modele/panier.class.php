@@ -39,7 +39,7 @@ class panier extends database
         WHERE reserver_date = ? AND horaire > ? AND horaire < ?
         ORDER BY horaire DESC;';
         // Les ? ci-dessus correspondent dans l'ordre à : $date, $horaireMin, $horaireMax, $idEscape
-        $escape = $this->execReqPrep($req, array($date, $horaireMin, $horaireMax, $idEscape));
+        $escape = $this->execReqPrep($req, array($date, $horaireMin, $horaireMax));
         return $escape;
     }
 

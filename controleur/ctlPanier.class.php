@@ -37,7 +37,7 @@ class ctlPanier
             $panier = $this->panier->affichagePanier($idEscape);
 
             $vue = new vue("Panier");
-            $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire, "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "message" => $message));
+            $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire, "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "tarifs" => $tarifs, "message" => $message));
         } else {
             // Créneau plus disponible : on redirige vers la page de réservation avec un message
             $_SESSION['flash_erreur_horaire'] = 'Cette horaire n\'est plus disponible, veuillez en choisir une autre.';
