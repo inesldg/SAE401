@@ -1,4 +1,5 @@
 <?php
+
 // Config Langue
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
@@ -76,7 +77,7 @@ CONTENEUR GLOBAL (2 colonnes)
                 <?= $escapeGame[0]['nom'] ?>
             </h2>
             <div class="infos-rapides">
-                <div class="prix" id="prixGames">A partir de 55€/pers.</div>
+                <div class="prix">A partir de <?= $tarifs[0]['prix'] ?>€ pour <?= $tarifs[0]['effectif'] ?> personnes.</div>
                 <div class="notation"><?= $nbAvis ?> <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">avis</span></div>
             </div>
             <!-- ===============================
@@ -260,28 +261,22 @@ CONTENEUR GLOBAL (2 colonnes)
                     <label>
                         <span id="participGames">Participants</span>
                         <select name="nbrPersonnesEscape" class="choix-horaire" id="nbrParticipantsGame">
-                            <option value="6" selected>6 personnes</option>
-                            <option value="7">7 personnes</option>
-                            <option value="8">8 personnes</option>
-                            <option value="9">9 personnes</option>
-                            <option value="10">10 personnes</option>
-                            <option value="11">11 personnes</option>
-                            <option value="12">12 personnes</option>
-                            <option value="13">13 personnes</option>
-                            <option value="14">14 personnes</option>
-                            <option value="15">15 personnes</option>
-                            <option value="16">16 personnes</option>
-                            <option value="17">17 personnes</option>
-                            <option value="18">18 personnes</option>
-                            <option value="19">19 personnes</option>
-                            <option value="20">20 personnes</option>
+                            <?php
+
+                            foreach($tarifs as $tarif){
+                                $result = '<option value="' . $tarif['effectif'] . '-' . $tarif['prix'] . '">' . $tarif['effectif'] . ' personnes</option>';
+
+                                echo $result;
+                            }
+                            
+                            ?>
                         </select>
                     </label>
                 </div>
 
                 <div class="total-ligne">
                     <span id="totalGames">Total</span>
-                    <span style="color: white;">220.00 €</span>
+                    <span style="color: white;" id="prixTotalCalendrier"><?= $tarifs[0]['prix'] ?>.00 €</span>
                 </div>
 
                 <?php if (!empty($message)): ?>

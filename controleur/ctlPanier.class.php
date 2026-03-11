@@ -14,6 +14,13 @@ class ctlPanier
 
     public function pagePanier($jour, $mois, $annee, $horaire, $nbrPersonnes, $idEscape, $message)
     {
+        if (is_numeric($nbrPersonnes) == false);{
+            $nbrPersonnes = explode("-", $nbrPersonnes);
+            $nbrPersonnes = $nbrPersonnes[0];
+        }
+
+        $tarifs = $this->panier->getTarifs($idEscape, $nbrPersonnes);
+
         $dateReserve = implode("-", [$annee, $mois, $jour]);
 
         $dispo = $this->panier->verifierDispo($idEscape);
