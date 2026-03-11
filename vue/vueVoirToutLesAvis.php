@@ -82,27 +82,31 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
 
                 <?php // Sécurisation et limitation de la note entre 0 et 5 ?>
                 <?php $note = max(0, min(5, (int) $evaluation['note'])); ?>
+
+                <?php
+                // Photo de l'utilisateur : on cherche dans photos_utilisateurs/
+                $dossierPhotos = "photos_utilisateurs/";
+                $idUtilisateur = $evaluation['id_utilisateur'] ?? null;
+                $photoUtilisateur = null;
+                if ($idUtilisateur !== null) {
+                    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                    foreach ($extensions as $ext) {
+                        $fichier = $dossierPhotos . $idUtilisateur . "." . $ext;
+                        if (file_exists($fichier)) {
+                            $photoUtilisateur = $fichier;
+                            break;
+                        }
+                    }
+                }
+                ?>
+
                 <div class="avis" data-note="<?= $note ?>">
                     <div class="container-avis">
                         <div class="top-avis">
                             <div class="photo-de-profil">
-                                <?php
-                                $dossier = "photos_users/";
-                                $idUser = $evaluation['id_utilisateur'] ?? null;
-                                $photoPath = null;
-                                if ($idUser) {
-                                    foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
-                                        if (file_exists($dossier . $idUser . "." . $ext)) {
-                                            $photoPath = $dossier . $idUser . "." . $ext;
-                                            break;
-                                        }
-                                    }
-                                }
-                                ?>
-                                <!-- Affichage photo ou placeholder -->
-                                <?php if ($photoPath): ?>
-                                    <img src="<?= htmlspecialchars($photoPath) ?>"
-                                        alt="Photo de profil de <?= htmlspecialchars($evaluation['prenom']) ?>">
+                                <?php if ($photoUtilisateur): ?>
+                                    <img src="<?= htmlspecialchars($photoUtilisateur) ?>"
+                                        alt="Photo de <?= htmlspecialchars($evaluation['prenom']) ?>">
                                 <?php else: ?>
                                     <div class="photo-de-profil-placeholder" aria-hidden="true">
                                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
@@ -113,7 +117,6 @@ $idEscapeGame = $escapeGame[0]['id_escape'] ?? ($_GET['idEscapeGame'] ?? '');
                                         </svg>
                                     </div>
                                 <?php endif; ?>
-                                <!-- Informations de l'avis -->
                                 <div class="pseudo"><?= htmlspecialchars($evaluation['prenom']) ?></div>
                             </div>
                         </div>

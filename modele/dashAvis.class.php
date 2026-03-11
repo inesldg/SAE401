@@ -12,6 +12,7 @@ class dashAvis extends database
                 a.note,
                 a.commentaire,
                 a.avis_date,
+                u.id_utilisateur,
                 u.nom,
                 u.prenom,
                 e.nom AS nom_escape

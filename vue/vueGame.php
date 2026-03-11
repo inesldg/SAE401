@@ -27,6 +27,12 @@ if (!empty($escapeGame[0]['id_escape'])) {
         }
     }
 }
+
+// Nombre d'avis pour ce jeu : on compte les éléments dans $avis
+$nbAvis = 0;
+if (!empty($avis) && is_array($avis)) {
+    $nbAvis = count($avis);
+}
 ?>
 
 <!-- ===============================
@@ -71,10 +77,8 @@ CONTENEUR GLOBAL (2 colonnes)
             </h2>
             <div class="infos-rapides">
                 <div class="prix" id="prixGames">A partir de 55€/pers.</div>
-                <div class="notation">★★★★★ <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">10
-                        avis</span></div>
+                <div class="notation"><?= $nbAvis ?> <span style="font-size: 0.7rem; color: white;" id="nbAvisGames">avis</span></div>
             </div>
-
             <!-- ===============================
             ICÔNES INFORMATIONS
             =============================== -->
@@ -138,11 +142,32 @@ CONTENEUR GLOBAL (2 colonnes)
                         // Calcul des étoiles
                         $note = intval($evaluation['note']);
                         $etoiles = str_repeat('★', $note) . str_repeat('☆', 5 - $note);
+
+                        // Photo de l'utilisateur : on cherche dans photos_utilisateurs/
+                        $dossierPhotos = "photos_utilisateurs/";
+                        $idUtilisateur = $evaluation['id_utilisateur'] ?? null;
+                        $photoUtilisateur = null;
+                        if ($idUtilisateur !== null) {
+                            $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                            foreach ($extensions as $ext) {
+                                $fichier = $dossierPhotos . $idUtilisateur . "." . $ext;
+                                if (file_exists($fichier)) {
+                                    $photoUtilisateur = $fichier;
+                                    break;
+                                }
+                            }
+                        }
                         ?>
 
                         <div class="avis-unitaire">
-                            <div class="photo-profil"></div>
-                            <strong><?= htmlspecialchars($evaluation['prenom']) ?></strong><br>
+                            <div class="photo-profil">
+                                <?php if ($photoUtilisateur): ?>
+                                    <img src="<?= htmlspecialchars($photoUtilisateur) ?>" alt="Photo de <?= htmlspecialchars($evaluation['prenom']) ?>">
+                                <?php else: ?>
+                                    <!-- Pas de photo : on laisse la div vide (style .photo-profil gère l’apparence) -->
+                                <?php endif; ?>
+                            </div>
+                            <strong><?= ($evaluation['prenom']) ?></strong><br>
 
                             <span style="color: var(--gold-clair)"><?= $etoiles ?></span>
                             <small>(<?= $note ?>/5)</small>
@@ -151,7 +176,7 @@ CONTENEUR GLOBAL (2 colonnes)
                                 <?= date('d/m/Y', strtotime($evaluation['avis_date'])) ?>
                             </div>
 
-                            <div><?= htmlspecialchars($commAffichage) ?></div>
+                            <div><?= ($commAffichage) ?></div>
                         </div>
 
                         <?php

@@ -70,12 +70,31 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
         </div>
         <div class="avis-container">
 
-            <?php foreach ($avis as $a) { ?>
+            <?php foreach ($avis as $a) {
+                // Photo de l'utilisateur : on cherche dans photos_utilisateurs/
+                $dossierPhotos = "photos_utilisateurs/";
+                $idUtilisateur = $a['id_utilisateur'] ?? null;
+                $photoUtilisateur = null;
+                if ($idUtilisateur !== null) {
+                    $extensions = ['jpg', 'jpeg', 'png', 'webp'];
+                    foreach ($extensions as $ext) {
+                        $fichier = $dossierPhotos . $idUtilisateur . "." . $ext;
+                        if (file_exists($fichier)) {
+                            $photoUtilisateur = $fichier;
+                            break;
+                        }
+                    }
+                }
+                ?>
 
                 <div class="card-avis">
 
                     <div class="avis-header">
-                        <div class="avatar"></div>
+                        <div class="avatar">
+                            <?php if ($photoUtilisateur): ?>
+                                <img src="<?= htmlspecialchars($photoUtilisateur) ?>" alt="Photo de <?= htmlspecialchars($a['prenom']) ?>">
+                            <?php endif; ?>
+                        </div>
 
                         <div class="infos">
                             <h3><?= htmlspecialchars($a['prenom']) . " " . htmlspecialchars($a['nom']) ?></h3>
