@@ -1,15 +1,18 @@
+/* BODY PRINCIPAL */
 body {
     background-color: var(--noir);
     font-family: var(--texte);
     color: var(--blanc-casse);
 }
 
+/* TEXTE ADMIN / INFO SECONDAIRE */
 .admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
+/* MENU LATÉRAL GAUCHE */
 .menu-gauche {
     width: 300px;
     background-color: var(--bleu-fonce);
@@ -22,6 +25,7 @@ body {
     width: 100%;
 }
 
+/* Liens du menu (dash, escape, calendrier, avis, user, tarif) */
 .dash,
 .escape,
 .calendrier,
@@ -36,6 +40,7 @@ body {
     color: var(--blanc-casse);
 }
 
+/* Élément actif "avis" */
 .avis {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
@@ -46,6 +51,7 @@ body {
     border-right: solid #A3730C 3px;
 }
 
+/* Décalage texte à l’intérieur des liens */
 .dash>div,
 .escape>div,
 .calendrier>div,
@@ -56,6 +62,7 @@ body {
     font-size: 14px;
 }
 
+/* Hover sur liens menu (sauf "avis" actif) */
 .dash:hover,
 .calendrier:hover,
 .user:hover,
@@ -70,6 +77,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Ligne de séparation du menu */
 .ligne {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -79,6 +87,7 @@ body {
     margin-left: -20px;
 }
 
+/* CONTENU PRINCIPAL */
 .contenu {
     display: flex;
 }
@@ -88,6 +97,7 @@ body {
     flex: 1;
 }
 
+/* TITRES */
 h1 {
     margin: 0;
     font-family: var(--titre);
@@ -100,13 +110,14 @@ h1 {
     margin-bottom: 32px;
 }
 
-
+/* CONTAINER DES AVIS */
 .avis-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* CARTE D’AVIS */
 .card-avis {
     position: relative;
     background-color: var(--bleu-fonce);
@@ -115,20 +126,23 @@ h1 {
     padding: 20px;
 }
 
+/* HEADER DE L’AVIS (avatar + infos) */
 .avis-header {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
+/* AVATAR UTILISATEUR */
 .avatar {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: #D9D9D9; /* placeholder si pas d'image */
+    background-color: #D9D9D9;
     margin-right: 15px;
 }
 
+/* INFORMATIONS UTILISATEUR */
 .infos h3 {
     margin: 0;
     font-size: 14px;
@@ -141,6 +155,7 @@ h1 {
     color: var(--gold-clair); 
 }
 
+/* ÉTOILES */
 .etoiles {
     margin-bottom: 10px;
 }
@@ -155,13 +170,14 @@ h1 {
     color: var(--gold-clair);
 }
 
+/* COMMENTAIRE */
 .commentaire {
     font-size: 13px;
     line-height: 1.5;
     color: var(--blanc-casse);
 }
 
-/* Bouton supprimer en haut à droite */
+/* BOUTON SUPPRIMER EN HAUT À DROITE */
 .btn-supprimer {
     position: absolute;
     top: 15px;
