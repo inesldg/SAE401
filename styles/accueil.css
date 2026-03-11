@@ -520,18 +520,220 @@ SECTION AVIS CLIENTS
 RESPONSIVE DESIGN
 Adaptation tablette et mobile
 --------------------------------------------------- */
-@media (max-width: 1024px) {
 
-    .accueil-escapes__grille,
+/* ----- TABLETTE (max-width: 1024px) ----- */
+@media (max-width: 1024px) {
+    .hero-accueil {
+        min-height: 90vh;
+    }
+
+    .hero-accueil__inner {
+        flex-direction: column;
+        gap: 2rem;
+        width: min(90%, 600px);
+        text-align: center;
+    }
+
+    .hero-accueil__contenu {
+        text-align: center;
+        order: 1;
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-accueil__3d {
+        order: 2;
+        height: 320px;
+        flex: none;
+        width: 100%;
+    }
+
+    #three-container {
+        margin-left: 0;
+    }
+
+    .hero-accueil__titre {
+        white-space: normal;
+    }
+
+    .hero-accueil__titre #aventure {
+        display: inline;
+    }
+
+    .accueil-section,
+    .accueil-section2 {
+        padding: 3rem 1.25rem;
+        padding-bottom: 100px;
+        background-attachment: scroll;
+    }
+
+    .accueil-titre {
+        margin-bottom: 2.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .accueil-escapes .accueil-titre::before,
+    .accueil-escapes .accueil-titre::after,
+    .accueil-avis .accueil-titre::before,
+    .accueil-avis .accueil-titre::after {
+        width: 80px;
+    }
+
+    .accueil-escapes__grille {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-x: visible;
+        gap: 1.25rem;
+    }
+
+    .accueil-escape-card {
+        flex: none;
+        min-width: 0;
+    }
+
     .accueil-avis__grille {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .accueil-btn-son {
+        bottom: 20px;
+        left: 20px;
+        width: 44px;
+        height: 44px;
+    }
 }
 
-@media (max-width: 600px) {
+/* ----- TÉLÉPHONE (max-width: 768px) ----- */
+@media (max-width: 768px) {
+    .hero-accueil {
+        min-height: 85vh;
+        background-position: 60% center;
+    }
 
-    .accueil-escapes__grille,
+    .hero-accueil__inner {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .hero-accueil__contenu {
+        padding: 1rem 0.5rem;
+    }
+
+    .hero-accueil__titre {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .hero-accueil__sous-titre {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-accueil__bouton {
+        padding: 0.75rem 1.35rem;
+        font-size: 0.95rem;
+    }
+
+    /* Masquer la clé 3D sur mobile : pas de chargement Three.js, meilleures perfs */
+    .hero-accueil__3d {
+        display: none !important;
+    }
+
+    .accueil-section,
+    .accueil-section2 {
+        padding: 2.5rem 1rem;
+        padding-bottom: 80px;
+    }
+
+    .accueil-conteneur {
+        padding: 0 0.5rem;
+    }
+
+    .accueil-titre {
+        font-size: clamp(1.25rem, 4vw, 1.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .accueil-escapes .accueil-titre::before,
+    .accueil-escapes .accueil-titre::after,
+    .accueil-avis .accueil-titre::before,
+    .accueil-avis .accueil-titre::after {
+        width: 50px;
+    }
+
+    .accueil-experience__texte {
+        font-size: 0.95rem;
+        padding: 0 0.25rem;
+    }
+
+    .accueil-escapes__grille {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .accueil-escape-card__img {
+        height: 180px;
+    }
+
+    .accueil-escape-card__corps {
+        padding: 1.25rem;
+    }
+
+    .accueil-escape-card__titre {
+        font-size: 0.95rem;
+    }
+
+    .accueil-escape-card__desc {
+        font-size: 0.8rem;
+    }
+
+    .accueil-escape-card__infos {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .accueil-escapes__lien-wrap {
+        margin-top: 1.5rem;
+    }
+
+    .accueil-escapes__lien {
+        font-size: 1rem;
+    }
+
     .accueil-avis__grille {
         grid-template-columns: 1fr;
+    }
+
+    .accueil-btn-son {
+        bottom: 16px;
+        left: 16px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .accueil-btn-son__icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ----- PETIT TÉLÉPHONE (max-width: 480px) ----- */
+@media (max-width: 480px) {
+    .hero-accueil__titre {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
+    .accueil-escape-card {
+        min-width: 0;
+    }
+
+    .accueil-escape-card__img {
+        height: 160px;
+    }
+
+    .accueil-escape-card__img .placeholder-img {
+        min-height: 160px;
     }
 }

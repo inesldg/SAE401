@@ -29,15 +29,25 @@ Sauf dans le cas où la variable se trouve déjà dans le fichier vue.class.php 
 
 <body>
 
+  <!--
+    LOADER
+    Affiche un écran de chargement (boussole + texte) tant que la page n'est pas entièrement prête.
+    Le composant loader.php injecte le bloc HTML avec l'animation. Le script ci-dessous masque
+    le loader dès que l'événement "load" du window est déclenché (ressources, images, scripts chargés)
+-->
   <?php require "composants/loader.php"; ?>
   <script>
     (function () {
       var loader = document.getElementById('page-loader');
       if (!loader) return;
+
+      /* Fonctionn qui cache le loader : ajoute la classe CSS qui déclenche le fondu de sortie */
       function hideLoader() {
         loader.classList.add('page-loader--hidden');
         loader.setAttribute('aria-hidden', 'true');
       }
+
+      /* Si la page est déjà chargée (ex: dans cache), on masque tout de suite ; sinon on attend l'événement "load" */
       if (document.readyState === 'complete') {
         hideLoader();
       } else {

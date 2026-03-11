@@ -1,24 +1,35 @@
 <?php
 
-/*************************************
-Classe chargée de l'affichage des vues
- *************************************/
+/*
+ * Classe chargée de l'affichage des vues
+ * À partir d'une action (accueil, Game, Contact, …), construit le nom du
+ * fichier de vue à inclure (`vue/vue<Action>.php`)
+ * Prépare les morceaux communs (header, footer) et les variables nécessaires,
+ * puis les injecte dans le gabarit principal `gabarit.php`
+ */
 class vue
 {
 
-  private $fichierVue;    // Nom du fichier permettant de générer le contenu pour la vue en fonction de l'action demandée
-  // Exemple : "vue/vueAccueil.php", "vue/vueArticles.php", "vue/vueErreur.php", ...
+  /*
+   * Nom complet du fichier de vue à inclure pour l'action demandée
+   * Exemple : "vue/vueAccueil.php", "vue/vueEscapeGames.php", "vue/vueErreur.php", ...
+   */
+  private $fichierVue;
 
   /*******************************************************
-  Initialise le nom du fichier requis pour générer le contenu à afficher dans la vue correspondant à l'action
-    Entrée : 
-      action [string] : action demandée
-
-    Sortie :
-      $fichierVue [string] : nom du fichier requis pour générer le contenu à afficher dans la vue
-
-    Retour : 
-
+   * Constructeur
+   * Initialise le chemin du fichier de vue correspondant à l'action
+   *
+   * Entrée :
+   *   $action [string] : action demandée par le routeur
+   *                        (ex. "Accueil", "EscapeGames", "Game", "Contact", …)
+   *
+   * Sortie :
+   *   $this->fichierVue [string] : chemin du fichier de vue à inclure,
+   *   construit sous la forme "vue/vue{$action}.php"
+   *
+   * Retour :
+   *   aucun (initialisation interne de l'objet).
    *******************************************************/
   public function __construct($action)
   {
@@ -26,12 +37,26 @@ class vue
   }
 
   /*******************************************************
-  Affiche dans le gabarit la vue correspondant à l'action demandée
-    Entrée : 
-      data [array] : tableau associatif contenant les données à afficher dans la vue
-
-    Retour : 
-
+   * Affiche dans le gabarit la vue correspondant à l'action demandée
+   *
+   * Étapes principales :
+   *   1. Récupère le titre d'onglet depuis la configuration globale
+   *   2. Construit le header adapté au statut de l'utilisateur
+   *      (déconnecté, connecté, administrateur) via les différents composants
+   *   3. Construit le footer commun
+   *   4. Extrait les données passées en paramètre ($data) pour les rendre
+   *      directement accessibles dans le fichier de vue spécifique
+   *   5. Exécute le fichier de vue correspondant à l'action et récupère
+   *      son rendu HTML dans la variable $main
+   *   6. Inclut enfin `gabarit.php`, qui assemble header, contenu principal
+   *      ($main) et footer dans un template commun
+   *
+   * Entrée :
+   *   $data [array] : tableau associatif contenant les données à afficher
+   *   dans la vue (ex: les jeux etc)
+   *
+   * Retour :
+   *   aucun : la méthode se charge directement d'afficher la page complète
    *******************************************************/
   public function afficher($data)
   {

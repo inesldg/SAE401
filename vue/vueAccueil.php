@@ -204,7 +204,7 @@ if (isset($acces[0]['statut'])) {
 // ===== SCRIPTS JAVASCRIPT =====
 // Script Three.js pour l'objet 3D de la page d'accueil
 
-$script = '<script type="module" src="js/three-key.js"></script>';
+$script = '<script type="module" src="js/three-key-loader.js"></script>';
 
 // Scripts traduction (commun + header + footer + page)
 $script .= '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradAccueil.js" defer></script><script src="js/traduction.js" defer></script>';
