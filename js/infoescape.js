@@ -151,3 +151,12 @@ if (formReservation) {
 }
 
 genererCalendrier();
+
+let nbrPersPrix = document.querySelector('#nbrParticipantsGame')
+
+nbrPersPrix.addEventListener("change", function() {
+    let prix = nbrPersPrix.value.split("-")
+    console.log(prix[1]);
+
+    document.querySelector('#prixTotalCalendrier').innerHTML = prix[1] + '.00 €'
+});

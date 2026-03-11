@@ -61,10 +61,11 @@ class ctlEscapeGames
     {
         $game = $this->escapeGames->afficherGame($idEscapeGame);
         $avis = $this->escapeGames->afficherAvis($idEscapeGame);
+        $tarifs = $this->escapeGames->getTarifs($idEscapeGame);
 
         if ($game != 0) {
             $vue = new vue("Game"); // Instancie la vue appropriée
-            $vue->afficher(array("escapeGame" => $game, "avis" => $avis, "message" => $message)); // Affiche la liste des clients dans la vue
+            $vue->afficher(array("escapeGame" => $game, "avis" => $avis, "tarifs"=>$tarifs, "message" => $message)); // Affiche la liste des clients dans la vue
         } else
             throw new Exception("L'escape Game demandé n'existe pas");
     }

@@ -100,8 +100,17 @@ class escapeGames extends database
 
     public function afficherGame($idEscapeGame)
     {
-        $req = 'SELECT * FROM escape
-        WHERE id_escape = ?;';
+        $req = 'SELECT * FROM escape WHERE escape.id_escape = ?';
+        $afficherGame = $this->execReqPrep($req, array($idEscapeGame));
+        //$idEscapeGame a récupérer en $_GET avec l'index (avec symbole & pour ajouter un parametre dans le lien)
+
+        return $afficherGame;
+    }
+
+    public function getTarifs($idEscapeGame)
+    {
+        $req = 'SELECT * FROM tarif WHERE id_escape = ?
+        ORDER BY effectif ASC;';
         $afficherGame = $this->execReqPrep($req, array($idEscapeGame));
         //$idEscapeGame a récupérer en $_GET avec l'index (avec symbole & pour ajouter un parametre dans le lien)
 

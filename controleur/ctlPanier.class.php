@@ -14,6 +14,13 @@ class ctlPanier
 
     public function pagePanier($jour, $mois, $annee, $horaire, $nbrPersonnes, $idEscape, $message)
     {
+        if (is_numeric($nbrPersonnes) == false);{
+            $nbrPersonnes = explode("-", $nbrPersonnes);
+            $nbrPersonnes = $nbrPersonnes[0];
+        }
+
+        $tarifs = $this->panier->getTarifs($idEscape, $nbrPersonnes);
+
         $dateReserve = implode("-", [$annee, $mois, $jour]);
 
         $dispo = $this->panier->verifierDispo($idEscape);
@@ -30,7 +37,7 @@ class ctlPanier
             $panier = $this->panier->affichagePanier($idEscape);
 
             $vue = new vue("Panier");
-            $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire,    "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "message" => $message));
+            $vue->afficher(array("jour" => $jour, "mois" => $mois, "annee" => $annee, "horaire" => $horaire, "nbrPersonnes" => $nbrPersonnes, "panier" => $panier, "tarifs" => $tarifs, "message" => $message));
         }
         else{
             throw new Exception('

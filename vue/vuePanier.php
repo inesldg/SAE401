@@ -1,7 +1,5 @@
 <?php
 
-// var_dump($jour, $horaire, $nbrPersonnes, $panier);
-
 // Config Langue
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
@@ -14,7 +12,7 @@ if (!isset($_SESSION['lang'])) {
 $escape = isset($panier[0]) ? $panier[0] : null;
 $nomEscape = $escape && isset($escape['nom']) ? $escape['nom'] : '';
 $descEscape = $escape && isset($escape['description']) ? $escape['description'] : '';
-$prixEscape = $escape && isset($escape['prix']) ? (int) $escape['prix'] : 0;
+// $prixEscape = $escape && isset($escape['prix']) ? (int) $escape['prix'] : 0;
 
 // Date complète : jour + mois + année (mois/année par défaut si non passés ou vides)
 $mois = (isset($mois) && $mois !== '') ? (int) $mois : (int) date('n');
@@ -71,7 +69,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                             <span class="recap-personnes"><?= $nbrPersonnes ?> personne(s)</span>
                         </div>
                         <div class="ligne-prix">
-                            <div class="prix-unitaire"><?= $prixEscape ?> €</div>
+                            <div class="prix-unitaire"><?= $tarifs[0]['prix'] ?> €</div>
                         </div>
                     </div>
                 </div>
@@ -175,7 +173,7 @@ $style = '<link rel="stylesheet" href="styles/panier.css">';
                     <input type="hidden" name="idEscapeReserve" value="<?= $panier[0]['id_escape'] ?>"> -->
 
                     <input type="hidden" name="montant" id="montantPanier"
-                        value="<?= $prixEscape ? $prixEscape : 141 ?>">
+                        value="<?= $tarifs[0]['prix'] ?>">
                     <input type="hidden" name="dateReserve" value="<?= htmlspecialchars($dateReserve) ?>">
                     <input type="hidden" name="horaireReserve" value="<?= htmlspecialchars($horaire) ?>">
                     <input type="hidden" name="nbrPersonneReserve" id="inputNbrPersonnesForm"
