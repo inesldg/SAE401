@@ -45,7 +45,8 @@ body {
 /* CARTE PRINCIPALE PROFIL */
 /* ========================= */
 .carte {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     background: rgba(255, 255, 255, 0.307);
     border-radius: 12px;
     overflow: hidden;
@@ -142,7 +143,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .pdp-wrapper:hover .pdp-crayon {
@@ -189,6 +190,10 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 25px 40px;
     margin-bottom: 30px;
+}
+
+.case {
+    width: 100%;
 }
 
 .case--pleine {
@@ -247,7 +252,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
 }
 
 .adresseemail {
@@ -258,11 +262,13 @@ body {
 
 .boite-email {
     background: #e9dcc5;
-    padding: 12px 150px;
+     padding: 12px 20px;
     border-radius: 10px;
     font-size: 0.9rem;
-    min-width: 300px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+    word-break: break-word;
 }
 
 /* Message succès/erreur : au-dessus de la carte, bien visible */
@@ -294,6 +300,11 @@ body {
         min-height: 100vh;
     }
 
+    .grille-formulaire {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
     .carte {
         width: 95%;
         margin: 20px auto;
@@ -304,11 +315,6 @@ body {
         /* On réduit l'espace interne */
     }
 
-    .grille-formulaire {
-        gap: 20px;
-        /* On resserre un peu */
-    }
-
     p {
         font-size: 16px;
     }
@@ -317,68 +323,48 @@ body {
 /* ========================= */
 /* RESPONSIVE MOBILE */
 /* ========================= */
-@media screen and (max-width: 425px) {
+@media (max-width: 425px) {
 
-    /* 1. Header de la carte */
-    .carte-couleur {
-        height: 100px;
-    }
-
-    .carte-couleur__titre {
-        font-size: 1.1rem;
-    }
-
-    /* 2. Ligne Profil : On empile tout ! */
-    .ligne-profil {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-
-    .infos-utilisateur {
-        flex-direction: column;
-        /* Photo au dessus du nom */
-        gap: 10px;
-    }
-
-    .bouton-sauvegarder {
+    .carte {
         width: 100%;
-        /* Le bouton prend toute la largeur */
-        padding: 12px;
+        max-width: 900px;
     }
 
-    /* 3. Formulaire : Passage en 1 seule colonne */
+    .carte-contenu {
+        padding: 25px 20px;
+    }
+
+    .content {
+        padding: 50px 15px;
+    }
+
+    h1 {
+        letter-spacing: 4px;
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+
+    .gallery-title {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+    }
+
     .grille-formulaire {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .case input {
-        padding: 12px;
-        /* On réduit légèrement la taille des champs */
+    .horizontal-line {
+        width: 85%;
     }
 
-    /* 4. Section Email */
-    .boite-email {
-        min-width: 100%;
-        /* Prend toute la largeur disponible */
-        padding: 12px 20px;
-        box-sizing: border-box;
+    .quote-text {
+        font-size: 0.9rem;
     }
 
-    .email .case {
-        max-width: 100% !important;
-        /* Force l'input mail à prendre la largeur */
-    }
-
-    /* 5. Background / Fond */
-    .background-fond {
-        padding: 10px;
-        align-items: flex-start;
-        /* Évite que la carte soit centrée verticalement et coupée en haut */
-        overflow-y: auto;
-    }
 }
