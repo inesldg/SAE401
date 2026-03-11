@@ -12,6 +12,7 @@ require "controleur/ctlAdmin.class.php";
 require "controleur/ctlDashAvis.class.php";
 require "controleur/ctlDashCalendrier.class.php";
 require "controleur/ctlPanier.class.php";
+require "controleur/ctlDashTarif.class.php";
 
 class routeur
 {
@@ -27,6 +28,7 @@ class routeur
     private $ctlDashAvis;
     private $ctlDashCalendrier;
     private $ctlPanier;
+    private $ctlDashTarif;
 
 
 
@@ -44,6 +46,7 @@ class routeur
         $this->ctlDashAvis = new ctlDashAvis();
         $this->ctlDashCalendrier = new ctlDashCalendrier();
         $this->ctlPanier = new ctlPanier();
+        $this->ctlDashTarif = new ctlDashTarif();
     }
 
     public function routerRequete()
@@ -140,9 +143,9 @@ class routeur
                             break;
 
                         case "paiement":
-                                if (isset($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['dateReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'])) {
-                                    $this->ctlPanier->paiement($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['dateReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'], $id);
-                                }
+                            if (isset($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['dateReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'])) {
+                                $this->ctlPanier->paiement($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'], $_POST['numCarte'], $_POST['moisExpiration'], $_POST['anneeExpiration'], $_POST['numCarteDos'], $_POST['dateReserve'], $_POST['horaireReserve'], $_POST['nbrPersonneReserve'], $_POST['idEscapeReserve'], $_POST['montant'], $id);
+                            }
                             break;
 
 
@@ -220,6 +223,20 @@ class routeur
                                     $this->ctlAjoutEscape->supprimerEscape($_GET['id']);
                                 else
                                     throw new Exception("ID manquant pour la suppression");
+                            }
+                            break;
+                        case "dashTarif":
+                            if ($acces[0]['statut'] !== 2) {
+                                throw new Exception("Action non valide");
+                            } else {
+                                $this->ctlDashTarif->afficherDashboard();
+                            }
+                            break;
+                        case "enregistrerTarifs":
+                            if ($acces[0]['statut'] !== 2) {
+                                throw new Exception("Action non valide");
+                            } else {
+                                $this->ctlDashTarif->enregistrerTarifs();
                             }
                             break;
                         case "changementAcces":

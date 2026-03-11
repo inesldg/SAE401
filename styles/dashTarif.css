@@ -36,7 +36,7 @@ body {
     color: var(--blanc-casse);
 }
 
-.dash {
+.tarif {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -60,7 +60,7 @@ body {
 .calendrier:hover,
 .avis:hover,
 .user:hover,
-.tarif:hover {
+.dash:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -94,135 +94,122 @@ h1 {
     margin-bottom: 5px;
 }
 
-.sous-titre {
-    font-size: 14px;
-    font-weight: lighter;
-    margin-bottom: 32px;
-}
+/* ========================= */
+/* SECTION TARIFS */
+/* ========================= */
 
-.cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
-    margin-bottom: 32px;
-
-}
-
-.card {
-    display: flex;
-    align-items: center;
-    padding: 25px;
-    border: solid var(--bleu-clair) 1px;
-    border-radius: 10px;
+.escape-tarif {
     background-color: var(--bleu-fonce);
-    transition: stroke 0.3s ease;
-    /* pour un effet fluide */
+    border: 1px solid rgba(43, 67, 89, 0.5);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
 }
 
-.card:hover {
-    border: solid rgb(197, 160, 89, 0.2) 1px;
-    background-color: rgb(197, 160, 89, 0.1);
+.escape-tarif h2 {
+    font-family: var(--titre);
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
-/* SVG initial */
-.part2 svg path {
-    stroke: #F2F2F2;
-    /* couleur initiale */
-    transition: stroke 0.3s ease, fill 0.3s ease;
-}
-
-/* Au hover sur la carte entière */
-.card:hover .part2 svg path {
-    stroke: #A3730C;
-    /* couleur du contour */
-}
-
-.part1>h2 {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.donnee {
-    display: flex;
-    align-items: flex-end;
-}
-
-.chiffre {
-    margin-top: 5px;
-    font-size: 24px;
-
-}
-
-.texte {
-    font-size: 14px;
-    margin-left: 15px;
-    opacity: 50%;
-    font-weight: 200;
-}
-
-.part2 {
-    margin-left: auto;
+.escape-tarif p {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 20px;
 }
 
 /* ========================= */
-/* TABLEAU DES RÉSERVATIONS */
+/* TABLEAU TARIFS */
 /* ========================= */
 
-#reservationsDash {
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-.table-reservations {
+.tarif-table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 /* HEAD */
-.table-reservations thead {
-    background-color: var(--bleu-fonce);
-    border: 1px solid rgb(43, 67, 89, 0.5);
+.tarif-table thead {
+    background-color: rgba(43, 67, 89, 0.3);
 }
 
-.table-reservations th {
+.tarif-table th {
     text-align: left;
-    padding: 15px;
+    padding: 14px;
     font-size: 12px;
-    color: var(--blanc-casse);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid rgba(43, 67, 89, 0.5);
     font-weight: normal;
 }
 
 /* BODY */
-.table-reservations td {
-    padding: 15px;
-    border: 1px solid rgb(43, 67, 89, 0.5);
-    font-size: 12px;
-    color: var(--blanc-casse);
+
+.tarif-table td {
+    padding: 14px;
+    border: 1px solid rgba(43, 67, 89, 0.5);
+    font-size: 13px;
+}
+
+/* hover ligne */
+
+.tarif-table tbody tr:hover {
+    background-color: rgba(255,255,255,0.03);
+}
+
+/* ========================= */
+/* INPUT PRIX */
+/* ========================= */
+
+.tarif-table input[type="number"] {
+    width: 120px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--bleu-clair);
     background-color: var(--bleu-fonce);
+    color: var(--blanc-casse);
+    font-size: 13px;
 }
 
-/* Ligne hover (optionnel mais propre) */
-.table-reservations tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+.tarif-table input[type="number"]:focus {
+    outline: none;
+    border: 1px solid var(--gold-clair);
+    box-shadow: 0 0 4px rgba(197,160,89,0.4);
 }
 
+/* enlever les flèches input number */
 
-/* Message si aucune réservation */
-.table-reservations tbody tr td[colspan] {
-    text-align: center;
-    font-style: italic;
-    opacity: 0.7;
+.tarif-table input::-webkit-outer-spin-button,
+.tarif-table input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
 
 /* ========================= */
-/* TABLETTE */
+/* BOUTON */
+/* ========================= */
+
+.btn-enregistrer {
+    background-color: var(--gold-clair);
+    border: none;
+    color: var(--bleu-fonce);
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.btn-enregistrer:hover {
+    background-color: #A3730C;
+    color: white;
+}
+
+/* ========================= */
+/* RESPONSIVE */
 /* ========================= */
 @media (max-width: 1024px) {
 
@@ -252,12 +239,12 @@ h1 {
     .calendrier:hover,
     .avis:hover,
     .user:hover,
-    .tarif:hover {
+    .dash:hover {
         margin-left: 0;
         margin-top: 0;
     }
 
-    .dash {
+    .tarif {
         color: var(--gold-clair);
         background-color: transparent;
         border-right: none;
@@ -283,54 +270,6 @@ h1 {
     .ligne {
         width: 100%;
         margin-left: 0;
-    }
-
-    /* cartes */
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-/* ========================= */
-/* MOBILE */
-/* ========================= */
-@media (max-width: 700px) {
-
-    h1 {
-        font-size: 20px;
-    }
-
-    .sous-titre {
-        font-size: 12px;
-    }
-
-    /* cartes */
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    .chiffre {
-        font-size: 20px;
-    }
-
-    /* tableau responsive */
-    .table-reservations {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .table-reservations th,
-    .table-reservations td {
-        padding: 12px;
-        font-size: 11px;
     }
 
 }

@@ -26,7 +26,8 @@ body {
 .escape,
 .calendrier,
 .avis,
-.user {
+.user,
+.tarif {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
@@ -49,7 +50,8 @@ body {
 .escape>div,
 .calendrier>div,
 .avis>div,
-.user>div {
+.user>div,
+.tarif>div {
     margin-left: 10px;
     font-size: 14px;
 }
@@ -57,7 +59,8 @@ body {
 .dash:hover,
 .calendrier:hover,
 .user:hover,
-.escape:hover {
+.escape:hover,
+.tarif:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -163,7 +166,7 @@ h1 {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: var(--golf-fonce);
+    background-color: var(--gold-fonce);
     color: var(--blanc-casse);
     border: none;
     border-radius: 5px;
@@ -176,4 +179,157 @@ h1 {
 .btn-supprimer:hover{
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
+}
+
+/* ========================= */
+/* TABLETTE */
+/* ========================= */
+@media (max-width: 1024px) {
+
+     .contenu {
+        flex-direction: column;
+    }
+
+    /* menu admin */
+    .menu-gauche {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .menu-categorie {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .menu-categorie::-webkit-scrollbar {
+        display: none;
+    }
+
+    .escape:hover,
+    .calendrier:hover,
+    .dash:hover,
+    .user:hover,
+    .tarif:hover {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .avis {
+        color: var(--gold-clair);
+        background-color: transparent;
+        border-right: none;
+        margin: 0;
+    }
+
+    .dash,
+    .escape,
+    .calendrier,
+    .avis,
+    .user,
+    .tarif {
+        margin-bottom: 0;
+    }
+
+    .droite {
+        margin: 25px 20px;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .ligne {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .avis-container {
+        gap: 15px;
+    }
+
+    .card-avis {
+        padding: 15px;
+    }
+
+    .avis-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .btn-supprimer {
+        position: static;
+        align-self: flex-end;
+    }
+
+    .infos h3,
+    .infos span {
+        font-size: 14px;
+    }
+
+    .star {
+        font-size: 20px;
+    }
+
+    .commentaire {
+        font-size: 13px;
+    }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .sous-titre {
+        font-size: 12px;
+    }
+
+    .card-avis {
+        padding: 12px;
+    }
+
+    .avis-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .infos h3 {
+        font-size: 13px;
+    }
+
+    .infos span {
+        font-size: 12px;
+    }
+
+    .etoiles {
+        margin-bottom: 8px;
+    }
+
+    .star {
+        font-size: 18px;
+    }
+
+    .commentaire {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .btn-supprimer {
+        padding: 3px 6px;
+        font-size: 12px;
+        margin-top: 5px;
+    }
 }

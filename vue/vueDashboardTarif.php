@@ -11,9 +11,8 @@ $lang = $_SESSION['lang'];
 $col_nom = "nom_" . $lang;
 $col_desc = "description_" . $lang;
 
-
 // Style
-$style = '<link rel="stylesheet" href="styles/dashAvis.css">';
+$style = '<link rel="stylesheet" href="styles/dashTarif.css">';
 ?>
 <div class="contenu">
     <div class="menu-gauche">
@@ -34,7 +33,7 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
             </a>
             <a href="index.php?action=dashTarif" class="tarif">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M12 18C10.0333 18 8.28333 17.4417 6.75 16.325C5.21667 15.2083 4.13333 13.7667 3.5 12H0V10H3.05C3 9.6 2.97933 9.22933 2.988 8.888C2.99667 8.54667 3.01733 8.25067 3.05 8H0V6H3.5C4.13333 4.23333 5.21667 2.79167 6.75 1.675C8.28333 0.558334 10.0333 0 12 0C13.15 0 14.2377 0.204333 15.263 0.613C16.2883 1.02167 17.2007 1.584 18 2.3L16.575 3.7C15.9583 3.16667 15.2627 2.75 14.488 2.45C13.7133 2.15 12.884 2 12 2C10.5833 2 9.31667 2.371 8.2 3.113C7.08333 3.855 6.24167 4.81733 5.675 6H12V8H5.075C5.00833 8.45 4.98333 8.846 5 9.188C5.01667 9.53 5.04167 9.80067 5.075 10H12V12H5.675C6.24167 13.1833 7.08333 14.146 8.2 14.888C9.31667 15.63 10.5833 16.0007 12 16C12.8833 16 13.7127 15.85 14.488 15.55C15.2633 15.25 15.959 14.8333 16.575 14.3L18 15.7C17.2 16.4167 16.2873 16.9793 15.262 17.388C14.2367 17.7967 13.1493 18.0007 12 18Z" fill="#F2F2F2" />
+                    <path d="M12 18C10.0333 18 8.28333 17.4417 6.75 16.325C5.21667 15.2083 4.13333 13.7667 3.5 12H0V10H3.05C3 9.6 2.97933 9.22933 2.988 8.888C2.99667 8.54667 3.01733 8.25067 3.05 8H0V6H3.5C4.13333 4.23333 5.21667 2.79167 6.75 1.675C8.28333 0.558334 10.0333 0 12 0C13.15 0 14.2377 0.204333 15.263 0.613C16.2883 1.02167 17.2007 1.584 18 2.3L16.575 3.7C15.9583 3.16667 15.2627 2.75 14.488 2.45C13.7133 2.15 12.884 2 12 2C10.5833 2 9.31667 2.371 8.2 3.113C7.08333 3.855 6.24167 4.81733 5.675 6H12V8H5.075C5.00833 8.45 4.98333 8.846 5 9.188C5.01667 9.53 5.04167 9.80067 5.075 10H12V12H5.675C6.24167 13.1833 7.08333 14.146 8.2 14.888C9.31667 15.63 10.5833 16.0007 12 16C12.8833 16 13.7127 15.85 14.488 15.55C15.2633 15.25 15.959 14.8333 16.575 14.3L18 15.7C17.2 16.4167 16.2873 16.9793 15.262 17.388C14.2367 17.7967 13.1493 18.0007 12 18Z" fill="#C5A059" />
                 </svg>
                 <div id="tarifAdmin">Tarifs</div>
             </a>
@@ -53,65 +52,60 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
             </a>
             <a href="index.php?action=dashAvis" class="avis">
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V18L4.467 15.4C4.81319 15.1404 5.23426 15 5.667 15H17C17.5304 15 18.0391 14.7893 18.4142 14.4142C18.7893 14.0391 19 13.5304 19 13V3C19 2.46957 18.7893 1.96086 18.4142 1.58579C18.0391 1.21071 17.5304 1 17 1Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V18L4.467 15.4C4.81319 15.1404 5.23426 15 5.667 15H17C17.5304 15 18.0391 14.7893 18.4142 14.4142C18.7893 14.0391 19 13.5304 19 13V3C19 2.46957 18.7893 1.96086 18.4142 1.58579C18.0391 1.21071 17.5304 1 17 1Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <div id="avisAdmin">Avis</div>
             </a>
         </div>
     </div>
 
-
     <div class="droite">
-        <div class="haut">
-            <h1 id="dashAvisTitreListe">TOUS LES AVIS</h1>
-            <div class="sous-titre">
-                <?= count($avis) ?> <span id="dashAvisSuffixeNombre">avis</span>
+        <h1 id="dashAdmin">Gestion des tarifs</h1>
+
+        <?php foreach ($escapes as $escape): ?>
+            <div class="escape-tarif">
+                <h2><?= htmlspecialchars($escape['nom']) ?> (<?= $escape['nbr_pers_min'] ?> à <?= $escape['nbr_pers_max'] ?> pers)</h2>
+                <p><?= htmlspecialchars($escape['description']) ?></p>
+
+                <form method="POST" action="index.php?action=enregistrerTarifs">
+                    <input type="hidden" name="id_escape" value="<?= $escape['id_escape'] ?>">
+
+                    <table class="tarif-table">
+                        <thead>
+                            <tr>
+                                <th>Effectif</th>
+                                <th>Prix (€)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $tarifs = $dashTarif->getTarifsByEscape($escape['id_escape']);
+                            $tarifMap = [];
+                            foreach ($tarifs as $t) {
+                                $tarifMap[$t['effectif']] = $t['prix'];
+                            }
+
+                            for ($i = $escape['nbr_pers_min']; $i <= $escape['nbr_pers_max']; $i++):
+                                $prix = $tarifMap[$i] ?? '';
+                            ?>
+                                <tr>
+                                    <td><?= $i ?></td>
+                                    <td>
+                                        <input type="number" min="0" name="prix[<?= $i ?>]" value="<?= $prix ?>" required>
+                                    </td>
+                                </tr>
+                            <?php endfor; ?>
+                        </tbody>
+                    </table>
+
+                    <button type="submit" class="btn-enregistrer">Enregistrer les tarifs</button>
+                </form>
             </div>
-        </div>
-        <div class="avis-container">
+        <?php endforeach; ?>
 
-            <?php foreach ($avis as $a) { ?>
-
-                <div class="card-avis">
-
-                    <div class="avis-header">
-                        <div class="avatar"></div>
-
-                        <div class="infos">
-                            <h3><?= htmlspecialchars($a['prenom']) . " " . htmlspecialchars($a['nom']) ?></h3>
-                            <span><?= htmlspecialchars($a['nom_escape']) ?></span>
-                        </div>
-
-                        <form method="POST" action="index.php?action=supprimerAvis">
-                            <input type="hidden" name="id_avis" value="<?= $a['id_avis'] ?>">
-                            <button type="submit" class="btn-supprimer">
-                                <span class="dashAvisSupprimerTexte">Supprimer</span>
-                            </button>
-                        </form>
-                    </div>
-
-                    <div class="etoiles">
-                        <?php for ($i = 1; $i <= 5; $i++) { ?>
-                            <?php if ($i <= $a['note']) { ?>
-                                <span class="star gold">★</span>
-                            <?php } else { ?>
-                                <span class="star">★</span>
-                            <?php } ?>
-                        <?php } ?>
-                    </div>
-
-                    <p class="commentaire">
-                        <?= nl2br(htmlspecialchars($a['commentaire'])) ?>
-                    </p>
-
-                </div>
-
-            <?php } ?>
-
-        </div>
     </div>
 </div>
 
 <?php
+
 $script = '<script src="js/traduction/tradCommun.js" defer></script><script src="js/traduction/tradHeader.js" defer></script><script src="js/traduction/tradFooter.js" defer></script><script src="js/traduction/tradDashboard.js" defer></script><script src="js/traduction.js" defer></script>';
-?>

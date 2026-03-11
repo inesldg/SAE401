@@ -2,6 +2,7 @@ body {
     background-color: var(--noir);
     font-family: var(--texte);
     color: var(--blanc-casse);
+    overflow-x: hidden;
 }
 
 /* ========================= */
@@ -35,7 +36,8 @@ body {
 .escape,
 .calendrier,
 .avis,
-.user {
+.user,
+.tarif {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
@@ -60,7 +62,8 @@ body {
 .escape>div,
 .calendrier>div,
 .avis>div,
-.user>div {
+.user>div,
+.tarif>div {
     margin-left: 10px;
     font-size: 14px;
 }
@@ -68,7 +71,8 @@ body {
 .dash:hover,
 .calendrier:hover,
 .avis:hover,
-.user:hover {
+.user:hover,
+.tarif:hover {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
     padding: 10px;
@@ -194,7 +198,7 @@ h1 {
 /* ========================= */
 /* FORMULAIRES */
 /* ========================= */
-h2{
+h2 {
     font-family: var(--titre);
     font-size: 24px;
     color: var(--noir);
@@ -219,16 +223,16 @@ label {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
-    gap: 20px; 
+    gap: 20px;
 }
 
-::placeholder{
+::placeholder {
     color: #cacaca;
     font-weight: lighter;
     font-size: 14px;
 }
 
-.valider{
+.valider {
     background: var(--gold-gradient);
     color: var(--blanc-casse);
     font-weight: bold;
@@ -282,12 +286,13 @@ label span {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
-    overflow: hidden;          /* Pour que le radius masque les coins des cellules */
+    overflow: hidden;
+    /* Pour que le radius masque les coins des cellules */
 }
 
 .table-escapes thead {
     background-color: var(--bleu-fonce);
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid var(--bleu-clair);
 }
 
 .table-escapes th {
@@ -297,13 +302,13 @@ label span {
     color: var(--blanc-casse);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid var(--bleu-clair);
     font-weight: normal;
 }
 
 .table-escapes td {
     padding: 15px;
-    border: 1px solid rgb(43, 67, 89, 0.5);
+    border: 1px solid var(--bleu-clair);
     font-size: 12px;
     color: var(--blanc-casse);
     background-color: var(--bleu-fonce);
@@ -324,28 +329,201 @@ label span {
     width: 60px;
     height: 60px;
 }
+
 /* ========================= */
 /* LIENS DANS LE TABLEAU */
 /* ========================= */
-td > a{
+td>a {
     text-decoration: none;
 }
 
-.supp{
-    display: block;       /* ou inline-block */
-    text-align: center;   /* centre le contenu si c’est un texte ou icône */
-    margin: 0 auto;       /* centre horizontalement le block */
+.supp {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .supp:hover svg path {
     stroke: red;
 }
 
-.joueurs, .duree{
+.joueurs,
+.duree {
     align-items: center;
     margin-left: 10px;
 }
 
-.case{
+.case {
     display: inline-flex;
+}
+
+
+/* ========================= */
+/* TABLETTE */
+/* ========================= */
+@media (max-width: 1024px) {
+
+    .contenu {
+        flex-direction: column;
+    }
+
+    /* menu admin */
+    .menu-gauche {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .menu-categorie {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .menu-categorie::-webkit-scrollbar {
+        display: none;
+    }
+
+    .dash:hover,
+    .calendrier:hover,
+    .avis:hover,
+    .user:hover,
+    .tarif:hover {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .escape {
+        color: var(--gold-clair);
+        background-color: transparent;
+        border-right: none;
+        margin: 0;
+    }
+
+    .dash,
+    .escape,
+    .calendrier,
+    .avis,
+    .user,
+    .tarif {
+        margin-bottom: 0;
+    }
+
+    .droite {
+        margin: 25px 20px;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .ligne {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .table-escapes {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        overflow-x: auto;
+        box-sizing: border-box;
+    }
+
+    label,
+    input,
+    .image-label,
+    .image-label .choix {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 700px) {
+
+    /* titres */
+    h1 {
+        font-size: 22px;
+    }
+
+    .sous-titre {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+
+    /* header page */
+    .haut {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .part2 {
+        margin-left: 0;
+    }
+
+    /* bouton */
+    .ajouter {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    /* tableau scroll */
+    .table-escapes {
+        margin-top: 20px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table-escapes th,
+    .table-escapes td {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    /* popup */
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    /* formulaire */
+    label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    label span {
+        width: auto;
+        font-size: 14px;
+    }
+
+    .image-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .image-label input[type="file"] {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-label .choix {
+        width: 100%;
+    }
+
 }
