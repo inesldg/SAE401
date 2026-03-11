@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
 }
 
 /* ========================= */
@@ -52,6 +53,7 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     margin: 25px;
+    box-sizing: border-box;
 }
 
 /* ========================= */
@@ -90,6 +92,7 @@ body {
     overflow-y: auto;
     border: 1px solid rgba(197, 160, 89, 0.15);
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 /* ========================= */
@@ -194,6 +197,7 @@ body {
 
 .case {
     width: 100%;
+    box-sizing: border-box;
 }
 
 .case--pleine {
@@ -232,6 +236,7 @@ body {
     font-size: 0.9rem;
     color: var(--texte-gris);
     outline: none;
+    box-sizing: border-box;
 }
 
 .section-mdp {
@@ -262,13 +267,14 @@ body {
 
 .boite-email {
     background: #e9dcc5;
-     padding: 12px 20px;
+    padding: 12px 20px;
     border-radius: 10px;
     font-size: 0.9rem;
     width: 100%;
     max-width: 400px;
     text-align: center;
     word-break: break-word;
+    box-sizing: border-box;
 }
 
 /* Message succès/erreur : au-dessus de la carte, bien visible */
@@ -311,8 +317,8 @@ body {
     }
 
     .carte-contenu {
-        padding: 30px;
-        /* On réduit l'espace interne */
+        padding: 30px 20px;
+        /* moins de padding à gauche et à droite */
     }
 
     p {
