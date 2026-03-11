@@ -26,9 +26,9 @@ $style = '<link rel="stylesheet" href="styles/inscription.css">';
         <defs>
             <!-- Dégradé doré utilisé pour les contours -->
             <linearGradient id="goldStrokeInscription" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#E6B856;stop-opacity:0.85" />
-                <stop offset="50%" style="stop-color:#C5A059;stop-opacity:0.75" />
-                <stop offset="100%" style="stop-color:#8B6914;stop-opacity:0.7" />
+                <stop offset="0%" style="stop-color:#E6B856;stop-opacity:0.3" />
+                <stop offset="50%" style="stop-color:#C5A059;stop-opacity:0.3" />
+                <stop offset="100%" style="stop-color:#8B6914;stop-opacity:0.3" />
             </linearGradient>
         </defs>
         <path

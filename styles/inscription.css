@@ -69,7 +69,7 @@ main {
     width: 100%;
     height: auto;
     pointer-events: none;
-    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.25)) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
+    filter: drop-shadow(0 0 12px #c5595940) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
 }
 
 /* contenu formulaire */
@@ -222,13 +222,96 @@ ANIMATIONS
     }
 }
 
-/* responsive */
-@media (max-width: 768px) {
+/* --- TABLETTE (768px) --- */
+@media (width <= 768px) {
     .decoration-coin {
-        width: 150px;
+        width: 170px;
+        opacity: 0.4;
     }
 
     .boite-formulaire {
         transform: scale(0.85);
+        margin-top: -1rem;
+    }
+
+    .titre-connexion {
+        font-size: 2rem;
+    }
+
+    .haut-droit {
+        top: 80px;
+        right: -20px;
+    }
+
+    .bas-gauche {
+        bottom: -10px;
+        left: -20px;
+        transform: rotate(180deg);
+        animation: pulsationDouceBas 4s ease-in-out infinite alternate;
+    }
+}
+
+/* --- MOBILE (425px) --- */
+@media (width <= 425px) {
+
+    /* On cache les engrenages pour épurer */
+    .decoration-coin {
+        display: none;
+    }
+
+    main {
+        padding: 0 10px;
+        align-items: center;
+    }
+
+    /* Le SVG et sa boîte */
+    .boite-formulaire {
+        transform: scale(0.65);
+        height: 17000px;
+        margin-top: -5rem;
+    }
+
+    .svg-arriere-plan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotationLente 60s linear infinite;
+    z-index: 1;
+    width: 10000%;
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(0 0 12px #c5595940) drop-shadow(0 0 24px rgba(139, 105, 20, 0.15));
+}
+
+    /* Les deux inputs côte à côte passent en colonne */
+    .groupe-ligne {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contenu-formulaire {
+        max-width: 290px;
+    }
+
+    .titre-connexion {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .boite-formulaire input {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .boite-formulaire .inscription {
+        font-size: 14px;
+        padding: 14px;
+        margin-top: 10px;
+    }
+
+    .boite-formulaire .lien-inscription {
+        font-size: 12px;
+        margin-top: 20px;
     }
 }
