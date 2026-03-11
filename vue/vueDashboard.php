@@ -14,10 +14,14 @@ $col_desc = "description_" . $lang;
 // Style
 $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
 ?>
+
+<!-- ==================== STRUCTURE PRINCIPALE ==================== -->
 <div class="contenu">
+    <!-- ==================== MENU GAUCHE ==================== -->
     <div class="menu-gauche">
         <div class="admin" id="adminAdministrateur">Administrateur</div>
         <div class="ligne"></div>
+        <!-- Menu des différentes sections du dashboard -->
         <div class="menu-categorie">
             <a href="index.php?action=dash" class="dash">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,11 +63,15 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
         </div>
     </div>
 
+    <!-- ==================== CONTENU DE DROITE ==================== -->
     <div class="droite">
+        <!-- Titre principal du dashboard -->
         <h1 id="dashAdmin">Dashboard</h1>
         <div class="sous-titre" id="soustitreDash">Vue d’ensemble de l’activité</div>
+        <!-- ==================== CARDS DE SYNTHÈSE ==================== -->
         <div class="cards">
             <div class="card">
+                <!-- Card : Réservations -->
                 <div class="part1">
                     <h2 id="reservationDash">RÉSERVATION</h2>
                     <div class="donnee">
@@ -80,6 +88,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                 </div>
             </div>
 
+            <!-- Card : Utilisateurs -->
             <div class="card">
                 <div class="part1">
                     <h2 id="utilisateurAdmin">UTILISATEURS</h2>
@@ -97,6 +106,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                 </div>
             </div>
 
+            <!-- Card : Escapes -->
             <div class="card">
                 <div class="part1">
                     <h2 id="escapeAdmin">ESCAPES</h2>
@@ -113,6 +123,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                 </div>
             </div>
 
+            <!-- Card : Revenus -->
             <div class="card">
                 <div class="part1">
                     <h2 id="revenusdash">REVENUS</h2>
@@ -129,6 +140,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                 </div>
             </div>
 
+            <!-- Card : note moyenne -->
             <div class="card">
                 <div class="part1">
                     <h2 id="moyenneDash">NOTE MOYENNE</h2>
@@ -145,6 +157,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                 </div>
             </div>
 
+            <!-- Card : Taux -->
             <div class="card">
                 <div class="part1">
                     <h2 id="tauxdoccupationDash">TAUX D'OCCUPATION</h2>
@@ -162,6 +175,9 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             </div>
         </div>
 
+        <!-- ===========================
+     TABLE : RÉSERVATIONS RÉCENTES
+     =========================== -->
         <h1 id="reservationsDash">RÉSERVATIONS RÉCENTES</h1>
         <table class="table-reservations">
             <thead>
@@ -176,6 +192,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
             </thead>
             <tbody>
                 <?php if (!empty($reservationsRecente)): ?>
+                    <!-- Boucle sur les réservations récentes -->
                     <?php foreach ($reservationsRecente as $res): ?>
                         <tr>
                             <td><?= $res['nom_escape'] ?></td>
@@ -187,6 +204,7 @@ $style = '<link rel="stylesheet" href="styles/dashboardAdmin.css">';
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
+                    <!-- Message si aucune réservation récente -->
                     <tr>
                         <td colspan="6">Aucune réservation récente</td>
                     </tr>

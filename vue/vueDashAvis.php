@@ -15,10 +15,14 @@ $col_desc = "description_" . $lang;
 // Style
 $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
 ?>
+
+<!-- ==================== STRUCTURE PRINCIPALE ==================== -->
 <div class="contenu">
+    <!-- ==================== MENU GAUCHE ==================== -->
     <div class="menu-gauche">
         <div class="admin" id="adminAdministrateur">Administrateur</div>
         <div class="ligne"></div>
+        <!-- Menu des différentes sections du dashboard -->
         <div class="menu-categorie">
             <a href="index.php?action=dash" class="dash">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,16 +64,19 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
         </div>
     </div>
 
-
+    <!-- ==================== CONTENU DE DROITE ==================== -->
     <div class="droite">
         <div class="haut">
+            <!-- Titre principal du dashboard -->
             <h1 id="dashAvisTitreListe">TOUS LES AVIS</h1>
             <div class="sous-titre">
                 <?= count($avis) ?> <span id="dashAvisSuffixeNombre">avis</span>
             </div>
         </div>
+        <!-- Conteneur principal des cartes d'avis -->
         <div class="avis-container">
 
+            <!-- Boucle sur chaque avis pour créer une carte -->
             <?php foreach ($avis as $a) {
                 // Photo de l'utilisateur : on cherche dans photos_utilisateurs/
                 $dossierPhotos = "photos_utilisateurs/";
@@ -89,6 +96,7 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
 
                 <div class="card-avis">
 
+                    <!-- En-tête de l'avis : avatar + infos + bouton supprimer -->
                     <div class="avis-header">
                         <div class="avatar">
                             <?php if ($photoUtilisateur): ?>
@@ -96,11 +104,13 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
                             <?php endif; ?>
                         </div>
 
+                        <!-- Informations de l'utilisateur -->
                         <div class="infos">
-                            <h3><?= htmlspecialchars($a['prenom']) . " " . htmlspecialchars($a['nom']) ?></h3>
-                            <span><?= htmlspecialchars($a['nom_escape']) ?></span>
+                            <h3><?= $a['prenom'] . " " . $a['nom'] ?></h3>
+                            <span><?= $a['nom_escape'] ?></span>
                         </div>
 
+                        <!-- Formulaire pour supprimer l'avis -->
                         <form method="POST" action="index.php?action=supprimerAvis">
                             <input type="hidden" name="id_avis" value="<?= $a['id_avis'] ?>">
                             <button type="submit" class="btn-supprimer">
@@ -109,6 +119,7 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
                         </form>
                     </div>
 
+                    <!-- Affichage des étoiles selon la note -->
                     <div class="etoiles">
                         <?php for ($i = 1; $i <= 5; $i++) { ?>
                             <?php if ($i <= $a['note']) { ?>
@@ -119,8 +130,9 @@ $style = '<link rel="stylesheet" href="styles/dashAvis.css">';
                         <?php } ?>
                     </div>
 
+                    <!-- Commentaire de l'utilisateur -->
                     <p class="commentaire">
-                        <?= nl2br(htmlspecialchars($a['commentaire'])) ?>
+                        <?= nl2br($a['commentaire']) ?> <!-- nl2br convertit les sauts de ligne en <br> -->
                     </p>
 
                 </div>

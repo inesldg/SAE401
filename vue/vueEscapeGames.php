@@ -119,7 +119,7 @@ SECTION HERO (titre principal)
                     <label>
                         <span id="labelDureeMax">Maximum</span>
                         <input type="number" name="duree_max" min="0" placeholder="120"
-                            value="<?= isset($filtres['duree_max']) ? htmlspecialchars($filtres['duree_max']) : '' ?>">
+                            value="<?= isset($filtres['duree_max']) ? $filtres['duree_max'] : '' ?>">
                     </label>
                 </fieldset>
 
@@ -228,7 +228,7 @@ SECTION HERO (titre principal)
 
                     <!-- lien invisible pour rendre toute la carte cliquable -->
                     <a href="index.php?action=game&idEscapeGame=<?= $game['id_escape'] ?>" class="accueil-escape-card__link"
-                        aria-label="Voir détails : <?= htmlspecialchars($game['nom']) ?>"></a>
+                        aria-label="Voir détails : <?= $game['nom'] ?>"></a>
                 </article>
             <?php endforeach; ?>
             <?php endif; ?>

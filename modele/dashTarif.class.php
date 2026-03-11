@@ -23,6 +23,7 @@ class DashTarif extends database
     // Enregistre ou met à jour un tarif
     public function saveTarif($id_escape, $effectif, $prix)
     {
+        // Vérifie si un tarif existe déjà pour cet escape et cet effectif
         $existant = $this->execReqPrep(
             "SELECT id_tarif FROM tarif WHERE id_escape = :id_escape AND effectif = :effectif",
             [
@@ -32,6 +33,7 @@ class DashTarif extends database
         );
 
         if (count($existant) > 0) {
+            // Si le tarif existe déjà, on fait une mise à jour du prix
             $this->execReqPrep(
                 "UPDATE tarif SET prix = :prix WHERE id_tarif = :id_tarif",
                 [
@@ -40,6 +42,7 @@ class DashTarif extends database
                 ]
             );
         } else {
+            // Sinon, on insère un nouveau tarif
             $this->execReqPrep(
                 "INSERT INTO tarif (prix, effectif, id_escape) VALUES (:prix, :effectif, :id_escape)",
                 [

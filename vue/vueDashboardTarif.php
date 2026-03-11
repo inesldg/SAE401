@@ -14,10 +14,14 @@ $col_desc = "description_" . $lang;
 // Style
 $style = '<link rel="stylesheet" href="styles/dashTarif.css">';
 ?>
+
+<!-- ==================== STRUCTURE PRINCIPALE ==================== -->
 <div class="contenu">
+    <!-- ==================== MENU GAUCHE ==================== -->
     <div class="menu-gauche">
         <div class="admin" id="adminAdministrateur">Administrateur</div>
         <div class="ligne"></div>
+        <!-- Menu des différentes sections du dashboard -->
         <div class="menu-categorie">
             <a href="index.php?action=dash" class="dash">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,17 +63,24 @@ $style = '<link rel="stylesheet" href="styles/dashTarif.css">';
         </div>
     </div>
 
+     <!-- ==================== CONTENU DE DROITE ==================== -->
     <div class="droite">
+        <!-- Titre principal du dashboard -->
         <h1 id="dashAdmin">Gestion des tarifs</h1>
 
+        <!-- Boucle sur tous les escapes -->
         <?php foreach ($escapes as $escape): ?>
             <div class="escape-tarif">
-                <h2><?= htmlspecialchars($escape['nom']) ?> (<?= $escape['nbr_pers_min'] ?> à <?= $escape['nbr_pers_max'] ?> pers)</h2>
-                <p><?= htmlspecialchars($escape['description']) ?></p>
+                <!-- Nom de l'escape + nombre minimum et maximum de personnes -->
+                <h2><?= $escape['nom'] ?> (<?= $escape['nbr_pers_min'] ?> à <?= $escape['nbr_pers_max'] ?> pers)</h2>
+                <!-- Description de l'escape -->
+                <p><?= $escape['description'] ?></p>
 
+                <!-- Formulaire pour enregistrer les tarifs -->
                 <form method="POST" action="index.php?action=enregistrerTarifs">
                     <input type="hidden" name="id_escape" value="<?= $escape['id_escape'] ?>">
 
+                    <!-- Tableau des tarifs -->
                     <table class="tarif-table">
                         <thead>
                             <tr>
@@ -79,18 +90,21 @@ $style = '<link rel="stylesheet" href="styles/dashTarif.css">';
                         </thead>
                         <tbody>
                             <?php
+                            // Récupère les tarifs existants pour cet escape
                             $tarifs = $dashTarif->getTarifsByEscape($escape['id_escape']);
                             $tarifMap = [];
                             foreach ($tarifs as $t) {
                                 $tarifMap[$t['effectif']] = $t['prix'];
                             }
 
+                            // Boucle pour créer une ligne par effectif possible
                             for ($i = $escape['nbr_pers_min']; $i <= $escape['nbr_pers_max']; $i++):
                                 $prix = $tarifMap[$i] ?? '';
                             ?>
                                 <tr>
                                     <td><?= $i ?></td>
                                     <td>
+                                        <!-- Champ input pour modifier le prix -->
                                         <input type="number" min="0" name="prix[<?= $i ?>]" value="<?= $prix ?>" required>
                                     </td>
                                 </tr>
@@ -98,6 +112,7 @@ $style = '<link rel="stylesheet" href="styles/dashTarif.css">';
                         </tbody>
                     </table>
 
+                    <!-- Bouton pour enregistrer les modifications -->
                     <button type="submit" class="btn-enregistrer">Enregistrer les tarifs</button>
                 </form>
             </div>

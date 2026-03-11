@@ -1,15 +1,18 @@
+/* BODY PRINCIPAL */
 body {
     background-color: var(--noir);
     font-family: var(--texte);
     color: var(--blanc-casse);
 }
 
+/* TEXTE ADMIN / INFO SECONDAIRE */
 .admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
+/* MENU LATÉRAL GAUCHE */
 .menu-gauche {
     width: 300px;
     background-color: var(--bleu-fonce);
@@ -22,6 +25,7 @@ body {
     width: 100%;
 }
 
+/* ÉLÉMENTS DU MENU */
 .dash,
 .escape,
 .calendrier,
@@ -36,6 +40,7 @@ body {
     color: var(--blanc-casse);
 }
 
+/* Élément tarif actif */
 .tarif {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
@@ -46,6 +51,7 @@ body {
     border-right: solid #A3730C 3px;
 }
 
+/* Texte à côté des icônes dans le menu */
 .dash>div,
 .escape>div,
 .calendrier>div,
@@ -56,6 +62,7 @@ body {
     font-size: 14px;
 }
 
+/* Hover sur les éléments du menu */
 .escape:hover,
 .calendrier:hover,
 .avis:hover,
@@ -70,6 +77,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* SÉPARATEUR MENU */
 .ligne {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -79,6 +87,7 @@ body {
     margin-left: -20px;
 }
 
+/* CONTENU PRINCIPAL */
 .contenu {
     display: flex;
 }
@@ -88,16 +97,14 @@ body {
     flex: 1;
 }
 
+/* TITRES */
 h1 {
     margin: 0;
     font-family: var(--titre);
     margin-bottom: 5px;
 }
 
-/* ========================= */
 /* SECTION TARIFS */
-/* ========================= */
-
 .escape-tarif {
     background-color: var(--bleu-fonce);
     border: 1px solid rgba(43, 67, 89, 0.5);
@@ -118,10 +125,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* ========================= */
-/* TABLEAU TARIFS */
-/* ========================= */
-
+/* TABLEAU DES TARIFS */
 .tarif-table {
     width: 100%;
     border-collapse: collapse;
@@ -144,23 +148,18 @@ h1 {
 }
 
 /* BODY */
-
 .tarif-table td {
     padding: 14px;
     border: 1px solid rgba(43, 67, 89, 0.5);
     font-size: 13px;
 }
 
-/* hover ligne */
-
+/* Hover ligne du tableau */
 .tarif-table tbody tr:hover {
     background-color: rgba(255,255,255,0.03);
 }
 
-/* ========================= */
 /* INPUT PRIX */
-/* ========================= */
-
 .tarif-table input[type="number"] {
     width: 120px;
     padding: 8px 10px;
@@ -177,20 +176,14 @@ h1 {
     box-shadow: 0 0 4px rgba(197,160,89,0.4);
 }
 
-/* enlever les flèches input number */
-
+/* Supprimer flèches par défaut des input number */
 .tarif-table input::-webkit-outer-spin-button,
 .tarif-table input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-
-
-/* ========================= */
-/* BOUTON */
-/* ========================= */
-
+/* BOUTON ENREGISTRER */
 .btn-enregistrer {
     background-color: var(--gold-clair);
     border: none;

@@ -1,19 +1,18 @@
+/* BODY PRINCIPAL */
 body {
     background-color: var(--noir);
     font-family: var(--texte);
     color: var(--blanc-casse);
 }
 
-/* texte admin avec opacité pour le distingué */
+/* TEXTE ADMIN / INFO SECONDAIRE */
 .admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
-/* =========================================================
-MENU LATÉRAL GAUCHE
-========================================================= */
+/* MENU LATÉRAL GAUCHE */
 .menu-gauche {
     width: 300px;
     background-color: var(--bleu-fonce);
@@ -27,7 +26,7 @@ MENU LATÉRAL GAUCHE
     width: 100%;
 }
 
-/* liens du menu */
+/* Liens du menu (icône + texte) */
 .dash,
 .escape,
 .calendrier,
@@ -42,6 +41,7 @@ MENU LATÉRAL GAUCHE
     color: var(--blanc-casse);
 }
 
+/* Élément actif 'user' */
 .user {
     color: var(--gold-clair);
     background-color: rgba(197, 160, 89, 0.2);
@@ -52,7 +52,7 @@ MENU LATÉRAL GAUCHE
     border-right: solid #A3730C 3px;
 }
 
-/* Icones ou textes à l’intérieur des liens menu */
+/* Icônes ou textes à l’intérieur des liens du menu */
 .dash>div,
 .escape>div,
 .calendrier>div,
@@ -63,7 +63,7 @@ MENU LATÉRAL GAUCHE
     font-size: 14px;
 }
 
-/* hober sur les liens menu 'sauf user) */
+/* Hover sur les liens du menu (sauf user) */
 .dash:hover,
 .calendrier:hover,
 .avis:hover,
@@ -78,7 +78,7 @@ MENU LATÉRAL GAUCHE
     margin-bottom: 20px;
 }
 
-/* ligne de séparation */
+/* LIGNE DE SÉPARATION DANS LE MENU */
 .ligne {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -88,18 +88,18 @@ MENU LATÉRAL GAUCHE
     margin-left: -20px;
 }
 
-/* contenu principal de la page */
+/* CONTENU PRINCIPAL DE LA PAGE */
 .contenu {
     display: flex;
 }
 
-/* colonne de droite */
+/* Colonne de droite (contenu principal) */
 .droite {
     margin: 32px;
     flex: 1;
 }
 
-/* titre */
+/* TITRES */
 h1 {
     margin: 0;
     font-family: var(--titre);
@@ -112,14 +112,12 @@ h1 {
     margin-bottom: 32px;
 }
 
-/* =========================================================
-TABLE UTILISATEURS
-========================================================= */
+/* TABLE UTILISATEURS */
 .table-utilisateur {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
-    overflow: hidden;          /* Pour que le radius masque les coins des cellules */
+    overflow: hidden;
 }
 
 .table-utilisateur thead {
@@ -146,16 +144,15 @@ TABLE UTILISATEURS
     font-weight: normal;
 }
 
-/* avatar */
+/* AVATAR UTILISATEUR */
 .avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /* pour avoir un cercle parfait */
     object-fit: cover;
-    /* recadrage image */
 }
 
+/* Placeholder si pas d'image */
 .avatar.placeholder {
     width: 50px;
     height: 50px;
@@ -165,9 +162,7 @@ TABLE UTILISATEURS
 }
 
 
-/* =========================================================
-CONTACT ET INFOS
-========================================================= */
+/* CONTACT ET INFOS */
 .contact div {
     line-height: 2;
 }
@@ -180,7 +175,7 @@ CONTACT ET INFOS
     padding: 3px 5px;
 }
 
-/* petit bouton */
+/* Petit bouton */
 .btn-mini {
     background: #4caf50;
     color: #fff;
@@ -194,9 +189,7 @@ CONTACT ET INFOS
     background: #45a049;
 }
 
-/* =========================================================
-BOUTON SUPPRIMER SVG
-========================================================= */
+/* BOUTON SUPPRIMER SVG */
 .supp svg path {
     stroke: #f00;
     transition: stroke 0.3s;
@@ -208,7 +201,7 @@ BOUTON SUPPRIMER SVG
 
 
 /* =========================
-   TABLEAU RESPONSIVE MOBILE
+   TABLEAU RESPONSIVE TABLETTE
 ========================= */
 @media (max-width: 1024px) {
     .contenu {
@@ -271,6 +264,9 @@ BOUTON SUPPRIMER SVG
     }
 }
 
+/* =========================
+   TABLEAU RESPONSIVE MOBILE
+========================= */
 @media (max-width: 700px) {
     h1 {
         font-size: 20px;
