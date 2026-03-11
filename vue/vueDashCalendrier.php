@@ -15,10 +15,14 @@ $col_desc = "description_" . $lang;
 // Style
 $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 ?>
+
+<!-- ==================== STRUCTURE PRINCIPALE ==================== -->
 <div class="contenu">
+    <!-- ==================== MENU GAUCHE ==================== -->
     <div class="menu-gauche">
         <div class="admin" id="adminAdministrateur">Administrateur</div>
         <div class="ligne"></div>
+        <!-- Menu des différentes sections du dashboard -->
         <div class="menu-categorie">
             <a href="index.php?action=dash" class="dash">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,26 +64,30 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
         </div>
     </div>
 
-
+    <!-- ==================== CONTENU DE DROITE ==================== -->
     <div class="droite">
         <div class="haut">
+            <!-- Titre principal du dashboard -->
             <h1 id="dashCalendrierTitre">CALENDRIER</h1>
             <div class="sous-titre" id="dashCalendrierSousTitre">Visualisez les créneaux réservés et disponibles par
                 date et par escape.</div>
         </div>
         <div class="bas">
 
+            <!-- FORMULAIRE DE FILTRAGE PAR ESCAPE -->
             <form method="GET">
                 <input type="hidden" name="action" value="dashCalendrier">
 
                 <div class="calendrier-boite">
 
+                    <!-- HEADER DU CALENDRIER (mois/année et flèches navigation) -->
                     <div class="calendrier-header">
                         <span class="fleche-cal" id="prev">&#10094;</span>
                         <span id="mois-annee"></span>
                         <span class="fleche-cal" id="next">&#10095;</span>
                     </div>
 
+                    <!-- JOURS DE LA SEMAINE -->
                     <div class="calendrier-jours">
                         <div id="dashCalLundi">LUN</div>
                         <div id="dashCalMardi">MAR</div>
@@ -90,13 +98,14 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                         <div id="dashCalDimanche">DIM</div>
                     </div>
 
+                    <!-- GRILLE DU CALENDRIER -->
                     <div class="calendrier-grille" id="jours"></div>
 
                 </div>
 
                 <input type="hidden" name="date" id="inputDate" value="<?= $date ?>">
 
-
+                <!-- FILTRE ESCAPE -->
                 <div class="droite2">
                     <div class="filtre">
                         <div class="titre" id="dashCalFiltrerParEscape">Filtrer par escape</div>
@@ -112,6 +121,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                         <button type="submit" id="dashCalBtnFiltrer">Filtrer</button>
                     </div>
 
+                    <!-- INDICATEURS DES CRÉNEAUX -->
                     <div class="joursj">
                         <div class="datejours">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -151,7 +161,9 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
             </form>
 
 
-
+            <!-- =======================
+                 CRÉNEAUX HORAIRES
+                 ======================= -->
             <h2 id="dashCalCreneauxTitre">Créneaux horaires</h2>
 
             <?php
@@ -161,6 +173,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
                 $reservationTrouvee = null;
 
+                // Vérifie si une réservation existe pour ce créneau
                 foreach ($reservations as $r) {
                     if ($r['horaire'] == $heure) {
                         $reservationTrouvee = $r;
@@ -169,6 +182,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                 }
             ?>
 
+                <!-- SI RÉSERVATION EXISTE -->
                 <?php if ($reservationTrouvee): ?>
                     <div class="creneau reserve">
                         <div class="grp">
@@ -222,6 +236,8 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
                             </svg>
                         </div>
                     </div>
+
+                    <!-- SI CRÉNEAU LIBRE -->
                 <?php else: ?>
                     <div class="creneau libre">
                         <div class="grp">
@@ -238,7 +254,7 @@ $style = '<link rel="stylesheet" href="styles/dashCalendrier.css">';
 
             <?php endforeach; ?>
 
-
+            <!-- POPUP SUPPRESSION RÉSERVATION -->
             <div id="overlay"></div>
 
             <div id="popup" class="popup-suppression">
