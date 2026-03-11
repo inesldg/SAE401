@@ -506,3 +506,127 @@ Formulaire superposé sur une carte SVG
     font-size: 1.1rem;
     cursor: pointer;
 }
+
+/* =====================================================
+TABLETTE (768px)
+===================================================== */
+@media screen and (max-width: 1024px) {
+
+    .panier {
+        padding: 40px 25px;
+    }
+
+    /* layout principal → colonne */
+    .conteneur-principal {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .colonne-gauche,
+    .colonne-laterale {
+        width: 100%;
+    }
+
+    /* cartes */
+    .panier .carte {
+        padding: 30px;
+    }
+
+    /* produit */
+    .produit {
+        gap: 15px;
+    }
+
+    .image-panier,
+    .image-remplacement {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* ligne prix */
+    .ligne-prix {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .prix-unitaire {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+
+    /* formulaire */
+    .ligne-formulaire {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .ligne-formulaire label {
+        width: auto;
+    }
+
+    /* carte bancaire */
+    .carte-bleue-wrapper {
+        max-width: 360px;
+    }
+
+    .bouton-valider {
+        font-size: 1rem;
+        padding: 16px;
+    }
+}
+
+
+/* =====================================================
+MOBILE (425px)
+===================================================== */
+@media (max-width: 700px) {
+    .produit {
+        flex-direction: column;
+    }
+
+    .image-panier,
+    .image-remplacement {
+        width: 100%;
+        height: 180px;
+    }
+
+    .groupe-saisie {
+        flex-direction: column;
+    }
+
+    .groupe-saisie .bouton-or {
+        width: 100%;
+    }
+
+    .grille-nom-prenom {
+        grid-template-columns: 1fr;
+    }
+
+    .page-legal {
+        padding: 1.5rem 0.8rem 3rem;
+    }
+
+    .page-legal__bloc {
+        padding: 1.2rem 1rem;
+        border-radius: 14px;
+    }
+
+    .page-legal__titre {
+        font-size: 1rem;
+    }
+
+    .page-legal__texte {
+        font-size: 0.9rem;
+    }
+
+    .page-legal__texte p {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .page-legal__texte strong {
+        min-width: auto;
+    }
+
+}

@@ -277,14 +277,77 @@ h1 {
     letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+/* =========================================================
+RESPONSIVE TABLETTE
+========================================================= */
+
+@media (max-width: 425px) {
+
+    .content {
+        padding: 50px 15px;
+    }
+
+    h1 {
+        letter-spacing: 4px;
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+
+    .gallery-title {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+    }
+
+    /* cartes */
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+    .contact-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+
+    .social-icons-wrapper a svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* galerie */
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .photo-frame {
-        transform: skewX(0);
-        width: 100%;
+        width: 90%;
+        height: 320px;
+        transform: none;
     }
 
     .photo-frame img {
-        transform: skewX(0);
-        width: 100%;
+        transform: scale(1.1);
     }
+
+    .photo-frame:hover img {
+        transform: scale(1.15);
+    }
+
+    /* citation */
+    .horizontal-line {
+        width: 85%;
+    }
+
+    .quote-text {
+        font-size: 0.9rem;
+    }
+
 }
