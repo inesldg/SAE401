@@ -493,7 +493,7 @@ Formulaire superposé sur une carte SVG
 /* =====================================================
 TABLETTE (768px)
 ===================================================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
     .panier {
         padding: 40px 25px;
@@ -563,7 +563,28 @@ TABLETTE (768px)
 /* =====================================================
 MOBILE (425px)
 ===================================================== */
-@media (max-width: 425px) {
+@media (max-width: 700px) {
+    .produit {
+        flex-direction: column;
+    }
+
+    .image-panier,
+    .image-remplacement {
+        width: 100%;
+        height: 180px;
+    }
+
+    .groupe-saisie {
+        flex-direction: column;
+    }
+
+    .groupe-saisie .bouton-or {
+        width: 100%;
+    }
+
+    .grille-nom-prenom {
+        grid-template-columns: 1fr;
+    }
 
     .page-legal {
         padding: 1.5rem 0.8rem 3rem;

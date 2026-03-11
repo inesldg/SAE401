@@ -276,15 +276,3 @@ h1 {
     font-size: 1rem;
     letter-spacing: 1px;
 }
-
-@media (max-width: 768px) {
-    .photo-frame {
-        transform: skewX(0);
-        width: 100%;
-    }
-
-    .photo-frame img {
-        transform: skewX(0);
-        width: 100%;
-    }
-}
