@@ -1,3 +1,4 @@
+/* STYLES GÉNÉRAUX DU BODY */
 body {
     background-color: var(--noir);
     font-family: var(--texte);
@@ -5,18 +6,14 @@ body {
     overflow-x: hidden;
 }
 
-/* ========================= */
 /* INDICATION UTILISATEUR ADMIN */
-/* ========================= */
 .admin {
     font-size: 12px;
     color: var(--blanc-casse);
     opacity: 50%;
 }
 
-/* ========================= */
 /* MENU LATÉRAL GAUCHE */
-/* ========================= */
 .menu-gauche {
     width: 300px;
     background-color: var(--bleu-fonce);
@@ -29,9 +26,7 @@ body {
     width: 100%;
 }
 
-/* ========================= */
-/* ÉLÉMENTS DU MENU */
-/* ========================= */
+/* ÉLÉMENTS DU MENU (liens) */
 .dash,
 .escape,
 .calendrier,
@@ -68,6 +63,7 @@ body {
     font-size: 14px;
 }
 
+/* Hover sur les éléments du menu */
 .dash:hover,
 .calendrier:hover,
 .avis:hover,
@@ -82,9 +78,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ========================= */
 /* SÉPARATEUR MENU */
-/* ========================= */
 .ligne {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -94,9 +88,7 @@ body {
     margin-left: -20px;
 }
 
-/* ========================= */
 /* STRUCTURE PRINCIPALE */
-/* ========================= */
 .contenu {
     display: flex;
 }
@@ -107,9 +99,7 @@ body {
 }
 
 
-/* ========================= */
-/* TITRES */
-/* ========================= */
+/* TITRES ET SOUS-TITRES */
 h1 {
     margin: 0;
     font-family: var(--titre);
@@ -122,9 +112,7 @@ h1 {
     margin-bottom: 32px;
 }
 
-/* ========================= */
-/* BOUTONS */
-/* ========================= */
+/* BOUTONS (ajouter) */
 .ajouter {
     text-decoration: none;
     color: var(--blanc-casse);
@@ -135,9 +123,7 @@ h1 {
 }
 
 
-/* ========================= */
 /* STRUCTURE HEADER PAGE ADMIN */
-/* ========================= */
 .part2 {
     margin-top: 10px;
     margin-left: auto;
@@ -150,7 +136,7 @@ h1 {
 
 
 /* ========================= */
-/* POPUP / MODAL */
+/* POPUP
 /* ========================= */
 
 /* Overlay noir */
@@ -195,9 +181,8 @@ h1 {
     cursor: pointer;
 }
 
-/* ========================= */
+
 /* FORMULAIRES */
-/* ========================= */
 h2 {
     font-family: var(--titre);
     font-size: 24px;
@@ -248,9 +233,7 @@ label span {
     color: var(--noir);
 }
 
-/* ========================= */
-/* CHAMP UPLOAD IMAGE CUSTOM */
-/* ========================= */
+/* CHAMP UPLOAD IMAGE */
 .image-label {
     position: relative;
     display: flex;
@@ -278,16 +261,12 @@ label span {
     background-color: white;
 }
 
-
-/* ========================= */
-/* TABLEAU DES ESCAPE GAMES */
-/* ========================= */
+/* TABLEAU ESCAPE GAMES */
 .table-escapes {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
-    /* Pour que le radius masque les coins des cellules */
 }
 
 .table-escapes thead {
@@ -314,9 +293,7 @@ label span {
     background-color: var(--bleu-fonce);
 }
 
-/* ========================= */
 /* IMAGE DANS LE TABLEAU */
-/* ========================= */
 .table-escapes td img {
     width: 60px;
     height: 60px;
@@ -330,9 +307,7 @@ label span {
     height: 60px;
 }
 
-/* ========================= */
-/* LIENS DANS LE TABLEAU */
-/* ========================= */
+/* LIENS ET BOUTONS DANS LE TABLEAU */
 td>a {
     text-decoration: none;
 }
