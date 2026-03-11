@@ -11,7 +11,7 @@
         "#inputadresse": { "fr": "Votre adresse postale", "en": "Your postal address", "de": "Ihre Postanschrift" },
         "#inputconfmdp": { "fr": "Confirmer le mot de passe", "en": "Confirm password", "de": "Passwort bestätigen" },
         "#inputcommentaire": { "fr": "Un commentaire ? Partagez-nous votre avis !", "en": "A comment? Share your opinion!", "de": "Ein Kommentar? Teilen Sie Ihre Meinung!" },
-        "#inputcodepromo": { "fr": "Entrez le code inscrit sur le bon", "en": "Please enter the code written on the voucher", "de": "Bitte geben Sie den auf dem Gutschein geschriebenen Code ein" },
+        "#inputcodepromo": { "fr": "Entrez le code inscrit sur le bon", "en": "Please enter the code written on the voucher", "de": "Bitte Gutscheincode eingeben" },
         "#nomCompte": { "fr": "Nom", "en": "Name", "de": "Name" },
         "#prenomCompte": { "fr": "Prénom", "en": "First name", "de": "Vorname" },
         "#inputmdp_error": { "fr": "Veuillez entrer votre mot de passe.", "en": "Please enter your password.", "de": "Bitte geben Sie Ihr Passwort ein." },
