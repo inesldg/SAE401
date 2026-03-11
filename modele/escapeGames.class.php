@@ -1,9 +1,17 @@
 <?php
+
+// Modèle EscapeGames : toutes les opérations liées aux escapes côté « catalogue »
+// - liste de tous les escapes
+// - derniers escapes pour l'accueil
+// - recherche avec filtres (prix, lieu, nombre de personnes, note, durée)
+// - détails d'un escape + avis associés
+// - ajout d'un nouvel avis
+
 require_once "modele/database.class.php";
 
 class escapeGames extends database
 {
-
+    // Retourne tous les escapes (utilisé pour la page de liste)
     public function listeEscapeGames()
     {
         $req = 'SELECT * FROM escape;';
@@ -12,23 +20,20 @@ class escapeGames extends database
         return $listeEscapeGames;
     }
 
-    /**
-     * Les N jeux les plus récents (pour la page d'accueil).
-     */
+    // Retourne les N escapes les plus récents (pour la page d'accueil)
     public function listeEscapeGamesRecents($limit = 4)
     {
+        // On force un minimum de 1 pour éviter une limite à 0
         $limit = max(1, (int) $limit);
         $req = 'SELECT * FROM escape ORDER BY id_escape DESC LIMIT ' . $limit;
         return $this->execReq($req);
     }
 
-    /**
-     * Recherche d'escapes avec filtres
-     * $filtres est un tableau associatif contenant des valeurs
-     */
+    // Recherche d'escapes avec plusieurs filtres possibles
+    // $filtres est un tableau associatif (prix_max, pers_min, lieu, etoiles, duree_max, ...)
     public function filtrerEscapeGames(array $filtres)
     {
-        // Base : escape, avec jointure facultative sur tarif et moyenne des notes
+        // Base : table escape, avec jointures pour les tarifs et la moyenne des notes
         $sql = "
             SELECT e.*
             FROM escape e
@@ -44,26 +49,25 @@ class escapeGames extends database
         $conditions = [];
         $params = [];
 
-        // Prix max (tarif.prix = prix par personne)
+        // Filtre sur le prix maximum (tarif.prix)
         if (!empty($filtres['prix_max'])) {
             $conditions[] = "t.prix <= ?";
             $params[] = (float) $filtres['prix_max'];
         }
 
-        // Nombre minimum de personnes : jeux qui acceptent au moins ce nombre
+        // Filtre sur le nombre minimum de personnes
         if (!empty($filtres['pers_min'])) {
             $conditions[] = "e.nbr_pers_max >= ?";
             $params[] = (int) $filtres['pers_min'];
         }
 
-        // Lieu
+        // Filtre sur le lieu
         if (isset($filtres['lieu']) && $filtres['lieu'] !== '') {
             $conditions[] = "e.lieu = ?";
             $params[] = $filtres['lieu'];
         }
 
-        // Note (étoiles) : cases cochées = jeux dont la note moyenne arrondie vaut N (au moins un avis)
-        // Ex. cocher "5 ★" = jeux avec moyenne arrondie à 5 (ex. 4.5 à 5.4)
+        // Filtre sur la note moyenne (étoiles cochées dans le formulaire)
         $etoiles = $filtres['etoiles'] ?? [];
         if (!is_array($etoiles)) {
             $etoiles = $etoiles !== '' && $etoiles !== null ? [$etoiles] : [];
@@ -74,57 +78,62 @@ class escapeGames extends database
         if (!empty($etoiles)) {
             $etoilesConditions = [];
             foreach ($etoiles as $n) {
+                // ROUND(ev.note_moy) = ?  →  moyenne arrondie au nombre d'étoiles choisi
                 $etoilesConditions[] = "(ev.note_moy IS NOT NULL AND ROUND(ev.note_moy) = ?)";
                 $params[] = $n;
             }
             $conditions[] = "(" . implode(" OR ", $etoilesConditions) . ")";
         }
 
-        // Durée max
+        // Filtre sur la durée maximale
         if (!empty($filtres['duree_max'])) {
             $conditions[] = "e.duree <= ?";
             $params[] = (int) $filtres['duree_max'];
         }
 
+        // On ajoute toutes les conditions dans la requête SQL
         if (!empty($conditions)) {
             $sql .= " AND " . implode(" AND ", $conditions);
         }
 
         // Éviter les doublons si un escape a plusieurs tarifs
         $sql .= " GROUP BY e.id_escape";
+        // Tri par nom d'escape
         $sql .= " ORDER BY e.nom ASC";
 
         $listeEscapeGames = $this->execReqPrep($sql, $params);
         return is_array($listeEscapeGames) ? $listeEscapeGames : [];
     }
 
+    // Retourne les infos complètes d'un escape (page détail d'un jeu)
     public function afficherGame($idEscapeGame)
     {
         $req = 'SELECT * FROM escape
-        WHERE id_escape = ?;';
+        WHERE id_escape = ?;'; // ? = id de l'escape demandé
         $afficherGame = $this->execReqPrep($req, array($idEscapeGame));
-        //$idEscapeGame a récupérer en $_GET avec l'index (avec symbole & pour ajouter un parametre dans le lien)
 
         return $afficherGame;
     }
 
+    // Retourne tous les avis associés à un escape donné
     public function afficherAvis($idEscapeGame)
     {
         $req = 'SELECT evaluer.id_avis, evaluer.note, evaluer.commentaire, evaluer.avis_date, evaluer.id_escape, evaluer.id_utilisateur, utilisateur.nom, utilisateur.prenom
-        FROM `evaluer` 
+        FROM evaluer 
         INNER JOIN escape ON evaluer.id_escape = escape.id_escape 
         INNER JOIN utilisateur ON evaluer.id_utilisateur = utilisateur.id_utilisateur 
-        WHERE evaluer.id_escape = ?;';
+        WHERE evaluer.id_escape = ?;'; // ? = id de l'escape
         $afficherAvis = $this->execReqPrep($req, array($idEscapeGame));
-        //$idEscapeGame a récupérer en $_GET avec l'index (avec symbole & pour ajouter un parametre dans le lien)
 
         return $afficherAvis;
     }
 
+    // Ajoute un avis pour un escape (note + texte)
     public function ajouterAvis($note, $avis, $date, $id, $idEscape)
     {
-        $req = 'INSERT INTO `evaluer` (`id_avis`, `note`, `commentaire`, `avis_date`, `id_utilisateur`, `id_escape`) 
-                VALUES (NULL, ?, ?, ?, ?, ?);';
+        $req = 'INSERT INTO evaluer (note, commentaire, avis_date, id_utilisateur, id_escape) 
+                VALUES (?, ?, ?, ?, ?);';
+        // Les ? correspondent : note, commentaire, date de l'avis, id de l'utilisateur, id de l'escape
         $ajout = $this->execReqPrep($req, array($note, $avis, $date, $id, $idEscape));
 
         return $ajout;
