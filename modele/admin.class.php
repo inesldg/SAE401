@@ -1,10 +1,16 @@
 <?php
+/**
+ * Modèle Admin (tableau de bord)
+ * Fournit les statistiques et données pour le tableau de bord administrateur :
+ * compteurs (réservations, utilisateurs, escapes), revenus, note moyenne, taux d'occupation,
+ * et liste des réservations récentes.
+ */
 require_once "modele/database.class.php";
 
 class admin extends database
 {
 
-    // Nombre de réservations
+    /** Nombre total de réservations enregistrées. */
     public function getReservations()
     {
         $res = $this->execReq("SELECT COUNT(*) as total FROM reserver");

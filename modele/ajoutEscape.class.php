@@ -1,9 +1,24 @@
 <?php
+/**
+ * Modèle Ajout / gestion des escape games (côté admin)
+ * Permet d'ajouter un nouvel escape, de lister tous les escapes, et de supprimer un escape
+ * (y compris les fichiers photo associés sur le disque).
+ */
 require_once "modele/database.class.php";
 
 class ajoutEscape extends database
 {
 
+    /**
+     * Insère un nouvel escape en base et retourne son id_escape.
+     * @param string $nom Nom de l'escape
+     * @param string $description Description
+     * @param string $lieu Lieu
+     * @param int $duree Durée en minutes
+     * @param int $min Nombre minimum de personnes
+     * @param int $max Nombre maximum de personnes
+     * @return int|null id_escape du nouvel enregistrement, ou null si non trouvé
+     */
     public function ajouterEscape($nom, $description, $lieu, $duree, $min, $max)
     {
         // Insertion de l'escape dans la table escape

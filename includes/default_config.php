@@ -1,6 +1,7 @@
 <?php
 require_once "config/config.class.php";
 
+// On crée l'objet stdClass qu’on remplit ensuite avec des propriétés (comme titreOnglet par exemple)
 $Conf = new stdClass();
 
 // Configuration des paramètres par défaut du site modifiable dans le fichier config.class.php
